@@ -9,7 +9,7 @@ Header toolbar is a Toolbar based component used in headings for portlets, mobil
 
 ## Usage
 
-![header tooldbar dark background](/images/headerToolbar.png)
+![header tooldbar dark background](../../../images/headerToolbar.png)
 
 This toolbar is used in almost every page in the system. It can have different configurations as you can see in examples section:
 * Left area: Used for actions as triggering the side menu and back navigation
@@ -18,5 +18,5 @@ This toolbar is used in almost every page in the system. It can have different c
 
 ## Example
 
-![animated gif that shows how a header toolbar work with different interactions](/images/headerExample.gif)
+![animated gif that shows how a header toolbar work with different interactions](../../../images/headerExample.gif)
 

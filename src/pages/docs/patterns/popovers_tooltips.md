@@ -9,22 +9,22 @@ weight: 1
 
 Popovers are short helpful and/or descriptive pieces of information that appear on hover state.
 
-![popover to be displayed on the top side of a question mark icon](/images/popoverTop.png) 
-![popover to be displayed on the bottom side of a question mark icon](/images/popoverBottom.png) 
-![popover to be displayed to the left side of a question mark icon](/images/popoverLeft.png) 
-![popover to be displayed to the right side of a question mark icon](/images/popoverRight.png) 
+![popover to be displayed on the top side of a question mark icon](../../../images/popoverTop.png) 
+![popover to be displayed on the bottom side of a question mark icon](../../../images/popoverBottom.png) 
+![popover to be displayed to the left side of a question mark icon](../../../images/popoverLeft.png) 
+![popover to be displayed to the right side of a question mark icon](../../../images/popoverRight.png) 
 
 ## Usage
 
 Popovers are used together with the question mark icon as an affordance to let the user understand there is something to read that can be useful. Popovers contain information such as help to understand a context.
 
-![help icon](/images/helpIcon.png)
+![help icon](../../../images/helpIcon.png)
 
 # Tooltips
 
 Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.
 
-![the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases](/images/tooltips.png) 
+![the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases](../../../images/tooltips.png) 
 
 ## Usage
 

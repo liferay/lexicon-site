@@ -33,19 +33,19 @@ Lexicon allows your modal to have different configurations related to your needs
 
 This is the classic composition of a modal window with its three main parts: header, body and footer.
 
-![modal window over a dark transparent background](/images/modal.png)
+![modal window over a dark transparent background](../../../images/modal.png)
 
 ### Header and body
 
 This is the case when you don't need a footer bar to place your icons.
 
-![modal window over a dark transparent background only header and body](/images/modalHeaderBody.png)
+![modal window over a dark transparent background only header and body](../../../images/modalHeaderBody.png)
 
 ### Body and Footer
 
 This case is thought for those cases where you need to just show text and buttons to agree or cancel.
 
-![modal window over a dark transparent background only body and footer](/images/modalBodyFooter.png)
+![modal window over a dark transparent background only body and footer](../../../images/modalBodyFooter.png)
 
 ### iFrame in the body
 
@@ -56,5 +56,5 @@ It is always possible to bring an iFrame inside the body. For more information a
 
 When a modal reaches the mobile viewport size its look and feel is transformed to the one you see below offering a mobile friendly version. Modal occupies the hole screen allowing only the interaction with the modal and its content.
 
-![modal window mobile version always full screen](/images/modalMobileWhiteBg.png)
+![modal window mobile version always full screen](../../../images/modalMobileWhiteBg.png)
 

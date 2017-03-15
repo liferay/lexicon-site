@@ -1,5 +1,5 @@
 ---
-title: "Forms WIP"
+title: "Forms"
 description: "Forms pattern description"
 layout: "guide"
 weight: 1
@@ -17,8 +17,6 @@ When applying columns take into account that the reading directions is left-righ
 
 Sections help users to fill a form by chunking the form is smaller pieces. A form section is identified with an [accordion](./panel.html). There is no limitation in the number of accordions to use.
 
-TODO: Review: In case you need to use a subsection use header X
-
 ## Fields’ order
 
 Laying out the fields of your form we recommend you to follow an order of importance. Try to place first as many mandatory fields when possible to make the user task short. Non mandatory fields should go in a second place as they are not so important and the user could like to skip them. In case non mandatory fields are in between mandatory fields the user would expend more time scanning the form.
@@ -32,7 +30,7 @@ In mobile view ports field lengths should be half of the screen or full length.
 
 Fields can be mandatory/required to fill in a form. The way to mark a field as mandatory is:
 
-![example of mandatory field](/images/textfieldMandatory.png)
+![example of mandatory field](../../../images/textfieldMandatory.png)
 
 ## Inline validation
 
@@ -44,7 +42,7 @@ Forms have inline validation. All form fields that can be checked against a set 
 
 General form actions always placed at the end of the form and they are always placed in same order: Primary, Secondary (default), Negative (Link). The button size to use is large.
 
-![button order example](/images/buttonOrder.png)
+![button order example](../../../images/buttonOrder.png)
 
 ### Interior actions
 

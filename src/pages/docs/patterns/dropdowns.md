@@ -25,23 +25,17 @@ A dropdown menu can contain any kind of basic form component / element like text
 
 The default dropdown is just a panel not prepared for scrolling the content inside it. Use this type when the number of options you want to offer is short or the panel is big enough to contain all the elements you want to use.
 
-![default dropdown menu](/images/dropdownMenu.png)
+![default dropdown menu](../../../images/dropdownMenu.png)
 
 ### Scrolling content
 
 Scrolling content type is prepared to have scroll in all the dropdown menu or just a part of it. Use it in case your dataset is occupies more than the space you want to provide the dropdown menu in the screen.
 
-![default dropdown menu with scroll](/images/dropdownMenuScroll.png)
-
-### Dropdown wide / full
-
-This type allows you to have a big and responsive dropdown that adapts to the container width or window resize from the default width value, 500px. This value can be adapted to your needs.
-
-![default image](/images/lexiconDefault.png)
+![default dropdown menu with scroll](../../../images/dropdownMenuScroll.png)
 
 ## Example of use
 
 This example shows you how dropdowns would look like in a screen when displayed from the kebab menu and the action button. As you can see in the example the dropdown panel arrow can be positioned in different positions. Check Quartz implementation to get more details on that.
 
-![default dropdown menu example](/images/dropdownMenuExample.png)
+![default dropdown menu example](../../../images/dropdownMenuExample.png)
 

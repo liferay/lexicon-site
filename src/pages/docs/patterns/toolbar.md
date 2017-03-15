@@ -22,16 +22,16 @@ For a better understading of the previous sections, here are some example layout
 
 Example 1: Three consecutive fields
 
-![toolbar layout example with three fields](/images/toolbarLayoutExample1.png)
+![toolbar layout example with three fields](../../../images/toolbarLayoutExample1.png)
 
 Example 2: Three consecutive contents
 
-![toolbar layout example with three contents](/images/toolbarLayoutExample2.png)
+![toolbar layout example with three contents](../../../images/toolbarLayoutExample2.png)
 
 Example 3: Field - Content - Field
 
-![toolbar layout example with field - content - field](/images/toolbarLayoutExample3.png)
+![toolbar layout example with field - content - field](../../../images/toolbarLayoutExample3.png)
 
 Example 4: Field - Field - Content - Content
 
-![toolbar layout example with field - field - content - content](/images/toolbarLayoutExample4.png)
+![toolbar layout example with field - field - content - content](../../../images/toolbarLayoutExample4.png)

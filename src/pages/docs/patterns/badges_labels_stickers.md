@@ -13,21 +13,16 @@ Badges help highlight important information such as notifications or new and unr
 
 | Size | Usage |
 | ---- | ----- |
-| ![small size default color badge](/images/badgeSmallDefault.png) | **Small**: Use it to mark the number of notifications in a user sticker. |
-| ![defualt size default color badge](/images/badgeDefaultDefault.png) | **Default**: Use it for marking states. |
-| ![large size default color badge](/images/badgeLargeDefault.png) | **Large**: Use it when previous don't apply. |
+| ![small size default color badge](../../../images/badgeSmallDefault.png) | **Small**: Use it to mark the number of notifications in a user sticker. |
+| ![defualt size default color badge](../../../images/badgeDefaultDefault.png) | **Default**: Use it for marking states. |
+| ![large size default color badge](../../../images/badgeLargeDefault.png) | **Large**: Use it when previous don't apply. |
 
 ## Types
 
 | Type | Usage |
 | ---- | ----- |
-| ![defualt size default color badge](/images/badgeDefaultDefault.png) | Used to identify.|
-| ![defualt size default color close option badge](/images/badgeCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
-
-## Example of use
-
-TODO Example of use missing
-
+| ![defualt size default color badge](../../../images/badgeDefaultDefault.png) | Used to identify.|
+| ![defualt size default color close option badge](../../../images/badgeCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
 
 
 # Labels
@@ -41,16 +36,16 @@ Use labels to organize groups of items in your application. Labels have rounded 
 
 | Size | Usage |
 | ---- | ----- |
-| ![small size default color label](/images/labelSmallDefault.png) | **Small**: Use it to mark the number of notifications in a user sticker. |
-| ![defualt size default color label](/images/labelDefaultDefault.png) | **Default**: Use it for marking states. |
-| ![large size default color label](/images/labelLargeDefault.png) | **Large**: Use it when previous don't apply. |
+| ![small size default color label](../../../images/labelSmallDefault.png) | **Small**: Use it to mark the number of notifications in a user sticker. |
+| ![defualt size default color label](../../../images/labelDefaultDefault.png) | **Default**: Use it for marking states. |
+| ![large size default color label](../../../images/labelLargeDefault.png) | **Large**: Use it when previous don't apply. |
 
 ### Types
 
 | Type | Usage |
 | ---- | ----- |
-| ![defualt size default color label](/images/labelDefaultDefault.png) | Used to identify.|
-| ![defualt size default color close option label](/images/labelCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
+| ![defualt size default color label](../../../images/labelDefaultDefault.png) | Used to identify.|
+| ![defualt size default color close option label](../../../images/labelCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
 
 # Stickers
 
@@ -63,9 +58,9 @@ Use stickers to visually identify elements in a dataset that are part of a same 
 
 | Size | Usage |
 | ---- | ----- |
-| ![small size default color sticker](/images/stickerSquaredSmall.png) | 22x22. TODO |
-| ![defualt size default color sticker](/images/stickerSquaredDefault.png) | 32x32. Use it in cards that are image based, allowing to see more parts of the image. |
-| ![large size default color sticker](/images/stickerSquaredSmall.png) | 44x44. Use it in cards that are not image based, or list entries. |
+| ![small size default color sticker](../../../images/stickerSquaredSmall.png) | 22x22. Use it in smaller contexts where you only need visual identification but not manual interaction with this element. |
+| ![defualt size default color sticker](../../../images/stickerSquaredDefault.png) | 32x32. Use it in cards that are image based, allowing to see more parts of the image. |
+| ![large size default color sticker](../../../images/stickerSquaredSmall.png) | 44x44. Use it in cards that are not image based, or list entries. |
 
 ### Position
 Stickers can have different positions:
@@ -76,7 +71,7 @@ Stickers can have different positions:
 	* Top left
 	* Top right
 
-![sticker positions example](/images/stickerSample.png)
+![sticker positions example](../../../images/stickerSample.png)
 
 The most used cases in Liferay DE are inside bottom left and static.
 

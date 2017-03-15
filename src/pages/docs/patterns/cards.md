@@ -27,13 +27,13 @@ As you can see in the following image, a card is shaped by:
 
 Among these elements, the only one that can't be removed for the pattern meaning is the image.
 
-![default card layout](/images/cardLayout.png)
+![default card layout](../../../images/cardLayout.png)
 
 It is important to highlight that images can have different size configuration in relation to aspect ratio and cropping. Please, check images section in Quartz to get more information about it.
 
 ### Examples of use
 
-![three different examples of card configuration](/images/cardExample.png)
+![three different examples of card configuration](../../../images/cardExample.png)
 
 ## Variations
 
@@ -41,5 +41,5 @@ It is important to highlight that images can have different size configuration i
 
 This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type.
 
-![horizontal card](/images/cardHorizontal.png)
+![horizontal card](../../../images/cardHorizontal.png)
 

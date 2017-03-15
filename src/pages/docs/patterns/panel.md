@@ -17,17 +17,17 @@ Panels can be configured in different ways:
 
 ### Body
 
-![panel only body most simple version](/images/panelNaked.png)
+Use this configuration to separate content inside a form.
+
+![panel only body most simple version](../../../images/panelNaked.png)
 
 ### Header + body
 
-TODO description
+Use this configuration when you need to se parate a content that needs a title and the title needs to capture the attention of your user.
 
-![panel with header](/images/panelHeaderBody.png)
+Do never use it to collapse content without a disclosure arrow. Use an accordion in that case.
 
-### Header + body + footer
-
-TODO NOTE: Are we using panel states somewhere?
+![panel with header](../../../images/panelHeaderBody.png)
 
 ## Variations
 
@@ -35,10 +35,12 @@ TODO NOTE: Are we using panel states somewhere?
 
 Panels can be collapsible. Whenever there is a collapsible panel the header must include a disclosure icon as an affordance to let the user understand that open and close actions can be performed. Please, see that when a panel is open the header is highlighted with a blue line below it marking the active state.
 
-![collapsable panels](/images/panelCollasable.png)
+It is not a good practice to anidate accordions. Please try to avoid it.
+
+![collapsable panels](../../../images/panelCollasable.png)
 
 In the following example you can see the accordion working. It is also optional to close all entries when a diferent entry opens.
 
-![collapsable panels](/images/panelCollapsibleExample.gif)
+![collapsable panels](../../../images/panelCollapsibleExample.gif)
 
 

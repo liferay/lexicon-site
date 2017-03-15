@@ -6,50 +6,37 @@ icon: "lexicon-site-bell"
 weight: 3
 ---
 
-###### Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Quem num gosta di mé, boa gente num é.
+##### MARCH 15TH, 2017
 
-<article id="article1">
+## Lexicon site launch
 
-## Lorem ipsum dolor sit amet
+Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
 
-```javascript
-console.info('Hola Mundo');
-```
+##### MARCH 15TH, 2017
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+## Lexicon site launch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
 
-</article>
+The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 
 
-<article id="article2">
 
-## Lorem ipsum dolor sit amet
+##### MARCH 10TH, 2017
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+## Lexicon site launch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
+The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
 
-</article>
+##### MARCH 1ST, 2017
 
-<article id="article3">
+## Lexicon site launch
 
-## Lorem ipsum dolor sit amet
+Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.
-
-</article>
+The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 

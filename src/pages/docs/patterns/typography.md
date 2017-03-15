@@ -1,14 +1,13 @@
 ---
-title: "Typography WIP"
+title: "Typography"
 description: "Typography pattern description"
 layout: "guide"
 weight: 1
 ---
 
-Lexicon uses Helvetica Neue.
-Lexicon doesn't define Hn values so you can use them freely as you want.
+Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system.
 
-TODO PLOT EXAMPLE
+![helvetica neue example in regular, medium and bold](../../../images/HelveticaNeue.png)
 
 ## Sizes
 

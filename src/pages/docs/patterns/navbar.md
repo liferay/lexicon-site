@@ -7,7 +7,7 @@ weight: 1
 
 A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system.
 
-![default image](/images/Navbar.png)
+![navigation bar with 2 entries and a search field](../../../images/Navbar.png)
 
 ## Usage
 
@@ -17,26 +17,20 @@ A navbar can contain one or several entry points in the form of tabs at the left
 
 The search textfield activity must work only over the active option in the navigation bar.
 
-## Types
-
-TODO
-
-What types are being used or what are the most common cases
-
-* Base navbar
-* Navbar with basic search
-* Alternate Navbar Toggle Style
-* Navbar No Collapse
+When the viewport resizes to smaller screen sizes the navbar entries collapse intro a dropdown where the active screen gets populated and selected in the dropdown.
 
 ## Examples
 
-### Navbar with search bar
+Example 1: Navbar with search bar
 
-![default image](/images/Navbar.png)
+![navigation bar with 2 entries and a search field](../../../images/Navbar.png)
 
-### Navbar with search bar and focus state on search textfield
+Example 2: Navbar with search bar and focus state on search textfield
 
-![default image](/images/NavbarFocusSearch.png)
+![navigation bar with 2 entries and a search field and on focus](../../../images/NavbarFocusSearch.png)
 
+Example 3: Navbar with navigation options in dropdown and search. The second image corresponds to its responsive view. For more information about search, please visit [collapsible search](./collapsible_search.html)
 
+![navbar in mobile viewport with some navigation options collpased in a dropdown](../../../images/NavbarDropdown.png)
 
+![navbar in mobile viewport with all navigation options collpased in a dropdown](../../../images/NavbarDropdownMobile.png)

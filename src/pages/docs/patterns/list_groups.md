@@ -9,7 +9,7 @@ List is a visual representation of a dataset that provides more flexibility for 
 
 ## Usage
 
-![list entry in default state](/images/listItem.png)
+![list entry in default state](../../../images/listItem.png)
 
 A list view is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.
 
@@ -23,7 +23,7 @@ When a list is used together with management bar, the list entries must include 
 
 Whenever you need to group series of list entries, you can use the list group heading for that.
 
-![list group includes a heading](/images/listGroup.png)
+![list group includes a heading](../../../images/listGroup.png)
 
 ## Row interactions
 
@@ -36,16 +36,16 @@ Whenever you need to group series of list entries, you can use the list group he
 
 ### Default states
 
-![list entry in default state](/images/listItem.png)
+![list entry in default state](../../../images/listItem.png)
 
 ### Selected state
 
-![list entry in selected state](/images/listSelected.png)
+![list entry in selected state](../../../images/listSelected.png)
 
 ## Attributes
 
-![list attributes](/images/listAttributes.png)
+![list attributes](../../../images/listAttributes.png)
 
 ## Example of use
 
-![list with 3 entries, one in default state, one in selected state, one with actions menu open](/images/listExample.png)
+![list with 3 entries, one in default state, one in selected state, one with actions menu open](../../../images/listExample.png)

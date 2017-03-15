@@ -27,15 +27,13 @@ Lexicon counts with two tab bar styles. If there is the case where you have to u
 
 Nav tabs default are used in exterior levels and just below the navigation bar. This kind of tabs give a better context as the border helps the integration with a box below it.
 
-![bordered tabs](/images/tabsBordered.png)
+![bordered tabs](../../../images/tabsBordered.png)
 
-### Not bordered tabs
+### Non-bordered tabs
 
-Not bordered tabs are used in interior levels such as inside forms and in search results for different repositories.
+Non-bordered tabs are used in interior levels such as inside forms and in search results for different repositories.
 
-![not bordered tabs](/images/tabsNotBordered.png)
-
-
+![not bordered tabs](../../../images/tabsNotBordered.png)
 
 
 **TODO: Esto puede ser usado con todas?**

@@ -21,7 +21,7 @@ Pagination allows navigation between chunks, also denominated pages, of a datase
 
 Use it when you need a simple pagination pattern that does not require to change the page size.
 
-![default image](/images/pagination.png)
+![simple pagination](../../../images/pagination.png)
 
 ### Pagination bar
 
@@ -30,8 +30,8 @@ A pagination bar is pagination with additional functionality. This added functio
 Use it when you need a complex pagination pattern that requires changing the page size and recalculating the number of pages. This pattern gives feedback about the chunk of dataset you are viewing.
 
 Interactive components:
-* Entries dropdown: to select the number of elements per page
+* Entries dropdown: to select the number of elements per page. You can configure you page size options.
 * Arrows: to move to previous or next page.
 * Ellipsis: to select intermediate pages not possible to see due to the number of pages.
 
-![default image](/images/paginationBar.png)
+![pagination bar with a dropdown for page size and the simple pagination component](../../../images/paginationBar.png)
