@@ -30,37 +30,37 @@ When a table is used together with management bar, the table entries must includ
 
 ### Default state
 
-![table row in default state](/images/tableRow.png)
+![table row in default state](../../../images/tableRow.png)
 
 ### Selected state
 
-![table row in selected state](/images/tableRowSelected.png)
+![table row in selected state](../../../images/tableRowSelected.png)
 
 ### Hover state
 
 By default, Lexicon does not use the hover state in tables.
 
-![table row hover](/images/tableRowHover.png)
+![table row hover](../../../images/tableRowHover.png)
 
 ## Row attributes
 
-![table row attributes](/images/tableRowAttributes.png)
+![table row attributes](../../../images/tableRowAttributes.png)
 
 ## Table helpers
 
 ### Stripes
 
-![table stripes](/images/tableStripes.png)
+![table stripes](../../../images/tableStripes.png)
 
 ### Bordered
 
-![table bordered](/images/tableBordered.png)
+![table bordered](../../../images/tableBordered.png)
 
 ### Hover
 
 In the following example you can see how hover works even with a selected row.
 
-![table hover case](/images/tableHoverExample.gif)
+![table hover case](../../../images/tableHoverExample.gif)
 
 ## Mobile
 
@@ -70,7 +70,7 @@ Due to the complexity of a table in mobile, Lexicon does not define this pattern
 
 Due to the complexity of a table in mobile, Lexicon does not define this pattern for mobile viewport size.
 
-![table example](/images/tableExample.png)
+![table example](../../../images/tableExample.png)
 
 
 

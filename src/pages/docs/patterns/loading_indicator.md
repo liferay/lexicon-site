@@ -9,7 +9,7 @@ Loading indicator shows the user that an external process, like a connection, is
 
 ## Usage
 
-This feedback mechanism is essential for the user to understand that something is happening. Please remember to include when there is a connection to a server and the same screen shows the answer to the user.
+This feedback mechanism is essential for the user to understand that something is happening. Please remember to include it when there is a connection to a server and at the same screen shows the answer to the user.
 
 Please don’t use spinners inside buttons. In case you need a spinner for an action triggered by a button, place the spinner to one of the sides of the button.
 

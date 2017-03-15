@@ -21,15 +21,15 @@ A checkbox is a component that allows the user selecting something writen in its
 
 ### Default
 
-![checkbox default state](/images/checkbox.png)
+![checkbox default state](../../../images/checkbox.png)
 
 ### Active
 
-![checkbox active state](/images/checkboxSelected.png)
+![checkbox active state](../../../images/checkboxSelected.png)
 
 ### Disable
 
-![checkbox disable state](/images/checkboxDisabled.png)
+![checkbox disable state](../../../images/checkboxDisabled.png)
 
 # Radio button
 
@@ -46,15 +46,15 @@ A radio button is a component that allows the user selecting something writen in
 
 ### Default
 
-![radio button default state](/images/radiobuttonOff.png)
+![radio button default state](../../../images/radiobuttonOff.png)
 
 ### Active
 
-![radio button active state](/images/radiobuttonOn.png)
+![radio button active state](../../../images/radiobuttonOn.png)
 
 ### Disable
 
-![radio button disable state](/images/radiobuttonDisabled.png)
+![radio button disable state](../../../images/radiobuttonDisabled.png)
 
 ## Radio vs Dropdown Menu
 
@@ -90,15 +90,15 @@ A toogle is an interface element that by its activation or deactivation provokes
 
 ### Default
 
-![switch default state](/images/switchOff.png)
+![switch default state](../../../images/switchOff.png)
 
 ### Active
 
-![switch active state](/images/switchOn.png)
+![switch active state](../../../images/switchOn.png)
 
 ### Disable
 
-![switch disable state](/images/switchDisabled.png)
+![switch disable state](../../../images/switchDisabled.png)
 
 ## Variations
 
@@ -106,12 +106,12 @@ A toogle is an interface element that by its activation or deactivation provokes
 
 This type of toggles have labels around as the title label or other support label that make more explicit the switch value. The support label can be either at the top, right, bottom or left and its value should change with the toggle state change as the example shows. All the labels have the interaction that the switch have making the toggle more accessible.
 
-![switch with title and label on the right side, all off them switch off and on the toggle](/images/switchAttributes.png)
+![switch with title and label on the right side, all off them switch off and on the toggle](../../../images/switchAttributes.png)
 
 ### Toggle with icon
 
 Toggles can also have an icon inside the toggle circle that helps to identify the action. A toggles with icon can also have data attributes as the previous variation.
 
-![toggle with icon](/images/switchIcon.png)
+![toggle with icon](../../../images/switchIcon.png)
 
 

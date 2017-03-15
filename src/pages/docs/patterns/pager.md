@@ -17,19 +17,19 @@ Pagers are commonly used in forms that are chucked because of their length.
 
 Use it when you need a simple pagination pattern that does not require to change the page size.
 
-![pager default](/images/pagerDefault.png)
+![pager default](../../../images/pagerDefault.png)
 
 ### Aligned pager
 
 Aligned pager pushes the links to the left and right.
 
-![pager aligned](/images/pagerAligned.png)
+![pager aligned](../../../images/pagerAligned.png)
 
 ## States
 
 States are important in pagers to let your users understand where the process has its limits and where it can go. Please take are of enabling and disabling them properly depending on the sequence.
 
-![pager aligned disable](/images/pagerAlignedDisable.png)
+![pager aligned disable](../../../images/pagerAlignedDisable.png)
 
 ## Sizes
 

@@ -1,21 +1,21 @@
 ---
-title: "Colors"
+title: "Color palette"
 description: "Colors pattern description"
 layout: "guide"
 weight: 1
 ---
 
-TODO: definition
+Color palette defines a set of colors to be used in the system. Each of the colors has a meaning and a purpose to create a robust a design system.
 
 ## Usage
 
 Colors have a huge impact in a system as they define the visual identity, they bring armony, they communicate, among other caracteristics. Lexicon defines the following color palette that you are free to change for your own.
 
 ### Primary colors
-
+an
 Primary colors define part of the visual identity of Lexicon as a system. These colors have been carefully thought to be easily combined and be sure that accessibility is well covered.
 
-![set of 4 primary colors](/images/colorsPrimary.png)
+![set of 4 primary colors](../../../images/colorsPrimary.png)
 
 | Color | Usage |
 | ---- | ----- |
@@ -28,7 +28,7 @@ Primary colors define part of the visual identity of Lexicon as a system. These 
 
 Secondary colors are frequently used colors, also important as primary but do not define the visual identity in a stronger way as Primary colors do.
 
-![set of 5 secondary colors and its variations, also 5](/images/colorsSecondary.png)
+![set of 5 secondary colors and its variations, also 5](../../../images/colorsSecondary.png)
 
 | Color | Usage |
 | ----- | ----- |

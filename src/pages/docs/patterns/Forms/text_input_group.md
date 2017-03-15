@@ -16,21 +16,21 @@ Usually the components placed around the textfield are buttons, split button and
 
 ### Default input group
 
-![input group default configuration](/images/inputGroupDefault.png)
+![input group default configuration](../../../images/inputGroupDefault.png)
 
 ### Input group with button
 
-![input group with left button](/images/inputGroupButtonLeft.png)
+![input group with left button](../../../images/inputGroupButtonLeft.png)
 
-![input group with right button](/images/inputGroupButtonRight.png)
+![input group with right button](../../../images/inputGroupButtonRight.png)
 
 ### Input group with units
 
-![input group with mass on the left](/images/inputGroupMassLeft.png)
+![input group with mass on the left](../../../images/inputGroupMassLeft.png)
 
-![input group with mass on the right](/images/inputGroupMassRight.png)
+![input group with mass on the right](../../../images/inputGroupMassRight.png)
 
-![input group with mass on both sides](/images/inputGroupMassLeftRight.png)
+![input group with mass on both sides](../../../images/inputGroupMassLeftRight.png)
 
 ## Sizes
 

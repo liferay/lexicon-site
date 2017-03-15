@@ -7,7 +7,7 @@ weight: 1
 
 Management Bar is an extension of Navbar. Combine different management-bar components to create a toolbar that fits your needs.
 
-![state one of the management bar](/images/managementBarState1.png)
+![state one of the management bar](../../../images/managementBarState1.png)
 
 ## Usage
 
@@ -20,7 +20,7 @@ It is the default state.
 
 It displays tools focused on filtering, sorting and data visualization.
 
-![state one of the management bar](/images/managementBarState1.png)
+![state one of the management bar](../../../images/managementBarState1.png)
 
 ### State 2
 
@@ -28,7 +28,7 @@ It displays contextual tools associated to specific items selected. It is only a
 
 The background color and the way to show the icons of the bar in this state changes to differentiate from the default state and establish a visual relation with other forms of showing this tools.
 
-![state two of the management bar](/images/managementBarState2.png)
+![state two of the management bar](../../../images/managementBarState2.png)
 
 The tools shown in the management bar in each state are always related to the type of data displayed and type of visualization. The Management Bar never shows elements that not are required in a specific context.
 
@@ -42,4 +42,4 @@ The tools shown in the management bar in each state are always related to the ty
 
 ## Example of use
 
-![state one of the management bar](/images/managementBarExample.gif)
+![state one of the management bar](../../../images/managementBarExample.gif)

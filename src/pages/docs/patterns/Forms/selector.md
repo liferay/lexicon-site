@@ -17,11 +17,11 @@ This pattern is completely different from a dropdown as a selector is a native e
 
 ### Default
 
-![selector default state](/images/selector.png)
+![selector default state](../../../images/selector.png)
 
 ### Active
 
-![selector active state](/images/selectorFocus.png)
+![selector active state](../../../images/selectorFocus.png)
 
 # Multiple selector
 
@@ -31,11 +31,11 @@ Select button used to select more than one option from a simple list.
 
 ### Default
 
-![multiple selector default state](/images/selectorMultiple.png)
+![multiple selector default state](../../../images/selectorMultiple.png)
 
 ### Active
 
-![multiple selector active state](/images/selectorMultipleFocus.png)
+![multiple selector active state](../../../images/selectorMultipleFocus.png)
 
 # File upload
 
