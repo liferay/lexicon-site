@@ -1,0 +1,57 @@
+.content .sidebar-offset {
+	img {
+		max-width: 100%;
+		padding: 24px 0;
+	}
+
+	h1, h2 {
+		font-weight: 700;
+		margin: 46px 0 $base-size;
+	}
+
+	h3 {
+		font-size: $base-size / 2;
+	}
+
+	h3, h4 {
+		font-weight: 600;
+	}
+
+	header {
+		margin: 0 0 $base-size;
+		padding-bottom: $base-size * 1.25;
+
+		.container-fluid > h1 {
+			margin: 0;
+			line-height: $base-size;
+		}
+	}
+
+	.home {
+		background-color: $content-header-bg;
+		margin: 0;
+
+		h1 {
+			color: $brand-dark;
+			font-size: $base-size * 1.5;
+			font-weight: 300;
+			margin: $base-size 0;
+
+			@media (min-width: $grid-float-breakpoint) {
+				margin: 0 0 0 $base-size * 3.3;
+				font-size: $base-size * 2;
+			}
+		}
+
+		img {
+			@media (min-width: $grid-float-breakpoint) {
+				max-width: 400px;
+				padding: $base-size * 3 0 0;
+			}
+		}
+	}
+}
+
+.Home body {
+	background-color: $content-header-bg;
+}
