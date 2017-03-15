@@ -2,7 +2,7 @@
 title: "What is Lexicon"
 description: "What is Lexicon"
 layout: "guide"
-icon: "flash"
+icon: "lexicon-site-layers"
 weight: 1
 ---
 

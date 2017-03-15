@@ -2,7 +2,6 @@
 title: "Forms"
 description: "Forms section"
 layout: "guide"
-icon: "flash"
 weight: 1
 ---
 

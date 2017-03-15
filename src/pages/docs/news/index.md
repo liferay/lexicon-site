@@ -2,7 +2,7 @@
 title: "News"
 description: "News related to Lexicon design language and its tools for designers"
 layout: "guide"
-icon: "code-file"
+icon: "lexicon-site-bell"
 weight: 3
 ---
 
