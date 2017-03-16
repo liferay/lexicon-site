@@ -3,8 +3,8 @@
 	font-size: 14px;
 	color: $brand-dark-text;
 	margin-top: $base-size * 3;
-	min-height: $base-size * 4;
-	padding: $base-size * 1.375 0;
+	min-height: $base-size * 3;
+	padding: $base-size 0;
 
 	@media (max-width: $screen-lg) {
 		text-align: center;
@@ -27,10 +27,6 @@
 
 	span {
 		line-height: $base-size;
-
-		@media (min-width: $screen-lg) {
-			line-height: $base-size * 1.375;
-		}
 	}
 
 	.sticker {
@@ -44,7 +40,7 @@
 
 	.row img.logo {
 		margin: $base-size / 2 $base-size / 3;
-		max-height: $base-size * 1.375;
+		max-height: $base-size;
 		padding: 0;
 
 		@media (min-width: $screen-lg) {
