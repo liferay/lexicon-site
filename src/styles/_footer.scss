@@ -4,7 +4,18 @@
 	color: $brand-dark-text;
 	margin-top: $base-size * 3;
 	min-height: $base-size * 4;
-	padding: 45px 0;
+	padding: $base-size * 1.375 0;
+
+	@media (max-width: $screen-lg) {
+		text-align: center;
+	}
+
+
+	.text-right-lg {
+		@media (min-width: $screen-lg) {
+			text-align: right;
+		}
+	}
 
 	a {
 		color: $brand-dark-text;
@@ -14,17 +25,30 @@
 		}
 	}
 
+	span {
+		line-height: $base-size;
+
+		@media (min-width: $screen-lg) {
+			line-height: $base-size * 1.375;
+		}
+	}
+
 	.sticker {
 		background-color: $brand-dark;
+		margin: $base-size / 2 $base-size / 3;
 
-		&:last-of-type {
-			margin-left: $base-size / 1.33;
+		@media (min-width: $screen-lg) {
+			margin: 0 0 0 $base-size / 1.33;
 		}
 	}
 
 	.row img.logo {
-		max-height: 40px;
-		margin-right: $base-size / 2;
+		margin: $base-size / 2 $base-size / 3;
+		max-height: $base-size * 1.375;
 		padding: 0;
+
+		@media (min-width: $screen-lg) {
+			margin: 0 $base-size / 2 0 0;
+		}
 	}
 }
