@@ -1,4 +1,8 @@
 .content .sidebar-offset {
+	p {
+		line-height: $base-size / 1.33;
+	}
+
 	img {
 		max-width: 100%;
 		padding: 24px 0;
