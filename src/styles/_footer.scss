@@ -1,13 +1,17 @@
 .footer {
 	background-color: $brand-darker;
-	font-size: 14px;
 	color: $brand-dark-text;
+	font-size: 14px;
 	margin-top: $base-size * 3;
-	min-height: $base-size * 3;
-	padding: $base-size 0;
+	min-height: $base-size * 4;
+	padding: $base-size / 2 0;
 
 	@media (max-width: $screen-lg) {
 		text-align: center;
+	}
+
+	@media (min-width: $screen-lg) {
+		padding: 47px 0;
 	}
 
 
