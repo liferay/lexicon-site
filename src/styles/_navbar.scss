@@ -1,9 +1,0 @@
-.navbar-fixed {
-	@include position(fixed, 0 0 null 0);
-
-	z-index: 11;
-
-	@media (min-width: $grid-float-breakpoint) {
-		width: $sidebar-width;
-	}
-}
