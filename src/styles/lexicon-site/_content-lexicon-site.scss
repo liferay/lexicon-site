@@ -63,3 +63,15 @@
 .Home body {
 	background-color: $content-header-bg;
 }
+
+.News {
+	.content .sidebar-offset h3 {
+		margin-top: 0;
+	}
+
+	h5 {
+		color: $brand-dark-text;
+		display: inline-block;
+		margin-top: 24px;
+	}
+}
