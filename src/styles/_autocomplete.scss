@@ -5,11 +5,20 @@
 
 .autocomplete-list {
 	a {
-		color: $brand-darker-text;
+		color: $brand-darker;
+		font-size: 14px;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	p {
 		margin-bottom: 0;
+	}
+
+	.autocomplete-title {
+		font-weight: 700;
 	}
 
 	.list-group .list-group-item {
