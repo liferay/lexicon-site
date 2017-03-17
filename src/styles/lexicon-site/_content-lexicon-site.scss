@@ -1,33 +1,52 @@
 .content .sidebar-offset {
 	p {
 		line-height: $base-size / 1.33;
+		margin-bottom: $base-size * 0.75;
 	}
 
 	img {
 		max-width: 100%;
-		padding: 24px 0;
 	}
 
 	table img {
 		padding: $base-size / 3 0;
 	}
 
-	h1, h2 {
-		font-weight: 700;
-		margin: 46px 0 $base-size;
+	h1 {
+		font-size: 24px;
+	}
+
+	h2 {
+		font-size: 22px;
+		line-height: $base-size;
 	}
 
 	h3 {
-		font-size: $base-size / 2;
+		font-size: $base-size / 1.6;
+		font-weight: 700;
+		line-height: 28px;
 	}
 
-	h3, h4 {
+	h4 {
+		font-size: $base-size / 2;
 		font-weight: 600;
+		margin-bottom: $base-size / 2;
+	}
+
+	h5 {
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 20px;
+		margin-bottom: 4px;
+	}
+
+	h1, h2 {
+		font-weight: 700;
+		margin: $base-size / 2 0 $base-size * 0.75;
 	}
 
 	header {
-		margin: 0 0 $base-size;
-		padding-bottom: $base-size * 1.25;
+		margin: 0 0 $base-size * 0.75;
 
 		.container-fluid > h1 {
 			margin: 0;

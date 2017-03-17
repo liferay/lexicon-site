@@ -1,7 +1,10 @@
 .docs header {
 	background-color: $content-header-bg;
-	min-height: $base-size * 3.25;
-	padding: $base-size 0;
+	padding: $base-size / 2 0;
+
+	@media (min-width: $grid-float-breakpoint) {
+		padding: $base-size 0;
+	}
 }
 
 .about {
