@@ -11927,10 +11927,16 @@ button.loading > .linear.loading-animation {
   z-index: 10; }
 
 .autocomplete-list a {
-  color: #6D7290; }
+  color: #414456;
+  font-size: 14px; }
+  .autocomplete-list a:hover {
+    text-decoration: none; }
 
 .autocomplete-list p {
   margin-bottom: 0; }
+
+.autocomplete-list .autocomplete-title {
+  font-weight: 700; }
 
 .autocomplete-list .list-group .list-group-item {
   border-width: 0; }
@@ -11992,28 +11998,46 @@ button.loading > .linear.loading-animation {
 
 .footer {
   background-color: #414456;
-  font-size: 14px;
   color: #A2A7C2;
+  font-size: 14px;
   margin-top: 96px;
   min-height: 128px;
-  padding: 45px 0; }
+  padding: 16px 0; }
+  @media (max-width: 992px) {
+    .footer {
+      text-align: center; } }
+  @media (min-width: 992px) {
+    .footer {
+      padding: 47px 0; } }
+  @media (min-width: 992px) {
+    .footer .text-right-lg {
+      text-align: right; } }
   .footer a {
     color: #A2A7C2; }
     .footer a.white {
       color: #FFF; }
+  .footer span {
+    line-height: 32px; }
   .footer .sticker {
-    background-color: #4C4F64; }
-    .footer .sticker:last-of-type {
-      margin-left: 24.06015px; }
+    background-color: #4C4F64;
+    margin: 16px 10.66667px; }
+    @media (min-width: 992px) {
+      .footer .sticker {
+        margin: 0 0 0 24.06015px; } }
   .footer .row img.logo {
-    max-height: 40px;
-    margin-right: 16px;
+    margin: 16px 10.66667px;
+    max-height: 32px;
     padding: 0; }
+    @media (min-width: 992px) {
+      .footer .row img.logo {
+        margin: 0 16px 0 0; } }
 
 .docs header {
   background-color: #F1F3F5;
-  min-height: 104px;
-  padding: 32px 0; }
+  padding: 16px 0; }
+  @media (min-width: 768px) {
+    .docs header {
+      padding: 32px 0; } }
 
 .about {
   padding: 32px 0;
@@ -12038,7 +12062,7 @@ button.loading > .linear.loading-animation {
     margin-left: 376px; } }
 
 .sidebar-offset .container-fluid {
-  max-width: 800px; }
+  max-width: 960px; }
   @media (min-width: 480px) {
     .sidebar-offset .container-fluid {
       padding-left: 32px;
@@ -12075,23 +12099,45 @@ button.loading > .linear.loading-animation {
     .sidenav-fixed.sidenav-menu-slider .sidenav-menu {
       top: 104px; } }
 
+.content .sidebar-offset p {
+  line-height: 24.06015px;
+  margin-bottom: 24px; }
+
 .content .sidebar-offset img {
-  max-width: 100%;
-  padding: 24px 0; }
+  max-width: 100%; }
+
+.content .sidebar-offset table img {
+  padding: 10.66667px 0; }
+
+.content .sidebar-offset h1 {
+  font-size: 24px; }
+
+.content .sidebar-offset h2 {
+  font-size: 22px;
+  line-height: 32px; }
+
+.content .sidebar-offset h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px; }
+
+.content .sidebar-offset h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px; }
+
+.content .sidebar-offset h5 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 4px; }
 
 .content .sidebar-offset h1, .content .sidebar-offset h2 {
   font-weight: 700;
-  margin: 46px 0 32px; }
-
-.content .sidebar-offset h3 {
-  font-size: 16px; }
-
-.content .sidebar-offset h3, .content .sidebar-offset h4 {
-  font-weight: 600; }
+  margin: 16px 0 24px; }
 
 .content .sidebar-offset header {
-  margin: 0 0 32px;
-  padding-bottom: 40px; }
+  margin: 0 0 24px; }
   .content .sidebar-offset header .container-fluid > h1 {
     margin: 0;
     line-height: 32px; }
@@ -12116,6 +12162,14 @@ button.loading > .linear.loading-animation {
 .Home body {
   background-color: #F1F3F5; }
 
+.News .content .sidebar-offset h3 {
+  margin-top: 0; }
+
+.News h5 {
+  color: #A2A7C2;
+  display: inline-block;
+  margin-top: 24px; }
+
 .navbar-lexicon-site {
   background-color: #4C4F64;
   border-color: #4C4F64;
@@ -12123,11 +12177,13 @@ button.loading > .linear.loading-animation {
   @media (min-width: 768px) {
     .navbar-lexicon-site {
       min-height: 104px;
-      padding-top: 14px; } }
+      padding-top: 12px; } }
   .navbar-lexicon-site .logo {
-    width: 108px;
+    width: 106px;
     display: inline-block;
-    margin-right: 5px; }
+    margin-right: 2px; }
+  .navbar-lexicon-site small {
+    font-size: 14px; }
   .navbar-lexicon-site .navbar-brand {
     color: #A2A7C2;
     line-height: 40px;
@@ -12226,7 +12282,7 @@ button.loading > .linear.loading-animation {
     font-size: 16px;
     font-weight: 600; }
   .sidebar-lexicon-site .nav-pills > li > ul > li > ul > li > a, .sidebar-lexicon-site .nav-pills > li > .nav .nav > li > a {
-    margin-left: 64px;
+    margin-left: 72px;
     padding-left: 16px; }
   .sidebar-lexicon-site .nav-pills > li > .icon-monospaced.lexicon-icon {
     float: left;
@@ -12274,7 +12330,8 @@ table h4 {
 
 body {
   color: #414456;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px; }
   @media (max-width: 768px) {
     body {
       margin-top: 64px; } }

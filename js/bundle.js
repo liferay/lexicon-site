@@ -22302,26 +22302,27 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'footer');
       ie_open('div', null, null, 'class', 'container-fluid');
       ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'col-md-8 col-lg-9');
+      ie_open('div', null, null, 'class', 'col-md-7');
       ie_open('img', null, null, 'class', 'logo', 'src', '/images/liferayLogo.png');
       ie_close('img');
+      ie_void('div', null, null, 'class', 'clearfix hidden-lg hidden-md');
       ie_open('span');
       itext('Brought to you by ');
       ie_open('a', null, null, 'href', 'http://www.liferay.com', 'class', 'white', 'target', '_blank');
       itext('Liferay, Inc');
       ie_close('a');
-      itext('. Registered under MIT License');
+      itext('.');
       ie_close('span');
       ie_close('div');
-      ie_open('div', null, null, 'class', 'col-md-4 col-lg-3 text-right');
-      ie_open('a', null, null, 'href', 'https://twitter.com/Liferay_Lexicon', 'target', '_blank', 'class', 'sticker sticker-circle sticker-default sticker-static sticker-lg');
+      ie_open('div', null, null, 'class', 'col-md-5 text-right-lg');
+      ie_open('a', null, null, 'href', 'https://twitter.com/Liferay_Lexicon', 'target', '_blank', 'class', 'sticker sticker-rounded sticker-default sticker-static');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
       ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#twitter');
       ie_close('svg');
       ie_close('a');
-      ie_open('a', null, null, 'href', 'mailto:lexicon@liferay.com', 'class', 'sticker sticker-circle sticker-default sticker-static sticker-lg');
+      ie_open('a', null, null, 'href', 'mailto:lexicon@liferay.com', 'class', 'sticker sticker-rounded sticker-default sticker-static');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
-      ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#reply');
+      ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#comments');
       ie_close('svg');
       ie_close('a');
       ie_close('div');
@@ -23080,127 +23081,6 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace updatesIndex.
-     * @public
-     */
-
-    goog.module('updatesIndex.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricUpdates.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param201 = function param201() {
-        ie_open('div');
-        ie_open('header', null, null, 'class', 'header');
-        ie_open('div', null, null, 'class', 'container');
-        ie_open('h1', null, null, 'class', 'header-title');
-        itext('Updates');
-        ie_close('h1');
-        ie_open('h1', null, null, 'class', 'header-subtitle');
-        itext('Check out what\'s new.');
-        ie_close('h1');
-        ie_close('div');
-        ie_close('header');
-        $templateAlias2({ updates: opt_data.page.updates }, null, opt_ijData);
-        ie_close('div');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param201 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'updatesIndex.render';
-    }
-
-    exports.render.params = ["page"];
-    exports.render.types = { "page": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var updatesIndex = function (_Component) {
-    babelHelpers.inherits(updatesIndex, _Component);
-
-    function updatesIndex() {
-      babelHelpers.classCallCheck(this, updatesIndex);
-      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
-    }
-
-    return updatesIndex;
-  }(Component);
-
-  Soy.register(updatesIndex, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['updatesIndex'] = updatesIndex;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var updatesIndex = function (_Component) {
-    babelHelpers.inherits(updatesIndex, _Component);
-
-    function updatesIndex() {
-      babelHelpers.classCallCheck(this, updatesIndex);
-      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
-    }
-
-    return updatesIndex;
-  }(Component);
-
-  ;
-
-  Soy.register(updatesIndex, templates);
-
-  this['metal']['updatesIndex'] = updatesIndex;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
      * @fileoverview Templates in namespace pageDocsIndex.
      * @public
      */
@@ -23535,6 +23415,261 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
+     * @fileoverview Templates in namespace updatesIndex.
+     * @public
+     */
+
+    goog.module('updatesIndex.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias2 = Soy.getTemplate('ElectricUpdates.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param201 = function param201() {
+        ie_open('div');
+        ie_open('header', null, null, 'class', 'header');
+        ie_open('div', null, null, 'class', 'container');
+        ie_open('h1', null, null, 'class', 'header-title');
+        itext('Updates');
+        ie_close('h1');
+        ie_open('h1', null, null, 'class', 'header-subtitle');
+        itext('Check out what\'s new.');
+        ie_close('h1');
+        ie_close('div');
+        ie_close('header');
+        $templateAlias2({ updates: opt_data.page.updates }, null, opt_ijData);
+        ie_close('div');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param201 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'updatesIndex.render';
+    }
+
+    exports.render.params = ["page"];
+    exports.render.types = { "page": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var updatesIndex = function (_Component) {
+    babelHelpers.inherits(updatesIndex, _Component);
+
+    function updatesIndex() {
+      babelHelpers.classCallCheck(this, updatesIndex);
+      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
+    }
+
+    return updatesIndex;
+  }(Component);
+
+  Soy.register(updatesIndex, templates);
+  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
+  this['metalNamed']['index']['updatesIndex'] = updatesIndex;
+  this['metalNamed']['index']['templates'] = templates;
+  this['metal']['index'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['index'];
+
+  var updatesIndex = function (_Component) {
+    babelHelpers.inherits(updatesIndex, _Component);
+
+    function updatesIndex() {
+      babelHelpers.classCallCheck(this, updatesIndex);
+      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
+    }
+
+    return updatesIndex;
+  }(Component);
+
+  ;
+
+  Soy.register(updatesIndex, templates);
+
+  this['metal']['updatesIndex'] = updatesIndex;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from index.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsLexicon.
+     * @public
+     */
+
+    goog.module('docsLexicon.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param209 = function param209() {
+        ie_open('h2');
+        itext('Design language');
+        ie_close('h2');
+        ie_open('p');
+        itext('Lexicon is a design language created with the aim of providing a common framework for building interfaces within the Liferay product ecosystem. A guide to design principles, components, patterns and contexts of use that contributes to give consistency and coherence to these products and, ultimately, be able to provide a satisfactory and unified experience to its users.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lexicon is a constantly evolving project. An iterative work that seeks to improve and gradually adapt to the evolution of technology and people.');
+        ie_close('p');
+        ie_open('h2');
+        itext('Modular approach');
+        ie_close('h2');
+        ie_open('p');
+        itext('The lexicon approach to interface design is based essentially on modularity. It is configured as a system that from a controlled number of components is able to respond to the multiple and different needs of liferay products. An exercise in synthesis, abstraction and coordination that seeks to simplify processes, reduce production times and, above all, contribute to provide the consistency we want for the use experience.');
+        ie_close('p');
+        ie_open('p');
+        itext('For this, the construction of Lexicon is based on the Atomic Design theoretical approach. A work methodology based on modularity that seeks to give a more hierarchical and organized logic to the creation of interfaces design systems. This methodology has been ideated and developed by the designer Brad Frost and is based on nonlinear process organized across five stages: Atoms, Molecules, Organisms, Templates and Pages.');
+        ie_close('p');
+        ie_open('h2');
+        itext('Lexicon site');
+        ie_close('h2');
+        ie_open('p');
+        itext('Lexicon Site is then presented as the necessary platform for the diffusion and access to Lexicon system by designers, developers or any other person involved in the creation of digital products. Mainly focused on Liferay community, but open to anyone who wants to make use of its content and also want to contribute with their own proposals and suggestions.');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param209 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsLexicon.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var docsLexicon = function (_Component) {
+    babelHelpers.inherits(docsLexicon, _Component);
+
+    function docsLexicon() {
+      babelHelpers.classCallCheck(this, docsLexicon);
+      return babelHelpers.possibleConstructorReturn(this, (docsLexicon.__proto__ || Object.getPrototypeOf(docsLexicon)).apply(this, arguments));
+    }
+
+    return docsLexicon;
+  }(Component);
+
+  Soy.register(docsLexicon, templates);
+  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
+  this['metalNamed']['index']['docsLexicon'] = docsLexicon;
+  this['metalNamed']['index']['templates'] = templates;
+  this['metal']['index'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['index'];
+
+  var docsLexicon = function (_Component) {
+    babelHelpers.inherits(docsLexicon, _Component);
+
+    function docsLexicon() {
+      babelHelpers.classCallCheck(this, docsLexicon);
+      return babelHelpers.possibleConstructorReturn(this, (docsLexicon.__proto__ || Object.getPrototypeOf(docsLexicon)).apply(this, arguments));
+    }
+
+    return docsLexicon;
+  }(Component);
+
+  ;
+
+  Soy.register(docsLexicon, templates);
+
+  this['metal']['docsLexicon'] = docsLexicon;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from index.soy.
+    // Please don't edit this file by hand.
+
+    /**
      * @fileoverview Templates in namespace docsNews.
      * @public
      */
@@ -23678,140 +23813,6 @@ babelHelpers;
   Soy.register(docsNews, templates);
 
   this['metal']['docsNews'] = docsNews;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsLexicon.
-     * @public
-     */
-
-    goog.module('docsLexicon.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param209 = function param209() {
-        ie_open('h2');
-        itext('Design language');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lexicon is a design language created with the aim of providing a common framework for building interfaces within the Liferay product ecosystem. A guide to design principles, components, patterns and contexts of use that contributes to give consistency and coherence to these products and, ultimately, be able to provide a satisfactory and unified experience to its users.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lexicon is a constantly evolving project. An iterative work that seeks to improve and gradually adapt to the evolution of technology and people.');
-        ie_close('p');
-        ie_open('h2');
-        itext('Modular approach');
-        ie_close('h2');
-        ie_open('p');
-        itext('The lexicon approach to interface design is based essentially on modularity. It is configured as a system that from a controlled number of components is able to respond to the multiple and different needs of liferay products. An exercise in synthesis, abstraction and coordination that seeks to simplify processes, reduce production times and, above all, contribute to provide the consistency we want for the use experience.');
-        ie_close('p');
-        ie_open('p');
-        itext('For this, the construction of Lexicon is based on the Atomic Design theoretical approach. A work methodology based on modularity that seeks to give a more hierarchical and organized logic to the creation of interfaces design systems. This methodology has been ideated and developed by the designer Brad Frost and is based on nonlinear process organized across five stages: Atoms, Molecules, Organisms, Templates and Pages.');
-        ie_close('p');
-        ie_open('h2');
-        itext('Lexicon site');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lexicon Site is then presented as the necessary platform for the diffusion and access to Lexicon system by designers, developers or any other person involved in the creation of digital products. Mainly focused on Liferay community, but open to anyone who wants to make use of its content and also want to contribute with their own proposals and suggestions.');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param209 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsLexicon.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsLexicon = function (_Component) {
-    babelHelpers.inherits(docsLexicon, _Component);
-
-    function docsLexicon() {
-      babelHelpers.classCallCheck(this, docsLexicon);
-      return babelHelpers.possibleConstructorReturn(this, (docsLexicon.__proto__ || Object.getPrototypeOf(docsLexicon)).apply(this, arguments));
-    }
-
-    return docsLexicon;
-  }(Component);
-
-  Soy.register(docsLexicon, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsLexicon'] = docsLexicon;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var docsLexicon = function (_Component) {
-    babelHelpers.inherits(docsLexicon, _Component);
-
-    function docsLexicon() {
-      babelHelpers.classCallCheck(this, docsLexicon);
-      return babelHelpers.possibleConstructorReturn(this, (docsLexicon.__proto__ || Object.getPrototypeOf(docsLexicon)).apply(this, arguments));
-    }
-
-    return docsLexicon;
-  }(Component);
-
-  ;
-
-  Soy.register(docsLexicon, templates);
-
-  this['metal']['docsLexicon'] = docsLexicon;
 }).call(this);
 'use strict';
 
