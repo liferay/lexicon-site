@@ -6,17 +6,17 @@
 	min-height: $base-size * 4;
 	padding: $base-size / 2 0;
 
-	@media (max-width: $screen-lg) {
+	@media (max-width: $screen-md) {
 		text-align: center;
 	}
 
-	@media (min-width: $screen-lg) {
+	@media (min-width: $screen-md) {
 		padding: 47px 0;
 	}
 
 
 	.text-right-lg {
-		@media (min-width: $screen-lg) {
+		@media (min-width: $screen-md) {
 			text-align: right;
 		}
 	}
@@ -37,7 +37,7 @@
 		background-color: $brand-dark;
 		margin: $base-size / 2 $base-size / 3;
 
-		@media (min-width: $screen-lg) {
+		@media (min-width: $screen-md) {
 			margin: 0 0 0 $base-size / 1.33;
 		}
 	}
@@ -47,7 +47,7 @@
 		max-height: $base-size;
 		padding: 0;
 
-		@media (min-width: $screen-lg) {
+		@media (min-width: $screen-md) {
 			margin: 0 $base-size / 2 0 0;
 		}
 	}
