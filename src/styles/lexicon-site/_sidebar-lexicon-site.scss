@@ -14,7 +14,7 @@
 	}
 
 	.sidebar-body {
-		padding-top: 0px;
+		padding-top: 0;
 
 		@media (max-width: $grid-float-breakpoint) {
 			padding: 0 16px 16px;
@@ -44,8 +44,8 @@
 			&:active, &:focus {
 				@include placeholder($brand-darker-text);
 
-				color: $brand-darker-text;
 				background-color: #FFF;
+				color: $brand-darker-text;
 			}
 		}
 	}
@@ -63,12 +63,12 @@
 			a {
 				background-color: transparent;
 				color: #FFF;
+				font-size: 16px;
+				font-weight: 600;
 				line-height: 22px;
 				margin-left: $base-size * 1.5;
 				min-height: $base-size * 1.25;
 				padding-left: $base-size / 2;
-				font-size: 16px;
-				font-weight: 600;
 			}
 
 			& ul > li > ul > li > a, .nav .nav > li > a {
@@ -86,7 +86,7 @@
 		& > li > ul > li.active > a, & > li > ul > li.active > a:hover, & > li > ul > li.active > a:focus {
 			background-color: $brand-dark-active;
 			color: #FFF;
-			font-weight: 400;
+			font-weight: normal;
 		}
 
 		& > li > a:hover, & > li > ul > li:hover > a, & > li > a:focus {
@@ -95,7 +95,7 @@
 
 		& li > ul > li > a {
 			color: $brand-dark-text;
-			font-weight: 400;
+			font-weight: normal;
 		}
 
 		& li {

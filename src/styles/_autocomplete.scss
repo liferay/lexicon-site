@@ -18,15 +18,15 @@
 	}
 
 	.autocomplete-title {
-		font-weight: 700;
+		font-weight: bold;
 	}
 
 	.list-group .list-group-item {
 		border-width: 0;
-        
-        &:hover {
-            background-color: #f5f9ff;
-        }
+
+		&:hover {
+			background-color: #F5F9FF;
+		}
 
 		&:first-child {
 			border-top-left-radius: 4px;
