@@ -5,9 +5,11 @@ layout: "guide"
 weight: 1
 ---
 
+### Introduction
+
 Header toolbar is a Toolbar based component used in headings for portlets, mobile pages, and page sections.
 
-## Usage
+### Usage
 
 ![header tooldbar dark background](../../../images/headerToolbar.png)
 
@@ -16,7 +18,7 @@ This toolbar is used in almost every page in the system. It can have different c
 * Center area: Used for the page or application title.
 * Right area: Used for actions, explicit when it is possible and a maximum number of 3. Implicit inside a kebab menu when the metaphor is not clear.
 
-## Example
+### Example
 
 ![animated gif that shows how a header toolbar work with different interactions](../../../images/headerExample.gif)
 

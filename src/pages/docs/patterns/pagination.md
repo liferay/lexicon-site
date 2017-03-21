@@ -5,9 +5,11 @@ layout: "guide"
 weight: 1
 ---
 
+### Description
+
 Pagination allows navigation between chunks, also denominated pages, of a dataset.
 
-## Sizes
+### Sizes
 
 | Size | Description |
 | ---- | ----- |
@@ -15,15 +17,15 @@ Pagination allows navigation between chunks, also denominated pages, of a datase
 | Default | The font-size is 16px |
 | Large | The font-size is 18px and the proportions are bigger |
 
-## Variations
+### Variations
 
-### Pagination
+#### Pagination
 
 Use it when you need a simple pagination pattern that does not require to change the page size.
 
 ![simple pagination](../../../images/pagination.png)
 
-### Pagination bar
+#### Pagination bar
 
 A pagination bar is pagination with additional functionality. This added functionality comes with a page size selector placed on the left size of the bar. To the right side we incorporate a label to provide feedback on the exact chunk of information displayed from the dataset. On the right side of the pagination bar there is the classic pagination that adapts depending on the number of pages.
 

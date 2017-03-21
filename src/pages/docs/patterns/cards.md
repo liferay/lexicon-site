@@ -5,16 +5,18 @@ layout: "guide"
 weight: 1
 ---
 
+### Description
+
 Cards are a very specific visual represntation of data.
 
-## Usage
+### Usage
 Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images asociated to your content. A good example of this could be your users database or an image library.
 
 Cards are not meant to compare information in an exhautive way but a light way. In case you need exhaustive comparison and not based on image comparison, you must use a table.
 
 Cards in Lexicon are open to many configurations. We provide a flexible card layout for you to configure it as you want. Later on this page we provide a series of examples we use in our systems for you to get inspired.
 
-## Layout
+### Layout
 By providing a flexible layout, Lexicon opens you a wider range of possible configurations for your card. Every element can be used or deleted adapting it to your specific needs in each use case.
 
 As you can see in the following image, a card is shaped by:
@@ -35,9 +37,9 @@ It is important to highlight that images can have different size configuration i
 
 ![three different examples of card configuration](../../../images/cardExample.png)
 
-## Variations
+### Variations
 
-### Horizontal card
+#### Horizontal card
 
 This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type.
 

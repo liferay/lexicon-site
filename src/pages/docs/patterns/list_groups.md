@@ -5,9 +5,11 @@ layout: "guide"
 weight: 1
 ---
 
+### Introduction
+
 List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view.
 
-## Usage
+### Usage
 
 ![list entry in default state](../../../images/listItem.png)
 
@@ -19,33 +21,33 @@ Not all the element in a list entry are mandatory, feel free to delete and inclu
 
 When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.
 
-## List group
+### List group
 
 Whenever you need to group series of list entries, you can use the list group heading for that.
 
 ![list group includes a heading](../../../images/listGroup.png)
 
-## Row interactions
+### Row interactions
 
 * Selecting a row is only possible by using the checkbox.
 * Text elements in the row can be configured as links to navigate.
 * A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don't need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.
 * If the action you want to perform of is "Edit", place it as a link in the title to navigate to an edition screen for the element.
 
-## Row states
+### Row states
 
-### Default states
+#### Default states
 
 ![list entry in default state](../../../images/listItem.png)
 
-### Selected state
+#### Selected state
 
 ![list entry in selected state](../../../images/listSelected.png)
 
-## Attributes
+### Attributes
 
 ![list attributes](../../../images/listAttributes.png)
 
-## Example of use
+### Example of use
 
 ![list with 3 entries, one in default state, one in selected state, one with actions menu open](../../../images/listExample.png)

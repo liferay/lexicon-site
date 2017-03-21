@@ -5,11 +5,13 @@ layout: "guide"
 weight: 1
 ---
 
+### Description
+
 Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system.
 
 ![helvetica neue example in regular, medium and bold](../../../images/HelveticaNeue.png)
 
-## Sizes
+### Sizes
 
 Lexicon only defines 3 font sizes for the common usage and leaves H values open for free use.
 

@@ -5,11 +5,13 @@ layout: "guide"
 weight: 1
 ---
 
-# Badges
+## Badges
+
+### Description
 
 Badges help highlight important information such as notifications or new and unread messages. Badges have circular borders by default.
 
-## Sizes
+### Sizes
 
 | Size | Usage |
 | ---- | ----- |
@@ -17,7 +19,7 @@ Badges help highlight important information such as notifications or new and unr
 | ![defualt size default color badge](../../../images/badgeDefaultDefault.png) | **Default**: Use it for marking states. |
 | ![large size default color badge](../../../images/badgeLargeDefault.png) | **Large**: Use it when previous don't apply. |
 
-## Types
+### Types
 
 | Type | Usage |
 | ---- | ----- |
@@ -25,11 +27,13 @@ Badges help highlight important information such as notifications or new and unr
 | ![defualt size default color close option badge](../../../images/badgeCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
 
 
-# Labels
+## Labels
+
+### Description
 
 Labels are a mechanism to categorize information providing quick recognition.
 
-## Usage
+### Usage
 Use labels to organize groups of items in your application. Labels have rounded borders by default.
 
 ### Sizes
@@ -47,11 +51,13 @@ Use labels to organize groups of items in your application. Labels have rounded 
 | ![defualt size default color label](../../../images/labelDefaultDefault.png) | Used to identify.|
 | ![defualt size default color close option label](../../../images/labelCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
 
-# Stickers
+## Stickers
+
+### Description
 
 Stickers are a visual way to quickly identify content in a different way than badges and labels. Stickers can be either numbers or characters but always restricted to a maximum number of 3 characters. A sticker can also contain just an icon. Stickers are always squared.
 
-## Usage
+### Usage
 Use stickers to visually identify elements in a dataset that are part of a same group. You can use any color you want for stickers.
 
 ### Sizes
@@ -75,6 +81,6 @@ Stickers can have different positions:
 
 The most used cases in Liferay DE are inside bottom left and static.
 
-## Example of use
+### Example of use
 
-**Example of use missing**
+***Example of use missing***

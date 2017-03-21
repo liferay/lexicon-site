@@ -5,11 +5,13 @@ layout: "guide"
 weight: 1
 ---
 
+### Description
+
 A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system.
 
 ![navigation bar with 2 entries and a search field](../../../images/Navbar.png)
 
-## Usage
+### Usage
 
 Navbars in DE are used inside applications to provide navigation among their different pieces.
 
@@ -19,17 +21,17 @@ The search textfield activity must work only over the active option in the navig
 
 When the viewport resizes to smaller screen sizes the navbar entries collapse intro a dropdown where the active screen gets populated and selected in the dropdown.
 
-## Examples
+### Examples
 
-Example 1: Navbar with search bar
+**Example 1:** Navbar with search bar
 
 ![navigation bar with 2 entries and a search field](../../../images/Navbar.png)
 
-Example 2: Navbar with search bar and focus state on search textfield
+**Example 2:** Navbar with search bar and focus state on search textfield
 
 ![navigation bar with 2 entries and a search field and on focus](../../../images/NavbarFocusSearch.png)
 
-Example 3: Navbar with navigation options in dropdown and search. The second image corresponds to its responsive view. For more information about search, please visit [collapsible search](./collapsible_search.html)
+**Example 3:** Navbar with navigation options in dropdown and search. The second image corresponds to its responsive view. For more information about search, please visit [collapsible search](./collapsible_search.html)
 
 ![navbar in mobile viewport with some navigation options collpased in a dropdown](../../../images/NavbarDropdown.png)
 

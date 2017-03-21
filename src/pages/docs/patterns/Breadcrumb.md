@@ -5,11 +5,13 @@ layout: "guide"
 weight: 1
 ---
 
+### Description
+
 Breadcrumb is a secondary navigation pattern that identifies the page position inside a hierarchy.
 
 ![breadcrumb](../../../images/breadcrumb.png)
 
-## Usage
+### Usage
 
 * The breadcrumb is always horizontal.
 * Long crumbs can be reduced using ellipsis.

@@ -6,37 +6,29 @@ icon: "lexicon-site-bell"
 weight: 3
 ---
 
-##### MARCH 15TH, 2017
+##### March 15th, 2017
 
-## Lexicon site launch
-
-Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
-
-The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 
-
-
-##### MARCH 15TH, 2017
-
-## Lexicon site launch
+### Lexicon Axure library v1.0 released
 
 Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
 
-The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 
 
+##### March 15th, 2017
 
-##### MARCH 10TH, 2017
-
-## Lexicon site launch
+### January Lexicon Update
 
 Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
 
-The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 
+
+##### March 15th, 2017
+
+### September Lexicon Update
+
+Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay. 
 
 
-##### MARCH 1ST, 2017
+##### March 15th, 2017
 
-## Lexicon site launch
+### Lexicon site launch
 
 Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
-
-The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with. 
