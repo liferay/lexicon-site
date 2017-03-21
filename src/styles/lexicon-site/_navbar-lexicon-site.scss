@@ -2,26 +2,27 @@
 	background-color: $brand-dark;
 	border-color: $brand-dark;
 	min-height: $base-size * 2;
-
+    
 	@media (min-width: $grid-float-breakpoint) {
-		min-height: $base-size * 3.25;
+		min-height: $base-size * 3;
 		padding-top: 12px;
+        padding-left: 12px;
 	}
 
 	.logo {
-		width: 106px;
+		width: 109px;
     	display: inline-block;
     	margin-right: 2px;
 	}
 
 	small {
-		font-size: 14px;
+		font-size: 13px;
+        line-height: 0;
 	}
 
 	.navbar-brand {
 		color: $brand-dark-text;
 		line-height: $base-size * 1.25;
-		padding-left: 24px;
 
 		small {
 			padding: 8px;

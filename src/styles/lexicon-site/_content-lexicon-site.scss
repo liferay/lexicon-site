@@ -1,56 +1,71 @@
 .content .sidebar-offset {
 	p {
-		line-height: $base-size / 1.33;
-		margin-bottom: $base-size * 0.75;
+		line-height: $base-size * 0.75;
+		margin-bottom: 20px;
 	}
 
 	img {
 		max-width: 100%;
+        margin-top: 12px; 
+        margin-bottom: $base-size * 0.75;
 	}
-
-	table img {
-		padding: $base-size / 3 0;
-	}
+    
+    table img {
+        margin-top: 4px;
+        margin-bottom: 8px;
+    }
+    
+    ul {
+        margin-bottom: $base-size * 0.75;
+        
+        li {
+            line-height: $base-size * 0.75;
+        }
+    }
 
 	h1 {
-		font-size: 24px;
+		font-size: 26px;
+        line-height: $base-size;
 	}
 
 	h2 {
-		font-size: 22px;
-		line-height: $base-size;
+		font-size: 23px;
+        line-height: $base-size;
 	}
 
 	h3 {
-		font-size: $base-size / 1.6;
+		font-size: 20px;
+        line-height: 28px;
+	}
+    
+    h1, h2, h3 {
 		font-weight: 700;
-		line-height: 28px;
+		margin-top: $base-size * 1.5;
+        margin-bottom: $base-size / 2;
 	}
 
 	h4 {
 		font-size: $base-size / 2;
-		font-weight: 600;
-		margin-bottom: $base-size / 2;
+		font-weight: 700;
+        line-height: $base-size * 0.75;
+        margin-top: 0;
+        margin-bottom: 12px;
 	}
 
 	h5 {
 		font-size: 12px;
 		font-weight: 600;
 		line-height: 20px;
-		margin-bottom: 4px;
+		margin-bottom: 8px;
+        text-transform: uppercase;
 	}
 
-	h1, h2 {
-		font-weight: 700;
-		margin: $base-size / 2 0 $base-size * 0.75;
-	}
 
 	header {
-		margin: 0 0 $base-size * 0.75;
+		margin: 0;
 
 		.container-fluid > h1 {
 			margin: 0;
-			line-height: $base-size;
 		}
 	}
 
@@ -63,6 +78,7 @@
 			font-size: $base-size * 1.5;
 			font-weight: 300;
 			margin: $base-size 0;
+            line-height: $base-size * 2;
 
 			@media (min-width: $grid-float-breakpoint) {
 				margin: 0 0 0 $base-size * 3.3;
@@ -90,7 +106,6 @@
 
 	h5 {
 		color: $brand-dark-text;
-		display: inline-block;
-		margin-top: 24px;
+		margin-top: 48px;
 	}
 }

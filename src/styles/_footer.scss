@@ -22,7 +22,7 @@
 	}
 
 	a {
-		color: $brand-dark-text;
+		color: $brand-darker-text;
 
 		&.white {
 			color: #FFF;
@@ -32,6 +32,10 @@
 	span {
 		line-height: $base-size;
 	}
+    
+    span a {
+        font-weight: 600;
+    }
 
 	.sticker {
 		background-color: $brand-dark;
@@ -41,6 +45,10 @@
 			margin: 0 0 0 $base-size / 1.33;
 		}
 	}
+    
+    .sticker:hover {
+        color: $brand-dark-text;
+    }
 
 	.row img.logo {
 		margin: $base-size / 2 $base-size / 3;
