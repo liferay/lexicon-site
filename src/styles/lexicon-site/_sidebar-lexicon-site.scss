@@ -6,7 +6,7 @@
 	}
 
 	.sidebar-header {
-		padding: $base-size / 2 24px 12px;
+		padding: $base-size * 0.75  $base-size * 0.75 12px;
 
 		@media (max-width: $grid-float-breakpoint) {
 			padding: 16px;
@@ -72,7 +72,7 @@
 			}
 
 			& ul > li > ul > li > a, .nav .nav > li > a {
-				margin-left: $base-size * 2.25;
+				margin-left: $base-size * 2;
 				padding-left: $base-size / 2;
 			}
 
@@ -114,7 +114,7 @@
 					width: 40px;
 
 					@include transform(rotate(-90deg));
-					@include transition(all 0.3s $ease-in-out-back);
+					@include transition(all 0.2s $ease-in-out-back);
 				}
 			}
 

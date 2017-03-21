@@ -5,50 +5,50 @@ layout: "guide"
 weight: 4
 ---
 
-# Text field
+## Text field
 
 A textfield is the most basic pattern for introducing text for a conversation between human and machine.
 
-## States
+### States
 
-### Default
+#### Default
 
 ![default empty state](../../../images/textfield.png)
 
-### Active
+#### Active
 
 ![default active state](../../../images/textfieldActive.png)
 
-### Disabled
+#### Disabled
 
 ![default disabled state](../../../images/textfieldDisabled.png)
 
-### Read only
+#### Read only
 
 ![default disabled state](../../../images/textfieldReadonly.png)
 
-## Validations
+### Validations
 
-### Success
+#### Success
 
 ![default success state](../../../images/textfieldSuccess.png)
 
-### Warning
+#### Warning
 
 ![default warning state](../../../images/textfieldWarning.png)
 
-### Error
+#### Error
 
 ![default error state](../../../images/textfieldError.png)
 
 
-# Text area
+## Text area
 
 A text area is similar to a text field input but for several lines of text. Text areas allow users to introduce long description of products as an example.
 
 ![text area](../../../images/textarea.png)
 
-## Usage
+### Usage
 
 * Text area can be resized allowing the user to see more or less text as he please.
 * Text area states and validation states are the same as for the text field.

@@ -5,9 +5,11 @@ layout: "guide"
 weight: 1
 ---
 
+### Description
+
 A table is a specific pattern for comparing datasets in a very direct an analytical way.
 
-## Usage
+### Usage
 
 A table view is useful for comparing entries among them that need exhaustive comparison. Tables are very heavy in text display, if you need to display images we recommend you to take a look at lists and cards.
 
@@ -16,7 +18,7 @@ A table entry or row don't allow you to display 2 different data types in one sa
 When a table is used together with management bar, the table entries must include the checkbox, as the selection and actions are reflected in the management bar.
 
 
-## Row interactions
+### Row interactions
 
 * Selecting a row is only possible by using the checkbox.
 * Text elements in the row can be configured as links to navigate.
@@ -26,47 +28,47 @@ When a table is used together with management bar, the table entries must includ
 * A cell entry could include a button as main action of a table entry. An example could be "Execute".
 * Drag and drop is possible for moving selected elements into a folder. A click and drag over a non selected element implies selection.
 
-## Row states
+### Row states
 
-### Default state
+#### Default state
 
 ![table row in default state](../../../images/tableRow.png)
 
-### Selected state
+#### Selected state
 
 ![table row in selected state](../../../images/tableRowSelected.png)
 
-### Hover state
+#### Hover state
 
 By default, Lexicon does not use the hover state in tables.
 
 ![table row hover](../../../images/tableRowHover.png)
 
-## Row attributes
+### Row attributes
 
 ![table row attributes](../../../images/tableRowAttributes.png)
 
-## Table helpers
+### Table helpers
 
-### Stripes
+#### Stripes
 
 ![table stripes](../../../images/tableStripes.png)
 
-### Bordered
+#### Bordered
 
 ![table bordered](../../../images/tableBordered.png)
 
-### Hover
+#### Hover
 
 In the following example you can see how hover works even with a selected row.
 
 ![table hover case](../../../images/tableHoverExample.gif)
 
-## Mobile
+### Mobile
 
 Due to the complexity of a table in mobile, Lexicon does not define this pattern for mobile viewport size.
 
-## Example of use
+### Example of use
 
 Due to the complexity of a table in mobile, Lexicon does not define this pattern for mobile viewport size.
 

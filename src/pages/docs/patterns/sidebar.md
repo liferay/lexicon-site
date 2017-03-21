@@ -5,9 +5,11 @@ layout: "guide"
 weight: 1
 ---
 
+### Description
+
 Sidebar is a vertical panel that appears from the right side of the screen on interactions like the info button.
 
-## Usage
+### Usage
 
 Sidebar is basically an information container where to display information. This information can be of the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy. The side bar can be configured in light background color or inverse (dark).
 

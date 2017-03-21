@@ -1,8 +1,17 @@
 table {
 	@extend .table;
-
-	h4 {
-		font-size: 14px;
-		margin-bottom: 0;
-	}
+    margin-bottom: 24px;
+    
+    & > tbody > tr > td, & > thead > tr > th {
+        padding: $base-size / 2;
+        line-height: $base-size * 0,75;
+        border-bottom: 1px solid $brand-border-color;
+    }
+    
+    thead th {
+        border-bottom: 2px solid $brand-border-color;
+        vertical-align: bottom;
+        font-weight: 600;
+        font-size: $base-size / 2;
+    }
 }

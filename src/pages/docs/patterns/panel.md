@@ -5,23 +5,25 @@ layout: "guide"
 weight: 1
 ---
 
+### Descrition
+
 Panels help to separate your content.
 
-## Usage
+### Usage
 
 Panel are use to help separating content a making processes as reading or filling a form easier to the user. Panels are a way of chunking into smaller pieces.
 
-## Configuration
+### Configuration
 
 Panels can be configured in different ways:
 
-### Body
+#### Body
 
 Use this configuration to separate content inside a form.
 
 ![panel only body most simple version](../../../images/panelNaked.png)
 
-### Header + body
+#### Header + body
 
 Use this configuration when you need to se parate a content that needs a title and the title needs to capture the attention of your user.
 
@@ -29,9 +31,9 @@ Do never use it to collapse content without a disclosure arrow. Use an accordion
 
 ![panel with header](../../../images/panelHeaderBody.png)
 
-## Variations
+### Variations
 
-### Accordion
+#### Accordion
 
 Panels can be collapsible. Whenever there is a collapsible panel the header must include a disclosure icon as an affordance to let the user understand that open and close actions can be performed. Please, see that when a panel is open the header is highlighted with a blue line below it marking the active state.
 
