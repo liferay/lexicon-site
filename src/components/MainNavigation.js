@@ -8,9 +8,13 @@ import templates from './MainNavigation.soy';
 
 class MainNavigation extends Component {
 	handleCollapseClick_(event) {
+		event.preventDefault();
+
 		const parent = dom.parent(event.target, 'li');
 
-		dom.toggleClasses(parent, 'active');
+		let cssClass = 'active';
+
+		dom.toggleClasses(parent, cssClass);
 	}
 };
 
