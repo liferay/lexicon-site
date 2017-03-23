@@ -11936,10 +11936,12 @@ button.loading > .linear.loading-animation {
   margin-bottom: 0; }
 
 .autocomplete-list .autocomplete-title {
-  font-weight: 700; }
+  font-weight: bold; }
 
 .autocomplete-list .list-group .list-group-item {
   border-width: 0; }
+  .autocomplete-list .list-group .list-group-item:hover {
+    background-color: #F5F9FF; }
   .autocomplete-list .list-group .list-group-item:first-child {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -12013,17 +12015,21 @@ button.loading > .linear.loading-animation {
     .footer .text-right-lg {
       text-align: right; } }
   .footer a {
-    color: #A2A7C2; }
+    color: #6D7290; }
     .footer a.white {
       color: #FFF; }
   .footer span {
     line-height: 32px; }
+  .footer span a {
+    font-weight: 600; }
   .footer .sticker {
     background-color: #4C4F64;
     margin: 16px 10.66667px; }
     @media (min-width: 992px) {
       .footer .sticker {
         margin: 0 0 0 24.06015px; } }
+  .footer .sticker:hover {
+    color: #A2A7C2; }
   .footer .row img.logo {
     margin: 16px 10.66667px;
     max-height: 32px;
@@ -12097,50 +12103,61 @@ button.loading > .linear.loading-animation {
   top: 64px; }
   @media (min-width: 768px) {
     .sidenav-fixed.sidenav-menu-slider .sidenav-menu {
-      top: 104px; } }
+      top: 96px; } }
 
 .content .sidebar-offset p {
-  line-height: 24.06015px;
-  margin-bottom: 24px; }
+  line-height: 24px;
+  margin-bottom: 20px; }
 
 .content .sidebar-offset img {
+  margin-bottom: 24px;
+  margin-top: 12px;
   max-width: 100%; }
 
 .content .sidebar-offset table img {
-  padding: 10.66667px 0; }
+  margin-bottom: 8px;
+  margin-top: 4px; }
+
+.content .sidebar-offset ul {
+  margin-bottom: 24px; }
+  .content .sidebar-offset ul li {
+    line-height: 24px; }
 
 .content .sidebar-offset h1 {
-  font-size: 24px; }
+  font-size: 26px;
+  line-height: 32px; }
 
 .content .sidebar-offset h2 {
-  font-size: 22px;
+  font-size: 23px;
   line-height: 32px; }
 
 .content .sidebar-offset h3 {
   font-size: 20px;
-  font-weight: 700;
   line-height: 28px; }
+
+.content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
+  font-weight: bold;
+  margin-bottom: 16px;
+  margin-top: 48px; }
 
 .content .sidebar-offset h4 {
   font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 16px; }
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: 12px;
+  margin-top: 0; }
 
 .content .sidebar-offset h5 {
   font-size: 12px;
   font-weight: 600;
   line-height: 20px;
-  margin-bottom: 4px; }
-
-.content .sidebar-offset h1, .content .sidebar-offset h2 {
-  font-weight: 700;
-  margin: 16px 0 24px; }
+  margin-bottom: 8px;
+  text-transform: uppercase; }
 
 .content .sidebar-offset header {
-  margin: 0 0 24px; }
+  margin: 0; }
   .content .sidebar-offset header .container-fluid > h1 {
-    margin: 0;
-    line-height: 32px; }
+    margin: 0; }
 
 .content .sidebar-offset .home {
   background-color: #F1F3F5;
@@ -12149,11 +12166,12 @@ button.loading > .linear.loading-animation {
     color: #4C4F64;
     font-size: 48px;
     font-weight: 300;
+    line-height: 64px;
     margin: 32px 0; }
     @media (min-width: 768px) {
       .content .sidebar-offset .home h1 {
-        margin: 0 0 0 105.6px;
-        font-size: 64px; } }
+        font-size: 64px;
+        margin: 0 0 0 105.6px; } }
   @media (min-width: 768px) {
     .content .sidebar-offset .home img {
       max-width: 400px;
@@ -12167,8 +12185,7 @@ button.loading > .linear.loading-animation {
 
 .News h5 {
   color: #A2A7C2;
-  display: inline-block;
-  margin-top: 24px; }
+  margin-top: 48px; }
 
 .navbar-lexicon-site {
   background-color: #4C4F64;
@@ -12176,18 +12193,19 @@ button.loading > .linear.loading-animation {
   min-height: 64px; }
   @media (min-width: 768px) {
     .navbar-lexicon-site {
-      min-height: 104px;
+      min-height: 96px;
+      padding-left: 12px;
       padding-top: 12px; } }
   .navbar-lexicon-site .logo {
-    width: 106px;
     display: inline-block;
-    margin-right: 2px; }
+    margin-right: 2px;
+    width: 109px; }
   .navbar-lexicon-site small {
-    font-size: 14px; }
+    font-size: 13px;
+    line-height: 0; }
   .navbar-lexicon-site .navbar-brand {
     color: #A2A7C2;
-    line-height: 40px;
-    padding-left: 24px; }
+    line-height: 40px; }
     .navbar-lexicon-site .navbar-brand small {
       padding: 8px; }
   .navbar-lexicon-site .navbar-toggle {
@@ -12195,13 +12213,13 @@ button.loading > .linear.loading-animation {
     height: 48px; }
     @media (max-width: 768px) {
       .navbar-lexicon-site .navbar-toggle .icon-bar {
-        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        -o-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         -webkit-transform-origin: 0;
         -moz-transform-origin: 0;
         -ms-transform-origin: 0;
-        transform-origin: 0; }
+        transform-origin: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -o-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
       .navbar-lexicon-site .navbar-toggle.toggler-header-expanded .icon-bar:nth-of-type(1) {
         -webkit-transform: rotate(45deg) translate(0) scale(1.1);
         -moz-transform: rotate(45deg) translate(0) scale(1.1);
@@ -12227,12 +12245,12 @@ button.loading > .linear.loading-animation {
   .sidebar-lexicon-site a, .sidebar-lexicon-site .nav .lexicon-icon {
     color: #A2A7C2; }
   .sidebar-lexicon-site .sidebar-header {
-    padding: 16px 24px 12px; }
+    padding: 24px 24px 12px; }
     @media (max-width: 768px) {
       .sidebar-lexicon-site .sidebar-header {
         padding: 16px; } }
   .sidebar-lexicon-site .sidebar-body {
-    padding-top: 0px; }
+    padding-top: 0; }
     @media (max-width: 768px) {
       .sidebar-lexicon-site .sidebar-body {
         padding: 0 16px 16px; } }
@@ -12259,8 +12277,8 @@ button.loading > .linear.loading-animation {
       .sidebar-lexicon-site .input-group > input.form-control::-webkit-input-placeholder {
         color: #6D7290; }
       .sidebar-lexicon-site .input-group > input.form-control:active, .sidebar-lexicon-site .input-group > input.form-control:focus {
-        color: #6D7290;
-        background-color: #FFF; }
+        background-color: #FFF;
+        color: #6D7290; }
         .sidebar-lexicon-site .input-group > input.form-control:active::-moz-placeholder, .sidebar-lexicon-site .input-group > input.form-control:focus::-moz-placeholder {
           color: #6D7290;
           opacity: 1; }
@@ -12275,14 +12293,14 @@ button.loading > .linear.loading-animation {
   .sidebar-lexicon-site .nav-pills > li > a {
     background-color: transparent;
     color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 22px;
     margin-left: 48px;
     min-height: 40px;
-    padding-left: 16px;
-    font-size: 16px;
-    font-weight: 600; }
+    padding-left: 16px; }
   .sidebar-lexicon-site .nav-pills > li > ul > li > ul > li > a, .sidebar-lexicon-site .nav-pills > li > .nav .nav > li > a {
-    margin-left: 72px;
+    margin-left: 64px;
     padding-left: 16px; }
   .sidebar-lexicon-site .nav-pills > li > .icon-monospaced.lexicon-icon {
     float: left;
@@ -12291,42 +12309,53 @@ button.loading > .linear.loading-animation {
   .sidebar-lexicon-site .nav-pills > li > ul > li.active > a, .sidebar-lexicon-site .nav-pills > li > ul > li.active > a:hover, .sidebar-lexicon-site .nav-pills > li > ul > li.active > a:focus {
     background-color: #575A6F;
     color: #FFF;
-    font-weight: 400; }
+    font-weight: normal; }
   .sidebar-lexicon-site .nav-pills > li > a:hover, .sidebar-lexicon-site .nav-pills > li > ul > li:hover > a, .sidebar-lexicon-site .nav-pills > li > a:focus {
     background-color: #51556A; }
   .sidebar-lexicon-site .nav-pills li > ul > li > a {
     color: #A2A7C2;
-    font-weight: 400; }
-  .sidebar-lexicon-site .nav-pills li > .collapse-toggle {
+    font-weight: normal; }
+  .sidebar-lexicon-site .nav-pills > li.nav-heading > a, .sidebar-lexicon-site .nav-pills > li.nav-heading > a:focus, .sidebar-lexicon-site .nav-pills > li > ul > li.nav-heading > a, .sidebar-lexicon-site .nav-pills > li > ul > li.nav-heading > a:focus {
+    background-color: transparent; }
+  .sidebar-lexicon-site .nav-pills > li.nav-heading > a:hover, .sidebar-lexicon-site .nav-pills > li > ul > li.nav-heading > a:hover {
+    background-color: #51556A; }
+  .sidebar-lexicon-site .nav-pills li > a > .collapse-toggle {
     display: inline-block;
     margin: 0;
     min-height: auto;
     padding: 0;
     position: absolute;
     right: 0;
-    top: 0; }
-    .sidebar-lexicon-site .nav-pills li > .collapse-toggle .lexicon-icon {
-      height: 40px;
-      padding: 12px;
-      width: 40px;
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
-      transform: rotate(-90deg);
-      -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      -o-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-  .sidebar-lexicon-site .nav-pills li.active > .collapse-toggle .lexicon-icon {
+    top: 0;
+    height: 40px;
+    padding: 12px;
+    width: 40px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  .sidebar-lexicon-site .nav-pills li.active > a > .collapse-toggle {
     -webkit-transform: rotate(0);
     -moz-transform: rotate(0);
     -ms-transform: rotate(0);
     -o-transform: rotate(0);
     transform: rotate(0); }
 
-table h4 {
-  font-size: 14px;
-  margin-bottom: 0; }
+table {
+  margin-bottom: 24px; }
+  table > tbody > tr > td, table > thead > tr > th {
+    border-bottom: 1px solid #E1E2E8;
+    line-height: 0px, 75;
+    padding: 16px; }
+  table thead th {
+    border-bottom: 2px solid #E1E2E8;
+    font-size: 16px;
+    font-weight: 600;
+    vertical-align: bottom; }
 
 body {
   color: #414456;

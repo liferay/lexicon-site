@@ -21562,15 +21562,15 @@ babelHelpers;
       var localCurrentDepth__soy3 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
       if (opt_data.section.children) {
         ie_open('ul', null, null, 'class', 'nav nav-nested nav-pills nav-stacked');
-        var pageList21 = opt_data.section.children;
-        var pageListLen21 = pageList21.length;
-        for (var pageIndex21 = 0; pageIndex21 < pageListLen21; pageIndex21++) {
-          var pageData21 = pageList21[pageIndex21];
-          if (!pageData21.hidden) {
-            ie_open('li', null, null, 'class', pageData21.active ? 'active' : '');
-            $anchor(soy.$$assignDefaults({ page: pageData21 }, opt_data), null, opt_ijData);
+        var pageList23 = opt_data.section.children;
+        var pageListLen23 = pageList23.length;
+        for (var pageIndex23 = 0; pageIndex23 < pageListLen23; pageIndex23++) {
+          var pageData23 = pageList23[pageIndex23];
+          if (!pageData23.hidden) {
+            ie_open('li', null, null, 'class', (pageData23.active ? 'active' : '') + ' ' + (pageData23.children ? 'nav-heading' : ''));
+            $anchor(soy.$$assignDefaults({ page: pageData23 }, opt_data), null, opt_ijData);
             if (!opt_data.depth || localCurrentDepth__soy3 + 1 < opt_data.depth) {
-              $render({ currentDepth: localCurrentDepth__soy3 + 1, depth: opt_data.depth, section: pageData21 }, null, opt_ijData);
+              $render({ currentDepth: localCurrentDepth__soy3 + 1, depth: opt_data.depth, section: pageData23 }, null, opt_ijData);
             }
             ie_close('li');
           }
@@ -21596,19 +21596,21 @@ babelHelpers;
         ie_void('use', null, null, 'xlink:href', '/images/icons/lexicon-site-icons.svg#' + opt_data.page.icon);
         ie_close('svg');
       }
-      ie_open('a', null, null, 'href', opt_data.page.url);
+      if (!opt_data.page.children) {
+        ie_open('a', null, null, 'href', opt_data.page.url);
+      } else {
+        ie_open('a', null, null, 'data-onclick', 'handleCollapseClick_', 'href', 'javascript:;');
+      }
       ie_open('span');
       var dyn0 = opt_data.page.title;
       if (typeof dyn0 == 'function') dyn0();else if (dyn0 != null) itext(dyn0);
       ie_close('span');
-      ie_close('a');
       if (opt_data.page.children) {
-        ie_open('a', null, null, 'data-onclick', 'handleCollapseClick_', 'class', 'collapse-toggle', 'href', 'javascript:;');
-        ie_open('svg', null, null, 'class', 'lexicon-icon icon-monospaced');
+        ie_open('svg', null, null, 'class', 'collapse-toggle lexicon-icon icon-monospaced');
         ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#caret-bottom');
         ie_close('svg');
-        ie_close('a');
       }
+      ie_close('a');
     }
     exports.anchor = $anchor;
     if (goog.DEBUG) {
@@ -21660,9 +21662,13 @@ babelHelpers;
 		babelHelpers.createClass(MainNavigation, [{
 			key: 'handleCollapseClick_',
 			value: function handleCollapseClick_(event) {
+				event.preventDefault();
+
 				var parent = dom.parent(event.target, 'li');
 
-				dom.toggleClasses(parent, 'active');
+				var cssClass = 'active';
+
+				dom.toggleClasses(parent, cssClass);
 			}
 		}]);
 		return MainNavigation;
@@ -22069,13 +22075,13 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       opt_data = opt_data || {};
-      var param51 = function param51() {
+      var param59 = function param59() {
         ie_open('div', null, null, 'class', 'blog');
         $mainPost(opt_data, null, opt_ijData);
         $olderPosts(opt_data, null, opt_ijData);
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param51 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param59 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22130,25 +22136,25 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'posts-list');
       ie_open('div', null, null, 'class', 'container');
       ie_open('ul', null, null, 'class', 'list-unstyled col-md-6 col-md-offset-3');
-      var pageList78 = opt_data.site.index.children[0].children;
-      var pageListLen78 = pageList78.length;
-      for (var pageIndex78 = 0; pageIndex78 < pageListLen78; pageIndex78++) {
-        var pageData78 = pageList78[pageIndex78];
+      var pageList86 = opt_data.site.index.children[0].children;
+      var pageListLen86 = pageList86.length;
+      for (var pageIndex86 = 0; pageIndex86 < pageListLen86; pageIndex86++) {
+        var pageData86 = pageList86[pageIndex86];
         ie_open('li', null, null, 'class', 'text-center');
-        ie_open('a', null, null, 'href', pageData78.url);
+        ie_open('a', null, null, 'href', pageData86.url);
         ie_open('small');
         itext('By ');
-        var dyn5 = pageData78.author;
+        var dyn5 = pageData86.author;
         if (typeof dyn5 == 'function') dyn5();else if (dyn5 != null) itext(dyn5);
         itext(' ');
         ie_open('span');
         itext('| ');
-        var dyn6 = pageData78.date;
+        var dyn6 = pageData86.date;
         if (typeof dyn6 == 'function') dyn6();else if (dyn6 != null) itext(dyn6);
         ie_close('span');
         ie_close('small');
         ie_open('p', null, null, 'class', 'lead');
-        var dyn7 = pageData78.title;
+        var dyn7 = pageData86.title;
         if (typeof dyn7 == 'function') dyn7();else if (dyn7 != null) itext(dyn7);
         ie_close('p');
         ie_close('a');
@@ -22244,11 +22250,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param84 = function param84() {
+      var param92 = function param92() {
         $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
         $guide(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param84 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param92 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22278,7 +22284,7 @@ babelHelpers;
       var dyn9 = opt_data.content;
       if (typeof dyn9 == 'function') dyn9();else if (dyn9 != null) itext(dyn9);
       ie_close('div');
-      ie_open('nav', null, null, 'class', 'col-xs-12 col-md-offset-2 col-md-5');
+      ie_open('nav', null, null, 'class', 'col-md-5 col-md-offset-2 col-xs-12');
       $templateAlias3({ elementClasses: 'docs-nav' }, null, opt_ijData);
       ie_close('nav');
       ie_close('div');
@@ -22308,19 +22314,18 @@ babelHelpers;
       ie_void('div', null, null, 'class', 'clearfix hidden-lg hidden-md');
       ie_open('span');
       itext('Brought to you by ');
-      ie_open('a', null, null, 'href', 'http://www.liferay.com', 'class', 'white', 'target', '_blank');
-      itext('Liferay, Inc');
+      ie_open('a', null, null, 'class', 'white', 'href', 'http://www.liferay.com', 'target', '_blank');
+      itext('Liferay, Inc.');
       ie_close('a');
-      itext('.');
       ie_close('span');
       ie_close('div');
       ie_open('div', null, null, 'class', 'col-md-5 text-right-lg');
-      ie_open('a', null, null, 'href', 'https://twitter.com/Liferay_Lexicon', 'target', '_blank', 'class', 'sticker sticker-rounded sticker-default sticker-static');
+      ie_open('a', null, null, 'class', 'sticker sticker-default sticker-rounded sticker-static', 'href', 'https://twitter.com/Liferay_Lexicon', 'target', '_blank');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
       ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#twitter');
       ie_close('svg');
       ie_close('a');
-      ie_open('a', null, null, 'href', 'mailto:lexicon@liferay.com', 'class', 'sticker sticker-rounded sticker-default sticker-static');
+      ie_open('a', null, null, 'class', 'sticker sticker-default sticker-rounded sticker-static', 'href', 'mailto:lexicon@liferay.com');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
       ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#comments');
       ie_close('svg');
@@ -22567,13 +22572,13 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param128 = function param128() {
+      var param136 = function param136() {
         $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
         ie_open('div', null, null, 'class', 'sidebar-offset');
         $header(null, null, opt_ijData);
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param128 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param136 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22595,7 +22600,7 @@ babelHelpers;
       ie_open('img', null, null, 'src', '/images/LexiconLogoHome.png');
       ie_close('img');
       ie_open('h1');
-      itext('A consistent design system to help you build beautiful web apps easily');
+      itext('Build consistent and beautiful web experiences easily');
       ie_close('h1');
       ie_close('div');
       ie_close('div');
@@ -22706,7 +22711,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param150 = function param150() {
+      var param158 = function param158() {
         ie_open('article');
         ie_open('p');
         ie_open('strong');
@@ -22747,7 +22752,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param150 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param158 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22852,7 +22857,7 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       opt_data = opt_data || {};
-      var param139 = function param139() {
+      var param147 = function param147() {
         ie_open('section');
         ie_open('p');
         ie_open('strong');
@@ -22887,7 +22892,7 @@ babelHelpers;
         ie_close('p');
         ie_close('section');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param139 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param147 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23120,11 +23125,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param160 = function param160() {
+      var param168 = function param168() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         $topics(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param160 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param168 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23188,18 +23193,18 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-13 col-md-offset-3 col-xs-16');
       ie_open('div', null, null, 'class', 'row');
-      var topicList183 = opt_data.site.index.children[1].children;
-      var topicListLen183 = topicList183.length;
-      for (var topicIndex183 = 0; topicIndex183 < topicListLen183; topicIndex183++) {
-        var topicData183 = topicList183[topicIndex183];
-        if (!topicData183.hidden) {
+      var topicList191 = opt_data.site.index.children[1].children;
+      var topicListLen191 = topicList191.length;
+      for (var topicIndex191 = 0; topicIndex191 < topicListLen191; topicIndex191++) {
+        var topicData191 = topicList191[topicIndex191];
+        if (!topicData191.hidden) {
           ie_open('div', null, null, 'class', 'col-md-6 col-xs-16');
-          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData183.url);
+          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData191.url);
           ie_open('div', null, null, 'class', 'topic-icon');
-          ie_void('span', null, null, 'class', 'icon-16-' + topicData183.icon);
+          ie_void('span', null, null, 'class', 'icon-16-' + topicData191.icon);
           ie_close('div');
           ie_open('h3', null, null, 'class', 'topic-title');
-          var dyn13 = topicData183.title;
+          var dyn13 = topicData191.title;
           if (typeof dyn13 == 'function') dyn13();else if (dyn13 != null) itext(dyn13);
           ie_close('h3');
           ie_close('a');
@@ -23321,7 +23326,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param189 = function param189() {
+      var param197 = function param197() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         ie_open('div', null, null, 'class', 'sidebar-offset');
         ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
@@ -23346,7 +23351,7 @@ babelHelpers;
         ie_close('div');
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param189 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param197 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23452,7 +23457,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param201 = function param201() {
+      var param209 = function param209() {
         ie_open('div');
         ie_open('header', null, null, 'class', 'header');
         ie_open('div', null, null, 'class', 'container');
@@ -23467,7 +23472,7 @@ babelHelpers;
         $templateAlias2({ updates: opt_data.page.updates }, null, opt_ijData);
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param201 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param209 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23571,28 +23576,28 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param209 = function param209() {
-        ie_open('h2');
+      var param226 = function param226() {
+        ie_open('h3');
         itext('Design language');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
-        itext('Lexicon is a design language created with the aim of providing a common framework for building interfaces within the Liferay product ecosystem. A guide to design principles, components, patterns and contexts of use that contributes to give consistency and coherence to these products and, ultimately, be able to provide a satisfactory and unified experience to its users.');
+        itext('Lexicon is a design language created with the aim of providing a common framework for building interfaces within the Liferay product ecosystem. A guide to design principles, components, patterns and contexts of use that contributes to give consistency and coherence to these products and, ultimately, provide a satisfactory and unified experience to its users.');
         ie_close('p');
         ie_open('p');
         itext('Lexicon is a constantly evolving project. An iterative work that seeks to improve and gradually adapt to the evolution of technology and people.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Modular approach');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
-        itext('The lexicon approach to interface design is based essentially on modularity. It is configured as a system that from a controlled number of components is able to respond to the multiple and different needs of liferay products. An exercise in synthesis, abstraction and coordination that seeks to simplify processes, reduce production times and, above all, contribute to provide the consistency we want for the use experience.');
+        itext('The lexicon approach to interface design is based essentially on modularity. It is configured as a system that from a controlled number of components is able to respond to the multiple and different needs of liferay products. An exercise in synthesis, abstraction and coordination that seeks to simplify processes, reduce production times and, above all, to guarantee the consistency we want for the use experience.');
         ie_close('p');
         ie_open('p');
         itext('For this, the construction of Lexicon is based on the Atomic Design theoretical approach. A work methodology based on modularity that seeks to give a more hierarchical and organized logic to the creation of interfaces design systems. This methodology has been ideated and developed by the designer Brad Frost and is based on nonlinear process organized across five stages: Atoms, Molecules, Organisms, Templates and Pages.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Lexicon site');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon Site is then presented as the necessary platform for the diffusion and access to Lexicon system by designers, developers or any other person involved in the creation of digital products. Mainly focused on Liferay community, but open to anyone who wants to make use of its content and also want to contribute with their own proposals and suggestions.');
         ie_close('p');
@@ -23601,7 +23606,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param209 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param226 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23705,61 +23710,49 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param218 = function param218() {
+      var param217 = function param217() {
         ie_open('h5');
-        itext('MARCH 15TH, 2017');
+        itext('March 15th, 2017');
         ie_close('h5');
-        ie_open('h2');
-        itext('Lexicon site launch');
-        ie_close('h2');
+        ie_open('h3');
+        itext('Lexicon Axure library v1.0 released');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.');
         ie_close('p');
-        ie_open('p');
-        itext('The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with.');
-        ie_close('p');
         ie_open('h5');
-        itext('MARCH 15TH, 2017');
+        itext('March 15th, 2017');
         ie_close('h5');
-        ie_open('h2');
-        itext('Lexicon site launch');
-        ie_close('h2');
+        ie_open('h3');
+        itext('January Lexicon Update');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.');
         ie_close('p');
-        ie_open('p');
-        itext('The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with.');
-        ie_close('p');
         ie_open('h5');
-        itext('MARCH 10TH, 2017');
+        itext('March 15th, 2017');
         ie_close('h5');
-        ie_open('h2');
-        itext('Lexicon site launch');
-        ie_close('h2');
+        ie_open('h3');
+        itext('September Lexicon Update');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.');
         ie_close('p');
-        ie_open('p');
-        itext('The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with.');
-        ie_close('p');
         ie_open('h5');
-        itext('MARCH 1ST, 2017');
+        itext('March 15th, 2017');
         ie_close('h5');
-        ie_open('h2');
+        ie_open('h3');
         itext('Lexicon site launch');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.');
-        ie_close('p');
-        ie_open('p');
-        itext('The library will evelove with the time providing more patterns and specifications so any user can find the right answers to the questions you might come up with.');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param218 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param217 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23863,7 +23856,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param227 = function param227() {
+      var param235 = function param235() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Breadcrumb is a secondary navigation pattern that identifies the page position inside a hierarchy.');
         ie_close('p');
@@ -23871,9 +23867,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/breadcrumb.png', 'alt', 'breadcrumb');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('The breadcrumb is always horizontal.');
@@ -23890,7 +23886,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param227 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param235 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23970,16 +23966,19 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param236 = function param236() {
+      var param244 = function param244() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Alerts are used to capture the attention of the user in an intrusive way. Sometimes just to say that something went right, others to say that something needs to be reviewed.');
         ie_close('p');
         ie_open('p');
         itext('Alerts are possible to define in 4 different colors, grey for the default type of message and four other corresponding to status colors.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Types');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -24038,12 +24037,12 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Temporary alert stripe');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Temporary alert stripe');
+        ie_close('h4');
         ie_open('p');
         itext('This message is meant to disappear after a short period of time, so it must be the case that the user doesn\'t have time to read it and there must not be a consequence for not reading it. This type of alerts have embedded links in case you need them.');
         ie_close('p');
@@ -24063,9 +24062,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/alertTemporaryError.png', 'alt', 'temporary error alert stripe');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Dismissible alerts stripe');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Use this kind of alerts to inform users about something and to ensure they don\u2018t miss the information. These alerts can contain links to carry out actions such as undoing actions or visiting a page. This alert is placed right below the navigation bar.');
         ie_close('p');
@@ -24085,9 +24084,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/alertDismissError.png', 'alt', 'dismiss error alert stripe');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Alert notification');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Notifications display information about something that has happened or is happening in the system. These alerts are not related to actions that are being performed by the user at that moment. Unlike alerts, notifications are displayed on the top right corner of the screen. Both desktop and mobile notifications have similar dimensions.');
         ie_close('p');
@@ -24100,7 +24099,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param236 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param244 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -24180,16 +24179,19 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param245 = function param245() {
-        ie_open('h1');
+      var param253 = function param253() {
+        ie_open('h2');
         itext('Badges');
-        ie_close('h1');
+        ie_close('h2');
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Badges help highlight important information such as notifications or new and unread messages. Badges have circular borders by default.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sizes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -24240,9 +24242,9 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
+        ie_open('h3');
         itext('Types');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -24275,15 +24277,18 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h1');
+        ie_open('h2');
         itext('Labels');
-        ie_close('h1');
+        ie_close('h2');
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Labels are a mechanism to categorize information providing quick recognition.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Use labels to organize groups of items in your application. Labels have rounded borders by default.');
         ie_close('p');
@@ -24375,15 +24380,18 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h1');
+        ie_open('h2');
         itext('Stickers');
-        ie_close('h1');
+        ie_close('h2');
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Stickers are a visual way to quickly identify content in a different way than badges and labels. Stickers can be either numbers or characters but always restricted to a maximum number of 3 characters. A sticker can also contain just an icon. Stickers are always squared.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Use stickers to visually identify elements in a dataset that are part of a same group. You can use any color you want for stickers.');
         ie_close('p');
@@ -24466,12 +24474,14 @@ babelHelpers;
         ie_open('p');
         itext('The most used cases in Liferay DE are inside bottom left and static.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Example of use');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('strong');
+        ie_open('em');
         itext('Example of use missing');
+        ie_close('em');
         ie_close('strong');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -24479,7 +24489,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param245 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param253 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -24559,13 +24569,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param254 = function param254() {
+      var param262 = function param262() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Buttons communicate an action to happen on user interaction.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Types');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -24616,39 +24629,33 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
+        ie_open('h3');
         itext('States');
-        ie_close('h2');
-        ie_open('p');
-        ie_open('strong');
+        ie_close('h3');
+        ie_open('h4');
         itext('Default state');
-        ie_close('strong');
-        ie_close('p');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/buttonsDefault.png', 'alt', 'set of three button types in default state');
         ie_close('img');
         ie_close('p');
-        ie_open('p');
-        ie_open('strong');
+        ie_open('h4');
         itext('Active & Hover states');
-        ie_close('strong');
-        ie_close('p');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/buttonsActive.png', 'alt', 'set of three button types in active state');
         ie_close('img');
         ie_close('p');
-        ie_open('p');
-        ie_open('strong');
+        ie_open('h4');
         itext('Disable state');
-        ie_close('strong');
-        ie_close('p');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/buttonsDisabled.png', 'alt', 'set of three button types in disabled state');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sizes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -24711,12 +24718,12 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Icon button');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Icon button');
+        ie_close('h4');
         ie_open('p');
         itext('Buttons can icons insted of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in ');
         ie_open('a', null, null, 'href', './management_bar.html');
@@ -24728,9 +24735,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/buttonIcon.png', 'alt', 'icon button');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Block level button');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('All buttons can also be configured at block level. Use this configuration in those cases that you need the user to realize there is an important action to be done. It could be used as a load more action below a list, as an example. Please do not use it in forms. Be always careful with the type button to use, primary is not always the best choice neither the only configuration.');
         ie_close('p');
@@ -24738,9 +24745,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/buttonBlockLevelPrimary.png', 'alt', 'block level button primary state, default size');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Dropdown button');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Dropdown buttons are always used together with a dropdown menu.');
         ie_close('p');
@@ -24748,9 +24755,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/buttonDropdownDefault.png', 'alt', 'dropdown button default size');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Split button');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Split buttons are used in those cases where you need to offer the user a quick main action but salso secondary actions.');
         ie_close('p');
@@ -24758,9 +24765,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/buttonSplitDefault.png', 'alt', 'button splitted default size');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Button group');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Button groups are used to switch between complementary views for example but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.');
         ie_close('p');
@@ -24768,9 +24775,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/buttonGroupDefault.png', 'alt', 'button gruop or segmented button, 3 segments, default size');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Action button');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('The action button is always a primary button with a special size of 64x64 due to its importance. This button floats on the bottom right corner of the screen. It contains all the adding or creating actions in a context. When there is only one action to perform in the page where it is used the button triggers the action. In case there are more that one actions, all the actions appear listed in a dropdown panel that is triggered on click interaction with the button. Once selected the action in the list, the dropdown is closed.');
         ie_close('p');
@@ -24783,7 +24790,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param254 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param262 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -24863,13 +24870,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param263 = function param263() {
+      var param271 = function param271() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Cards are a very specific visual represntation of data.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images asociated to your content. A good example of this could be your users database or an image library.');
         ie_close('p');
@@ -24879,9 +24889,9 @@ babelHelpers;
         ie_open('p');
         itext('Cards in Lexicon are open to many configurations. We provide a flexible card layout for you to configure it as you want. Later on this page we provide a series of examples we use in our systems for you to get inspired.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Layout');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('By providing a flexible layout, Lexicon opens you a wider range of possible configurations for your card. Every element can be used or deleted adapting it to your specific needs in each use case.');
         ie_close('p');
@@ -24927,12 +24937,12 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/cardExample.png', 'alt', 'three different examples of card configuration');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Horizontal card');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Horizontal card');
+        ie_close('h4');
         ie_open('p');
         itext('This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type.');
         ie_close('p');
@@ -24945,7 +24955,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param263 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param271 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -25025,13 +25035,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param272 = function param272() {
+      var param280 = function param280() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Collapsible search provides a solution for the search text field in mobile resolution as the viewport size is reduced.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/searchCollapse.png', 'alt', 'search collapse image with desktop and mobile examples');
         ie_close('img');
@@ -25054,7 +25067,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param272 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param280 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -25134,13 +25147,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param281 = function param281() {
+      var param289 = function param289() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Color palette defines a set of colors to be used in the system. Each of the colors has a meaning and a purpose to create a robust a design system.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Colors have a huge impact in a system as they define the visual identity, they bring armony, they communicate, among other caracteristics. Lexicon defines the following color palette that you are free to change for your own.');
         ie_close('p');
@@ -25278,7 +25294,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param281 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param289 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -25358,7 +25374,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param290 = function param290() {
+      var param298 = function param298() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('A dataset display is the combination of a ');
         ie_open('a', null, null, 'href', './management_bar.html');
@@ -25378,15 +25397,15 @@ babelHelpers;
         ie_close('a');
         itext('.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('This pattern is used when the elements of the visualization require colective management, therefore the management bar becomes important as it has to facilitate the tools needed to work with the data set.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Empty state');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('It is important to let the user know what happends in empty states and let them know what has happend and how to perform actions to move out from that empty state.');
         ie_close('p');
@@ -25401,9 +25420,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/datasetDisplayEmptyExample.gif', 'alt', 'animations showing how initial empty state works');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Empty search state');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('As stated in the previous case, it is important to help the user understanding what happens in empty states. Here is the example for a empty search result.');
         ie_close('p');
@@ -25411,9 +25430,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/datasetDisplayEmptySearch.gif', 'alt', 'animations showing how an empty search works');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Invidual actions');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Individual actions are all those actions that an element has. This actions are always possible to reach from the element it self throw the actions menu. Some of this actions are also placed in the management bar when only one element fromt the dataset is selected. These actions are always represented by a metaphor, , they are buttons with icon. Only those actions that can be easily represented by an icon will be there. Not all possible represented by an icon must be there, only the ones considered as more relevant.');
         ie_close('p');
@@ -25421,9 +25440,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/datasetDisplayIndividualActions.png', 'alt', 'individual actions displayed both in management bar and from actions menu');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Colective actions');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Colective actions are shown in the management bar when more than one element is selected in the dataset. In case there are  colective actions that don\'t have an icon representation the can be placed in a dropdown triggered from the actions button.');
         ie_close('p');
@@ -25446,7 +25465,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param290 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param298 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -25528,7 +25547,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param326 = function param326() {
+      var param334 = function param334() {
         ie_open('h6');
         itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
         ie_close('h6');
@@ -25589,7 +25608,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param326 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param334 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -25885,13 +25904,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param299 = function param299() {
+      var param307 = function param307() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Dropdowns are a list of options related to the element that triggers them.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Dropdowns are used to list a set of options that are not easy to manage in the screen. This mechanism helps to clean-up the screen making everything more implicit.');
         ie_close('p');
@@ -25915,12 +25937,12 @@ babelHelpers;
         ie_open('p');
         itext('A dropdown menu can contain any kind of basic form component / element like textfield, list of options, list of options with radio buttons, list of options with checkboxes, or button.');
         ie_close('p');
-        ie_open('h2');
-        itext('Types');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('Types');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         itext('The default dropdown is just a panel not prepared for scrolling the content inside it. Use this type when the number of options you want to offer is short or the panel is big enough to contain all the elements you want to use.');
         ie_close('p');
@@ -25928,9 +25950,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/dropdownMenu.png', 'alt', 'default dropdown menu');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Scrolling content');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Scrolling content type is prepared to have scroll in all the dropdown menu or just a part of it. Use it in case your dataset is occupies more than the space you want to provide the dropdown menu in the screen.');
         ie_close('p');
@@ -25938,9 +25960,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/dropdownMenuScroll.png', 'alt', 'default dropdown menu with scroll');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Example of use');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('This example shows you how dropdowns would look like in a screen when displayed from the kebab menu and the action button. As you can see in the example the dropdown panel arrow can be positioned in different positions. Check Quartz implementation to get more details on that.');
         ie_close('p');
@@ -25953,7 +25975,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param299 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param307 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26057,13 +26079,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param308 = function param308() {
+      var param316 = function param316() {
+        ie_open('h3');
+        itext('Introduction');
+        ie_close('h3');
         ie_open('p');
         itext('Header toolbar is a Toolbar based component used in headings for portlets, mobile pages, and page sections.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/headerToolbar.png', 'alt', 'header tooldbar dark background');
         ie_close('img');
@@ -26082,9 +26107,9 @@ babelHelpers;
         itext('Right area: Used for actions, explicit when it is possible and a maximum number of 3. Implicit inside a kebab menu when the metaphor is not clear.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
+        ie_open('h3');
         itext('Example');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/headerExample.gif', 'alt', 'animated gif that shows how a header toolbar work with different interactions');
         ie_close('img');
@@ -26094,7 +26119,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param308 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param316 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26198,13 +26223,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param317 = function param317() {
+      var param325 = function param325() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Icon is a visual metaphor representing a concept that lies behind the idea and/or action.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Liferay icon library');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Liferay has its own icon library created for the porpuses of the projects that use Lexicon. You can also use other icon libraries. ');
         ie_open('a', null, null, 'href', 'http://liferay.github.io/lexicon/content/icons-lexicon/');
@@ -26220,9 +26248,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/icons3.png', 'alt', 'icon set column 3');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Language flags');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('People tend to have pretty strong opinions on whether flags should be used as a visual cue for indicating a language, mainly because in many parts of the world, the flag may have cultural and geographic meanings that we might not be aware of, or the flag itself isn\'t fully accurate to the dialects spoken in that region.');
         ie_close('p');
@@ -26233,9 +26261,9 @@ babelHelpers;
         ie_close('a');
         itext('.');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Other icon libraries');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('a', null, null, 'href', 'http://fontawesome.io/');
         itext('Font Awesome');
@@ -26246,21 +26274,21 @@ babelHelpers;
         ie_close('a');
         itext(' are good alternatives in case you don\'t want to use Lexicon icon library.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Icons can be used only when the metaphor is direct and clear. In case there is not a good icon to represent the concept you want to transmit, it will probably better to use words. Icons must be reserved to broad accepted visual ideas.');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Why do we use SVG?');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('SVG gives us and you a greater amount of freedom in styling the icons, as well as a higher level of fidelity and clarity in the icons. Font icons, while fairly simple, also suffer some drawbacks, mainly with sub-pixel aliasing that cause the quality to not be as high as we would like. Also SVG allows for multi-color icons.');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Help icon');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Help icon is used in lexicon together with tooltips or popovers. As an example, it gives a better visual clue to users to reach an explanation about a field in a form.');
         ie_close('p');
@@ -26334,7 +26362,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param317 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param325 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26438,13 +26466,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param340 = function param340() {
+      var param348 = function param348() {
+        ie_open('h3');
+        itext('Introduction');
+        ie_close('h3');
         ie_open('p');
         itext('List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
         ie_close('img');
@@ -26461,9 +26492,9 @@ babelHelpers;
         ie_open('p');
         itext('When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('List group');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Whenever you need to group series of list entries, you can use the list group heading for that.');
         ie_close('p');
@@ -26471,9 +26502,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/listGroup.png', 'alt', 'list group includes a heading');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Row interactions');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('Selecting a row is only possible by using the checkbox.');
@@ -26488,33 +26519,33 @@ babelHelpers;
         itext('If the action you want to perform of is "Edit", place it as a link in the title to navigate to an edition screen for the element.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
-        itext('Row states');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default states');
+        itext('Row states');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default states');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Selected state');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/listSelected.png', 'alt', 'list entry in selected state');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Attributes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/listAttributes.png', 'alt', 'list attributes');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Example of use');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/listExample.png', 'alt', 'list with 3 entries, one in default state, one in selected state, one with actions menu open');
         ie_close('img');
@@ -26524,7 +26555,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param340 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param348 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26628,13 +26659,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param349 = function param349() {
+      var param357 = function param357() {
+        ie_open('h3');
+        itext('Descrition');
+        ie_close('h3');
         ie_open('p');
         itext('Loading indicator shows the user that an external process, like a connection, is being executed.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('This feedback mechanism is essential for the user to understand that something is happening. Please remember to include it when there is a connection to a server and at the same screen shows the answer to the user.');
         ie_close('p');
@@ -26642,9 +26676,9 @@ babelHelpers;
         itext('Please don\u2019t use spinners inside buttons. In case you need a spinner for an action triggered by a button, place the spinner to one of the sides of the button.');
         ie_close('p');
         ie_void('div', null, null, 'class', 'loading-icon loading-icon-md');
-        ie_open('h2');
+        ie_open('h3');
         itext('Types');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -26675,9 +26709,9 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
+        ie_open('h3');
         itext('Size');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Make a responsive usage of the sizes that help the user to understand that something is happening not being aggressive. The context of use will help you understanding the size to use.');
         ie_close('p');
@@ -26732,7 +26766,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param349 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param357 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26836,7 +26870,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param358 = function param358() {
+      var param366 = function param366() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Management Bar is an extension of Navbar. Combine different management-bar components to create a toolbar that fits your needs.');
         ie_close('p');
@@ -26844,15 +26881,15 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('The Management Bar is always part of a bigger structure and works along with other data management patterns like tables, lists or cards, and its functionality is directly related to them. The Management Bar has two main states:');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('State 1');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('It is the default state.');
         ie_close('p');
@@ -26863,9 +26900,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('State 2');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('It displays contextual tools associated to specific items selected. It is only activated when one or more items from the visualization are selected.');
         ie_close('p');
@@ -26879,9 +26916,9 @@ babelHelpers;
         ie_open('p');
         itext('The tools shown in the management bar in each state are always related to the type of data displayed and type of visualization. The Management Bar never shows elements that not are required in a specific context.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Requirements');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('The Management Bar has to be fixed on the header of the page so it can be always visible during the vertical scroll.');
@@ -26899,9 +26936,9 @@ babelHelpers;
         itext('A user can only sort and filter by those elements that are visible in the current visualization.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
+        ie_open('h3');
         itext('Example of use');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/managementBarExample.gif', 'alt', 'state one of the management bar');
         ie_close('img');
@@ -26911,7 +26948,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param358 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param366 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27015,13 +27052,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param367 = function param367() {
+      var param375 = function param375() {
+        ie_open('h3');
+        itext('Descrition');
+        ie_close('h3');
         ie_open('p');
         itext('A modal is a box with content displayed on top of the page to capture the user\u2019s attention for an specific action inside the same process. Modals are subordinated to pages.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('Modals can be build in different sizes and configurations. Depending on the amount of content you have you will decide one of them.');
@@ -27036,9 +27076,9 @@ babelHelpers;
         itext('When a modal has footer, the actions are placed inside and aligned to the left. There is an order of importance and the sequence is: Primary button (only one), secondary button, and button link.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
+        ie_open('h3');
         itext('Size');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Modals can be configured in 4 different size and they are defined as table shows:');
         ie_close('p');
@@ -27088,15 +27128,15 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
+        ie_open('h3');
         itext('Configurations');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon allows your modal to have different configurations related to your needs. These needs vary from case to case and that is why not every modal in the system needs to be equal, but needs to follow certain rules.');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Header, body and footer');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('This is the classic composition of a modal window with its three main parts: header, body and footer.');
         ie_close('p');
@@ -27104,9 +27144,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/modal.png', 'alt', 'modal window over a dark transparent background');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Header and body');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('This is the case when you don\'t need a footer bar to place your icons.');
         ie_close('p');
@@ -27114,9 +27154,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/modalHeaderBody.png', 'alt', 'modal window over a dark transparent background only header and body');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Body and Footer');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('This case is thought for those cases where you need to just show text and buttons to agree or cancel.');
         ie_close('p');
@@ -27124,15 +27164,15 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/modalBodyFooter.png', 'alt', 'modal window over a dark transparent background only body and footer');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('iFrame in the body');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('It is always possible to bring an iFrame inside the body. For more information about this check Quartz.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Mobile');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('When a modal reaches the mobile viewport size its look and feel is transformed to the one you see below offering a mobile friendly version. Modal occupies the hole screen allowing only the interaction with the modal and its content.');
         ie_close('p');
@@ -27145,7 +27185,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param367 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param375 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27249,13 +27289,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param385 = function param385() {
+      var param393 = function param393() {
+        ie_open('h3');
+        itext('Descrition');
+        ie_close('h3');
         ie_open('p');
         itext('Nav is the pattern that defines the navigation pattern.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Variations');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Nav can be use either for horizontal or vertical navigation structures. This page shows different simple use cases of this pattern that will be applied in a bit more complex patterns such us ');
         ie_open('a', null, null, 'href', './navbar.html');
@@ -27263,9 +27306,9 @@ babelHelpers;
         ie_close('a');
         itext('.');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Vertical');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('A vertical navigation can be simple or it can be nested, where some of the entries could have interior levels of navigation.');
         ie_close('p');
@@ -27283,9 +27326,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/navNested.png', 'alt', 'nav stacked');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Horizontal');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('A nav can be also configured in horizontal for different purposes as can be the ');
         ie_open('a', null, null, 'href', './navbar.html');
@@ -27302,7 +27345,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param385 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param393 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27406,13 +27449,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param376 = function param376() {
+      var param384 = function param384() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Tabs let the user move around parallel content in a same context.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('Use tabs when you need to move between views on the same context.');
@@ -27442,15 +27488,15 @@ babelHelpers;
         itext('One of the tabs must be always pre selected');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
+        ie_open('h3');
         itext('Variations');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon counts with two tab bar styles. If there is the case where you have to use both in a page, place first Bordered tabs and second Not bordered tabs.');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Bordered tabs');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Nav tabs default are used in exterior levels and just below the navigation bar. This kind of tabs give a better context as the border helps the integration with a box below it.');
         ie_close('p');
@@ -27458,9 +27504,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/tabsBordered.png', 'alt', 'bordered tabs');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Non-bordered tabs');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Non-bordered tabs are used in interior levels such as inside forms and in search results for different repositories.');
         ie_close('p');
@@ -27489,7 +27535,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param376 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param384 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27593,7 +27639,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param394 = function param394() {
+      var param402 = function param402() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system.');
         ie_close('p');
@@ -27601,9 +27650,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Navbars in DE are used inside applications to provide navigation among their different pieces.');
         ie_close('p');
@@ -27616,25 +27665,34 @@ babelHelpers;
         ie_open('p');
         itext('When the viewport resizes to smaller screen sizes the navbar entries collapse intro a dropdown where the active screen gets populated and selected in the dropdown.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Examples');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
-        itext('Example 1: Navbar with search bar');
+        ie_open('strong');
+        itext('Example 1:');
+        ie_close('strong');
+        itext(' Navbar with search bar');
         ie_close('p');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        itext('Example 2: Navbar with search bar and focus state on search textfield');
+        ie_open('strong');
+        itext('Example 2:');
+        ie_close('strong');
+        itext(' Navbar with search bar and focus state on search textfield');
         ie_close('p');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/NavbarFocusSearch.png', 'alt', 'navigation bar with 2 entries and a search field and on focus');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        itext('Example 3: Navbar with navigation options in dropdown and search. The second image corresponds to its responsive view. For more information about search, please visit ');
+        ie_open('strong');
+        itext('Example 3:');
+        ie_close('strong');
+        itext(' Navbar with navigation options in dropdown and search. The second image corresponds to its responsive view. For more information about search, please visit ');
         ie_open('a', null, null, 'href', './collapsible_search.html');
         itext('collapsible search');
         ie_close('a');
@@ -27652,7 +27710,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param394 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param402 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27756,22 +27814,25 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param403 = function param403() {
+      var param411 = function param411() {
+        ie_open('h3');
+        itext('Descrition');
+        ie_close('h3');
         ie_open('p');
         itext('Pager allows navigation between pages of a process or task divided in subtasks or also called pages.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Pagers are commonly used in forms that are chucked because of their length.');
         ie_close('p');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default pager');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default pager');
+        ie_close('h4');
         ie_open('p');
         itext('Use it when you need a simple pagination pattern that does not require to change the page size.');
         ie_close('p');
@@ -27779,9 +27840,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/pagerDefault.png', 'alt', 'pager default');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Aligned pager');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Aligned pager pushes the links to the left and right.');
         ie_close('p');
@@ -27789,9 +27850,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/pagerAligned.png', 'alt', 'pager aligned');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('States');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('States are important in pagers to let your users understand where the process has its limits and where it can go. Please take are of enabling and disabling them properly depending on the sequence.');
         ie_close('p');
@@ -27799,9 +27860,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/pagerAlignedDisable.png', 'alt', 'pager aligned disable');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sizes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Usage each size depending on the context, take into account the available space and the hierarchical importance.');
         ie_close('p');
@@ -27848,7 +27909,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param403 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param411 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27952,13 +28013,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param412 = function param412() {
+      var param420 = function param420() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Pagination allows navigation between chunks, also denominated pages, of a dataset.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sizes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -27997,12 +28061,12 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Pagination');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Pagination');
+        ie_close('h4');
         ie_open('p');
         itext('Use it when you need a simple pagination pattern that does not require to change the page size.');
         ie_close('p');
@@ -28010,9 +28074,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/pagination.png', 'alt', 'simple pagination');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Pagination bar');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('A pagination bar is pagination with additional functionality. This added functionality comes with a page size selector placed on the left size of the bar. To the right side we incorporate a label to provide feedback on the exact chunk of information displayed from the dataset. On the right side of the pagination bar there is the classic pagination that adapts depending on the number of pages.');
         ie_close('p');
@@ -28042,7 +28106,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param412 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param420 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28146,25 +28210,28 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param421 = function param421() {
+      var param429 = function param429() {
+        ie_open('h3');
+        itext('Descrition');
+        ie_close('h3');
         ie_open('p');
         itext('Panels help to separate your content.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Panel are use to help separating content a making processes as reading or filling a form easier to the user. Panels are a way of chunking into smaller pieces.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Configuration');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Panels can be configured in different ways:');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Body');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Use this configuration to separate content inside a form.');
         ie_close('p');
@@ -28172,9 +28239,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/panelNaked.png', 'alt', 'panel only body most simple version');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Header + body');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Use this configuration when you need to se parate a content that needs a title and the title needs to capture the attention of your user.');
         ie_close('p');
@@ -28185,12 +28252,12 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/panelHeaderBody.png', 'alt', 'panel with header');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Accordion');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Accordion');
+        ie_close('h4');
         ie_open('p');
         itext('Panels can be collapsible. Whenever there is a collapsible panel the header must include a disclosure icon as an affordance to let the user understand that open and close actions can be performed. Please, see that when a panel is open the header is highlighted with a blue line below it marking the active state.');
         ie_close('p');
@@ -28213,7 +28280,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param421 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param429 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28317,10 +28384,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param430 = function param430() {
-        ie_open('h1');
+      var param438 = function param438() {
+        ie_open('h2');
         itext('Popovers');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('Popovers are short helpful and/or descriptive pieces of information that appear on hover state.');
         ie_close('p');
@@ -28334,9 +28401,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/popoverRight.png', 'alt', 'popover to be displayed to the right side of a question mark icon');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Popovers are used together with the question mark icon as an affordance to let the user understand there is something to read that can be useful. Popovers contain information such as help to understand a context.');
         ie_close('p');
@@ -28344,9 +28411,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/helpIcon.png', 'alt', 'help icon');
         ie_close('img');
         ie_close('p');
-        ie_open('h1');
+        ie_open('h2');
         itext('Tooltips');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.');
         ie_close('p');
@@ -28354,9 +28421,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/tooltips.png', 'alt', 'the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Tooltips are used in with icon buttons to help understanding the metaphor they transmit. They can be also used with links or images.');
         ie_close('p');
@@ -28371,7 +28438,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param430 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param438 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28475,13 +28542,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param439 = function param439() {
+      var param447 = function param447() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Progress bar is a progress indicator used to show the completion percentage of a task.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Progress bars can be classified in two groups:');
         ie_close('p');
@@ -28497,9 +28567,9 @@ babelHelpers;
         ie_close('strong');
         itext(': where there are intermediate states in the completion process. Used to show the user where is inside a process divided in steps. Use it for user processes.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sizes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Indeterminate progress bars can be configured in 4 differents sizes');
         ie_close('p');
@@ -28533,12 +28603,12 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Progress bar');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Progress bar');
+        ie_close('h4');
         ie_open('p');
         itext('This is an indeterminate progress bar. This progress bar can be used with or without label. If you foresee this pattern will be used in a process that can take long time to be completed, a label can be useful to the user. But there is not always the need to show the completion percentage.');
         ie_close('p');
@@ -28546,9 +28616,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/progressBarIndeterminate.png', 'alt', 'indeterminate progress bar');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Stripped contextual progress bar');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Lexicon provides an alternative to the previous progress bar based on stripes that could help your users to identify better the action progrees.');
         ie_close('p');
@@ -28556,9 +28626,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/progressBarIndeterminateStriped.png', 'alt', 'indeterminate stripped progress bar');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Multi step progress bar');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('A multi step progress bar, also known as wizard, is a determinate progress bar. This progress bar is used in long processes dividing the main task in subtasks that will help your users completing the process.');
         ie_close('p');
@@ -28571,7 +28641,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param439 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param447 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28675,13 +28745,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param448 = function param448() {
+      var param456 = function param456() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Sidebar is a vertical panel that appears from the right side of the screen on interactions like the info button.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Sidebar is basically an information container where to display information. This information can be of the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy. The side bar can be configured in light background color or inverse (dark).');
         ie_close('p');
@@ -28701,7 +28774,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param448 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param456 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28805,13 +28878,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param457 = function param457() {
+      var param465 = function param465() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Side navigation pattern brings a panel from the leftmost or rightmost side of the screen pushing the content.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('This pattern is created to include portal main navigation in portal. This navigation is divided is 3 main areas: Control panel, User, and the Site. Different applications are contained inside each of this sections.');
         ie_close('p');
@@ -28827,7 +28903,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param457 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param465 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28931,13 +29007,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param466 = function param466() {
+      var param474 = function param474() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('A table is a specific pattern for comparing datasets in a very direct an analytical way.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('A table view is useful for comparing entries among them that need exhaustive comparison. Tables are very heavy in text display, if you need to display images we recommend you to take a look at lists and cards.');
         ie_close('p');
@@ -28947,9 +29026,9 @@ babelHelpers;
         ie_open('p');
         itext('When a table is used together with management bar, the table entries must include the checkbox, as the selection and actions are reflected in the management bar.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Row interactions');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('Selecting a row is only possible by using the checkbox.');
@@ -28973,26 +29052,26 @@ babelHelpers;
         itext('Drag and drop is possible for moving selected elements into a folder. A click and drag over a non selected element implies selection.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
-        itext('Row states');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default state');
+        itext('Row states');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default state');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/tableRow.png', 'alt', 'table row in default state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Selected state');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/tableRowSelected.png', 'alt', 'table row in selected state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Hover state');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('By default, Lexicon does not use the hover state in tables.');
         ie_close('p');
@@ -29000,33 +29079,33 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/tableRowHover.png', 'alt', 'table row hover');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Row attributes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/tableRowAttributes.png', 'alt', 'table row attributes');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
-        itext('Table helpers');
-        ie_close('h2');
         ie_open('h3');
-        itext('Stripes');
+        itext('Table helpers');
         ie_close('h3');
+        ie_open('h4');
+        itext('Stripes');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/tableStripes.png', 'alt', 'table stripes');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Bordered');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/tableBordered.png', 'alt', 'table bordered');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Hover');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('In the following example you can see how hover works even with a selected row.');
         ie_close('p');
@@ -29034,15 +29113,15 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/tableHoverExample.gif', 'alt', 'table hover case');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Mobile');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Due to the complexity of a table in mobile, Lexicon does not define this pattern for mobile viewport size.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Example of use');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Due to the complexity of a table in mobile, Lexicon does not define this pattern for mobile viewport size.');
         ie_close('p');
@@ -29055,7 +29134,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param466 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param474 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29159,13 +29238,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param475 = function param475() {
+      var param483 = function param483() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Timelines represent visually events along the time.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Timelines are series of events placed in a timeline. Each event is composed by a point placed in the line a ');
         ie_open('a', null, null, 'href', './panel.html');
@@ -29176,12 +29258,12 @@ babelHelpers;
         ie_open('p');
         itext('The point can be any kind of identifier. We recommend the default one, circle, but it can be the case of events related to people where you might prefer to use a user identifier.');
         ie_close('p');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         itext('The icons are aligned to the left side of the screen.');
         ie_close('p');
@@ -29189,9 +29271,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/timelineDefault.png', 'alt', 'default timeline left aligned');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Right timeline');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('The icons are aligned to the right side of the screen.');
         ie_close('p');
@@ -29199,9 +29281,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/timelineRight.png', 'alt', 'timeline right aligned');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Center timeline');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('The icons are aligned to the center of the screen.');
         ie_close('p');
@@ -29209,29 +29291,33 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/timelineCenter.png', 'alt', 'timeline center aligned');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Even/odd timeline');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Being in the center the panel can appear in alternate positions starting on the left side for even configuration and starting on the right for odd configuration.');
         ie_close('p');
-        ie_open('p');
+        ie_open('h5');
         ie_open('strong');
         itext('Timeline Even');
         ie_close('strong');
+        ie_close('h5');
+        ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/timelineCenterEven.png', 'alt', 'timeline center aligned even order');
         ie_close('img');
         ie_close('p');
-        ie_open('p');
+        ie_open('h5');
         ie_open('strong');
         itext('Timeline Odd');
         ie_close('strong');
+        ie_close('h5');
+        ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/timelineCenterOdd.png', 'alt', 'timeline center aligned odd order');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Right XS Timeline only');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('On window resize to mobile viewport (<768), the timeline icon are always aligned to the left. In case you want to place on the right, it is also possible with this example.');
         ie_close('p');
@@ -29244,7 +29330,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param475 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param483 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29348,13 +29434,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param484 = function param484() {
+      var param492 = function param492() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('A toolbar is a set of actions related to a context grouped in a bar.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('A toolbar is a generic bar that helps grouping actions in a way that they are visually organized for any context of use in Lexicon. Its height changes depending on the heigth of the elements it contains. The toolbat always maintais the vertical alignment.');
         ie_close('p');
@@ -29369,9 +29458,9 @@ babelHelpers;
         itext('Content: is used to span as much as possible in the rest of the space. In case there are severral contents the available space is equally divided.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
+        ie_open('h3');
         itext('Layout');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('For a better understading of the previous sections, here are some example layouts:');
         ie_close('p');
@@ -29408,7 +29497,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param484 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param492 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29512,7 +29601,10 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param493 = function param493() {
+      var param501 = function param501() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system.');
         ie_close('p');
@@ -29520,9 +29612,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/HelveticaNeue.png', 'alt', 'helvetica neue example in regular, medium and bold');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sizes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Lexicon only defines 3 font sizes for the common usage and leaves H values open for free use.');
         ie_close('p');
@@ -29569,7 +29661,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param493 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param501 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29673,19 +29765,22 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param502 = function param502() {
+      var param510 = function param510() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('User icons are used to visually identify users in the system.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Use a user icon to identify a user inside a context. User icons in Lexicon are always displayed inside a circle.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Size');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes');
         ie_close('img');
@@ -29752,12 +29847,12 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h2');
-        itext('Types');
-        ie_close('h2');
         ie_open('h3');
-        itext('User icon with image');
+        itext('Types');
         ie_close('h3');
+        ie_open('h4');
+        itext('User icon with image');
+        ie_close('h4');
         ie_open('p');
         itext('User images help to personalize the interface. In case you have your user image and can make use of it, use this type of user icon.');
         ie_close('p');
@@ -29765,9 +29860,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/userIconImages.png', 'alt', 'all 6 user icons sizes with image');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('User icon with text');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Sometimes you won\u2019t have the user image or won\u2019t be allowed to use it. In those cases use this pattern. The text must be always in capital letters and a maximum of 2 letters. Use first letter from Name and Surname (NS).');
         ie_close('p');
@@ -29780,7 +29875,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param502 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param510 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29886,7 +29981,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param520 = function param520() {
+      var param528 = function param528() {
         ie_open('h6');
         itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
         ie_close('h6');
@@ -29947,7 +30042,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param520 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param528 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30051,22 +30146,25 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param511 = function param511() {
+      var param519 = function param519() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('Forms is one of the most used patterns in Lexicon. Forms capture information from the user and transmits it to the system either to store, to produce an action or both at same time. Forms in Lexicon are defined to be full width.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Structure');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Forms can be created in one single column or two columns. If your form is divided in several sections that are stacked consider not changing the internal layout between sections, it can affect the experience of filling the whole form.');
         ie_close('p');
         ie_open('p');
         itext('When applying columns take into account that the reading directions is left-right, and up-down, in each column. So expect your user to read first column one and then column two.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sections');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Sections help users to fill a form by chunking the form is smaller pieces. A form section is identified with an ');
         ie_open('a', null, null, 'href', './panel.html');
@@ -30074,21 +30172,21 @@ babelHelpers;
         ie_close('a');
         itext('. There is no limitation in the number of accordions to use.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Fields\u2019 order');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Laying out the fields of your form we recommend you to follow an order of importance. Try to place first as many mandatory fields when possible to make the user task short. Non mandatory fields should go in a second place as they are not so important and the user could like to skip them. In case non mandatory fields are in between mandatory fields the user would expend more time scanning the form.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Fields\u2019 lengths');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Fields must occupy the space you expect your user needs to fill it. The only requirement for fields is to adapt their width to the grid so they behave properly on window resize. Sharp shape forms do not go against Lexicon but we prefer rectangular shape form as they look more clear. In mobile view ports field lengths should be half of the screen or full length.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Mandatory fields');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Fields can be mandatory/required to fill in a form. The way to mark a field as mandatory is:');
         ie_close('p');
@@ -30096,18 +30194,18 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/textfieldMandatory.png', 'alt', 'example of mandatory field');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Inline validation');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Forms have inline validation. All form fields that can be checked against a set of rules while filling them must show success or error state to the user.');
         ie_close('p');
-        ie_open('h2');
-        itext('Actions');
-        ie_close('h2');
         ie_open('h3');
-        itext('General actions');
+        itext('Actions');
         ie_close('h3');
+        ie_open('h4');
+        itext('General actions');
+        ie_close('h4');
         ie_open('p');
         itext('General form actions always placed at the end of the form and they are always placed in same order: Primary, Secondary (default), Negative (Link). The button size to use is large.');
         ie_close('p');
@@ -30115,9 +30213,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/buttonOrder.png', 'alt', 'button order example');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Interior actions');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Interior form actions should not be as notorious as general actions. Therefore they use default button size.');
         ie_close('p');
@@ -30126,7 +30224,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param511 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param519 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30230,16 +30328,16 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param534 = function param534() {
-        ie_open('h1');
+      var param542 = function param542() {
+        ie_open('h2');
         itext('Checkbox');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('A checkbox is a component that allows the user selecting something writen in its associatead text label. A list of consecutive checkboxes would allow the user to select multiple things.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('Checkboxes should be used when more than one option can be selected.');
@@ -30257,39 +30355,39 @@ babelHelpers;
         itext('Note that although we have visually defined the checkbox, we use the native checkbox as it is easier to identify by the end user using different web browsers.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
-        itext('States');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('States');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/checkbox.png', 'alt', 'checkbox default state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Active');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/checkboxSelected.png', 'alt', 'checkbox active state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Disable');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/checkboxDisabled.png', 'alt', 'checkbox disable state');
         ie_close('img');
         ie_close('p');
-        ie_open('h1');
+        ie_open('h2');
         itext('Radio button');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('A radio button is a component that allows the user selecting something writen in its associatead text label. A list of consecutive radio buttons would allow the user to select just one thing.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('As a general rule of thumb, radio buttons should be used when there\u2019s a range of options and only one option can be chosen.');
@@ -30304,39 +30402,39 @@ babelHelpers;
         itext('Note that although we have visually defined the radio button, we use the native radio button as it is easier to identify by the end user using different web browsers.');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
-        itext('States');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('States');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/radiobuttonOff.png', 'alt', 'radio button default state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Active');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/radiobuttonOn.png', 'alt', 'radio button active state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Disable');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/radiobuttonDisabled.png', 'alt', 'radio button disable state');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Radio vs Dropdown Menu');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('It is a common case of doubt when to use radios or a dropdown menu instead when users need to choose one item out of a list of options. There is not a fixed rule for that but we propose this guidelines.');
         ie_close('p');
-        ie_open('p');
+        ie_open('h4');
         itext('Radio buttons:');
-        ie_close('p');
+        ie_close('h4');
         ie_open('ul');
         ie_open('li');
         itext('When the number of options is small');
@@ -30348,9 +30446,9 @@ babelHelpers;
         itext('Radio buttons are always listed vertically.');
         ie_close('li');
         ie_close('ul');
-        ie_open('p');
+        ie_open('h4');
         itext('Dropdown menus:');
-        ie_close('p');
+        ie_close('h4');
         ie_open('ul');
         ie_open('li');
         itext('When the number of options is large, or has the potential to become large.');
@@ -30359,15 +30457,15 @@ babelHelpers;
         itext('Options should be of the same nature (e.g. a list of branches, or a list of people).');
         ie_close('li');
         ie_close('ul');
-        ie_open('h1');
+        ie_open('h2');
         itext('Toggle');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('A toogle is an interface element that by its activation or deactivation provokes a inmediate action in the screen.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('Use a toggle to present the user mutually exclusive options that have an action that is possible to perceive inmediately.');
@@ -30390,36 +30488,36 @@ babelHelpers;
         ie_close('p');
         ie_close('li');
         ie_close('ul');
-        ie_open('h2');
-        itext('States');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('States');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/switchOff.png', 'alt', 'switch default state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Active');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/switchOn.png', 'alt', 'switch active state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Disable');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/switchDisabled.png', 'alt', 'switch disable state');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
-        itext('Variations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Toggle with data attributes');
+        itext('Variations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Toggle with data attributes');
+        ie_close('h4');
         ie_open('p');
         itext('This type of toggles have labels around as the title label or other support label that make more explicit the switch value. The support label can be either at the top, right, bottom or left and its value should change with the toggle state change as the example shows. All the labels have the interaction that the switch have making the toggle more accessible.');
         ie_close('p');
@@ -30427,9 +30525,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/switchAttributes.png', 'alt', 'switch with title and label on the right side, all off them switch off and on the toggle');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Toggle with icon');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         itext('Toggles can also have an icon inside the toggle circle that helps to identify the action. A toggles with icon can also have data attributes as the previous variation.');
         ie_close('p');
@@ -30442,7 +30540,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param534 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param542 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30546,62 +30644,62 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param543 = function param543() {
-        ie_open('h1');
+      var param551 = function param551() {
+        ie_open('h2');
         itext('Selector');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('Selectors are frequently used as a part of forms. This elements are used when we need to select one or more within several options. These options are displayed in the button once selected.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('This pattern is completely different from a dropdown as a selector is a native element with a list asociated. A dropdown instead opens a panel where the panel could contain multiple different things.');
         ie_close('p');
-        ie_open('h2');
-        itext('States');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('States');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/selector.png', 'alt', 'selector default state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Active');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/selectorFocus.png', 'alt', 'selector active state');
         ie_close('img');
         ie_close('p');
-        ie_open('h1');
+        ie_open('h2');
         itext('Multiple selector');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('Select button used to select more than one option from a simple list.');
         ie_close('p');
-        ie_open('h2');
-        itext('States');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('States');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/selectorMultiple.png', 'alt', 'multiple selector default state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Active');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/selectorMultipleFocus.png', 'alt', 'multiple selector active state');
         ie_close('img');
         ie_close('p');
-        ie_open('h1');
+        ie_open('h2');
         itext('File upload');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('File upload is the pattern for uploading files into the system.');
         ie_close('p');
@@ -30613,7 +30711,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param543 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param551 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30717,32 +30815,35 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param561 = function param561() {
+      var param569 = function param569() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
         ie_open('p');
         itext('A text input group is a text field with extra elements that makes the pattern more complete for a common or frequent use case.');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Layout');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('The layout of an input has a bit of freedom. You are allowed to configure elements on the left or the right side of the field or both at same time.');
         ie_close('p');
         ie_open('p');
         itext('Usually the components placed around the textfield are buttons, split button and/or help labels. These help labels are placed to make more explicit things as currency, unit of measurement, digits, email addresses, etc.');
         ie_close('p');
-        ie_open('h2');
-        itext('Types');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default input group');
+        itext('Types');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default input group');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/inputGroupDefault.png', 'alt', 'input group default configuration');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Input group with button');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/inputGroupButtonLeft.png', 'alt', 'input group with left button');
         ie_close('img');
@@ -30751,9 +30852,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/inputGroupButtonRight.png', 'alt', 'input group with right button');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Input group with units');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/inputGroupMassLeft.png', 'alt', 'input group with mass on the left');
         ie_close('img');
@@ -30766,9 +30867,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/inputGroupMassLeftRight.png', 'alt', 'input group with mass on both sides');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Sizes');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('p');
         itext('Input groups can be configured in 3 different sizes from small, to default, to large. The measures can be taken from input fields and buttons.');
         ie_close('p');
@@ -30777,7 +30878,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param561 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param569 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30881,71 +30982,71 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param552 = function param552() {
-        ie_open('h1');
+      var param560 = function param560() {
+        ie_open('h2');
         itext('Text field');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('A textfield is the most basic pattern for introducing text for a conversation between human and machine.');
         ie_close('p');
-        ie_open('h2');
-        itext('States');
-        ie_close('h2');
         ie_open('h3');
-        itext('Default');
+        itext('States');
         ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/textfield.png', 'alt', 'default empty state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Active');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/textfieldActive.png', 'alt', 'default active state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Disabled');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/textfieldDisabled.png', 'alt', 'default disabled state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Read only');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/textfieldReadonly.png', 'alt', 'default disabled state');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
-        itext('Validations');
-        ie_close('h2');
         ie_open('h3');
-        itext('Success');
+        itext('Validations');
         ie_close('h3');
+        ie_open('h4');
+        itext('Success');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/textfieldSuccess.png', 'alt', 'default success state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Warning');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/textfieldWarning.png', 'alt', 'default warning state');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
+        ie_open('h4');
         itext('Error');
-        ie_close('h3');
+        ie_close('h4');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/textfieldError.png', 'alt', 'default error state');
         ie_close('img');
         ie_close('p');
-        ie_open('h1');
+        ie_open('h2');
         itext('Text area');
-        ie_close('h1');
+        ie_close('h2');
         ie_open('p');
         itext('A text area is similar to a text field input but for several lines of text. Text areas allow users to introduce long description of products as an example.');
         ie_close('p');
@@ -30953,9 +31054,9 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/textarea.png', 'alt', 'text area');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
+        ie_open('h3');
         itext('Usage');
-        ie_close('h2');
+        ie_close('h3');
         ie_open('ul');
         ie_open('li');
         itext('Text area can be resized allowing the user to see more or less text as he please.');
@@ -30969,7 +31070,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param552 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param560 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {

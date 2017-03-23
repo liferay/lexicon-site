@@ -10,7 +10,7 @@
         "spec": ">=2.0.10 <3.0.0",
         "type": "range"
       },
-      "/Users/liferay/projects/lexicon-site"
+      "/Users/ncavanaugh/Dev/Work/lexicon-site"
     ]
   ],
   "_from": "source-sans-pro@>=2.0.10 <3.0.0",
@@ -40,7 +40,7 @@
   "_shasum": "c1ca859cf164a088944c5e83745085e87cd533a9",
   "_shrinkwrap": null,
   "_spec": "source-sans-pro@^2.0.10",
-  "_where": "/Users/liferay/projects/lexicon-site",
+  "_where": "/Users/ncavanaugh/Dev/Work/lexicon-site",
   "author": {
     "name": "Paul D. Hunt"
   },
