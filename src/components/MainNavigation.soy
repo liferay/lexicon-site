@@ -12,7 +12,7 @@
 		<ul class="nav nav-nested nav-pills nav-stacked">
 			{foreach $page in $section.children}
 				{if not $page.hidden}
-					<li class="{$page.active ? 'active' : ''}">
+					<li class="{$page.active ? 'active' : ''} {$page.children ? 'nav-heading' : ''}">
 						{call .anchor data="all"}
 							{param page: $page /}
 						{/call}
@@ -41,15 +41,19 @@
 		</svg>
 	{/if}
 
-	<a href="{$page.url}">
-		<span>{$page.title}</span>
-	</a>
+	{if not $page.children}
+		<a href="{$page.url}">
+	{else}
+		<a data-onclick="handleCollapseClick_" href="javascript:;">
+	{/if}
 
-	{if $page.children}
-		<a data-onclick="handleCollapseClick_" class="collapse-toggle" href="javascript:;">
-			<svg class="lexicon-icon icon-monospaced">
+		<span>{$page.title}</span>
+
+		{if $page.children}
+			<svg class="collapse-toggle lexicon-icon icon-monospaced">
 				<use xlink:href="/vendor/lexicon/icons.svg#caret-bottom" />
 			</svg>
-		</a>
-	{/if}
+		{/if}
+	</a>
+
 {/template}
