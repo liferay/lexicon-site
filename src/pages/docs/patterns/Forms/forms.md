@@ -38,6 +38,11 @@ Fields can be mandatory/required to fill in a form. The way to mark a field as m
 
 Forms have inline validation. All form fields that can be checked against a set of rules while filling them must show success or error state to the user.
 
+### Content blocks
+Content block allow you let the user add contents of a same type in a form. Content blocks are usually used to contribute with more form pieces that allow the user to specify more information. Content block always bring the possibility to add or remove blocks. See the following example:
+
+![Content block example](../../../images/contentBlock.gif)
+
 ### Actions
 
 #### General actions
