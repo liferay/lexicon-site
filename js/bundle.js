@@ -24094,6 +24094,13 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/alertsNotification.png', 'alt', 'set of four notification alerts');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/alertAttributes.png', 'alt', 'attributes for stripe alerts and notification alerts');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
@@ -24277,6 +24284,13 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/badgesAttributes.png', 'alt', 'badge attributtes');
+        ie_close('img');
+        ie_close('p');
         ie_open('h2');
         itext('Labels');
         ie_close('h2');
@@ -24380,6 +24394,13 @@ babelHelpers;
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/badgesAttributes.png', 'alt', 'badge attributtes');
+        ie_close('img');
+        ie_close('p');
         ie_open('h2');
         itext('Stickers');
         ie_close('h2');
@@ -24430,7 +24451,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/stickerSquaredSmall.png', 'alt', 'large size default color sticker');
+        ie_open('img', null, null, 'src', '../../../images/stickerSquaredLarge.png', 'alt', 'large size default color sticker');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24473,16 +24494,6 @@ babelHelpers;
         ie_close('p');
         ie_open('p');
         itext('The most used cases in Liferay DE are inside bottom left and static.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Example of use');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('strong');
-        ie_open('em');
-        itext('Example of use missing');
-        ie_close('em');
-        ie_close('strong');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
@@ -24704,18 +24715,6 @@ babelHelpers;
         itext(': Use it on reduced spaces.');
         ie_close('td');
         ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/buttonPrimaryXsDefault.png', 'alt', 'button primary extra small size disable state');
-        ie_close('img');
-        ie_close('td');
-        ie_open('td');
-        ie_open('strong');
-        itext('Extra small');
-        ie_close('strong');
-        itext(': Use it in spaces that are very small and not really significant.');
-        ie_close('td');
-        ie_close('tr');
         ie_close('tbody');
         ie_close('table');
         ie_open('h3');
@@ -24769,7 +24768,7 @@ babelHelpers;
         itext('Button group');
         ie_close('h4');
         ie_open('p');
-        itext('Button groups are used to switch between complementary views for example but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.');
+        itext('Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.');
         ie_close('p');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/buttonGroupDefault.png', 'alt', 'button gruop or segmented button, 3 segments, default size');
@@ -24783,6 +24782,13 @@ babelHelpers;
         ie_close('p');
         ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/buttonAction.png', 'alt', 'plus button or button actions');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/buttonAttributtes.png', 'alt', 'button attributtes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -24924,11 +24930,14 @@ babelHelpers;
         itext('Among these elements, the only one that can\'t be removed for the pattern meaning is the image.');
         ie_close('p');
         ie_open('p');
+        itext('It is important to highlight that images can have different size configuration in relation to aspect ratio and cropping. Please, check images section in Quartz to get more information about it.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
         ie_open('img', null, null, 'src', '../../../images/cardLayout.png', 'alt', 'default card layout');
         ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('It is important to highlight that images can have different size configuration in relation to aspect ratio and cropping. Please, check images section in Quartz to get more information about it.');
         ie_close('p');
         ie_open('h3');
         itext('Examples of use');
@@ -25547,7 +25556,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param334 = function param334() {
+      var param343 = function param343() {
         ie_open('h6');
         itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
         ie_close('h6');
@@ -25608,7 +25617,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param334 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param343 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -25970,6 +25979,13 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/dropdownMenuExample.png', 'alt', 'default dropdown menu example');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/dropdownAttributes.png', 'alt', 'dropdown attributes');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
@@ -26040,6 +26056,134 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
+    // This file was automatically generated from grid.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsPatternsGridHtml.
+     * @public
+     */
+
+    goog.module('docsPatternsGridHtml.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param316 = function param316() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Measures is of the atomic elements inside Lexicon at atom level that helps building components of different complexity and also templates. Mesaures and distances are one of the most important elements as it provides visual consitancy and order to the interaface components itself and among components.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lexicon is build in base of 8 pixels grid. This means that the measures we work designing our system will be always multiples of 8 as 16 or 24 and intermediate values as 12 or 20.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Form example');
+        ie_close('h4');
+        ie_open('p');
+        itext('TODO');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param316 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsPatternsGridHtml.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var docsPatternsGridHtml = function (_Component) {
+    babelHelpers.inherits(docsPatternsGridHtml, _Component);
+
+    function docsPatternsGridHtml() {
+      babelHelpers.classCallCheck(this, docsPatternsGridHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsGridHtml.__proto__ || Object.getPrototypeOf(docsPatternsGridHtml)).apply(this, arguments));
+    }
+
+    return docsPatternsGridHtml;
+  }(Component);
+
+  Soy.register(docsPatternsGridHtml, templates);
+  this['metalNamed']['grid'] = this['metalNamed']['grid'] || {};
+  this['metalNamed']['grid']['docsPatternsGridHtml'] = docsPatternsGridHtml;
+  this['metalNamed']['grid']['templates'] = templates;
+  this['metal']['grid'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['grid'];
+
+  var docsPatternsGridHtml = function (_Component) {
+    babelHelpers.inherits(docsPatternsGridHtml, _Component);
+
+    function docsPatternsGridHtml() {
+      babelHelpers.classCallCheck(this, docsPatternsGridHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsGridHtml.__proto__ || Object.getPrototypeOf(docsPatternsGridHtml)).apply(this, arguments));
+    }
+
+    return docsPatternsGridHtml;
+  }(Component);
+
+  ;
+
+  Soy.register(docsPatternsGridHtml, templates);
+
+  this['metal']['docsPatternsGridHtml'] = docsPatternsGridHtml;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
     // This file was automatically generated from header_toolbar.soy.
     // Please don't edit this file by hand.
 
@@ -26079,7 +26223,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param316 = function param316() {
+      var param325 = function param325() {
         ie_open('h3');
         itext('Introduction');
         ie_close('h3');
@@ -26119,7 +26263,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param316 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param325 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26223,7 +26367,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param325 = function param325() {
+      var param334 = function param334() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -26362,7 +26506,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param325 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param334 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26466,7 +26610,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param348 = function param348() {
+      var param357 = function param357() {
         ie_open('h3');
         itext('Introduction');
         ie_close('h3');
@@ -26555,7 +26699,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param348 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param357 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26659,7 +26803,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param357 = function param357() {
+      var param366 = function param366() {
         ie_open('h3');
         itext('Descrition');
         ie_close('h3');
@@ -26766,7 +26910,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param357 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param366 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26870,7 +27014,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param366 = function param366() {
+      var param375 = function param375() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -26943,12 +27087,19 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/managementBarExample.gif', 'alt', 'state one of the management bar');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/managementBarAttributes.png', 'alt', 'management bar attributes');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param366 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param375 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27052,7 +27203,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param375 = function param375() {
+      var param384 = function param384() {
         ie_open('h3');
         itext('Descrition');
         ie_close('h3');
@@ -27180,12 +27331,19 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/modalMobileWhiteBg.png', 'alt', 'modal window mobile version always full screen');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/modalAttributes.png', 'alt', 'modal attributes for desktop and mobile');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param375 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param384 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27289,7 +27447,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param393 = function param393() {
+      var param402 = function param402() {
         ie_open('h3');
         itext('Descrition');
         ie_close('h3');
@@ -27345,7 +27503,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param393 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param402 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27449,7 +27607,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param384 = function param384() {
+      var param393 = function param393() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -27514,28 +27672,19 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/tabsNotBordered.png', 'alt', 'not bordered tabs');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
         ie_open('p');
-        ie_open('strong');
-        itext('TODO: Esto puede ser usado con todas?');
-        ie_close('strong');
+        ie_open('img', null, null, 'src', '../../../images/tabsAttributes.png', 'alt', 'tabs Attributes');
+        ie_close('img');
         ie_close('p');
-        ie_open('ul');
-        ie_open('li');
-        itext('Nav tabs scroll');
-        ie_close('li');
-        ie_open('li');
-        itext('Nav tabs justified');
-        ie_close('li');
-        ie_open('li');
-        itext('Nav tabs grid');
-        ie_close('li');
-        ie_close('ul');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param384 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param393 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27639,7 +27788,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param402 = function param402() {
+      var param411 = function param411() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -27705,12 +27854,19 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/NavbarDropdownMobile.png', 'alt', 'navbar in mobile viewport with all navigation options collpased in a dropdown');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/navbarAttributes.png', 'alt', 'navbar attributes');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param402 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param411 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -27814,7 +27970,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param411 = function param411() {
+      var param420 = function param420() {
         ie_open('h3');
         itext('Descrition');
         ie_close('h3');
@@ -27909,7 +28065,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param411 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param420 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28013,7 +28169,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param420 = function param420() {
+      var param429 = function param429() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -28101,12 +28257,19 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/paginationBar.png', 'alt', 'pagination bar with a dropdown for page size and the simple pagination component');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/paginationAttributes.png', 'alt', 'pagination attributes');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param420 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param429 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28210,7 +28373,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param429 = function param429() {
+      var param438 = function param438() {
         ie_open('h3');
         itext('Descrition');
         ie_close('h3');
@@ -28275,12 +28438,19 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/panelCollapsibleExample.gif', 'alt', 'collapsable panels');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/panelAttributes.png', 'alt', 'panel attributes');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param429 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param438 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28384,7 +28554,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param438 = function param438() {
+      var param447 = function param447() {
         ie_open('h2');
         itext('Popovers');
         ie_close('h2');
@@ -28411,6 +28581,13 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/helpIcon.png', 'alt', 'help icon');
         ie_close('img');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/popoverAttributes.png', 'alt', 'popover attributes');
+        ie_close('img');
+        ie_close('p');
         ie_open('h2');
         itext('Tooltips');
         ie_close('h2');
@@ -28433,12 +28610,19 @@ babelHelpers;
         ie_open('p');
         itext('Please make a right use of the arrow positioning as it could drive to misunderstandings when it doesn\u2019t point to the correct interface element.');
         ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/tooltipAttributes.png', 'alt', 'tooltip attributes');
+        ie_close('img');
+        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param438 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param447 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28542,7 +28726,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param447 = function param447() {
+      var param456 = function param456() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -28641,7 +28825,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param447 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param456 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28745,7 +28929,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param456 = function param456() {
+      var param465 = function param465() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -28774,7 +28958,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param456 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param465 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -28878,7 +29062,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param465 = function param465() {
+      var param474 = function param474() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -28903,7 +29087,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param465 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param474 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29007,7 +29191,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param474 = function param474() {
+      var param483 = function param483() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -29134,7 +29318,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param474 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param483 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29238,7 +29422,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param483 = function param483() {
+      var param492 = function param492() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -29330,7 +29514,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param483 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param492 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29434,7 +29618,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param492 = function param492() {
+      var param501 = function param501() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -29497,7 +29681,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param492 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param501 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29601,7 +29785,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param501 = function param501() {
+      var param510 = function param510() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -29661,7 +29845,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param501 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param510 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29765,7 +29949,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param510 = function param510() {
+      var param519 = function param519() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -29875,7 +30059,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param510 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param519 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -29981,7 +30165,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param528 = function param528() {
+      var param537 = function param537() {
         ie_open('h6');
         itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
         ie_close('h6');
@@ -30042,7 +30226,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param528 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param537 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30146,7 +30330,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param519 = function param519() {
+      var param528 = function param528() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -30201,6 +30385,16 @@ babelHelpers;
         itext('Forms have inline validation. All form fields that can be checked against a set of rules while filling them must show success or error state to the user.');
         ie_close('p');
         ie_open('h3');
+        itext('Content blocks');
+        ie_close('h3');
+        ie_open('p');
+        itext('Content block allow you let the user add contents of a same type in a form. Content blocks are usually used to contribute with more form pieces that allow the user to specify more information. Content block always bring the possibility to add or remove blocks. See the following example:');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/contentBlock.gif', 'alt', 'Content block example');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
         itext('Actions');
         ie_close('h3');
         ie_open('h4');
@@ -30224,7 +30418,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param519 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param528 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30328,7 +30522,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param542 = function param542() {
+      var param551 = function param551() {
         ie_open('h2');
         itext('Checkbox');
         ie_close('h2');
@@ -30540,7 +30734,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param542 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param551 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30644,7 +30838,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param551 = function param551() {
+      var param560 = function param560() {
         ie_open('h2');
         itext('Selector');
         ie_close('h2');
@@ -30697,21 +30891,12 @@ babelHelpers;
         ie_open('img', null, null, 'src', '../../../images/selectorMultipleFocus.png', 'alt', 'multiple selector active state');
         ie_close('img');
         ie_close('p');
-        ie_open('h2');
-        itext('File upload');
-        ie_close('h2');
-        ie_open('p');
-        itext('File upload is the pattern for uploading files into the system.');
-        ie_close('p');
-        ie_open('p');
-        itext('TODO: Image');
-        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param551 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param560 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30815,7 +31000,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param569 = function param569() {
+      var param578 = function param578() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -30878,7 +31063,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param569 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param578 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -30982,7 +31167,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param560 = function param560() {
+      var param569 = function param569() {
         ie_open('h2');
         itext('Text field');
         ie_close('h2');
@@ -31070,7 +31255,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param560 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param569 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -31124,6 +31309,481 @@ babelHelpers;
   Soy.register(docsPatternsFormsTextInputHtml, templates);
 
   this['metal']['docsPatternsFormsTextInputHtml'] = docsPatternsFormsTextInputHtml;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from datasetTemplate.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsPatternsTemplatesDatasetTemplateHtml.
+     * @public
+     */
+
+    goog.module('docsPatternsTemplatesDatasetTemplateHtml.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param587 = function param587() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Dataset template shows how a dataset is displayed using Lexicon.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Structure');
+        ie_close('h3');
+        ie_open('p');
+        itext('This template counts with several patterns listed as follown that can be directly mapped with the image.');
+        ie_close('p');
+        ie_open('ol');
+        ie_open('li');
+        itext('Header toolbar: the actions menu must only contain direct actions over the application in question as import, export, permissions.');
+        ie_close('li');
+        ie_open('li');
+        itext('Navigation bar: includes different entries of the application. If there is only one it must be present in the bar. Search field is optional and only acts over the selected element in the navbar.');
+        ie_close('li');
+        ie_open('li');
+        itext('Dataset display');
+        ie_open('ol');
+        ie_open('li');
+        itext('Management bar');
+        ie_close('li');
+        ie_open('li');
+        itext('Breadcrumb (When further than first level)');
+        ie_close('li');
+        ie_open('li');
+        itext('Visualization: Table / List / Cards');
+        ie_close('li');
+        ie_open('li');
+        itext('Pagination bar');
+        ie_close('li');
+        ie_close('ol');
+        ie_close('li');
+        ie_open('li');
+        itext('Plus button: Place it in case your dataset allows adding more elements');
+        ie_close('li');
+        ie_close('ol');
+        ie_open('h3');
+        itext('Example');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/DatasetTemplate@2x.png', 'alt', 'Form template example');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param587 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsPatternsTemplatesDatasetTemplateHtml.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var docsPatternsTemplatesDatasetTemplateHtml = function (_Component) {
+    babelHelpers.inherits(docsPatternsTemplatesDatasetTemplateHtml, _Component);
+
+    function docsPatternsTemplatesDatasetTemplateHtml() {
+      babelHelpers.classCallCheck(this, docsPatternsTemplatesDatasetTemplateHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesDatasetTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesDatasetTemplateHtml)).apply(this, arguments));
+    }
+
+    return docsPatternsTemplatesDatasetTemplateHtml;
+  }(Component);
+
+  Soy.register(docsPatternsTemplatesDatasetTemplateHtml, templates);
+  this['metalNamed']['datasetTemplate'] = this['metalNamed']['datasetTemplate'] || {};
+  this['metalNamed']['datasetTemplate']['docsPatternsTemplatesDatasetTemplateHtml'] = docsPatternsTemplatesDatasetTemplateHtml;
+  this['metalNamed']['datasetTemplate']['templates'] = templates;
+  this['metal']['datasetTemplate'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from index.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsPatternsTemplates.
+     * @public
+     */
+
+    goog.module('docsPatternsTemplates.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param605 = function param605() {
+        ie_open('h6');
+        itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
+        ie_close('h6');
+        ie_open('article', null, null, 'id', 'article1');
+        ie_open('h2');
+        itext('Lorem ipsum dolor sit amet');
+        ie_close('h2');
+        $templateAlias2({ code: 'var hello = function() {\n    console.log(\'Hello, World!\');\n};', mode: 'javascript' }, null, opt_ijData);
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article2');
+        ie_open('h2');
+        itext('Lorem ipsum dolor sit amet');
+        ie_close('h2');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article3');
+        ie_open('h2');
+        itext('Lorem ipsum dolor sit amet');
+        ie_close('h2');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_close('article');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param605 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsPatternsTemplates.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var docsPatternsTemplates = function (_Component) {
+    babelHelpers.inherits(docsPatternsTemplates, _Component);
+
+    function docsPatternsTemplates() {
+      babelHelpers.classCallCheck(this, docsPatternsTemplates);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplates.__proto__ || Object.getPrototypeOf(docsPatternsTemplates)).apply(this, arguments));
+    }
+
+    return docsPatternsTemplates;
+  }(Component);
+
+  Soy.register(docsPatternsTemplates, templates);
+  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
+  this['metalNamed']['index']['docsPatternsTemplates'] = docsPatternsTemplates;
+  this['metalNamed']['index']['templates'] = templates;
+  this['metal']['index'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['index'];
+
+  var docsPatternsTemplates = function (_Component) {
+    babelHelpers.inherits(docsPatternsTemplates, _Component);
+
+    function docsPatternsTemplates() {
+      babelHelpers.classCallCheck(this, docsPatternsTemplates);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplates.__proto__ || Object.getPrototypeOf(docsPatternsTemplates)).apply(this, arguments));
+    }
+
+    return docsPatternsTemplates;
+  }(Component);
+
+  ;
+
+  Soy.register(docsPatternsTemplates, templates);
+
+  this['metal']['docsPatternsTemplates'] = docsPatternsTemplates;
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['datasetTemplate'];
+
+  var docsPatternsTemplatesDatasetTemplateHtml = function (_Component) {
+    babelHelpers.inherits(docsPatternsTemplatesDatasetTemplateHtml, _Component);
+
+    function docsPatternsTemplatesDatasetTemplateHtml() {
+      babelHelpers.classCallCheck(this, docsPatternsTemplatesDatasetTemplateHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesDatasetTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesDatasetTemplateHtml)).apply(this, arguments));
+    }
+
+    return docsPatternsTemplatesDatasetTemplateHtml;
+  }(Component);
+
+  ;
+
+  Soy.register(docsPatternsTemplatesDatasetTemplateHtml, templates);
+
+  this['metal']['docsPatternsTemplatesDatasetTemplateHtml'] = docsPatternsTemplatesDatasetTemplateHtml;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from formsTemplate.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsPatternsTemplatesFormsTemplateHtml.
+     * @public
+     */
+
+    goog.module('docsPatternsTemplatesFormsTemplateHtml.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param596 = function param596() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Form template helps you to understand how forms are built and composed using Lexicon. This template will allow you to understand how to create any form.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Structure');
+        ie_close('h3');
+        ie_open('p');
+        itext('A form template count with several patterns that shape this pattern:');
+        ie_close('p');
+        ie_open('ol');
+        ie_open('li');
+        itext('Header toolbar');
+        ie_close('li');
+        ie_open('li');
+        itext('Navigation bar (not always needed)');
+        ie_close('li');
+        ie_open('li');
+        itext('Tab bar (Not always needed)');
+        ie_close('li');
+        ie_open('li');
+        itext('Form');
+        ie_open('ol');
+        ie_open('li');
+        itext('Series of panels and pangels with accordions. Accordions work as functional form modules or sections. All the actions inside a form must be secondary, having only one primary action to really catch the user attention');
+        ie_close('li');
+        ie_open('li');
+        itext('Form main buttons: always placed to the left side and in the following order: Primary, secondary, link');
+        ie_close('li');
+        ie_close('ol');
+        ie_close('li');
+        ie_close('ol');
+        ie_open('h3');
+        itext('Example');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/FormPreview@2x.png', 'alt', 'Form template example');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param596 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsPatternsTemplatesFormsTemplateHtml.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var docsPatternsTemplatesFormsTemplateHtml = function (_Component) {
+    babelHelpers.inherits(docsPatternsTemplatesFormsTemplateHtml, _Component);
+
+    function docsPatternsTemplatesFormsTemplateHtml() {
+      babelHelpers.classCallCheck(this, docsPatternsTemplatesFormsTemplateHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesFormsTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesFormsTemplateHtml)).apply(this, arguments));
+    }
+
+    return docsPatternsTemplatesFormsTemplateHtml;
+  }(Component);
+
+  Soy.register(docsPatternsTemplatesFormsTemplateHtml, templates);
+  this['metalNamed']['formsTemplate'] = this['metalNamed']['formsTemplate'] || {};
+  this['metalNamed']['formsTemplate']['docsPatternsTemplatesFormsTemplateHtml'] = docsPatternsTemplatesFormsTemplateHtml;
+  this['metalNamed']['formsTemplate']['templates'] = templates;
+  this['metal']['formsTemplate'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['formsTemplate'];
+
+  var docsPatternsTemplatesFormsTemplateHtml = function (_Component) {
+    babelHelpers.inherits(docsPatternsTemplatesFormsTemplateHtml, _Component);
+
+    function docsPatternsTemplatesFormsTemplateHtml() {
+      babelHelpers.classCallCheck(this, docsPatternsTemplatesFormsTemplateHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesFormsTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesFormsTemplateHtml)).apply(this, arguments));
+    }
+
+    return docsPatternsTemplatesFormsTemplateHtml;
+  }(Component);
+
+  ;
+
+  Soy.register(docsPatternsTemplatesFormsTemplateHtml, templates);
+
+  this['metal']['docsPatternsTemplatesFormsTemplateHtml'] = docsPatternsTemplatesFormsTemplateHtml;
 }).call(this);
 }).call(this);
 //# sourceMappingURL=bundle.js.map
