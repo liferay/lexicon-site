@@ -11,7 +11,6 @@ Alerts are used to capture the attention of the user in an intrusive way. Someti
 
 Alerts are possible to define in 4 different colors, grey for the default type of message and four other corresponding to status colors.
 
-
 ### Types
 
 | Type | Usage |
@@ -50,4 +49,9 @@ This alert is placed right below the navigation bar.
 Notifications display information about something that has happened or is happening in the system. These alerts are not related to actions that are being performed by the user at that moment. Unlike alerts, notifications are displayed on the top right corner of the screen. Both desktop and mobile notifications have similar dimensions.
 
 ![set of four notification alerts](../../../images/alertsNotification.png) 
+
+### Attributes
+
+![attributes for stripe alerts and notification alerts](../../../images/alertAttributes.png)
+
 

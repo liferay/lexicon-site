@@ -29,9 +29,11 @@ As you can see in the following image, a card is shaped by:
 
 Among these elements, the only one that can't be removed for the pattern meaning is the image.
 
-![default card layout](../../../images/cardLayout.png)
-
 It is important to highlight that images can have different size configuration in relation to aspect ratio and cropping. Please, check images section in Quartz to get more information about it.
+
+### Attributes
+
+![default card layout](../../../images/cardLayout.png)
 
 ### Examples of use
 

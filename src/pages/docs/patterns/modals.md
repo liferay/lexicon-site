@@ -53,10 +53,13 @@ This case is thought for those cases where you need to just show text and button
 
 It is always possible to bring an iFrame inside the body. For more information about this check Quartz.
 
-
 ### Mobile
 
 When a modal reaches the mobile viewport size its look and feel is transformed to the one you see below offering a mobile friendly version. Modal occupies the hole screen allowing only the interaction with the modal and its content.
 
 ![modal window mobile version always full screen](../../../images/modalMobileWhiteBg.png)
+
+### Attributes
+
+![modal attributes for desktop and mobile](../../../images/modalAttributes.png)
 

@@ -20,6 +20,10 @@ Popovers are used together with the question mark icon as an affordance to let t
 
 ![help icon](../../../images/helpIcon.png)
 
+### Attributes
+
+![popover attributes](../../../images/popoverAttributes.png)
+
 ## Tooltips
 
 Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.
@@ -34,3 +38,7 @@ They can be also used with links or images.
 The tooltip appears on hover state and disappears when hover ends. This pattern does not exist in mobile a hover is not a possible state.
 
 Please make a right use of the arrow positioning as it could drive to misunderstandings when it doesn’t point to the correct interface element.
+
+### Attributes
+
+![tooltip attributes](../../../images/tooltipAttributes.png)

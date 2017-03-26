@@ -37,11 +37,9 @@ Non-bordered tabs are used in interior levels such as inside forms and in search
 
 ![not bordered tabs](../../../images/tabsNotBordered.png)
 
+### Attributes
 
-**TODO: Esto puede ser usado con todas?**
+![tabs Attributes](../../../images/tabsAttributes.png)
 
-* Nav tabs scroll
-* Nav tabs justified
-* Nav tabs grid
 
 

@@ -38,7 +38,6 @@ Buttons communicate an action to happen on user interaction.
 | ![button primary large size disable state](../../../images/buttonPrimaryLargeDefault.png) | **Large**: Used for main page actions like Save or Cancel. |
 | ![button primary default size disable state](../../../images/buttonPrimaryDefaultDefault.png) | **Default**: Used for actions inside a page, like dropdowns, button groups, split buttons. |
 | ![button primary small size disable state](../../../images/buttonPrimarySmallDefault.png) | **Small**: Use it on reduced spaces. |
-| ![button primary extra small size disable state](../../../images/buttonPrimaryXsDefault.png) | **Extra small**: Use it in spaces that are very small and not really significant. |
 
 ### Variations
 
@@ -68,7 +67,7 @@ Split buttons are used in those cases where you need to offer the user a quick m
 
 #### Button group
 
-Button groups are used to switch between complementary views for example but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.
+Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.
 
 ![button gruop or segmented button, 3 segments, default size](../../../images/buttonGroupDefault.png)
 
@@ -77,3 +76,8 @@ Button groups are used to switch between complementary views for example but the
 The action button is always a primary button with a special size of 64x64 due to its importance. This button floats on the bottom right corner of the screen. It contains all the adding or creating actions in a context. When there is only one action to perform in the page where it is used the button triggers the action. In case there are more that one actions, all the actions appear listed in a dropdown panel that is triggered on click interaction with the button. Once selected the action in the list, the dropdown is closed.
 
 ![plus button or button actions](../../../images/buttonAction.png)
+
+### Attributes
+
+![button attributtes](../../../images/buttonAttributtes.png)
+

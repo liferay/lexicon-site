@@ -37,3 +37,7 @@ Interactive components:
 * Ellipsis: to select intermediate pages not possible to see due to the number of pages.
 
 ![pagination bar with a dropdown for page size and the simple pagination component](../../../images/paginationBar.png)
+
+### Attributes
+
+![pagination attributes](../../../images/paginationAttributes.png)

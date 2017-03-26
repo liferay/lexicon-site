@@ -36,3 +36,9 @@ When the viewport resizes to smaller screen sizes the navbar entries collapse in
 ![navbar in mobile viewport with some navigation options collpased in a dropdown](../../../images/NavbarDropdown.png)
 
 ![navbar in mobile viewport with all navigation options collpased in a dropdown](../../../images/NavbarDropdownMobile.png)
+
+### Attributes
+
+![navbar attributes](../../../images/navbarAttributes.png)
+
+

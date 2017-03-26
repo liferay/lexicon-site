@@ -36,9 +36,3 @@ Select button used to select more than one option from a simple list.
 #### Active
 
 ![multiple selector active state](../../../images/selectorMultipleFocus.png)
-
-## File upload
-
-File upload is the pattern for uploading files into the system.
-
-TODO: Image

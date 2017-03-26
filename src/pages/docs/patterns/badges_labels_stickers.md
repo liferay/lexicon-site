@@ -26,6 +26,9 @@ Badges help highlight important information such as notifications or new and unr
 | ![defualt size default color badge](../../../images/badgeDefaultDefault.png) | Used to identify.|
 | ![defualt size default color close option badge](../../../images/badgeCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
 
+### Attributes
+
+![badge attributtes](../../../images/badgesAttributes.png)
 
 ## Labels
 
@@ -51,6 +54,10 @@ Use labels to organize groups of items in your application. Labels have rounded 
 | ![defualt size default color label](../../../images/labelDefaultDefault.png) | Used to identify.|
 | ![defualt size default color close option label](../../../images/labelCloseDefaultDefault.png) | Used to identify with the possibility of removing it.|
 
+### Attributes
+
+![badge attributtes](../../../images/badgesAttributes.png)
+
 ## Stickers
 
 ### Description
@@ -66,7 +73,7 @@ Use stickers to visually identify elements in a dataset that are part of a same 
 | ---- | ----- |
 | ![small size default color sticker](../../../images/stickerSquaredSmall.png) | 22x22. Use it in smaller contexts where you only need visual identification but not manual interaction with this element. |
 | ![defualt size default color sticker](../../../images/stickerSquaredDefault.png) | 32x32. Use it in cards that are image based, allowing to see more parts of the image. |
-| ![large size default color sticker](../../../images/stickerSquaredSmall.png) | 44x44. Use it in cards that are not image based, or list entries. |
+| ![large size default color sticker](../../../images/stickerSquaredLarge.png) | 44x44. Use it in cards that are not image based, or list entries. |
 
 ### Position
 Stickers can have different positions:
@@ -80,7 +87,3 @@ Stickers can have different positions:
 ![sticker positions example](../../../images/stickerSample.png)
 
 The most used cases in Liferay DE are inside bottom left and static.
-
-### Example of use
-
-***Example of use missing***

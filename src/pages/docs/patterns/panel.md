@@ -45,4 +45,8 @@ In the following example you can see the accordion working. It is also optional 
 
 ![collapsable panels](../../../images/panelCollapsibleExample.gif)
 
+### Attributes
+
+![panel attributes](../../../images/panelAttributes.png)
+
 

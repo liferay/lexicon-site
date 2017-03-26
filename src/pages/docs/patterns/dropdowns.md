@@ -41,3 +41,8 @@ This example shows you how dropdowns would look like in a screen when displayed 
 
 ![default dropdown menu example](../../../images/dropdownMenuExample.png)
 
+
+### Attributes
+
+![dropdown attributes](../../../images/dropdownAttributes.png)
+

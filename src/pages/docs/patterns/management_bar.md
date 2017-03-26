@@ -45,3 +45,7 @@ The tools shown in the management bar in each state are always related to the ty
 ### Example of use
 
 ![state one of the management bar](../../../images/managementBarExample.gif)
+
+### Attributes
+
+![management bar attributes](../../../images/managementBarAttributes.png)
