@@ -22075,13 +22075,13 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       opt_data = opt_data || {};
-      var param59 = function param59() {
+      var param70 = function param70() {
         ie_open('div', null, null, 'class', 'blog');
         $mainPost(opt_data, null, opt_ijData);
         $olderPosts(opt_data, null, opt_ijData);
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param59 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param70 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22136,25 +22136,25 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'posts-list');
       ie_open('div', null, null, 'class', 'container');
       ie_open('ul', null, null, 'class', 'list-unstyled col-md-6 col-md-offset-3');
-      var pageList86 = opt_data.site.index.children[0].children;
-      var pageListLen86 = pageList86.length;
-      for (var pageIndex86 = 0; pageIndex86 < pageListLen86; pageIndex86++) {
-        var pageData86 = pageList86[pageIndex86];
+      var pageList97 = opt_data.site.index.children[0].children;
+      var pageListLen97 = pageList97.length;
+      for (var pageIndex97 = 0; pageIndex97 < pageListLen97; pageIndex97++) {
+        var pageData97 = pageList97[pageIndex97];
         ie_open('li', null, null, 'class', 'text-center');
-        ie_open('a', null, null, 'href', pageData86.url);
+        ie_open('a', null, null, 'href', pageData97.url);
         ie_open('small');
         itext('By ');
-        var dyn5 = pageData86.author;
+        var dyn5 = pageData97.author;
         if (typeof dyn5 == 'function') dyn5();else if (dyn5 != null) itext(dyn5);
         itext(' ');
         ie_open('span');
         itext('| ');
-        var dyn6 = pageData86.date;
+        var dyn6 = pageData97.date;
         if (typeof dyn6 == 'function') dyn6();else if (dyn6 != null) itext(dyn6);
         ie_close('span');
         ie_close('small');
         ie_open('p', null, null, 'class', 'lead');
-        var dyn7 = pageData86.title;
+        var dyn7 = pageData97.title;
         if (typeof dyn7 == 'function') dyn7();else if (dyn7 != null) itext(dyn7);
         ie_close('p');
         ie_close('a');
@@ -22250,11 +22250,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param92 = function param92() {
+      var param103 = function param103() {
         $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
         $guide(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param92 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param103 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22572,13 +22572,13 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param136 = function param136() {
+      var param59 = function param59() {
         $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
         ie_open('div', null, null, 'class', 'sidebar-offset');
         $header(null, null, opt_ijData);
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param136 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param59 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22661,6 +22661,340 @@ babelHelpers;
   Soy.register(pageIndex, templates);
 
   this['metal']['pageIndex'] = pageIndex;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from index.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace pageDocsIndex.
+     * @public
+     */
+
+    goog.module('pageDocsIndex.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias3 = Soy.getTemplate('ElectricSearchAutocomplete.incrementaldom', 'render');
+
+    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param168 = function param168() {
+        $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
+        $topics(opt_data, null, opt_ijData);
+      };
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param168 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'pageDocsIndex.render';
+    }
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $topics(opt_data, opt_ignored, opt_ijData) {
+      ie_open('div', null, null, 'class', 'sidebar-offset');
+      ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-xs-16');
+      ie_open('h1', null, null, 'class', 'docs-home-top-title');
+      itext('Docs');
+      ie_close('h1');
+      ie_open('p', null, null, 'class', 'docs-home-top-description');
+      itext('Start learning how to leverage the power of ');
+      var dyn12 = opt_data.site.title;
+      if (typeof dyn12 == 'function') dyn12();else if (dyn12 != null) itext(dyn12);
+      itext(' in your project.');
+      ie_close('p');
+      ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'container-hybrid docs-home-top-form');
+      ie_open('form', null, null, 'action', '/docs/search.html', 'method', 'GET', 'enctype', 'multipart/form-data');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-md-7 col-md-offset-3 col-xs-16');
+      $templateAlias3({ maxResults: 3, path: '/docs/', placeholder: 'Search Docs' }, null, opt_ijData);
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'col-md-3 col-xs-16');
+      ie_open('button', null, null, 'class', 'btn btn-accent btn-block', 'type', 'submit');
+      itext('Search');
+      ie_close('button');
+      ie_close('div');
+      ie_close('div');
+      ie_close('form');
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'docs-home-topics');
+      ie_open('div', null, null, 'class', 'container-hybrid');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-xs-16');
+      ie_open('section', null, null, 'class', 'docs-home-middle');
+      ie_open('h2', null, null, 'class', 'docs-home-middle-subtitle');
+      itext('Choose a Guide');
+      ie_close('h2');
+      ie_open('p', null, null, 'class', 'docs-home-middle-description');
+      itext('Each one provide step by step coverage for every core feature.');
+      ie_close('p');
+      ie_close('section');
+      ie_close('div');
+      ie_close('div');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-md-13 col-md-offset-3 col-xs-16');
+      ie_open('div', null, null, 'class', 'row');
+      var topicList191 = opt_data.site.index.children[1].children;
+      var topicListLen191 = topicList191.length;
+      for (var topicIndex191 = 0; topicIndex191 < topicListLen191; topicIndex191++) {
+        var topicData191 = topicList191[topicIndex191];
+        if (!topicData191.hidden) {
+          ie_open('div', null, null, 'class', 'col-md-6 col-xs-16');
+          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData191.url);
+          ie_open('div', null, null, 'class', 'topic-icon');
+          ie_void('span', null, null, 'class', 'icon-16-' + topicData191.icon);
+          ie_close('div');
+          ie_open('h3', null, null, 'class', 'topic-title');
+          var dyn13 = topicData191.title;
+          if (typeof dyn13 == 'function') dyn13();else if (dyn13 != null) itext(dyn13);
+          ie_close('h3');
+          ie_close('a');
+          ie_close('div');
+        }
+      }
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+    }
+    exports.topics = $topics;
+    if (goog.DEBUG) {
+      $topics.soyTemplateName = 'pageDocsIndex.topics';
+    }
+
+    exports.render.params = ["site"];
+    exports.render.types = { "site": "any" };
+    exports.topics.params = ["site"];
+    exports.topics.types = { "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var pageDocsIndex = function (_Component) {
+    babelHelpers.inherits(pageDocsIndex, _Component);
+
+    function pageDocsIndex() {
+      babelHelpers.classCallCheck(this, pageDocsIndex);
+      return babelHelpers.possibleConstructorReturn(this, (pageDocsIndex.__proto__ || Object.getPrototypeOf(pageDocsIndex)).apply(this, arguments));
+    }
+
+    return pageDocsIndex;
+  }(Component);
+
+  Soy.register(pageDocsIndex, templates);
+  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
+  this['metalNamed']['index']['pageDocsIndex'] = pageDocsIndex;
+  this['metalNamed']['index']['templates'] = templates;
+  this['metal']['index'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['index'];
+
+  var pageDocsIndex = function (_Component) {
+    babelHelpers.inherits(pageDocsIndex, _Component);
+
+    function pageDocsIndex() {
+      babelHelpers.classCallCheck(this, pageDocsIndex);
+      return babelHelpers.possibleConstructorReturn(this, (pageDocsIndex.__proto__ || Object.getPrototypeOf(pageDocsIndex)).apply(this, arguments));
+    }
+
+    return pageDocsIndex;
+  }(Component);
+
+  ;
+
+  Soy.register(pageDocsIndex, templates);
+
+  this['metal']['pageDocsIndex'] = pageDocsIndex;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from search.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace pageDocsSearch.
+     * @public
+     */
+
+    goog.module('pageDocsSearch.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias3 = Soy.getTemplate('ElectricSearch.incrementaldom', 'render');
+
+    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param197 = function param197() {
+        $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
+        ie_open('div', null, null, 'class', 'sidebar-offset');
+        ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
+        ie_open('div', null, null, 'class', 'row');
+        ie_open('div', null, null, 'class', 'col-xs-16');
+        ie_open('h1', null, null, 'class', 'docs-home-top-title');
+        ie_open('span');
+        itext('Electric');
+        ie_close('span');
+        itext(' Docs');
+        ie_close('h1');
+        ie_open('p', null, null, 'class', 'docs-home-top-description');
+        itext('Start learning how to leverage the power of Electric.');
+        ie_close('p');
+        ie_close('div');
+        ie_close('div');
+        ie_open('div', null, null, 'class', 'row');
+        ie_open('div', null, null, 'class', 'container-hybrid');
+        $templateAlias3({ action: '/docs/search.html', path: '/docs/', placeholder: 'Search Docs' }, null, opt_ijData);
+        ie_close('div');
+        ie_close('div');
+        ie_close('div');
+        ie_close('div');
+      };
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param197 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'pageDocsSearch.render';
+    }
+
+    exports.render.params = ["site"];
+    exports.render.types = { "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var pageDocsSearch = function (_Component) {
+    babelHelpers.inherits(pageDocsSearch, _Component);
+
+    function pageDocsSearch() {
+      babelHelpers.classCallCheck(this, pageDocsSearch);
+      return babelHelpers.possibleConstructorReturn(this, (pageDocsSearch.__proto__ || Object.getPrototypeOf(pageDocsSearch)).apply(this, arguments));
+    }
+
+    return pageDocsSearch;
+  }(Component);
+
+  Soy.register(pageDocsSearch, templates);
+  this['metalNamed']['search'] = this['metalNamed']['search'] || {};
+  this['metalNamed']['search']['pageDocsSearch'] = pageDocsSearch;
+  this['metalNamed']['search']['templates'] = templates;
+  this['metal']['search'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['search'];
+
+  var pageDocsSearch = function (_Component) {
+    babelHelpers.inherits(pageDocsSearch, _Component);
+
+    function pageDocsSearch() {
+      babelHelpers.classCallCheck(this, pageDocsSearch);
+      return babelHelpers.possibleConstructorReturn(this, (pageDocsSearch.__proto__ || Object.getPrototypeOf(pageDocsSearch)).apply(this, arguments));
+    }
+
+    return pageDocsSearch;
+  }(Component);
+
+  ;
+
+  Soy.register(pageDocsSearch, templates);
+
+  this['metal']['pageDocsSearch'] = pageDocsSearch;
 }).call(this);
 'use strict';
 
@@ -23086,340 +23420,6 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace pageDocsIndex.
-     * @public
-     */
-
-    goog.module('pageDocsIndex.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias3 = Soy.getTemplate('ElectricSearchAutocomplete.incrementaldom', 'render');
-
-    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param168 = function param168() {
-        $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
-        $topics(opt_data, null, opt_ijData);
-      };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param168 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageDocsIndex.render';
-    }
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $topics(opt_data, opt_ignored, opt_ijData) {
-      ie_open('div', null, null, 'class', 'sidebar-offset');
-      ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
-      ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'col-xs-16');
-      ie_open('h1', null, null, 'class', 'docs-home-top-title');
-      itext('Docs');
-      ie_close('h1');
-      ie_open('p', null, null, 'class', 'docs-home-top-description');
-      itext('Start learning how to leverage the power of ');
-      var dyn12 = opt_data.site.title;
-      if (typeof dyn12 == 'function') dyn12();else if (dyn12 != null) itext(dyn12);
-      itext(' in your project.');
-      ie_close('p');
-      ie_close('div');
-      ie_close('div');
-      ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'container-hybrid docs-home-top-form');
-      ie_open('form', null, null, 'action', '/docs/search.html', 'method', 'GET', 'enctype', 'multipart/form-data');
-      ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'col-md-7 col-md-offset-3 col-xs-16');
-      $templateAlias3({ maxResults: 3, path: '/docs/', placeholder: 'Search Docs' }, null, opt_ijData);
-      ie_close('div');
-      ie_open('div', null, null, 'class', 'col-md-3 col-xs-16');
-      ie_open('button', null, null, 'class', 'btn btn-accent btn-block', 'type', 'submit');
-      itext('Search');
-      ie_close('button');
-      ie_close('div');
-      ie_close('div');
-      ie_close('form');
-      ie_close('div');
-      ie_close('div');
-      ie_close('div');
-      ie_open('div', null, null, 'class', 'docs-home-topics');
-      ie_open('div', null, null, 'class', 'container-hybrid');
-      ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'col-xs-16');
-      ie_open('section', null, null, 'class', 'docs-home-middle');
-      ie_open('h2', null, null, 'class', 'docs-home-middle-subtitle');
-      itext('Choose a Guide');
-      ie_close('h2');
-      ie_open('p', null, null, 'class', 'docs-home-middle-description');
-      itext('Each one provide step by step coverage for every core feature.');
-      ie_close('p');
-      ie_close('section');
-      ie_close('div');
-      ie_close('div');
-      ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'col-md-13 col-md-offset-3 col-xs-16');
-      ie_open('div', null, null, 'class', 'row');
-      var topicList191 = opt_data.site.index.children[1].children;
-      var topicListLen191 = topicList191.length;
-      for (var topicIndex191 = 0; topicIndex191 < topicListLen191; topicIndex191++) {
-        var topicData191 = topicList191[topicIndex191];
-        if (!topicData191.hidden) {
-          ie_open('div', null, null, 'class', 'col-md-6 col-xs-16');
-          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData191.url);
-          ie_open('div', null, null, 'class', 'topic-icon');
-          ie_void('span', null, null, 'class', 'icon-16-' + topicData191.icon);
-          ie_close('div');
-          ie_open('h3', null, null, 'class', 'topic-title');
-          var dyn13 = topicData191.title;
-          if (typeof dyn13 == 'function') dyn13();else if (dyn13 != null) itext(dyn13);
-          ie_close('h3');
-          ie_close('a');
-          ie_close('div');
-        }
-      }
-      ie_close('div');
-      ie_close('div');
-      ie_close('div');
-      ie_close('div');
-      ie_close('div');
-      ie_close('div');
-    }
-    exports.topics = $topics;
-    if (goog.DEBUG) {
-      $topics.soyTemplateName = 'pageDocsIndex.topics';
-    }
-
-    exports.render.params = ["site"];
-    exports.render.types = { "site": "any" };
-    exports.topics.params = ["site"];
-    exports.topics.types = { "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var pageDocsIndex = function (_Component) {
-    babelHelpers.inherits(pageDocsIndex, _Component);
-
-    function pageDocsIndex() {
-      babelHelpers.classCallCheck(this, pageDocsIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageDocsIndex.__proto__ || Object.getPrototypeOf(pageDocsIndex)).apply(this, arguments));
-    }
-
-    return pageDocsIndex;
-  }(Component);
-
-  Soy.register(pageDocsIndex, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['pageDocsIndex'] = pageDocsIndex;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var pageDocsIndex = function (_Component) {
-    babelHelpers.inherits(pageDocsIndex, _Component);
-
-    function pageDocsIndex() {
-      babelHelpers.classCallCheck(this, pageDocsIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageDocsIndex.__proto__ || Object.getPrototypeOf(pageDocsIndex)).apply(this, arguments));
-    }
-
-    return pageDocsIndex;
-  }(Component);
-
-  ;
-
-  Soy.register(pageDocsIndex, templates);
-
-  this['metal']['pageDocsIndex'] = pageDocsIndex;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from search.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace pageDocsSearch.
-     * @public
-     */
-
-    goog.module('pageDocsSearch.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias3 = Soy.getTemplate('ElectricSearch.incrementaldom', 'render');
-
-    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param197 = function param197() {
-        $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
-        ie_open('div', null, null, 'class', 'sidebar-offset');
-        ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
-        ie_open('div', null, null, 'class', 'row');
-        ie_open('div', null, null, 'class', 'col-xs-16');
-        ie_open('h1', null, null, 'class', 'docs-home-top-title');
-        ie_open('span');
-        itext('Electric');
-        ie_close('span');
-        itext(' Docs');
-        ie_close('h1');
-        ie_open('p', null, null, 'class', 'docs-home-top-description');
-        itext('Start learning how to leverage the power of Electric.');
-        ie_close('p');
-        ie_close('div');
-        ie_close('div');
-        ie_open('div', null, null, 'class', 'row');
-        ie_open('div', null, null, 'class', 'container-hybrid');
-        $templateAlias3({ action: '/docs/search.html', path: '/docs/', placeholder: 'Search Docs' }, null, opt_ijData);
-        ie_close('div');
-        ie_close('div');
-        ie_close('div');
-        ie_close('div');
-      };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param197 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageDocsSearch.render';
-    }
-
-    exports.render.params = ["site"];
-    exports.render.types = { "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var pageDocsSearch = function (_Component) {
-    babelHelpers.inherits(pageDocsSearch, _Component);
-
-    function pageDocsSearch() {
-      babelHelpers.classCallCheck(this, pageDocsSearch);
-      return babelHelpers.possibleConstructorReturn(this, (pageDocsSearch.__proto__ || Object.getPrototypeOf(pageDocsSearch)).apply(this, arguments));
-    }
-
-    return pageDocsSearch;
-  }(Component);
-
-  Soy.register(pageDocsSearch, templates);
-  this['metalNamed']['search'] = this['metalNamed']['search'] || {};
-  this['metalNamed']['search']['pageDocsSearch'] = pageDocsSearch;
-  this['metalNamed']['search']['templates'] = templates;
-  this['metal']['search'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['search'];
-
-  var pageDocsSearch = function (_Component) {
-    babelHelpers.inherits(pageDocsSearch, _Component);
-
-    function pageDocsSearch() {
-      babelHelpers.classCallCheck(this, pageDocsSearch);
-      return babelHelpers.possibleConstructorReturn(this, (pageDocsSearch.__proto__ || Object.getPrototypeOf(pageDocsSearch)).apply(this, arguments));
-    }
-
-    return pageDocsSearch;
-  }(Component);
-
-  ;
-
-  Soy.register(pageDocsSearch, templates);
-
-  this['metal']['pageDocsSearch'] = pageDocsSearch;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
      * @fileoverview Templates in namespace updatesIndex.
      * @public
      */
@@ -23576,7 +23576,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param226 = function param226() {
+      var param217 = function param217() {
         ie_open('h3');
         itext('Design language');
         ie_close('h3');
@@ -23606,7 +23606,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param226 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param217 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23710,7 +23710,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param217 = function param217() {
+      var param226 = function param226() {
         ie_open('h5');
         itext('March 15th, 2017');
         ie_close('h5');
@@ -23752,7 +23752,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param217 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param226 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -26100,19 +26100,57 @@ babelHelpers;
         itext('Description');
         ie_close('h3');
         ie_open('p');
-        itext('Measures is of the atomic elements inside Lexicon at atom level that helps building components of different complexity and also templates. Mesaures and distances are one of the most important elements as it provides visual consitancy and order to the interaface components itself and among components.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lexicon is build in base of 8 pixels grid. This means that the measures we work designing our system will be always multiples of 8 as 16 or 24 and intermediate values as 12 or 20.');
+        itext('Lexicon uses a 4px grid as the minimum unit of measure in terms of distance and space. 4px is a right decision as it allows as scalling with accuracy in alignment. Visual order and cleaness is one of the aims of this system.');
         ie_close('p');
         ie_open('h3');
-        itext('Usage');
+        itext('4px grid');
         ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/grid.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/meausres.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('The grid used in interfaces built with Lexicon follows the following rules:');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Maximum grid width: 1280px');
+        ie_close('li');
+        ie_open('li');
+        itext('Gutter: 32px');
+        ie_close('li');
+        ie_open('li');
+        itext('Margin: 16px');
+        ie_close('li');
+        ie_open('li');
+        itext('Number of colums: 12');
+        ie_close('li');
+        ie_open('li');
+        itext('Column width: varies with the canvas width');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('p');
+        ie_open('strong');
+        itext('Note:');
+        ie_close('strong');
+        itext(' Quartz implements Lexicon on top of bootstrap using the default bootstrap grid that has a gutter of 30px and a margin of 15px.');
+        ie_close('p');
+        ie_open('h3');
+        itext('4px usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('A 4px minimum unit of measure allow us to play with values as 8px, 12px, 16px, 20px, 24px and so on. The previously stated units are the ones most used in Lexicon. The follwing set of examples shows how we use this measures to build up our system. Please refer to attributes section inside patterns to see more use cases and learn how Lexicon applies them.');
+        ie_close('p');
         ie_open('h4');
         itext('Form example');
         ie_close('h4');
         ie_open('p');
-        itext('TODO');
+        ie_open('img', null, null, 'src', '../../../images/formDistances.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
