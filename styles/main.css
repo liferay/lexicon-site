@@ -11940,7 +11940,7 @@ button.loading > .linear.loading-animation {
 
 .autocomplete-list .list-group .list-group-item {
   border-width: 0; }
-  .autocomplete-list .list-group .list-group-item:hover {
+  .autocomplete-list .list-group .list-group-item:hover, .autocomplete-list .list-group .list-group-item.active {
     background-color: #F5F9FF; }
   .autocomplete-list .list-group .list-group-item:first-child {
     border-top-left-radius: 4px;
