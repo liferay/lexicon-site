@@ -24,7 +24,7 @@
 	.list-group .list-group-item {
 		border-width: 0;
 
-		&:hover {
+		&:hover, &.active {
 			background-color: #F5F9FF;
 		}
 
