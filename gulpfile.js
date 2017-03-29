@@ -11,7 +11,26 @@ const sass = require('gulp-sass');
 
 electric.registerTasks({
 	gulp: gulp,
-	plugins: ['electric-quartz-components']
+	plugins: ['electric-quartz-components'],
+	markdownRenderer: function(md) {
+		var image = md.renderer.rules.image;
+
+		md.renderer.rules.image = function(tokens, idx, options, env) {
+			var res = image.apply(this, arguments);
+
+			var token = tokens[idx];
+
+			var src = token.src;
+
+			src = src.replace(/(\.\w{3,})$/, '@2x$1 2x');
+
+			res = res.replace('<img ', '<img srcset="' + src + '" ');
+
+			return res;
+		};
+
+		return md;
+	}
 });
 
 // Fonts -----------------------------------------------------------------------
