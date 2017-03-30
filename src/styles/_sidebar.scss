@@ -3,7 +3,12 @@
 		margin-left: $sidebar-width;
 	}
 
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
 	.container-fluid {
+		flex: 1;
 		max-width: $content-max-width;
 
 		@media (min-width: $screen-xs) {
