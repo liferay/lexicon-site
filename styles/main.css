@@ -12061,26 +12061,39 @@ button.loading > .linear.loading-animation {
   z-index: 11; }
   @media (min-width: 768px) {
     .navbar-fixed {
+      width: 276px; } }
+  @media (min-width: 900px) {
+    .navbar-fixed {
       width: 376px; } }
 
-@media (min-width: 768px) {
-  .sidebar-offset {
-    margin-left: 376px; } }
-
-.sidebar-offset .container-fluid {
-  max-width: 960px; }
-  @media (min-width: 480px) {
-    .sidebar-offset .container-fluid {
-      padding-left: 32px;
-      padding-right: 64px; } }
-  @media (min-width: 992px) {
-    .sidebar-offset .container-fluid {
-      padding-left: 64px;
-      padding-right: 128px; } }
+.sidebar-offset {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+  @media (min-width: 768px) {
+    .sidebar-offset {
+      margin-left: 276px; } }
+  @media (min-width: 900px) {
+    .sidebar-offset {
+      margin-left: 376px; } }
+  .sidebar-offset .container-fluid {
+    flex: 1;
+    max-width: 960px; }
+    @media (min-width: 480px) {
+      .sidebar-offset .container-fluid {
+        padding-left: 32px;
+        padding-right: 64px; } }
+    @media (min-width: 992px) {
+      .sidebar-offset .container-fluid {
+        padding-left: 64px;
+        padding-right: 128px; } }
 
 .sidenav-menu-slider .sidenav-menu {
   width: 100%; }
   @media (min-width: 768px) {
+    .sidenav-menu-slider .sidenav-menu {
+      width: 276px; } }
+  @media (min-width: 900px) {
     .sidenav-menu-slider .sidenav-menu {
       width: 376px; } }
 
@@ -12088,12 +12101,15 @@ button.loading > .linear.loading-animation {
   visibility: visible; }
   .sidenav-fixed.sidenav-menu-slider.open {
     width: 100%; }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     .sidenav-fixed.sidenav-menu-slider, .sidenav-fixed.sidenav-menu-slider.open {
       -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
       -o-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
       transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); } }
   @media (min-width: 768px) {
+    .sidenav-fixed.sidenav-menu-slider, .sidenav-fixed.sidenav-menu-slider.open {
+      width: 276px; } }
+  @media (min-width: 900px) {
     .sidenav-fixed.sidenav-menu-slider, .sidenav-fixed.sidenav-menu-slider.open {
       width: 376px; } }
 
@@ -12211,7 +12227,7 @@ button.loading > .linear.loading-animation {
   .navbar-lexicon-site .navbar-toggle {
     border-width: 0;
     height: 48px; }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .navbar-lexicon-site .navbar-toggle .icon-bar {
         -webkit-transform-origin: 0;
         -moz-transform-origin: 0;
@@ -12246,12 +12262,12 @@ button.loading > .linear.loading-animation {
     color: #A2A7C2; }
   .sidebar-lexicon-site .sidebar-header {
     padding: 24px 24px 12px; }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .sidebar-lexicon-site .sidebar-header {
         padding: 16px; } }
   .sidebar-lexicon-site .sidebar-body {
     padding-top: 0; }
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       .sidebar-lexicon-site .sidebar-body {
         padding: 0 16px 16px; } }
   .sidebar-lexicon-site .input-group {
@@ -12361,6 +12377,6 @@ body {
   color: #414456;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px; }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     body {
       margin-top: 64px; } }
