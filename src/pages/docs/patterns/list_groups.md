@@ -1,6 +1,6 @@
 ---
 title: "List"
-description: "List pattern description"
+description: "Dataset representation."
 layout: "guide"
 weight: 1
 ---

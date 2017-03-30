@@ -1,11 +1,11 @@
 ---
 title: "Modals"
-description: "Spinner pattern description"
+description: "Capturing user attention in a process to solve a task of the process."
 layout: "guide"
 weight: 1
 ---
 
-### Descrition
+### Description
 
 A modal is a box with content displayed on top of the page to capture the user’s attention for an specific action inside the same process. Modals are subordinated to pages.
 

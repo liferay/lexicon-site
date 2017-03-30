@@ -1,6 +1,6 @@
 ---
 title: "Side nav"
-description: "Side nav pattern description"
+description: "Side panel for navigation."
 layout: "guide"
 weight: 1
 ---

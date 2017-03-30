@@ -1,11 +1,11 @@
 ---
 title: "Panel"
-description: "Panel pattern description"
+description: "Panels separate your content."
 layout: "guide"
 weight: 1
 ---
 
-### Descrition
+### Description
 
 Panels help to separate your content.
 

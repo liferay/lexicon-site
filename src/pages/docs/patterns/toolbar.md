@@ -1,6 +1,6 @@
 ---
 title: "Toolbar"
-description: "Toolbar pattern description"
+description: "How to build your own toolbar."
 layout: "guide"
 weight: 1
 ---

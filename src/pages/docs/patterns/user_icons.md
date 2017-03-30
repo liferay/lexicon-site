@@ -1,6 +1,6 @@
 ---
 title: "User icons"
-description: "User icons pattern description"
+description: "Visual representation of a user."
 layout: "guide"
 weight: 1
 ---

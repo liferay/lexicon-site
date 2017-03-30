@@ -1,6 +1,6 @@
 ---
 title: "Selectors"
-description: "Selector pattern description"
+description: "Selector variations and usage."
 layout: "guide"
 weight: 3
 ---

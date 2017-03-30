@@ -1,6 +1,6 @@
 ---
 title: "What is Lexicon"
-description: "What is Lexicon"
+description: "User experience design language."
 layout: "guide"
 icon: "lexicon-site-layers"
 weight: 1

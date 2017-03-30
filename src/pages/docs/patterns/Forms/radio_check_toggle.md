@@ -1,6 +1,6 @@
 ---
 title: "Checkbox, Radio button, Toggle"
-description: "Checkbox, Radio button, Toggle patterns description"
+description: "Checkbox, Radio button, Toggle usage."
 layout: "guide"
 weight: 2
 ---

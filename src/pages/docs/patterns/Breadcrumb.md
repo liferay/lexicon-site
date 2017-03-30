@@ -1,6 +1,6 @@
 ---
 title: "Breadcrumb"
-description: "Breadcrumb pattern description"
+description: "Breadcrumb navigation"
 layout: "guide"
 weight: 1
 ---

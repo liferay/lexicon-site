@@ -1,6 +1,6 @@
 ---
 title: "Management bar"
-description: "Buttons pattern description"
+description: "Specific toolbar for dataset management."
 layout: "guide"
 weight: 1
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Pagination"
-description: "Pagination pattern description"
+description: "Navigation between chunks of a dataset."
 layout: "guide"
 weight: 1
 ---

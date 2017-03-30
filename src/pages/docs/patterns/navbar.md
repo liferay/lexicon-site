@@ -1,6 +1,6 @@
 ---
 title: "Navbar"
-description: "Navbar pattern description"
+description: "Defines navigation in applications or sites."
 layout: "guide"
 weight: 1
 ---

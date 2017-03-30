@@ -1,6 +1,6 @@
 ---
 title: "Grid"
-description: "Grid pattern"
+description: "Grid, measures and distances."
 layout: "guide"
 weight: 1
 ---

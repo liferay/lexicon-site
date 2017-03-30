@@ -1,6 +1,6 @@
 ---
 title: "Alerts"
-description: "Alerts pattern description"
+description: "Alerts are used to capture the attention of the user in an intrusive way"
 layout: "guide"
 weight: 1
 ---

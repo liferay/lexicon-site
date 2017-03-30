@@ -1,6 +1,6 @@
 ---
 title: "Progress bars"
-description: "Progress bars pattern description"
+description: "Progress indicator to show the process completion."
 layout: "guide"
 weight: 1
 ---

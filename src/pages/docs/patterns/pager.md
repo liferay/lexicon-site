@@ -1,11 +1,11 @@
 ---
 title: "Pager"
-description: "Pager pattern description"
+description: "Navigation between pages of a process or task."
 layout: "guide"
 weight: 1
 ---
 
-### Descrition
+### Description
 
 Pager allows navigation between pages of a process or task divided in subtasks or also called pages.
 

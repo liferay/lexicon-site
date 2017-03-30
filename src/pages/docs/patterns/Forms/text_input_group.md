@@ -1,6 +1,6 @@
 ---
 title: "Text input group"
-description: "Text input group pattern description"
+description: "Text input group variations and usage."
 layout: "guide"
 weight: 5
 ---

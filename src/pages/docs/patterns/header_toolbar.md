@@ -1,6 +1,6 @@
 ---
 title: "Header toolbar"
-description: "Buttons pattern description"
+description: "Usage and confiration."
 layout: "guide"
 weight: 1
 ---

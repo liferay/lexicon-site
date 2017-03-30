@@ -1,6 +1,6 @@
 ---
 title: "Sidebar"
-description: "Sidebar pattern description"
+description: "Sidebar for extended information."
 layout: "guide"
 weight: 1
 ---

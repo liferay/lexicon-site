@@ -1,6 +1,6 @@
 ---
 title: "Forms"
-description: "Forms pattern description"
+description: "Forms usage tips."
 layout: "guide"
 weight: 1
 ---

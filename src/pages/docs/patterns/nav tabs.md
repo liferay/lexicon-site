@@ -1,6 +1,6 @@
 ---
 title: "Nav tabs"
-description: "Nav tabs pattern description"
+description: "Tabs let the user move around parallel content in a same context."
 layout: "guide"
 weight: 1
 ---

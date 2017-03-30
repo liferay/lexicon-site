@@ -1,6 +1,6 @@
 ---
 title: "Icons"
-description: "Buttons pattern description"
+description: "Lexicon icon library and the use of external libraries."
 layout: "guide"
 weight: 1
 ---

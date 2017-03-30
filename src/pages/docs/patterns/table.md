@@ -1,6 +1,6 @@
 ---
 title: "Table"
-description: "Table pattern description"
+description: "Dataset representation."
 layout: "guide"
 weight: 1
 ---

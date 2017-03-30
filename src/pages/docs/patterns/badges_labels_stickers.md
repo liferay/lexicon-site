@@ -1,6 +1,6 @@
 ---
 title: "Badges, Labels and Stickers"
-description: "Badges, Labels and Stickers pattern description"
+description: "Badges, Labels and Stickers usage."
 layout: "guide"
 weight: 1
 ---

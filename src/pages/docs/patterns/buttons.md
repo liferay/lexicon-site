@@ -1,6 +1,6 @@
 ---
 title: "Buttons"
-description: "Buttons pattern description"
+description: "Buttons communicate an action to happen on user interaction"
 layout: "guide"
 weight: 1
 ---

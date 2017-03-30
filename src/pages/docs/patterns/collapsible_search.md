@@ -1,6 +1,6 @@
 ---
 title: "Collapsible search"
-description: "Collapsible search pattern description"
+description: "Simple search solution for small screens."
 layout: "guide"
 weight: 1
 ---

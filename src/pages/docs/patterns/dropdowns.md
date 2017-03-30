@@ -1,6 +1,6 @@
 ---
 title: "Dropdown"
-description: "Dropdown pattern description"
+description: "Dropdown menu variations and usage."
 layout: "guide"
 weight: 1
 ---

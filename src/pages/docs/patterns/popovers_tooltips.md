@@ -1,6 +1,6 @@
 ---
 title: "Popovers and Tooltips"
-description: "Popovers and Tooltips pattern description"
+description: "Popovers and Tooltips usage."
 layout: "guide"
 weight: 1
 ---

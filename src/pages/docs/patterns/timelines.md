@@ -1,13 +1,13 @@
 ---
 title: "Timelines"
-description: "Timelines pattern description"
+description: "Timelines visually represent events along the time."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Timelines represent visually events along the time.
+Timelines visually represent events along the time.
 
 ### Usage
 

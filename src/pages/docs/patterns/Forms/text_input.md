@@ -1,6 +1,6 @@
 ---
 title: "Text input"
-description: "Text input pattern description"
+description: "Text input variations, validations and usage."
 layout: "guide"
 weight: 4
 ---

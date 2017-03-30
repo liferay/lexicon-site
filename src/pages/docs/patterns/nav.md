@@ -1,11 +1,11 @@
 ---
 title: "Nav"
-description: "Nav pattern description"
+description: "Nested navigation."
 layout: "guide"
 weight: 1
 ---
 
-### Descrition
+### Description
 
 Nav is the pattern that defines the navigation pattern.
 

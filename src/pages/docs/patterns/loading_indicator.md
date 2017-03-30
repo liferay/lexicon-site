@@ -1,11 +1,11 @@
 ---
 title: "Loading indicator"
-description: "Loading indicator pattern description"
+description: "Providing feedback to users on processes."
 layout: "guide"
 weight: 1
 ---
 
-### Descrition
+### Description
 
 Loading indicator shows the user that an external process, like a connection, is being executed.
 

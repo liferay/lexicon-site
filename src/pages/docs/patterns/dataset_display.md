@@ -1,6 +1,6 @@
 ---
 title: "Dataset display"
-description: "Dataset display pattern description"
+description: "Relation between management bar and dataset visualization."
 layout: "guide"
 weight: 1
 ---

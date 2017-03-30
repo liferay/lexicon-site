@@ -1,6 +1,6 @@
 ---
 title: "Color palette"
-description: "Colors pattern description"
+description: "Color palette definition and usage."
 layout: "guide"
 weight: 1
 ---

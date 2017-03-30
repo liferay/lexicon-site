@@ -1,6 +1,6 @@
 ---
 title: "Typography"
-description: "Typography pattern description"
+description: "Typeface usage."
 layout: "guide"
 weight: 1
 ---
