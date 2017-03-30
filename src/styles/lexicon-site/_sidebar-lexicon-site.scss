@@ -8,7 +8,7 @@
 	.sidebar-header {
 		padding: $base-size * 0.75  $base-size * 0.75 12px;
 
-		@media (max-width: $grid-float-breakpoint) {
+		@media (max-width: $grid-float-breakpoint - 1px) {
 			padding: 16px;
 		}
 	}
@@ -16,7 +16,7 @@
 	.sidebar-body {
 		padding-top: 0;
 
-		@media (max-width: $grid-float-breakpoint) {
+		@media (max-width: $grid-float-breakpoint - 1px) {
 			padding: 0 16px 16px;
 		}
 	}

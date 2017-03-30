@@ -26,7 +26,7 @@ body {
 	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: $base-size / 2;
 
-	@media (max-width: $grid-float-breakpoint) {
+	@media (max-width: $grid-float-breakpoint - 1px) {
 		margin-top: $base-size * 2;
 	}
 }

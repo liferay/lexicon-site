@@ -39,7 +39,7 @@
 	}
 
 	&, &.open {
-		@media (max-width: $grid-float-breakpoint) {
+		@media (max-width: $grid-float-breakpoint - 1px) {
 			@include transition(all 0.3s $ease-out-quint);
 		}
 

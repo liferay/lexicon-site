@@ -33,7 +33,7 @@
 		border-width: 0;
 		height: $base-size * 1.5;
 
-		@media (max-width: $grid-float-breakpoint) {
+		@media (max-width: $grid-float-breakpoint - 1px) {
 			.icon-bar {
 				@include transform-origin(0);
 				@include transition(all 0.3s $ease-in-out-back);
