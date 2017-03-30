@@ -1,7 +1,6 @@
-'use strict';
-
 const connect = require('gulp-connect');
 const electric = require('electric');
+const fs = require('fs');
 const ghPages = require('gulp-gh-pages');
 const gulp = require('gulp');
 const lexicon = require('lexicon-ux');
@@ -15,19 +14,44 @@ electric.registerTasks({
 	markdownRenderer: function(md) {
 		var image = md.renderer.rules.image;
 
-		md.renderer.rules.image = function(tokens, idx, options, env) {
-			var res = image.apply(this, arguments);
+		if (!image.__LEXICON__) {
+			const addSrcSet = function(str, src) {
+				return str.replace('<img ', '<img srcset="' + src + ' 2x" ');
+			};
 
-			var token = tokens[idx];
+			const getRetina = function(src) {
+				return src.replace(/(\.\w{3,})$/, '@2x$1');
+			};
 
-			var src = token.src;
+			const stripRetina = function(src) {
+				return src.replace('@2x', '');
+			};
 
-			src = src.replace(/(\.\w{3,})$/, '@2x$1 2x');
+			md.renderer.rules.image = function(tokens, idx, options, env) {
+				var token = tokens[idx];
 
-			res = res.replace('<img ', '<img srcset="' + src + '" ');
+				var res = image.apply(this, arguments);
 
-			return res;
-		};
+				var src = token.src;
+
+				var absolutePath = path.resolve(process.cwd(), 'src/', src.replace(/^(\.\.\/)+images/, 'images'));
+
+				if (!src.includes('@2x') && fs.existsSync(getRetina(absolutePath))) {
+					src = getRetina(src);
+
+					res = addSrcSet(res, src);
+				}
+				else if (src.includes('@2x') && fs.existsSync(stripRetina(absolutePath))) {
+					res = stripRetina(res);
+
+					res = addSrcSet(res, src);
+				}
+
+				return res;
+			};
+
+			md.renderer.rules.image.__LEXICON__ = true;
+		}
 
 		return md;
 	}
