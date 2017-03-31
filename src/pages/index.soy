@@ -12,7 +12,7 @@ description: "Something nice and compelling about the project. Make it short and
 	{call main.render data="all"}
 		{param content kind="html"}
 			{call Sidebar.render data="all"}
-				{param section: $site.index.children[1] /}
+				{param section: $site.index.children['docs'] /}
 			{/call}
 			<div class="sidebar-offset">
 				{call .header /}

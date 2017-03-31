@@ -10,7 +10,9 @@
 
 	{if $section.children}
 		<ul class="nav nav-nested nav-pills nav-stacked">
-			{foreach $page in $section.children}
+			{foreach $childId in $section.childIds}
+				{let $page: $section.children[$childId] /}
+
 				{if not $page.hidden}
 					<li class="{$page.active ? 'active' : ''} {$page.children ? 'nav-heading' : ''}">
 						{call .anchor data="all"}
