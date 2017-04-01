@@ -75,7 +75,7 @@ Button groups are used to switch between complementary views for example, but th
 
 The action button is always a primary button with a special size of 64x64 due to its importance. This button floats on the bottom right corner of the screen. It contains all the adding or creating actions in a context. When there is only one action to perform in the page where it is used the button triggers the action. In case there are more that one actions, all the actions appear listed in a dropdown panel that is triggered on click interaction with the button. Once selected the action in the list, the dropdown is closed.
 
-![plus button or button actions](../../../images/buttonAction.png)
+![plus button or button actions](../../../images/buttonPlus.png)
 
 ### Attributes
 
