@@ -10,7 +10,7 @@ Lexicon uses a 4px grid as the minimum unit of measure in terms of distance and 
 
 ### 4px grid
 
-![form distances to build up forms using Lexicon](../../../images/grid.png)
+![form distances to build up forms using Lexicon](../../../images/Grid.png)
 
 ![form distances to build up forms using Lexicon](../../../images/meausres.png)
 
