@@ -15912,6 +15912,862 @@ babelHelpers;
 'use strict';
 
 (function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from Tabs.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace Tabs.
+     * @public
+     */
+
+    goog.module('Tabs.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var $$temp;
+      if (opt_data.tabs.length > 0) {
+        ie_open('ul', null, null, 'class', 'nav ' + (opt_data.type != 'none' ? 'nav-' + opt_data.type : '') + ' ' + (($$temp = opt_data.elementClasses) == null ? '' : $$temp), 'role', 'tablist');
+        var currentTabList37 = opt_data.tabs;
+        var currentTabListLen37 = currentTabList37.length;
+        for (var currentTabIndex37 = 0; currentTabIndex37 < currentTabListLen37; currentTabIndex37++) {
+          var currentTabData37 = currentTabList37[currentTabIndex37];
+          var isDisabled__soy10 = opt_data.disabled != null && opt_data.disabled || currentTabData37.disabled;
+          var isCurrentTab__soy11 = opt_data.tab == currentTabIndex37;
+          ie_open_start('li');
+          iattr('class', (isDisabled__soy10 ? 'disabled' : '') + ' ' + (isCurrentTab__soy11 ? 'active' : ''));
+          iattr('data-index', currentTabIndex37);
+          if (!isDisabled__soy10 && !isCurrentTab__soy11) {
+            iattr('data-onclick', 'onClickItem');
+          }
+          iattr('role', 'presentation');
+          ie_open_end();
+          ie_open_start('a');
+          iattr('aria-expanded', isCurrentTab__soy11 ? 'true' : 'false');
+          iattr('data-toggle', 'tab');
+          iattr('data-unfocusable', isDisabled__soy10 ? 'true' : 'false');
+          if (!isDisabled__soy10) {
+            iattr('href', '#');
+          }
+          iattr('ref', 'tab-' + currentTabIndex37);
+          iattr('role', 'tab');
+          iattr('tabindex', isCurrentTab__soy11 ? '0' : '-1');
+          ie_open_end();
+          var dyn0 = currentTabData37.label;
+          if (typeof dyn0 == 'function') dyn0();else if (dyn0 != null) itext(dyn0);
+          ie_close('a');
+          ie_close('li');
+        }
+        ie_close('ul');
+      }
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'Tabs.render';
+    }
+
+    exports.render.params = ["tab", "tabs", "disabled", "elementClasses", "type"];
+    exports.render.types = { "tab": "any", "tabs": "any", "disabled": "any", "elementClasses": "any", "type": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var Tabs = function (_Component) {
+    babelHelpers.inherits(Tabs, _Component);
+
+    function Tabs() {
+      babelHelpers.classCallCheck(this, Tabs);
+      return babelHelpers.possibleConstructorReturn(this, (Tabs.__proto__ || Object.getPrototypeOf(Tabs)).apply(this, arguments));
+    }
+
+    return Tabs;
+  }(Component);
+
+  Soy.register(Tabs, templates);
+  this['metalNamed']['Tabs'] = this['metalNamed']['Tabs'] || {};
+  this['metalNamed']['Tabs']['Tabs'] = Tabs;
+  this['metalNamed']['Tabs']['templates'] = templates;
+  this['metal']['Tabs'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+	var core = this['metal']['metal'];
+	var EventEmitter = this['metal']['events'];
+
+	/**
+  * Listens to keyboard events and uses them to move focus between different
+  * elements from a component (via the arrow keys for example).
+  * By default `KeyboardFocusManager` will assume that all focusable elements
+  * in the component will have refs that follow the pattern in
+  * KeyboardFocusManager.REF_REGEX, which includes a position number. The arrow
+  * keys will then automatically move between elements by
+  * incrementing/decrementing this position.
+  * It's possible to fully customize this behavior by passing a function to
+  * `setFocusHandler`. For more details check this function's docs.
+  */
+
+	var KeyboardFocusManager = function (_EventEmitter) {
+		babelHelpers.inherits(KeyboardFocusManager, _EventEmitter);
+
+		/**
+   * Constructor for `KeyboardFocusManager`.
+   * @param {!Component} component
+   * @param {string=} opt_selector
+   */
+		function KeyboardFocusManager(component, opt_selector) {
+			babelHelpers.classCallCheck(this, KeyboardFocusManager);
+
+			var _this = babelHelpers.possibleConstructorReturn(this, (KeyboardFocusManager.__proto__ || Object.getPrototypeOf(KeyboardFocusManager)).call(this));
+
+			_this.component_ = component;
+			_this.selector_ = opt_selector || '*';
+			_this.handleKey_ = _this.handleKey_.bind(_this);
+			return _this;
+		}
+
+		/**
+   * Builds a ref string for the given position.
+   * @param {string} prefix
+   * @param {number|string} position
+   * @return {string}
+   * @protected
+   */
+
+
+		babelHelpers.createClass(KeyboardFocusManager, [{
+			key: 'buildRef_',
+			value: function buildRef_(prefix, position) {
+				return prefix + position;
+			}
+
+			/**
+    * @inheritDoc
+    */
+
+		}, {
+			key: 'disposeInternal',
+			value: function disposeInternal() {
+				babelHelpers.get(KeyboardFocusManager.prototype.__proto__ || Object.getPrototypeOf(KeyboardFocusManager.prototype), 'disposeInternal', this).call(this);
+				this.stop();
+				this.component_ = null;
+				this.selector_ = null;
+			}
+
+			/**
+    * Gets the next focusable element, that is, the next element that doesn't
+    * have the `data-unfocusable` attribute set to `true`.
+    * @param {string} prefix
+    * @param {number} position
+    * @param {number} increment
+    * @return {string}
+    * @protected
+    */
+
+		}, {
+			key: 'getNextFocusable_',
+			value: function getNextFocusable_(prefix, position, increment) {
+				var initialPosition = position;
+				var element = void 0;
+				var ref = void 0;
+				do {
+					position = this.increment_(position, increment);
+					ref = this.buildRef_(prefix, position);
+					element = this.component_.refs[ref];
+				} while (this.isFocusable_(element) && position !== initialPosition);
+				return element ? ref : null;
+			}
+
+			/**
+    * Handles a `keydown` event. Decides if a new element should be focused
+    * according to the key that was pressed.
+    * @param {!Event} event
+    * @protected
+    */
+
+		}, {
+			key: 'handleKey_',
+			value: function handleKey_(event) {
+				var element = this.focusHandler_ && this.focusHandler_(event);
+				if (!this.focusHandler_ || element === true) {
+					element = this.handleKeyDefault_(event);
+				}
+
+				var originalValue = element;
+				if (!core.isElement(element)) {
+					element = this.component_.refs[element];
+				}
+				if (element) {
+					element.focus();
+					this.emit(KeyboardFocusManager.EVENT_FOCUSED, {
+						element: element,
+						ref: core.isString(originalValue) ? originalValue : null
+					});
+				}
+			}
+
+			/**
+    * Handles a key press according to the default behavior. Assumes that all
+    * focusable elements in the component will have refs that follow the pattern
+    * in KeyboardFocusManager.REF_REGEX, which includes a position number. The
+    * arrow keys will then automatically move between elements by
+    * incrementing/decrementing the position.
+    * @param {!Event} event
+    * @protected
+    */
+
+		}, {
+			key: 'handleKeyDefault_',
+			value: function handleKeyDefault_(event) {
+				var ref = event.delegateTarget.getAttribute('ref');
+				var matches = KeyboardFocusManager.REF_REGEX.exec(ref);
+				if (!matches) {
+					return;
+				}
+
+				var position = parseInt(matches[1], 10);
+				var prefix = ref.substr(0, ref.length - matches[1].length);
+				switch (event.keyCode) {
+					case 37:
+					case 38:
+						// Left/up arrow keys will focus the previous element.
+						return this.getNextFocusable_(prefix, position, -1);
+					case 39:
+					case 40:
+						// Right/down arrow keys will focus the next element.
+						return this.getNextFocusable_(prefix, position, 1);
+				}
+			}
+
+			/**
+    * Increments the given position, making sure to follow circular rules if
+    * enabled.
+    * @param {number} position
+    * @param {number} increment
+    * @return {number}
+    * @protected
+    */
+
+		}, {
+			key: 'increment_',
+			value: function increment_(position, increment) {
+				var size = this.circularLength_;
+				position += increment;
+				if (core.isNumber(size)) {
+					if (position < 0) {
+						position = size - 1;
+					} else if (position >= size) {
+						position = 0;
+					}
+				}
+				return position;
+			}
+
+			/**
+    * Checks if the given element is focusable.
+    * @param {Element} element
+    * @return {boolean}
+    * @protected
+    */
+
+		}, {
+			key: 'isFocusable_',
+			value: function isFocusable_(element) {
+				return element && element.getAttribute('data-unfocusable') === 'true';
+			}
+
+			/**
+    * Sets the length of the focusable elements. If a number is passed, the
+    * default focusing behavior will follow a circular pattern, going from the
+    * last to the first element, and vice versa.
+    * @param {?number} circularLength
+    * @chainable
+    */
+
+		}, {
+			key: 'setCircularLength',
+			value: function setCircularLength(circularLength) {
+				this.circularLength_ = circularLength;
+				return this;
+			}
+
+			/**
+    * Sets a handler function that will be called to decide which element should
+    * be focused according to the key that was pressed. It will receive the key
+    * event and should return one of the following:
+    *   - `true`, if the default behavior should be triggered instead.
+    *   - A string, representing a `ref` to the component element that should be
+    *       focused.
+    *   - The element itself that should be focused.
+    *   - Anything else, if nothing should be focused (skipping default behavior
+    *       too).
+    * @param {function(key: string)} focusHandler
+    * @chainable
+    */
+
+		}, {
+			key: 'setFocusHandler',
+			value: function setFocusHandler(focusHandler) {
+				this.focusHandler_ = focusHandler;
+				return this;
+			}
+
+			/**
+    * Starts listening to keyboard events and handling element focus.
+    * @chainable
+    */
+
+		}, {
+			key: 'start',
+			value: function start() {
+				if (!this.handle_) {
+					this.handle_ = this.component_.delegate('keydown', this.selector_, this.handleKey_);
+				}
+				return this;
+			}
+
+			/**
+    * Stops listening to keyboard events and handling element focus.
+    * @chainable
+    */
+
+		}, {
+			key: 'stop',
+			value: function stop() {
+				if (this.handle_) {
+					this.handle_.removeListener();
+					this.handle_ = null;
+				}
+				return this;
+			}
+		}]);
+		return KeyboardFocusManager;
+	}(EventEmitter);
+
+	// Event emitted when a selected element was focused via the keyboard.
+
+
+	KeyboardFocusManager.EVENT_FOCUSED = 'focused';
+
+	// The regex used to extract the position from an element's ref.
+	KeyboardFocusManager.REF_REGEX = /.+-(\d+)$/;
+
+	this['metal']['KeyboardFocusManager'] = KeyboardFocusManager;
+}).call(this);
+'use strict';
+
+(function () {
+	var core = this['metal']['metal'];
+	var templates = this['metal']['Tabs'];
+	var Component = this['metal']['component'];
+	var KeyboardFocusManager = this['metal']['KeyboardFocusManager'];
+	var Soy = this['metal']['Soy'];
+
+	/**
+  * UI Component to navigate through tabbed data.
+  */
+
+	var Tabs = function (_Component) {
+		babelHelpers.inherits(Tabs, _Component);
+
+		function Tabs() {
+			babelHelpers.classCallCheck(this, Tabs);
+			return babelHelpers.possibleConstructorReturn(this, (Tabs.__proto__ || Object.getPrototypeOf(Tabs)).apply(this, arguments));
+		}
+
+		babelHelpers.createClass(Tabs, [{
+			key: 'attached',
+
+			/**
+    * @inheritDoc
+    */
+			value: function attached() {
+				this.keyboardFocusManager_ = new KeyboardFocusManager(this, 'a').setCircularLength(this.tabs.length).start();
+			}
+
+			/**
+    * Adds a tab to the tabs array at the specified index if given or
+    * appends it at the end.
+    * @param {Object} tab
+    * @param {number} index
+    */
+
+		}, {
+			key: 'addTab',
+			value: function addTab(tab, index) {
+				if (core.isNumber(index)) {
+					this.tabs.splice(index, 0, tab);
+				} else {
+					this.tabs.push(tab);
+				}
+
+				this.tabs = this.tabs;
+			}
+
+			/**
+    * Adds a tab to the tabs array at the specified index if given or
+    * appends it at the end.
+    * @param {string} label
+    * @param {boolean} disabled
+    * @param {number} index
+    */
+
+		}, {
+			key: 'addTabByName',
+			value: function addTabByName(label, disabled, index) {
+				if (core.isString(label)) {
+					var tab = {
+						label: label,
+						disabled: disabled
+					};
+
+					if (!core.isDef(disabled)) {
+						tab.disabled = false;
+					}
+
+					this.addTab(tab, index);
+				}
+			}
+
+			/**
+    * @inheritDoc
+    */
+
+		}, {
+			key: 'created',
+			value: function created() {
+				this.lastState_ = {
+					tab: this.tab
+				};
+
+				this.on(Tabs.Events.CHANGE_REQUEST, this.defaultChangeRequestFn_, true);
+			}
+
+			/**
+    * Default `changeRequest` function, sets new state of tabs.
+    * @param {EventFacade} event
+    * @protected
+    */
+
+		}, {
+			key: 'defaultChangeRequestFn_',
+			value: function defaultChangeRequestFn_(event) {
+				this.setState_(event.state);
+			}
+
+			/**
+    * Fires `changeRequest` event.
+    * @param {Object} state
+    * @protected
+    */
+
+		}, {
+			key: 'dispatchRequest_',
+			value: function dispatchRequest_(state) {
+				this.emit(Tabs.Events.CHANGE_REQUEST, {
+					lastState: this.lastState_,
+					state: state,
+					totalTabs: this.tabs.length
+				});
+			}
+
+			/**
+    * @inheritDoc
+    */
+
+		}, {
+			key: 'disposed',
+			value: function disposed() {
+				this.keyboardFocusManager_.dispose();
+				this.keyboardFocusManager_ = null;
+			}
+
+			/**
+    * Removes the tab at the given index from the tabs array.
+    * @return {number} Returns the index of the first tab which is not disabled.
+    */
+
+		}, {
+			key: 'findFirstAvailableIndex_',
+			value: function findFirstAvailableIndex_() {
+				if (!this.disabled) {
+					for (var i = 0; i < this.tabs.length; i++) {
+						if (!this.tabs[i].disabled) {
+							return i;
+						}
+					}
+				}
+
+				return -1;
+			}
+
+			/**
+    * `onClick` handler for tab items.
+    * @param {EventFacade} event
+    */
+
+		}, {
+			key: 'onClickItem',
+			value: function onClickItem(event) {
+				var item = event.delegateTarget;
+
+				event.preventDefault();
+
+				var index = parseInt(item.getAttribute('data-index'));
+
+				this.dispatchRequest_({
+					tab: index
+				});
+			}
+
+			/**
+    * Removes the tab at the given index from the tabs array.
+    * @param  {number} index
+    * @return {Object} Returns the removed tab.
+    */
+
+		}, {
+			key: 'removeTab',
+			value: function removeTab(index) {
+				if (core.isNumber(index) && index > -1 && index < this.tabs.length) {
+					var tabs = this.tabs.splice(index, 1);
+
+					this.tabs = this.tabs;
+
+					return tabs[0];
+				}
+			}
+
+			/**
+    * Set the new tabs state. The state is a payload object
+    * containing the tab number, e.g. `{tab:1}`.
+    * @param {Object} state
+    * @protected
+    */
+
+		}, {
+			key: 'setState_',
+			value: function setState_(state) {
+				this.tab = state.tab;
+
+				this.lastState_ = state;
+			}
+
+			/**
+    * Disables the tab at the given index in the tabs array.
+    * @param  {number} index
+    * @return {boolean} disabled
+    */
+
+		}, {
+			key: 'setTabDisabled',
+			value: function setTabDisabled(index, disabled) {
+				if (core.isNumber(index) && core.isBoolean(disabled)) {
+					this.tabs[index].disabled = disabled;
+
+					this.tabs = this.tabs;
+				}
+			}
+
+			/**
+    * Synchronizes the component with the current value of the `tabs` state
+    * property. Updates the length of the circular focus handling for tabs.
+    */
+
+		}, {
+			key: 'syncTabs',
+			value: function syncTabs() {
+				if (this.keyboardFocusManager_) {
+					this.keyboardFocusManager_.setCircularLength(this.tabs.length);
+				}
+			}
+
+			/**
+    * Toggles the disabled state of the tab at the given index in the tabs array.
+    * If the tab at the given index is active, then the next nearest enabled tab
+    * will become the new active tab.
+    * @param  {number} index
+    */
+
+		}, {
+			key: 'toggleTabDisabled',
+			value: function toggleTabDisabled(index) {
+				if (core.isNumber(index) && index >= 0 && index < this.tabs.length) {
+					this.tabs[index].disabled = !this.tabs[index].disabled;
+
+					if (index === this.tab) {
+						this.tab = this.findFirstAvailableIndex_();
+					}
+
+					this.tabs = this.tabs;
+				}
+			}
+		}]);
+		return Tabs;
+	}(Component);
+
+	Soy.register(Tabs, templates);
+
+	Tabs.Events = {
+		CHANGE_REQUEST: 'changeRequest'
+	};
+
+	/**
+  * Default types used to style the tabs component.
+  */
+	Tabs.TYPES = {
+		NONE: 'none',
+		PILLS: 'pills',
+		TABS: 'tabs'
+	};
+
+	/**
+  * State definition.
+  * @type {!Object}
+  * @static
+  */
+	Tabs.STATE = {
+		/**
+   * Determines if the whole component should be disabled or not.
+   * @type {boolean}
+   * @default false
+   */
+		disabled: {
+			validator: core.isBoolean,
+			value: false
+		},
+
+		/**
+   * Tab to display on initial paint. It has two attributes, 'label', which is
+   * required and 'disabled' which is optional.
+   * @type {number}
+   * @default Default will be set by the valueFn.
+   */
+		tab: {
+			validator: core.isNumber,
+			valueFn: 'findFirstAvailableIndex_'
+		},
+
+		/**
+   * Tabs array, holding the actual tabs.
+   * @type {Array}
+   * @default []
+   */
+		tabs: {
+			validator: function validator(value) {
+				return value.every(function (item) {
+					return !!item.label;
+				});
+			},
+			value: []
+		},
+
+		/**
+   * Type currently being used to style the tabs component.
+   * @type {string}
+   * @default {string}
+   */
+		type: {
+			validator: function validator(value) {
+				return value.toUpperCase() in Tabs.TYPES;
+			},
+			value: Tabs.TYPES.TABS
+		}
+	};
+
+	this['metal']['Tabs'] = Tabs;
+}).call(this);
+'use strict';
+
+(function () {
+  var Tabs = this['metal']['Tabs'];
+  var dom = this['metal']['dom'];
+  var State = this['metal']['state'];
+
+  /**
+   * Class the identity sibling rendered "Code Mirror" components on the
+   * page and make them tab navigable.
+   */
+
+  var ElectricCodeTabs = function (_State) {
+    babelHelpers.inherits(ElectricCodeTabs, _State);
+
+    function ElectricCodeTabs(opt) {
+      babelHelpers.classCallCheck(this, ElectricCodeTabs);
+
+      var _this = babelHelpers.possibleConstructorReturn(this, (ElectricCodeTabs.__proto__ || Object.getPrototypeOf(ElectricCodeTabs)).call(this, opt));
+
+      var tabGroupsData = [];
+      document.querySelectorAll('.' + _this.className).forEach(function (element) {
+        tabGroupsData.push({
+          label: _this.getTabLabelFromElement_(element),
+          element: element
+        });
+        if (!element.nextElementSibling || !dom.hasClass(element.nextElementSibling, _this.className)) {
+          if (tabGroupsData.length > 1) {
+            _this.renderTabs_(tabGroupsData);
+          }
+          tabGroupsData = [];
+        }
+      });
+      return _this;
+    }
+
+    /**
+     * Extracts the tab label from a given code mirror element.
+     * @param  {element} element
+     * @return {string} The title from the element or the matched map value.
+     * @private
+     */
+
+
+    babelHelpers.createClass(ElectricCodeTabs, [{
+      key: 'getTabLabelFromElement_',
+      value: function getTabLabelFromElement_(element) {
+        var tabLabel = element.querySelector('.code').dataset.mode;
+        return this.dictionary[tabLabel] || tabLabel;
+      }
+
+      /**
+       * Hides a given element by adding the hide CSS class.
+       * @param  {element} element
+       * @private
+       */
+
+    }, {
+      key: 'hide_',
+      value: function hide_(element) {
+        dom.addClasses(element, 'hide');
+      }
+
+      /**
+       * Hides all code mirror elements related to a tab navigation.
+       * @param  {Array<element>} tabs
+       * @private
+       */
+
+    }, {
+      key: 'hideAll_',
+      value: function hideAll_(tabs) {
+        var _this2 = this;
+
+        tabs.forEach(function (tab) {
+          _this2.hide_(tab.element);
+        });
+      }
+
+      /**
+       * Renders a tab navigations for a given tab content group.
+       * @param  {Array<Object>} data
+       * @private
+       */
+
+    }, {
+      key: 'renderTabs_',
+      value: function renderTabs_(data) {
+        var _this3 = this;
+
+        var container = dom.buildFragment('<div class="tabContainer"></div>');
+        var tabsComponent = new Tabs({
+          elementClasses: 'nav-code-tabs',
+          tabs: data
+        }, container);
+
+        tabsComponent.on('changeRequest', function (event) {
+          var currentTab = event.state.tab;
+          _this3.hideAll_(tabsComponent.tabs);
+          _this3.show_(tabsComponent.tabs[currentTab].element);
+        });
+
+        this.hideAll_(tabsComponent.tabs);
+        this.show_(tabsComponent.tabs[0].element);
+
+        data[0].element.parentNode.insertBefore(container, data[0].element);
+      }
+
+      /**
+       * Shows a given code mirror element by removing the hide CSS class.
+       * @param  {Array<Object>} data
+       */
+
+    }, {
+      key: 'show_',
+      value: function show_(element) {
+        dom.removeClasses(element, 'hide');
+      }
+    }]);
+    return ElectricCodeTabs;
+  }(State);
+
+  /**
+   * State definition.
+   * @type {!Object}
+   * @static
+   */
+
+
+  ElectricCodeTabs.STATE = {
+    /**
+    * The code mirror container CSS class name used for looking for elements and
+     * group them to build tabs.
+    * @type {string}
+    * @default {string}
+    */
+    className: {
+      value: 'code-container'
+    },
+
+    /**
+    * A dictionary of languages label
+    * @type {Object}
+    * @default {}
+    */
+    dictionary: {
+      value: {
+        'text/html': 'HTML',
+        'text/x-java': 'Java',
+        'application/json': 'JSON'
+      }
+    }
+  };
+
+  this['metal']['ElectricCodeTabs'] = ElectricCodeTabs;
+}).call(this);
+'use strict';
+
+(function () {
 	var Component = this['metal']['component'];
 
 	var ElectricNavigation = function (_Component) {
@@ -16939,7 +17795,7 @@ babelHelpers;
 						return '#' + article.id;
 					});
 
-					this.progress = new metal.ReadingProgress({
+					this.progress = new ReadingProgress({
 						items: articleIds,
 						titleSelector: titleSelector,
 						trackerConfig: {
@@ -16948,7 +17804,7 @@ babelHelpers;
 						}
 					}, this.refs.readingContainer);
 
-					this.affix = new metal.Affix({
+					this.affix = new Affix({
 						element: element,
 						offsetBottom: offsetBottom,
 						offsetTop: offsetTop
@@ -19245,7 +20101,8 @@ babelHelpers;
 			value: function filterResults_(data, query) {
 				var _this2 = this;
 
-				var children = data.children;
+				var children = data.children,
+				    childIds = data.childIds;
 
 
 				var results = [];
@@ -19255,7 +20112,9 @@ babelHelpers;
 				}
 
 				if (children) {
-					children.forEach(function (child) {
+					childIds.forEach(function (childId) {
+						var child = children[childId];
+
 						results = results.concat(_this2.filterResults_(child, query));
 					});
 				}
@@ -20561,6 +21420,7 @@ babelHelpers;
 
 				if (input) {
 					this.autocomplete = new Autocomplete({
+						autoBestAlign: false,
 						data: this.search_.bind(this),
 						format: this.format_.bind(this),
 						inputElement: input,
@@ -20643,6 +21503,7 @@ babelHelpers;
 
 (function () {
 	var ElectricCode = this['metal']['ElectricCode'];
+	var ElectricCodeTabs = this['metal']['ElectricCodeTabs'];
 	var ElectricNavigation = this['metal']['ElectricNavigation'];
 	var ElectricReadingProgress = this['metal']['ElectricReadingProgress'];
 	var ElectricSearch = this['metal']['ElectricSearch'];
@@ -20651,6 +21512,7 @@ babelHelpers;
 	var ElectricUpdates = this['metal']['ElectricUpdates'];
 	this['metalNamed']['components'] = this['metalNamed']['components'] || {};
 	this['metalNamed']['components']['ElectricCode'] = ElectricCode;
+	this['metalNamed']['components']['ElectricCodeTabs'] = ElectricCodeTabs;
 	this['metalNamed']['components']['ElectricNavigation'] = ElectricNavigation;
 	this['metalNamed']['components']['ElectricReadingProgress'] = ElectricReadingProgress;
 	this['metalNamed']['components']['ElectricSearch'] = ElectricSearch;
@@ -20706,10 +21568,12 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
+      var $$temp;
+      var spritesheet___soy3 = ($$temp = opt_data.spritesheet) == null ? '/vendor/lexicon/icons.svg' : $$temp;
       ie_open('div', null, null, 'class', 'code-container' + (opt_data.elementClasses ? ' ' + opt_data.elementClasses : ''));
       ie_open('button', null, null, 'class', 'btn btn-sm btn-copy');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
-      ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#paste');
+      ie_void('use', null, null, 'xlink:href', spritesheet___soy3 + '#paste');
       ie_close('svg');
       ie_close('button');
       ie_open('pre');
@@ -20725,8 +21589,8 @@ babelHelpers;
       $render.soyTemplateName = 'ElectricCode.render';
     }
 
-    exports.render.params = ["code", "mode", "elementClasses"];
-    exports.render.types = { "code": "any", "mode": "any", "elementClasses": "any" };
+    exports.render.params = ["code", "elementClasses", "mode", "spritesheet"];
+    exports.render.types = { "code": "any", "elementClasses": "any", "mode": "any", "spritesheet": "any" };
     templates = exports;
     return exports;
   });
@@ -20811,20 +21675,21 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       var $$temp;
-      var localAnchorVariant__soy12 = ($$temp = opt_data.anchorVariant) == null ? 'basic' : $$temp;
-      var localCurrentDepth__soy13 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
-      var localListItemActiveClasses__soy14 = ($$temp = opt_data.listItemActiveClasses) == null ? 'active' : $$temp;
+      var localAnchorVariant__soy15 = ($$temp = opt_data.anchorVariant) == null ? 'basic' : $$temp;
+      var localCurrentDepth__soy16 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
+      var localListItemActiveClasses__soy17 = ($$temp = opt_data.listItemActiveClasses) == null ? 'active' : $$temp;
       if (opt_data.section.children) {
         ie_open('ul', null, null, 'class', ($$temp = opt_data.elementClasses) == null ? '' : $$temp);
-        var pageList41 = opt_data.section.children;
-        var pageListLen41 = pageList41.length;
-        for (var pageIndex41 = 0; pageIndex41 < pageListLen41; pageIndex41++) {
-          var pageData41 = pageList41[pageIndex41];
-          if (!pageData41.hidden) {
-            ie_open('li', null, null, 'class', (($$temp = opt_data.listItemClasses) == null ? '' : $$temp) + (pageData41.active ? ' ' + localListItemActiveClasses__soy14 : ''));
-            soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), localAnchorVariant__soy12, false)(soy.$$assignDefaults({ page: pageData41 }, opt_data), null, opt_ijData);
-            if (!opt_data.depth || localCurrentDepth__soy13 + 1 < opt_data.depth) {
-              $render({ anchorVariant: localAnchorVariant__soy12, currentDepth: localCurrentDepth__soy13 + 1, currentURL: opt_data.currentURL, depth: opt_data.depth, elementClasses: opt_data.elementClasses, linkClasses: opt_data.linkClasses, listItemActiveClasses: opt_data.listItemActiveClasses, listItemClasses: opt_data.listItemClasses, section: pageData41 }, null, opt_ijData);
+        var childIdList45 = opt_data.section.childIds;
+        var childIdListLen45 = childIdList45.length;
+        for (var childIdIndex45 = 0; childIdIndex45 < childIdListLen45; childIdIndex45++) {
+          var childIdData45 = childIdList45[childIdIndex45];
+          var page__soy23 = opt_data.section.children[childIdData45];
+          if (!page__soy23.hidden) {
+            ie_open('li', null, null, 'class', (($$temp = opt_data.listItemClasses) == null ? '' : $$temp) + (page__soy23.active ? ' ' + localListItemActiveClasses__soy17 : ''));
+            soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), localAnchorVariant__soy15, false)(soy.$$assignDefaults({ page: page__soy23 }, opt_data), null, opt_ijData);
+            if (!opt_data.depth || localCurrentDepth__soy16 + 1 < opt_data.depth) {
+              $render({ anchorVariant: localAnchorVariant__soy15, currentDepth: localCurrentDepth__soy16 + 1, currentURL: opt_data.currentURL, depth: opt_data.depth, elementClasses: opt_data.elementClasses, linkClasses: opt_data.linkClasses, listItemActiveClasses: opt_data.listItemActiveClasses, listItemClasses: opt_data.listItemClasses, section: page__soy23 }, null, opt_ijData);
             }
             ie_close('li');
           }
@@ -20844,7 +21709,7 @@ babelHelpers;
      * @return {void}
      * @suppress {checkTypes}
      */
-    function __deltemplate_s44_b83841ac(opt_data, opt_ignored, opt_ijData) {
+    function __deltemplate_s48_b83841ac(opt_data, opt_ignored, opt_ijData) {
       var $$temp;
       if (opt_data.page.url || opt_data.page.redirect) {
         ie_open('a', null, null, 'class', ($$temp = opt_data.linkClasses) == null ? '' : $$temp, 'href', ($$temp = opt_data.page.redirect) == null ? opt_data.page.url : $$temp);
@@ -20860,11 +21725,11 @@ babelHelpers;
         ie_close('span');
       }
     }
-    exports.__deltemplate_s44_b83841ac = __deltemplate_s44_b83841ac;
+    exports.__deltemplate_s48_b83841ac = __deltemplate_s48_b83841ac;
     if (goog.DEBUG) {
-      __deltemplate_s44_b83841ac.soyTemplateName = 'ElectricNavigation.__deltemplate_s44_b83841ac';
+      __deltemplate_s48_b83841ac.soyTemplateName = 'ElectricNavigation.__deltemplate_s48_b83841ac';
     }
-    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'basic', 0, __deltemplate_s44_b83841ac);
+    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'basic', 0, __deltemplate_s48_b83841ac);
 
     exports.render.params = ["section", "anchorVariant", "currentDepth", "currentURL", "depth", "elementClasses", "linkClasses", "listItemActiveClasses", "listItemClasses"];
     exports.render.types = { "section": "any", "anchorVariant": "any", "currentDepth": "any", "currentURL": "any", "depth": "any", "elementClasses": "any", "linkClasses": "any", "listItemActiveClasses": "any", "listItemClasses": "any" };
@@ -21042,10 +21907,12 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
+      var $$temp;
       opt_data = opt_data || {};
+      var spritesheet___soy71 = ($$temp = opt_data.spritesheet) == null ? '/vendor/lexicon/icons.svg' : $$temp;
       ie_open('div', null, null, 'class', 'search');
-      $form(opt_data, null, opt_ijData);
-      $results(opt_data, null, opt_ijData);
+      $form(soy.$$assignDefaults({ spritesheet: spritesheet___soy71 }, opt_data), null, opt_ijData);
+      $results(soy.$$assignDefaults({ spritesheet: spritesheet___soy71 }, opt_data), null, opt_ijData);
       ie_close('div');
     }
     exports.render = $render;
@@ -21061,7 +21928,6 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $form(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
       ie_open('form', null, null, 'action', opt_data.action, 'method', 'GET', 'enctype', 'multipart/form-data');
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-6 col-md-offset-2');
@@ -21072,7 +21938,7 @@ babelHelpers;
       ie_close('input');
       ie_open('span', null, null, 'class', 'input-group-addon');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
-      ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#search');
+      ie_void('use', null, null, 'xlink:href', opt_data.spritesheet + '#search');
       ie_close('svg');
       ie_close('span');
       ie_close('div');
@@ -21100,7 +21966,6 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $results(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
       ie_open('div', null, null, 'class', 'search-result-container');
       if (opt_data.query) {
         ie_open('p', null, null, 'class', 'search-result-summary');
@@ -21117,24 +21982,24 @@ babelHelpers;
         ie_close('p');
       }
       if (opt_data.results) {
-        var resultList103 = opt_data.results;
-        var resultListLen103 = resultList103.length;
-        for (var resultIndex103 = 0; resultIndex103 < resultListLen103; resultIndex103++) {
-          var resultData103 = resultList103[resultIndex103];
+        var resultList114 = opt_data.results;
+        var resultListLen114 = resultList114.length;
+        for (var resultIndex114 = 0; resultIndex114 < resultListLen114; resultIndex114++) {
+          var resultData114 = resultList114[resultIndex114];
           ie_open('div', null, null, 'class', 'search-result');
-          if (resultData103.icon) {
+          if (resultData114.icon) {
             ie_open('div', null, null, 'class', 'search-result-icon');
             ie_open('svg', null, null, 'class', 'lexicon-icon');
-            ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#' + resultData103.icon);
+            ie_void('use', null, null, 'xlink:href', opt_data.spritesheet + '#' + resultData114.icon);
             ie_close('svg');
             ie_close('div');
           }
-          ie_open('a', null, null, 'class', 'search-result-link', 'href', resultData103.url);
-          var dyn5 = resultData103.title;
+          ie_open('a', null, null, 'class', 'search-result-link', 'href', resultData114.url);
+          var dyn5 = resultData114.title;
           if (typeof dyn5 == 'function') dyn5();else if (dyn5 != null) itext(dyn5);
           ie_close('a');
           ie_open('p', null, null, 'class', 'search-result-text');
-          var dyn6 = resultData103.description;
+          var dyn6 = resultData114.description;
           if (typeof dyn6 == 'function') dyn6();else if (dyn6 != null) itext(dyn6);
           ie_close('p');
           ie_close('div');
@@ -21147,12 +22012,12 @@ babelHelpers;
       $results.soyTemplateName = 'ElectricSearch.results';
     }
 
-    exports.render.params = ["action", "placeholder", "query", "results"];
-    exports.render.types = { "action": "any", "placeholder": "any", "query": "any", "results": "any" };
-    exports.form.params = ["action", "placeholder", "query"];
-    exports.form.types = { "action": "any", "placeholder": "any", "query": "any" };
-    exports.results.params = ["results", "query"];
-    exports.results.types = { "results": "any", "query": "any" };
+    exports.render.params = ["action", "placeholder", "query", "results", "spritesheet"];
+    exports.render.types = { "action": "any", "placeholder": "any", "query": "any", "results": "any", "spritesheet": "any" };
+    exports.form.params = ["action", "placeholder", "query", "spritesheet"];
+    exports.form.types = { "action": "any", "placeholder": "any", "query": "any", "spritesheet": "any" };
+    exports.results.params = ["results", "query", "spritesheet"];
+    exports.results.types = { "results": "any", "query": "any", "spritesheet": "any" };
     templates = exports;
     return exports;
   });
@@ -21236,6 +22101,7 @@ babelHelpers;
     function $render(opt_data, opt_ignored, opt_ijData) {
       var $$temp;
       opt_data = opt_data || {};
+      var spritesheet___soy119 = ($$temp = opt_data.spritesheet) == null ? '/vendor/lexicon/icons.svg' : $$temp;
       ie_open('div', null, null, 'class', 'page-autocomplete');
       ie_open('div', null, null, 'class', 'form-group');
       ie_open('div', null, null, 'class', 'input-group');
@@ -21243,7 +22109,7 @@ babelHelpers;
       ie_close('input');
       ie_open('span', null, null, 'class', 'input-group-addon');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
-      ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#search');
+      ie_void('use', null, null, 'xlink:href', spritesheet___soy119 + '#search');
       ie_close('svg');
       ie_close('span');
       ie_close('div');
@@ -21255,8 +22121,8 @@ babelHelpers;
       $render.soyTemplateName = 'ElectricSearchAutocomplete.render';
     }
 
-    exports.render.params = ["placeholder"];
-    exports.render.types = { "placeholder": "any" };
+    exports.render.params = ["placeholder", "spritesheet"];
+    exports.render.types = { "placeholder": "any", "spritesheet": "any" };
     templates = exports;
     return exports;
   });
@@ -21362,20 +22228,20 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-lg-8 col-lg-offset-2 col-md-12 col-md-offset-0');
       if (opt_data.updates) {
-        var updateList128 = opt_data.updates;
-        var updateListLen128 = updateList128.length;
-        for (var updateIndex128 = 0; updateIndex128 < updateListLen128; updateIndex128++) {
-          var updateData128 = updateList128[updateIndex128];
+        var updateList142 = opt_data.updates;
+        var updateListLen142 = updateList142.length;
+        for (var updateIndex142 = 0; updateIndex142 < updateListLen142; updateIndex142++) {
+          var updateData142 = updateList142[updateIndex142];
           ie_open('section', null, null, 'class', 'update');
           ie_open('div', null, null, 'class', 'row update-row');
-          ie_open('div', null, null, 'class', 'col-sm-2 ' + (updateData128.major ? 'major' : 'minor') + '-update update-timeline');
+          ie_open('div', null, null, 'class', 'col-sm-2 ' + (updateData142.major ? 'major' : 'minor') + '-update update-timeline');
           ie_open('div', null, null, 'class', 'update-point');
-          var dyn7 = updateData128.version;
+          var dyn7 = updateData142.version;
           if (typeof dyn7 == 'function') dyn7();else if (dyn7 != null) itext(dyn7);
           ie_close('div');
           ie_close('div');
           ie_open('div', null, null, 'class', 'col-sm-10 update-features');
-          $features(soy.$$assignDefaults({ features: updateData128.features }, opt_data), null, opt_ijData);
+          $features(soy.$$assignDefaults({ features: updateData142.features }, opt_data), null, opt_ijData);
           ie_close('div');
           ie_close('div');
           ie_close('section');
@@ -21398,13 +22264,13 @@ babelHelpers;
      */
     function $features(opt_data, opt_ignored, opt_ijData) {
       var $$temp;
-      var localFeatureVariant__soy132 = ($$temp = opt_data.featureVariant) == null ? 'basic' : $$temp;
+      var localFeatureVariant__soy146 = ($$temp = opt_data.featureVariant) == null ? 'basic' : $$temp;
       ie_open('div', null, null, 'class', 'row');
-      var featureList136 = opt_data.features;
-      var featureListLen136 = featureList136.length;
-      for (var featureIndex136 = 0; featureIndex136 < featureListLen136; featureIndex136++) {
-        var featureData136 = featureList136[featureIndex136];
-        soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), localFeatureVariant__soy132, false)(soy.$$assignDefaults({ feature: featureData136 }, opt_data), null, opt_ijData);
+      var featureList150 = opt_data.features;
+      var featureListLen150 = featureList150.length;
+      for (var featureIndex150 = 0; featureIndex150 < featureListLen150; featureIndex150++) {
+        var featureData150 = featureList150[featureIndex150];
+        soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), localFeatureVariant__soy146, false)(soy.$$assignDefaults({ feature: featureData150 }, opt_data), null, opt_ijData);
       }
       ie_close('div');
     }
@@ -21420,11 +22286,13 @@ babelHelpers;
      * @return {void}
      * @suppress {checkTypes}
      */
-    function __deltemplate_s139_5080d024(opt_data, opt_ignored, opt_ijData) {
+    function __deltemplate_s153_5080d024(opt_data, opt_ignored, opt_ijData) {
+      var $$temp;
+      var spritesheet___soy154 = ($$temp = opt_data.spritesheet) == null ? '/vendor/lexicon/icons.svg' : $$temp;
       ie_open('div', null, null, 'class', 'col-xs-12 col-sm-6 update-feature');
       ie_open('div', null, null, 'class', 'feature-topper');
       ie_open('svg', null, null, 'class', 'lexicon-icon');
-      ie_void('use', null, null, 'xlink:href', '/vendor/lexicon/icons.svg#' + opt_data.feature.icon);
+      ie_void('use', null, null, 'xlink:href', spritesheet___soy154 + '#' + opt_data.feature.icon);
       ie_close('svg');
       ie_open('h1', null, null, 'class', 'feature-header');
       var dyn8 = opt_data.feature.title;
@@ -21444,11 +22312,11 @@ babelHelpers;
       ie_close('div');
       ie_close('div');
     }
-    exports.__deltemplate_s139_5080d024 = __deltemplate_s139_5080d024;
+    exports.__deltemplate_s153_5080d024 = __deltemplate_s153_5080d024;
     if (goog.DEBUG) {
-      __deltemplate_s139_5080d024.soyTemplateName = 'ElectricUpdates.__deltemplate_s139_5080d024';
+      __deltemplate_s153_5080d024.soyTemplateName = 'ElectricUpdates.__deltemplate_s153_5080d024';
     }
-    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), 'basic', 0, __deltemplate_s139_5080d024);
+    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), 'basic', 0, __deltemplate_s153_5080d024);
 
     exports.render.params = ["featureVariant", "updates"];
     exports.render.types = { "featureVariant": "any", "updates": "any" };
@@ -21562,15 +22430,16 @@ babelHelpers;
       var localCurrentDepth__soy3 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
       if (opt_data.section.children) {
         ie_open('ul', null, null, 'class', 'nav nav-nested nav-pills nav-stacked');
-        var pageList23 = opt_data.section.children;
-        var pageListLen23 = pageList23.length;
-        for (var pageIndex23 = 0; pageIndex23 < pageListLen23; pageIndex23++) {
-          var pageData23 = pageList23[pageIndex23];
-          if (!pageData23.hidden) {
-            ie_open('li', null, null, 'class', (pageData23.active ? 'active' : '') + ' ' + (pageData23.children ? 'nav-heading' : ''));
-            $anchor(soy.$$assignDefaults({ page: pageData23 }, opt_data), null, opt_ijData);
+        var childIdList24 = opt_data.section.childIds;
+        var childIdListLen24 = childIdList24.length;
+        for (var childIdIndex24 = 0; childIdIndex24 < childIdListLen24; childIdIndex24++) {
+          var childIdData24 = childIdList24[childIdIndex24];
+          var page__soy7 = opt_data.section.children[childIdData24];
+          if (!page__soy7.hidden) {
+            ie_open('li', null, null, 'class', (page__soy7.active ? 'active' : '') + ' ' + (page__soy7.children ? 'nav-heading' : ''));
+            $anchor(soy.$$assignDefaults({ page: page__soy7 }, opt_data), null, opt_ijData);
             if (!opt_data.depth || localCurrentDepth__soy3 + 1 < opt_data.depth) {
-              $render({ currentDepth: localCurrentDepth__soy3 + 1, depth: opt_data.depth, section: pageData23 }, null, opt_ijData);
+              $render({ currentDepth: localCurrentDepth__soy3 + 1, depth: opt_data.depth, section: page__soy7 }, null, opt_ijData);
             }
             ie_close('li');
           }
@@ -22035,319 +22904,6 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace pageIndex.
-     * @public
-     */
-
-    goog.module('pageIndex.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param136 = function param136() {
-        $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
-        ie_open('div', null, null, 'class', 'sidebar-offset');
-        $header(null, null, opt_ijData);
-        ie_close('div');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param136 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageIndex.render';
-    }
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $header(opt_data, opt_ignored, opt_ijData) {
-      ie_open('header', null, null, 'class', 'header home');
-      ie_open('div', null, null, 'class', 'container-fluid');
-      ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'col-md-12');
-      ie_open('img', null, null, 'src', '/images/LexiconLogoHome.png');
-      ie_close('img');
-      ie_open('h1');
-      itext('Build consistent and beautiful web experiences easily');
-      ie_close('h1');
-      ie_close('div');
-      ie_close('div');
-      ie_close('div');
-      ie_close('header');
-    }
-    exports.header = $header;
-    if (goog.DEBUG) {
-      $header.soyTemplateName = 'pageIndex.header';
-    }
-
-    exports.render.params = ["site"];
-    exports.render.types = { "site": "any" };
-    exports.header.params = [];
-    exports.header.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var pageIndex = function (_Component) {
-    babelHelpers.inherits(pageIndex, _Component);
-
-    function pageIndex() {
-      babelHelpers.classCallCheck(this, pageIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
-    }
-
-    return pageIndex;
-  }(Component);
-
-  Soy.register(pageIndex, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['pageIndex'] = pageIndex;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var pageIndex = function (_Component) {
-    babelHelpers.inherits(pageIndex, _Component);
-
-    function pageIndex() {
-      babelHelpers.classCallCheck(this, pageIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
-    }
-
-    return pageIndex;
-  }(Component);
-
-  ;
-
-  Soy.register(pageIndex, templates);
-
-  this['metal']['pageIndex'] = pageIndex;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from blog.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace blog.
-     * @public
-     */
-
-    goog.module('blog.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param59 = function param59() {
-        ie_open('div', null, null, 'class', 'blog');
-        $mainPost(opt_data, null, opt_ijData);
-        $olderPosts(opt_data, null, opt_ijData);
-        ie_close('div');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param59 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'blog.render';
-    }
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $mainPost(opt_data, opt_ignored, opt_ijData) {
-      ie_open('article', null, null, 'class', 'container');
-      ie_open('header');
-      ie_open('small');
-      itext('By ');
-      var dyn1 = opt_data.page.author;
-      if (typeof dyn1 == 'function') dyn1();else if (dyn1 != null) itext(dyn1);
-      itext(' ');
-      ie_open('span');
-      itext('| ');
-      var dyn2 = opt_data.page.date;
-      if (typeof dyn2 == 'function') dyn2();else if (dyn2 != null) itext(dyn2);
-      ie_close('span');
-      ie_close('small');
-      ie_open('h3');
-      var dyn3 = opt_data.page.title;
-      if (typeof dyn3 == 'function') dyn3();else if (dyn3 != null) itext(dyn3);
-      ie_close('h3');
-      ie_close('header');
-      ie_open('div', null, null, 'class', 'content');
-      var dyn4 = opt_data.content;
-      if (typeof dyn4 == 'function') dyn4();else if (dyn4 != null) itext(dyn4);
-      ie_close('div');
-      ie_close('article');
-    }
-    exports.mainPost = $mainPost;
-    if (goog.DEBUG) {
-      $mainPost.soyTemplateName = 'blog.mainPost';
-    }
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $olderPosts(opt_data, opt_ignored, opt_ijData) {
-      ie_open('div', null, null, 'class', 'posts-list');
-      ie_open('div', null, null, 'class', 'container');
-      ie_open('ul', null, null, 'class', 'list-unstyled col-md-6 col-md-offset-3');
-      var pageList86 = opt_data.site.index.children[0].children;
-      var pageListLen86 = pageList86.length;
-      for (var pageIndex86 = 0; pageIndex86 < pageListLen86; pageIndex86++) {
-        var pageData86 = pageList86[pageIndex86];
-        ie_open('li', null, null, 'class', 'text-center');
-        ie_open('a', null, null, 'href', pageData86.url);
-        ie_open('small');
-        itext('By ');
-        var dyn5 = pageData86.author;
-        if (typeof dyn5 == 'function') dyn5();else if (dyn5 != null) itext(dyn5);
-        itext(' ');
-        ie_open('span');
-        itext('| ');
-        var dyn6 = pageData86.date;
-        if (typeof dyn6 == 'function') dyn6();else if (dyn6 != null) itext(dyn6);
-        ie_close('span');
-        ie_close('small');
-        ie_open('p', null, null, 'class', 'lead');
-        var dyn7 = pageData86.title;
-        if (typeof dyn7 == 'function') dyn7();else if (dyn7 != null) itext(dyn7);
-        ie_close('p');
-        ie_close('a');
-        ie_close('li');
-      }
-      ie_close('ul');
-      ie_close('div');
-      ie_close('div');
-    }
-    exports.olderPosts = $olderPosts;
-    if (goog.DEBUG) {
-      $olderPosts.soyTemplateName = 'blog.olderPosts';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    exports.mainPost.params = ["content", "page"];
-    exports.mainPost.types = { "content": "any", "page": "any" };
-    exports.olderPosts.params = ["site"];
-    exports.olderPosts.types = { "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var blog = function (_Component) {
-    babelHelpers.inherits(blog, _Component);
-
-    function blog() {
-      babelHelpers.classCallCheck(this, blog);
-      return babelHelpers.possibleConstructorReturn(this, (blog.__proto__ || Object.getPrototypeOf(blog)).apply(this, arguments));
-    }
-
-    return blog;
-  }(Component);
-
-  Soy.register(blog, templates);
-  this['metalNamed']['blog'] = this['metalNamed']['blog'] || {};
-  this['metalNamed']['blog']['blog'] = blog;
-  this['metalNamed']['blog']['templates'] = templates;
-  this['metal']['blog'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
     // This file was automatically generated from guide.soy.
     // Please don't edit this file by hand.
 
@@ -22391,11 +22947,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param92 = function param92() {
-        $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
+      var param72 = function param72() {
+        $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children['docs'] }, opt_data), null, opt_ijData);
         $guide(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param92 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param72 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22414,16 +22970,16 @@ babelHelpers;
       ie_open('header');
       ie_open('div', null, null, 'class', 'container-fluid');
       ie_open('h1');
-      var dyn8 = opt_data.page.title;
-      if (typeof dyn8 == 'function') dyn8();else if (dyn8 != null) itext(dyn8);
+      var dyn1 = opt_data.page.title;
+      if (typeof dyn1 == 'function') dyn1();else if (dyn1 != null) itext(dyn1);
       ie_close('h1');
       ie_close('div');
       ie_close('header');
       ie_open('div', null, null, 'class', 'container-fluid');
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-12');
-      var dyn9 = opt_data.content;
-      if (typeof dyn9 == 'function') dyn9();else if (dyn9 != null) itext(dyn9);
+      var dyn2 = opt_data.content;
+      if (typeof dyn2 == 'function') dyn2();else if (dyn2 != null) itext(dyn2);
       ie_close('div');
       ie_open('nav', null, null, 'class', 'col-md-5 col-md-offset-2 col-xs-12');
       $templateAlias3({ elementClasses: 'docs-nav' }, null, opt_ijData);
@@ -22561,8 +23117,8 @@ babelHelpers;
       var $$temp;
       ie_open('div', null, null, 'class', ($$temp = opt_data.elementClasses) == null ? 'main' : $$temp);
       ie_open('main', null, null, 'class', 'content');
-      var dyn10 = opt_data.content;
-      if (typeof dyn10 == 'function') dyn10();else if (dyn10 != null) itext(dyn10);
+      var dyn3 = opt_data.content;
+      if (typeof dyn3 == 'function') dyn3();else if (dyn3 != null) itext(dyn3);
       ie_close('main');
       ie_close('div');
     }
@@ -22598,8 +23154,8 @@ babelHelpers;
     function $logo(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null, 'class', 'navbar-header navbar-header-left-xs');
       ie_open('a', null, null, 'class', 'navbar-brand', 'href', '/');
-      var dyn11 = opt_data.site.title;
-      if (typeof dyn11 == 'function') dyn11();else if (dyn11 != null) itext(dyn11);
+      var dyn4 = opt_data.site.title;
+      if (typeof dyn4 == 'function') dyn4();else if (dyn4 != null) itext(dyn4);
       ie_close('a');
       ie_close('div');
     }
@@ -22672,276 +23228,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from markdown-post.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace blogMarkdownPostHtml.
-     * @public
-     */
-
-    goog.module('blogMarkdownPostHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('blog.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param200 = function param200() {
-        ie_open('article');
-        ie_open('p');
-        ie_open('strong');
-        itext('Strong');
-        ie_close('strong');
-        itext(' dolor sit amet, ');
-        ie_open('a', null, null, 'href', '#');
-        itext('consectetur adipiscing elit');
-        ie_close('a');
-        itext(', sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ');
-        ie_open('em');
-        itext('ullamco');
-        ie_close('em');
-        itext(' laboris nisi ut aliquip ');
-        ie_open('strike');
-        itext('ex');
-        ie_close('strike');
-        itext(' ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-        ie_close('p');
-        ie_open('blockquote');
-        ie_open('p');
-        itext('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
-        ie_close('p');
-        ie_close('blockquote');
-        ie_open('p');
-        itext('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?');
-        ie_close('p');
-        ie_open('figure');
-        ie_open('img', null, null, 'src', 'https://cloud.githubusercontent.com/assets/19154228/21908369/559710ce-d8c8-11e6-9987-9622306f1a77.png', 'alt', 'Lorem Ipsum');
-        ie_close('img');
-        ie_close('figure');
-        ie_open('p');
-        itext('At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param200 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'blogMarkdownPostHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var blogMarkdownPostHtml = function (_Component) {
-    babelHelpers.inherits(blogMarkdownPostHtml, _Component);
-
-    function blogMarkdownPostHtml() {
-      babelHelpers.classCallCheck(this, blogMarkdownPostHtml);
-      return babelHelpers.possibleConstructorReturn(this, (blogMarkdownPostHtml.__proto__ || Object.getPrototypeOf(blogMarkdownPostHtml)).apply(this, arguments));
-    }
-
-    return blogMarkdownPostHtml;
-  }(Component);
-
-  Soy.register(blogMarkdownPostHtml, templates);
-  this['metalNamed']['markdown-post'] = this['metalNamed']['markdown-post'] || {};
-  this['metalNamed']['markdown-post']['blogMarkdownPostHtml'] = blogMarkdownPostHtml;
-  this['metalNamed']['markdown-post']['templates'] = templates;
-  this['metal']['markdown-post'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['markdown-post'];
-
-  var blogMarkdownPostHtml = function (_Component) {
-    babelHelpers.inherits(blogMarkdownPostHtml, _Component);
-
-    function blogMarkdownPostHtml() {
-      babelHelpers.classCallCheck(this, blogMarkdownPostHtml);
-      return babelHelpers.possibleConstructorReturn(this, (blogMarkdownPostHtml.__proto__ || Object.getPrototypeOf(blogMarkdownPostHtml)).apply(this, arguments));
-    }
-
-    return blogMarkdownPostHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(blogMarkdownPostHtml, templates);
-
-  this['metal']['blogMarkdownPostHtml'] = blogMarkdownPostHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from first-post.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace pageBlogFirstPost.
-     * @public
-     */
-
-    goog.module('pageBlogFirstPost.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('blog.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param189 = function param189() {
-        ie_open('section');
-        ie_open('p');
-        ie_open('strong');
-        itext('Lorem ipsum');
-        ie_close('strong');
-        itext(' dolor sit amet, ');
-        ie_open('a', null, null, 'href', '#');
-        itext('consectetur adipiscing elit');
-        ie_close('a');
-        itext(', sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ');
-        ie_open('em');
-        itext('ullamco');
-        ie_close('em');
-        itext(' laboris nisi ut aliquip ');
-        ie_open('strike');
-        itext('ex');
-        ie_close('strike');
-        itext(' ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-        ie_close('p');
-        ie_open('blockquote');
-        itext('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
-        ie_close('blockquote');
-        ie_open('p');
-        itext('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?');
-        ie_close('p');
-        ie_open('figure');
-        ie_open('img', null, null, 'src', 'https://cloud.githubusercontent.com/assets/19154228/21908369/559710ce-d8c8-11e6-9987-9622306f1a77.png', 'alt', 'Lorem Ipsum');
-        ie_close('img');
-        ie_close('figure');
-        ie_open('p');
-        itext('At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.');
-        ie_close('p');
-        ie_close('section');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param189 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageBlogFirstPost.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var pageBlogFirstPost = function (_Component) {
-    babelHelpers.inherits(pageBlogFirstPost, _Component);
-
-    function pageBlogFirstPost() {
-      babelHelpers.classCallCheck(this, pageBlogFirstPost);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogFirstPost.__proto__ || Object.getPrototypeOf(pageBlogFirstPost)).apply(this, arguments));
-    }
-
-    return pageBlogFirstPost;
-  }(Component);
-
-  Soy.register(pageBlogFirstPost, templates);
-  this['metalNamed']['first-post'] = this['metalNamed']['first-post'] || {};
-  this['metalNamed']['first-post']['pageBlogFirstPost'] = pageBlogFirstPost;
-  this['metalNamed']['first-post']['templates'] = templates;
-  this['metal']['first-post'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
     // This file was automatically generated from index.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace pageBlogIndex.
+     * @fileoverview Templates in namespace pageIndex.
      * @public
      */
 
-    goog.module('pageBlogIndex.incrementaldom');
+    goog.module('pageIndex.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -22962,6 +23257,10 @@ babelHelpers;
     var itext = IncrementalDom.text;
     var iattr = IncrementalDom.attr;
 
+    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
+
     /**
      * @param {Object<string, *>=} opt_data
      * @param {(null|undefined)=} opt_ignored
@@ -22969,10 +23268,18 @@ babelHelpers;
      * @return {void}
      * @suppress {checkTypes}
      */
-    function $render(opt_data, opt_ignored, opt_ijData) {}
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param60 = function param60() {
+        $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children['docs'] }, opt_data), null, opt_ijData);
+        ie_open('div', null, null, 'class', 'sidebar-offset');
+        $header(null, null, opt_ijData);
+        ie_close('div');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param60 }, opt_data), null, opt_ijData);
+    }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageBlogIndex.render';
+      $render.soyTemplateName = 'pageIndex.render';
     }
 
     /**
@@ -22982,44 +23289,48 @@ babelHelpers;
      * @return {void}
      * @suppress {checkTypes}
      */
-    function $soyweb(opt_data, opt_ignored, opt_ijData) {
-      ie_open('!DOCTYPE', null, null, 'html', '');
-      ie_open('html', null, null, 'lang', 'en');
-      ie_open('head');
-      ie_open('meta', null, null, 'charset', 'UTF-8');
-      ie_close('meta');
-      ie_open('meta', null, null, 'http-equiv', 'refresh', 'content', '0; URL=\'' + opt_data.page.redirect + '\'');
-      ie_close('meta');
-      ie_close('head');
-      ie_close('html');
+    function $header(opt_data, opt_ignored, opt_ijData) {
+      ie_open('header', null, null, 'class', 'header home');
+      ie_open('div', null, null, 'class', 'container-fluid');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-md-12');
+      ie_open('img', null, null, 'src', '/images/LexiconLogoHome.png');
+      ie_close('img');
+      ie_open('h1');
+      itext('Build consistent and beautiful web experiences easily');
+      ie_close('h1');
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+      ie_close('header');
     }
-    exports.soyweb = $soyweb;
+    exports.header = $header;
     if (goog.DEBUG) {
-      $soyweb.soyTemplateName = 'pageBlogIndex.soyweb';
+      $header.soyTemplateName = 'pageIndex.header';
     }
 
-    exports.render.params = [];
-    exports.render.types = {};
-    exports.soyweb.params = ["page"];
-    exports.soyweb.types = { "page": "any" };
+    exports.render.params = ["site"];
+    exports.render.types = { "site": "any" };
+    exports.header.params = [];
+    exports.header.types = {};
     templates = exports;
     return exports;
   });
 
-  var pageBlogIndex = function (_Component) {
-    babelHelpers.inherits(pageBlogIndex, _Component);
+  var pageIndex = function (_Component) {
+    babelHelpers.inherits(pageIndex, _Component);
 
-    function pageBlogIndex() {
-      babelHelpers.classCallCheck(this, pageBlogIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogIndex.__proto__ || Object.getPrototypeOf(pageBlogIndex)).apply(this, arguments));
+    function pageIndex() {
+      babelHelpers.classCallCheck(this, pageIndex);
+      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
     }
 
-    return pageBlogIndex;
+    return pageIndex;
   }(Component);
 
-  Soy.register(pageBlogIndex, templates);
+  Soy.register(pageIndex, templates);
   this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['pageBlogIndex'] = pageBlogIndex;
+  this['metalNamed']['index']['pageIndex'] = pageIndex;
   this['metalNamed']['index']['templates'] = templates;
   this['metal']['index'] = templates;
   /* jshint ignore:end */
@@ -23029,48 +23340,24 @@ babelHelpers;
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['first-post'];
-
-  var pageBlogFirstPost = function (_Component) {
-    babelHelpers.inherits(pageBlogFirstPost, _Component);
-
-    function pageBlogFirstPost() {
-      babelHelpers.classCallCheck(this, pageBlogFirstPost);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogFirstPost.__proto__ || Object.getPrototypeOf(pageBlogFirstPost)).apply(this, arguments));
-    }
-
-    return pageBlogFirstPost;
-  }(Component);
-
-  ;
-
-  Soy.register(pageBlogFirstPost, templates);
-
-  this['metal']['pageBlogFirstPost'] = pageBlogFirstPost;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
   var templates = this['metal']['index'];
 
-  var pageBlogIndex = function (_Component) {
-    babelHelpers.inherits(pageBlogIndex, _Component);
+  var pageIndex = function (_Component) {
+    babelHelpers.inherits(pageIndex, _Component);
 
-    function pageBlogIndex() {
-      babelHelpers.classCallCheck(this, pageBlogIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogIndex.__proto__ || Object.getPrototypeOf(pageBlogIndex)).apply(this, arguments));
+    function pageIndex() {
+      babelHelpers.classCallCheck(this, pageIndex);
+      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
     }
 
-    return pageBlogIndex;
+    return pageIndex;
   }(Component);
 
   ;
 
-  Soy.register(pageBlogIndex, templates);
+  Soy.register(pageIndex, templates);
 
-  this['metal']['pageBlogIndex'] = pageBlogIndex;
+  this['metal']['pageIndex'] = pageIndex;
 }).call(this);
 'use strict';
 
@@ -23125,11 +23412,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param148 = function param148() {
-        $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
+      var param117 = function param117() {
+        $templateAlias2({ section: opt_data.page }, null, opt_ijData);
         $topics(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param148 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param117 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23153,8 +23440,8 @@ babelHelpers;
       ie_close('h1');
       ie_open('p', null, null, 'class', 'docs-home-top-description');
       itext('Start learning how to leverage the power of ');
-      var dyn12 = opt_data.site.title;
-      if (typeof dyn12 == 'function') dyn12();else if (dyn12 != null) itext(dyn12);
+      var dyn5 = opt_data.site.title;
+      if (typeof dyn5 == 'function') dyn5();else if (dyn5 != null) itext(dyn5);
       itext(' in your project.');
       ie_close('p');
       ie_close('div');
@@ -23193,19 +23480,20 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-13 col-md-offset-3 col-xs-16');
       ie_open('div', null, null, 'class', 'row');
-      var topicList171 = opt_data.site.index.children[1].children;
-      var topicListLen171 = topicList171.length;
-      for (var topicIndex171 = 0; topicIndex171 < topicListLen171; topicIndex171++) {
-        var topicData171 = topicList171[topicIndex171];
-        if (!topicData171.hidden) {
+      var childIdList141 = opt_data.page.childIds;
+      var childIdListLen141 = childIdList141.length;
+      for (var childIdIndex141 = 0; childIdIndex141 < childIdListLen141; childIdIndex141++) {
+        var childIdData141 = childIdList141[childIdIndex141];
+        var topic__soy131 = opt_data.page.children[childIdData141];
+        if (!topic__soy131.hidden) {
           ie_open('div', null, null, 'class', 'col-md-6 col-xs-16');
-          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData171.url);
+          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topic__soy131.url);
           ie_open('div', null, null, 'class', 'topic-icon');
-          ie_void('span', null, null, 'class', 'icon-16-' + topicData171.icon);
+          ie_void('span', null, null, 'class', 'icon-16-' + topic__soy131.icon);
           ie_close('div');
           ie_open('h3', null, null, 'class', 'topic-title');
-          var dyn13 = topicData171.title;
-          if (typeof dyn13 == 'function') dyn13();else if (dyn13 != null) itext(dyn13);
+          var dyn6 = topic__soy131.title;
+          if (typeof dyn6 == 'function') dyn6();else if (dyn6 != null) itext(dyn6);
           ie_close('h3');
           ie_close('a');
           ie_close('div');
@@ -23223,10 +23511,10 @@ babelHelpers;
       $topics.soyTemplateName = 'pageDocsIndex.topics';
     }
 
-    exports.render.params = ["site"];
-    exports.render.types = { "site": "any" };
-    exports.topics.params = ["site"];
-    exports.topics.types = { "site": "any" };
+    exports.render.params = ["page"];
+    exports.render.types = { "page": "any" };
+    exports.topics.params = ["page", "site"];
+    exports.topics.types = { "page": "any", "site": "any" };
     templates = exports;
     return exports;
   });
@@ -23326,8 +23614,8 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param177 = function param177() {
-        $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
+      var param147 = function param147() {
+        $templateAlias2({ section: opt_data.site.index.children['docs'] }, null, opt_ijData);
         ie_open('div', null, null, 'class', 'sidebar-offset');
         ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
         ie_open('div', null, null, 'class', 'row');
@@ -23351,7 +23639,7 @@ babelHelpers;
         ie_close('div');
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param177 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param147 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23420,132 +23708,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace updatesIndex.
+     * @fileoverview Templates in namespace ZXGvl.
      * @public
      */
 
-    goog.module('updatesIndex.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricUpdates.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param209 = function param209() {
-        ie_open('div');
-        ie_open('header', null, null, 'class', 'header');
-        ie_open('div', null, null, 'class', 'container');
-        ie_open('h1', null, null, 'class', 'header-title');
-        itext('Updates');
-        ie_close('h1');
-        ie_open('h1', null, null, 'class', 'header-subtitle');
-        itext('Check out what\'s new.');
-        ie_close('h1');
-        ie_close('div');
-        ie_close('header');
-        $templateAlias2({ updates: opt_data.page.updates }, null, opt_ijData);
-        ie_close('div');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param209 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'updatesIndex.render';
-    }
-
-    exports.render.params = ["page"];
-    exports.render.types = { "page": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var updatesIndex = function (_Component) {
-    babelHelpers.inherits(updatesIndex, _Component);
-
-    function updatesIndex() {
-      babelHelpers.classCallCheck(this, updatesIndex);
-      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
-    }
-
-    return updatesIndex;
-  }(Component);
-
-  Soy.register(updatesIndex, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['updatesIndex'] = updatesIndex;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var updatesIndex = function (_Component) {
-    babelHelpers.inherits(updatesIndex, _Component);
-
-    function updatesIndex() {
-      babelHelpers.classCallCheck(this, updatesIndex);
-      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
-    }
-
-    return updatesIndex;
-  }(Component);
-
-  ;
-
-  Soy.register(updatesIndex, templates);
-
-  this['metal']['updatesIndex'] = updatesIndex;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsLexicon.
-     * @public
-     */
-
-    goog.module('docsLexicon.incrementaldom');
+    goog.module('ZXGvl.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -23576,7 +23743,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param217 = function param217() {
+      var param159 = function param159() {
         ie_open('h3');
         itext('Design language');
         ie_close('h3');
@@ -23606,11 +23773,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param217 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param159 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsLexicon.render';
+      $render.soyTemplateName = 'ZXGvl.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -23619,20 +23786,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsLexicon = function (_Component) {
-    babelHelpers.inherits(docsLexicon, _Component);
+  var ZXGvl = function (_Component) {
+    babelHelpers.inherits(ZXGvl, _Component);
 
-    function docsLexicon() {
-      babelHelpers.classCallCheck(this, docsLexicon);
-      return babelHelpers.possibleConstructorReturn(this, (docsLexicon.__proto__ || Object.getPrototypeOf(docsLexicon)).apply(this, arguments));
+    function ZXGvl() {
+      babelHelpers.classCallCheck(this, ZXGvl);
+      return babelHelpers.possibleConstructorReturn(this, (ZXGvl.__proto__ || Object.getPrototypeOf(ZXGvl)).apply(this, arguments));
     }
 
-    return docsLexicon;
+    return ZXGvl;
   }(Component);
 
-  Soy.register(docsLexicon, templates);
+  Soy.register(ZXGvl, templates);
   this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsLexicon'] = docsLexicon;
+  this['metalNamed']['index']['ZXGvl'] = ZXGvl;
   this['metalNamed']['index']['templates'] = templates;
   this['metal']['index'] = templates;
   /* jshint ignore:end */
@@ -23644,22 +23811,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['index'];
 
-  var docsLexicon = function (_Component) {
-    babelHelpers.inherits(docsLexicon, _Component);
+  var ZXGvl = function (_Component) {
+    babelHelpers.inherits(ZXGvl, _Component);
 
-    function docsLexicon() {
-      babelHelpers.classCallCheck(this, docsLexicon);
-      return babelHelpers.possibleConstructorReturn(this, (docsLexicon.__proto__ || Object.getPrototypeOf(docsLexicon)).apply(this, arguments));
+    function ZXGvl() {
+      babelHelpers.classCallCheck(this, ZXGvl);
+      return babelHelpers.possibleConstructorReturn(this, (ZXGvl.__proto__ || Object.getPrototypeOf(ZXGvl)).apply(this, arguments));
     }
 
-    return docsLexicon;
+    return ZXGvl;
   }(Component);
 
   ;
 
-  Soy.register(docsLexicon, templates);
+  Soy.register(ZXGvl, templates);
 
-  this['metal']['docsLexicon'] = docsLexicon;
+  this['metal']['ZXGvl'] = ZXGvl;
 }).call(this);
 'use strict';
 
@@ -23675,11 +23842,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsNews.
+     * @fileoverview Templates in namespace hlZoK.
      * @public
      */
 
-    goog.module('docsNews.incrementaldom');
+    goog.module('hlZoK.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -23710,7 +23877,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param226 = function param226() {
+      var param168 = function param168() {
         ie_open('h5');
         itext('March 30th, 2017');
         ie_close('h5');
@@ -23725,11 +23892,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param226 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param168 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsNews.render';
+      $render.soyTemplateName = 'hlZoK.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -23738,20 +23905,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsNews = function (_Component) {
-    babelHelpers.inherits(docsNews, _Component);
+  var hlZoK = function (_Component) {
+    babelHelpers.inherits(hlZoK, _Component);
 
-    function docsNews() {
-      babelHelpers.classCallCheck(this, docsNews);
-      return babelHelpers.possibleConstructorReturn(this, (docsNews.__proto__ || Object.getPrototypeOf(docsNews)).apply(this, arguments));
+    function hlZoK() {
+      babelHelpers.classCallCheck(this, hlZoK);
+      return babelHelpers.possibleConstructorReturn(this, (hlZoK.__proto__ || Object.getPrototypeOf(hlZoK)).apply(this, arguments));
     }
 
-    return docsNews;
+    return hlZoK;
   }(Component);
 
-  Soy.register(docsNews, templates);
+  Soy.register(hlZoK, templates);
   this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsNews'] = docsNews;
+  this['metalNamed']['index']['hlZoK'] = hlZoK;
   this['metalNamed']['index']['templates'] = templates;
   this['metal']['index'] = templates;
   /* jshint ignore:end */
@@ -23763,22 +23930,465 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['index'];
 
-  var docsNews = function (_Component) {
-    babelHelpers.inherits(docsNews, _Component);
+  var hlZoK = function (_Component) {
+    babelHelpers.inherits(hlZoK, _Component);
 
-    function docsNews() {
-      babelHelpers.classCallCheck(this, docsNews);
-      return babelHelpers.possibleConstructorReturn(this, (docsNews.__proto__ || Object.getPrototypeOf(docsNews)).apply(this, arguments));
+    function hlZoK() {
+      babelHelpers.classCallCheck(this, hlZoK);
+      return babelHelpers.possibleConstructorReturn(this, (hlZoK.__proto__ || Object.getPrototypeOf(hlZoK)).apply(this, arguments));
     }
 
-    return docsNews;
+    return hlZoK;
   }(Component);
 
   ;
 
-  Soy.register(docsNews, templates);
+  Soy.register(hlZoK, templates);
 
-  this['metal']['docsNews'] = docsNews;
+  this['metal']['hlZoK'] = hlZoK;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from cards.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace AqyKB.
+     * @public
+     */
+
+    goog.module('AqyKB.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param213 = function param213() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Cards are a very specific visual representation of data.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images asociated to your content. A good example of this could be your users database or an image library.');
+        ie_close('p');
+        ie_open('p');
+        itext('Cards are not meant to compare information in an exhautive way but a light way. In case you need exhaustive comparison and not based on image comparison, you must use a table.');
+        ie_close('p');
+        ie_open('p');
+        itext('Cards in Lexicon are open to many configurations. We provide a flexible card layout for you to configure it as you want. Later on this page we provide a series of examples we use in our systems for you to get inspired.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Layout');
+        ie_close('h3');
+        ie_open('p');
+        itext('By providing a flexible layout, Lexicon opens you a wider range of possible configurations for your card. Every element can be used or deleted adapting it to your specific needs in each use case.');
+        ie_close('p');
+        ie_open('p');
+        itext('As you can see in the following image, a card is shaped by:');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Image: main element in this pattern.');
+        ie_close('li');
+        ie_open('li');
+        itext('Checkbox or radio button: useful when working together as a visualization type with a management bar.');
+        ie_close('li');
+        ie_open('li');
+        itext('Sticker or User image: Useful to identify the file type or the owner.');
+        ie_close('li');
+        ie_open('li');
+        itext('Information area');
+        ie_open('ul');
+        ie_open('li');
+        itext('Text lines of different importance: relevant information.');
+        ie_close('li');
+        ie_open('li');
+        itext('Actions menu: actions associated to the card');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('p');
+        itext('Among these elements, the only one that can\'t be removed for the pattern meaning is the image.');
+        ie_close('p');
+        ie_open('p');
+        itext('It is important to highlight that images can have different size configuration in relation to aspect ratio and cropping. Please, check images section in Quartz to get more information about it.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/cardLayout@2x.png 2x', 'src', '../../../images/cardLayout.png', 'alt', 'default card layout');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Examples of use');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/cardExample@2x.png 2x', 'src', '../../../images/cardExample.png', 'alt', 'three different examples of card configuration');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Variations');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Horizontal card');
+        ie_close('h4');
+        ie_open('p');
+        itext('This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/cardHorizontal@2x.png 2x', 'src', '../../../images/cardHorizontal.png', 'alt', 'horizontal card');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param213 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'AqyKB.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var AqyKB = function (_Component) {
+    babelHelpers.inherits(AqyKB, _Component);
+
+    function AqyKB() {
+      babelHelpers.classCallCheck(this, AqyKB);
+      return babelHelpers.possibleConstructorReturn(this, (AqyKB.__proto__ || Object.getPrototypeOf(AqyKB)).apply(this, arguments));
+    }
+
+    return AqyKB;
+  }(Component);
+
+  Soy.register(AqyKB, templates);
+  this['metalNamed']['cards'] = this['metalNamed']['cards'] || {};
+  this['metalNamed']['cards']['AqyKB'] = AqyKB;
+  this['metalNamed']['cards']['templates'] = templates;
+  this['metal']['cards'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['cards'];
+
+  var AqyKB = function (_Component) {
+    babelHelpers.inherits(AqyKB, _Component);
+
+    function AqyKB() {
+      babelHelpers.classCallCheck(this, AqyKB);
+      return babelHelpers.possibleConstructorReturn(this, (AqyKB.__proto__ || Object.getPrototypeOf(AqyKB)).apply(this, arguments));
+    }
+
+    return AqyKB;
+  }(Component);
+
+  ;
+
+  Soy.register(AqyKB, templates);
+
+  this['metal']['AqyKB'] = AqyKB;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from colors.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace BQgXu.
+     * @public
+     */
+
+    goog.module('BQgXu.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param231 = function param231() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Color palette defines a set of colors to be used in the system. Each of the colors has a meaning and a purpose to create a robust a design system.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Colors have a huge impact in a system as they define the visual identity, they bring armony, they communicate, among other caracteristics. Lexicon defines the following color palette that you are free to change for your own.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Primary colors');
+        ie_close('h3');
+        ie_open('p');
+        itext('an Primary colors define part of the visual identity of Lexicon as a system. These colors have been carefully thought to be easily combined and be sure that accessibility is well covered.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/colorsPrimary@2x.png 2x', 'src', '../../../images/colorsPrimary.png', 'alt', 'set of 4 primary colors');
+        ie_close('img');
+        ie_close('p');
+        ie_open('table');
+        ie_open('thead');
+        ie_open('tr');
+        ie_open('th');
+        itext('Color');
+        ie_close('th');
+        ie_open('th');
+        itext('Usage');
+        ie_close('th');
+        ie_close('tr');
+        ie_close('thead');
+        ie_open('tbody');
+        ie_open('tr');
+        ie_open('td');
+        itext('Anchor navy');
+        ie_close('td');
+        ie_open('td');
+        itext('Used as background color in navigation.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Secondary blue');
+        ie_close('td');
+        ie_open('td');
+        itext('Used as default color.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Primary blue');
+        ie_close('td');
+        ie_open('td');
+        itext('Used for active state and hover, primary buttons, etc.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('White');
+        ie_close('td');
+        ie_open('td');
+        itext('Used when secondary blue doesn\u2019t respect accessibility rules.');
+        ie_close('td');
+        ie_close('tr');
+        ie_close('tbody');
+        ie_close('table');
+        ie_open('h3');
+        itext('Secondary colors');
+        ie_close('h3');
+        ie_open('p');
+        itext('Secondary colors are frequently used colors, also important as primary but do not define the visual identity in a stronger way as Primary colors do.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/colorsSecondary@2x.png 2x', 'src', '../../../images/colorsSecondary.png', 'alt', 'set of 5 secondary colors and its variations, also 5');
+        ie_close('img');
+        ie_close('p');
+        ie_open('table');
+        ie_open('thead');
+        ie_open('tr');
+        ie_open('th');
+        itext('Color');
+        ie_close('th');
+        ie_open('th');
+        itext('Usage');
+        ie_close('th');
+        ie_close('tr');
+        ie_close('thead');
+        ie_open('tbody');
+        ie_open('tr');
+        ie_open('td');
+        itext('Blue');
+        ie_close('td');
+        ie_open('td');
+        itext('Information');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Green');
+        ie_close('td');
+        ie_open('td');
+        itext('Success');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Orange');
+        ie_close('td');
+        ie_open('td');
+        itext('Warning');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Red');
+        ie_close('td');
+        ie_open('td');
+        itext('Error');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Grey');
+        ie_close('td');
+        ie_open('td');
+        itext('Secondary light');
+        ie_close('td');
+        ie_close('tr');
+        ie_close('tbody');
+        ie_close('table');
+        ie_open('p');
+        itext('Each of the color has a variation. These colors and its variations are normally used together, one for text color and the second one as a brackground color for the message.');
+        ie_close('p');
+        ie_open('h2');
+        itext('Changing Lexicon color palette');
+        ie_close('h2');
+        ie_open('p');
+        itext('Changing the prestablished color palette is always possible. From Lexicon we understand that our color palette might not fit your needs or requirements as you can have a different corporate image. You just need to set you colors instead of our colors.');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param231 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'BQgXu.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var BQgXu = function (_Component) {
+    babelHelpers.inherits(BQgXu, _Component);
+
+    function BQgXu() {
+      babelHelpers.classCallCheck(this, BQgXu);
+      return babelHelpers.possibleConstructorReturn(this, (BQgXu.__proto__ || Object.getPrototypeOf(BQgXu)).apply(this, arguments));
+    }
+
+    return BQgXu;
+  }(Component);
+
+  Soy.register(BQgXu, templates);
+  this['metalNamed']['colors'] = this['metalNamed']['colors'] || {};
+  this['metalNamed']['colors']['BQgXu'] = BQgXu;
+  this['metalNamed']['colors']['templates'] = templates;
+  this['metal']['colors'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['colors'];
+
+  var BQgXu = function (_Component) {
+    babelHelpers.inherits(BQgXu, _Component);
+
+    function BQgXu() {
+      babelHelpers.classCallCheck(this, BQgXu);
+      return babelHelpers.possibleConstructorReturn(this, (BQgXu.__proto__ || Object.getPrototypeOf(BQgXu)).apply(this, arguments));
+    }
+
+    return BQgXu;
+  }(Component);
+
+  ;
+
+  Soy.register(BQgXu, templates);
+
+  this['metal']['BQgXu'] = BQgXu;
 }).call(this);
 'use strict';
 
@@ -23794,11 +24404,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsBreadcrumbHtml.
+     * @fileoverview Templates in namespace fYymM.
      * @public
      */
 
-    goog.module('docsPatternsBreadcrumbHtml.incrementaldom');
+    goog.module('fYymM.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -23829,7 +24439,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param235 = function param235() {
+      var param177 = function param177() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -23859,11 +24469,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param235 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param177 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsBreadcrumbHtml.render';
+      $render.soyTemplateName = 'fYymM.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -23872,20 +24482,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsBreadcrumbHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsBreadcrumbHtml, _Component);
+  var fYymM = function (_Component) {
+    babelHelpers.inherits(fYymM, _Component);
 
-    function docsPatternsBreadcrumbHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsBreadcrumbHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsBreadcrumbHtml.__proto__ || Object.getPrototypeOf(docsPatternsBreadcrumbHtml)).apply(this, arguments));
+    function fYymM() {
+      babelHelpers.classCallCheck(this, fYymM);
+      return babelHelpers.possibleConstructorReturn(this, (fYymM.__proto__ || Object.getPrototypeOf(fYymM)).apply(this, arguments));
     }
 
-    return docsPatternsBreadcrumbHtml;
+    return fYymM;
   }(Component);
 
-  Soy.register(docsPatternsBreadcrumbHtml, templates);
+  Soy.register(fYymM, templates);
   this['metalNamed']['Breadcrumb'] = this['metalNamed']['Breadcrumb'] || {};
-  this['metalNamed']['Breadcrumb']['docsPatternsBreadcrumbHtml'] = docsPatternsBreadcrumbHtml;
+  this['metalNamed']['Breadcrumb']['fYymM'] = fYymM;
   this['metalNamed']['Breadcrumb']['templates'] = templates;
   this['metal']['Breadcrumb'] = templates;
   /* jshint ignore:end */
@@ -23900,15 +24510,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from alerts.soy.
+    // This file was automatically generated from typography.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsAlertsHtml.
+     * @fileoverview Templates in namespace HkFMy.
      * @public
      */
 
-    goog.module('docsPatternsAlertsHtml.incrementaldom');
+    goog.module('HkFMy.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -23939,24 +24549,28 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param244 = function param244() {
+      var param452 = function param452() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
         ie_open('p');
-        itext('Alerts are used to capture the attention of the user in an intrusive way. Sometimes just to say that something went right, others to say that something needs to be reviewed.');
+        itext('Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system.');
         ie_close('p');
         ie_open('p');
-        itext('Alerts are possible to define in 4 different colors, grey for the default type of message and four other corresponding to status colors.');
+        ie_open('img', null, null, 'srcset', '../../../images/HelveticaNeue@2x.png 2x', 'src', '../../../images/HelveticaNeue.png', 'alt', 'helvetica neue example in regular, medium and bold');
+        ie_close('img');
         ie_close('p');
         ie_open('h3');
-        itext('Types');
+        itext('Sizes');
         ie_close('h3');
+        ie_open('p');
+        itext('Lexicon only defines 3 font sizes for the common usage and leaves H values open for free use.');
+        ie_close('p');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
         ie_open('th');
-        itext('Type');
+        itext('Size');
         ie_close('th');
         ie_open('th');
         itext('Usage');
@@ -23966,124 +24580,40 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        itext('Information');
+        itext('19px');
         ie_close('td');
         ie_open('td');
-        ie_open('strong');
-        itext('Blue color');
-        ie_close('strong');
-        itext('. Information alerts are used to inform users about things that occur while they are carry out a task.');
+        itext('Defined for titles.');
         ie_close('td');
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        itext('Success');
+        itext('16px');
         ie_close('td');
         ie_open('td');
-        ie_open('strong');
-        itext('Green color');
-        ie_close('strong');
-        itext('. Success alert messages will appear when everything was ok. (E.g.: \u201CThe user was created successfully\u201D).');
+        itext('Defined for normal text, paragraphs, etc.');
         ie_close('td');
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        itext('Warning');
+        itext('14px');
         ie_close('td');
         ie_open('td');
-        ie_open('strong');
-        itext('Yellow color');
-        ie_close('strong');
-        itext('. This alert lets users know that the action they performed was done but there are some issues with it. (E.g. The item was created but with there were some issues).');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Error');
-        ie_close('td');
-        ie_open('td');
-        ie_open('strong');
-        itext('Red color');
-        ie_close('strong');
-        itext('. This alert indicates that something went wrong after performing an action. (E.g.: Form couldn\u2019t be saved because some data was missing)');
+        itext('Defined for details, help text supporting components, etc.');
         ie_close('td');
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
-        ie_open('h3');
-        itext('Variations');
-        ie_close('h3');
-        ie_open('h4');
-        itext('Temporary alert stripe');
-        ie_close('h4');
-        ie_open('p');
-        itext('This message is meant to disappear after a short period of time, so it must be the case that the user doesn\'t have time to read it and there must not be a consequence for not reading it. This type of alerts have embedded links in case you need them.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryInfo@2x.png 2x', 'src', '../../../images/alertTemporaryInfo.png', 'alt', 'temporary information alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertTemporarySuccess@2x.png 2x', 'src', '../../../images/alertTemporarySuccess.png', 'alt', 'temporary success alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryWarning@2x.png 2x', 'src', '../../../images/alertTemporaryWarning.png', 'alt', 'temporary warning alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryError@2x.png 2x', 'src', '../../../images/alertTemporaryError.png', 'alt', 'temporary error alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Dismissible alerts stripe');
-        ie_close('h4');
-        ie_open('p');
-        itext('Use this kind of alerts to inform users about something and to ensure they don\u2018t miss the information. These alerts can contain links to carry out actions such as undoing actions or visiting a page. This alert is placed right below the navigation bar.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertDismissInfo@2x.png 2x', 'src', '../../../images/alertDismissInfo.png', 'alt', 'dismiss information alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertDismissSuccess@2x.png 2x', 'src', '../../../images/alertDismissSuccess.png', 'alt', 'dismiss success alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertDismissWarning@2x.png 2x', 'src', '../../../images/alertDismissWarning.png', 'alt', 'dismiss warning alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertDismissError@2x.png 2x', 'src', '../../../images/alertDismissError.png', 'alt', 'dismiss error alert stripe');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Alert notification');
-        ie_close('h4');
-        ie_open('p');
-        itext('Notifications display information about something that has happened or is happening in the system. These alerts are not related to actions that are being performed by the user at that moment. Unlike alerts, notifications are displayed on the top right corner of the screen. Both desktop and mobile notifications have similar dimensions.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertsNotification@2x.png 2x', 'src', '../../../images/alertsNotification.png', 'alt', 'set of four notification alerts');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Attributes');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/alertAttributes@2x.png 2x', 'src', '../../../images/alertAttributes.png', 'alt', 'attributes for stripe alerts and notification alerts');
-        ie_close('img');
-        ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
         ie_close('input');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param244 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param452 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsAlertsHtml.render';
+      $render.soyTemplateName = 'HkFMy.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -24092,23 +24622,922 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsAlertsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsAlertsHtml, _Component);
+  var HkFMy = function (_Component) {
+    babelHelpers.inherits(HkFMy, _Component);
 
-    function docsPatternsAlertsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsAlertsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsAlertsHtml.__proto__ || Object.getPrototypeOf(docsPatternsAlertsHtml)).apply(this, arguments));
+    function HkFMy() {
+      babelHelpers.classCallCheck(this, HkFMy);
+      return babelHelpers.possibleConstructorReturn(this, (HkFMy.__proto__ || Object.getPrototypeOf(HkFMy)).apply(this, arguments));
     }
 
-    return docsPatternsAlertsHtml;
+    return HkFMy;
   }(Component);
 
-  Soy.register(docsPatternsAlertsHtml, templates);
-  this['metalNamed']['alerts'] = this['metalNamed']['alerts'] || {};
-  this['metalNamed']['alerts']['docsPatternsAlertsHtml'] = docsPatternsAlertsHtml;
-  this['metalNamed']['alerts']['templates'] = templates;
-  this['metal']['alerts'] = templates;
+  Soy.register(HkFMy, templates);
+  this['metalNamed']['typography'] = this['metalNamed']['typography'] || {};
+  this['metalNamed']['typography']['HkFMy'] = HkFMy;
+  this['metalNamed']['typography']['templates'] = templates;
+  this['metal']['typography'] = templates;
   /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['typography'];
+
+  var HkFMy = function (_Component) {
+    babelHelpers.inherits(HkFMy, _Component);
+
+    function HkFMy() {
+      babelHelpers.classCallCheck(this, HkFMy);
+      return babelHelpers.possibleConstructorReturn(this, (HkFMy.__proto__ || Object.getPrototypeOf(HkFMy)).apply(this, arguments));
+    }
+
+    return HkFMy;
+  }(Component);
+
+  ;
+
+  Soy.register(HkFMy, templates);
+
+  this['metal']['HkFMy'] = HkFMy;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from sidenav.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace JSfmb.
+     * @public
+     */
+
+    goog.module('JSfmb.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param416 = function param416() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Side navigation pattern brings a panel from the leftmost or rightmost side of the screen pushing the content.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('This pattern is created to include portal main navigation in portal. This navigation is divided is 3 main areas: Control panel, User, and the Site. Different applications are contained inside each of this sections.');
+        ie_close('p');
+        ie_open('p');
+        itext('The side navigation is always shown and hidden interacting with the menu button.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/sideNavExample.gif', 'alt', 'side navigation to show the product menu in Liferay');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param416 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'JSfmb.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var JSfmb = function (_Component) {
+    babelHelpers.inherits(JSfmb, _Component);
+
+    function JSfmb() {
+      babelHelpers.classCallCheck(this, JSfmb);
+      return babelHelpers.possibleConstructorReturn(this, (JSfmb.__proto__ || Object.getPrototypeOf(JSfmb)).apply(this, arguments));
+    }
+
+    return JSfmb;
+  }(Component);
+
+  Soy.register(JSfmb, templates);
+  this['metalNamed']['sidenav'] = this['metalNamed']['sidenav'] || {};
+  this['metalNamed']['sidenav']['JSfmb'] = JSfmb;
+  this['metalNamed']['sidenav']['templates'] = templates;
+  this['metal']['sidenav'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['sidenav'];
+
+  var JSfmb = function (_Component) {
+    babelHelpers.inherits(JSfmb, _Component);
+
+    function JSfmb() {
+      babelHelpers.classCallCheck(this, JSfmb);
+      return babelHelpers.possibleConstructorReturn(this, (JSfmb.__proto__ || Object.getPrototypeOf(JSfmb)).apply(this, arguments));
+    }
+
+    return JSfmb;
+  }(Component);
+
+  ;
+
+  Soy.register(JSfmb, templates);
+
+  this['metal']['JSfmb'] = JSfmb;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from progress_bars.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace KfMFM.
+     * @public
+     */
+
+    goog.module('KfMFM.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param398 = function param398() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Progress bar is a progress indicator used to show the completion percentage of a task.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Progress bars can be classified in two groups:');
+        ie_close('p');
+        ie_open('p');
+        ie_open('strong');
+        itext('Indeterminate');
+        ie_close('strong');
+        itext(': where there are no intermediate states. As long as the process is running the progress bar grows continuously from 0% to 100%. Use it for system processes.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('strong');
+        itext('Determinate');
+        ie_close('strong');
+        itext(': where there are intermediate states in the completion process. Used to show the user where is inside a process divided in steps. Use it for user processes.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Sizes');
+        ie_close('h3');
+        ie_open('p');
+        itext('Indeterminate progress bars can be configured in 4 differents sizes');
+        ie_close('p');
+        ie_open('table');
+        ie_open('thead');
+        ie_open('tr');
+        ie_open('th');
+        itext('Size');
+        ie_close('th');
+        ie_open('th');
+        itext('Usage');
+        ie_close('th');
+        ie_close('tr');
+        ie_close('thead');
+        ie_open('tbody');
+        ie_open('tr');
+        ie_open('td');
+        itext('Extra small');
+        ie_close('td');
+        ie_open('td');
+        itext('Height 8px. Use it in small contexts.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Default');
+        ie_close('td');
+        ie_open('td');
+        itext('Height 20px. Use it by default.');
+        ie_close('td');
+        ie_close('tr');
+        ie_close('tbody');
+        ie_close('table');
+        ie_open('h3');
+        itext('Variations');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Progress bar');
+        ie_close('h4');
+        ie_open('p');
+        itext('This is an indeterminate progress bar. This progress bar can be used with or without label. If you foresee this pattern will be used in a process that can take long time to be completed, a label can be useful to the user. But there is not always the need to show the completion percentage.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/progressBarIndeterminate.png', 'alt', 'indeterminate progress bar');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Stripped contextual progress bar');
+        ie_close('h4');
+        ie_open('p');
+        itext('Lexicon provides an alternative to the previous progress bar based on stripes that could help your users to identify better the action progrees.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/progressBarIndeterminateStriped.png', 'alt', 'indeterminate stripped progress bar');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Multi step progress bar');
+        ie_close('h4');
+        ie_open('p');
+        itext('A multi step progress bar, also known as wizard, is a determinate progress bar. This progress bar is used in long processes dividing the main task in subtasks that will help your users completing the process.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/progressBarDeterminate.png', 'alt', 'determiate progress bar or wizard');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param398 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'KfMFM.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var KfMFM = function (_Component) {
+    babelHelpers.inherits(KfMFM, _Component);
+
+    function KfMFM() {
+      babelHelpers.classCallCheck(this, KfMFM);
+      return babelHelpers.possibleConstructorReturn(this, (KfMFM.__proto__ || Object.getPrototypeOf(KfMFM)).apply(this, arguments));
+    }
+
+    return KfMFM;
+  }(Component);
+
+  Soy.register(KfMFM, templates);
+  this['metalNamed']['progress_bars'] = this['metalNamed']['progress_bars'] || {};
+  this['metalNamed']['progress_bars']['KfMFM'] = KfMFM;
+  this['metalNamed']['progress_bars']['templates'] = templates;
+  this['metal']['progress_bars'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['progress_bars'];
+
+  var KfMFM = function (_Component) {
+    babelHelpers.inherits(KfMFM, _Component);
+
+    function KfMFM() {
+      babelHelpers.classCallCheck(this, KfMFM);
+      return babelHelpers.possibleConstructorReturn(this, (KfMFM.__proto__ || Object.getPrototypeOf(KfMFM)).apply(this, arguments));
+    }
+
+    return KfMFM;
+  }(Component);
+
+  ;
+
+  Soy.register(KfMFM, templates);
+
+  this['metal']['KfMFM'] = KfMFM;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from timelines.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace Lkagp.
+     * @public
+     */
+
+    goog.module('Lkagp.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param434 = function param434() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Timelines visually represent events along the time.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Timelines are series of events placed in a timeline. Each event is composed by a point placed in the line a ');
+        ie_open('a', null, null, 'href', './panel.html');
+        itext('panel');
+        ie_close('a');
+        itext(' to describe the event to the right or left of the point.');
+        ie_close('p');
+        ie_open('p');
+        itext('The point can be any kind of identifier. We recommend the default one, circle, but it can be the case of events related to people where you might prefer to use a user identifier.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Variations');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
+        ie_open('p');
+        itext('The icons are aligned to the left side of the screen.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/timelineDefault.png', 'alt', 'default timeline left aligned');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Right timeline');
+        ie_close('h4');
+        ie_open('p');
+        itext('The icons are aligned to the right side of the screen.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/timelineRight.png', 'alt', 'timeline right aligned');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Center timeline');
+        ie_close('h4');
+        ie_open('p');
+        itext('The icons are aligned to the center of the screen.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/timelineCenter.png', 'alt', 'timeline center aligned');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Even/odd timeline');
+        ie_close('h4');
+        ie_open('p');
+        itext('Being in the center the panel can appear in alternate positions starting on the left side for even configuration and starting on the right for odd configuration.');
+        ie_close('p');
+        ie_open('h5');
+        ie_open('strong');
+        itext('Timeline Even');
+        ie_close('strong');
+        ie_close('h5');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/timelineCenterEven.png', 'alt', 'timeline center aligned even order');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h5');
+        ie_open('strong');
+        itext('Timeline Odd');
+        ie_close('strong');
+        ie_close('h5');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/timelineCenterOdd.png', 'alt', 'timeline center aligned odd order');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Right XS Timeline only');
+        ie_close('h4');
+        ie_open('p');
+        itext('On window resize to mobile viewport (<768), the timeline icon are always aligned to the left. In case you want to place on the right, it is also possible with this example.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/timelineCenterRightXSOnly.png', 'alt', 'timeline right aligned extra small ');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param434 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'Lkagp.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var Lkagp = function (_Component) {
+    babelHelpers.inherits(Lkagp, _Component);
+
+    function Lkagp() {
+      babelHelpers.classCallCheck(this, Lkagp);
+      return babelHelpers.possibleConstructorReturn(this, (Lkagp.__proto__ || Object.getPrototypeOf(Lkagp)).apply(this, arguments));
+    }
+
+    return Lkagp;
+  }(Component);
+
+  Soy.register(Lkagp, templates);
+  this['metalNamed']['timelines'] = this['metalNamed']['timelines'] || {};
+  this['metalNamed']['timelines']['Lkagp'] = Lkagp;
+  this['metalNamed']['timelines']['templates'] = templates;
+  this['metal']['timelines'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['timelines'];
+
+  var Lkagp = function (_Component) {
+    babelHelpers.inherits(Lkagp, _Component);
+
+    function Lkagp() {
+      babelHelpers.classCallCheck(this, Lkagp);
+      return babelHelpers.possibleConstructorReturn(this, (Lkagp.__proto__ || Object.getPrototypeOf(Lkagp)).apply(this, arguments));
+    }
+
+    return Lkagp;
+  }(Component);
+
+  ;
+
+  Soy.register(Lkagp, templates);
+
+  this['metal']['Lkagp'] = Lkagp;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from grid.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace MjnbU.
+     * @public
+     */
+
+    goog.module('MjnbU.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param258 = function param258() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Lexicon uses a 4px grid as the minimum unit of measure in terms of distance and space. 4px is a right decision as it allows as scalling with accuracy in alignment. Visual order and cleaness is one of the aims of this system.');
+        ie_close('p');
+        ie_open('h3');
+        itext('4px grid');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/Grid@2x.png 2x', 'src', '../../../images/Grid.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/meausres@2x.png 2x', 'src', '../../../images/meausres.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('The grid used in interfaces built with Lexicon follows the following rules:');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Maximum grid width: 1280px');
+        ie_close('li');
+        ie_open('li');
+        itext('Gutter: 32px');
+        ie_close('li');
+        ie_open('li');
+        itext('Margin: 16px');
+        ie_close('li');
+        ie_open('li');
+        itext('Number of colums: 12');
+        ie_close('li');
+        ie_open('li');
+        itext('Column width: varies with the canvas width');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('p');
+        ie_open('strong');
+        itext('Note:');
+        ie_close('strong');
+        itext(' Quartz implements Lexicon on top of bootstrap using the default bootstrap grid that has a gutter of 30px and a margin of 15px.');
+        ie_close('p');
+        ie_open('h3');
+        itext('4px usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('A 4px minimum unit of measure allow us to play with values as 8px, 12px, 16px, 20px, 24px and so on. The previously stated units are the ones most used in Lexicon. The follwing set of examples shows how we use this measures to build up our system. Please refer to attributes section inside patterns to see more use cases and learn how Lexicon applies them.');
+        ie_close('p');
+        ie_open('h4');
+        itext('Form example');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/formDistances@2x.png 2x', 'src', '../../../images/formDistances.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param258 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'MjnbU.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var MjnbU = function (_Component) {
+    babelHelpers.inherits(MjnbU, _Component);
+
+    function MjnbU() {
+      babelHelpers.classCallCheck(this, MjnbU);
+      return babelHelpers.possibleConstructorReturn(this, (MjnbU.__proto__ || Object.getPrototypeOf(MjnbU)).apply(this, arguments));
+    }
+
+    return MjnbU;
+  }(Component);
+
+  Soy.register(MjnbU, templates);
+  this['metalNamed']['grid'] = this['metalNamed']['grid'] || {};
+  this['metalNamed']['grid']['MjnbU'] = MjnbU;
+  this['metalNamed']['grid']['templates'] = templates;
+  this['metal']['grid'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['grid'];
+
+  var MjnbU = function (_Component) {
+    babelHelpers.inherits(MjnbU, _Component);
+
+    function MjnbU() {
+      babelHelpers.classCallCheck(this, MjnbU);
+      return babelHelpers.possibleConstructorReturn(this, (MjnbU.__proto__ || Object.getPrototypeOf(MjnbU)).apply(this, arguments));
+    }
+
+    return MjnbU;
+  }(Component);
+
+  ;
+
+  Soy.register(MjnbU, templates);
+
+  this['metal']['MjnbU'] = MjnbU;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from panel.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace OlXjO.
+     * @public
+     */
+
+    goog.module('OlXjO.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param380 = function param380() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Panels help to separate your content.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Panel are use to help separating content a making processes as reading or filling a form easier to the user. Panels are a way of chunking into smaller pieces.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Configuration');
+        ie_close('h3');
+        ie_open('p');
+        itext('Panels can be configured in different ways:');
+        ie_close('p');
+        ie_open('h4');
+        itext('Body');
+        ie_close('h4');
+        ie_open('p');
+        itext('Use this configuration to separate content inside a form.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/panelNaked@2x.png 2x', 'src', '../../../images/panelNaked.png', 'alt', 'panel only body most simple version');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Header + body');
+        ie_close('h4');
+        ie_open('p');
+        itext('Use this configuration when you need to se parate a content that needs a title and the title needs to capture the attention of your user.');
+        ie_close('p');
+        ie_open('p');
+        itext('Do never use it to collapse content without a disclosure arrow. Use an accordion in that case.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/panelHeaderBody@2x.png 2x', 'src', '../../../images/panelHeaderBody.png', 'alt', 'panel with header');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Variations');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Accordion');
+        ie_close('h4');
+        ie_open('p');
+        itext('Panels can be collapsible. Whenever there is a collapsible panel the header must include a disclosure icon as an affordance to let the user understand that open and close actions can be performed. Please, see that when a panel is open the header is highlighted with a blue line below it marking the active state.');
+        ie_close('p');
+        ie_open('p');
+        itext('It is not a good practice to anidate accordions. Please try to avoid it.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/panelCollasable@2x.png 2x', 'src', '../../../images/panelCollasable.png', 'alt', 'collapsable panels');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('In the following example you can see the accordion working. It is also optional to close all entries when a diferent entry opens.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/panelCollapsibleExample.gif', 'alt', 'collapsable panels');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/panelAttributes@2x.png 2x', 'src', '../../../images/panelAttributes.png', 'alt', 'panel attributes');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param380 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'OlXjO.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var OlXjO = function (_Component) {
+    babelHelpers.inherits(OlXjO, _Component);
+
+    function OlXjO() {
+      babelHelpers.classCallCheck(this, OlXjO);
+      return babelHelpers.possibleConstructorReturn(this, (OlXjO.__proto__ || Object.getPrototypeOf(OlXjO)).apply(this, arguments));
+    }
+
+    return OlXjO;
+  }(Component);
+
+  Soy.register(OlXjO, templates);
+  this['metalNamed']['panel'] = this['metalNamed']['panel'] || {};
+  this['metalNamed']['panel']['OlXjO'] = OlXjO;
+  this['metalNamed']['panel']['templates'] = templates;
+  this['metal']['panel'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['panel'];
+
+  var OlXjO = function (_Component) {
+    babelHelpers.inherits(OlXjO, _Component);
+
+    function OlXjO() {
+      babelHelpers.classCallCheck(this, OlXjO);
+      return babelHelpers.possibleConstructorReturn(this, (OlXjO.__proto__ || Object.getPrototypeOf(OlXjO)).apply(this, arguments));
+    }
+
+    return OlXjO;
+  }(Component);
+
+  ;
+
+  Soy.register(OlXjO, templates);
+
+  this['metal']['OlXjO'] = OlXjO;
 }).call(this);
 'use strict';
 
@@ -24124,11 +25553,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsBadgesLabelsStickersHtml.
+     * @fileoverview Templates in namespace SBGgW.
      * @public
      */
 
-    goog.module('docsPatternsBadgesLabelsStickersHtml.incrementaldom');
+    goog.module('SBGgW.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -24159,7 +25588,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param253 = function param253() {
+      var param195 = function param195() {
         ie_open('h2');
         itext('Badges');
         ie_close('h2');
@@ -24473,11 +25902,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param253 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param195 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsBadgesLabelsStickersHtml.render';
+      $render.soyTemplateName = 'SBGgW.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -24486,23 +25915,47 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsBadgesLabelsStickersHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsBadgesLabelsStickersHtml, _Component);
+  var SBGgW = function (_Component) {
+    babelHelpers.inherits(SBGgW, _Component);
 
-    function docsPatternsBadgesLabelsStickersHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsBadgesLabelsStickersHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsBadgesLabelsStickersHtml.__proto__ || Object.getPrototypeOf(docsPatternsBadgesLabelsStickersHtml)).apply(this, arguments));
+    function SBGgW() {
+      babelHelpers.classCallCheck(this, SBGgW);
+      return babelHelpers.possibleConstructorReturn(this, (SBGgW.__proto__ || Object.getPrototypeOf(SBGgW)).apply(this, arguments));
     }
 
-    return docsPatternsBadgesLabelsStickersHtml;
+    return SBGgW;
   }(Component);
 
-  Soy.register(docsPatternsBadgesLabelsStickersHtml, templates);
+  Soy.register(SBGgW, templates);
   this['metalNamed']['badges_labels_stickers'] = this['metalNamed']['badges_labels_stickers'] || {};
-  this['metalNamed']['badges_labels_stickers']['docsPatternsBadgesLabelsStickersHtml'] = docsPatternsBadgesLabelsStickersHtml;
+  this['metalNamed']['badges_labels_stickers']['SBGgW'] = SBGgW;
   this['metalNamed']['badges_labels_stickers']['templates'] = templates;
   this['metal']['badges_labels_stickers'] = templates;
   /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['badges_labels_stickers'];
+
+  var SBGgW = function (_Component) {
+    babelHelpers.inherits(SBGgW, _Component);
+
+    function SBGgW() {
+      babelHelpers.classCallCheck(this, SBGgW);
+      return babelHelpers.possibleConstructorReturn(this, (SBGgW.__proto__ || Object.getPrototypeOf(SBGgW)).apply(this, arguments));
+    }
+
+    return SBGgW;
+  }(Component);
+
+  ;
+
+  Soy.register(SBGgW, templates);
+
+  this['metal']['SBGgW'] = SBGgW;
 }).call(this);
 'use strict';
 
@@ -24514,15 +25967,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from buttons.soy.
+    // This file was automatically generated from pager.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsButtonsHtml.
+     * @fileoverview Templates in namespace TZKeG.
      * @public
      */
 
-    goog.module('docsPatternsButtonsHtml.incrementaldom');
+    goog.module('TZKeG.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -24553,7 +26006,979 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param262 = function param262() {
+      var param362 = function param362() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Pager allows navigation between pages of a process or task divided in subtasks or also called pages.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Pagers are commonly used in forms that are chucked because of their length.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Variations');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Default pager');
+        ie_close('h4');
+        ie_open('p');
+        itext('Use it when you need a simple pagination pattern that does not require to change the page size.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/pagerDefault.png', 'alt', 'pager default');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Aligned pager');
+        ie_close('h4');
+        ie_open('p');
+        itext('Aligned pager pushes the links to the left and right.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/pagerAligned.png', 'alt', 'pager aligned');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('States');
+        ie_close('h3');
+        ie_open('p');
+        itext('States are important in pagers to let your users understand where the process has its limits and where it can go. Please take are of enabling and disabling them properly depending on the sequence.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/pagerAlignedDisable.png', 'alt', 'pager aligned disable');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Sizes');
+        ie_close('h3');
+        ie_open('p');
+        itext('Usage each size depending on the context, take into account the available space and the hierarchical importance.');
+        ie_close('p');
+        ie_open('table');
+        ie_open('thead');
+        ie_open('tr');
+        ie_open('th');
+        itext('Size');
+        ie_close('th');
+        ie_open('th');
+        itext('Description');
+        ie_close('th');
+        ie_close('tr');
+        ie_close('thead');
+        ie_open('tbody');
+        ie_open('tr');
+        ie_open('td');
+        itext('Small');
+        ie_close('td');
+        ie_open('td');
+        itext('The font-size is 12px and the proportions are smaller.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Default');
+        ie_close('td');
+        ie_open('td');
+        itext('The font-size is 16px and the proportions are smaller.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Large');
+        ie_close('td');
+        ie_open('td');
+        itext('The font-size is 18px and the proportions are bigger.');
+        ie_close('td');
+        ie_close('tr');
+        ie_close('tbody');
+        ie_close('table');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param362 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'TZKeG.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var TZKeG = function (_Component) {
+    babelHelpers.inherits(TZKeG, _Component);
+
+    function TZKeG() {
+      babelHelpers.classCallCheck(this, TZKeG);
+      return babelHelpers.possibleConstructorReturn(this, (TZKeG.__proto__ || Object.getPrototypeOf(TZKeG)).apply(this, arguments));
+    }
+
+    return TZKeG;
+  }(Component);
+
+  Soy.register(TZKeG, templates);
+  this['metalNamed']['pager'] = this['metalNamed']['pager'] || {};
+  this['metalNamed']['pager']['TZKeG'] = TZKeG;
+  this['metalNamed']['pager']['templates'] = templates;
+  this['metal']['pager'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['pager'];
+
+  var TZKeG = function (_Component) {
+    babelHelpers.inherits(TZKeG, _Component);
+
+    function TZKeG() {
+      babelHelpers.classCallCheck(this, TZKeG);
+      return babelHelpers.possibleConstructorReturn(this, (TZKeG.__proto__ || Object.getPrototypeOf(TZKeG)).apply(this, arguments));
+    }
+
+    return TZKeG;
+  }(Component);
+
+  ;
+
+  Soy.register(TZKeG, templates);
+
+  this['metal']['TZKeG'] = TZKeG;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from dataset_display.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace ToEDp.
+     * @public
+     */
+
+    goog.module('ToEDp.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param240 = function param240() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('A dataset display is the combination of a ');
+        ie_open('a', null, null, 'href', './management_bar.html');
+        itext('management bar');
+        ie_close('a');
+        itext(' with one or many data visualization types. The most common visualization types used are ');
+        ie_open('a', null, null, 'href', './table.html');
+        itext('table');
+        ie_close('a');
+        itext(', ');
+        ie_open('a', null, null, 'href', './list.html');
+        itext('list');
+        ie_close('a');
+        itext(' and ');
+        ie_open('a', null, null, 'href', './card.html');
+        itext('card');
+        ie_close('a');
+        itext('.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('This pattern is used when the elements of the visualization require colective management, therefore the management bar becomes important as it has to facilitate the tools needed to work with the data set.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Empty state');
+        ie_close('h3');
+        ie_open('p');
+        itext('It is important to let the user know what happends in empty states and let them know what has happend and how to perform actions to move out from that empty state.');
+        ie_close('p');
+        ie_open('p');
+        itext('In Lexicon we use our ');
+        ie_open('a', null, null, 'href', 'https://github.com/marcoscv-work/liferay-emoticons');
+        itext('emoticons library');
+        ie_close('a');
+        itext(' as a visual support together with a text message to help the user. It is very important that this message is clear and let the user understand what to do next.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/datasetDisplayEmptyExample.gif', 'alt', 'animations showing how initial empty state works');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Empty search state');
+        ie_close('h3');
+        ie_open('p');
+        itext('As stated in the previous case, it is important to help the user understanding what happens in empty states. Here is the example for a empty search result.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/datasetDisplayEmptySearch.gif', 'alt', 'animations showing how an empty search works');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Invidual actions');
+        ie_close('h3');
+        ie_open('p');
+        itext('Individual actions are all those actions that an element has. This actions are always possible to reach from the element it self throw the actions menu. Some of this actions are also placed in the management bar when only one element fromt the dataset is selected. These actions are always represented by a metaphor, , they are buttons with icon. Only those actions that can be easily represented by an icon will be there. Not all possible represented by an icon must be there, only the ones considered as more relevant.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/datasetDisplayIndividualActions.png', 'alt', 'individual actions displayed both in management bar and from actions menu');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Colective actions');
+        ie_close('h3');
+        ie_open('p');
+        itext('Colective actions are shown in the management bar when more than one element is selected in the dataset. In case there are  colective actions that don\'t have an icon representation the can be placed in a dropdown triggered from the actions button.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/datasetDisplayColectiveActions.png', 'alt', 'colective actions displayed both in management bar and from actions menu');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Drag and drop example');
+        ie_close('h3');
+        ie_open('p');
+        itext('The following animations shows how a drag and drop action works in a list view.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/tableDragDrop.gif', 'alt', 'table drag and drop example');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param240 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'ToEDp.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var ToEDp = function (_Component) {
+    babelHelpers.inherits(ToEDp, _Component);
+
+    function ToEDp() {
+      babelHelpers.classCallCheck(this, ToEDp);
+      return babelHelpers.possibleConstructorReturn(this, (ToEDp.__proto__ || Object.getPrototypeOf(ToEDp)).apply(this, arguments));
+    }
+
+    return ToEDp;
+  }(Component);
+
+  Soy.register(ToEDp, templates);
+  this['metalNamed']['dataset_display'] = this['metalNamed']['dataset_display'] || {};
+  this['metalNamed']['dataset_display']['ToEDp'] = ToEDp;
+  this['metalNamed']['dataset_display']['templates'] = templates;
+  this['metal']['dataset_display'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['dataset_display'];
+
+  var ToEDp = function (_Component) {
+    babelHelpers.inherits(ToEDp, _Component);
+
+    function ToEDp() {
+      babelHelpers.classCallCheck(this, ToEDp);
+      return babelHelpers.possibleConstructorReturn(this, (ToEDp.__proto__ || Object.getPrototypeOf(ToEDp)).apply(this, arguments));
+    }
+
+    return ToEDp;
+  }(Component);
+
+  ;
+
+  Soy.register(ToEDp, templates);
+
+  this['metal']['ToEDp'] = ToEDp;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from header_toolbar.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace XOiud.
+     * @public
+     */
+
+    goog.module('XOiud.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param267 = function param267() {
+        ie_open('h3');
+        itext('Introduction');
+        ie_close('h3');
+        ie_open('p');
+        itext('Header toolbar is a Toolbar based component used in headings for portlets, mobile pages, and page sections.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/headerToolbar@2x.png 2x', 'src', '../../../images/headerToolbar.png', 'alt', 'header tooldbar dark background');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('This toolbar is used in almost every page in the system. It can have different configurations as you can see in examples section:');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Left area: Used for actions as triggering the side menu and back navigation');
+        ie_close('li');
+        ie_open('li');
+        itext('Center area: Used for the page or application title.');
+        ie_close('li');
+        ie_open('li');
+        itext('Right area: Used for actions, explicit when it is possible and a maximum number of 3. Implicit inside a kebab menu when the metaphor is not clear.');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('h3');
+        itext('Example');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/headerExample.gif', 'alt', 'animated gif that shows how a header toolbar work with different interactions');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param267 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'XOiud.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var XOiud = function (_Component) {
+    babelHelpers.inherits(XOiud, _Component);
+
+    function XOiud() {
+      babelHelpers.classCallCheck(this, XOiud);
+      return babelHelpers.possibleConstructorReturn(this, (XOiud.__proto__ || Object.getPrototypeOf(XOiud)).apply(this, arguments));
+    }
+
+    return XOiud;
+  }(Component);
+
+  Soy.register(XOiud, templates);
+  this['metalNamed']['header_toolbar'] = this['metalNamed']['header_toolbar'] || {};
+  this['metalNamed']['header_toolbar']['XOiud'] = XOiud;
+  this['metalNamed']['header_toolbar']['templates'] = templates;
+  this['metal']['header_toolbar'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['header_toolbar'];
+
+  var XOiud = function (_Component) {
+    babelHelpers.inherits(XOiud, _Component);
+
+    function XOiud() {
+      babelHelpers.classCallCheck(this, XOiud);
+      return babelHelpers.possibleConstructorReturn(this, (XOiud.__proto__ || Object.getPrototypeOf(XOiud)).apply(this, arguments));
+    }
+
+    return XOiud;
+  }(Component);
+
+  ;
+
+  Soy.register(XOiud, templates);
+
+  this['metal']['XOiud'] = XOiud;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from user_icons.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace ZlNwr.
+     * @public
+     */
+
+    goog.module('ZlNwr.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param461 = function param461() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('User icons are used to visually identify users in the system.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Use a user icon to identify a user inside a context. User icons in Lexicon are always displayed inside a circle.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Size');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/userIcon@2x.png 2x', 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes');
+        ie_close('img');
+        ie_close('p');
+        ie_open('table');
+        ie_open('thead');
+        ie_open('tr');
+        ie_open('th');
+        itext('Size');
+        ie_close('th');
+        ie_open('th');
+        itext('Usage');
+        ie_close('th');
+        ie_close('tr');
+        ie_close('thead');
+        ie_open('tbody');
+        ie_open('tr');
+        ie_open('td');
+        itext('Extra small');
+        ie_close('td');
+        ie_open('td');
+        itext('22px. Use it in timelines and cards as identifier. Use it when you need to include many users.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Small');
+        ie_close('td');
+        ie_open('td');
+        itext('30px. Use it in timelines and cards as identifier.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Default');
+        ie_close('td');
+        ie_open('td');
+        itext('32px. The most common usage.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Large');
+        ie_close('td');
+        ie_open('td');
+        itext('45px. Use it in user centered contexts as user cards.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Extra large');
+        ie_close('td');
+        ie_open('td');
+        itext('64px. Use it in user centered contexts as user cards.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Extra estra large');
+        ie_close('td');
+        ie_open('td');
+        itext('128px. Use it in user centered contexts as user cards.');
+        ie_close('td');
+        ie_close('tr');
+        ie_close('tbody');
+        ie_close('table');
+        ie_open('h3');
+        itext('Types');
+        ie_close('h3');
+        ie_open('h4');
+        itext('User icon with image');
+        ie_close('h4');
+        ie_open('p');
+        itext('User images help to personalize the interface. In case you have your user image and can make use of it, use this type of user icon.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/userIconImages@2x.png 2x', 'src', '../../../images/userIconImages.png', 'alt', 'all 6 user icons sizes with image');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('User icon with text');
+        ie_close('h4');
+        ie_open('p');
+        itext('Sometimes you won\u2019t have the user image or won\u2019t be allowed to use it. In those cases use this pattern. The text must be always in capital letters and a maximum of 2 letters. Use first letter from Name and Surname (NS).');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/userIcon@2x.png 2x', 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes with text');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param461 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'ZlNwr.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var ZlNwr = function (_Component) {
+    babelHelpers.inherits(ZlNwr, _Component);
+
+    function ZlNwr() {
+      babelHelpers.classCallCheck(this, ZlNwr);
+      return babelHelpers.possibleConstructorReturn(this, (ZlNwr.__proto__ || Object.getPrototypeOf(ZlNwr)).apply(this, arguments));
+    }
+
+    return ZlNwr;
+  }(Component);
+
+  Soy.register(ZlNwr, templates);
+  this['metalNamed']['user_icons'] = this['metalNamed']['user_icons'] || {};
+  this['metalNamed']['user_icons']['ZlNwr'] = ZlNwr;
+  this['metalNamed']['user_icons']['templates'] = templates;
+  this['metal']['user_icons'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['user_icons'];
+
+  var ZlNwr = function (_Component) {
+    babelHelpers.inherits(ZlNwr, _Component);
+
+    function ZlNwr() {
+      babelHelpers.classCallCheck(this, ZlNwr);
+      return babelHelpers.possibleConstructorReturn(this, (ZlNwr.__proto__ || Object.getPrototypeOf(ZlNwr)).apply(this, arguments));
+    }
+
+    return ZlNwr;
+  }(Component);
+
+  ;
+
+  Soy.register(ZlNwr, templates);
+
+  this['metal']['ZlNwr'] = ZlNwr;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from alerts.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace oYApP.
+     * @public
+     */
+
+    goog.module('oYApP.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param186 = function param186() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Alerts are used to capture the attention of the user in an intrusive way. Sometimes just to say that something went right, others to say that something needs to be reviewed.');
+        ie_close('p');
+        ie_open('p');
+        itext('Alerts are possible to define in 4 different colors, grey for the default type of message and four other corresponding to status colors.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Types');
+        ie_close('h3');
+        ie_open('table');
+        ie_open('thead');
+        ie_open('tr');
+        ie_open('th');
+        itext('Type');
+        ie_close('th');
+        ie_open('th');
+        itext('Usage');
+        ie_close('th');
+        ie_close('tr');
+        ie_close('thead');
+        ie_open('tbody');
+        ie_open('tr');
+        ie_open('td');
+        itext('Information');
+        ie_close('td');
+        ie_open('td');
+        ie_open('strong');
+        itext('Blue color');
+        ie_close('strong');
+        itext('. Information alerts are used to inform users about things that occur while they are carry out a task.');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Success');
+        ie_close('td');
+        ie_open('td');
+        ie_open('strong');
+        itext('Green color');
+        ie_close('strong');
+        itext('. Success alert messages will appear when everything was ok. (E.g.: \u201CThe user was created successfully\u201D).');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Warning');
+        ie_close('td');
+        ie_open('td');
+        ie_open('strong');
+        itext('Yellow color');
+        ie_close('strong');
+        itext('. This alert lets users know that the action they performed was done but there are some issues with it. (E.g. The item was created but with there were some issues).');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Error');
+        ie_close('td');
+        ie_open('td');
+        ie_open('strong');
+        itext('Red color');
+        ie_close('strong');
+        itext('. This alert indicates that something went wrong after performing an action. (E.g.: Form couldn\u2019t be saved because some data was missing)');
+        ie_close('td');
+        ie_close('tr');
+        ie_close('tbody');
+        ie_close('table');
+        ie_open('h3');
+        itext('Variations');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Temporary alert stripe');
+        ie_close('h4');
+        ie_open('p');
+        itext('This message is meant to disappear after a short period of time, so it must be the case that the user doesn\'t have time to read it and there must not be a consequence for not reading it. This type of alerts have embedded links in case you need them.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryInfo@2x.png 2x', 'src', '../../../images/alertTemporaryInfo.png', 'alt', 'temporary information alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporarySuccess@2x.png 2x', 'src', '../../../images/alertTemporarySuccess.png', 'alt', 'temporary success alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryWarning@2x.png 2x', 'src', '../../../images/alertTemporaryWarning.png', 'alt', 'temporary warning alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryError@2x.png 2x', 'src', '../../../images/alertTemporaryError.png', 'alt', 'temporary error alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Dismissible alerts stripe');
+        ie_close('h4');
+        ie_open('p');
+        itext('Use this kind of alerts to inform users about something and to ensure they don\u2018t miss the information. These alerts can contain links to carry out actions such as undoing actions or visiting a page. This alert is placed right below the navigation bar.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissInfo@2x.png 2x', 'src', '../../../images/alertDismissInfo.png', 'alt', 'dismiss information alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissSuccess@2x.png 2x', 'src', '../../../images/alertDismissSuccess.png', 'alt', 'dismiss success alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissWarning@2x.png 2x', 'src', '../../../images/alertDismissWarning.png', 'alt', 'dismiss warning alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissError@2x.png 2x', 'src', '../../../images/alertDismissError.png', 'alt', 'dismiss error alert stripe');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Alert notification');
+        ie_close('h4');
+        ie_open('p');
+        itext('Notifications display information about something that has happened or is happening in the system. These alerts are not related to actions that are being performed by the user at that moment. Unlike alerts, notifications are displayed on the top right corner of the screen. Both desktop and mobile notifications have similar dimensions.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertsNotification@2x.png 2x', 'src', '../../../images/alertsNotification.png', 'alt', 'set of four notification alerts');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/alertAttributes@2x.png 2x', 'src', '../../../images/alertAttributes.png', 'alt', 'attributes for stripe alerts and notification alerts');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param186 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'oYApP.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var oYApP = function (_Component) {
+    babelHelpers.inherits(oYApP, _Component);
+
+    function oYApP() {
+      babelHelpers.classCallCheck(this, oYApP);
+      return babelHelpers.possibleConstructorReturn(this, (oYApP.__proto__ || Object.getPrototypeOf(oYApP)).apply(this, arguments));
+    }
+
+    return oYApP;
+  }(Component);
+
+  Soy.register(oYApP, templates);
+  this['metalNamed']['alerts'] = this['metalNamed']['alerts'] || {};
+  this['metalNamed']['alerts']['oYApP'] = oYApP;
+  this['metalNamed']['alerts']['templates'] = templates;
+  this['metal']['alerts'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from buttons.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace hghPp.
+     * @public
+     */
+
+    goog.module('hghPp.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param204 = function param204() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -24769,11 +27194,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param262 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param204 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsButtonsHtml.render';
+      $render.soyTemplateName = 'hghPp.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -24782,20 +27207,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsButtonsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsButtonsHtml, _Component);
+  var hghPp = function (_Component) {
+    babelHelpers.inherits(hghPp, _Component);
 
-    function docsPatternsButtonsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsButtonsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsButtonsHtml.__proto__ || Object.getPrototypeOf(docsPatternsButtonsHtml)).apply(this, arguments));
+    function hghPp() {
+      babelHelpers.classCallCheck(this, hghPp);
+      return babelHelpers.possibleConstructorReturn(this, (hghPp.__proto__ || Object.getPrototypeOf(hghPp)).apply(this, arguments));
     }
 
-    return docsPatternsButtonsHtml;
+    return hghPp;
   }(Component);
 
-  Soy.register(docsPatternsButtonsHtml, templates);
+  Soy.register(hghPp, templates);
   this['metalNamed']['buttons'] = this['metalNamed']['buttons'] || {};
-  this['metalNamed']['buttons']['docsPatternsButtonsHtml'] = docsPatternsButtonsHtml;
+  this['metalNamed']['buttons']['hghPp'] = hghPp;
   this['metalNamed']['buttons']['templates'] = templates;
   this['metal']['buttons'] = templates;
   /* jshint ignore:end */
@@ -24810,15 +27235,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from cards.soy.
+    // This file was automatically generated from nav.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsCardsHtml.
+     * @fileoverview Templates in namespace cEVhq.
      * @public
      */
 
-    goog.module('docsPatternsCardsHtml.incrementaldom');
+    goog.module('cEVhq.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -24849,597 +27274,55 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param271 = function param271() {
+      var param344 = function param344() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
         ie_open('p');
-        itext('Cards are a very specific visual representation of data.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images asociated to your content. A good example of this could be your users database or an image library.');
-        ie_close('p');
-        ie_open('p');
-        itext('Cards are not meant to compare information in an exhautive way but a light way. In case you need exhaustive comparison and not based on image comparison, you must use a table.');
-        ie_close('p');
-        ie_open('p');
-        itext('Cards in Lexicon are open to many configurations. We provide a flexible card layout for you to configure it as you want. Later on this page we provide a series of examples we use in our systems for you to get inspired.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Layout');
-        ie_close('h3');
-        ie_open('p');
-        itext('By providing a flexible layout, Lexicon opens you a wider range of possible configurations for your card. Every element can be used or deleted adapting it to your specific needs in each use case.');
-        ie_close('p');
-        ie_open('p');
-        itext('As you can see in the following image, a card is shaped by:');
-        ie_close('p');
-        ie_open('ul');
-        ie_open('li');
-        itext('Image: main element in this pattern.');
-        ie_close('li');
-        ie_open('li');
-        itext('Checkbox or radio button: useful when working together as a visualization type with a management bar.');
-        ie_close('li');
-        ie_open('li');
-        itext('Sticker or User image: Useful to identify the file type or the owner.');
-        ie_close('li');
-        ie_open('li');
-        itext('Information area');
-        ie_open('ul');
-        ie_open('li');
-        itext('Text lines of different importance: relevant information.');
-        ie_close('li');
-        ie_open('li');
-        itext('Actions menu: actions associated to the card');
-        ie_close('li');
-        ie_close('ul');
-        ie_close('li');
-        ie_close('ul');
-        ie_open('p');
-        itext('Among these elements, the only one that can\'t be removed for the pattern meaning is the image.');
-        ie_close('p');
-        ie_open('p');
-        itext('It is important to highlight that images can have different size configuration in relation to aspect ratio and cropping. Please, check images section in Quartz to get more information about it.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Attributes');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/cardLayout@2x.png 2x', 'src', '../../../images/cardLayout.png', 'alt', 'default card layout');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Examples of use');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/cardExample@2x.png 2x', 'src', '../../../images/cardExample.png', 'alt', 'three different examples of card configuration');
-        ie_close('img');
+        itext('Nav is the pattern that defines the navigation pattern.');
         ie_close('p');
         ie_open('h3');
         itext('Variations');
         ie_close('h3');
-        ie_open('h4');
-        itext('Horizontal card');
-        ie_close('h4');
         ie_open('p');
-        itext('This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/cardHorizontal@2x.png 2x', 'src', '../../../images/cardHorizontal.png', 'alt', 'horizontal card');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param271 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsCardsHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsCardsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsCardsHtml, _Component);
-
-    function docsPatternsCardsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsCardsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsCardsHtml.__proto__ || Object.getPrototypeOf(docsPatternsCardsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsCardsHtml;
-  }(Component);
-
-  Soy.register(docsPatternsCardsHtml, templates);
-  this['metalNamed']['cards'] = this['metalNamed']['cards'] || {};
-  this['metalNamed']['cards']['docsPatternsCardsHtml'] = docsPatternsCardsHtml;
-  this['metalNamed']['cards']['templates'] = templates;
-  this['metal']['cards'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from collapsible_search.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsCollapsibleSearchHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsCollapsibleSearchHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param280 = function param280() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Collapsible search provides a solution for the search text field in mobile resolution as the viewport size is reduced.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/searchCollapse@2x.png 2x', 'src', '../../../images/searchCollapse.png', 'alt', 'search collapse image with desktop and mobile examples');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('The search text field is reduced to just a button icon with the magnifying lense. When the button is tapped the field appears hovering the rest of the elements in the bar. Once the search action is performed the field gets to its initial state.');
-        ie_close('p');
-        ie_open('p');
-        itext('This pattern is commonly used when a search text filed placed in a bar gets to a mobile resolution. It can be the case of a navbar, or a management bar.');
-        ie_close('p');
-        ie_open('p');
-        itext('The following animation shows this pattern works:');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/searchCollapseExample.gif', 'alt', 'collapse search animation in mobile to show a use case');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param280 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsCollapsibleSearchHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsCollapsibleSearchHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsCollapsibleSearchHtml, _Component);
-
-    function docsPatternsCollapsibleSearchHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsCollapsibleSearchHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsCollapsibleSearchHtml.__proto__ || Object.getPrototypeOf(docsPatternsCollapsibleSearchHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsCollapsibleSearchHtml;
-  }(Component);
-
-  Soy.register(docsPatternsCollapsibleSearchHtml, templates);
-  this['metalNamed']['collapsible_search'] = this['metalNamed']['collapsible_search'] || {};
-  this['metalNamed']['collapsible_search']['docsPatternsCollapsibleSearchHtml'] = docsPatternsCollapsibleSearchHtml;
-  this['metalNamed']['collapsible_search']['templates'] = templates;
-  this['metal']['collapsible_search'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from colors.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsColorsHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsColorsHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param289 = function param289() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Color palette defines a set of colors to be used in the system. Each of the colors has a meaning and a purpose to create a robust a design system.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('Colors have a huge impact in a system as they define the visual identity, they bring armony, they communicate, among other caracteristics. Lexicon defines the following color palette that you are free to change for your own.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Primary colors');
-        ie_close('h3');
-        ie_open('p');
-        itext('an Primary colors define part of the visual identity of Lexicon as a system. These colors have been carefully thought to be easily combined and be sure that accessibility is well covered.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/colorsPrimary@2x.png 2x', 'src', '../../../images/colorsPrimary.png', 'alt', 'set of 4 primary colors');
-        ie_close('img');
-        ie_close('p');
-        ie_open('table');
-        ie_open('thead');
-        ie_open('tr');
-        ie_open('th');
-        itext('Color');
-        ie_close('th');
-        ie_open('th');
-        itext('Usage');
-        ie_close('th');
-        ie_close('tr');
-        ie_close('thead');
-        ie_open('tbody');
-        ie_open('tr');
-        ie_open('td');
-        itext('Anchor navy');
-        ie_close('td');
-        ie_open('td');
-        itext('Used as background color in navigation.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Secondary blue');
-        ie_close('td');
-        ie_open('td');
-        itext('Used as default color.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Primary blue');
-        ie_close('td');
-        ie_open('td');
-        itext('Used for active state and hover, primary buttons, etc.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('White');
-        ie_close('td');
-        ie_open('td');
-        itext('Used when secondary blue doesn\u2019t respect accessibility rules.');
-        ie_close('td');
-        ie_close('tr');
-        ie_close('tbody');
-        ie_close('table');
-        ie_open('h3');
-        itext('Secondary colors');
-        ie_close('h3');
-        ie_open('p');
-        itext('Secondary colors are frequently used colors, also important as primary but do not define the visual identity in a stronger way as Primary colors do.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/colorsSecondary@2x.png 2x', 'src', '../../../images/colorsSecondary.png', 'alt', 'set of 5 secondary colors and its variations, also 5');
-        ie_close('img');
-        ie_close('p');
-        ie_open('table');
-        ie_open('thead');
-        ie_open('tr');
-        ie_open('th');
-        itext('Color');
-        ie_close('th');
-        ie_open('th');
-        itext('Usage');
-        ie_close('th');
-        ie_close('tr');
-        ie_close('thead');
-        ie_open('tbody');
-        ie_open('tr');
-        ie_open('td');
-        itext('Blue');
-        ie_close('td');
-        ie_open('td');
-        itext('Information');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Green');
-        ie_close('td');
-        ie_open('td');
-        itext('Success');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Orange');
-        ie_close('td');
-        ie_open('td');
-        itext('Warning');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Red');
-        ie_close('td');
-        ie_open('td');
-        itext('Error');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Grey');
-        ie_close('td');
-        ie_open('td');
-        itext('Secondary light');
-        ie_close('td');
-        ie_close('tr');
-        ie_close('tbody');
-        ie_close('table');
-        ie_open('p');
-        itext('Each of the color has a variation. These colors and its variations are normally used together, one for text color and the second one as a brackground color for the message.');
-        ie_close('p');
-        ie_open('h2');
-        itext('Changing Lexicon color palette');
-        ie_close('h2');
-        ie_open('p');
-        itext('Changing the prestablished color palette is always possible. From Lexicon we understand that our color palette might not fit your needs or requirements as you can have a different corporate image. You just need to set you colors instead of our colors.');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param289 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsColorsHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsColorsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsColorsHtml, _Component);
-
-    function docsPatternsColorsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsColorsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsColorsHtml.__proto__ || Object.getPrototypeOf(docsPatternsColorsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsColorsHtml;
-  }(Component);
-
-  Soy.register(docsPatternsColorsHtml, templates);
-  this['metalNamed']['colors'] = this['metalNamed']['colors'] || {};
-  this['metalNamed']['colors']['docsPatternsColorsHtml'] = docsPatternsColorsHtml;
-  this['metalNamed']['colors']['templates'] = templates;
-  this['metal']['colors'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from dataset_display.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsDatasetDisplayHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsDatasetDisplayHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param298 = function param298() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('A dataset display is the combination of a ');
-        ie_open('a', null, null, 'href', './management_bar.html');
-        itext('management bar');
-        ie_close('a');
-        itext(' with one or many data visualization types. The most common visualization types used are ');
-        ie_open('a', null, null, 'href', './table.html');
-        itext('table');
-        ie_close('a');
-        itext(', ');
-        ie_open('a', null, null, 'href', './list.html');
-        itext('list');
-        ie_close('a');
-        itext(' and ');
-        ie_open('a', null, null, 'href', './card.html');
-        itext('card');
+        itext('Nav can be use either for horizontal or vertical navigation structures. This page shows different simple use cases of this pattern that will be applied in a bit more complex patterns such us ');
+        ie_open('a', null, null, 'href', './navbar.html');
+        itext('navbar');
         ie_close('a');
         itext('.');
         ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
+        ie_open('h4');
+        itext('Vertical');
+        ie_close('h4');
         ie_open('p');
-        itext('This pattern is used when the elements of the visualization require colective management, therefore the management bar becomes important as it has to facilitate the tools needed to work with the data set.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Empty state');
-        ie_close('h3');
-        ie_open('p');
-        itext('It is important to let the user know what happends in empty states and let them know what has happend and how to perform actions to move out from that empty state.');
+        itext('A vertical navigation can be simple or it can be nested, where some of the entries could have interior levels of navigation.');
         ie_close('p');
         ie_open('p');
-        itext('In Lexicon we use our ');
-        ie_open('a', null, null, 'href', 'https://github.com/marcoscv-work/liferay-emoticons');
-        itext('emoticons library');
+        ie_open('img', null, null, 'srcset', '../../../images/navStacked@2x.png 2x', 'src', '../../../images/navStacked.png', 'alt', 'nav stacked');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('In a nested navigation usually the first level opens the second. Levels that open interior levels must be always identified with a disclosure arrow that indicates this action.');
+        ie_close('p');
+        ie_open('p');
+        itext('It is possible to nest as many levels as you want in a nested navigation but we encourage to use a maximum of two nested levels.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/navNested@2x.png 2x', 'src', '../../../images/navNested.png', 'alt', 'nav stacked');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Horizontal');
+        ie_close('h4');
+        ie_open('p');
+        itext('A nav can be also configured in horizontal for different purposes as can be the ');
+        ie_open('a', null, null, 'href', './navbar.html');
+        itext('navbar');
         ie_close('a');
-        itext(' as a visual support together with a text message to help the user. It is very important that this message is clear and let the user understand what to do next.');
+        itext('.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/datasetDisplayEmptyExample.gif', 'alt', 'animations showing how initial empty state works');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Empty search state');
-        ie_close('h3');
-        ie_open('p');
-        itext('As stated in the previous case, it is important to help the user understanding what happens in empty states. Here is the example for a empty search result.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/datasetDisplayEmptySearch.gif', 'alt', 'animations showing how an empty search works');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Invidual actions');
-        ie_close('h3');
-        ie_open('p');
-        itext('Individual actions are all those actions that an element has. This actions are always possible to reach from the element it self throw the actions menu. Some of this actions are also placed in the management bar when only one element fromt the dataset is selected. These actions are always represented by a metaphor, , they are buttons with icon. Only those actions that can be easily represented by an icon will be there. Not all possible represented by an icon must be there, only the ones considered as more relevant.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/datasetDisplayIndividualActions.png', 'alt', 'individual actions displayed both in management bar and from actions menu');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Colective actions');
-        ie_close('h3');
-        ie_open('p');
-        itext('Colective actions are shown in the management bar when more than one element is selected in the dataset. In case there are  colective actions that don\'t have an icon representation the can be placed in a dropdown triggered from the actions button.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/datasetDisplayColectiveActions.png', 'alt', 'colective actions displayed both in management bar and from actions menu');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Drag and drop example');
-        ie_close('h3');
-        ie_open('p');
-        itext('The following animations shows how a drag and drop action works in a list view.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tableDragDrop.gif', 'alt', 'table drag and drop example');
+        ie_open('img', null, null, 'srcset', '../../../images/navHorizontal@2x.png 2x', 'src', '../../../images/navHorizontal.png', 'alt', 'nav stacked');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -25447,11 +27330,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param298 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param344 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsDatasetDisplayHtml.render';
+      $render.soyTemplateName = 'cEVhq.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -25460,23 +27343,47 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsDatasetDisplayHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsDatasetDisplayHtml, _Component);
+  var cEVhq = function (_Component) {
+    babelHelpers.inherits(cEVhq, _Component);
 
-    function docsPatternsDatasetDisplayHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsDatasetDisplayHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsDatasetDisplayHtml.__proto__ || Object.getPrototypeOf(docsPatternsDatasetDisplayHtml)).apply(this, arguments));
+    function cEVhq() {
+      babelHelpers.classCallCheck(this, cEVhq);
+      return babelHelpers.possibleConstructorReturn(this, (cEVhq.__proto__ || Object.getPrototypeOf(cEVhq)).apply(this, arguments));
     }
 
-    return docsPatternsDatasetDisplayHtml;
+    return cEVhq;
   }(Component);
 
-  Soy.register(docsPatternsDatasetDisplayHtml, templates);
-  this['metalNamed']['dataset_display'] = this['metalNamed']['dataset_display'] || {};
-  this['metalNamed']['dataset_display']['docsPatternsDatasetDisplayHtml'] = docsPatternsDatasetDisplayHtml;
-  this['metalNamed']['dataset_display']['templates'] = templates;
-  this['metal']['dataset_display'] = templates;
+  Soy.register(cEVhq, templates);
+  this['metalNamed']['nav'] = this['metalNamed']['nav'] || {};
+  this['metalNamed']['nav']['cEVhq'] = cEVhq;
+  this['metalNamed']['nav']['templates'] = templates;
+  this['metal']['nav'] = templates;
   /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['nav'];
+
+  var cEVhq = function (_Component) {
+    babelHelpers.inherits(cEVhq, _Component);
+
+    function cEVhq() {
+      babelHelpers.classCallCheck(this, cEVhq);
+      return babelHelpers.possibleConstructorReturn(this, (cEVhq.__proto__ || Object.getPrototypeOf(cEVhq)).apply(this, arguments));
+    }
+
+    return cEVhq;
+  }(Component);
+
+  ;
+
+  Soy.register(cEVhq, templates);
+
+  this['metal']['cEVhq'] = cEVhq;
 }).call(this);
 'use strict';
 
@@ -25492,11 +27399,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatterns.
+     * @fileoverview Templates in namespace cFWNf.
      * @public
      */
 
-    goog.module('docsPatterns.incrementaldom');
+    goog.module('cFWNf.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -25529,7 +27436,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param343 = function param343() {
+      var param285 = function param285() {
         ie_open('h6');
         itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
         ie_close('h6');
@@ -25590,11 +27497,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param343 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param285 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatterns.render';
+      $render.soyTemplateName = 'cFWNf.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -25603,20 +27510,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatterns = function (_Component) {
-    babelHelpers.inherits(docsPatterns, _Component);
+  var cFWNf = function (_Component) {
+    babelHelpers.inherits(cFWNf, _Component);
 
-    function docsPatterns() {
-      babelHelpers.classCallCheck(this, docsPatterns);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatterns.__proto__ || Object.getPrototypeOf(docsPatterns)).apply(this, arguments));
+    function cFWNf() {
+      babelHelpers.classCallCheck(this, cFWNf);
+      return babelHelpers.possibleConstructorReturn(this, (cFWNf.__proto__ || Object.getPrototypeOf(cFWNf)).apply(this, arguments));
     }
 
-    return docsPatterns;
+    return cFWNf;
   }(Component);
 
-  Soy.register(docsPatterns, templates);
+  Soy.register(cFWNf, templates);
   this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsPatterns'] = docsPatterns;
+  this['metalNamed']['index']['cFWNf'] = cFWNf;
   this['metalNamed']['index']['templates'] = templates;
   this['metal']['index'] = templates;
   /* jshint ignore:end */
@@ -25628,214 +27535,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['index'];
 
-  var docsPatterns = function (_Component) {
-    babelHelpers.inherits(docsPatterns, _Component);
+  var cFWNf = function (_Component) {
+    babelHelpers.inherits(cFWNf, _Component);
 
-    function docsPatterns() {
-      babelHelpers.classCallCheck(this, docsPatterns);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatterns.__proto__ || Object.getPrototypeOf(docsPatterns)).apply(this, arguments));
+    function cFWNf() {
+      babelHelpers.classCallCheck(this, cFWNf);
+      return babelHelpers.possibleConstructorReturn(this, (cFWNf.__proto__ || Object.getPrototypeOf(cFWNf)).apply(this, arguments));
     }
 
-    return docsPatterns;
+    return cFWNf;
   }(Component);
 
   ;
 
-  Soy.register(docsPatterns, templates);
+  Soy.register(cFWNf, templates);
 
-  this['metal']['docsPatterns'] = docsPatterns;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['alerts'];
-
-  var docsPatternsAlertsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsAlertsHtml, _Component);
-
-    function docsPatternsAlertsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsAlertsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsAlertsHtml.__proto__ || Object.getPrototypeOf(docsPatternsAlertsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsAlertsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsAlertsHtml, templates);
-
-  this['metal']['docsPatternsAlertsHtml'] = docsPatternsAlertsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['badges_labels_stickers'];
-
-  var docsPatternsBadgesLabelsStickersHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsBadgesLabelsStickersHtml, _Component);
-
-    function docsPatternsBadgesLabelsStickersHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsBadgesLabelsStickersHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsBadgesLabelsStickersHtml.__proto__ || Object.getPrototypeOf(docsPatternsBadgesLabelsStickersHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsBadgesLabelsStickersHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsBadgesLabelsStickersHtml, templates);
-
-  this['metal']['docsPatternsBadgesLabelsStickersHtml'] = docsPatternsBadgesLabelsStickersHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['Breadcrumb'];
-
-  var docsPatternsBreadcrumbHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsBreadcrumbHtml, _Component);
-
-    function docsPatternsBreadcrumbHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsBreadcrumbHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsBreadcrumbHtml.__proto__ || Object.getPrototypeOf(docsPatternsBreadcrumbHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsBreadcrumbHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsBreadcrumbHtml, templates);
-
-  this['metal']['docsPatternsBreadcrumbHtml'] = docsPatternsBreadcrumbHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['buttons'];
-
-  var docsPatternsButtonsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsButtonsHtml, _Component);
-
-    function docsPatternsButtonsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsButtonsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsButtonsHtml.__proto__ || Object.getPrototypeOf(docsPatternsButtonsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsButtonsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsButtonsHtml, templates);
-
-  this['metal']['docsPatternsButtonsHtml'] = docsPatternsButtonsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['cards'];
-
-  var docsPatternsCardsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsCardsHtml, _Component);
-
-    function docsPatternsCardsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsCardsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsCardsHtml.__proto__ || Object.getPrototypeOf(docsPatternsCardsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsCardsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsCardsHtml, templates);
-
-  this['metal']['docsPatternsCardsHtml'] = docsPatternsCardsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['collapsible_search'];
-
-  var docsPatternsCollapsibleSearchHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsCollapsibleSearchHtml, _Component);
-
-    function docsPatternsCollapsibleSearchHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsCollapsibleSearchHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsCollapsibleSearchHtml.__proto__ || Object.getPrototypeOf(docsPatternsCollapsibleSearchHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsCollapsibleSearchHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsCollapsibleSearchHtml, templates);
-
-  this['metal']['docsPatternsCollapsibleSearchHtml'] = docsPatternsCollapsibleSearchHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['colors'];
-
-  var docsPatternsColorsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsColorsHtml, _Component);
-
-    function docsPatternsColorsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsColorsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsColorsHtml.__proto__ || Object.getPrototypeOf(docsPatternsColorsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsColorsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsColorsHtml, templates);
-
-  this['metal']['docsPatternsColorsHtml'] = docsPatternsColorsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['dataset_display'];
-
-  var docsPatternsDatasetDisplayHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsDatasetDisplayHtml, _Component);
-
-    function docsPatternsDatasetDisplayHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsDatasetDisplayHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsDatasetDisplayHtml.__proto__ || Object.getPrototypeOf(docsPatternsDatasetDisplayHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsDatasetDisplayHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsDatasetDisplayHtml, templates);
-
-  this['metal']['docsPatternsDatasetDisplayHtml'] = docsPatternsDatasetDisplayHtml;
+  this['metal']['cFWNf'] = cFWNf;
 }).call(this);
 'use strict';
 
@@ -25847,15 +27562,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from dropdowns.soy.
+    // This file was automatically generated from collapsible_search.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsDropdownsHtml.
+     * @fileoverview Templates in namespace wUNev.
      * @public
      */
 
-    goog.module('docsPatternsDropdownsHtml.incrementaldom');
+    goog.module('wUNev.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -25886,7 +27601,119 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param307 = function param307() {
+      var param222 = function param222() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Collapsible search provides a solution for the search text field in mobile resolution as the viewport size is reduced.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/searchCollapse@2x.png 2x', 'src', '../../../images/searchCollapse.png', 'alt', 'search collapse image with desktop and mobile examples');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('The search text field is reduced to just a button icon with the magnifying lense. When the button is tapped the field appears hovering the rest of the elements in the bar. Once the search action is performed the field gets to its initial state.');
+        ie_close('p');
+        ie_open('p');
+        itext('This pattern is commonly used when a search text filed placed in a bar gets to a mobile resolution. It can be the case of a navbar, or a management bar.');
+        ie_close('p');
+        ie_open('p');
+        itext('The following animation shows this pattern works:');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/searchCollapseExample.gif', 'alt', 'collapse search animation in mobile to show a use case');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param222 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'wUNev.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var wUNev = function (_Component) {
+    babelHelpers.inherits(wUNev, _Component);
+
+    function wUNev() {
+      babelHelpers.classCallCheck(this, wUNev);
+      return babelHelpers.possibleConstructorReturn(this, (wUNev.__proto__ || Object.getPrototypeOf(wUNev)).apply(this, arguments));
+    }
+
+    return wUNev;
+  }(Component);
+
+  Soy.register(wUNev, templates);
+  this['metalNamed']['collapsible_search'] = this['metalNamed']['collapsible_search'] || {};
+  this['metalNamed']['collapsible_search']['wUNev'] = wUNev;
+  this['metalNamed']['collapsible_search']['templates'] = templates;
+  this['metal']['collapsible_search'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from dropdowns.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace qaCdI.
+     * @public
+     */
+
+    goog.module('qaCdI.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param249 = function param249() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -25964,11 +27791,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param307 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param249 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsDropdownsHtml.render';
+      $render.soyTemplateName = 'qaCdI.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -25977,20 +27804,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsDropdownsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsDropdownsHtml, _Component);
+  var qaCdI = function (_Component) {
+    babelHelpers.inherits(qaCdI, _Component);
 
-    function docsPatternsDropdownsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsDropdownsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsDropdownsHtml.__proto__ || Object.getPrototypeOf(docsPatternsDropdownsHtml)).apply(this, arguments));
+    function qaCdI() {
+      babelHelpers.classCallCheck(this, qaCdI);
+      return babelHelpers.possibleConstructorReturn(this, (qaCdI.__proto__ || Object.getPrototypeOf(qaCdI)).apply(this, arguments));
     }
 
-    return docsPatternsDropdownsHtml;
+    return qaCdI;
   }(Component);
 
-  Soy.register(docsPatternsDropdownsHtml, templates);
+  Soy.register(qaCdI, templates);
   this['metalNamed']['dropdowns'] = this['metalNamed']['dropdowns'] || {};
-  this['metalNamed']['dropdowns']['docsPatternsDropdownsHtml'] = docsPatternsDropdownsHtml;
+  this['metalNamed']['dropdowns']['qaCdI'] = qaCdI;
   this['metalNamed']['dropdowns']['templates'] = templates;
   this['metal']['dropdowns'] = templates;
   /* jshint ignore:end */
@@ -25998,30 +27825,6 @@ babelHelpers;
 'use strict';
 
 (function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['dropdowns'];
-
-  var docsPatternsDropdownsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsDropdownsHtml, _Component);
-
-    function docsPatternsDropdownsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsDropdownsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsDropdownsHtml.__proto__ || Object.getPrototypeOf(docsPatternsDropdownsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsDropdownsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsDropdownsHtml, templates);
-
-  this['metal']['docsPatternsDropdownsHtml'] = docsPatternsDropdownsHtml;
-}).call(this);
-'use strict';
-
-(function () {
   /* jshint ignore:start */
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
@@ -26029,15 +27832,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from grid.soy.
+    // This file was automatically generated from popovers_tooltips.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsGridHtml.
+     * @fileoverview Templates in namespace eTlfp.
      * @public
      */
 
-    goog.module('docsPatternsGridHtml.incrementaldom');
+    goog.module('eTlfp.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -26068,1041 +27871,61 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param316 = function param316() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
+      var param389 = function param389() {
+        ie_open('h2');
+        itext('Popovers');
+        ie_close('h2');
         ie_open('p');
-        itext('Lexicon uses a 4px grid as the minimum unit of measure in terms of distance and space. 4px is a right decision as it allows as scalling with accuracy in alignment. Visual order and cleaness is one of the aims of this system.');
+        itext('Popovers are short helpful and/or descriptive pieces of information that appear on hover state.');
         ie_close('p');
-        ie_open('h3');
-        itext('4px grid');
-        ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/Grid@2x.png 2x', 'src', '../../../images/Grid.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_open('img', null, null, 'srcset', '../../../images/popovers@2x.png 2x', 'src', '../../../images/popovers.png', 'alt', 'four different popovers with the arrow to the left, or right or top or down');
         ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/meausres@2x.png 2x', 'src', '../../../images/meausres.png', 'alt', 'form distances to build up forms using Lexicon');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('The grid used in interfaces built with Lexicon follows the following rules:');
-        ie_close('p');
-        ie_open('ul');
-        ie_open('li');
-        itext('Maximum grid width: 1280px');
-        ie_close('li');
-        ie_open('li');
-        itext('Gutter: 32px');
-        ie_close('li');
-        ie_open('li');
-        itext('Margin: 16px');
-        ie_close('li');
-        ie_open('li');
-        itext('Number of colums: 12');
-        ie_close('li');
-        ie_open('li');
-        itext('Column width: varies with the canvas width');
-        ie_close('li');
-        ie_close('ul');
-        ie_open('p');
-        ie_open('strong');
-        itext('Note:');
-        ie_close('strong');
-        itext(' Quartz implements Lexicon on top of bootstrap using the default bootstrap grid that has a gutter of 30px and a margin of 15px.');
-        ie_close('p');
-        ie_open('h3');
-        itext('4px usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('A 4px minimum unit of measure allow us to play with values as 8px, 12px, 16px, 20px, 24px and so on. The previously stated units are the ones most used in Lexicon. The follwing set of examples shows how we use this measures to build up our system. Please refer to attributes section inside patterns to see more use cases and learn how Lexicon applies them.');
-        ie_close('p');
-        ie_open('h4');
-        itext('Form example');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/formDistances@2x.png 2x', 'src', '../../../images/formDistances.png', 'alt', 'form distances to build up forms using Lexicon');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param316 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsGridHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsGridHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsGridHtml, _Component);
-
-    function docsPatternsGridHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsGridHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsGridHtml.__proto__ || Object.getPrototypeOf(docsPatternsGridHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsGridHtml;
-  }(Component);
-
-  Soy.register(docsPatternsGridHtml, templates);
-  this['metalNamed']['grid'] = this['metalNamed']['grid'] || {};
-  this['metalNamed']['grid']['docsPatternsGridHtml'] = docsPatternsGridHtml;
-  this['metalNamed']['grid']['templates'] = templates;
-  this['metal']['grid'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['grid'];
-
-  var docsPatternsGridHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsGridHtml, _Component);
-
-    function docsPatternsGridHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsGridHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsGridHtml.__proto__ || Object.getPrototypeOf(docsPatternsGridHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsGridHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsGridHtml, templates);
-
-  this['metal']['docsPatternsGridHtml'] = docsPatternsGridHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from header_toolbar.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsHeaderToolbarHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsHeaderToolbarHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param325 = function param325() {
-        ie_open('h3');
-        itext('Introduction');
-        ie_close('h3');
-        ie_open('p');
-        itext('Header toolbar is a Toolbar based component used in headings for portlets, mobile pages, and page sections.');
         ie_close('p');
         ie_open('h3');
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/headerToolbar@2x.png 2x', 'src', '../../../images/headerToolbar.png', 'alt', 'header tooldbar dark background');
-        ie_close('img');
+        itext('Popovers are used together with the question mark icon as an affordance to let the user understand there is something to read that can be useful. Popovers contain information such as help to understand a context.');
         ie_close('p');
         ie_open('p');
-        itext('This toolbar is used in almost every page in the system. It can have different configurations as you can see in examples section:');
-        ie_close('p');
-        ie_open('ul');
-        ie_open('li');
-        itext('Left area: Used for actions as triggering the side menu and back navigation');
-        ie_close('li');
-        ie_open('li');
-        itext('Center area: Used for the page or application title.');
-        ie_close('li');
-        ie_open('li');
-        itext('Right area: Used for actions, explicit when it is possible and a maximum number of 3. Implicit inside a kebab menu when the metaphor is not clear.');
-        ie_close('li');
-        ie_close('ul');
-        ie_open('h3');
-        itext('Example');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/headerExample.gif', 'alt', 'animated gif that shows how a header toolbar work with different interactions');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param325 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsHeaderToolbarHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsHeaderToolbarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsHeaderToolbarHtml, _Component);
-
-    function docsPatternsHeaderToolbarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsHeaderToolbarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsHeaderToolbarHtml.__proto__ || Object.getPrototypeOf(docsPatternsHeaderToolbarHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsHeaderToolbarHtml;
-  }(Component);
-
-  Soy.register(docsPatternsHeaderToolbarHtml, templates);
-  this['metalNamed']['header_toolbar'] = this['metalNamed']['header_toolbar'] || {};
-  this['metalNamed']['header_toolbar']['docsPatternsHeaderToolbarHtml'] = docsPatternsHeaderToolbarHtml;
-  this['metalNamed']['header_toolbar']['templates'] = templates;
-  this['metal']['header_toolbar'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['header_toolbar'];
-
-  var docsPatternsHeaderToolbarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsHeaderToolbarHtml, _Component);
-
-    function docsPatternsHeaderToolbarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsHeaderToolbarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsHeaderToolbarHtml.__proto__ || Object.getPrototypeOf(docsPatternsHeaderToolbarHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsHeaderToolbarHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsHeaderToolbarHtml, templates);
-
-  this['metal']['docsPatternsHeaderToolbarHtml'] = docsPatternsHeaderToolbarHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from icons.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsIconsHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsIconsHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param334 = function param334() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Icon is a visual metaphor representing a concept that lies behind the idea and/or action.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Liferay icon library');
-        ie_close('h3');
-        ie_open('p');
-        itext('Liferay has its own icon library created for the porpuses of the projects that use Lexicon. You can also use other icon libraries. ');
-        ie_open('a', null, null, 'href', 'http://liferay.github.io/lexicon/content/icons-lexicon/');
-        itext('Check our icon library');
-        ie_close('a');
-        itext('.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/icons1.png', 'alt', 'icon set column 1');
-        ie_close('img');
-        ie_open('img', null, null, 'src', '../../../images/icons2.png', 'alt', 'icon set column 2');
-        ie_close('img');
-        ie_open('img', null, null, 'src', '../../../images/icons3.png', 'alt', 'icon set column 3');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Language flags');
-        ie_close('h4');
-        ie_open('p');
-        itext('People tend to have pretty strong opinions on whether flags should be used as a visual cue for indicating a language, mainly because in many parts of the world, the flag may have cultural and geographic meanings that we might not be aware of, or the flag itself isn\'t fully accurate to the dialects spoken in that region.');
-        ie_close('p');
-        ie_open('p');
-        itext('While we understand that reasoning, we\'ve found that the times they are actually needed (when a user is not familiar with the currently displayed language) somewhat eliminates using other mechanisms, such as the name of the language (since the current language could be in an entirely different character set). Given this, there is often at least some familiarity with the identity of a country that speaks a shared language. ');
-        ie_open('a', null, null, 'href', 'http://liferay.github.io/lexicon/content/icons-lexicon/');
-        itext('Check our flags library');
-        ie_close('a');
-        itext('.');
-        ie_close('p');
-        ie_open('h4');
-        itext('Other icon libraries');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('a', null, null, 'href', 'http://fontawesome.io/');
-        itext('Font Awesome');
-        ie_close('a');
-        itext(' and ');
-        ie_open('a', null, null, 'href', 'http://glyphicons.com/');
-        itext('Glyphicons');
-        ie_close('a');
-        itext(' are good alternatives in case you don\'t want to use Lexicon icon library.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('Icons can be used only when the metaphor is direct and clear. In case there is not a good icon to represent the concept you want to transmit, it will probably better to use words. Icons must be reserved to broad accepted visual ideas.');
-        ie_close('p');
-        ie_open('h4');
-        itext('Why do we use SVG?');
-        ie_close('h4');
-        ie_open('p');
-        itext('SVG gives us and you a greater amount of freedom in styling the icons, as well as a higher level of fidelity and clarity in the icons. Font icons, while fairly simple, also suffer some drawbacks, mainly with sub-pixel aliasing that cause the quality to not be as high as we would like. Also SVG allows for multi-color icons.');
-        ie_close('p');
-        ie_open('h4');
-        itext('Help icon');
-        ie_close('h4');
-        ie_open('p');
-        itext('Help icon is used in lexicon together with tooltips or popovers. As an example, it gives a better visual clue to users to reach an explanation about a field in a form.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Sizes');
-        ie_close('h3');
-        ie_open('table');
-        ie_open('thead');
-        ie_open('tr');
-        ie_open('th');
-        itext('Size');
-        ie_close('th');
-        ie_open('th');
-        itext('Usage');
-        ie_close('th');
-        ie_close('tr');
-        ie_close('thead');
-        ie_open('tbody');
-        ie_open('tr');
-        ie_open('td');
-        itext('Icon-large');
-        ie_close('td');
-        ie_open('td');
-        itext('Icon-large (x1.33)');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Icon-2x');
-        ie_close('td');
-        ie_open('td');
-        itext('Icon-2x (x2)');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Icon-3x');
-        ie_close('td');
-        ie_open('td');
-        itext('Icon-3x (x3)');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Icon-4x');
-        ie_close('td');
-        ie_open('td');
-        itext('Icon-4x (x4)');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Icon-5x');
-        ie_close('td');
-        ie_open('td');
-        itext('Icon-5x (x5)');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Icon-2x');
-        ie_close('td');
-        ie_open('td');
-        itext('Icon-2x (x2)');
-        ie_close('td');
-        ie_close('tr');
-        ie_close('tbody');
-        ie_close('table');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param334 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsIconsHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsIconsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsIconsHtml, _Component);
-
-    function docsPatternsIconsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsIconsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsIconsHtml.__proto__ || Object.getPrototypeOf(docsPatternsIconsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsIconsHtml;
-  }(Component);
-
-  Soy.register(docsPatternsIconsHtml, templates);
-  this['metalNamed']['icons'] = this['metalNamed']['icons'] || {};
-  this['metalNamed']['icons']['docsPatternsIconsHtml'] = docsPatternsIconsHtml;
-  this['metalNamed']['icons']['templates'] = templates;
-  this['metal']['icons'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['icons'];
-
-  var docsPatternsIconsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsIconsHtml, _Component);
-
-    function docsPatternsIconsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsIconsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsIconsHtml.__proto__ || Object.getPrototypeOf(docsPatternsIconsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsIconsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsIconsHtml, templates);
-
-  this['metal']['docsPatternsIconsHtml'] = docsPatternsIconsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from list_groups.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsListGroupsHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsListGroupsHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param357 = function param357() {
-        ie_open('h3');
-        itext('Introduction');
-        ie_close('h3');
-        ie_open('p');
-        itext('List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/listItem@2x.png 2x', 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('A list view is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.');
-        ie_close('p');
-        ie_open('p');
-        itext('A list allows you a free way of displaying information. While the table isn\'t meant to have several text labels in a column, list is the pattern for doing that, as you can see in the following examples.');
-        ie_close('p');
-        ie_open('p');
-        itext('Not all the element in a list entry are mandatory, feel free to delete and include the ones you need.');
-        ie_close('p');
-        ie_open('p');
-        itext('When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.');
-        ie_close('p');
-        ie_open('h3');
-        itext('List group');
-        ie_close('h3');
-        ie_open('p');
-        itext('Whenever you need to group series of list entries, you can use the list group heading for that.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/listGroup@2x.png 2x', 'src', '../../../images/listGroup.png', 'alt', 'list group includes a heading');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Row interactions');
-        ie_close('h3');
-        ie_open('ul');
-        ie_open('li');
-        itext('Selecting a row is only possible by using the checkbox.');
-        ie_close('li');
-        ie_open('li');
-        itext('Text elements in the row can be configured as links to navigate.');
-        ie_close('li');
-        ie_open('li');
-        itext('A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don\'t need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.');
-        ie_close('li');
-        ie_open('li');
-        itext('If the action you want to perform of is "Edit", place it as a link in the title to navigate to an edition screen for the element.');
-        ie_close('li');
-        ie_close('ul');
-        ie_open('h3');
-        itext('Row states');
-        ie_close('h3');
-        ie_open('h4');
-        itext('Default states');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/listItem@2x.png 2x', 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Selected state');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/listSelected@2x.png 2x', 'src', '../../../images/listSelected.png', 'alt', 'list entry in selected state');
+        ie_open('img', null, null, 'srcset', '../../../images/helpIcon@2x.png 2x', 'src', '../../../images/helpIcon.png', 'alt', 'help icon');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/listAttributes@2x.png 2x', 'src', '../../../images/listAttributes.png', 'alt', 'list attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/popoverAttributes@2x.png 2x', 'src', '../../../images/popoverAttributes.png', 'alt', 'popover attributes');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
-        itext('Example of use');
-        ie_close('h3');
+        ie_open('h2');
+        itext('Tooltips');
+        ie_close('h2');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/listExample@2x.png 2x', 'src', '../../../images/listExample.png', 'alt', 'list with 3 entries, one in default state, one in selected state, one with actions menu open');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param357 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsListGroupsHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsListGroupsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsListGroupsHtml, _Component);
-
-    function docsPatternsListGroupsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsListGroupsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsListGroupsHtml.__proto__ || Object.getPrototypeOf(docsPatternsListGroupsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsListGroupsHtml;
-  }(Component);
-
-  Soy.register(docsPatternsListGroupsHtml, templates);
-  this['metalNamed']['list_groups'] = this['metalNamed']['list_groups'] || {};
-  this['metalNamed']['list_groups']['docsPatternsListGroupsHtml'] = docsPatternsListGroupsHtml;
-  this['metalNamed']['list_groups']['templates'] = templates;
-  this['metal']['list_groups'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['list_groups'];
-
-  var docsPatternsListGroupsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsListGroupsHtml, _Component);
-
-    function docsPatternsListGroupsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsListGroupsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsListGroupsHtml.__proto__ || Object.getPrototypeOf(docsPatternsListGroupsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsListGroupsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsListGroupsHtml, templates);
-
-  this['metal']['docsPatternsListGroupsHtml'] = docsPatternsListGroupsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from loading_indicator.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsLoadingIndicatorHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsLoadingIndicatorHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param366 = function param366() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Loading indicator shows the user that an external process, like a connection, is being executed.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('This feedback mechanism is essential for the user to understand that something is happening. Please remember to include it when there is a connection to a server and at the same screen shows the answer to the user.');
+        itext('Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.');
         ie_close('p');
         ie_open('p');
-        itext('Please don\u2019t use spinners inside buttons. In case you need a spinner for an action triggered by a button, place the spinner to one of the sides of the button.');
-        ie_close('p');
-        ie_void('div', null, null, 'class', 'loading-icon loading-icon-md');
-        ie_open('h3');
-        itext('Types');
-        ie_close('h3');
-        ie_open('table');
-        ie_open('thead');
-        ie_open('tr');
-        ie_open('th');
-        itext('Types');
-        ie_close('th');
-        ie_open('th');
-        itext('Description');
-        ie_close('th');
-        ie_close('tr');
-        ie_close('thead');
-        ie_open('tbody');
-        ie_open('tr');
-        ie_open('td');
-        ie_void('div', null, null, 'class', 'loading-icon loading-icon');
-        ie_close('td');
-        ie_open('td');
-        itext('Dotted spinner default');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        ie_void('div', null, null, 'class', 'loading-icon linear');
-        ie_close('td');
-        ie_open('td');
-        itext('Linear spinner default');
-        ie_close('td');
-        ie_close('tr');
-        ie_close('tbody');
-        ie_close('table');
-        ie_open('h3');
-        itext('Size');
-        ie_close('h3');
-        ie_open('p');
-        itext('Make a responsive usage of the sizes that help the user to understand that something is happening not being aggressive. The context of use will help you understanding the size to use.');
-        ie_close('p');
-        ie_open('table');
-        ie_open('thead');
-        ie_open('tr');
-        ie_open('th');
-        itext('Size');
-        ie_close('th');
-        ie_open('th');
-        itext('Description');
-        ie_close('th');
-        ie_close('tr');
-        ie_close('thead');
-        ie_open('tbody');
-        ie_open('tr');
-        ie_open('td');
-        itext('Small');
-        ie_close('td');
-        ie_open('td');
-        itext('10px');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Default');
-        ie_close('td');
-        ie_open('td');
-        itext('16px');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Medium');
-        ie_close('td');
-        ie_open('td');
-        itext('32px');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Large');
-        ie_close('td');
-        ie_open('td');
-        itext('64px');
-        ie_close('td');
-        ie_close('tr');
-        ie_close('tbody');
-        ie_close('table');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param366 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsLoadingIndicatorHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsLoadingIndicatorHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsLoadingIndicatorHtml, _Component);
-
-    function docsPatternsLoadingIndicatorHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsLoadingIndicatorHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsLoadingIndicatorHtml.__proto__ || Object.getPrototypeOf(docsPatternsLoadingIndicatorHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsLoadingIndicatorHtml;
-  }(Component);
-
-  Soy.register(docsPatternsLoadingIndicatorHtml, templates);
-  this['metalNamed']['loading_indicator'] = this['metalNamed']['loading_indicator'] || {};
-  this['metalNamed']['loading_indicator']['docsPatternsLoadingIndicatorHtml'] = docsPatternsLoadingIndicatorHtml;
-  this['metalNamed']['loading_indicator']['templates'] = templates;
-  this['metal']['loading_indicator'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['loading_indicator'];
-
-  var docsPatternsLoadingIndicatorHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsLoadingIndicatorHtml, _Component);
-
-    function docsPatternsLoadingIndicatorHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsLoadingIndicatorHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsLoadingIndicatorHtml.__proto__ || Object.getPrototypeOf(docsPatternsLoadingIndicatorHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsLoadingIndicatorHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsLoadingIndicatorHtml, templates);
-
-  this['metal']['docsPatternsLoadingIndicatorHtml'] = docsPatternsLoadingIndicatorHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from management_bar.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsManagementBarHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsManagementBarHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param375 = function param375() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Management Bar is an extension of Navbar. Combine different management-bar components to create a toolbar that fits your needs.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/managementBarState1@2x.png 2x', 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
+        ie_open('img', null, null, 'srcset', '../../../images/tooltips@2x.png 2x', 'src', '../../../images/tooltips.png', 'alt', 'the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        itext('The Management Bar is always part of a bigger structure and works along with other data management patterns like tables, lists or cards, and its functionality is directly related to them. The Management Bar has two main states:');
-        ie_close('p');
-        ie_open('h4');
-        itext('State 1');
-        ie_close('h4');
-        ie_open('p');
-        itext('It is the default state.');
+        itext('Tooltips are used in with icon buttons to help understanding the metaphor they transmit. They can be also used with links or images.');
         ie_close('p');
         ie_open('p');
-        itext('It displays tools focused on filtering, sorting and data visualization.');
+        itext('The tooltip appears on hover state and disappears when hover ends. This pattern does not exist in mobile a hover is not a possible state.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/managementBarState1@2x.png 2x', 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('State 2');
-        ie_close('h4');
-        ie_open('p');
-        itext('It displays contextual tools associated to specific items selected. It is only activated when one or more items from the visualization are selected.');
-        ie_close('p');
-        ie_open('p');
-        itext('The background color and the way to show the icons of the bar in this state changes to differentiate from the default state and establish a visual relation with other forms of showing this tools.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/managementBarState2@2x.png 2x', 'src', '../../../images/managementBarState2.png', 'alt', 'state two of the management bar');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('The tools shown in the management bar in each state are always related to the type of data displayed and type of visualization. The Management Bar never shows elements that not are required in a specific context.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Requirements');
-        ie_close('h3');
-        ie_open('ul');
-        ie_open('li');
-        itext('The Management Bar has to be fixed on the header of the page so it can be always visible during the vertical scroll.');
-        ie_close('li');
-        ie_open('li');
-        itext('On the default state of the bar, filter and order tools have to be always on the left side and visualization and information tools on the right.');
-        ie_close('li');
-        ie_open('li');
-        itext('On the second state, the tools for selected items appear always on the right side of the bar and vary according to the items selected.');
-        ie_close('li');
-        ie_open('li');
-        itext('Tools shown in the Management Bar are only the ones that the type of data displayed requires it in a specific context.');
-        ie_close('li');
-        ie_open('li');
-        itext('A user can only sort and filter by those elements that are visible in the current visualization.');
-        ie_close('li');
-        ie_close('ul');
-        ie_open('h3');
-        itext('Example of use');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/managementBarExample.gif', 'alt', 'state one of the management bar');
-        ie_close('img');
+        itext('Please make a right use of the arrow positioning as it could drive to misunderstandings when it doesn\u2019t point to the correct interface element.');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/mangementBarAttributes@2x.png 2x', 'src', '../../../images/mangementBarAttributes.png', 'alt', 'management bar attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/tooltipAttributes@2x.png 2x', 'src', '../../../images/tooltipAttributes.png', 'alt', 'tooltip attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -27110,11 +27933,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param375 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param389 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsManagementBarHtml.render';
+      $render.soyTemplateName = 'eTlfp.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -27123,22 +27946,22 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsManagementBarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsManagementBarHtml, _Component);
+  var eTlfp = function (_Component) {
+    babelHelpers.inherits(eTlfp, _Component);
 
-    function docsPatternsManagementBarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsManagementBarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsManagementBarHtml.__proto__ || Object.getPrototypeOf(docsPatternsManagementBarHtml)).apply(this, arguments));
+    function eTlfp() {
+      babelHelpers.classCallCheck(this, eTlfp);
+      return babelHelpers.possibleConstructorReturn(this, (eTlfp.__proto__ || Object.getPrototypeOf(eTlfp)).apply(this, arguments));
     }
 
-    return docsPatternsManagementBarHtml;
+    return eTlfp;
   }(Component);
 
-  Soy.register(docsPatternsManagementBarHtml, templates);
-  this['metalNamed']['management_bar'] = this['metalNamed']['management_bar'] || {};
-  this['metalNamed']['management_bar']['docsPatternsManagementBarHtml'] = docsPatternsManagementBarHtml;
-  this['metalNamed']['management_bar']['templates'] = templates;
-  this['metal']['management_bar'] = templates;
+  Soy.register(eTlfp, templates);
+  this['metalNamed']['popovers_tooltips'] = this['metalNamed']['popovers_tooltips'] || {};
+  this['metalNamed']['popovers_tooltips']['eTlfp'] = eTlfp;
+  this['metalNamed']['popovers_tooltips']['templates'] = templates;
+  this['metal']['popovers_tooltips'] = templates;
   /* jshint ignore:end */
 }).call(this);
 'use strict';
@@ -27146,24 +27969,181 @@ babelHelpers;
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['management_bar'];
+  var templates = this['metal']['popovers_tooltips'];
 
-  var docsPatternsManagementBarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsManagementBarHtml, _Component);
+  var eTlfp = function (_Component) {
+    babelHelpers.inherits(eTlfp, _Component);
 
-    function docsPatternsManagementBarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsManagementBarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsManagementBarHtml.__proto__ || Object.getPrototypeOf(docsPatternsManagementBarHtml)).apply(this, arguments));
+    function eTlfp() {
+      babelHelpers.classCallCheck(this, eTlfp);
+      return babelHelpers.possibleConstructorReturn(this, (eTlfp.__proto__ || Object.getPrototypeOf(eTlfp)).apply(this, arguments));
     }
 
-    return docsPatternsManagementBarHtml;
+    return eTlfp;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsManagementBarHtml, templates);
+  Soy.register(eTlfp, templates);
 
-  this['metal']['docsPatternsManagementBarHtml'] = docsPatternsManagementBarHtml;
+  this['metal']['eTlfp'] = eTlfp;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from sidebar.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace euYsS.
+     * @public
+     */
+
+    goog.module('euYsS.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param407 = function param407() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Sidebar is a vertical panel that appears from the right side of the screen on interactions like the info button.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('Sidebar is basically an information container where to display information. This information can be of the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy. The side bar can be configured in light background color or inverse (dark).');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/sidebarExamples.png', 'alt', 'sidebar example for an image in documents and media');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('The following example shows the information panel for an element in the document library. In this case, we want to show differnt information as the image itself, the urls, and other metadata are shown.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/sidebarExample.gif', 'alt', 'sidebar example for an image in documents and media');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param407 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'euYsS.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var euYsS = function (_Component) {
+    babelHelpers.inherits(euYsS, _Component);
+
+    function euYsS() {
+      babelHelpers.classCallCheck(this, euYsS);
+      return babelHelpers.possibleConstructorReturn(this, (euYsS.__proto__ || Object.getPrototypeOf(euYsS)).apply(this, arguments));
+    }
+
+    return euYsS;
+  }(Component);
+
+  Soy.register(euYsS, templates);
+  this['metalNamed']['sidebar'] = this['metalNamed']['sidebar'] || {};
+  this['metalNamed']['sidebar']['euYsS'] = euYsS;
+  this['metalNamed']['sidebar']['templates'] = templates;
+  this['metal']['sidebar'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['sidebar'];
+
+  var euYsS = function (_Component) {
+    babelHelpers.inherits(euYsS, _Component);
+
+    function euYsS() {
+      babelHelpers.classCallCheck(this, euYsS);
+      return babelHelpers.possibleConstructorReturn(this, (euYsS.__proto__ || Object.getPrototypeOf(euYsS)).apply(this, arguments));
+    }
+
+    return euYsS;
+  }(Component);
+
+  ;
+
+  Soy.register(euYsS, templates);
+
+  this['metal']['euYsS'] = euYsS;
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['Breadcrumb'];
+
+  var fYymM = function (_Component) {
+    babelHelpers.inherits(fYymM, _Component);
+
+    function fYymM() {
+      babelHelpers.classCallCheck(this, fYymM);
+      return babelHelpers.possibleConstructorReturn(this, (fYymM.__proto__ || Object.getPrototypeOf(fYymM)).apply(this, arguments));
+    }
+
+    return fYymM;
+  }(Component);
+
+  ;
+
+  Soy.register(fYymM, templates);
+
+  this['metal']['fYymM'] = fYymM;
 }).call(this);
 'use strict';
 
@@ -27179,11 +28159,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsModalsHtml.
+     * @fileoverview Templates in namespace gAUsh.
      * @public
      */
 
-    goog.module('docsPatternsModalsHtml.incrementaldom');
+    goog.module('gAUsh.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -27214,7 +28194,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param384 = function param384() {
+      var param326 = function param326() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -27354,11 +28334,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param384 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param326 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsModalsHtml.render';
+      $render.soyTemplateName = 'gAUsh.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -27367,20 +28347,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsModalsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsModalsHtml, _Component);
+  var gAUsh = function (_Component) {
+    babelHelpers.inherits(gAUsh, _Component);
 
-    function docsPatternsModalsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsModalsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsModalsHtml.__proto__ || Object.getPrototypeOf(docsPatternsModalsHtml)).apply(this, arguments));
+    function gAUsh() {
+      babelHelpers.classCallCheck(this, gAUsh);
+      return babelHelpers.possibleConstructorReturn(this, (gAUsh.__proto__ || Object.getPrototypeOf(gAUsh)).apply(this, arguments));
     }
 
-    return docsPatternsModalsHtml;
+    return gAUsh;
   }(Component);
 
-  Soy.register(docsPatternsModalsHtml, templates);
+  Soy.register(gAUsh, templates);
   this['metalNamed']['modals'] = this['metalNamed']['modals'] || {};
-  this['metalNamed']['modals']['docsPatternsModalsHtml'] = docsPatternsModalsHtml;
+  this['metalNamed']['modals']['gAUsh'] = gAUsh;
   this['metalNamed']['modals']['templates'] = templates;
   this['metal']['modals'] = templates;
   /* jshint ignore:end */
@@ -27392,22 +28372,46 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['modals'];
 
-  var docsPatternsModalsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsModalsHtml, _Component);
+  var gAUsh = function (_Component) {
+    babelHelpers.inherits(gAUsh, _Component);
 
-    function docsPatternsModalsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsModalsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsModalsHtml.__proto__ || Object.getPrototypeOf(docsPatternsModalsHtml)).apply(this, arguments));
+    function gAUsh() {
+      babelHelpers.classCallCheck(this, gAUsh);
+      return babelHelpers.possibleConstructorReturn(this, (gAUsh.__proto__ || Object.getPrototypeOf(gAUsh)).apply(this, arguments));
     }
 
-    return docsPatternsModalsHtml;
+    return gAUsh;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsModalsHtml, templates);
+  Soy.register(gAUsh, templates);
 
-  this['metal']['docsPatternsModalsHtml'] = docsPatternsModalsHtml;
+  this['metal']['gAUsh'] = gAUsh;
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['buttons'];
+
+  var hghPp = function (_Component) {
+    babelHelpers.inherits(hghPp, _Component);
+
+    function hghPp() {
+      babelHelpers.classCallCheck(this, hghPp);
+      return babelHelpers.possibleConstructorReturn(this, (hghPp.__proto__ || Object.getPrototypeOf(hghPp)).apply(this, arguments));
+    }
+
+    return hghPp;
+  }(Component);
+
+  ;
+
+  Soy.register(hghPp, templates);
+
+  this['metal']['hghPp'] = hghPp;
 }).call(this);
 'use strict';
 
@@ -27419,15 +28423,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from nav.soy.
+    // This file was automatically generated from toolbar.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsNavHtml.
+     * @fileoverview Templates in namespace hrbNF.
      * @public
      */
 
-    goog.module('docsPatternsNavHtml.incrementaldom');
+    goog.module('hrbNF.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -27458,236 +28462,62 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param402 = function param402() {
+      var param443 = function param443() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
         ie_open('p');
-        itext('Nav is the pattern that defines the navigation pattern.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Variations');
-        ie_close('h3');
-        ie_open('p');
-        itext('Nav can be use either for horizontal or vertical navigation structures. This page shows different simple use cases of this pattern that will be applied in a bit more complex patterns such us ');
-        ie_open('a', null, null, 'href', './navbar.html');
-        itext('navbar');
-        ie_close('a');
-        itext('.');
-        ie_close('p');
-        ie_open('h4');
-        itext('Vertical');
-        ie_close('h4');
-        ie_open('p');
-        itext('A vertical navigation can be simple or it can be nested, where some of the entries could have interior levels of navigation.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/navStacked@2x.png 2x', 'src', '../../../images/navStacked.png', 'alt', 'nav stacked');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('In a nested navigation usually the first level opens the second. Levels that open interior levels must be always identified with a disclosure arrow that indicates this action.');
-        ie_close('p');
-        ie_open('p');
-        itext('It is possible to nest as many levels as you want in a nested navigation but we encourage to use a maximum of two nested levels.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/navNested@2x.png 2x', 'src', '../../../images/navNested.png', 'alt', 'nav stacked');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Horizontal');
-        ie_close('h4');
-        ie_open('p');
-        itext('A nav can be also configured in horizontal for different purposes as can be the ');
-        ie_open('a', null, null, 'href', './navbar.html');
-        itext('navbar');
-        ie_close('a');
-        itext('.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/navHorizontal@2x.png 2x', 'src', '../../../images/navHorizontal.png', 'alt', 'nav stacked');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param402 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsNavHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsNavHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsNavHtml, _Component);
-
-    function docsPatternsNavHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsNavHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsNavHtml.__proto__ || Object.getPrototypeOf(docsPatternsNavHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsNavHtml;
-  }(Component);
-
-  Soy.register(docsPatternsNavHtml, templates);
-  this['metalNamed']['nav'] = this['metalNamed']['nav'] || {};
-  this['metalNamed']['nav']['docsPatternsNavHtml'] = docsPatternsNavHtml;
-  this['metalNamed']['nav']['templates'] = templates;
-  this['metal']['nav'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['nav'];
-
-  var docsPatternsNavHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsNavHtml, _Component);
-
-    function docsPatternsNavHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsNavHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsNavHtml.__proto__ || Object.getPrototypeOf(docsPatternsNavHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsNavHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsNavHtml, templates);
-
-  this['metal']['docsPatternsNavHtml'] = docsPatternsNavHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from nav tabs.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsNavTabsHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsNavTabsHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param393 = function param393() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Tabs let the user move around parallel content in a same context.');
+        itext('A toolbar is a set of actions related to a context grouped in a bar.');
         ie_close('p');
         ie_open('h3');
         itext('Usage');
         ie_close('h3');
+        ie_open('p');
+        itext('A toolbar is a generic bar that helps grouping actions in a way that they are visually organized for any context of use in Lexicon. Its height changes depending on the heigth of the elements it contains. The toolbat always maintais the vertical alignment.');
+        ie_close('p');
+        ie_open('p');
+        itext('You only need to define the number of blocks or containers that you want to have in your toolbar and place the elements inside it. These blocks or containers are of 2 different types:');
+        ie_close('p');
         ie_open('ul');
         ie_open('li');
-        itext('Use tabs when you need to move between views on the same context.');
+        itext('Field: is used to make tight groups.');
         ie_close('li');
         ie_open('li');
-        itext('Split your information into groups that are easy to identify by your end users.');
-        ie_close('li');
-        ie_open('li');
-        itext('Order your tabs in a natural way for your users.');
-        ie_close('li');
-        ie_open('li');
-        itext('Tabs are meant to be used when you don\u2019t need to compare contents.');
-        ie_close('li');
-        ie_open('li');
-        itext('All tabs in a tab bar must follow the same style and type. Changing styles in tabs can produce the feeling of navigation and this is not the desired outcome for this pattern.');
-        ie_close('li');
-        ie_open('li');
-        itext('A tab must change to selected state on user selection. It must be easy to identify among other tabs. There can only be one tab selected at same time. The rest of the tabs must be possible to read.');
-        ie_close('li');
-        ie_open('li');
-        itext('Tab label must be short, maximum two words, clear and concise.');
-        ie_close('li');
-        ie_open('li');
-        itext('Do not use all caps in the label, this complicates the readability of the tab.');
-        ie_close('li');
-        ie_open('li');
-        itext('One of the tabs must be always pre selected');
+        itext('Content: is used to span as much as possible in the rest of the space. In case there are severral contents the available space is equally divided.');
         ie_close('li');
         ie_close('ul');
         ie_open('h3');
-        itext('Variations');
+        itext('Layout');
         ie_close('h3');
         ie_open('p');
-        itext('Lexicon counts with two tab bar styles. If there is the case where you have to use both in a page, place first Bordered tabs and second Not bordered tabs.');
-        ie_close('p');
-        ie_open('h4');
-        itext('Bordered tabs');
-        ie_close('h4');
-        ie_open('p');
-        itext('Nav tabs default are used in exterior levels and just below the navigation bar. This kind of tabs give a better context as the border helps the integration with a box below it.');
+        itext('For a better understading of the previous sections, here are some example layouts:');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/tabsBordered@2x.png 2x', 'src', '../../../images/tabsBordered.png', 'alt', 'bordered tabs');
+        itext('Example 1: Three consecutive fields');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample1.png', 'alt', 'toolbar layout example with three fields');
         ie_close('img');
         ie_close('p');
-        ie_open('h4');
-        itext('Non-bordered tabs');
-        ie_close('h4');
         ie_open('p');
-        itext('Non-bordered tabs are used in interior levels such as inside forms and in search results for different repositories.');
+        itext('Example 2: Three consecutive contents');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/tabsNotBordered@2x.png 2x', 'src', '../../../images/tabsNotBordered.png', 'alt', 'not bordered tabs');
+        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample2.png', 'alt', 'toolbar layout example with three contents');
         ie_close('img');
         ie_close('p');
-        ie_open('h3');
-        itext('Attributes');
-        ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/tabsAttributes@2x.png 2x', 'src', '../../../images/tabsAttributes.png', 'alt', 'tabs Attributes');
+        itext('Example 3: Field - Content - Field');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample3.png', 'alt', 'toolbar layout example with field - content - field');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('Example 4: Field - Field - Content - Content');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample4.png', 'alt', 'toolbar layout example with field - field - content - content');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -27695,11 +28525,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param393 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param443 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsNavTabsHtml.render';
+      $render.soyTemplateName = 'hrbNF.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -27708,22 +28538,22 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsNavTabsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsNavTabsHtml, _Component);
+  var hrbNF = function (_Component) {
+    babelHelpers.inherits(hrbNF, _Component);
 
-    function docsPatternsNavTabsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsNavTabsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsNavTabsHtml.__proto__ || Object.getPrototypeOf(docsPatternsNavTabsHtml)).apply(this, arguments));
+    function hrbNF() {
+      babelHelpers.classCallCheck(this, hrbNF);
+      return babelHelpers.possibleConstructorReturn(this, (hrbNF.__proto__ || Object.getPrototypeOf(hrbNF)).apply(this, arguments));
     }
 
-    return docsPatternsNavTabsHtml;
+    return hrbNF;
   }(Component);
 
-  Soy.register(docsPatternsNavTabsHtml, templates);
-  this['metalNamed']['nav tabs'] = this['metalNamed']['nav tabs'] || {};
-  this['metalNamed']['nav tabs']['docsPatternsNavTabsHtml'] = docsPatternsNavTabsHtml;
-  this['metalNamed']['nav tabs']['templates'] = templates;
-  this['metal']['nav tabs'] = templates;
+  Soy.register(hrbNF, templates);
+  this['metalNamed']['toolbar'] = this['metalNamed']['toolbar'] || {};
+  this['metalNamed']['toolbar']['hrbNF'] = hrbNF;
+  this['metalNamed']['toolbar']['templates'] = templates;
+  this['metal']['toolbar'] = templates;
   /* jshint ignore:end */
 }).call(this);
 'use strict';
@@ -27731,24 +28561,24 @@ babelHelpers;
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['nav tabs'];
+  var templates = this['metal']['toolbar'];
 
-  var docsPatternsNavTabsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsNavTabsHtml, _Component);
+  var hrbNF = function (_Component) {
+    babelHelpers.inherits(hrbNF, _Component);
 
-    function docsPatternsNavTabsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsNavTabsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsNavTabsHtml.__proto__ || Object.getPrototypeOf(docsPatternsNavTabsHtml)).apply(this, arguments));
+    function hrbNF() {
+      babelHelpers.classCallCheck(this, hrbNF);
+      return babelHelpers.possibleConstructorReturn(this, (hrbNF.__proto__ || Object.getPrototypeOf(hrbNF)).apply(this, arguments));
     }
 
-    return docsPatternsNavTabsHtml;
+    return hrbNF;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsNavTabsHtml, templates);
+  Soy.register(hrbNF, templates);
 
-  this['metal']['docsPatternsNavTabsHtml'] = docsPatternsNavTabsHtml;
+  this['metal']['hrbNF'] = hrbNF;
 }).call(this);
 'use strict';
 
@@ -27760,15 +28590,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from navbar.soy.
+    // This file was automatically generated from icons.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsNavbarHtml.
+     * @fileoverview Templates in namespace ztMZz.
      * @public
      */
 
-    goog.module('docsPatternsNavbarHtml.incrementaldom');
+    goog.module('ztMZz.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -27799,240 +28629,78 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param411 = function param411() {
+      var param276 = function param276() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
         ie_open('p');
-        itext('A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/Navbar@2x.png 2x', 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
-        ie_close('img');
+        itext('Icon is a visual metaphor representing a concept that lies behind the idea and/or action.');
         ie_close('p');
         ie_open('h3');
-        itext('Usage');
+        itext('Liferay icon library');
         ie_close('h3');
         ie_open('p');
-        itext('Navbars in DE are used inside applications to provide navigation among their different pieces.');
-        ie_close('p');
-        ie_open('p');
-        itext('A navbar can contain one or several entry points in the form of tabs at the leftmost side and search field at the rightmost side. In case there are many options to navigate, you can make use of a dropdown to host some of the navigating options.');
-        ie_close('p');
-        ie_open('p');
-        itext('The search textfield activity must work only over the active option in the navigation bar.');
-        ie_close('p');
-        ie_open('p');
-        itext('When the viewport resizes to smaller screen sizes the navbar entries collapse intro a dropdown where the active screen gets populated and selected in the dropdown.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Examples');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('strong');
-        itext('Example 1:');
-        ie_close('strong');
-        itext(' Navbar with search bar');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/Navbar@2x.png 2x', 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('strong');
-        itext('Example 2:');
-        ie_close('strong');
-        itext(' Navbar with search bar and focus state on search textfield');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/NavbarFocusSearch@2x.png 2x', 'src', '../../../images/NavbarFocusSearch.png', 'alt', 'navigation bar with 2 entries and a search field and on focus');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        ie_open('strong');
-        itext('Example 3:');
-        ie_close('strong');
-        itext(' Navbar with navigation options in dropdown and search. The second image corresponds to its responsive view. For more information about search, please visit ');
-        ie_open('a', null, null, 'href', './collapsible_search.html');
-        itext('collapsible search');
+        itext('Liferay has its own icon library created for the porpuses of the projects that use Lexicon. You can also use other icon libraries. ');
+        ie_open('a', null, null, 'href', 'http://liferay.github.io/lexicon/content/icons-lexicon/');
+        itext('Check our icon library');
         ie_close('a');
+        itext('.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/NavbarDropdown@2x.png 2x', 'src', '../../../images/NavbarDropdown.png', 'alt', 'navbar in mobile viewport with some navigation options collpased in a dropdown');
+        ie_open('img', null, null, 'src', '../../../images/icons1.png', 'alt', 'icon set column 1');
+        ie_close('img');
+        ie_open('img', null, null, 'src', '../../../images/icons2.png', 'alt', 'icon set column 2');
+        ie_close('img');
+        ie_open('img', null, null, 'src', '../../../images/icons3.png', 'alt', 'icon set column 3');
         ie_close('img');
         ie_close('p');
+        ie_open('h4');
+        itext('Language flags');
+        ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/NavbarDropdownMobile@2x.png 2x', 'src', '../../../images/NavbarDropdownMobile.png', 'alt', 'navbar in mobile viewport with all navigation options collpased in a dropdown');
-        ie_close('img');
+        itext('People tend to have pretty strong opinions on whether flags should be used as a visual cue for indicating a language, mainly because in many parts of the world, the flag may have cultural and geographic meanings that we might not be aware of, or the flag itself isn\'t fully accurate to the dialects spoken in that region.');
         ie_close('p');
-        ie_open('h3');
-        itext('Attributes');
-        ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/navbarAttributes@2x.png 2x', 'src', '../../../images/navbarAttributes.png', 'alt', 'navbar attributes');
-        ie_close('img');
+        itext('While we understand that reasoning, we\'ve found that the times they are actually needed (when a user is not familiar with the currently displayed language) somewhat eliminates using other mechanisms, such as the name of the language (since the current language could be in an entirely different character set). Given this, there is often at least some familiarity with the identity of a country that speaks a shared language. ');
+        ie_open('a', null, null, 'href', 'http://liferay.github.io/lexicon/content/icons-lexicon/');
+        itext('Check our flags library');
+        ie_close('a');
+        itext('.');
         ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param411 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsNavbarHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsNavbarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsNavbarHtml, _Component);
-
-    function docsPatternsNavbarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsNavbarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsNavbarHtml.__proto__ || Object.getPrototypeOf(docsPatternsNavbarHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsNavbarHtml;
-  }(Component);
-
-  Soy.register(docsPatternsNavbarHtml, templates);
-  this['metalNamed']['navbar'] = this['metalNamed']['navbar'] || {};
-  this['metalNamed']['navbar']['docsPatternsNavbarHtml'] = docsPatternsNavbarHtml;
-  this['metalNamed']['navbar']['templates'] = templates;
-  this['metal']['navbar'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['navbar'];
-
-  var docsPatternsNavbarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsNavbarHtml, _Component);
-
-    function docsPatternsNavbarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsNavbarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsNavbarHtml.__proto__ || Object.getPrototypeOf(docsPatternsNavbarHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsNavbarHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsNavbarHtml, templates);
-
-  this['metal']['docsPatternsNavbarHtml'] = docsPatternsNavbarHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from pager.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsPagerHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsPagerHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param420 = function param420() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
+        ie_open('h4');
+        itext('Other icon libraries');
+        ie_close('h4');
         ie_open('p');
-        itext('Pager allows navigation between pages of a process or task divided in subtasks or also called pages.');
+        ie_open('a', null, null, 'href', 'http://fontawesome.io/');
+        itext('Font Awesome');
+        ie_close('a');
+        itext(' and ');
+        ie_open('a', null, null, 'href', 'http://glyphicons.com/');
+        itext('Glyphicons');
+        ie_close('a');
+        itext(' are good alternatives in case you don\'t want to use Lexicon icon library.');
         ie_close('p');
         ie_open('h3');
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        itext('Pagers are commonly used in forms that are chucked because of their length.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Variations');
-        ie_close('h3');
-        ie_open('h4');
-        itext('Default pager');
-        ie_close('h4');
-        ie_open('p');
-        itext('Use it when you need a simple pagination pattern that does not require to change the page size.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/pagerDefault.png', 'alt', 'pager default');
-        ie_close('img');
+        itext('Icons can be used only when the metaphor is direct and clear. In case there is not a good icon to represent the concept you want to transmit, it will probably better to use words. Icons must be reserved to broad accepted visual ideas.');
         ie_close('p');
         ie_open('h4');
-        itext('Aligned pager');
+        itext('Why do we use SVG?');
         ie_close('h4');
         ie_open('p');
-        itext('Aligned pager pushes the links to the left and right.');
+        itext('SVG gives us and you a greater amount of freedom in styling the icons, as well as a higher level of fidelity and clarity in the icons. Font icons, while fairly simple, also suffer some drawbacks, mainly with sub-pixel aliasing that cause the quality to not be as high as we would like. Also SVG allows for multi-color icons.');
         ie_close('p');
+        ie_open('h4');
+        itext('Help icon');
+        ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/pagerAligned.png', 'alt', 'pager aligned');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('States');
-        ie_close('h3');
-        ie_open('p');
-        itext('States are important in pagers to let your users understand where the process has its limits and where it can go. Please take are of enabling and disabling them properly depending on the sequence.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/pagerAlignedDisable.png', 'alt', 'pager aligned disable');
-        ie_close('img');
+        itext('Help icon is used in lexicon together with tooltips or popovers. As an example, it gives a better visual clue to users to reach an explanation about a field in a form.');
         ie_close('p');
         ie_open('h3');
         itext('Sizes');
         ie_close('h3');
-        ie_open('p');
-        itext('Usage each size depending on the context, take into account the available space and the hierarchical importance.');
-        ie_close('p');
         ie_open('table');
         ie_open('thead');
         ie_open('tr');
@@ -28040,33 +28708,57 @@ babelHelpers;
         itext('Size');
         ie_close('th');
         ie_open('th');
-        itext('Description');
+        itext('Usage');
         ie_close('th');
         ie_close('tr');
         ie_close('thead');
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        itext('Small');
+        itext('Icon-large');
         ie_close('td');
         ie_open('td');
-        itext('The font-size is 12px and the proportions are smaller.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Default');
-        ie_close('td');
-        ie_open('td');
-        itext('The font-size is 16px and the proportions are smaller.');
+        itext('Icon-large (x1.33)');
         ie_close('td');
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        itext('Large');
+        itext('Icon-2x');
         ie_close('td');
         ie_open('td');
-        itext('The font-size is 18px and the proportions are bigger.');
+        itext('Icon-2x (x2)');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Icon-3x');
+        ie_close('td');
+        ie_open('td');
+        itext('Icon-3x (x3)');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Icon-4x');
+        ie_close('td');
+        ie_open('td');
+        itext('Icon-4x (x4)');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Icon-5x');
+        ie_close('td');
+        ie_open('td');
+        itext('Icon-5x (x5)');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Icon-2x');
+        ie_close('td');
+        ie_open('td');
+        itext('Icon-2x (x2)');
         ie_close('td');
         ie_close('tr');
         ie_close('tbody');
@@ -28076,11 +28768,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param420 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param276 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsPagerHtml.render';
+      $render.soyTemplateName = 'ztMZz.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -28089,47 +28781,23 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsPagerHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPagerHtml, _Component);
+  var ztMZz = function (_Component) {
+    babelHelpers.inherits(ztMZz, _Component);
 
-    function docsPatternsPagerHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPagerHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPagerHtml.__proto__ || Object.getPrototypeOf(docsPatternsPagerHtml)).apply(this, arguments));
+    function ztMZz() {
+      babelHelpers.classCallCheck(this, ztMZz);
+      return babelHelpers.possibleConstructorReturn(this, (ztMZz.__proto__ || Object.getPrototypeOf(ztMZz)).apply(this, arguments));
     }
 
-    return docsPatternsPagerHtml;
+    return ztMZz;
   }(Component);
 
-  Soy.register(docsPatternsPagerHtml, templates);
-  this['metalNamed']['pager'] = this['metalNamed']['pager'] || {};
-  this['metalNamed']['pager']['docsPatternsPagerHtml'] = docsPatternsPagerHtml;
-  this['metalNamed']['pager']['templates'] = templates;
-  this['metal']['pager'] = templates;
+  Soy.register(ztMZz, templates);
+  this['metalNamed']['icons'] = this['metalNamed']['icons'] || {};
+  this['metalNamed']['icons']['ztMZz'] = ztMZz;
+  this['metalNamed']['icons']['templates'] = templates;
+  this['metal']['icons'] = templates;
   /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['pager'];
-
-  var docsPatternsPagerHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPagerHtml, _Component);
-
-    function docsPatternsPagerHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPagerHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPagerHtml.__proto__ || Object.getPrototypeOf(docsPatternsPagerHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsPagerHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsPagerHtml, templates);
-
-  this['metal']['docsPatternsPagerHtml'] = docsPatternsPagerHtml;
 }).call(this);
 'use strict';
 
@@ -28145,11 +28813,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsPaginationHtml.
+     * @fileoverview Templates in namespace jjCCy.
      * @public
      */
 
-    goog.module('docsPatternsPaginationHtml.incrementaldom');
+    goog.module('jjCCy.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -28180,7 +28848,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param429 = function param429() {
+      var param371 = function param371() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -28280,11 +28948,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param429 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param371 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsPaginationHtml.render';
+      $render.soyTemplateName = 'jjCCy.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -28293,20 +28961,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsPaginationHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPaginationHtml, _Component);
+  var jjCCy = function (_Component) {
+    babelHelpers.inherits(jjCCy, _Component);
 
-    function docsPatternsPaginationHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPaginationHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPaginationHtml.__proto__ || Object.getPrototypeOf(docsPatternsPaginationHtml)).apply(this, arguments));
+    function jjCCy() {
+      babelHelpers.classCallCheck(this, jjCCy);
+      return babelHelpers.possibleConstructorReturn(this, (jjCCy.__proto__ || Object.getPrototypeOf(jjCCy)).apply(this, arguments));
     }
 
-    return docsPatternsPaginationHtml;
+    return jjCCy;
   }(Component);
 
-  Soy.register(docsPatternsPaginationHtml, templates);
+  Soy.register(jjCCy, templates);
   this['metalNamed']['pagination'] = this['metalNamed']['pagination'] || {};
-  this['metalNamed']['pagination']['docsPatternsPaginationHtml'] = docsPatternsPaginationHtml;
+  this['metalNamed']['pagination']['jjCCy'] = jjCCy;
   this['metalNamed']['pagination']['templates'] = templates;
   this['metal']['pagination'] = templates;
   /* jshint ignore:end */
@@ -28318,22 +28986,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['pagination'];
 
-  var docsPatternsPaginationHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPaginationHtml, _Component);
+  var jjCCy = function (_Component) {
+    babelHelpers.inherits(jjCCy, _Component);
 
-    function docsPatternsPaginationHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPaginationHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPaginationHtml.__proto__ || Object.getPrototypeOf(docsPatternsPaginationHtml)).apply(this, arguments));
+    function jjCCy() {
+      babelHelpers.classCallCheck(this, jjCCy);
+      return babelHelpers.possibleConstructorReturn(this, (jjCCy.__proto__ || Object.getPrototypeOf(jjCCy)).apply(this, arguments));
     }
 
-    return docsPatternsPaginationHtml;
+    return jjCCy;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsPaginationHtml, templates);
+  Soy.register(jjCCy, templates);
 
-  this['metal']['docsPatternsPaginationHtml'] = docsPatternsPaginationHtml;
+  this['metal']['jjCCy'] = jjCCy;
 }).call(this);
 'use strict';
 
@@ -28345,15 +29013,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from panel.soy.
+    // This file was automatically generated from navbar.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsPanelHtml.
+     * @fileoverview Templates in namespace kaRtE.
      * @public
      */
 
-    goog.module('docsPatternsPanelHtml.incrementaldom');
+    goog.module('kaRtE.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -28384,76 +29052,77 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param438 = function param438() {
+      var param353 = function param353() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
         ie_open('p');
-        itext('Panels help to separate your content.');
+        itext('A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/Navbar@2x.png 2x', 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
+        ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        itext('Panel are use to help separating content a making processes as reading or filling a form easier to the user. Panels are a way of chunking into smaller pieces.');
+        itext('Navbars in DE are used inside applications to provide navigation among their different pieces.');
+        ie_close('p');
+        ie_open('p');
+        itext('A navbar can contain one or several entry points in the form of tabs at the leftmost side and search field at the rightmost side. In case there are many options to navigate, you can make use of a dropdown to host some of the navigating options.');
+        ie_close('p');
+        ie_open('p');
+        itext('The search textfield activity must work only over the active option in the navigation bar.');
+        ie_close('p');
+        ie_open('p');
+        itext('When the viewport resizes to smaller screen sizes the navbar entries collapse intro a dropdown where the active screen gets populated and selected in the dropdown.');
         ie_close('p');
         ie_open('h3');
-        itext('Configuration');
+        itext('Examples');
         ie_close('h3');
         ie_open('p');
-        itext('Panels can be configured in different ways:');
-        ie_close('p');
-        ie_open('h4');
-        itext('Body');
-        ie_close('h4');
-        ie_open('p');
-        itext('Use this configuration to separate content inside a form.');
+        ie_open('strong');
+        itext('Example 1:');
+        ie_close('strong');
+        itext(' Navbar with search bar');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/panelNaked@2x.png 2x', 'src', '../../../images/panelNaked.png', 'alt', 'panel only body most simple version');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Header + body');
-        ie_close('h4');
-        ie_open('p');
-        itext('Use this configuration when you need to se parate a content that needs a title and the title needs to capture the attention of your user.');
-        ie_close('p');
-        ie_open('p');
-        itext('Do never use it to collapse content without a disclosure arrow. Use an accordion in that case.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/panelHeaderBody@2x.png 2x', 'src', '../../../images/panelHeaderBody.png', 'alt', 'panel with header');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Variations');
-        ie_close('h3');
-        ie_open('h4');
-        itext('Accordion');
-        ie_close('h4');
-        ie_open('p');
-        itext('Panels can be collapsible. Whenever there is a collapsible panel the header must include a disclosure icon as an affordance to let the user understand that open and close actions can be performed. Please, see that when a panel is open the header is highlighted with a blue line below it marking the active state.');
-        ie_close('p');
-        ie_open('p');
-        itext('It is not a good practice to anidate accordions. Please try to avoid it.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/panelCollasable@2x.png 2x', 'src', '../../../images/panelCollasable.png', 'alt', 'collapsable panels');
+        ie_open('img', null, null, 'srcset', '../../../images/Navbar@2x.png 2x', 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        itext('In the following example you can see the accordion working. It is also optional to close all entries when a diferent entry opens.');
+        ie_open('strong');
+        itext('Example 2:');
+        ie_close('strong');
+        itext(' Navbar with search bar and focus state on search textfield');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/panelCollapsibleExample.gif', 'alt', 'collapsable panels');
+        ie_open('img', null, null, 'srcset', '../../../images/NavbarFocusSearch@2x.png 2x', 'src', '../../../images/NavbarFocusSearch.png', 'alt', 'navigation bar with 2 entries and a search field and on focus');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('strong');
+        itext('Example 3:');
+        ie_close('strong');
+        itext(' Navbar with navigation options in dropdown and search. The second image corresponds to its responsive view. For more information about search, please visit ');
+        ie_open('a', null, null, 'href', './collapsible_search.html');
+        itext('collapsible search');
+        ie_close('a');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/NavbarDropdown@2x.png 2x', 'src', '../../../images/NavbarDropdown.png', 'alt', 'navbar in mobile viewport with some navigation options collpased in a dropdown');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/NavbarDropdownMobile@2x.png 2x', 'src', '../../../images/NavbarDropdownMobile.png', 'alt', 'navbar in mobile viewport with all navigation options collpased in a dropdown');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/panelAttributes@2x.png 2x', 'src', '../../../images/panelAttributes.png', 'alt', 'panel attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/navbarAttributes@2x.png 2x', 'src', '../../../images/navbarAttributes.png', 'alt', 'navbar attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -28461,11 +29130,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param438 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param353 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsPanelHtml.render';
+      $render.soyTemplateName = 'kaRtE.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -28474,22 +29143,22 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsPanelHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPanelHtml, _Component);
+  var kaRtE = function (_Component) {
+    babelHelpers.inherits(kaRtE, _Component);
 
-    function docsPatternsPanelHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPanelHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPanelHtml.__proto__ || Object.getPrototypeOf(docsPatternsPanelHtml)).apply(this, arguments));
+    function kaRtE() {
+      babelHelpers.classCallCheck(this, kaRtE);
+      return babelHelpers.possibleConstructorReturn(this, (kaRtE.__proto__ || Object.getPrototypeOf(kaRtE)).apply(this, arguments));
     }
 
-    return docsPatternsPanelHtml;
+    return kaRtE;
   }(Component);
 
-  Soy.register(docsPatternsPanelHtml, templates);
-  this['metalNamed']['panel'] = this['metalNamed']['panel'] || {};
-  this['metalNamed']['panel']['docsPatternsPanelHtml'] = docsPatternsPanelHtml;
-  this['metalNamed']['panel']['templates'] = templates;
-  this['metal']['panel'] = templates;
+  Soy.register(kaRtE, templates);
+  this['metalNamed']['navbar'] = this['metalNamed']['navbar'] || {};
+  this['metalNamed']['navbar']['kaRtE'] = kaRtE;
+  this['metalNamed']['navbar']['templates'] = templates;
+  this['metal']['navbar'] = templates;
   /* jshint ignore:end */
 }).call(this);
 'use strict';
@@ -28497,24 +29166,24 @@ babelHelpers;
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['panel'];
+  var templates = this['metal']['navbar'];
 
-  var docsPatternsPanelHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPanelHtml, _Component);
+  var kaRtE = function (_Component) {
+    babelHelpers.inherits(kaRtE, _Component);
 
-    function docsPatternsPanelHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPanelHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPanelHtml.__proto__ || Object.getPrototypeOf(docsPatternsPanelHtml)).apply(this, arguments));
+    function kaRtE() {
+      babelHelpers.classCallCheck(this, kaRtE);
+      return babelHelpers.possibleConstructorReturn(this, (kaRtE.__proto__ || Object.getPrototypeOf(kaRtE)).apply(this, arguments));
     }
 
-    return docsPatternsPanelHtml;
+    return kaRtE;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsPanelHtml, templates);
+  Soy.register(kaRtE, templates);
 
-  this['metal']['docsPatternsPanelHtml'] = docsPatternsPanelHtml;
+  this['metal']['kaRtE'] = kaRtE;
 }).call(this);
 'use strict';
 
@@ -28526,15 +29195,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from popovers_tooltips.soy.
+    // This file was automatically generated from list_groups.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsPopoversTooltipsHtml.
+     * @fileoverview Templates in namespace oSVEt.
      * @public
      */
 
-    goog.module('docsPatternsPopoversTooltipsHtml.incrementaldom');
+    goog.module('oSVEt.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -28565,61 +29234,88 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param447 = function param447() {
-        ie_open('h2');
-        itext('Popovers');
-        ie_close('h2');
+      var param299 = function param299() {
+        ie_open('h3');
+        itext('Introduction');
+        ie_close('h3');
         ie_open('p');
-        itext('Popovers are short helpful and/or descriptive pieces of information that appear on hover state.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/popovers@2x.png 2x', 'src', '../../../images/popovers.png', 'alt', 'four different popovers with the arrow to the left, or right or top or down');
-        ie_close('img');
+        itext('List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view.');
         ie_close('p');
         ie_open('h3');
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        itext('Popovers are used together with the question mark icon as an affordance to let the user understand there is something to read that can be useful. Popovers contain information such as help to understand a context.');
+        ie_open('img', null, null, 'srcset', '../../../images/listItem@2x.png 2x', 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
+        ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/helpIcon@2x.png 2x', 'src', '../../../images/helpIcon.png', 'alt', 'help icon');
+        itext('A list view is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.');
+        ie_close('p');
+        ie_open('p');
+        itext('A list allows you a free way of displaying information. While the table isn\'t meant to have several text labels in a column, list is the pattern for doing that, as you can see in the following examples.');
+        ie_close('p');
+        ie_open('p');
+        itext('Not all the element in a list entry are mandatory, feel free to delete and include the ones you need.');
+        ie_close('p');
+        ie_open('p');
+        itext('When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.');
+        ie_close('p');
+        ie_open('h3');
+        itext('List group');
+        ie_close('h3');
+        ie_open('p');
+        itext('Whenever you need to group series of list entries, you can use the list group heading for that.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/listGroup@2x.png 2x', 'src', '../../../images/listGroup.png', 'alt', 'list group includes a heading');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Row interactions');
+        ie_close('h3');
+        ie_open('ul');
+        ie_open('li');
+        itext('Selecting a row is only possible by using the checkbox.');
+        ie_close('li');
+        ie_open('li');
+        itext('Text elements in the row can be configured as links to navigate.');
+        ie_close('li');
+        ie_open('li');
+        itext('A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don\'t need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.');
+        ie_close('li');
+        ie_open('li');
+        itext('If the action you want to perform of is "Edit", place it as a link in the title to navigate to an edition screen for the element.');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('h3');
+        itext('Row states');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Default states');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/listItem@2x.png 2x', 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Selected state');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/listSelected@2x.png 2x', 'src', '../../../images/listSelected.png', 'alt', 'list entry in selected state');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/popoverAttributes@2x.png 2x', 'src', '../../../images/popoverAttributes.png', 'alt', 'popover attributes');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h2');
-        itext('Tooltips');
-        ie_close('h2');
-        ie_open('p');
-        itext('Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/tooltips@2x.png 2x', 'src', '../../../images/tooltips.png', 'alt', 'the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases');
+        ie_open('img', null, null, 'srcset', '../../../images/listAttributes@2x.png 2x', 'src', '../../../images/listAttributes.png', 'alt', 'list attributes');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
-        itext('Usage');
+        itext('Example of use');
         ie_close('h3');
         ie_open('p');
-        itext('Tooltips are used in with icon buttons to help understanding the metaphor they transmit. They can be also used with links or images.');
-        ie_close('p');
-        ie_open('p');
-        itext('The tooltip appears on hover state and disappears when hover ends. This pattern does not exist in mobile a hover is not a possible state.');
-        ie_close('p');
-        ie_open('p');
-        itext('Please make a right use of the arrow positioning as it could drive to misunderstandings when it doesn\u2019t point to the correct interface element.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Attributes');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/tooltipAttributes@2x.png 2x', 'src', '../../../images/tooltipAttributes.png', 'alt', 'tooltip attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/listExample@2x.png 2x', 'src', '../../../images/listExample.png', 'alt', 'list with 3 entries, one in default state, one in selected state, one with actions menu open');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -28627,11 +29323,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param447 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param299 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsPopoversTooltipsHtml.render';
+      $render.soyTemplateName = 'oSVEt.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -28640,47 +29336,23 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsPopoversTooltipsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPopoversTooltipsHtml, _Component);
+  var oSVEt = function (_Component) {
+    babelHelpers.inherits(oSVEt, _Component);
 
-    function docsPatternsPopoversTooltipsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPopoversTooltipsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPopoversTooltipsHtml.__proto__ || Object.getPrototypeOf(docsPatternsPopoversTooltipsHtml)).apply(this, arguments));
+    function oSVEt() {
+      babelHelpers.classCallCheck(this, oSVEt);
+      return babelHelpers.possibleConstructorReturn(this, (oSVEt.__proto__ || Object.getPrototypeOf(oSVEt)).apply(this, arguments));
     }
 
-    return docsPatternsPopoversTooltipsHtml;
+    return oSVEt;
   }(Component);
 
-  Soy.register(docsPatternsPopoversTooltipsHtml, templates);
-  this['metalNamed']['popovers_tooltips'] = this['metalNamed']['popovers_tooltips'] || {};
-  this['metalNamed']['popovers_tooltips']['docsPatternsPopoversTooltipsHtml'] = docsPatternsPopoversTooltipsHtml;
-  this['metalNamed']['popovers_tooltips']['templates'] = templates;
-  this['metal']['popovers_tooltips'] = templates;
+  Soy.register(oSVEt, templates);
+  this['metalNamed']['list_groups'] = this['metalNamed']['list_groups'] || {};
+  this['metalNamed']['list_groups']['oSVEt'] = oSVEt;
+  this['metalNamed']['list_groups']['templates'] = templates;
+  this['metal']['list_groups'] = templates;
   /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['popovers_tooltips'];
-
-  var docsPatternsPopoversTooltipsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsPopoversTooltipsHtml, _Component);
-
-    function docsPatternsPopoversTooltipsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsPopoversTooltipsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsPopoversTooltipsHtml.__proto__ || Object.getPrototypeOf(docsPatternsPopoversTooltipsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsPopoversTooltipsHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsPopoversTooltipsHtml, templates);
-
-  this['metal']['docsPatternsPopoversTooltipsHtml'] = docsPatternsPopoversTooltipsHtml;
 }).call(this);
 'use strict';
 
@@ -28692,15 +29364,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from progress_bars.soy.
+    // This file was automatically generated from loading_indicator.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsProgressBarsHtml.
+     * @fileoverview Templates in namespace uFIeV.
      * @public
      */
 
-    goog.module('docsPatternsProgressBarsHtml.incrementaldom');
+    goog.module('uFIeV.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -28731,36 +29403,61 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param456 = function param456() {
+      var param308 = function param308() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
         ie_open('p');
-        itext('Progress bar is a progress indicator used to show the completion percentage of a task.');
+        itext('Loading indicator shows the user that an external process, like a connection, is being executed.');
         ie_close('p');
         ie_open('h3');
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        itext('Progress bars can be classified in two groups:');
+        itext('This feedback mechanism is essential for the user to understand that something is happening. Please remember to include it when there is a connection to a server and at the same screen shows the answer to the user.');
         ie_close('p');
         ie_open('p');
-        ie_open('strong');
-        itext('Indeterminate');
-        ie_close('strong');
-        itext(': where there are no intermediate states. As long as the process is running the progress bar grows continuously from 0% to 100%. Use it for system processes.');
+        itext('Please don\u2019t use spinners inside buttons. In case you need a spinner for an action triggered by a button, place the spinner to one of the sides of the button.');
         ie_close('p');
-        ie_open('p');
-        ie_open('strong');
-        itext('Determinate');
-        ie_close('strong');
-        itext(': where there are intermediate states in the completion process. Used to show the user where is inside a process divided in steps. Use it for user processes.');
-        ie_close('p');
+        ie_void('div', null, null, 'class', 'loading-icon loading-icon-md');
         ie_open('h3');
-        itext('Sizes');
+        itext('Types');
+        ie_close('h3');
+        ie_open('table');
+        ie_open('thead');
+        ie_open('tr');
+        ie_open('th');
+        itext('Types');
+        ie_close('th');
+        ie_open('th');
+        itext('Description');
+        ie_close('th');
+        ie_close('tr');
+        ie_close('thead');
+        ie_open('tbody');
+        ie_open('tr');
+        ie_open('td');
+        ie_void('div', null, null, 'class', 'loading-icon loading-icon');
+        ie_close('td');
+        ie_open('td');
+        itext('Dotted spinner default');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        ie_void('div', null, null, 'class', 'loading-icon linear');
+        ie_close('td');
+        ie_open('td');
+        itext('Linear spinner default');
+        ie_close('td');
+        ie_close('tr');
+        ie_close('tbody');
+        ie_close('table');
+        ie_open('h3');
+        itext('Size');
         ie_close('h3');
         ie_open('p');
-        itext('Indeterminate progress bars can be configured in 4 differents sizes');
+        itext('Make a responsive usage of the sizes that help the user to understand that something is happening not being aggressive. The context of use will help you understanding the size to use.');
         ie_close('p');
         ie_open('table');
         ie_open('thead');
@@ -28769,17 +29466,17 @@ babelHelpers;
         itext('Size');
         ie_close('th');
         ie_open('th');
-        itext('Usage');
+        itext('Description');
         ie_close('th');
         ie_close('tr');
         ie_close('thead');
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        itext('Extra small');
+        itext('Small');
         ie_close('td');
         ie_open('td');
-        itext('Height 8px. Use it in small contexts.');
+        itext('10px');
         ie_close('td');
         ie_close('tr');
         ie_open('tr');
@@ -28787,42 +29484,347 @@ babelHelpers;
         itext('Default');
         ie_close('td');
         ie_open('td');
-        itext('Height 20px. Use it by default.');
+        itext('16px');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Medium');
+        ie_close('td');
+        ie_open('td');
+        itext('32px');
+        ie_close('td');
+        ie_close('tr');
+        ie_open('tr');
+        ie_open('td');
+        itext('Large');
+        ie_close('td');
+        ie_open('td');
+        itext('64px');
         ie_close('td');
         ie_close('tr');
         ie_close('tbody');
         ie_close('table');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param308 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'uFIeV.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var uFIeV = function (_Component) {
+    babelHelpers.inherits(uFIeV, _Component);
+
+    function uFIeV() {
+      babelHelpers.classCallCheck(this, uFIeV);
+      return babelHelpers.possibleConstructorReturn(this, (uFIeV.__proto__ || Object.getPrototypeOf(uFIeV)).apply(this, arguments));
+    }
+
+    return uFIeV;
+  }(Component);
+
+  Soy.register(uFIeV, templates);
+  this['metalNamed']['loading_indicator'] = this['metalNamed']['loading_indicator'] || {};
+  this['metalNamed']['loading_indicator']['uFIeV'] = uFIeV;
+  this['metalNamed']['loading_indicator']['templates'] = templates;
+  this['metal']['loading_indicator'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from management_bar.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace xqkoA.
+     * @public
+     */
+
+    goog.module('xqkoA.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param317 = function param317() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Management Bar is an extension of Navbar. Combine different management-bar components to create a toolbar that fits your needs.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/managementBarState1@2x.png 2x', 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('The Management Bar is always part of a bigger structure and works along with other data management patterns like tables, lists or cards, and its functionality is directly related to them. The Management Bar has two main states:');
+        ie_close('p');
+        ie_open('h4');
+        itext('State 1');
+        ie_close('h4');
+        ie_open('p');
+        itext('It is the default state.');
+        ie_close('p');
+        ie_open('p');
+        itext('It displays tools focused on filtering, sorting and data visualization.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/managementBarState1@2x.png 2x', 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('State 2');
+        ie_close('h4');
+        ie_open('p');
+        itext('It displays contextual tools associated to specific items selected. It is only activated when one or more items from the visualization are selected.');
+        ie_close('p');
+        ie_open('p');
+        itext('The background color and the way to show the icons of the bar in this state changes to differentiate from the default state and establish a visual relation with other forms of showing this tools.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/managementBarState2@2x.png 2x', 'src', '../../../images/managementBarState2.png', 'alt', 'state two of the management bar');
+        ie_close('img');
+        ie_close('p');
+        ie_open('p');
+        itext('The tools shown in the management bar in each state are always related to the type of data displayed and type of visualization. The Management Bar never shows elements that not are required in a specific context.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Requirements');
+        ie_close('h3');
+        ie_open('ul');
+        ie_open('li');
+        itext('The Management Bar has to be fixed on the header of the page so it can be always visible during the vertical scroll.');
+        ie_close('li');
+        ie_open('li');
+        itext('On the default state of the bar, filter and order tools have to be always on the left side and visualization and information tools on the right.');
+        ie_close('li');
+        ie_open('li');
+        itext('On the second state, the tools for selected items appear always on the right side of the bar and vary according to the items selected.');
+        ie_close('li');
+        ie_open('li');
+        itext('Tools shown in the Management Bar are only the ones that the type of data displayed requires it in a specific context.');
+        ie_close('li');
+        ie_open('li');
+        itext('A user can only sort and filter by those elements that are visible in the current visualization.');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('h3');
+        itext('Example of use');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/managementBarExample.gif', 'alt', 'state one of the management bar');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/mangementBarAttributes@2x.png 2x', 'src', '../../../images/mangementBarAttributes.png', 'alt', 'management bar attributes');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param317 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'xqkoA.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var xqkoA = function (_Component) {
+    babelHelpers.inherits(xqkoA, _Component);
+
+    function xqkoA() {
+      babelHelpers.classCallCheck(this, xqkoA);
+      return babelHelpers.possibleConstructorReturn(this, (xqkoA.__proto__ || Object.getPrototypeOf(xqkoA)).apply(this, arguments));
+    }
+
+    return xqkoA;
+  }(Component);
+
+  Soy.register(xqkoA, templates);
+  this['metalNamed']['management_bar'] = this['metalNamed']['management_bar'] || {};
+  this['metalNamed']['management_bar']['xqkoA'] = xqkoA;
+  this['metalNamed']['management_bar']['templates'] = templates;
+  this['metal']['management_bar'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from nav tabs.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace tOXtB.
+     * @public
+     */
+
+    goog.module('tOXtB.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param335 = function param335() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Tabs let the user move around parallel content in a same context.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('ul');
+        ie_open('li');
+        itext('Use tabs when you need to move between views on the same context.');
+        ie_close('li');
+        ie_open('li');
+        itext('Split your information into groups that are easy to identify by your end users.');
+        ie_close('li');
+        ie_open('li');
+        itext('Order your tabs in a natural way for your users.');
+        ie_close('li');
+        ie_open('li');
+        itext('Tabs are meant to be used when you don\u2019t need to compare contents.');
+        ie_close('li');
+        ie_open('li');
+        itext('All tabs in a tab bar must follow the same style and type. Changing styles in tabs can produce the feeling of navigation and this is not the desired outcome for this pattern.');
+        ie_close('li');
+        ie_open('li');
+        itext('A tab must change to selected state on user selection. It must be easy to identify among other tabs. There can only be one tab selected at same time. The rest of the tabs must be possible to read.');
+        ie_close('li');
+        ie_open('li');
+        itext('Tab label must be short, maximum two words, clear and concise.');
+        ie_close('li');
+        ie_open('li');
+        itext('Do not use all caps in the label, this complicates the readability of the tab.');
+        ie_close('li');
+        ie_open('li');
+        itext('One of the tabs must be always pre selected');
+        ie_close('li');
+        ie_close('ul');
         ie_open('h3');
         itext('Variations');
         ie_close('h3');
+        ie_open('p');
+        itext('Lexicon counts with two tab bar styles. If there is the case where you have to use both in a page, place first Bordered tabs and second Not bordered tabs.');
+        ie_close('p');
         ie_open('h4');
-        itext('Progress bar');
+        itext('Bordered tabs');
         ie_close('h4');
         ie_open('p');
-        itext('This is an indeterminate progress bar. This progress bar can be used with or without label. If you foresee this pattern will be used in a process that can take long time to be completed, a label can be useful to the user. But there is not always the need to show the completion percentage.');
+        itext('Nav tabs default are used in exterior levels and just below the navigation bar. This kind of tabs give a better context as the border helps the integration with a box below it.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/progressBarIndeterminate.png', 'alt', 'indeterminate progress bar');
+        ie_open('img', null, null, 'srcset', '../../../images/tabsBordered@2x.png 2x', 'src', '../../../images/tabsBordered.png', 'alt', 'bordered tabs');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
-        itext('Stripped contextual progress bar');
+        itext('Non-bordered tabs');
         ie_close('h4');
         ie_open('p');
-        itext('Lexicon provides an alternative to the previous progress bar based on stripes that could help your users to identify better the action progrees.');
+        itext('Non-bordered tabs are used in interior levels such as inside forms and in search results for different repositories.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/progressBarIndeterminateStriped.png', 'alt', 'indeterminate stripped progress bar');
+        ie_open('img', null, null, 'srcset', '../../../images/tabsNotBordered@2x.png 2x', 'src', '../../../images/tabsNotBordered.png', 'alt', 'not bordered tabs');
         ie_close('img');
         ie_close('p');
-        ie_open('h4');
-        itext('Multi step progress bar');
-        ie_close('h4');
+        ie_open('h3');
+        itext('Attributes');
+        ie_close('h3');
         ie_open('p');
-        itext('A multi step progress bar, also known as wizard, is a determinate progress bar. This progress bar is used in long processes dividing the main task in subtasks that will help your users completing the process.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/progressBarDeterminate.png', 'alt', 'determiate progress bar or wizard');
+        ie_open('img', null, null, 'srcset', '../../../images/tabsAttributes@2x.png 2x', 'src', '../../../images/tabsAttributes.png', 'alt', 'tabs Attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -28830,11 +29832,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param456 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param335 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsProgressBarsHtml.render';
+      $render.soyTemplateName = 'tOXtB.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -28843,22 +29845,22 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsProgressBarsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsProgressBarsHtml, _Component);
+  var tOXtB = function (_Component) {
+    babelHelpers.inherits(tOXtB, _Component);
 
-    function docsPatternsProgressBarsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsProgressBarsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsProgressBarsHtml.__proto__ || Object.getPrototypeOf(docsPatternsProgressBarsHtml)).apply(this, arguments));
+    function tOXtB() {
+      babelHelpers.classCallCheck(this, tOXtB);
+      return babelHelpers.possibleConstructorReturn(this, (tOXtB.__proto__ || Object.getPrototypeOf(tOXtB)).apply(this, arguments));
     }
 
-    return docsPatternsProgressBarsHtml;
+    return tOXtB;
   }(Component);
 
-  Soy.register(docsPatternsProgressBarsHtml, templates);
-  this['metalNamed']['progress_bars'] = this['metalNamed']['progress_bars'] || {};
-  this['metalNamed']['progress_bars']['docsPatternsProgressBarsHtml'] = docsPatternsProgressBarsHtml;
-  this['metalNamed']['progress_bars']['templates'] = templates;
-  this['metal']['progress_bars'] = templates;
+  Soy.register(tOXtB, templates);
+  this['metalNamed']['nav tabs'] = this['metalNamed']['nav tabs'] || {};
+  this['metalNamed']['nav tabs']['tOXtB'] = tOXtB;
+  this['metalNamed']['nav tabs']['templates'] = templates;
+  this['metal']['nav tabs'] = templates;
   /* jshint ignore:end */
 }).call(this);
 'use strict';
@@ -28866,286 +29868,48 @@ babelHelpers;
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['progress_bars'];
+  var templates = this['metal']['list_groups'];
 
-  var docsPatternsProgressBarsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsProgressBarsHtml, _Component);
+  var oSVEt = function (_Component) {
+    babelHelpers.inherits(oSVEt, _Component);
 
-    function docsPatternsProgressBarsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsProgressBarsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsProgressBarsHtml.__proto__ || Object.getPrototypeOf(docsPatternsProgressBarsHtml)).apply(this, arguments));
+    function oSVEt() {
+      babelHelpers.classCallCheck(this, oSVEt);
+      return babelHelpers.possibleConstructorReturn(this, (oSVEt.__proto__ || Object.getPrototypeOf(oSVEt)).apply(this, arguments));
     }
 
-    return docsPatternsProgressBarsHtml;
+    return oSVEt;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsProgressBarsHtml, templates);
+  Soy.register(oSVEt, templates);
 
-  this['metal']['docsPatternsProgressBarsHtml'] = docsPatternsProgressBarsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from sidebar.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsSidebarHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsSidebarHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param465 = function param465() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Sidebar is a vertical panel that appears from the right side of the screen on interactions like the info button.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('Sidebar is basically an information container where to display information. This information can be of the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy. The side bar can be configured in light background color or inverse (dark).');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/sidebarExamples.png', 'alt', 'sidebar example for an image in documents and media');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('The following example shows the information panel for an element in the document library. In this case, we want to show differnt information as the image itself, the urls, and other metadata are shown.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/sidebarExample.gif', 'alt', 'sidebar example for an image in documents and media');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param465 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsSidebarHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsSidebarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsSidebarHtml, _Component);
-
-    function docsPatternsSidebarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsSidebarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsSidebarHtml.__proto__ || Object.getPrototypeOf(docsPatternsSidebarHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsSidebarHtml;
-  }(Component);
-
-  Soy.register(docsPatternsSidebarHtml, templates);
-  this['metalNamed']['sidebar'] = this['metalNamed']['sidebar'] || {};
-  this['metalNamed']['sidebar']['docsPatternsSidebarHtml'] = docsPatternsSidebarHtml;
-  this['metalNamed']['sidebar']['templates'] = templates;
-  this['metal']['sidebar'] = templates;
-  /* jshint ignore:end */
+  this['metal']['oSVEt'] = oSVEt;
 }).call(this);
 'use strict';
 
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['sidebar'];
+  var templates = this['metal']['alerts'];
 
-  var docsPatternsSidebarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsSidebarHtml, _Component);
+  var oYApP = function (_Component) {
+    babelHelpers.inherits(oYApP, _Component);
 
-    function docsPatternsSidebarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsSidebarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsSidebarHtml.__proto__ || Object.getPrototypeOf(docsPatternsSidebarHtml)).apply(this, arguments));
+    function oYApP() {
+      babelHelpers.classCallCheck(this, oYApP);
+      return babelHelpers.possibleConstructorReturn(this, (oYApP.__proto__ || Object.getPrototypeOf(oYApP)).apply(this, arguments));
     }
 
-    return docsPatternsSidebarHtml;
+    return oYApP;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsSidebarHtml, templates);
+  Soy.register(oYApP, templates);
 
-  this['metal']['docsPatternsSidebarHtml'] = docsPatternsSidebarHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from sidenav.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsSidenavHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsSidenavHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param474 = function param474() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Side navigation pattern brings a panel from the leftmost or rightmost side of the screen pushing the content.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('This pattern is created to include portal main navigation in portal. This navigation is divided is 3 main areas: Control panel, User, and the Site. Different applications are contained inside each of this sections.');
-        ie_close('p');
-        ie_open('p');
-        itext('The side navigation is always shown and hidden interacting with the menu button.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/sideNavExample.gif', 'alt', 'side navigation to show the product menu in Liferay');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param474 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsSidenavHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsSidenavHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsSidenavHtml, _Component);
-
-    function docsPatternsSidenavHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsSidenavHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsSidenavHtml.__proto__ || Object.getPrototypeOf(docsPatternsSidenavHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsSidenavHtml;
-  }(Component);
-
-  Soy.register(docsPatternsSidenavHtml, templates);
-  this['metalNamed']['sidenav'] = this['metalNamed']['sidenav'] || {};
-  this['metalNamed']['sidenav']['docsPatternsSidenavHtml'] = docsPatternsSidenavHtml;
-  this['metalNamed']['sidenav']['templates'] = templates;
-  this['metal']['sidenav'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['sidenav'];
-
-  var docsPatternsSidenavHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsSidenavHtml, _Component);
-
-    function docsPatternsSidenavHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsSidenavHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsSidenavHtml.__proto__ || Object.getPrototypeOf(docsPatternsSidenavHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsSidenavHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsSidenavHtml, templates);
-
-  this['metal']['docsPatternsSidenavHtml'] = docsPatternsSidenavHtml;
+  this['metal']['oYApP'] = oYApP;
 }).call(this);
 'use strict';
 
@@ -29161,11 +29925,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsTableHtml.
+     * @fileoverview Templates in namespace phKKC.
      * @public
      */
 
-    goog.module('docsPatternsTableHtml.incrementaldom');
+    goog.module('phKKC.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -29196,7 +29960,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param483 = function param483() {
+      var param425 = function param425() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -29323,11 +30087,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param483 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param425 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsTableHtml.render';
+      $render.soyTemplateName = 'phKKC.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -29336,20 +30100,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsTableHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTableHtml, _Component);
+  var phKKC = function (_Component) {
+    babelHelpers.inherits(phKKC, _Component);
 
-    function docsPatternsTableHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTableHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTableHtml.__proto__ || Object.getPrototypeOf(docsPatternsTableHtml)).apply(this, arguments));
+    function phKKC() {
+      babelHelpers.classCallCheck(this, phKKC);
+      return babelHelpers.possibleConstructorReturn(this, (phKKC.__proto__ || Object.getPrototypeOf(phKKC)).apply(this, arguments));
     }
 
-    return docsPatternsTableHtml;
+    return phKKC;
   }(Component);
 
-  Soy.register(docsPatternsTableHtml, templates);
+  Soy.register(phKKC, templates);
   this['metalNamed']['table'] = this['metalNamed']['table'] || {};
-  this['metalNamed']['table']['docsPatternsTableHtml'] = docsPatternsTableHtml;
+  this['metalNamed']['table']['phKKC'] = phKKC;
   this['metalNamed']['table']['templates'] = templates;
   this['metal']['table'] = templates;
   /* jshint ignore:end */
@@ -29361,1122 +30125,166 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['table'];
 
-  var docsPatternsTableHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTableHtml, _Component);
+  var phKKC = function (_Component) {
+    babelHelpers.inherits(phKKC, _Component);
 
-    function docsPatternsTableHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTableHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTableHtml.__proto__ || Object.getPrototypeOf(docsPatternsTableHtml)).apply(this, arguments));
+    function phKKC() {
+      babelHelpers.classCallCheck(this, phKKC);
+      return babelHelpers.possibleConstructorReturn(this, (phKKC.__proto__ || Object.getPrototypeOf(phKKC)).apply(this, arguments));
     }
 
-    return docsPatternsTableHtml;
+    return phKKC;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsTableHtml, templates);
+  Soy.register(phKKC, templates);
 
-  this['metal']['docsPatternsTableHtml'] = docsPatternsTableHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from timelines.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsTimelinesHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsTimelinesHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param492 = function param492() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Timelines visually represent events along the time.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('Timelines are series of events placed in a timeline. Each event is composed by a point placed in the line a ');
-        ie_open('a', null, null, 'href', './panel.html');
-        itext('panel');
-        ie_close('a');
-        itext(' to describe the event to the right or left of the point.');
-        ie_close('p');
-        ie_open('p');
-        itext('The point can be any kind of identifier. We recommend the default one, circle, but it can be the case of events related to people where you might prefer to use a user identifier.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Variations');
-        ie_close('h3');
-        ie_open('h4');
-        itext('Default');
-        ie_close('h4');
-        ie_open('p');
-        itext('The icons are aligned to the left side of the screen.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/timelineDefault.png', 'alt', 'default timeline left aligned');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Right timeline');
-        ie_close('h4');
-        ie_open('p');
-        itext('The icons are aligned to the right side of the screen.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/timelineRight.png', 'alt', 'timeline right aligned');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Center timeline');
-        ie_close('h4');
-        ie_open('p');
-        itext('The icons are aligned to the center of the screen.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/timelineCenter.png', 'alt', 'timeline center aligned');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Even/odd timeline');
-        ie_close('h4');
-        ie_open('p');
-        itext('Being in the center the panel can appear in alternate positions starting on the left side for even configuration and starting on the right for odd configuration.');
-        ie_close('p');
-        ie_open('h5');
-        ie_open('strong');
-        itext('Timeline Even');
-        ie_close('strong');
-        ie_close('h5');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/timelineCenterEven.png', 'alt', 'timeline center aligned even order');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h5');
-        ie_open('strong');
-        itext('Timeline Odd');
-        ie_close('strong');
-        ie_close('h5');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/timelineCenterOdd.png', 'alt', 'timeline center aligned odd order');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Right XS Timeline only');
-        ie_close('h4');
-        ie_open('p');
-        itext('On window resize to mobile viewport (<768), the timeline icon are always aligned to the left. In case you want to place on the right, it is also possible with this example.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/timelineCenterRightXSOnly.png', 'alt', 'timeline right aligned extra small ');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param492 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsTimelinesHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsTimelinesHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTimelinesHtml, _Component);
-
-    function docsPatternsTimelinesHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTimelinesHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTimelinesHtml.__proto__ || Object.getPrototypeOf(docsPatternsTimelinesHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsTimelinesHtml;
-  }(Component);
-
-  Soy.register(docsPatternsTimelinesHtml, templates);
-  this['metalNamed']['timelines'] = this['metalNamed']['timelines'] || {};
-  this['metalNamed']['timelines']['docsPatternsTimelinesHtml'] = docsPatternsTimelinesHtml;
-  this['metalNamed']['timelines']['templates'] = templates;
-  this['metal']['timelines'] = templates;
-  /* jshint ignore:end */
+  this['metal']['phKKC'] = phKKC;
 }).call(this);
 'use strict';
 
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['timelines'];
+  var templates = this['metal']['dropdowns'];
 
-  var docsPatternsTimelinesHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTimelinesHtml, _Component);
+  var qaCdI = function (_Component) {
+    babelHelpers.inherits(qaCdI, _Component);
 
-    function docsPatternsTimelinesHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTimelinesHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTimelinesHtml.__proto__ || Object.getPrototypeOf(docsPatternsTimelinesHtml)).apply(this, arguments));
+    function qaCdI() {
+      babelHelpers.classCallCheck(this, qaCdI);
+      return babelHelpers.possibleConstructorReturn(this, (qaCdI.__proto__ || Object.getPrototypeOf(qaCdI)).apply(this, arguments));
     }
 
-    return docsPatternsTimelinesHtml;
+    return qaCdI;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsTimelinesHtml, templates);
+  Soy.register(qaCdI, templates);
 
-  this['metal']['docsPatternsTimelinesHtml'] = docsPatternsTimelinesHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from toolbar.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsToolbarHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsToolbarHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param501 = function param501() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('A toolbar is a set of actions related to a context grouped in a bar.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('A toolbar is a generic bar that helps grouping actions in a way that they are visually organized for any context of use in Lexicon. Its height changes depending on the heigth of the elements it contains. The toolbat always maintais the vertical alignment.');
-        ie_close('p');
-        ie_open('p');
-        itext('You only need to define the number of blocks or containers that you want to have in your toolbar and place the elements inside it. These blocks or containers are of 2 different types:');
-        ie_close('p');
-        ie_open('ul');
-        ie_open('li');
-        itext('Field: is used to make tight groups.');
-        ie_close('li');
-        ie_open('li');
-        itext('Content: is used to span as much as possible in the rest of the space. In case there are severral contents the available space is equally divided.');
-        ie_close('li');
-        ie_close('ul');
-        ie_open('h3');
-        itext('Layout');
-        ie_close('h3');
-        ie_open('p');
-        itext('For a better understading of the previous sections, here are some example layouts:');
-        ie_close('p');
-        ie_open('p');
-        itext('Example 1: Three consecutive fields');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample1.png', 'alt', 'toolbar layout example with three fields');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('Example 2: Three consecutive contents');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample2.png', 'alt', 'toolbar layout example with three contents');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('Example 3: Field - Content - Field');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample3.png', 'alt', 'toolbar layout example with field - content - field');
-        ie_close('img');
-        ie_close('p');
-        ie_open('p');
-        itext('Example 4: Field - Field - Content - Content');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/toolbarLayoutExample4.png', 'alt', 'toolbar layout example with field - field - content - content');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param501 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsToolbarHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsToolbarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsToolbarHtml, _Component);
-
-    function docsPatternsToolbarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsToolbarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsToolbarHtml.__proto__ || Object.getPrototypeOf(docsPatternsToolbarHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsToolbarHtml;
-  }(Component);
-
-  Soy.register(docsPatternsToolbarHtml, templates);
-  this['metalNamed']['toolbar'] = this['metalNamed']['toolbar'] || {};
-  this['metalNamed']['toolbar']['docsPatternsToolbarHtml'] = docsPatternsToolbarHtml;
-  this['metalNamed']['toolbar']['templates'] = templates;
-  this['metal']['toolbar'] = templates;
-  /* jshint ignore:end */
+  this['metal']['qaCdI'] = qaCdI;
 }).call(this);
 'use strict';
 
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['toolbar'];
+  var templates = this['metal']['nav tabs'];
 
-  var docsPatternsToolbarHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsToolbarHtml, _Component);
+  var tOXtB = function (_Component) {
+    babelHelpers.inherits(tOXtB, _Component);
 
-    function docsPatternsToolbarHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsToolbarHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsToolbarHtml.__proto__ || Object.getPrototypeOf(docsPatternsToolbarHtml)).apply(this, arguments));
+    function tOXtB() {
+      babelHelpers.classCallCheck(this, tOXtB);
+      return babelHelpers.possibleConstructorReturn(this, (tOXtB.__proto__ || Object.getPrototypeOf(tOXtB)).apply(this, arguments));
     }
 
-    return docsPatternsToolbarHtml;
+    return tOXtB;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsToolbarHtml, templates);
+  Soy.register(tOXtB, templates);
 
-  this['metal']['docsPatternsToolbarHtml'] = docsPatternsToolbarHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from typography.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsTypographyHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsTypographyHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param510 = function param510() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/HelveticaNeue@2x.png 2x', 'src', '../../../images/HelveticaNeue.png', 'alt', 'helvetica neue example in regular, medium and bold');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Sizes');
-        ie_close('h3');
-        ie_open('p');
-        itext('Lexicon only defines 3 font sizes for the common usage and leaves H values open for free use.');
-        ie_close('p');
-        ie_open('table');
-        ie_open('thead');
-        ie_open('tr');
-        ie_open('th');
-        itext('Size');
-        ie_close('th');
-        ie_open('th');
-        itext('Usage');
-        ie_close('th');
-        ie_close('tr');
-        ie_close('thead');
-        ie_open('tbody');
-        ie_open('tr');
-        ie_open('td');
-        itext('19px');
-        ie_close('td');
-        ie_open('td');
-        itext('Defined for titles.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('16px');
-        ie_close('td');
-        ie_open('td');
-        itext('Defined for normal text, paragraphs, etc.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('14px');
-        ie_close('td');
-        ie_open('td');
-        itext('Defined for details, help text supporting components, etc.');
-        ie_close('td');
-        ie_close('tr');
-        ie_close('tbody');
-        ie_close('table');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param510 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsTypographyHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsTypographyHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTypographyHtml, _Component);
-
-    function docsPatternsTypographyHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTypographyHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTypographyHtml.__proto__ || Object.getPrototypeOf(docsPatternsTypographyHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsTypographyHtml;
-  }(Component);
-
-  Soy.register(docsPatternsTypographyHtml, templates);
-  this['metalNamed']['typography'] = this['metalNamed']['typography'] || {};
-  this['metalNamed']['typography']['docsPatternsTypographyHtml'] = docsPatternsTypographyHtml;
-  this['metalNamed']['typography']['templates'] = templates;
-  this['metal']['typography'] = templates;
-  /* jshint ignore:end */
+  this['metal']['tOXtB'] = tOXtB;
 }).call(this);
 'use strict';
 
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['typography'];
+  var templates = this['metal']['loading_indicator'];
 
-  var docsPatternsTypographyHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTypographyHtml, _Component);
+  var uFIeV = function (_Component) {
+    babelHelpers.inherits(uFIeV, _Component);
 
-    function docsPatternsTypographyHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTypographyHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTypographyHtml.__proto__ || Object.getPrototypeOf(docsPatternsTypographyHtml)).apply(this, arguments));
+    function uFIeV() {
+      babelHelpers.classCallCheck(this, uFIeV);
+      return babelHelpers.possibleConstructorReturn(this, (uFIeV.__proto__ || Object.getPrototypeOf(uFIeV)).apply(this, arguments));
     }
 
-    return docsPatternsTypographyHtml;
+    return uFIeV;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsTypographyHtml, templates);
+  Soy.register(uFIeV, templates);
 
-  this['metal']['docsPatternsTypographyHtml'] = docsPatternsTypographyHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from user_icons.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsUserIconsHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsUserIconsHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param519 = function param519() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('User icons are used to visually identify users in the system.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('Use a user icon to identify a user inside a context. User icons in Lexicon are always displayed inside a circle.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Size');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/userIcon@2x.png 2x', 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes');
-        ie_close('img');
-        ie_close('p');
-        ie_open('table');
-        ie_open('thead');
-        ie_open('tr');
-        ie_open('th');
-        itext('Size');
-        ie_close('th');
-        ie_open('th');
-        itext('Usage');
-        ie_close('th');
-        ie_close('tr');
-        ie_close('thead');
-        ie_open('tbody');
-        ie_open('tr');
-        ie_open('td');
-        itext('Extra small');
-        ie_close('td');
-        ie_open('td');
-        itext('22px. Use it in timelines and cards as identifier. Use it when you need to include many users.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Small');
-        ie_close('td');
-        ie_open('td');
-        itext('30px. Use it in timelines and cards as identifier.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Default');
-        ie_close('td');
-        ie_open('td');
-        itext('32px. The most common usage.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Large');
-        ie_close('td');
-        ie_open('td');
-        itext('45px. Use it in user centered contexts as user cards.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Extra large');
-        ie_close('td');
-        ie_open('td');
-        itext('64px. Use it in user centered contexts as user cards.');
-        ie_close('td');
-        ie_close('tr');
-        ie_open('tr');
-        ie_open('td');
-        itext('Extra estra large');
-        ie_close('td');
-        ie_open('td');
-        itext('128px. Use it in user centered contexts as user cards.');
-        ie_close('td');
-        ie_close('tr');
-        ie_close('tbody');
-        ie_close('table');
-        ie_open('h3');
-        itext('Types');
-        ie_close('h3');
-        ie_open('h4');
-        itext('User icon with image');
-        ie_close('h4');
-        ie_open('p');
-        itext('User images help to personalize the interface. In case you have your user image and can make use of it, use this type of user icon.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/userIconImages@2x.png 2x', 'src', '../../../images/userIconImages.png', 'alt', 'all 6 user icons sizes with image');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('User icon with text');
-        ie_close('h4');
-        ie_open('p');
-        itext('Sometimes you won\u2019t have the user image or won\u2019t be allowed to use it. In those cases use this pattern. The text must be always in capital letters and a maximum of 2 letters. Use first letter from Name and Surname (NS).');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/userIcon@2x.png 2x', 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes with text');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param519 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsUserIconsHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsUserIconsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsUserIconsHtml, _Component);
-
-    function docsPatternsUserIconsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsUserIconsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsUserIconsHtml.__proto__ || Object.getPrototypeOf(docsPatternsUserIconsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsUserIconsHtml;
-  }(Component);
-
-  Soy.register(docsPatternsUserIconsHtml, templates);
-  this['metalNamed']['user_icons'] = this['metalNamed']['user_icons'] || {};
-  this['metalNamed']['user_icons']['docsPatternsUserIconsHtml'] = docsPatternsUserIconsHtml;
-  this['metalNamed']['user_icons']['templates'] = templates;
-  this['metal']['user_icons'] = templates;
-  /* jshint ignore:end */
+  this['metal']['uFIeV'] = uFIeV;
 }).call(this);
 'use strict';
 
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['user_icons'];
+  var templates = this['metal']['collapsible_search'];
 
-  var docsPatternsUserIconsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsUserIconsHtml, _Component);
+  var wUNev = function (_Component) {
+    babelHelpers.inherits(wUNev, _Component);
 
-    function docsPatternsUserIconsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsUserIconsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsUserIconsHtml.__proto__ || Object.getPrototypeOf(docsPatternsUserIconsHtml)).apply(this, arguments));
+    function wUNev() {
+      babelHelpers.classCallCheck(this, wUNev);
+      return babelHelpers.possibleConstructorReturn(this, (wUNev.__proto__ || Object.getPrototypeOf(wUNev)).apply(this, arguments));
     }
 
-    return docsPatternsUserIconsHtml;
+    return wUNev;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsUserIconsHtml, templates);
+  Soy.register(wUNev, templates);
 
-  this['metal']['docsPatternsUserIconsHtml'] = docsPatternsUserIconsHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsForms.
-     * @public
-     */
-
-    goog.module('docsPatternsForms.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param537 = function param537() {
-        ie_open('h6');
-        itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        $templateAlias2({ code: 'var hello = function() {\n    console.log(\'Hello, World!\');\n};', mode: 'javascript' }, null, opt_ijData);
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param537 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsForms.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsForms = function (_Component) {
-    babelHelpers.inherits(docsPatternsForms, _Component);
-
-    function docsPatternsForms() {
-      babelHelpers.classCallCheck(this, docsPatternsForms);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsForms.__proto__ || Object.getPrototypeOf(docsPatternsForms)).apply(this, arguments));
-    }
-
-    return docsPatternsForms;
-  }(Component);
-
-  Soy.register(docsPatternsForms, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsPatternsForms'] = docsPatternsForms;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
+  this['metal']['wUNev'] = wUNev;
 }).call(this);
 'use strict';
 
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
+  var templates = this['metal']['management_bar'];
 
-  var docsPatternsForms = function (_Component) {
-    babelHelpers.inherits(docsPatternsForms, _Component);
+  var xqkoA = function (_Component) {
+    babelHelpers.inherits(xqkoA, _Component);
 
-    function docsPatternsForms() {
-      babelHelpers.classCallCheck(this, docsPatternsForms);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsForms.__proto__ || Object.getPrototypeOf(docsPatternsForms)).apply(this, arguments));
+    function xqkoA() {
+      babelHelpers.classCallCheck(this, xqkoA);
+      return babelHelpers.possibleConstructorReturn(this, (xqkoA.__proto__ || Object.getPrototypeOf(xqkoA)).apply(this, arguments));
     }
 
-    return docsPatternsForms;
+    return xqkoA;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsForms, templates);
+  Soy.register(xqkoA, templates);
 
-  this['metal']['docsPatternsForms'] = docsPatternsForms;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from forms.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsFormsFormsHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsFormsFormsHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param528 = function param528() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Forms is one of the most used patterns in Lexicon. Forms capture information from the user and transmits it to the system either to store, to produce an action or both at same time. Forms in Lexicon are defined to be full width.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Structure');
-        ie_close('h3');
-        ie_open('p');
-        itext('Forms can be created in one single column or two columns. If your form is divided in several sections that are stacked consider not changing the internal layout between sections, it can affect the experience of filling the whole form.');
-        ie_close('p');
-        ie_open('p');
-        itext('When applying columns take into account that the reading directions is left-right, and up-down, in each column. So expect your user to read first column one and then column two.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Sections');
-        ie_close('h3');
-        ie_open('p');
-        itext('Sections help users to fill a form by chunking the form is smaller pieces. A form section is identified with an ');
-        ie_open('a', null, null, 'href', './panel.html');
-        itext('accordion');
-        ie_close('a');
-        itext('. There is no limitation in the number of accordions to use.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Fields\u2019 order');
-        ie_close('h3');
-        ie_open('p');
-        itext('Laying out the fields of your form we recommend you to follow an order of importance. Try to place first as many mandatory fields when possible to make the user task short. Non mandatory fields should go in a second place as they are not so important and the user could like to skip them. In case non mandatory fields are in between mandatory fields the user would expend more time scanning the form.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Fields\u2019 lengths');
-        ie_close('h3');
-        ie_open('p');
-        itext('Fields must occupy the space you expect your user needs to fill it. The only requirement for fields is to adapt their width to the grid so they behave properly on window resize. Sharp shape forms do not go against Lexicon but we prefer rectangular shape form as they look more clear. In mobile view ports field lengths should be half of the screen or full length.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Mandatory fields');
-        ie_close('h3');
-        ie_open('p');
-        itext('Fields can be mandatory/required to fill in a form. The way to mark a field as mandatory is:');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/textfieldMandatory@2x.png 2x', 'src', '../../../images/textfieldMandatory.png', 'alt', 'example of mandatory field');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Inline validation');
-        ie_close('h3');
-        ie_open('p');
-        itext('Forms have inline validation. All form fields that can be checked against a set of rules while filling them must show success or error state to the user.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Content blocks');
-        ie_close('h3');
-        ie_open('p');
-        itext('Content block allow you let the user add contents of a same type in a form. Content blocks are usually used to contribute with more form pieces that allow the user to specify more information. Content block always bring the possibility to add or remove blocks. See the following example:');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/contentBlock.gif', 'alt', 'Content block example');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h3');
-        itext('Actions');
-        ie_close('h3');
-        ie_open('h4');
-        itext('General actions');
-        ie_close('h4');
-        ie_open('p');
-        itext('General form actions always placed at the end of the form and they are always placed in same order: Primary, Secondary (default), Negative (Link). The button size to use is large.');
-        ie_close('p');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/buttonOrder@2x.png 2x', 'src', '../../../images/buttonOrder.png', 'alt', 'button order example');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Interior actions');
-        ie_close('h4');
-        ie_open('p');
-        itext('Interior form actions should not be as notorious as general actions. Therefore they use default button size.');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param528 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsFormsFormsHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsFormsFormsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsFormsHtml, _Component);
-
-    function docsPatternsFormsFormsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsFormsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsFormsHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsFormsHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsFormsFormsHtml;
-  }(Component);
-
-  Soy.register(docsPatternsFormsFormsHtml, templates);
-  this['metalNamed']['forms'] = this['metalNamed']['forms'] || {};
-  this['metalNamed']['forms']['docsPatternsFormsFormsHtml'] = docsPatternsFormsFormsHtml;
-  this['metalNamed']['forms']['templates'] = templates;
-  this['metal']['forms'] = templates;
-  /* jshint ignore:end */
+  this['metal']['xqkoA'] = xqkoA;
 }).call(this);
 'use strict';
 
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['forms'];
+  var templates = this['metal']['icons'];
 
-  var docsPatternsFormsFormsHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsFormsHtml, _Component);
+  var ztMZz = function (_Component) {
+    babelHelpers.inherits(ztMZz, _Component);
 
-    function docsPatternsFormsFormsHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsFormsHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsFormsHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsFormsHtml)).apply(this, arguments));
+    function ztMZz() {
+      babelHelpers.classCallCheck(this, ztMZz);
+      return babelHelpers.possibleConstructorReturn(this, (ztMZz.__proto__ || Object.getPrototypeOf(ztMZz)).apply(this, arguments));
     }
 
-    return docsPatternsFormsFormsHtml;
+    return ztMZz;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsFormsFormsHtml, templates);
+  Soy.register(ztMZz, templates);
 
-  this['metal']['docsPatternsFormsFormsHtml'] = docsPatternsFormsFormsHtml;
+  this['metal']['ztMZz'] = ztMZz;
 }).call(this);
 'use strict';
 
@@ -30492,11 +30300,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsFormsRadioCheckToggleHtml.
+     * @fileoverview Templates in namespace ObjgJ.
      * @public
      */
 
-    goog.module('docsPatternsFormsRadioCheckToggleHtml.incrementaldom');
+    goog.module('ObjgJ.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -30527,7 +30335,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param551 = function param551() {
+      var param493 = function param493() {
         ie_open('h2');
         itext('Checkbox');
         ie_close('h2');
@@ -30739,11 +30547,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param551 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param493 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsFormsRadioCheckToggleHtml.render';
+      $render.soyTemplateName = 'ObjgJ.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -30752,20 +30560,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsFormsRadioCheckToggleHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsRadioCheckToggleHtml, _Component);
+  var ObjgJ = function (_Component) {
+    babelHelpers.inherits(ObjgJ, _Component);
 
-    function docsPatternsFormsRadioCheckToggleHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsRadioCheckToggleHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsRadioCheckToggleHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsRadioCheckToggleHtml)).apply(this, arguments));
+    function ObjgJ() {
+      babelHelpers.classCallCheck(this, ObjgJ);
+      return babelHelpers.possibleConstructorReturn(this, (ObjgJ.__proto__ || Object.getPrototypeOf(ObjgJ)).apply(this, arguments));
     }
 
-    return docsPatternsFormsRadioCheckToggleHtml;
+    return ObjgJ;
   }(Component);
 
-  Soy.register(docsPatternsFormsRadioCheckToggleHtml, templates);
+  Soy.register(ObjgJ, templates);
   this['metalNamed']['radio_check_toggle'] = this['metalNamed']['radio_check_toggle'] || {};
-  this['metalNamed']['radio_check_toggle']['docsPatternsFormsRadioCheckToggleHtml'] = docsPatternsFormsRadioCheckToggleHtml;
+  this['metalNamed']['radio_check_toggle']['ObjgJ'] = ObjgJ;
   this['metalNamed']['radio_check_toggle']['templates'] = templates;
   this['metal']['radio_check_toggle'] = templates;
   /* jshint ignore:end */
@@ -30777,184 +30585,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['radio_check_toggle'];
 
-  var docsPatternsFormsRadioCheckToggleHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsRadioCheckToggleHtml, _Component);
+  var ObjgJ = function (_Component) {
+    babelHelpers.inherits(ObjgJ, _Component);
 
-    function docsPatternsFormsRadioCheckToggleHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsRadioCheckToggleHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsRadioCheckToggleHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsRadioCheckToggleHtml)).apply(this, arguments));
+    function ObjgJ() {
+      babelHelpers.classCallCheck(this, ObjgJ);
+      return babelHelpers.possibleConstructorReturn(this, (ObjgJ.__proto__ || Object.getPrototypeOf(ObjgJ)).apply(this, arguments));
     }
 
-    return docsPatternsFormsRadioCheckToggleHtml;
+    return ObjgJ;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsFormsRadioCheckToggleHtml, templates);
+  Soy.register(ObjgJ, templates);
 
-  this['metal']['docsPatternsFormsRadioCheckToggleHtml'] = docsPatternsFormsRadioCheckToggleHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from selector.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsFormsSelectorHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsFormsSelectorHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param560 = function param560() {
-        ie_open('h2');
-        itext('Selector');
-        ie_close('h2');
-        ie_open('p');
-        itext('Selectors are frequently used as a part of forms. This elements are used when we need to select one or more within several options. These options are displayed in the button once selected.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Usage');
-        ie_close('h3');
-        ie_open('p');
-        itext('This pattern is completely different from a dropdown as a selector is a native element with a list asociated. A dropdown instead opens a panel where the panel could contain multiple different things.');
-        ie_close('p');
-        ie_open('h3');
-        itext('States');
-        ie_close('h3');
-        ie_open('h4');
-        itext('Default');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/selector@2x.png 2x', 'src', '../../../images/selector.png', 'alt', 'selector default state');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Active');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/selectorFocus@2x.png 2x', 'src', '../../../images/selectorFocus.png', 'alt', 'selector active state');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h2');
-        itext('Multiple selector');
-        ie_close('h2');
-        ie_open('p');
-        itext('Select button used to select more than one option from a simple list.');
-        ie_close('p');
-        ie_open('h3');
-        itext('States');
-        ie_close('h3');
-        ie_open('h4');
-        itext('Default');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/selectorMultiple@2x.png 2x', 'src', '../../../images/selectorMultiple.png', 'alt', 'multiple selector default state');
-        ie_close('img');
-        ie_close('p');
-        ie_open('h4');
-        itext('Active');
-        ie_close('h4');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/selectorMultipleFocus@2x.png 2x', 'src', '../../../images/selectorMultipleFocus.png', 'alt', 'multiple selector active state');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param560 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsFormsSelectorHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsFormsSelectorHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsSelectorHtml, _Component);
-
-    function docsPatternsFormsSelectorHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsSelectorHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsSelectorHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsSelectorHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsFormsSelectorHtml;
-  }(Component);
-
-  Soy.register(docsPatternsFormsSelectorHtml, templates);
-  this['metalNamed']['selector'] = this['metalNamed']['selector'] || {};
-  this['metalNamed']['selector']['docsPatternsFormsSelectorHtml'] = docsPatternsFormsSelectorHtml;
-  this['metalNamed']['selector']['templates'] = templates;
-  this['metal']['selector'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['selector'];
-
-  var docsPatternsFormsSelectorHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsSelectorHtml, _Component);
-
-    function docsPatternsFormsSelectorHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsSelectorHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsSelectorHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsSelectorHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsFormsSelectorHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsFormsSelectorHtml, templates);
-
-  this['metal']['docsPatternsFormsSelectorHtml'] = docsPatternsFormsSelectorHtml;
+  this['metal']['ObjgJ'] = ObjgJ;
 }).call(this);
 'use strict';
 
@@ -30970,11 +30616,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsFormsTextInputGroupHtml.
+     * @fileoverview Templates in namespace WeapX.
      * @public
      */
 
-    goog.module('docsPatternsFormsTextInputGroupHtml.incrementaldom');
+    goog.module('WeapX.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -31005,7 +30651,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param578 = function param578() {
+      var param520 = function param520() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -31068,11 +30714,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param578 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param520 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsFormsTextInputGroupHtml.render';
+      $render.soyTemplateName = 'WeapX.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -31081,20 +30727,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsFormsTextInputGroupHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsTextInputGroupHtml, _Component);
+  var WeapX = function (_Component) {
+    babelHelpers.inherits(WeapX, _Component);
 
-    function docsPatternsFormsTextInputGroupHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsTextInputGroupHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsTextInputGroupHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsTextInputGroupHtml)).apply(this, arguments));
+    function WeapX() {
+      babelHelpers.classCallCheck(this, WeapX);
+      return babelHelpers.possibleConstructorReturn(this, (WeapX.__proto__ || Object.getPrototypeOf(WeapX)).apply(this, arguments));
     }
 
-    return docsPatternsFormsTextInputGroupHtml;
+    return WeapX;
   }(Component);
 
-  Soy.register(docsPatternsFormsTextInputGroupHtml, templates);
+  Soy.register(WeapX, templates);
   this['metalNamed']['text_input_group'] = this['metalNamed']['text_input_group'] || {};
-  this['metalNamed']['text_input_group']['docsPatternsFormsTextInputGroupHtml'] = docsPatternsFormsTextInputGroupHtml;
+  this['metalNamed']['text_input_group']['WeapX'] = WeapX;
   this['metalNamed']['text_input_group']['templates'] = templates;
   this['metal']['text_input_group'] = templates;
   /* jshint ignore:end */
@@ -31106,22 +30752,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['text_input_group'];
 
-  var docsPatternsFormsTextInputGroupHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsTextInputGroupHtml, _Component);
+  var WeapX = function (_Component) {
+    babelHelpers.inherits(WeapX, _Component);
 
-    function docsPatternsFormsTextInputGroupHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsTextInputGroupHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsTextInputGroupHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsTextInputGroupHtml)).apply(this, arguments));
+    function WeapX() {
+      babelHelpers.classCallCheck(this, WeapX);
+      return babelHelpers.possibleConstructorReturn(this, (WeapX.__proto__ || Object.getPrototypeOf(WeapX)).apply(this, arguments));
     }
 
-    return docsPatternsFormsTextInputGroupHtml;
+    return WeapX;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsFormsTextInputGroupHtml, templates);
+  Soy.register(WeapX, templates);
 
-  this['metal']['docsPatternsFormsTextInputGroupHtml'] = docsPatternsFormsTextInputGroupHtml;
+  this['metal']['WeapX'] = WeapX;
 }).call(this);
 'use strict';
 
@@ -31133,15 +30779,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from text_input.soy.
+    // This file was automatically generated from forms.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsFormsTextInputHtml.
+     * @fileoverview Templates in namespace cJCdj.
      * @public
      */
 
-    goog.module('docsPatternsFormsTextInputHtml.incrementaldom');
+    goog.module('cJCdj.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -31172,7 +30818,199 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param569 = function param569() {
+      var param470 = function param470() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Forms is one of the most used patterns in Lexicon. Forms capture information from the user and transmits it to the system either to store, to produce an action or both at same time. Forms in Lexicon are defined to be full width.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Structure');
+        ie_close('h3');
+        ie_open('p');
+        itext('Forms can be created in one single column or two columns. If your form is divided in several sections that are stacked consider not changing the internal layout between sections, it can affect the experience of filling the whole form.');
+        ie_close('p');
+        ie_open('p');
+        itext('When applying columns take into account that the reading directions is left-right, and up-down, in each column. So expect your user to read first column one and then column two.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Sections');
+        ie_close('h3');
+        ie_open('p');
+        itext('Sections help users to fill a form by chunking the form is smaller pieces. A form section is identified with an ');
+        ie_open('a', null, null, 'href', './panel.html');
+        itext('accordion');
+        ie_close('a');
+        itext('. There is no limitation in the number of accordions to use.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Fields\u2019 order');
+        ie_close('h3');
+        ie_open('p');
+        itext('Laying out the fields of your form we recommend you to follow an order of importance. Try to place first as many mandatory fields when possible to make the user task short. Non mandatory fields should go in a second place as they are not so important and the user could like to skip them. In case non mandatory fields are in between mandatory fields the user would expend more time scanning the form.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Fields\u2019 lengths');
+        ie_close('h3');
+        ie_open('p');
+        itext('Fields must occupy the space you expect your user needs to fill it. The only requirement for fields is to adapt their width to the grid so they behave properly on window resize. Sharp shape forms do not go against Lexicon but we prefer rectangular shape form as they look more clear. In mobile view ports field lengths should be half of the screen or full length.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Mandatory fields');
+        ie_close('h3');
+        ie_open('p');
+        itext('Fields can be mandatory/required to fill in a form. The way to mark a field as mandatory is:');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldMandatory@2x.png 2x', 'src', '../../../images/textfieldMandatory.png', 'alt', 'example of mandatory field');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Inline validation');
+        ie_close('h3');
+        ie_open('p');
+        itext('Forms have inline validation. All form fields that can be checked against a set of rules while filling them must show success or error state to the user.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Content blocks');
+        ie_close('h3');
+        ie_open('p');
+        itext('Content block allow you let the user add contents of a same type in a form. Content blocks are usually used to contribute with more form pieces that allow the user to specify more information. Content block always bring the possibility to add or remove blocks. See the following example:');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'src', '../../../images/contentBlock.gif', 'alt', 'Content block example');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h3');
+        itext('Actions');
+        ie_close('h3');
+        ie_open('h4');
+        itext('General actions');
+        ie_close('h4');
+        ie_open('p');
+        itext('General form actions always placed at the end of the form and they are always placed in same order: Primary, Secondary (default), Negative (Link). The button size to use is large.');
+        ie_close('p');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonOrder@2x.png 2x', 'src', '../../../images/buttonOrder.png', 'alt', 'button order example');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Interior actions');
+        ie_close('h4');
+        ie_open('p');
+        itext('Interior form actions should not be as notorious as general actions. Therefore they use default button size.');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param470 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'cJCdj.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var cJCdj = function (_Component) {
+    babelHelpers.inherits(cJCdj, _Component);
+
+    function cJCdj() {
+      babelHelpers.classCallCheck(this, cJCdj);
+      return babelHelpers.possibleConstructorReturn(this, (cJCdj.__proto__ || Object.getPrototypeOf(cJCdj)).apply(this, arguments));
+    }
+
+    return cJCdj;
+  }(Component);
+
+  Soy.register(cJCdj, templates);
+  this['metalNamed']['forms'] = this['metalNamed']['forms'] || {};
+  this['metalNamed']['forms']['cJCdj'] = cJCdj;
+  this['metalNamed']['forms']['templates'] = templates;
+  this['metal']['forms'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['forms'];
+
+  var cJCdj = function (_Component) {
+    babelHelpers.inherits(cJCdj, _Component);
+
+    function cJCdj() {
+      babelHelpers.classCallCheck(this, cJCdj);
+      return babelHelpers.possibleConstructorReturn(this, (cJCdj.__proto__ || Object.getPrototypeOf(cJCdj)).apply(this, arguments));
+    }
+
+    return cJCdj;
+  }(Component);
+
+  ;
+
+  Soy.register(cJCdj, templates);
+
+  this['metal']['cJCdj'] = cJCdj;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from text_input.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace heRDv.
+     * @public
+     */
+
+    goog.module('heRDv.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param511 = function param511() {
         ie_open('h2');
         itext('Text field');
         ie_close('h2');
@@ -31260,11 +31098,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param569 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param511 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsFormsTextInputHtml.render';
+      $render.soyTemplateName = 'heRDv.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -31273,20 +31111,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsFormsTextInputHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsTextInputHtml, _Component);
+  var heRDv = function (_Component) {
+    babelHelpers.inherits(heRDv, _Component);
 
-    function docsPatternsFormsTextInputHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsTextInputHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsTextInputHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsTextInputHtml)).apply(this, arguments));
+    function heRDv() {
+      babelHelpers.classCallCheck(this, heRDv);
+      return babelHelpers.possibleConstructorReturn(this, (heRDv.__proto__ || Object.getPrototypeOf(heRDv)).apply(this, arguments));
     }
 
-    return docsPatternsFormsTextInputHtml;
+    return heRDv;
   }(Component);
 
-  Soy.register(docsPatternsFormsTextInputHtml, templates);
+  Soy.register(heRDv, templates);
   this['metalNamed']['text_input'] = this['metalNamed']['text_input'] || {};
-  this['metalNamed']['text_input']['docsPatternsFormsTextInputHtml'] = docsPatternsFormsTextInputHtml;
+  this['metalNamed']['text_input']['heRDv'] = heRDv;
   this['metalNamed']['text_input']['templates'] = templates;
   this['metal']['text_input'] = templates;
   /* jshint ignore:end */
@@ -31298,155 +31136,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['text_input'];
 
-  var docsPatternsFormsTextInputHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsFormsTextInputHtml, _Component);
+  var heRDv = function (_Component) {
+    babelHelpers.inherits(heRDv, _Component);
 
-    function docsPatternsFormsTextInputHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsFormsTextInputHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsFormsTextInputHtml.__proto__ || Object.getPrototypeOf(docsPatternsFormsTextInputHtml)).apply(this, arguments));
+    function heRDv() {
+      babelHelpers.classCallCheck(this, heRDv);
+      return babelHelpers.possibleConstructorReturn(this, (heRDv.__proto__ || Object.getPrototypeOf(heRDv)).apply(this, arguments));
     }
 
-    return docsPatternsFormsTextInputHtml;
+    return heRDv;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsFormsTextInputHtml, templates);
+  Soy.register(heRDv, templates);
 
-  this['metal']['docsPatternsFormsTextInputHtml'] = docsPatternsFormsTextInputHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from datasetTemplate.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsPatternsTemplatesDatasetTemplateHtml.
-     * @public
-     */
-
-    goog.module('docsPatternsTemplatesDatasetTemplateHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param587 = function param587() {
-        ie_open('h3');
-        itext('Description');
-        ie_close('h3');
-        ie_open('p');
-        itext('Dataset template shows how a dataset is displayed using Lexicon.');
-        ie_close('p');
-        ie_open('h3');
-        itext('Structure');
-        ie_close('h3');
-        ie_open('p');
-        itext('This template counts with several patterns listed as follown that can be directly mapped with the image.');
-        ie_close('p');
-        ie_open('ol');
-        ie_open('li');
-        itext('Header toolbar: the actions menu must only contain direct actions over the application in question as import, export, permissions.');
-        ie_close('li');
-        ie_open('li');
-        itext('Navigation bar: includes different entries of the application. If there is only one it must be present in the bar. Search field is optional and only acts over the selected element in the navbar.');
-        ie_close('li');
-        ie_open('li');
-        itext('Dataset display');
-        ie_open('ol');
-        ie_open('li');
-        itext('Management bar');
-        ie_close('li');
-        ie_open('li');
-        itext('Breadcrumb (When further than first level)');
-        ie_close('li');
-        ie_open('li');
-        itext('Visualization: Table / List / Cards');
-        ie_close('li');
-        ie_open('li');
-        itext('Pagination bar');
-        ie_close('li');
-        ie_close('ol');
-        ie_close('li');
-        ie_open('li');
-        itext('Plus button: Place it in case your dataset allows adding more elements');
-        ie_close('li');
-        ie_close('ol');
-        ie_open('h3');
-        itext('Example');
-        ie_close('h3');
-        ie_open('p');
-        ie_open('img', null, null, 'srcset', '../../../images/DatasetTemplate@2x.png 2x', 'src', '../../../images/DatasetTemplate.png', 'alt', 'Form template example');
-        ie_close('img');
-        ie_close('p');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
-        ie_close('input');
-        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
-        ie_close('input');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param587 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsTemplatesDatasetTemplateHtml.render';
-    }
-
-    exports.render.params = ["page", "site"];
-    exports.render.types = { "page": "any", "site": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var docsPatternsTemplatesDatasetTemplateHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTemplatesDatasetTemplateHtml, _Component);
-
-    function docsPatternsTemplatesDatasetTemplateHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTemplatesDatasetTemplateHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesDatasetTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesDatasetTemplateHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsTemplatesDatasetTemplateHtml;
-  }(Component);
-
-  Soy.register(docsPatternsTemplatesDatasetTemplateHtml, templates);
-  this['metalNamed']['datasetTemplate'] = this['metalNamed']['datasetTemplate'] || {};
-  this['metalNamed']['datasetTemplate']['docsPatternsTemplatesDatasetTemplateHtml'] = docsPatternsTemplatesDatasetTemplateHtml;
-  this['metalNamed']['datasetTemplate']['templates'] = templates;
-  this['metal']['datasetTemplate'] = templates;
-  /* jshint ignore:end */
+  this['metal']['heRDv'] = heRDv;
 }).call(this);
 'use strict';
 
@@ -31462,11 +31167,11 @@ babelHelpers;
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsTemplates.
+     * @fileoverview Templates in namespace pwuox.
      * @public
      */
 
-    goog.module('docsPatternsTemplates.incrementaldom');
+    goog.module('pwuox.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -31499,7 +31204,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param605 = function param605() {
+      var param479 = function param479() {
         ie_open('h6');
         itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
         ie_close('h6');
@@ -31560,11 +31265,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param605 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param479 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsTemplates.render';
+      $render.soyTemplateName = 'pwuox.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -31573,20 +31278,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsTemplates = function (_Component) {
-    babelHelpers.inherits(docsPatternsTemplates, _Component);
+  var pwuox = function (_Component) {
+    babelHelpers.inherits(pwuox, _Component);
 
-    function docsPatternsTemplates() {
-      babelHelpers.classCallCheck(this, docsPatternsTemplates);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplates.__proto__ || Object.getPrototypeOf(docsPatternsTemplates)).apply(this, arguments));
+    function pwuox() {
+      babelHelpers.classCallCheck(this, pwuox);
+      return babelHelpers.possibleConstructorReturn(this, (pwuox.__proto__ || Object.getPrototypeOf(pwuox)).apply(this, arguments));
     }
 
-    return docsPatternsTemplates;
+    return pwuox;
   }(Component);
 
-  Soy.register(docsPatternsTemplates, templates);
+  Soy.register(pwuox, templates);
   this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsPatternsTemplates'] = docsPatternsTemplates;
+  this['metalNamed']['index']['pwuox'] = pwuox;
   this['metalNamed']['index']['templates'] = templates;
   this['metal']['index'] = templates;
   /* jshint ignore:end */
@@ -31598,46 +31303,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['index'];
 
-  var docsPatternsTemplates = function (_Component) {
-    babelHelpers.inherits(docsPatternsTemplates, _Component);
+  var pwuox = function (_Component) {
+    babelHelpers.inherits(pwuox, _Component);
 
-    function docsPatternsTemplates() {
-      babelHelpers.classCallCheck(this, docsPatternsTemplates);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplates.__proto__ || Object.getPrototypeOf(docsPatternsTemplates)).apply(this, arguments));
+    function pwuox() {
+      babelHelpers.classCallCheck(this, pwuox);
+      return babelHelpers.possibleConstructorReturn(this, (pwuox.__proto__ || Object.getPrototypeOf(pwuox)).apply(this, arguments));
     }
 
-    return docsPatternsTemplates;
+    return pwuox;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsTemplates, templates);
+  Soy.register(pwuox, templates);
 
-  this['metal']['docsPatternsTemplates'] = docsPatternsTemplates;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['datasetTemplate'];
-
-  var docsPatternsTemplatesDatasetTemplateHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTemplatesDatasetTemplateHtml, _Component);
-
-    function docsPatternsTemplatesDatasetTemplateHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTemplatesDatasetTemplateHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesDatasetTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesDatasetTemplateHtml)).apply(this, arguments));
-    }
-
-    return docsPatternsTemplatesDatasetTemplateHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsPatternsTemplatesDatasetTemplateHtml, templates);
-
-  this['metal']['docsPatternsTemplatesDatasetTemplateHtml'] = docsPatternsTemplatesDatasetTemplateHtml;
+  this['metal']['pwuox'] = pwuox;
 }).call(this);
 'use strict';
 
@@ -31649,15 +31330,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from formsTemplate.soy.
+    // This file was automatically generated from selector.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace docsPatternsTemplatesFormsTemplateHtml.
+     * @fileoverview Templates in namespace wpdNo.
      * @public
      */
 
-    goog.module('docsPatternsTemplatesFormsTemplateHtml.incrementaldom');
+    goog.module('wpdNo.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -31688,7 +31369,493 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param596 = function param596() {
+      var param502 = function param502() {
+        ie_open('h2');
+        itext('Selector');
+        ie_close('h2');
+        ie_open('p');
+        itext('Selectors are frequently used as a part of forms. This elements are used when we need to select one or more within several options. These options are displayed in the button once selected.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Usage');
+        ie_close('h3');
+        ie_open('p');
+        itext('This pattern is completely different from a dropdown as a selector is a native element with a list asociated. A dropdown instead opens a panel where the panel could contain multiple different things.');
+        ie_close('p');
+        ie_open('h3');
+        itext('States');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/selector@2x.png 2x', 'src', '../../../images/selector.png', 'alt', 'selector default state');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Active');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/selectorFocus@2x.png 2x', 'src', '../../../images/selectorFocus.png', 'alt', 'selector active state');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h2');
+        itext('Multiple selector');
+        ie_close('h2');
+        ie_open('p');
+        itext('Select button used to select more than one option from a simple list.');
+        ie_close('p');
+        ie_open('h3');
+        itext('States');
+        ie_close('h3');
+        ie_open('h4');
+        itext('Default');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/selectorMultiple@2x.png 2x', 'src', '../../../images/selectorMultiple.png', 'alt', 'multiple selector default state');
+        ie_close('img');
+        ie_close('p');
+        ie_open('h4');
+        itext('Active');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/selectorMultipleFocus@2x.png 2x', 'src', '../../../images/selectorMultipleFocus.png', 'alt', 'multiple selector active state');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param502 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'wpdNo.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var wpdNo = function (_Component) {
+    babelHelpers.inherits(wpdNo, _Component);
+
+    function wpdNo() {
+      babelHelpers.classCallCheck(this, wpdNo);
+      return babelHelpers.possibleConstructorReturn(this, (wpdNo.__proto__ || Object.getPrototypeOf(wpdNo)).apply(this, arguments));
+    }
+
+    return wpdNo;
+  }(Component);
+
+  Soy.register(wpdNo, templates);
+  this['metalNamed']['selector'] = this['metalNamed']['selector'] || {};
+  this['metalNamed']['selector']['wpdNo'] = wpdNo;
+  this['metalNamed']['selector']['templates'] = templates;
+  this['metal']['selector'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['selector'];
+
+  var wpdNo = function (_Component) {
+    babelHelpers.inherits(wpdNo, _Component);
+
+    function wpdNo() {
+      babelHelpers.classCallCheck(this, wpdNo);
+      return babelHelpers.possibleConstructorReturn(this, (wpdNo.__proto__ || Object.getPrototypeOf(wpdNo)).apply(this, arguments));
+    }
+
+    return wpdNo;
+  }(Component);
+
+  ;
+
+  Soy.register(wpdNo, templates);
+
+  this['metal']['wpdNo'] = wpdNo;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from datasetTemplate.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace OafJu.
+     * @public
+     */
+
+    goog.module('OafJu.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param529 = function param529() {
+        ie_open('h3');
+        itext('Description');
+        ie_close('h3');
+        ie_open('p');
+        itext('Dataset template shows how a dataset is displayed using Lexicon.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Structure');
+        ie_close('h3');
+        ie_open('p');
+        itext('This template counts with several patterns listed as follown that can be directly mapped with the image.');
+        ie_close('p');
+        ie_open('ol');
+        ie_open('li');
+        itext('Header toolbar: the actions menu must only contain direct actions over the application in question as import, export, permissions.');
+        ie_close('li');
+        ie_open('li');
+        itext('Navigation bar: includes different entries of the application. If there is only one it must be present in the bar. Search field is optional and only acts over the selected element in the navbar.');
+        ie_close('li');
+        ie_open('li');
+        itext('Dataset display');
+        ie_open('ol');
+        ie_open('li');
+        itext('Management bar');
+        ie_close('li');
+        ie_open('li');
+        itext('Breadcrumb (When further than first level)');
+        ie_close('li');
+        ie_open('li');
+        itext('Visualization: Table / List / Cards');
+        ie_close('li');
+        ie_open('li');
+        itext('Pagination bar');
+        ie_close('li');
+        ie_close('ol');
+        ie_close('li');
+        ie_open('li');
+        itext('Plus button: Place it in case your dataset allows adding more elements');
+        ie_close('li');
+        ie_close('ol');
+        ie_open('h3');
+        itext('Example');
+        ie_close('h3');
+        ie_open('p');
+        ie_open('img', null, null, 'srcset', '../../../images/DatasetTemplate@2x.png 2x', 'src', '../../../images/DatasetTemplate.png', 'alt', 'Form template example');
+        ie_close('img');
+        ie_close('p');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param529 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'OafJu.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var OafJu = function (_Component) {
+    babelHelpers.inherits(OafJu, _Component);
+
+    function OafJu() {
+      babelHelpers.classCallCheck(this, OafJu);
+      return babelHelpers.possibleConstructorReturn(this, (OafJu.__proto__ || Object.getPrototypeOf(OafJu)).apply(this, arguments));
+    }
+
+    return OafJu;
+  }(Component);
+
+  Soy.register(OafJu, templates);
+  this['metalNamed']['datasetTemplate'] = this['metalNamed']['datasetTemplate'] || {};
+  this['metalNamed']['datasetTemplate']['OafJu'] = OafJu;
+  this['metalNamed']['datasetTemplate']['templates'] = templates;
+  this['metal']['datasetTemplate'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['datasetTemplate'];
+
+  var OafJu = function (_Component) {
+    babelHelpers.inherits(OafJu, _Component);
+
+    function OafJu() {
+      babelHelpers.classCallCheck(this, OafJu);
+      return babelHelpers.possibleConstructorReturn(this, (OafJu.__proto__ || Object.getPrototypeOf(OafJu)).apply(this, arguments));
+    }
+
+    return OafJu;
+  }(Component);
+
+  ;
+
+  Soy.register(OafJu, templates);
+
+  this['metal']['OafJu'] = OafJu;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from index.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace dKKgg.
+     * @public
+     */
+
+    goog.module('dKKgg.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param547 = function param547() {
+        ie_open('h6');
+        itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
+        ie_close('h6');
+        ie_open('article', null, null, 'id', 'article1');
+        ie_open('h2');
+        itext('Lorem ipsum dolor sit amet');
+        ie_close('h2');
+        $templateAlias2({ code: 'var hello = function() {\n    console.log(\'Hello, World!\');\n};', mode: 'javascript' }, null, opt_ijData);
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article2');
+        ie_open('h2');
+        itext('Lorem ipsum dolor sit amet');
+        ie_close('h2');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article3');
+        ie_open('h2');
+        itext('Lorem ipsum dolor sit amet');
+        ie_close('h2');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_open('p');
+        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
+        ie_close('p');
+        ie_close('article');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param547 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'dKKgg.render';
+    }
+
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
+    templates = exports;
+    return exports;
+  });
+
+  var dKKgg = function (_Component) {
+    babelHelpers.inherits(dKKgg, _Component);
+
+    function dKKgg() {
+      babelHelpers.classCallCheck(this, dKKgg);
+      return babelHelpers.possibleConstructorReturn(this, (dKKgg.__proto__ || Object.getPrototypeOf(dKKgg)).apply(this, arguments));
+    }
+
+    return dKKgg;
+  }(Component);
+
+  Soy.register(dKKgg, templates);
+  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
+  this['metalNamed']['index']['dKKgg'] = dKKgg;
+  this['metalNamed']['index']['templates'] = templates;
+  this['metal']['index'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['index'];
+
+  var dKKgg = function (_Component) {
+    babelHelpers.inherits(dKKgg, _Component);
+
+    function dKKgg() {
+      babelHelpers.classCallCheck(this, dKKgg);
+      return babelHelpers.possibleConstructorReturn(this, (dKKgg.__proto__ || Object.getPrototypeOf(dKKgg)).apply(this, arguments));
+    }
+
+    return dKKgg;
+  }(Component);
+
+  ;
+
+  Soy.register(dKKgg, templates);
+
+  this['metal']['dKKgg'] = dKKgg;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from formsTemplate.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace txIsw.
+     * @public
+     */
+
+    goog.module('txIsw.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param538 = function param538() {
         ie_open('h3');
         itext('Description');
         ie_close('h3');
@@ -31735,11 +31902,11 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param596 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param538 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsPatternsTemplatesFormsTemplateHtml.render';
+      $render.soyTemplateName = 'txIsw.render';
     }
 
     exports.render.params = ["page", "site"];
@@ -31748,20 +31915,20 @@ babelHelpers;
     return exports;
   });
 
-  var docsPatternsTemplatesFormsTemplateHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTemplatesFormsTemplateHtml, _Component);
+  var txIsw = function (_Component) {
+    babelHelpers.inherits(txIsw, _Component);
 
-    function docsPatternsTemplatesFormsTemplateHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTemplatesFormsTemplateHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesFormsTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesFormsTemplateHtml)).apply(this, arguments));
+    function txIsw() {
+      babelHelpers.classCallCheck(this, txIsw);
+      return babelHelpers.possibleConstructorReturn(this, (txIsw.__proto__ || Object.getPrototypeOf(txIsw)).apply(this, arguments));
     }
 
-    return docsPatternsTemplatesFormsTemplateHtml;
+    return txIsw;
   }(Component);
 
-  Soy.register(docsPatternsTemplatesFormsTemplateHtml, templates);
+  Soy.register(txIsw, templates);
   this['metalNamed']['formsTemplate'] = this['metalNamed']['formsTemplate'] || {};
-  this['metalNamed']['formsTemplate']['docsPatternsTemplatesFormsTemplateHtml'] = docsPatternsTemplatesFormsTemplateHtml;
+  this['metalNamed']['formsTemplate']['txIsw'] = txIsw;
   this['metalNamed']['formsTemplate']['templates'] = templates;
   this['metal']['formsTemplate'] = templates;
   /* jshint ignore:end */
@@ -31773,22 +31940,22 @@ babelHelpers;
   var Soy = this['metal']['Soy'];
   var templates = this['metal']['formsTemplate'];
 
-  var docsPatternsTemplatesFormsTemplateHtml = function (_Component) {
-    babelHelpers.inherits(docsPatternsTemplatesFormsTemplateHtml, _Component);
+  var txIsw = function (_Component) {
+    babelHelpers.inherits(txIsw, _Component);
 
-    function docsPatternsTemplatesFormsTemplateHtml() {
-      babelHelpers.classCallCheck(this, docsPatternsTemplatesFormsTemplateHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsPatternsTemplatesFormsTemplateHtml.__proto__ || Object.getPrototypeOf(docsPatternsTemplatesFormsTemplateHtml)).apply(this, arguments));
+    function txIsw() {
+      babelHelpers.classCallCheck(this, txIsw);
+      return babelHelpers.possibleConstructorReturn(this, (txIsw.__proto__ || Object.getPrototypeOf(txIsw)).apply(this, arguments));
     }
 
-    return docsPatternsTemplatesFormsTemplateHtml;
+    return txIsw;
   }(Component);
 
   ;
 
-  Soy.register(docsPatternsTemplatesFormsTemplateHtml, templates);
+  Soy.register(txIsw, templates);
 
-  this['metal']['docsPatternsTemplatesFormsTemplateHtml'] = docsPatternsTemplatesFormsTemplateHtml;
+  this['metal']['txIsw'] = txIsw;
 }).call(this);
 }).call(this);
 //# sourceMappingURL=bundle.js.map
