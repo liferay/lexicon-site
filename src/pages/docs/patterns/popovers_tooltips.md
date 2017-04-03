@@ -9,10 +9,7 @@ weight: 1
 
 Popovers are short helpful and/or descriptive pieces of information that appear on hover state.
 
-![popover to be displayed on the top side of a question mark icon](../../../images/popoverTop.png) 
-![popover to be displayed on the bottom side of a question mark icon](../../../images/popoverBottom.png) 
-![popover to be displayed to the left side of a question mark icon](../../../images/popoverLeft.png) 
-![popover to be displayed to the right side of a question mark icon](../../../images/popoverRight.png) 
+![four different popovers with the arrow to the left, or right or top or down](../../../images/popovers.png) 
 
 ### Usage
 

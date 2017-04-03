@@ -48,4 +48,4 @@ The tools shown in the management bar in each state are always related to the ty
 
 ### Attributes
 
-![management bar attributes](../../../images/managementBarAttributes.png)
+![management bar attributes](../../../images/mangementBarAttributes.png)
