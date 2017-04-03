@@ -25,7 +25,7 @@ A textfield is the most basic pattern for introducing text for a conversation be
 
 #### Read only
 
-![default disabled state](../../../images/textfieldReadonly.png)
+![default disabled state](../../../images/textfieldReadOnly.png)
 
 ### Validations
 
@@ -52,4 +52,3 @@ A text area is similar to a text field input but for several lines of text. Text
 
 * Text area can be resized allowing the user to see more or less text as he please.
 * Text area states and validation states are the same as for the text field.
-
