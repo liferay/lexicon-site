@@ -22035,6 +22035,147 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
+    // This file was automatically generated from index.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace pageIndex.
+     * @public
+     */
+
+    goog.module('pageIndex.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      var param136 = function param136() {
+        $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
+        ie_open('div', null, null, 'class', 'sidebar-offset');
+        $header(null, null, opt_ijData);
+        ie_close('div');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param136 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'pageIndex.render';
+    }
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $header(opt_data, opt_ignored, opt_ijData) {
+      ie_open('header', null, null, 'class', 'header home');
+      ie_open('div', null, null, 'class', 'container-fluid');
+      ie_open('div', null, null, 'class', 'row');
+      ie_open('div', null, null, 'class', 'col-md-12');
+      ie_open('img', null, null, 'src', '/images/LexiconLogoHome.png');
+      ie_close('img');
+      ie_open('h1');
+      itext('Build consistent and beautiful web experiences easily');
+      ie_close('h1');
+      ie_close('div');
+      ie_close('div');
+      ie_close('div');
+      ie_close('header');
+    }
+    exports.header = $header;
+    if (goog.DEBUG) {
+      $header.soyTemplateName = 'pageIndex.header';
+    }
+
+    exports.render.params = ["site"];
+    exports.render.types = { "site": "any" };
+    exports.header.params = [];
+    exports.header.types = {};
+    templates = exports;
+    return exports;
+  });
+
+  var pageIndex = function (_Component) {
+    babelHelpers.inherits(pageIndex, _Component);
+
+    function pageIndex() {
+      babelHelpers.classCallCheck(this, pageIndex);
+      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
+    }
+
+    return pageIndex;
+  }(Component);
+
+  Soy.register(pageIndex, templates);
+  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
+  this['metalNamed']['index']['pageIndex'] = pageIndex;
+  this['metalNamed']['index']['templates'] = templates;
+  this['metal']['index'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['index'];
+
+  var pageIndex = function (_Component) {
+    babelHelpers.inherits(pageIndex, _Component);
+
+    function pageIndex() {
+      babelHelpers.classCallCheck(this, pageIndex);
+      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
+    }
+
+    return pageIndex;
+  }(Component);
+
+  ;
+
+  Soy.register(pageIndex, templates);
+
+  this['metal']['pageIndex'] = pageIndex;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
     // This file was automatically generated from blog.soy.
     // Please don't edit this file by hand.
 
@@ -22531,147 +22672,6 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace pageIndex.
-     * @public
-     */
-
-    goog.module('pageIndex.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('Sidebar.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param136 = function param136() {
-        $templateAlias2(soy.$$assignDefaults({ section: opt_data.site.index.children[1] }, opt_data), null, opt_ijData);
-        ie_open('div', null, null, 'class', 'sidebar-offset');
-        $header(null, null, opt_ijData);
-        ie_close('div');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param136 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageIndex.render';
-    }
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $header(opt_data, opt_ignored, opt_ijData) {
-      ie_open('header', null, null, 'class', 'header home');
-      ie_open('div', null, null, 'class', 'container-fluid');
-      ie_open('div', null, null, 'class', 'row');
-      ie_open('div', null, null, 'class', 'col-md-12');
-      ie_open('img', null, null, 'src', '/images/LexiconLogoHome.png');
-      ie_close('img');
-      ie_open('h1');
-      itext('Build consistent and beautiful web experiences easily');
-      ie_close('h1');
-      ie_close('div');
-      ie_close('div');
-      ie_close('div');
-      ie_close('header');
-    }
-    exports.header = $header;
-    if (goog.DEBUG) {
-      $header.soyTemplateName = 'pageIndex.header';
-    }
-
-    exports.render.params = ["site"];
-    exports.render.types = { "site": "any" };
-    exports.header.params = [];
-    exports.header.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var pageIndex = function (_Component) {
-    babelHelpers.inherits(pageIndex, _Component);
-
-    function pageIndex() {
-      babelHelpers.classCallCheck(this, pageIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
-    }
-
-    return pageIndex;
-  }(Component);
-
-  Soy.register(pageIndex, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['pageIndex'] = pageIndex;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var pageIndex = function (_Component) {
-    babelHelpers.inherits(pageIndex, _Component);
-
-    function pageIndex() {
-      babelHelpers.classCallCheck(this, pageIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageIndex.__proto__ || Object.getPrototypeOf(pageIndex)).apply(this, arguments));
-    }
-
-    return pageIndex;
-  }(Component);
-
-  ;
-
-  Soy.register(pageIndex, templates);
-
-  this['metal']['pageIndex'] = pageIndex;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
     // This file was automatically generated from markdown-post.soy.
     // Please don't edit this file by hand.
 
@@ -22711,7 +22711,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param158 = function param158() {
+      var param200 = function param200() {
         ie_open('article');
         ie_open('p');
         ie_open('strong');
@@ -22752,7 +22752,7 @@ babelHelpers;
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
         ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param158 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param200 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22857,7 +22857,7 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       opt_data = opt_data || {};
-      var param147 = function param147() {
+      var param189 = function param189() {
         ie_open('section');
         ie_open('p');
         ie_open('strong');
@@ -22892,7 +22892,7 @@ babelHelpers;
         ie_close('p');
         ie_close('section');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param147 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param189 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23125,11 +23125,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param168 = function param168() {
+      var param148 = function param148() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         $topics(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param168 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param148 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23193,18 +23193,18 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-13 col-md-offset-3 col-xs-16');
       ie_open('div', null, null, 'class', 'row');
-      var topicList191 = opt_data.site.index.children[1].children;
-      var topicListLen191 = topicList191.length;
-      for (var topicIndex191 = 0; topicIndex191 < topicListLen191; topicIndex191++) {
-        var topicData191 = topicList191[topicIndex191];
-        if (!topicData191.hidden) {
+      var topicList171 = opt_data.site.index.children[1].children;
+      var topicListLen171 = topicList171.length;
+      for (var topicIndex171 = 0; topicIndex171 < topicListLen171; topicIndex171++) {
+        var topicData171 = topicList171[topicIndex171];
+        if (!topicData171.hidden) {
           ie_open('div', null, null, 'class', 'col-md-6 col-xs-16');
-          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData191.url);
+          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData171.url);
           ie_open('div', null, null, 'class', 'topic-icon');
-          ie_void('span', null, null, 'class', 'icon-16-' + topicData191.icon);
+          ie_void('span', null, null, 'class', 'icon-16-' + topicData171.icon);
           ie_close('div');
           ie_open('h3', null, null, 'class', 'topic-title');
-          var dyn13 = topicData191.title;
+          var dyn13 = topicData171.title;
           if (typeof dyn13 == 'function') dyn13();else if (dyn13 != null) itext(dyn13);
           ie_close('h3');
           ie_close('a');
@@ -23326,7 +23326,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param197 = function param197() {
+      var param177 = function param177() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         ie_open('div', null, null, 'class', 'sidebar-offset');
         ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
@@ -23351,7 +23351,7 @@ babelHelpers;
         ie_close('div');
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param197 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param177 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -24020,19 +24020,19 @@ babelHelpers;
         itext('This message is meant to disappear after a short period of time, so it must be the case that the user doesn\'t have time to read it and there must not be a consequence for not reading it. This type of alerts have embedded links in case you need them.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertTemporaryInfo.png', 'alt', 'temporary information alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryInfo@2x.png 2x', 'src', '../../../images/alertTemporaryInfo.png', 'alt', 'temporary information alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertTemporarySuccess.png', 'alt', 'temporary success alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporarySuccess@2x.png 2x', 'src', '../../../images/alertTemporarySuccess.png', 'alt', 'temporary success alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertTemporaryWarning.png', 'alt', 'temporary warning alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryWarning@2x.png 2x', 'src', '../../../images/alertTemporaryWarning.png', 'alt', 'temporary warning alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertTemporaryError.png', 'alt', 'temporary error alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertTemporaryError@2x.png 2x', 'src', '../../../images/alertTemporaryError.png', 'alt', 'temporary error alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -24042,19 +24042,19 @@ babelHelpers;
         itext('Use this kind of alerts to inform users about something and to ensure they don\u2018t miss the information. These alerts can contain links to carry out actions such as undoing actions or visiting a page. This alert is placed right below the navigation bar.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertDismissInfo.png', 'alt', 'dismiss information alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissInfo@2x.png 2x', 'src', '../../../images/alertDismissInfo.png', 'alt', 'dismiss information alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertDismissSuccess.png', 'alt', 'dismiss success alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissSuccess@2x.png 2x', 'src', '../../../images/alertDismissSuccess.png', 'alt', 'dismiss success alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertDismissWarning.png', 'alt', 'dismiss warning alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissWarning@2x.png 2x', 'src', '../../../images/alertDismissWarning.png', 'alt', 'dismiss warning alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertDismissError.png', 'alt', 'dismiss error alert stripe');
+        ie_open('img', null, null, 'srcset', '../../../images/alertDismissError@2x.png 2x', 'src', '../../../images/alertDismissError.png', 'alt', 'dismiss error alert stripe');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -24064,14 +24064,14 @@ babelHelpers;
         itext('Notifications display information about something that has happened or is happening in the system. These alerts are not related to actions that are being performed by the user at that moment. Unlike alerts, notifications are displayed on the top right corner of the screen. Both desktop and mobile notifications have similar dimensions.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertsNotification.png', 'alt', 'set of four notification alerts');
+        ie_open('img', null, null, 'srcset', '../../../images/alertsNotification@2x.png 2x', 'src', '../../../images/alertsNotification.png', 'alt', 'set of four notification alerts');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/alertAttributes.png', 'alt', 'attributes for stripe alerts and notification alerts');
+        ie_open('img', null, null, 'srcset', '../../../images/alertAttributes@2x.png 2x', 'src', '../../../images/alertAttributes.png', 'alt', 'attributes for stripe alerts and notification alerts');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -24186,7 +24186,7 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/badgeSmallDefault.png', 'alt', 'small size default color badge');
+        ie_open('img', null, null, 'srcset', '../../../images/badgeSmallDefault@2x.png 2x', 'src', '../../../images/badgeSmallDefault.png', 'alt', 'small size default color badge');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24198,7 +24198,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/badgeDefaultDefault.png', 'alt', 'defualt size default color badge');
+        ie_open('img', null, null, 'srcset', '../../../images/badgeDefaultDefault@2x.png 2x', 'src', '../../../images/badgeDefaultDefault.png', 'alt', 'defualt size default color badge');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24210,7 +24210,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/badgeLargeDefault.png', 'alt', 'large size default color badge');
+        ie_open('img', null, null, 'srcset', '../../../images/badgeLargeDefault@2x.png 2x', 'src', '../../../images/badgeLargeDefault.png', 'alt', 'large size default color badge');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24239,7 +24239,7 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/badgeDefaultDefault.png', 'alt', 'defualt size default color badge');
+        ie_open('img', null, null, 'srcset', '../../../images/badgeDefaultDefault@2x.png 2x', 'src', '../../../images/badgeDefaultDefault.png', 'alt', 'defualt size default color badge');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24248,7 +24248,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/badgeCloseDefaultDefault.png', 'alt', 'defualt size default color close option badge');
+        ie_open('img', null, null, 'srcset', '../../../images/badgeCloseDefaultDefault@2x.png 2x', 'src', '../../../images/badgeCloseDefaultDefault.png', 'alt', 'defualt size default color close option badge');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24261,7 +24261,7 @@ babelHelpers;
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/badgesAttributes.png', 'alt', 'badge attributtes');
+        ie_open('img', null, null, 'srcset', '../../../images/badgesAttributes@2x.png 2x', 'src', '../../../images/badgesAttributes.png', 'alt', 'badge attributtes');
         ie_close('img');
         ie_close('p');
         ie_open('h2');
@@ -24296,7 +24296,7 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/labelSmallDefault.png', 'alt', 'small size default color label');
+        ie_open('img', null, null, 'srcset', '../../../images/labelSmallDefault@2x.png 2x', 'src', '../../../images/labelSmallDefault.png', 'alt', 'small size default color label');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24308,7 +24308,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/labelDefaultDefault.png', 'alt', 'defualt size default color label');
+        ie_open('img', null, null, 'srcset', '../../../images/labelDefaultDefault@2x.png 2x', 'src', '../../../images/labelDefaultDefault.png', 'alt', 'defualt size default color label');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24320,7 +24320,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/labelLargeDefault.png', 'alt', 'large size default color label');
+        ie_open('img', null, null, 'srcset', '../../../images/labelLargeDefault@2x.png 2x', 'src', '../../../images/labelLargeDefault.png', 'alt', 'large size default color label');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24349,7 +24349,7 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/labelDefaultDefault.png', 'alt', 'defualt size default color label');
+        ie_open('img', null, null, 'srcset', '../../../images/labelDefaultDefault@2x.png 2x', 'src', '../../../images/labelDefaultDefault.png', 'alt', 'defualt size default color label');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24358,7 +24358,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/labelCloseDefaultDefault.png', 'alt', 'defualt size default color close option label');
+        ie_open('img', null, null, 'srcset', '../../../images/labelCloseDefaultDefault@2x.png 2x', 'src', '../../../images/labelCloseDefaultDefault.png', 'alt', 'defualt size default color close option label');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24371,7 +24371,7 @@ babelHelpers;
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/badgesAttributes.png', 'alt', 'badge attributtes');
+        ie_open('img', null, null, 'srcset', '../../../images/badgesAttributes@2x.png 2x', 'src', '../../../images/badgesAttributes.png', 'alt', 'badge attributtes');
         ie_close('img');
         ie_close('p');
         ie_open('h2');
@@ -24406,7 +24406,7 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/stickerSquaredSmall.png', 'alt', 'small size default color sticker');
+        ie_open('img', null, null, 'srcset', '../../../images/stickerSquaredSmall@2x.png 2x', 'src', '../../../images/stickerSquaredSmall.png', 'alt', 'small size default color sticker');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24415,7 +24415,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/stickerSquaredDefault.png', 'alt', 'defualt size default color sticker');
+        ie_open('img', null, null, 'srcset', '../../../images/stickerSquaredDefault@2x.png 2x', 'src', '../../../images/stickerSquaredDefault.png', 'alt', 'defualt size default color sticker');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24424,7 +24424,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/stickerSquaredLarge.png', 'alt', 'large size default color sticker');
+        ie_open('img', null, null, 'srcset', '../../../images/stickerSquaredLarge@2x.png 2x', 'src', '../../../images/stickerSquaredLarge.png', 'alt', 'large size default color sticker');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24462,7 +24462,7 @@ babelHelpers;
         ie_close('li');
         ie_close('ul');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/stickerSample.png', 'alt', 'sticker positions example');
+        ie_open('img', null, null, 'srcset', '../../../images/stickerSample@2x.png 2x', 'src', '../../../images/stickerSample.png', 'alt', 'sticker positions example');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -24577,7 +24577,7 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/buttonPrimaryDefaultDefault.png', 'alt', 'button primary default size defuault state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonPrimaryDefaultDefault@2x.png 2x', 'src', '../../../images/buttonPrimaryDefaultDefault.png', 'alt', 'button primary default size defuault state');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24589,7 +24589,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/buttonSecondaryDefaultDefault.png', 'alt', 'button secondary default size defuault state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonSecondaryDefaultDefault@2x.png 2x', 'src', '../../../images/buttonSecondaryDefaultDefault.png', 'alt', 'button secondary default size defuault state');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24601,7 +24601,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/buttonLinkDefaultDefault.png', 'alt', 'button link default size defuault state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonLinkDefaultDefault@2x.png 2x', 'src', '../../../images/buttonLinkDefaultDefault.png', 'alt', 'button link default size defuault state');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24620,21 +24620,21 @@ babelHelpers;
         itext('Default state');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonsDefault.png', 'alt', 'set of three button types in default state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonsDefault@2x.png 2x', 'src', '../../../images/buttonsDefault.png', 'alt', 'set of three button types in default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Active & Hover states');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonsActive.png', 'alt', 'set of three button types in active state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonsActive@2x.png 2x', 'src', '../../../images/buttonsActive.png', 'alt', 'set of three button types in active state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Disable state');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonsDisabled.png', 'alt', 'set of three button types in disabled state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonsDisabled@2x.png 2x', 'src', '../../../images/buttonsDisabled.png', 'alt', 'set of three button types in disabled state');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -24654,7 +24654,7 @@ babelHelpers;
         ie_open('tbody');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/buttonPrimaryLargeDefault.png', 'alt', 'button primary large size disable state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonPrimaryLargeDefault@2x.png 2x', 'src', '../../../images/buttonPrimaryLargeDefault.png', 'alt', 'button primary large size disable state');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24666,7 +24666,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/buttonPrimaryDefaultDefault.png', 'alt', 'button primary default size disable state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonPrimaryDefaultDefault@2x.png 2x', 'src', '../../../images/buttonPrimaryDefaultDefault.png', 'alt', 'button primary default size disable state');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24678,7 +24678,7 @@ babelHelpers;
         ie_close('tr');
         ie_open('tr');
         ie_open('td');
-        ie_open('img', null, null, 'src', '../../../images/buttonPrimarySmallDefault.png', 'alt', 'button primary small size disable state');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonPrimarySmallDefault@2x.png 2x', 'src', '../../../images/buttonPrimarySmallDefault.png', 'alt', 'button primary small size disable state');
         ie_close('img');
         ie_close('td');
         ie_open('td');
@@ -24704,7 +24704,7 @@ babelHelpers;
         itext('.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonIcon.png', 'alt', 'icon button');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonIcon@2x.png 2x', 'src', '../../../images/buttonIcon.png', 'alt', 'icon button');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -24714,7 +24714,7 @@ babelHelpers;
         itext('All buttons can also be configured at block level. Use this configuration in those cases that you need the user to realize there is an important action to be done. It could be used as a load more action below a list, as an example. Please do not use it in forms. Be always careful with the type button to use, primary is not always the best choice neither the only configuration.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonBlockLevelPrimary.png', 'alt', 'block level button primary state, default size');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonBlockLevelPrimary@2x.png 2x', 'src', '../../../images/buttonBlockLevelPrimary.png', 'alt', 'block level button primary state, default size');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -24724,7 +24724,7 @@ babelHelpers;
         itext('Dropdown buttons are always used together with a dropdown menu.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonDropdownDefault.png', 'alt', 'dropdown button default size');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonDropdownDefault@2x.png 2x', 'src', '../../../images/buttonDropdownDefault.png', 'alt', 'dropdown button default size');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -24734,7 +24734,7 @@ babelHelpers;
         itext('Split buttons are used in those cases where you need to offer the user a quick main action but salso secondary actions.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonSplitDefault.png', 'alt', 'button splitted default size');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonSplitDefault@2x.png 2x', 'src', '../../../images/buttonSplitDefault.png', 'alt', 'button splitted default size');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -24744,7 +24744,7 @@ babelHelpers;
         itext('Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonGroupDefault.png', 'alt', 'button gruop or segmented button, 3 segments, default size');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonGroupDefault@2x.png 2x', 'src', '../../../images/buttonGroupDefault.png', 'alt', 'button gruop or segmented button, 3 segments, default size');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -24754,14 +24754,14 @@ babelHelpers;
         itext('The action button is always a primary button with a special size of 64x64 due to its importance. This button floats on the bottom right corner of the screen. It contains all the adding or creating actions in a context. When there is only one action to perform in the page where it is used the button triggers the action. In case there are more that one actions, all the actions appear listed in a dropdown panel that is triggered on click interaction with the button. Once selected the action in the list, the dropdown is closed.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonPlus.png', 'alt', 'plus button or button actions');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonPlus@2x.png 2x', 'src', '../../../images/buttonPlus.png', 'alt', 'plus button or button actions');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonAttributtes.png', 'alt', 'button attributtes');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonAttributtes@2x.png 2x', 'src', '../../../images/buttonAttributtes.png', 'alt', 'button attributtes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -24909,14 +24909,14 @@ babelHelpers;
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/cardLayout.png', 'alt', 'default card layout');
+        ie_open('img', null, null, 'srcset', '../../../images/cardLayout@2x.png 2x', 'src', '../../../images/cardLayout.png', 'alt', 'default card layout');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Examples of use');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/cardExample.png', 'alt', 'three different examples of card configuration');
+        ie_open('img', null, null, 'srcset', '../../../images/cardExample@2x.png 2x', 'src', '../../../images/cardExample.png', 'alt', 'three different examples of card configuration');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -24929,7 +24929,7 @@ babelHelpers;
         itext('This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/cardHorizontal.png', 'alt', 'horizontal card');
+        ie_open('img', null, null, 'srcset', '../../../images/cardHorizontal@2x.png 2x', 'src', '../../../images/cardHorizontal.png', 'alt', 'horizontal card');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -25028,7 +25028,7 @@ babelHelpers;
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/searchCollapse.png', 'alt', 'search collapse image with desktop and mobile examples');
+        ie_open('img', null, null, 'srcset', '../../../images/searchCollapse@2x.png 2x', 'src', '../../../images/searchCollapse.png', 'alt', 'search collapse image with desktop and mobile examples');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -25149,7 +25149,7 @@ babelHelpers;
         itext('an Primary colors define part of the visual identity of Lexicon as a system. These colors have been carefully thought to be easily combined and be sure that accessibility is well covered.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/colorsPrimary.png', 'alt', 'set of 4 primary colors');
+        ie_open('img', null, null, 'srcset', '../../../images/colorsPrimary@2x.png 2x', 'src', '../../../images/colorsPrimary.png', 'alt', 'set of 4 primary colors');
         ie_close('img');
         ie_close('p');
         ie_open('table');
@@ -25205,7 +25205,7 @@ babelHelpers;
         itext('Secondary colors are frequently used colors, also important as primary but do not define the visual identity in a stronger way as Primary colors do.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/colorsSecondary.png', 'alt', 'set of 5 secondary colors and its variations, also 5');
+        ie_open('img', null, null, 'srcset', '../../../images/colorsSecondary@2x.png 2x', 'src', '../../../images/colorsSecondary.png', 'alt', 'set of 5 secondary colors and its variations, also 5');
         ie_close('img');
         ie_close('p');
         ie_open('table');
@@ -25929,7 +25929,7 @@ babelHelpers;
         itext('The default dropdown is just a panel not prepared for scrolling the content inside it. Use this type when the number of options you want to offer is short or the panel is big enough to contain all the elements you want to use.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/dropdownMenu.png', 'alt', 'default dropdown menu');
+        ie_open('img', null, null, 'srcset', '../../../images/dropdownMenu@2x.png 2x', 'src', '../../../images/dropdownMenu.png', 'alt', 'default dropdown menu');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -25939,7 +25939,7 @@ babelHelpers;
         itext('Scrolling content type is prepared to have scroll in all the dropdown menu or just a part of it. Use it in case your dataset is occupies more than the space you want to provide the dropdown menu in the screen.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/dropdownMenuScroll.png', 'alt', 'default dropdown menu with scroll');
+        ie_open('img', null, null, 'srcset', '../../../images/dropdownMenuScroll@2x.png 2x', 'src', '../../../images/dropdownMenuScroll.png', 'alt', 'default dropdown menu with scroll');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -25949,14 +25949,14 @@ babelHelpers;
         itext('This example shows you how dropdowns would look like in a screen when displayed from the kebab menu and the action button. As you can see in the example the dropdown panel arrow can be positioned in different positions. Check Quartz implementation to get more details on that.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/dropdownMenuExample.png', 'alt', 'default dropdown menu example');
+        ie_open('img', null, null, 'srcset', '../../../images/dropdownMenuExample@2x.png 2x', 'src', '../../../images/dropdownMenuExample.png', 'alt', 'default dropdown menu example');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/dropdownAttributes.png', 'alt', 'dropdown attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/dropdownAttributes@2x.png 2x', 'src', '../../../images/dropdownAttributes.png', 'alt', 'dropdown attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -26079,11 +26079,11 @@ babelHelpers;
         itext('4px grid');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/grid.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_open('img', null, null, 'srcset', '../../../images/Grid@2x.png 2x', 'src', '../../../images/Grid.png', 'alt', 'form distances to build up forms using Lexicon');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/meausres.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_open('img', null, null, 'srcset', '../../../images/meausres@2x.png 2x', 'src', '../../../images/meausres.png', 'alt', 'form distances to build up forms using Lexicon');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -26122,7 +26122,7 @@ babelHelpers;
         itext('Form example');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/formDistances.png', 'alt', 'form distances to build up forms using Lexicon');
+        ie_open('img', null, null, 'srcset', '../../../images/formDistances@2x.png 2x', 'src', '../../../images/formDistances.png', 'alt', 'form distances to build up forms using Lexicon');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -26245,7 +26245,7 @@ babelHelpers;
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/headerToolbar.png', 'alt', 'header tooldbar dark background');
+        ie_open('img', null, null, 'srcset', '../../../images/headerToolbar@2x.png 2x', 'src', '../../../images/headerToolbar.png', 'alt', 'header tooldbar dark background');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -26632,7 +26632,7 @@ babelHelpers;
         itext('Usage');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
+        ie_open('img', null, null, 'srcset', '../../../images/listItem@2x.png 2x', 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -26654,7 +26654,7 @@ babelHelpers;
         itext('Whenever you need to group series of list entries, you can use the list group heading for that.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/listGroup.png', 'alt', 'list group includes a heading');
+        ie_open('img', null, null, 'srcset', '../../../images/listGroup@2x.png 2x', 'src', '../../../images/listGroup.png', 'alt', 'list group includes a heading');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -26681,28 +26681,28 @@ babelHelpers;
         itext('Default states');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
+        ie_open('img', null, null, 'srcset', '../../../images/listItem@2x.png 2x', 'src', '../../../images/listItem.png', 'alt', 'list entry in default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Selected state');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/listSelected.png', 'alt', 'list entry in selected state');
+        ie_open('img', null, null, 'srcset', '../../../images/listSelected@2x.png 2x', 'src', '../../../images/listSelected.png', 'alt', 'list entry in selected state');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/listAttributes.png', 'alt', 'list attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/listAttributes@2x.png 2x', 'src', '../../../images/listAttributes.png', 'alt', 'list attributes');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Example of use');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/listExample.png', 'alt', 'list with 3 entries, one in default state, one in selected state, one with actions menu open');
+        ie_open('img', null, null, 'srcset', '../../../images/listExample@2x.png 2x', 'src', '../../../images/listExample.png', 'alt', 'list with 3 entries, one in default state, one in selected state, one with actions menu open');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -27033,7 +27033,7 @@ babelHelpers;
         itext('Management Bar is an extension of Navbar. Combine different management-bar components to create a toolbar that fits your needs.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
+        ie_open('img', null, null, 'srcset', '../../../images/managementBarState1@2x.png 2x', 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -27052,7 +27052,7 @@ babelHelpers;
         itext('It displays tools focused on filtering, sorting and data visualization.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
+        ie_open('img', null, null, 'srcset', '../../../images/managementBarState1@2x.png 2x', 'src', '../../../images/managementBarState1.png', 'alt', 'state one of the management bar');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -27065,7 +27065,7 @@ babelHelpers;
         itext('The background color and the way to show the icons of the bar in this state changes to differentiate from the default state and establish a visual relation with other forms of showing this tools.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/managementBarState2.png', 'alt', 'state two of the management bar');
+        ie_open('img', null, null, 'srcset', '../../../images/managementBarState2@2x.png 2x', 'src', '../../../images/managementBarState2.png', 'alt', 'state two of the management bar');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -27102,7 +27102,7 @@ babelHelpers;
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/mangementBarAttributes.png', 'alt', 'management bar attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/mangementBarAttributes@2x.png 2x', 'src', '../../../images/mangementBarAttributes.png', 'alt', 'management bar attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -27303,7 +27303,7 @@ babelHelpers;
         itext('This is the classic composition of a modal window with its three main parts: header, body and footer.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/modal.png', 'alt', 'modal window over a dark transparent background');
+        ie_open('img', null, null, 'srcset', '../../../images/modal@2x.png 2x', 'src', '../../../images/modal.png', 'alt', 'modal window over a dark transparent background');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -27313,7 +27313,7 @@ babelHelpers;
         itext('This is the case when you don\'t need a footer bar to place your icons.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/modalHeaderBody.png', 'alt', 'modal window over a dark transparent background only header and body');
+        ie_open('img', null, null, 'srcset', '../../../images/modalHeaderBody@2x.png 2x', 'src', '../../../images/modalHeaderBody.png', 'alt', 'modal window over a dark transparent background only header and body');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -27323,7 +27323,7 @@ babelHelpers;
         itext('This case is thought for those cases where you need to just show text and buttons to agree or cancel.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/modalBodyFooter.png', 'alt', 'modal window over a dark transparent background only body and footer');
+        ie_open('img', null, null, 'srcset', '../../../images/modalBodyFooter@2x.png 2x', 'src', '../../../images/modalBodyFooter.png', 'alt', 'modal window over a dark transparent background only body and footer');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -27339,14 +27339,14 @@ babelHelpers;
         itext('When a modal reaches the mobile viewport size its look and feel is transformed to the one you see below offering a mobile friendly version. Modal occupies the hole screen allowing only the interaction with the modal and its content.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/modalMobileWhiteBg.png', 'alt', 'modal window mobile version always full screen');
+        ie_open('img', null, null, 'srcset', '../../../images/modalMobileWhiteBg@2x.png 2x', 'src', '../../../images/modalMobileWhiteBg.png', 'alt', 'modal window mobile version always full screen');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/modalAttributes.png', 'alt', 'modal attributes for desktop and mobile');
+        ie_open('img', null, null, 'srcset', '../../../images/modalAttributes@2x.png 2x', 'src', '../../../images/modalAttributes.png', 'alt', 'modal attributes for desktop and mobile');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -27482,7 +27482,7 @@ babelHelpers;
         itext('A vertical navigation can be simple or it can be nested, where some of the entries could have interior levels of navigation.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/navStacked.png', 'alt', 'nav stacked');
+        ie_open('img', null, null, 'srcset', '../../../images/navStacked@2x.png 2x', 'src', '../../../images/navStacked.png', 'alt', 'nav stacked');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -27492,7 +27492,7 @@ babelHelpers;
         itext('It is possible to nest as many levels as you want in a nested navigation but we encourage to use a maximum of two nested levels.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/navNested.png', 'alt', 'nav stacked');
+        ie_open('img', null, null, 'srcset', '../../../images/navNested@2x.png 2x', 'src', '../../../images/navNested.png', 'alt', 'nav stacked');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -27506,7 +27506,7 @@ babelHelpers;
         itext('.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/navHorizontal.png', 'alt', 'nav stacked');
+        ie_open('img', null, null, 'srcset', '../../../images/navHorizontal@2x.png 2x', 'src', '../../../images/navHorizontal.png', 'alt', 'nav stacked');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -27670,7 +27670,7 @@ babelHelpers;
         itext('Nav tabs default are used in exterior levels and just below the navigation bar. This kind of tabs give a better context as the border helps the integration with a box below it.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tabsBordered.png', 'alt', 'bordered tabs');
+        ie_open('img', null, null, 'srcset', '../../../images/tabsBordered@2x.png 2x', 'src', '../../../images/tabsBordered.png', 'alt', 'bordered tabs');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -27680,14 +27680,14 @@ babelHelpers;
         itext('Non-bordered tabs are used in interior levels such as inside forms and in search results for different repositories.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tabsNotBordered.png', 'alt', 'not bordered tabs');
+        ie_open('img', null, null, 'srcset', '../../../images/tabsNotBordered@2x.png 2x', 'src', '../../../images/tabsNotBordered.png', 'alt', 'not bordered tabs');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tabsAttributes.png', 'alt', 'tabs Attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/tabsAttributes@2x.png 2x', 'src', '../../../images/tabsAttributes.png', 'alt', 'tabs Attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -27807,7 +27807,7 @@ babelHelpers;
         itext('A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
+        ie_open('img', null, null, 'srcset', '../../../images/Navbar@2x.png 2x', 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -27835,7 +27835,7 @@ babelHelpers;
         itext(' Navbar with search bar');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
+        ie_open('img', null, null, 'srcset', '../../../images/Navbar@2x.png 2x', 'src', '../../../images/Navbar.png', 'alt', 'navigation bar with 2 entries and a search field');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -27845,7 +27845,7 @@ babelHelpers;
         itext(' Navbar with search bar and focus state on search textfield');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/NavbarFocusSearch.png', 'alt', 'navigation bar with 2 entries and a search field and on focus');
+        ie_open('img', null, null, 'srcset', '../../../images/NavbarFocusSearch@2x.png 2x', 'src', '../../../images/NavbarFocusSearch.png', 'alt', 'navigation bar with 2 entries and a search field and on focus');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -27858,18 +27858,18 @@ babelHelpers;
         ie_close('a');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/NavbarDropdown.png', 'alt', 'navbar in mobile viewport with some navigation options collpased in a dropdown');
+        ie_open('img', null, null, 'srcset', '../../../images/NavbarDropdown@2x.png 2x', 'src', '../../../images/NavbarDropdown.png', 'alt', 'navbar in mobile viewport with some navigation options collpased in a dropdown');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/NavbarDropdownMobile.png', 'alt', 'navbar in mobile viewport with all navigation options collpased in a dropdown');
+        ie_open('img', null, null, 'srcset', '../../../images/NavbarDropdownMobile@2x.png 2x', 'src', '../../../images/NavbarDropdownMobile.png', 'alt', 'navbar in mobile viewport with all navigation options collpased in a dropdown');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/navbarAttributes.png', 'alt', 'navbar attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/navbarAttributes@2x.png 2x', 'src', '../../../images/navbarAttributes.png', 'alt', 'navbar attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -28238,7 +28238,7 @@ babelHelpers;
         itext('Use it when you need a simple pagination pattern that does not require to change the page size.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/pagination.png', 'alt', 'simple pagination');
+        ie_open('img', null, null, 'srcset', '../../../images/pagination@2x.png 2x', 'src', '../../../images/pagination.png', 'alt', 'simple pagination');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -28265,14 +28265,14 @@ babelHelpers;
         ie_close('li');
         ie_close('ul');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/paginationBar.png', 'alt', 'pagination bar with a dropdown for page size and the simple pagination component');
+        ie_open('img', null, null, 'srcset', '../../../images/paginationBar@2x.png 2x', 'src', '../../../images/paginationBar.png', 'alt', 'pagination bar with a dropdown for page size and the simple pagination component');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/paginationAttributes.png', 'alt', 'pagination attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/paginationAttributes@2x.png 2x', 'src', '../../../images/paginationAttributes.png', 'alt', 'pagination attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -28410,7 +28410,7 @@ babelHelpers;
         itext('Use this configuration to separate content inside a form.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/panelNaked.png', 'alt', 'panel only body most simple version');
+        ie_open('img', null, null, 'srcset', '../../../images/panelNaked@2x.png 2x', 'src', '../../../images/panelNaked.png', 'alt', 'panel only body most simple version');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -28423,7 +28423,7 @@ babelHelpers;
         itext('Do never use it to collapse content without a disclosure arrow. Use an accordion in that case.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/panelHeaderBody.png', 'alt', 'panel with header');
+        ie_open('img', null, null, 'srcset', '../../../images/panelHeaderBody@2x.png 2x', 'src', '../../../images/panelHeaderBody.png', 'alt', 'panel with header');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -28439,7 +28439,7 @@ babelHelpers;
         itext('It is not a good practice to anidate accordions. Please try to avoid it.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/panelCollasable.png', 'alt', 'collapsable panels');
+        ie_open('img', null, null, 'srcset', '../../../images/panelCollasable@2x.png 2x', 'src', '../../../images/panelCollasable.png', 'alt', 'collapsable panels');
         ie_close('img');
         ie_close('p');
         ie_open('p');
@@ -28453,7 +28453,7 @@ babelHelpers;
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/panelAttributes.png', 'alt', 'panel attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/panelAttributes@2x.png 2x', 'src', '../../../images/panelAttributes.png', 'alt', 'panel attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -28573,7 +28573,7 @@ babelHelpers;
         itext('Popovers are short helpful and/or descriptive pieces of information that appear on hover state.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/popovers.png', 'alt', 'four different popovers with the arrow to the left, or right or top or down');
+        ie_open('img', null, null, 'srcset', '../../../images/popovers@2x.png 2x', 'src', '../../../images/popovers.png', 'alt', 'four different popovers with the arrow to the left, or right or top or down');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -28583,14 +28583,14 @@ babelHelpers;
         itext('Popovers are used together with the question mark icon as an affordance to let the user understand there is something to read that can be useful. Popovers contain information such as help to understand a context.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/helpIcon.png', 'alt', 'help icon');
+        ie_open('img', null, null, 'srcset', '../../../images/helpIcon@2x.png 2x', 'src', '../../../images/helpIcon.png', 'alt', 'help icon');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/popoverAttributes.png', 'alt', 'popover attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/popoverAttributes@2x.png 2x', 'src', '../../../images/popoverAttributes.png', 'alt', 'popover attributes');
         ie_close('img');
         ie_close('p');
         ie_open('h2');
@@ -28600,7 +28600,7 @@ babelHelpers;
         itext('Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tooltips.png', 'alt', 'the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases');
+        ie_open('img', null, null, 'srcset', '../../../images/tooltips@2x.png 2x', 'src', '../../../images/tooltips.png', 'alt', 'the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -28619,7 +28619,7 @@ babelHelpers;
         itext('Attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tooltipAttributes.png', 'alt', 'tooltip attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/tooltipAttributes@2x.png 2x', 'src', '../../../images/tooltipAttributes.png', 'alt', 'tooltip attributes');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -29248,14 +29248,14 @@ babelHelpers;
         itext('Default state');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tableRow.png', 'alt', 'table row in default state');
+        ie_open('img', null, null, 'srcset', '../../../images/tableRow@2x.png 2x', 'src', '../../../images/tableRow.png', 'alt', 'table row in default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Selected state');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tableRowSelected.png', 'alt', 'table row in selected state');
+        ie_open('img', null, null, 'srcset', '../../../images/tableRowSelected@2x.png 2x', 'src', '../../../images/tableRowSelected.png', 'alt', 'table row in selected state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -29265,14 +29265,14 @@ babelHelpers;
         itext('By default, Lexicon does not use the hover state in tables.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tableRowHover.png', 'alt', 'table row hover');
+        ie_open('img', null, null, 'srcset', '../../../images/tableRowHover@2x.png 2x', 'src', '../../../images/tableRowHover.png', 'alt', 'table row hover');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
         itext('Row attributes');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tableRowAttributes.png', 'alt', 'table row attributes');
+        ie_open('img', null, null, 'srcset', '../../../images/tableRowAttributes@2x.png 2x', 'src', '../../../images/tableRowAttributes.png', 'alt', 'table row attributes');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -29315,7 +29315,7 @@ babelHelpers;
         itext('Due to the complexity of a table in mobile, Lexicon does not define this pattern for mobile viewport size.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/tableExample.png', 'alt', 'table example');
+        ie_open('img', null, null, 'srcset', '../../../images/tableExample@2x.png 2x', 'src', '../../../images/tableExample.png', 'alt', 'table example');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -29798,7 +29798,7 @@ babelHelpers;
         itext('Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/HelveticaNeue.png', 'alt', 'helvetica neue example in regular, medium and bold');
+        ie_open('img', null, null, 'srcset', '../../../images/HelveticaNeue@2x.png 2x', 'src', '../../../images/HelveticaNeue.png', 'alt', 'helvetica neue example in regular, medium and bold');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -29971,7 +29971,7 @@ babelHelpers;
         itext('Size');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes');
+        ie_open('img', null, null, 'srcset', '../../../images/userIcon@2x.png 2x', 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes');
         ie_close('img');
         ie_close('p');
         ie_open('table');
@@ -30046,7 +30046,7 @@ babelHelpers;
         itext('User images help to personalize the interface. In case you have your user image and can make use of it, use this type of user icon.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/userIconImages.png', 'alt', 'all 6 user icons sizes with image');
+        ie_open('img', null, null, 'srcset', '../../../images/userIconImages@2x.png 2x', 'src', '../../../images/userIconImages.png', 'alt', 'all 6 user icons sizes with image');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -30056,7 +30056,7 @@ babelHelpers;
         itext('Sometimes you won\u2019t have the user image or won\u2019t be allowed to use it. In those cases use this pattern. The text must be always in capital letters and a maximum of 2 letters. Use first letter from Name and Surname (NS).');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes with text');
+        ie_open('img', null, null, 'srcset', '../../../images/userIcon@2x.png 2x', 'src', '../../../images/userIcon.png', 'alt', 'all 6 user icons sizes with text');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -30380,7 +30380,7 @@ babelHelpers;
         itext('Fields can be mandatory/required to fill in a form. The way to mark a field as mandatory is:');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfieldMandatory.png', 'alt', 'example of mandatory field');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldMandatory@2x.png 2x', 'src', '../../../images/textfieldMandatory.png', 'alt', 'example of mandatory field');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -30409,7 +30409,7 @@ babelHelpers;
         itext('General form actions always placed at the end of the form and they are always placed in same order: Primary, Secondary (default), Negative (Link). The button size to use is large.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/buttonOrder.png', 'alt', 'button order example');
+        ie_open('img', null, null, 'srcset', '../../../images/buttonOrder@2x.png 2x', 'src', '../../../images/buttonOrder.png', 'alt', 'button order example');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -30561,21 +30561,21 @@ babelHelpers;
         itext('Default');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/checkbox.png', 'alt', 'checkbox default state');
+        ie_open('img', null, null, 'srcset', '../../../images/checkbox@2x.png 2x', 'src', '../../../images/checkbox.png', 'alt', 'checkbox default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Active');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/checkboxSelected.png', 'alt', 'checkbox active state');
+        ie_open('img', null, null, 'srcset', '../../../images/checkboxSelected@2x.png 2x', 'src', '../../../images/checkboxSelected.png', 'alt', 'checkbox active state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Disable');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/checkboxDisabled.png', 'alt', 'checkbox disable state');
+        ie_open('img', null, null, 'srcset', '../../../images/checkboxDisabled@2x.png 2x', 'src', '../../../images/checkboxDisabled.png', 'alt', 'checkbox disable state');
         ie_close('img');
         ie_close('p');
         ie_open('h2');
@@ -30608,21 +30608,21 @@ babelHelpers;
         itext('Default');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/radiobuttonOff.png', 'alt', 'radio button default state');
+        ie_open('img', null, null, 'srcset', '../../../images/radiobuttonOff@2x.png 2x', 'src', '../../../images/radiobuttonOff.png', 'alt', 'radio button default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Active');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/radiobuttonOn.png', 'alt', 'radio button active state');
+        ie_open('img', null, null, 'srcset', '../../../images/radiobuttonOn@2x.png 2x', 'src', '../../../images/radiobuttonOn.png', 'alt', 'radio button active state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Disable');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/radiobuttonDisabled.png', 'alt', 'radio button disable state');
+        ie_open('img', null, null, 'srcset', '../../../images/radiobuttonDisabled@2x.png 2x', 'src', '../../../images/radiobuttonDisabled.png', 'alt', 'radio button disable state');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -30694,21 +30694,21 @@ babelHelpers;
         itext('Default');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/switchOff.png', 'alt', 'switch default state');
+        ie_open('img', null, null, 'srcset', '../../../images/switchOff@2x.png 2x', 'src', '../../../images/switchOff.png', 'alt', 'switch default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Active');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/switchOn.png', 'alt', 'switch active state');
+        ie_open('img', null, null, 'srcset', '../../../images/switchOn@2x.png 2x', 'src', '../../../images/switchOn.png', 'alt', 'switch active state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Disable');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/switchDisabled.png', 'alt', 'switch disable state');
+        ie_open('img', null, null, 'srcset', '../../../images/switchDisabled@2x.png 2x', 'src', '../../../images/switchDisabled.png', 'alt', 'switch disable state');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -30721,7 +30721,7 @@ babelHelpers;
         itext('This type of toggles have labels around as the title label or other support label that make more explicit the switch value. The support label can be either at the top, right, bottom or left and its value should change with the toggle state change as the example shows. All the labels have the interaction that the switch have making the toggle more accessible.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/switchAttributes.png', 'alt', 'switch with title and label on the right side, all off them switch off and on the toggle');
+        ie_open('img', null, null, 'srcset', '../../../images/switchAttributes@2x.png 2x', 'src', '../../../images/switchAttributes.png', 'alt', 'switch with title and label on the right side, all off them switch off and on the toggle');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
@@ -30731,7 +30731,7 @@ babelHelpers;
         itext('Toggles can also have an icon inside the toggle circle that helps to identify the action. A toggles with icon can also have data attributes as the previous variation.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/switchIcon.png', 'alt', 'toggle with icon');
+        ie_open('img', null, null, 'srcset', '../../../images/switchIcon@2x.png 2x', 'src', '../../../images/switchIcon.png', 'alt', 'toggle with icon');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -30863,14 +30863,14 @@ babelHelpers;
         itext('Default');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/selector.png', 'alt', 'selector default state');
+        ie_open('img', null, null, 'srcset', '../../../images/selector@2x.png 2x', 'src', '../../../images/selector.png', 'alt', 'selector default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Active');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/selectorFocus.png', 'alt', 'selector active state');
+        ie_open('img', null, null, 'srcset', '../../../images/selectorFocus@2x.png 2x', 'src', '../../../images/selectorFocus.png', 'alt', 'selector active state');
         ie_close('img');
         ie_close('p');
         ie_open('h2');
@@ -30886,14 +30886,14 @@ babelHelpers;
         itext('Default');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/selectorMultiple.png', 'alt', 'multiple selector default state');
+        ie_open('img', null, null, 'srcset', '../../../images/selectorMultiple@2x.png 2x', 'src', '../../../images/selectorMultiple.png', 'alt', 'multiple selector default state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Active');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/selectorMultipleFocus.png', 'alt', 'multiple selector active state');
+        ie_open('img', null, null, 'srcset', '../../../images/selectorMultipleFocus@2x.png 2x', 'src', '../../../images/selectorMultipleFocus.png', 'alt', 'multiple selector active state');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -31028,33 +31028,33 @@ babelHelpers;
         itext('Default input group');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/inputGroupDefault.png', 'alt', 'input group default configuration');
+        ie_open('img', null, null, 'srcset', '../../../images/inputGroupDefault@2x.png 2x', 'src', '../../../images/inputGroupDefault.png', 'alt', 'input group default configuration');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Input group with button');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/inputGroupButtonLeft.png', 'alt', 'input group with left button');
+        ie_open('img', null, null, 'srcset', '../../../images/inputGroupButtonLeft@2x.png 2x', 'src', '../../../images/inputGroupButtonLeft.png', 'alt', 'input group with left button');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/inputGroupButtonRight.png', 'alt', 'input group with right button');
+        ie_open('img', null, null, 'srcset', '../../../images/inputGroupButtonRight@2x.png 2x', 'src', '../../../images/inputGroupButtonRight.png', 'alt', 'input group with right button');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Input group with units');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/inputGroupMassLeft.png', 'alt', 'input group with mass on the left');
+        ie_open('img', null, null, 'srcset', '../../../images/inputGroupMassLeft@2x.png 2x', 'src', '../../../images/inputGroupMassLeft.png', 'alt', 'input group with mass on the left');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/inputGroupMassRight.png', 'alt', 'input group with mass on the right');
+        ie_open('img', null, null, 'srcset', '../../../images/inputGroupMassRight@2x.png 2x', 'src', '../../../images/inputGroupMassRight.png', 'alt', 'input group with mass on the right');
         ie_close('img');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/inputGroupMassLeftRight.png', 'alt', 'input group with mass on both sides');
+        ie_open('img', null, null, 'srcset', '../../../images/inputGroupMassLeftRight@2x.png 2x', 'src', '../../../images/inputGroupMassLeftRight.png', 'alt', 'input group with mass on both sides');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -31186,28 +31186,28 @@ babelHelpers;
         itext('Default');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfield.png', 'alt', 'default empty state');
+        ie_open('img', null, null, 'srcset', '../../../images/textfield@2x.png 2x', 'src', '../../../images/textfield.png', 'alt', 'default empty state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Active');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfieldActive.png', 'alt', 'default active state');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldActive@2x.png 2x', 'src', '../../../images/textfieldActive.png', 'alt', 'default active state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Disabled');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfieldDisabled.png', 'alt', 'default disabled state');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldDisabled@2x.png 2x', 'src', '../../../images/textfieldDisabled.png', 'alt', 'default disabled state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Read only');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfieldReadonly.png', 'alt', 'default disabled state');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldReadonly@2x.png 2x', 'src', '../../../images/textfieldReadonly.png', 'alt', 'default disabled state');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -31217,21 +31217,21 @@ babelHelpers;
         itext('Success');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfieldSuccess.png', 'alt', 'default success state');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldSuccess@2x.png 2x', 'src', '../../../images/textfieldSuccess.png', 'alt', 'default success state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Warning');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfieldWarning.png', 'alt', 'default warning state');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldWarning@2x.png 2x', 'src', '../../../images/textfieldWarning.png', 'alt', 'default warning state');
         ie_close('img');
         ie_close('p');
         ie_open('h4');
         itext('Error');
         ie_close('h4');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textfieldError.png', 'alt', 'default error state');
+        ie_open('img', null, null, 'srcset', '../../../images/textfieldError@2x.png 2x', 'src', '../../../images/textfieldError.png', 'alt', 'default error state');
         ie_close('img');
         ie_close('p');
         ie_open('h2');
@@ -31241,7 +31241,7 @@ babelHelpers;
         itext('A text area is similar to a text field input but for several lines of text. Text areas allow users to introduce long description of products as an example.');
         ie_close('p');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/textarea.png', 'alt', 'text area');
+        ie_open('img', null, null, 'srcset', '../../../images/textarea@2x.png 2x', 'src', '../../../images/textarea.png', 'alt', 'text area');
         ie_close('img');
         ie_close('p');
         ie_open('h3');
@@ -31409,7 +31409,7 @@ babelHelpers;
         itext('Example');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/DatasetTemplate@2x.png', 'alt', 'Form template example');
+        ie_open('img', null, null, 'srcset', '../../../images/DatasetTemplate@2x.png 2x', 'src', '../../../images/DatasetTemplate.png', 'alt', 'Form template example');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
@@ -31727,7 +31727,7 @@ babelHelpers;
         itext('Example');
         ie_close('h3');
         ie_open('p');
-        ie_open('img', null, null, 'src', '../../../images/FormPreview@2x.png', 'alt', 'Form template example');
+        ie_open('img', null, null, 'srcset', '../../../images/FormPreview@2x.png 2x', 'src', '../../../images/FormPreview.png', 'alt', 'Form template example');
         ie_close('img');
         ie_close('p');
         ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
