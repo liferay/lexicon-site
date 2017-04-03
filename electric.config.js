@@ -1,8 +1,13 @@
 'use strict';
 
+const boxen = require('boxen');
+const chalk = require('chalk');
 const fs = require('fs');
 const lexicon = require('lexicon-ux');
 const path = require('path');
+const trueCasePath = require('true-case-path');
+
+const warnedFiles = {};
 
 module.exports = {
 	markdownRenderer: function(md) {
@@ -28,6 +33,28 @@ module.exports = {
 			var src = token.src;
 
 			var absolutePath = path.resolve(process.cwd(), 'src/', src.replace(/^(\.\.\/)+images/, 'images'));
+
+			var truePath = trueCasePath(absolutePath);
+
+			if (truePath !== absolutePath && !warnedFiles[absolutePath]) {
+				console.warn(boxen(
+					[
+						chalk.yellow.bold('Warning!'),
+						chalk.red('The image "' + chalk.blue(path.basename(src)) + '" has the wrong casing, and should be'),
+						chalk.red('referenced as "' + chalk.green(path.basename(truePath)) + '"'),
+						chalk.red('This isn\'t a problem on some systems, but most servers will be case-sensitive,'),
+						chalk.red('so this will result in broken images on the deployed site.'),
+					].join('\n'),
+					{
+						align: 'center',
+						borderStyle: 'double',
+						borderColor: 'red',
+						padding: 1
+					}
+				));
+
+				warnedFiles[absolutePath] = true;
+			}
 
 			if (!src.includes('@2x') && fs.existsSync(getRetina(absolutePath))) {
 				src = getRetina(src);
