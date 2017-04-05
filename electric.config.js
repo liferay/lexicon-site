@@ -7,9 +7,34 @@ const lexicon = require('lexicon-ux');
 const path = require('path');
 const trueCasePath = require('true-case-path');
 
+const args = process.argv.slice(2);
+
+const command = args[0];
+
+let NODE_ENV = process.env.NODE_ENV;
+
+if (!NODE_ENV) {
+	if (['build', 'deploy'].includes(command)) {
+		NODE_ENV = 'production';
+
+	}
+	else {
+		NODE_ENV = 'development';
+	}
+
+	process.env.NODE_ENV = NODE_ENV;
+}
+
 const warnedFiles = {};
 
 module.exports = {
+	frontMatterHook: function(data) {
+		if (NODE_ENV === 'development') {
+			delete data.googleAnalytics;
+		}
+
+		return data;
+	},
 	markdownRenderer: function(md) {
 		var image = md.renderer.rules.image;
 
