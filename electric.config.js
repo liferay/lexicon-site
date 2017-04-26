@@ -14,7 +14,7 @@ const command = args[0];
 let NODE_ENV = process.env.NODE_ENV;
 
 if (!NODE_ENV) {
-	if (['build', 'deploy'].includes(command)) {
+	if (['build', 'deploy'].indexOf(command) > -1) {
 		NODE_ENV = 'production';
 
 	}
