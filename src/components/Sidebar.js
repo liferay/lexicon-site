@@ -10,10 +10,16 @@ class Sidebar extends Component {
 	attached() {
 		Toggler.CSS_EXPANDED = 'open'; /* Until metal-toggler can manage classenames on states */
 
-		new Toggler({
-			content: '.sidebar-toggler-content',
-			header: '.sidebar-toggler'
-		});
+		this._toggler = new Toggler(
+			{
+				content: '.sidebar-toggler-content',
+				header: '.sidebar-toggler'
+			}
+		);
+	}
+
+	disposed(...args) {
+		this._toggler.dispose();
 	}
 };
 
