@@ -2,8 +2,8 @@
 title: "News"
 description: "Keep updated."
 layout: "guide"
-icon: "lexicon-site-news"
-weight: 3
+icon: "lexicon-site-bell"
+weight: 4
 ---
 
 <time>July 22nd, 2017</time>
@@ -14,6 +14,5 @@ Lexicon site has been updated with the legal terms and conditions. Lexicon is li
 
 <time>June 16th, 2017</time>
 
-### Lexicon site release
-
-Lexicon launches its documentation site to provide designers, developers and other people envolved in the design process. This guideline is created to let you understand the boundaries of this pattern library a help using the interactions patterns created by Liferay.
+## Updates
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

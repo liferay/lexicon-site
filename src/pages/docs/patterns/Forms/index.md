@@ -1,8 +1,9 @@
 ---
-title: "Forms"
-description: "Forms section"
+title: "Pattern Library"
+description: "Patterns section"
 layout: "guide"
-weight: 1
+icon: "lexicon-site-doc"
+weight: 3
 ---
 
 ###### Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.

@@ -11,38 +11,17 @@ weight: 1
 
 ### Usage
 
-Progress bars can be classified in two groups:
+As long as the process is running the progress bar grows continuously from 0% to 100%. Use it for system processes.
 
-**Indeterminate**: where there are no intermediate states. As long as the process is running the progress bar grows continuously from 0% to 100%. Use it for system processes.
+Progress bars can be in different states:
+- Loading: the bar process grows in primary color and the label changes with the completion percentage.
 
-**Determinate**: where there are intermediate states in the completion process. Used to show the user where is inside a process divided in steps. Use it for user processes.
+	![indeterminate progress bar](../../../images/ProgressBar30.png) 
 
-### Sizes
+- Warning: something happened and interrupted the process.
 
-Indeterminate progress bars can be configured in 4 differents sizes
+	![indeterminate progress bar](../../../images/ProgressBar70.png) 
 
-| Size | Usage |
-| ---- | ----- |
-| Extra small | Height 8px. Use it in small contexts. |
-| Default | Height 20px. Use it by default. |
-
-### Variations
-
-#### Progress bar
-
-This is an indeterminate progress bar. This progress bar can be used with or without label.
-If you foresee this pattern will be used in a process that can take long time to be completed, a label can be useful to the user. But there is not always the need to show the completion percentage.
-
-![indeterminate progress bar](../../../images/progressBarIndeterminate.png)
-
-#### Stripped contextual progress bar
-
-Lexicon provides an alternative to the previous progress bar based on stripes that could help your users to identify better the action progrees.
-
-![indeterminate stripped progress bar](../../../images/progressBarIndeterminateStriped.png)
-
-#### Multi step progress bar
-
-A multi step progress bar, also known as wizard, is a determinate progress bar. This progress bar is used in long processes dividing the main task in subtasks that will help your users completing the process.
-
-![determiate progress bar or wizard](../../../images/progressBarDeterminate.png)
+- Finished: the process is completed succesfully changing the label to success icon.
+	
+	![indeterminate progress bar](../../../images/ProgressBar100.png) 

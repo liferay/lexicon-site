@@ -13,71 +13,93 @@ weight: 1
 
 | Type | Usage |
 | ---- | ----- |
-| ![button primary default size defuault state](../../../images/buttonPrimaryDefaultDefault.png) | **Primary**: The primary button is always use for the most important actions. There can't be two primery actions together or near by. |
-| ![button secondary default size defuault state](../../../images/buttonSecondaryDefaultDefault.png) | **Secondary**: The default button is used for secondary actions. |
-| ![button link default size defuault state](../../../images/buttonLinkDefaultDefault.png) | **Link**: The link button is used for tertiary actions or opposite actions to the primary one.  |
+| ![button primary default size defuault state](../../../images/ButtonPrimary.png) | **Primary**: The primary button is always use for the most important actions. There can't be two primery actions together or near by. |
+| ![button primary default size defuault state](../../../images/ButtonSecondary.png) | **Secondary**: The seconday button is always use for the secondary actions. There can be several secondary actions near by. |
+| ![button primary default size defuault state](../../../images/ButtonBorderless.png) | **Borderless**: Use in those cases as toolbars where the secondary button would be too heavy for the pattern design. In this way the design gets cleaner. |
+| ![button primary default size defuault state](../../../images/ButtonLink.png) | **Link**: Used for many Cancel actions. |
+
+
 
 ### States
 
 #### Default state
 
-![set of three button types in default state](../../../images/buttonsDefault.png)
+![set of three button types in default state](../../../images/ButtonDefault.png)
 
-#### Active & Hover states
+#### Hover states
 
-![set of three button types in active state](../../../images/buttonsActive.png)
+![set of three button types in active state](../../../images/ButtonHover.png)
+
+#### Active states
+
+![set of three button types in active state](../../../images/ButtonActive.png)
 
 #### Disable state
 
-![set of three button types in disabled state](../../../images/buttonsDisabled.png)
+![set of three button types in disabled state](../../../images/ButtonDisabled.png)
 
 ### Sizes
 
 | Size | Usage |
 | ---- | ----- |
-| ![button primary large size disable state](../../../images/buttonPrimaryLargeDefault.png) | **Large**: Used for main page actions like Save or Cancel. |
-| ![button primary default size disable state](../../../images/buttonPrimaryDefaultDefault.png) | **Default**: Used for actions inside a page, like dropdowns, button groups, split buttons. |
-| ![button primary small size disable state](../../../images/buttonPrimarySmallDefault.png) | **Small**: Use it on reduced spaces. |
+| ![button primary large size disable state](../../../images/ButtonPrimary.png) | **Default**: Used for main page actions like Save or Cancel. |
+| ![button primary default size disable state](../../../images/ButtonPrimarySmall.png) | **Small**: Used for actions inside a page, like dropdowns, button groups, split buttons. |
 
 ### Variations
 
 #### Icon button
 
-Buttons can icons insted of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in [management bars](./management_bar.html).
+Buttons can icons insted of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in [management bars](./management_bar.html). This button variation can be primary, secondary or borderless type.
 
-![icon button](../../../images/buttonIcon.png)
+![button primary default size defuault state](../../../images/ButtonIconPrimary.png)  
+![button primary default size defuault state](../../../images/ButtonIconSecondary.png)   
+![button primary default size defuault state](../../../images/ButtonBorderlessIcon.png)
+
+#### Icon and text button
+
+This button type is used *only in sites* and not in administration. The icon emphasizes and helps to understand the action. The label must be the same icon purpose.
+
+![button with icon and text](../../../images/ButtonIcon+Text.png)
+
 
 #### Block level button
 
 All buttons can also be configured at block level. Use this configuration in those cases that you need the user to realize there is an important action to be done. It could be used as a load more action below a list, as an example. Please do not use it in forms. Be always careful with the type button to use, primary is not always the best choice neither the only configuration.
 
-![block level button primary state, default size](../../../images/buttonBlockLevelPrimary.png)
+![block level button primary state, default size](../../../images/ButtonBlockLevel.png)
 
 #### Dropdown button
 
-Dropdown buttons are always used together with a dropdown menu.
+Dropdown buttons are always used together with a dropdown menu. This button variation can be secondary or borderless type.
 
-![dropdown button default size](../../../images/buttonDropdownDefault.png)
+![button primary default size defuault state](../../../images/ButtonDropdown.png)  
+![button primary default size defuault state](../../../images/ButtonDropdownBorderless.png)
 
 #### Split button
 
 Split buttons are used in those cases where you need to offer the user a quick main action but salso secondary actions.
 
-![button splitted default size](../../../images/buttonSplitDefault.png)
+![button splitted default size](../../../images/lexiconDefault.png)
 
 #### Button group
 
 Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.
 
-![button gruop or segmented button, 3 segments, default size](../../../images/buttonGroupDefault.png)
+![button gruop or segmented button, 3 segments, default size](../../../images/lexiconDefault.png)
 
 #### Action button
 
-The action button is always a primary button with a special size of 64x64 due to its importance. This button floats on the bottom right corner of the screen. It contains all the adding or creating actions in a context. When there is only one action to perform in the page where it is used the button triggers the action. In case there are more that one actions, all the actions appear listed in a dropdown panel that is triggered on click interaction with the button. Once selected the action in the list, the dropdown is closed.
+Actions buttons can be found in two different ways:
 
-![plus button or button actions](../../../images/buttonPlus.png)
+* Plus button: normally placed in toolbars, allows to have adding actions over a dataset. The kind of elements to add with this button are of the same nature and folders. Sometimes it only has a unique action, some others it has more. Visit Dropdown menu > Sorting actions to know more.
+
+![Plus button](../../../images/ButtonActionPlus.png) 
+
+* Action button: can be found everywhere when a set of contextual actions are needed over an element or a dataset. This button displays a set of actions inside a dropdown menu. The actions must be sorted in an specific way, please visit Dropdown menu > Sorting actions to know more.
+
+![Actions or kebab button](../../../images/ButtonActionKebab.png)  
 
 ### Attributes
 
-![button attributtes](../../../images/buttonAttributtes.png)
+![button attributtes](../../../images/lexiconDefault.png)
 

@@ -15,15 +15,26 @@ Forms can be created in one single column or two columns. If your form is divide
 
 When applying columns take into account that the reading directions is left-right, and up-down, in each column. So expect your user to read first column one and then column two.
 
+### Distancies
+
+As a general thumb rule apply the follolwing sizes for distances:
+* Vertical distances
+	* 24px between consecutive components
+	* 48px between consecutive sections
+* Horizontal distances: 16px between consecutive fields
+
+Please visit [inVision](https://liferay.invisionapp.com/share/PWAGWSZHG) example to visually understand the behaviours.
+
 ### Sections
 
-Sections help users to fill a form by chunking the form is smaller pieces. A form section is identified with an [accordion](./panel.html). There is no limitation in the number of accordions to use.
+* Sections are identified with primary text with font-size of 14px.
+* Some forms may require a full with underline for a better visual separation of content. This is usually used in configuration forms.
 
 ### Fields’ order
 
 Laying out the fields of your form we recommend you to follow an order of importance. Try to place first as many mandatory fields when possible to make the user task short. Non mandatory fields should go in a second place as they are not so important and the user could like to skip them. In case non mandatory fields are in between mandatory fields the user would expend more time scanning the form.
 
-### Fields’ lengths
+### Fields’ length
 
 Fields must occupy the space you expect your user needs to fill it. The only requirement for fields is to adapt their width to the grid so they behave properly on window resize. Sharp shape forms do not go against Lexicon but we prefer rectangular shape form as they look more clear.
 In mobile view ports field lengths should be half of the screen or full length.
@@ -32,28 +43,59 @@ In mobile view ports field lengths should be half of the screen or full length.
 
 Fields can be mandatory/required to fill in a form. The way to mark a field as mandatory is:
 
-![example of mandatory field](../../../images/textfieldMandatory.png)
+![example of mandatory field](../../../images/InputMandatory.png)
 
-### Inline validation
+### Form validation
+
+#### Inline validation
 
 Forms have inline validation. All form fields that can be checked against a set of rules while filling them must show success or error state to the user.
 
-### Content blocks
-Content block allow you let the user add contents of a same type in a form. Content blocks are usually used to contribute with more form pieces that allow the user to specify more information. Content block always bring the possibility to add or remove blocks. See the following example:
+#### At least one field required
 
-![Content block example](../../../images/contentBlock.gif)
+It can be the case that inside a form or a fieldset only one of the input fields is required withouh a concrete decision on which of them must be required. In that case:
+
+1. Set mandatory mark in the fieldset title.
+2. It is recommended to include a short help text below the title. "Please enter at least one of the following fields."
+3. All fields must be marked with the validation color as it corresponds.
+4. The only validation message, in this case, is shown as an alert message at the top of the form. A good help message allows the user identifying the error and how to solve it.
+5. Once the validation conditions are met, the alert message disappears.
+6. Losing focus triggers validation unless one field in the group field is focused.
+
+![Form At Least One Field](../../../images/FormAtLeastOneField.png)
+
+![Form At Least One Field Validation](../../../images/FormAtLeastOneFieldValidation.png)
+
+TODO: create a gif to express the interaction
+
+### Repeatable fields
+
+### Single repeatable field
+Single repeable field is useful when the user must instroduce several data of the same type from different inputs, no matter the number nor the order.
+
+TODO: complete
+![Content block example](../../../images/lexiconDefault.png)
+
+### Set of repeatable fields
+This allow you let the user add contents of a same type in a form. This is usually used to contribute with more form pieces that allow the user to specify more information. A set always bring the possibility to add or remove sets. See the following example:
+
+TODO: complete
+![Content block example](../../../images/lexiconDefault.png)
 
 ### Actions
 
-#### General actions
+#### General form actions
 
-General form actions always placed at the end of the form and they are always placed in same order: Primary, Secondary (default), Negative (Link). The button size to use is large.
+General form actions always placed at the end of the form and they are always placed in same order and to the left of the form. The button size to use is default.
 
-![button order example](../../../images/buttonOrder.png)
+![button order. Primary, secondary, link](../../../images/ButtonOrder.png)
 
-#### Interior actions
+*Note: This order is reversed in modals, where buttons in the footer are right-aligned: Link, Secondary, Primary.*
+
+#### Interior form actions
 
 Interior form actions should not be as notorious as general actions. Therefore they use default button size.
+
 
 
 

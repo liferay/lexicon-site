@@ -15,11 +15,25 @@ This template counts with several patterns listed as follown that can be directl
 1. Header toolbar: the actions menu must only contain direct actions over the application in question as import, export, permissions.
 2. Navigation bar: includes different entries of the application. If there is only one it must be present in the bar. Search field is optional and only acts over the selected element in the navbar.
 3. Dataset display
-	1. Management bar
-	2. Breadcrumb (When further than first level)
-	3. Visualization: Table / List / Cards
-	4. Pagination bar
-4. Plus button: Place it in case your dataset allows adding more elements
+1. Management bar
+2. Breadcrumb (When further than first level)
+3. Visualization: Table / List / Cards
+4. Pagination bar
 
-### Example
-![Form template example](../../../images/DatasetTemplate@2x.png)
+### Table view example
+
+![Dataset template Table example](../../../images/TableViewTemplate1.png)
+
+### List view example
+![Dataset template List template example](../../../images/ListViewTemplate1.png)
+
+### Card view example
+![Dataset template Card template example](../../../images/CardViewTemplate2.jpg)
+
+### Empty state
+
+![Card View Search empty state](../../../images/CardViewEmpty.png)
+
+### Empty state on search result
+
+![Card View Search Without Result](../../../images/CardViewSearchWithoutResult.png)

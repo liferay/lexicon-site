@@ -9,6 +9,8 @@ weight: 2
 
 {$page.description}
 
+![checkbox](../../../images/CheckboxLabel.png)
+
 ### Usage
 
 * Checkboxes should be used when more than one option can be selected.
@@ -19,21 +21,19 @@ weight: 2
 
 ### States
 
-#### Default
-
-![checkbox default state](../../../images/checkbox.png)
-
-#### Active
-
-![checkbox active state](../../../images/checkboxSelected.png)
-
-#### Disable
-
-![checkbox disable state](../../../images/checkboxDisabled.png)
+| State | Definition |
+| ----- | ---------- |
+| ![checkbox on](../../../images/Checkbox+Active.png) | On |
+| ![checkbox off](../../../images/Checkbox.png) | Off |
+| ![checkbox on disabled](../../../images/Checkbox+Active+Disabled.png) | On disabled |
+| ![checkbox off disabled](../../../images/Checkbox+Disabled.png) | Off disabled |
+| ![checkbox variable for multiple selection](../../../images/CheckboxMultiple+Active.png) | Checkbox Variable for multiple selection |
 
 ## Radio button
 
 A radio button is a component that allows the user selecting something writen in its associatead text label. A list of consecutive radio buttons would allow the user to select just one thing.
+
+![radio button](../../../images/RadioButton+Label+Active.png)
 
 ### Usage
 
@@ -44,17 +44,12 @@ A radio button is a component that allows the user selecting something writen in
 
 ### States
 
-#### Default
-
-![radio button default state](../../../images/radiobuttonOff.png)
-
-#### Active
-
-![radio button active state](../../../images/radiobuttonOn.png)
-
-#### Disable
-
-![radio button disable state](../../../images/radiobuttonDisabled.png)
+| State | Definition |
+| ----- | ---------- |
+| ![radio button on](../../../images/RadioButton+Active.png) | On |
+| ![radio button off](../../../images/RadioButton.png) | Off |
+| ![radio button on disabled](../../../images/RadioButton+Active+Disabled.png) | On disabled |
+| ![radio button off disabled](../../../images/RadioButton+Disabled.png) | Off disabled |
 
 ### Radio vs Dropdown Menu
 
@@ -76,6 +71,8 @@ It is a common case of doubt when to use radios or a dropdown menu instead when 
 
 A toogle is an interface element that by its activation or deactivation provokes a inmediate action in the screen.
 
+![switch default state](../../../images/SwitchLabel+ON.png)
+
 ### Usage
 
 * Use a toggle to present the user mutually exclusive options that have an action that is possible to perceive inmediately.
@@ -88,17 +85,14 @@ A toogle is an interface element that by its activation or deactivation provokes
 
 ### States
 
-#### Default
+A switch can be in one of these four different status:
 
-![switch default state](../../../images/switchOff.png)
-
-#### Active
-
-![switch active state](../../../images/switchOn.png)
-
-#### Disable
-
-![switch disable state](../../../images/switchDisabled.png)
+| State | Definition |
+| ----- | ---------- |
+| ![switch on](../../../images/SwitchOn.png) | On |
+| ![switch off](../../../images/SwitchOff.png) | Off |
+| ![switch on disabled](../../../images/SwitchOn+Disabled.png) | On disabled |
+| ![switch off disabled](../../../images/SwitchOff+Disabled.png) | Off disabled |
 
 ### Variations
 
@@ -106,12 +100,15 @@ A toogle is an interface element that by its activation or deactivation provokes
 
 This type of toggles have labels around as the title label or other support label that make more explicit the switch value. The support label can be either at the top, right, bottom or left and its value should change with the toggle state change as the example shows. All the labels have the interaction that the switch have making the toggle more accessible.
 
-![switch with title and label on the right side, all off them switch off and on the toggle](../../../images/switchAttributes.png)
+TODO:
+
+![switch with title and label on the right side, all off them switch off and on the toggle](../../../images/lexiconDefault.png)
 
 #### Toggle with icon
 
 Toggles can also have an icon inside the toggle circle that helps to identify the action. A toggles with icon can also have data attributes as the previous variation.
 
-![toggle with icon](../../../images/switchIcon.png)
+![toggle with icon](../../../images/SwitchIcon.png)
+
 
 

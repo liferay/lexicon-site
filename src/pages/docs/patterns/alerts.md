@@ -9,49 +9,59 @@ weight: 1
 
 {$page.description}
 
+### Usage
+
 Alerts are possible to define in 4 different colors, grey for the default type of message and four other corresponding to status colors.
+
+All alerts types can contain links. Those links are defined in primary color.
 
 ### Types
 
 | Type | Usage |
 | ----- | ----- |
-| Information | **Blue color**. Information alerts are used to inform users about things that occur while they are carry out a task. |
-| Success | **Green color**. Success alert messages will appear when everything was ok. (E.g.: “The user was created successfully”). |
-| Warning | **Yellow color**. This alert lets users know that the action they performed was done but there are some issues with it. (E.g. The item was created but with there were some issues). |
-| Error | **Red color**. This alert indicates that something went wrong after performing an action. (E.g.: Form couldn’t be saved because some data was missing) |
+| Information | Blue color. Information alerts are used to inform users about things that occur while they are carry out a task. |
+| Success | Green color. Success alert messages will appear when everything was ok. (E.g.: “The user was created successfully”). |
+| Warning | Yellow color. This alert lets users know that the action they performed was done but there are some issues with it. (E.g. The item was created but with there were some issues). |
+| Error | Red color. This alert indicates that something went wrong after performing an action. (E.g.: Form couldn’t be saved because some data was missing) |
 
 ### Variations
 
-#### Temporary alert stripe
-This message is meant to disappear after a short period of time, so it must be the case that the user doesn't have time to read it and there must not be a consequence for not reading it. This type of alerts have embedded links in case you need them.
+TODO: example of each one in use and clear placement definition.
+Definir el uso de comfirm messages.
 
-![temporary information alert stripe](../../../images/alertTemporaryInfo.png)
+#### Toast
 
-![temporary success alert stripe](../../../images/alertTemporarySuccess.png)
+This type of alert is specific for toast messages. This type of messages appear on the top right corner of the screen. The maximum with of a toast message is 360px and the height can vary depending on the number of rows. It always have a close action.
 
-![temporary warning alert stripe](../../../images/alertTemporaryWarning.png)
+![four differet toast alert colors](../../../images/AlertToast.png)
 
-![temporary error alert stripe](../../../images/alertTemporaryError.png)
+Example of use:
 
-#### Dismissible alerts stripe
-Use this kind of alerts to inform users about something and to ensure they don‘t miss the information. These alerts can contain links to carry out actions such as undoing actions or visiting a page.
-This alert is placed right below the navigation bar.
+![toast alert example. Placed to the top right in the screen and below the header](../../../images/AlertToastExample.png)
 
-![dismiss information alert stripe](../../../images/alertDismissInfo.png)
 
-![dismiss success alert stripe](../../../images/alertDismissSuccess.png)
+#### Embedded
 
-![dismiss warning alert stripe](../../../images/alertDismissWarning.png)
+Embedded alerts are thought to be used inside context as forms. Usually you will only need to use the information one. Its width depends on the container with you use it, always respecting the container margins to the content. The close action is not of mandatory use.
 
-![dismiss error alert stripe](../../../images/alertDismissError.png)
+![four differet embedded alert colors](../../../images/AlertEmbedded.png)
 
-#### Alert notification
-Notifications display information about something that has happened or is happening in the system. These alerts are not related to actions that are being performed by the user at that moment. Unlike alerts, notifications are displayed on the top right corner of the screen. Both desktop and mobile notifications have similar dimensions.
+Example of use:
 
-![set of four notification alerts](../../../images/alertsNotification.png)
+![embedded alert example. Placed inside a form.](../../../images/AlertEmbeddedExample.png)
+
+#### Stripe
+
+Stripe alerts are always placed below the last navigation element, either the header or the navigation bar. This alert appears usually on "Save" action communicating the status of the action once received from the server. The close action is mandatory in this alert type. Its width is always full container width and **pushes** all the content below it.
+
+![four differet push alert colors](../../../images/AlertPush.png)
+
+Example of use:
+
+![push alert example. Placed right below the last horizontal navigation label](../../../images/AlertPushExample.png)
 
 ### Attributes
 
-![attributes for stripe alerts and notification alerts](../../../images/alertAttributes.png)
-
+TODO:
+Font size 14px
 

@@ -9,16 +9,30 @@ weight: 1
 
 {$page.description}
 
-### Structure
+### Structures and examples
 A form template count with several patterns that shape this pattern:
 
+#### Form without side navigation example
+
 1. Header toolbar
-2. Navigation bar (not always needed)
-3. Tab bar (Not always needed)
-4. Form
-	1. Series of panels and pangels with accordions. Accordions work as functional form modules or sections. All the actions inside a form must be secondary, having only one primary action to really catch the user attention
-	2. Form main buttons: always placed to the left side and in the following order: Primary, secondary, link
+2. Navigation bar
+3. Breadcrumb
+4. Page title
+5. Tab bar (not always needed)
+6. Form
 
-### Example
+![Form without side navigation example](../../../images/FormRegular.png)
 
-![Form template example](../../../images/FormPreview@2x.png)
+#### Form with side navigation example
+
+1. Header toolbar
+2. Navigation bar
+3. Breadcrumb
+4. Page title
+5. Tab bar (not always needed)
+6. Form
+	1. Left side: vertical navigation
+	2. Right side: form piece
+
+![Form without side navigation example](../../../images/FormVerticalNavigation.png)
+

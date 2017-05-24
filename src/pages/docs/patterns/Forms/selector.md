@@ -1,6 +1,6 @@
 ---
 title: "Selectors"
-description: "Selectors are frequently used as a part of forms. This elements are used when we need to select one or more within several options. These options are displayed in the button once selected. "
+description: "Selectors are frequently used as a part of forms. This elements are used when we need to select one or more within several options. These options are displayed in the button once selected."
 layout: "guide"
 weight: 3
 ---
@@ -8,6 +8,8 @@ weight: 3
 ## Selector
 
 {$page.description}
+
+![selector default state](../../../images/Selector.png)
 
 ### Usage
 
@@ -17,11 +19,16 @@ This pattern is completely different from a dropdown as a selector is a native e
 
 #### Default
 
-![selector default state](../../../images/selector.png)
+![selector default state](../../../images/Selector.png)
 
 #### Active
 
-![selector active state](../../../images/selectorFocus.png)
+![selector active state](../../../images/Selector+Focus.png)
+
+#### Disabled
+
+![selector disabled state](../../../images/Selector+Disabled.png)
+
 
 ## Multiple selector
 
@@ -31,8 +38,8 @@ Select button used to select more than one option from a simple list.
 
 #### Default
 
-![multiple selector default state](../../../images/selectorMultiple.png)
+![multiple selector default state](../../../images/lexiconDefault.png)
 
 #### Active
 
-![multiple selector active state](../../../images/selectorMultipleFocus.png)
+![multiple selector active state](../../../images/lexiconDefault.png)

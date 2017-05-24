@@ -9,6 +9,19 @@ weight: 1
 
 {$page.description}
 
+### Usage
+
+Icons can be used only when the metaphor is direct and clear. In case there is not a good icon to represent the concept you want to transmit, it will probably better to use words. Icons must be reserved to broad accepted visual ideas.
+
+### Sizes
+
+| Size | Usage |
+| ---- | ----- |
+| ![Icon 12px box 16px](../../../images/Icon12.png) | 16px box with icons of 12px |
+| ![Icon 16px box 16px](../../../images/Icon16.png) | 16px box with icons of 16px |
+| ![Icon 24px box 32px](../../../images/Icon20.png) | 32px box with icons of 20px |
+
+
 ### Liferay icon library
 
 Liferay has its own icon library created for the porpuses of the projects that use Lexicon.
@@ -23,6 +36,9 @@ Liferay has its own icon library created for the porpuses of the projects that u
 	</li>
 {/foreach}
 </ul>
+
+Please, read this [guide](https://gist.github.com/natecavanaugh/b9546c4215e5d5ef88a1b9d6ae2041a3#lexicon-icon-design-guidelines) on how to create icons for Lexicon.
+
 
 #### Language flags
 
@@ -45,14 +61,7 @@ While we understand that reasoning, we've found that the times they are actually
 
 [Font Awesome](http://fontawesome.io/) and [Glyphicons](http://glyphicons.com/) are good alternatives in case you don't want to use Lexicon icon library.
 
-### Usage
 
-Icons can be used only when the metaphor is direct and clear. In case there is not a good icon to represent the concept you want to transmit, it will probably better to use words. Icons must be reserved to broad accepted visual ideas.
 
-#### Why do we use SVG?
 
-SVG gives us and you a greater amount of freedom in styling the icons, as well as a higher level of fidelity and clarity in the icons. Font icons, while fairly simple, also suffer some drawbacks, mainly with sub-pixel aliasing that cause the quality to not be as high as we would like. Also SVG allows for multi-color icons.
 
-#### Help icon
-
-Help icon is used in lexicon together with tooltips or popovers. As an example, it gives a better visual clue to users to reach an explanation about a field in a form.

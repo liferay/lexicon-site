@@ -16,24 +16,34 @@ Usually the components placed around the textfield are buttons, split button and
 
 ### Types
 
-#### Default input group
-
-![input group default configuration](../../../images/inputGroupDefault.png)
-
 #### Input group with button
 
-![input group with left button](../../../images/inputGroupButtonLeft.png)
+![input group with left button](../../../images/InputGroupButtonLeft.png)
 
-![input group with right button](../../../images/inputGroupButtonRight.png)
+![input group with right button](../../../images/InputGroupButtonRight.png)
+
+#### Url input group
+
+![input group for url](../../../images/InputGroupUrl.png)
 
 #### Input group with units
 
-![input group with mass on the left](../../../images/inputGroupMassLeft.png)
+![input group with mass on the left](../../../images/InputGroupAddonLeft+Placeholder.png)
 
-![input group with mass on the right](../../../images/inputGroupMassRight.png)
+![input group with mass on the right](../../../images/InputGroupAddonRight.png)
 
-![input group with mass on both sides](../../../images/inputGroupMassLeftRight.png)
+![input group with mass on both sides](../../../images/InputGroupAddonLeftAddonRight.png)
 
-### Sizes
+![input group with mass in the middle and right side](../../../images/InputGroupInsert.png)
 
-Input groups can be configured in 3 different sizes from small, to default, to large. The measures can be taken from input fields and buttons.
+
+#### Input group with radio or checkbox
+
+![input group with mass on the left](../../../images/InputGroupCheckboxLeft.png)
+
+![input group with mass on the right](../../../images/InputGroupCheckboxLeft+Active.png)
+
+![input group with mass on both sides](../../../images/InputGroupRadioButtonLeft.png)
+
+![input group with mass in the middle and right side](../../../images/InputGroupRadioButtonLeft+Active.png)
+

@@ -9,21 +9,13 @@ weight: 1
 
 {$page.description}
 
-### Sizes
-
-| Size | Description |
-| ---- | ----- |
-| Small | The font-size is 12px and the proportions are smaller |
-| Default | The font-size is 16px |
-| Large | The font-size is 18px and the proportions are bigger |
-
 ### Variations
 
 #### Pagination
 
 Use it when you need a simple pagination pattern that does not require to change the page size.
 
-![simple pagination](../../../images/pagination.png)
+![simple pagination](../../../images/Pagination.png)
 
 #### Pagination bar
 
@@ -34,10 +26,14 @@ Use it when you need a complex pagination pattern that requires changing the pag
 Interactive components:
 * Entries dropdown: to select the number of elements per page. You can configure you page size options.
 * Arrows: to move to previous or next page.
-* Ellipsis: to select intermediate pages not possible to see due to the number of pages.
+* Ellipsis: to select intermediate pages not possible to see due to the number of pages through a dropdown menu.
 
-![pagination bar with a dropdown for page size and the simple pagination component](../../../images/paginationBar.png)
+![pagination bar with a dropdown for page size and the simple pagination component](../../../images/PaginationBar.png)
+
+##### Pagination bar mobile
+
+![pagination bar with a dropdown for page size and the simple pagination component](../../../images/PaginationBarMobile.png)
 
 ### Attributes
 
-![pagination attributes](../../../images/paginationAttributes.png)
+TODO:

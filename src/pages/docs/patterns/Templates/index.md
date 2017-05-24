@@ -2,7 +2,7 @@
 title: "Templates"
 description: "Templates section"
 layout: "guide"
-weight: 1
+weight: 2
 ---
 
 ###### Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.

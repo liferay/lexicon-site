@@ -11,7 +11,7 @@ weight: 1
 
 ### Usage
 
-![list entry in default state](../../../images/listItem.png)
+![list entry in default state](../../../images/ListViewDefault.png)
 
 A list view is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.
 
@@ -27,27 +27,53 @@ Whenever you need to group series of list entries, you can use the list group he
 
 ![list group includes a heading](../../../images/listGroup.png)
 
-### Row interactions
-
-* Selecting a row is only possible by using the checkbox.
-* Text elements in the row can be configured as links to navigate.
-* A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don't need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.
-* If the action you want to perform of is "Edit", place it as a link in the title to navigate to an edition screen for the element.
 
 ### Row states
 
 #### Default states
 
-![list entry in default state](../../../images/listItem.png)
+![list entry in default state](../../../images/ListViewDefault.png)
+
+#### Hover state
+
+![list entry in hover state](../../../images/ListViewHover.png)
 
 #### Selected state
 
-![list entry in selected state](../../../images/listSelected.png)
+![list entry in selected state](../../../images/ListViewActive.png)
+
+### Row interactions
+
+* A list entry can have a checkbox, a radio button or none of them.
+* Selecting a row is only possible by using the checkbox or radio button depending on the selection type desired in the list. An interaction with the background does not produce row selection.
+* Text elements in the row can be configured as links to navigate.
+* A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don't need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.
+* The main text is usually used as an action:
+	* In case of:
+		* Folder: it navigates to the next level.
+		* File: it navigates to its detail view.
+	* Do never use it for preview. Preview is always a secondary action placed in the row action menu.
+* If the link drives the user out of the site, please identify visually that this link will open in a new page.
+
+### Content format and aligment
+
+* Main text must be always in semibold.
+
 
 ### Attributes
 
-![list attributes](../../../images/listAttributes.png)
+TODO:
 
-### Example of use
+#### Example of use
 
-![list with 3 entries, one in default state, one in selected state, one with actions menu open](../../../images/listExample.png)
+![list view example with 3 different states in different entries](../../../images/ListViewExample.png)
+
+#### Example
+
+Please visit [inVision](https://liferay.invisionapp.com/share/YAAFKJ4WN) example to visually understand the behaviours.
+
+### Mobile
+
+#### Example
+
+Please visit [inVision](https://liferay.invisionapp.com/share/HEAGTZBRV) example to visually understand the behaviours.
