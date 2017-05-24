@@ -2,7 +2,7 @@
 	background-color: $brand-dark;
 
 	a, .nav .lexicon-icon {
-		color: $brand-secondary;
+		color: $brand-dark-text;
 	}
 
 	.sidebar-header {
@@ -29,23 +29,23 @@
 
 			background-color: transparent;
 			border-color: transparent;
-			color: $brand-secondary;
+			color: $brand-darker-text;
 			z-index: 9;
 		}
 
 		> input.form-control {
 			background-color: $brand-darker;
 			border-radius: 4px;
-			color: $brand-dark;
+			color: $brand-darker-text;
 			padding-right: $base-size * 1.5;
 
-			@include placeholder($brand-secondary);
+			@include placeholder($brand-darker-text);
 
 			&:active, &:focus {
-				@include placeholder($brand-secondary);
+				@include placeholder($brand-darker-text);
 
 				background-color: #FFF;
-				color: $brand-dark;
+				color: $brand-darker-text;
 			}
 		}
 	}
@@ -94,7 +94,7 @@
 		}
 
 		& li > ul > li > a {
-			color: $brand-secondary;
+			color: $brand-dark-text;
 			font-weight: normal;
 		}
 

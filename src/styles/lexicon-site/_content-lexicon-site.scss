@@ -2,6 +2,10 @@
 	p {
 		line-height: $base-size * 0.75;
 		margin-bottom: 20px;
+        
+        a {
+        color: $brand-blue;
+        }
 	}
 
 	img {
@@ -24,24 +28,36 @@
 	}
 
 	h1 {
-		font-size: 26px;
-		line-height: $base-size;
+		font-size: 28px;
+		line-height: $base-size * 2;
+        
+        @media (min-width: $grid-float-breakpoint) {
+            font-size: 32px;
+        }
 	}
 
 	h2 {
-		font-size: 23px;
-		line-height: $base-size;
+		color: $brand-secondary;
+        font-size: 22px;
+        letter-spacing: 0.5px;
+        line-height: $base-size;
+        text-transform: uppercase;
 	}
 
 	h3 {
-		font-size: 20px;
-		line-height: 28px;
+		font-size: 24px;
+		line-height: $base-size;
 	}
 
 	h1, h2, h3 {
-		font-weight: bold;
-		margin-bottom: $base-size / 2;
-		margin-top: $base-size * 1.5;
+		
+        font-weight: bold;
+            margin: $base-size 0;
+        
+        @media (min-width: $grid-float-breakpoint) {
+            margin-bottom: $base-size * 0.75;
+            margin-top: $base-size * 1.5;
+        }
 	}
 
 	h4 {
@@ -53,8 +69,9 @@
 	}
 
 	h5 {
-		font-size: 12px;
-		font-weight: 600;
+		color: $brand-secondary;
+        font-size: 12px;
+        letter-spacing: 1px;
 		line-height: 20px;
 		margin-bottom: 8px;
 		text-transform: uppercase;
@@ -67,35 +84,6 @@
 			margin: 0;
 		}
 	}
-
-	.home {
-		background-color: $content-header-bg;
-		margin: 0;
-
-		h1 {
-			color: $brand-dark;
-			font-size: $base-size * 1.5;
-			font-weight: 300;
-			line-height: $base-size * 2;
-			margin: $base-size 0;
-
-			@media (min-width: $grid-float-breakpoint) {
-				font-size: $base-size * 2;
-				margin: 0 0 0 $base-size * 3.3;
-			}
-		}
-
-		img {
-			@media (min-width: $grid-float-breakpoint) {
-				max-width: 400px;
-				padding: $base-size * 3 0 0;
-			}
-		}
-	}
-}
-
-.Home body {
-	background-color: $content-header-bg;
 }
 
 .News {
@@ -104,7 +92,7 @@
 	}
 
 	h5 {
-		color: $brand-dark-text;
+		color: $brand-dark;
 		margin-top: 48px;
 	}
 }

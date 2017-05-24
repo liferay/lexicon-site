@@ -5,7 +5,7 @@
 
 .autocomplete-list {
 	a {
-		color: $brand-secondary;
+		color: $brand-darker;
 		font-size: 14px;
 
 		&:hover {
@@ -18,15 +18,14 @@
 	}
 
 	.autocomplete-title {
-		font-weight: 600;
-        color: $brand-dark;
+		font-weight: bold;
 	}
 
 	.list-group .list-group-item {
 		border-width: 0;
 
 		&:hover, &.active {
-			background-color: $content-header-bg;
+			background-color: #F5F9FF;
 		}
 
 		&:first-child {
