@@ -111,15 +111,13 @@
 		& li {
 			> a > .collapse-toggle {
 				display: inline-block;
+				height: 40px;
 				margin: 0;
 				min-height: auto;
-				padding: 0;
+				padding: 12px;
 				position: absolute;
 				right: 0;
 				top: 0;
-
-				height: 40px;
-				padding: 12px;
 				width: 40px;
 
 				@include transform(rotate(-90deg));

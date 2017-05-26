@@ -1,16 +1,16 @@
 .footer {
 	font-size: 14px;
-    margin-top: $base-size * 1.5;
+	margin-top: $base-size * 1.5;
 	min-height: $base-size * 5;
 	padding: $base-size / 2 0;
-    
+
 	@media (max-width: $screen-md) {
 		text-align: center;
 	}
 
 	@media (min-width: $screen-md) {
+		margin-top: $base-size * 4;
 		padding: 47px 0;
-        margin-top: $base-size * 4;
 	}
 
 	.text-right-lg {
@@ -20,11 +20,11 @@
 	}
 
 	a {
-		color: #fff;
+		color: #FFF;
 
 		&.dark {
 			color: $brand-dark;
-            font-weight: 700;
+			font-weight: bold;
 		}
 	}
 
@@ -33,14 +33,14 @@
 	}
 
 	.sticker {
-        background-color: $brand-secondary;
-        border-radius: 20px;
-        color: #FFF;
+		background-color: $brand-secondary;
+		border-radius: 20px;
+		color: #FFF;
 		margin: $base-size / 2 $base-size / 4;
-        
-        .lexicon-icon {
-            width: 14px;
-        }
+
+		.lexicon-icon {
+			width: 14px;
+		}
 
 		@media (min-width: $screen-md) {
 			margin: 0 0 0 $base-size / 2;
@@ -48,7 +48,7 @@
 	}
 
 	.sticker:hover {
-        background-color: $brand-dark;
+		background-color: $brand-dark;
 	}
 
 	.row img.logo {

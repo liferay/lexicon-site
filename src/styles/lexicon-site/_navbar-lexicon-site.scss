@@ -1,29 +1,28 @@
 .navbar-lexicon-site {
 	background-color: $brand-dark;
 	border-color: $brand-dark;
-    padding: 8px 0;
+	padding: 8px 0;
 
 	@media (min-width: $grid-float-breakpoint) {
-		padding-left: 12px;
 		padding: 32px 0 24px 12px;
 	}
 
-    .logo {
+	.logo {
 		display: inline-block;
 		margin-right: 16px;
-        padding-bottom: 3px;
+		padding-bottom: 3px;
 		width: 121px;
 	}
-    
-    .label-version {
-        background-color: #393A4A;
-        color: #fff;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        padding: 6px 12px;
-        border-radius: 50px;
-    }
+
+	.label-version {
+		background-color: #393A4A;
+		border-radius: 50px;
+		color: #FFF;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		padding: 6px 12px;
+	}
 
 	.navbar-toggle {
 		border-width: 0;

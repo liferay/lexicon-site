@@ -8,11 +8,11 @@
 }
 
 .about {
-	padding: $base-size 0;
 	font-size: 18px;
+	padding: $base-size 0;
 }
 
 .about.about-inverted {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: transparentize(#000, 0.2);
 	color: #FFF;
 }
