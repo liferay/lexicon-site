@@ -1,0 +1,18 @@
+.docs header {
+	background-color: $content-header-bg;
+	padding: $base-size / 2 0;
+
+	@media (min-width: $grid-float-breakpoint) {
+		padding: $base-size 0;
+	}
+}
+
+.about {
+	font-size: 18px;
+	padding: $base-size 0;
+}
+
+.about.about-inverted {
+	background-color: transparentize(#000, 0.2);
+	color: #FFF;
+}
