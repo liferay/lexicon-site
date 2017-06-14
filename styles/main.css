@@ -12689,19 +12689,23 @@ h3 {
       background: #FF6060;
       border-radius: 50%; }
 
-.clay-link .clay-logo {
-  float: left;
-  margin-right: 16px;
-  width: 44px; }
-
-.clay-link a {
-  color: #FF6060;
-  display: block;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 10px; }
-  .clay-link a:hover {
-    border-width: 0; }
+.clay-link {
+  margin-bottom: 1em; }
+  @media (min-width: 992px) {
+    .clay-link {
+      margin-bottom: 0; } }
+  .clay-link .clay-logo {
+    float: left;
+    margin-right: 16px;
+    width: 44px; }
+  .clay-link a {
+    color: #FF6060;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px; }
+    .clay-link a:hover {
+      border-width: 0; }
 
 .contact-us {
   background-color: #FF6060;
@@ -12740,19 +12744,24 @@ h3 {
       color: #FF6060; }
 
 footer {
-  padding: 164px 0 264px;
-  background-color: #30313F; }
+  background-color: #30313F;
+  padding: 100px 0; }
   footer h3 {
     color: #FFF;
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 5px;
     text-transform: uppercase; }
-  footer > .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between; }
+  footer > .container > div {
+    padding-top: 20px; }
+  @media (min-width: 992px) {
+    footer > .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between; }
+      footer > .container > div {
+        padding-top: 0; } }
   footer .logo-liferay {
     width: 32px;
     margin-right: 16px; }
@@ -12771,19 +12780,29 @@ footer {
     display: flex;
     align-items: center;
     flex: 0 0 75%;
-    max-width: 75%;
     margin-bottom: 20px; }
   footer .social {
     display: flex;
-    max-width: 25%; }
+    justify-content: space-between; }
     footer .social li {
       margin-right: .75rem; }
-      footer .social li:last-of-type {
-        margin-right: auto; }
     footer .social a {
       padding: 0; }
     footer .social img {
       width: 32px; }
+  footer .social-header {
+    text-align: center; }
+  @media (min-width: 992px) {
+    footer {
+      padding: 164px 0 264px; }
+    footer .footer-brand {
+      max-width: 75%; }
+    footer .social-header {
+      text-align: left; }
+    footer .social {
+      max-width: 25%; }
+      footer .social li:last-of-type {
+        margin-right: auto; } }
 
 body {
   color: #272833;

@@ -12446,7 +12446,7 @@ function $footer(opt_data, opt_ignored, opt_ijData) {
         ie_open('div', null, null,
             'class', 'footer-brand d-flex align-items-center');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'http://liferay.com');
             ie_open('img', null, null,
                 'class', 'logo-liferay',
                 'src', 'images/liferay_logo.svg',
@@ -12461,7 +12461,8 @@ function $footer(opt_data, opt_ignored, opt_ijData) {
             ie_close('a');
           ie_close('p');
         ie_close('div');
-        ie_open('h3');
+        ie_open('h3', null, null,
+            'class', 'social-header');
           itext('Follow Us');
         ie_close('h3');
         ie_open('ul', null, null,
