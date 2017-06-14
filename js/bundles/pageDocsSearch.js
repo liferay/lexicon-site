@@ -2103,11 +2103,11 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param116 = function() {
+  var param60 = function() {
     $templateAlias2(soy.$$assignDefaults({section: opt_data.site.index.children['docs']}, opt_data), null, opt_ijData);
     $guide(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param116}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param60}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -2129,8 +2129,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null,
           'class', 'container-fluid');
         ie_open('h1');
-          var dyn2 = opt_data.page.title;
-          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
+          var dyn1 = opt_data.page.title;
+          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
         ie_close('h1');
       ie_close('div');
     ie_close('header');
@@ -2140,8 +2140,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
           'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-12');
-          var dyn3 = opt_data.content;
-          if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
+          var dyn2 = opt_data.content;
+          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
         ie_close('div');
         ie_open('nav', null, null,
             'class', 'col-md-5 col-md-offset-2 col-xs-12');
@@ -2303,8 +2303,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', ($$temp = opt_data.elementClasses) == null ? 'main' : $$temp);
     ie_open('main', null, null,
         'class', 'content');
-      var dyn4 = opt_data.content;
-      if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
+      var dyn3 = opt_data.content;
+      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
     ie_close('main');
   ie_close('div');
 }
@@ -2346,8 +2346,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
     ie_open('a', null, null,
         'class', 'navbar-brand',
         'href', '/');
-      var dyn5 = opt_data.site.title;
-      if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
+      var dyn4 = opt_data.site.title;
+      if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
     ie_close('a');
   ie_close('div');
 }
