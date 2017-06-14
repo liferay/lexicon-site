@@ -356,6 +356,12 @@ h3 {
 }
 
 .clay-link {
+	margin-bottom: 1em;
+
+	@media (min-width: $screen-md) {
+		margin-bottom: 0;
+	}
+
 	.clay-logo {
 		float: left;
 		margin-right: 16px;
@@ -425,8 +431,8 @@ h3 {
 }
 
 footer {
-	padding: 164px 0 264px;
 	background-color: #30313F;
+	padding: 100px 0;
 
 	h3 {
 		color: #FFF;
@@ -437,10 +443,20 @@ footer {
 	}
 
 	> .container {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		justify-content: space-between;
+		> div {
+			padding-top: 20px;
+		}
+
+		@media (min-width: $screen-md) {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+
+			> div {
+				padding-top: 0;
+			}
+		}
 	}
 
 	.logo-liferay {
@@ -469,20 +485,15 @@ footer {
 		display: flex;
 		align-items: center;
 		flex: 0 0 75%;
-		max-width: 75%;
 		margin-bottom: 20px;
 	}
 
 	.social {
 		display: flex;
-		max-width: 25%;
+		justify-content: space-between;
 
 		li {
 			margin-right: .75rem;
-
-			&:last-of-type {
-				margin-right: auto;
-			}
 		}
 
 		a {
@@ -492,6 +503,34 @@ footer {
 
 		img {
 			width: 32px;
+		}
+	}
+
+	.social-header {
+		text-align: center;
+	}
+
+	@media (min-width: $screen-md) {
+		& {
+			padding: 164px 0 264px;
+		}
+
+		.footer-brand {
+			max-width: 75%;
+		}
+
+		.social-header {
+			text-align: left;
+		}
+
+		.social {
+			max-width: 25%;
+
+			li {
+				&:last-of-type {
+					margin-right: auto;
+				}
+			}
 		}
 	}
 }
