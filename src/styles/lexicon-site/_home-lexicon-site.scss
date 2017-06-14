@@ -86,6 +86,8 @@
 				display: none;
 				position: absolute;
 				right: 0;
+				transform: translateY(-50%);
+				top: 50%;
 			}
 
 			.form-control:focus + .btn-clear {
