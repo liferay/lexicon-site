@@ -12491,7 +12491,9 @@ table {
         font-size: 2em;
         display: none;
         position: absolute;
-        right: 0; }
+        right: 0;
+        transform: translateY(-50%);
+        top: 50%; }
       .home .navbar .form-inline .form-control:focus + .btn-clear {
         display: block; }
     @media (min-width: 900px) {
