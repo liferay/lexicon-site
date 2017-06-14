@@ -1,5 +1,6 @@
 'use strict';
 
+const _ = require('lodash');
 const boxen = require('boxen');
 const chalk = require('chalk');
 const fs = require('fs');
@@ -27,6 +28,13 @@ if (!NODE_ENV) {
 
 const warnedFiles = {};
 
+const truncateOptions = {
+	omission: '',
+	separator: '-'
+};
+
+const REGEX_ILLEGAL_ID_PREFIX = /^[^A-Z]+/i;
+
 module.exports = {
 	frontMatterHook: function(data) {
 		if (NODE_ENV === 'development') {
@@ -48,6 +56,50 @@ module.exports = {
 
 		const stripRetina = function(src) {
 			return src.replace('@2x', '');
+		};
+
+		const CACHE = Object.create(null);
+
+		md.renderer.rules.heading_open = function(tokens, idx) {
+			var gid = tokens.__GID;
+
+			var level = tokens[idx].hLevel;
+
+			var idAttr = '';
+
+			if (level <= 3) {
+				if (!gid) {
+					gid = Math.ceil(Math.random() * (new Date()).getTime());
+					tokens.__GID = gid;
+				}
+
+				var idCache = CACHE[gid];
+
+				if (!idCache) {
+					idCache = {};
+					CACHE[gid] = idCache;
+				}
+
+				var content = _.kebabCase(tokens[idx + 1].content).replace(REGEX_ILLEGAL_ID_PREFIX, '');
+
+				var id = _.truncate(content, truncateOptions);
+
+				if (idCache[id]) {
+					var i = 0;
+
+					var prevId = id;
+
+					while (id in idCache) {
+						id = `${prevId}-${++i}`;
+					}
+				}
+
+				idCache[id] = true;
+
+				idAttr = ` id="${id}"`;
+			}
+
+			return `<h${level}${idAttr}>`;
 		};
 
 		md.renderer.rules.image = function(tokens, idx, options, env) {

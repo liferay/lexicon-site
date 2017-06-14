@@ -83,6 +83,38 @@
 			margin: 0;
 		}
 	}
+
+	.intro {
+		padding: 56px 0;
+		margin-bottom: 120px;
+		text-align: center;
+
+		h1 {
+			font-size: 210px;
+			color: #fff;
+			font-weight: 700;
+			margin-bottom: 100px;
+
+			span {
+				color: $action-color;
+			}
+		}
+
+		h3 {
+			width: 400px;
+			margin-bottom: 48px;
+			font-weight: 600;
+			letter-spacing: 7px;
+			font-size: 21px;
+		}
+
+		p {
+			font-size: 32px;
+			color: $gray-light;
+			max-width: 600px;
+			margin: 0 auto 56px auto;
+		}
+	}
 }
 
 .News {

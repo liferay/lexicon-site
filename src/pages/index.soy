@@ -1,6 +1,7 @@
 ---
 title: "Home"
 description: "Something nice and compelling about the project. Make it short and sweet."
+class: "foo"
 ---
 
 {namespace pageIndex}
@@ -10,13 +11,20 @@ description: "Something nice and compelling about the project. Make it short and
  */
 {template .render}
 	{call main.render data="all"}
+		{param elementClasses: 'home' /}
 		{param content kind="html"}
-			{call Sidebar.render data="all"}
-				{param section: $site.index.children['docs'] /}
+			{call .header /}
+			{call .intro}
+				{param site: $site /}
 			{/call}
-			<div class="sidebar-offset">
-				{call .header /}
-			</div>
+			{call .teasers}
+				{param site: $site /}
+			{/call}
+			{call .explore}
+				{param site: $site /}
+			{/call}
+			{call .contact /}
+			{call .footer /}
 		{/param}
 	{/call}
 {/template}
@@ -25,5 +33,163 @@ description: "Something nice and compelling about the project. Make it short and
  *
  */
 {template .header}
+	<nav class="navbar sticky-top navbar-toggleable-md">
+		<div class="container">
+			<div class="navbar-brand mr-auto">
+				<a href="/">
+					<img src="/images/logo_lexicon_b.png" alt="">
+				</a>
+				<span class="label label-version">v. 1.0</span>
+			</div>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control" type="text" placeholder="">
+				<button class="btn btn-clear" type="reset">&times;</button>
+			</form>
+		</div>
+	</nav>
+{/template}
 
+/**
+ * @param site
+ */
+{template .intro}
+	<div class="intro">
+		<div class="container">
+			<h3>Crafting beautiful UI</h3>
+			<h1>Let<span>&rsquo;</span>s play</h1>
+
+			<a class="btn btn-home" href="{$site.index.children.docs.children.lexicon.url}">Get Started</button>
+			<script type="template"><button class="btn btn-home" type="submit">Get Started</button></script>
+		</div>
+	</div>
+{/template}
+
+/**
+ * @param site
+ */
+{template .teasers}
+	{let $section: $site.index.children.docs /}
+	<div class="container teasers">
+		<div class="row d-flex align-items-center">
+			<div class="col-sm-6 col-xs-12">
+				<div class="media">
+					<img src="images/design_language.svg" alt="">
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<div class="media-body">
+					<a href="{$site.index.children.docs.children.lexicon.url}#design-language">
+						<h2>Design System</h2>
+					</a>
+
+					<p>Lexicon is a set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.</p>
+					<a class="btn btn-home btn-teaser" href="{$site.index.children.docs.children.lexicon.url}#design-language">+</a>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex align-items-center">
+			<div class="col-sm-6 col-xs-12 col-sm-push-6">
+				<div class="media">
+					<img src="images/modular_approach.svg" alt="">
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12 col-sm-pull-6">
+				<div class="media-body">
+					<a href="{$site.index.children.docs.children.lexicon.url}#modular-approach">
+						<h2>Modular Approach</h2>
+					</a>
+					<p>The lexicon approach to interface design is based on modularity. A flexible and consistent system that is able to respond to the multiple needs of modern digital products.</p>
+					<a class="btn btn-home btn-teaser" href="{$site.index.children.docs.children.lexicon.url}#modular-approach">+</a>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex align-items-center">
+			<div class="col-sm-6 col-xs-12">
+				<div class="media">
+					<img src="images/open_platform.svg" alt="">
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<div class="media-body">
+					<a href="{$site.index.children.docs.children.lexicon.url}#lexicon-site">
+						<h2>Open Platform</h2>
+					</a>
+					<p>An open space for designers, developers or any other person involved in the creation of digital products who want to contribute with their own proposals and suggestions.</p>
+					<a class="btn btn-home btn-teaser" href="{$site.index.children.docs.children.lexicon.url}#lexicon-site">+</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{/template}
+
+
+/**
+ * @param site
+ */
+{template .explore}
+	<div class="section explore-lexicon">
+		<div class="container">
+			<h2>Explore Lexicon</h2>
+			<h3>Lexicon is a live project, always growing<br>and aware of the latest technologies and trends. Feel yourself free to explore it.</h3>
+
+			{let $section: $site.index.children.docs /}
+			<ul class="list-unstyled">
+				{foreach $childId in $section.childIds}
+					{let $page: $section.children[$childId] /}
+
+					{if not $page.hidden}
+						<li class="{$page.icon}"><a href="{$page.url}">{$page.title}</a></li>
+					{/if}
+				{/foreach}
+			</ul>
+		</div>
+	</div>
+{/template}
+
+/**
+ *
+ */
+{template .contact}
+	<div class="section contact-us">
+		<div class="container">
+			<h2>We really care about your opinion. <br> It would be awesome if you could give us <br>some feedback!</h2>
+			<button class="btn btn-home" type="submit">Contact Us</button>
+		</div>
+	</div>
+{/template}
+
+/**
+ *
+ */
+{template .footer}
+	<footer>
+		<div class="container">
+			<div class="col-md-6">
+				<p class="clay-link section">
+					<img alt="Clay" class="clay-logo" src="images/clay_logo.svg">
+					<b class="clay-call-to-action">Discover Clay.</b>
+					<span>The web implementation for Lexicon experience language.</span>
+					<a href="http://claycss.wedeploy.io/">Visit Clay</a>
+				</p>
+			</div>
+			<div class="col-md-6">
+				<div class="footer-brand d-flex align-items-center">
+					<a href=""><img class="logo-liferay" src="images/liferay_logo.svg" alt=""></a>
+					<p>Brought to you by <a href="">Liferay, Inc.</a></p>
+				</div>
+				<h3>Follow Us</h3>
+				<ul class="social nav">
+					<li class="nav-item mr-2">
+						<a href="https://dribbble.com/liferay"><img src="images/dribble.png" alt="Dribbble"></a>
+					</li>
+					<li class="nav-item mr-2">
+						<a href=""><img src="images/mail.png" alt="Mail"></a>
+					</li>
+					<li class="nav-item">
+						<a href="https://twitter.com/Liferay_Lexicon"><img src="images/twitter.png" alt="Twitter"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 {/template}

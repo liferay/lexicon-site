@@ -37,16 +37,10 @@
  * @param page
  */
 {template .anchor}
-	{if $page.icon}
-		<svg class="lexicon-icon icon-monospaced">
-			<use xlink:href="/images/icons/lexicon-site-icons.svg#{$page.icon}" />
-		</svg>
-	{/if}
-
 	{if not $page.children}
-		<a href="{$page.url}">
+		<a class="{$page.icon ?: ''}" href="{$page.url}">
 	{else}
-		<a data-onclick="handleCollapseClick_" href="javascript:;">
+		<a class="{$page.icon ?: ''}" data-onclick="handleCollapseClick_" href="javascript:;">
 	{/if}
 
 		<span>{$page.title}</span>

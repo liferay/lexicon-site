@@ -2,7 +2,7 @@
 title: "Pattern library"
 description: "Patterns section"
 layout: "guide"
-icon: "lexicon-site-doc"
+icon: "lexicon-site-docs"
 weight: 2
 ---
 

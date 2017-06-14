@@ -1,8 +1,11 @@
 @import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
 
+@import "lexicon-site/variables";
+
 @import "atlas";
 
-@import "lexicon-site/variables";
+
+@import "mixins";
 
 @import "autocomplete";
 @import "blog";
@@ -16,6 +19,7 @@
 @import "lexicon-site/navbar-lexicon-site";
 @import "lexicon-site/sidebar-lexicon-site";
 @import "lexicon-site/table-lexicon-site";
+@import "lexicon-site/home-lexicon-site";
 
 // Font
 
@@ -23,10 +27,6 @@
 
 body {
 	color: $brand-dark;
-	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: $base-size / 2;
-
-	@media (max-width: $grid-float-breakpoint - 1px) {
-		margin-top: $base-size * 2;
-	}
 }
