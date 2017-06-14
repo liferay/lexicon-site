@@ -197,7 +197,7 @@ h3 {
 	text-align: center;
 
 	h1 {
-		font-size: 210px;
+		font-size: 120px;
 		color: #fff;
 		font-weight: bold;
 		line-height: 1.1;
@@ -206,6 +206,10 @@ h3 {
 
 		span {
 			color: $action-color;
+		}
+
+		@media (min-width: $screen-sm) {
+			font-size: 210px;
 		}
 	}
 
@@ -386,16 +390,14 @@ h3 {
 			border-left: 0px solid transparent;
 			border-right: 104px solid transparent;
 			border-top: 48px solid $action-color;
-			left: 70%;
+			left: 60%;
 			position: absolute;
 			top: 100%;
 
-			// .arrow-down {
 
-			// 	position: relative;
-			// 	top: -164px;
-			// 	left: 70%;
-			// }
+			@media (min-width: $screen-xs) {
+				left: 70%;
+			}
 		}
 	// }
 
