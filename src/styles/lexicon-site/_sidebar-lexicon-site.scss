@@ -90,8 +90,9 @@
 				font-size: 16px;
 				font-weight: 600;
 				line-height: 22px;
+                margin-left: $base-size * 1.5;
 				min-height: $base-size * 1.25;
-				padding-left: $base-size / 2 + $base-size * 1.5;
+				padding-left: $base-size / 2;
 			}
 
 			& ul > li > ul > li > a, .nav .nav > li > a {
@@ -111,15 +112,21 @@
 				}
 
 				&.lexicon-site-about:before {
-					@include square(25px, #6B6C7E);
+                    left: - $base-size * 1.357;
+
+                    @include square(22px, #6B6C7E);
 				}
 
 				&.lexicon-site-docs:before {
-					@include triangle(25px, #FFF);
+                    left: - $base-size * 1.4;
+
+                    @include triangle(25px, #FFF);
 				}
 
 				&.lexicon-site-news:before {
-					@include circle(25px, #FF6060);
+                    left: - $base-size * 1.4;
+
+                    @include circle(25px, #FF6060);
 				}
 			}
 		}
