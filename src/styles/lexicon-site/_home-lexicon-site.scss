@@ -115,8 +115,6 @@
 					background-size: 16px;
 					background-repeat: no-repeat;
 
-
-
 				}
 			}
 		}
@@ -161,6 +159,73 @@
 			border-radius: 50px;
 		}
 	}
+    
+    .footer {
+        font-size: 16px;
+        margin-top: $base-size * 1.5;
+        min-height: $base-size * 5;
+        padding: $base-size / 2 0;
+        color: #fff;
+
+        @media (max-width: $screen-md) {
+            text-align: center;
+        }
+
+        @media (min-width: $screen-md) {
+            padding: 140px 0;
+        }
+
+        .text-right-lg {
+            @media (min-width: $screen-md) {
+                text-align: right;
+            }
+        }
+
+        a {
+            color: #FFF;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+
+            &.bold {
+                font-weight: bold;
+                
+                &:hover {
+                    border-color: $action-color;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .sticker {
+            background-color: #fff;
+            border-radius: 20px;
+            color: $brand-dark;
+            margin: $base-size / 2 $base-size / 4;
+
+            .lexicon-icon {
+                width: 14px;
+            }
+
+            @media (min-width: $screen-md) {
+                margin: 0 0 0 $base-size / 3;
+            }
+        }
+
+        .sticker:hover {
+            background-color: $action-color;
+            color: #fff;
+        }
+
+        .row img.logo {
+            margin: $base-size / 2 $base-size / 3;
+            max-height: $base-size;
+            padding: 0;
+
+            @media (min-width: $screen-md) {
+                margin: 0 $base-size / 2 0 0;
+            }
+        }
+    }
 }
 
 .btn-home {
@@ -240,6 +305,10 @@
 
 	@media (min-width: $screen-sm) {
 		text-align: left;
+        .row {
+            display: flex;
+            align-items: center;
+	    }
 	}
 
 	.row {
@@ -251,7 +320,7 @@
 	}
     
 	img {
-		width: 360px;
+		width: 340px;
 		max-width: 100%;
 	}
 
@@ -264,6 +333,7 @@
 		padding-bottom: 4px;
 		border-bottom: 2px solid $brand-dark;
 		display: inline-block;
+        margin-top: 0;
 
 		&:hover {
 			border-color: $action-color;
@@ -344,7 +414,7 @@
 		}
 
 		&.lexicon-site-about:before {
-			@include square(44px, #6B6C7E);
+			@include square(40px, #6B6C7E);
 		}
 
 		&.lexicon-site-docs:before {
@@ -352,35 +422,51 @@
 		}
 
 		&.lexicon-site-news:before {
-			@include circle(44px, #FF6060);
+			@include circle(44px, #4887FF);
 		}
 	}
 }
 
+
 .clay-link {
-	margin-bottom: 1em;
+    background-color: #393A4A;
+    padding: 88px 0;
+    
+    .container {
+        width: 700px;
+    }
+    
+    p {
+        font-size: 20px;
+        line-height: 28px;
+        color: #fff;
+        
+        span {
+            font-weight: 700;
+        }
+    }
+    
+    a {
+        font-weight: 700;
+        color: $action-color;
+        padding-bottom: 1px;
+        border-bottom: 2px solid transparent;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: 0.1s;
+        
+        
+        &:hover {
+           border-color: $action-color;
+        }
+    }
+    
+    img {
+        width: 53px;
+        float: right;
+    }
 
-	@media (min-width: $screen-md) {
-		margin-bottom: 0;
-	}
-
-	.clay-logo {
-		float: left;
-		margin-right: 16px;
-		width: 44px;
-	}
-
-	a {
-		color: #FF6060;
-		display: block;
-		font-size: 14px;
-		font-weight: bold;
-		margin-top: 10px;
-
-		&:hover {
-			border-width: 0;
-		}
-	}
 }
 
 .contact-us {
@@ -402,10 +488,6 @@
 			position: absolute;
 			top: 100%;
 
-
-			@media (min-width: $screen-xs) {
-				left: 70%;
-			}
 		}
 	// }
 
@@ -428,118 +510,6 @@
 			background-color: #fff;
 			color: $action-color;
 
-		}
-	}
-}
-
-footer {
-	background-color: #30313F;
-	padding: 100px 0;
-
-	h3 {
-		color: #FFF;
-		font-size: 12px;
-		font-weight: bold;
-		margin-bottom: 5px;
-		text-transform: uppercase;
-	}
-
-	> .container {
-		> div {
-			padding-top: 20px;
-		}
-
-		@media (min-width: $screen-md) {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: space-between;
-
-			> div {
-				padding-top: 0;
-			}
-		}
-	}
-
-	.logo-liferay {
-		width: 32px;
-		margin-right: 16px;
-	}
-
-	p {
-		font-size: 16px;
-		margin-bottom: 3px;
-		color: #fff;
-
-		a {
-			font-weight: 700;
-			color: #fff;
-			padding-bottom: 2px;
-			border-bottom: 2px solid $gray-dark;
-
-			&:hover {
-				border-color: $action-color;
-			}
-		}
-	}
-
-	.footer-brand {
-		display: flex;
-		align-items: center;
-		flex: 0 0 75%;
-		margin-bottom: 20px;
-	}
-
-	.social {
-		display: flex;
-		justify-content: space-between;
-
-		li {
-			margin-right: .75rem;
-		}
-
-		a {
-			padding: 0;
-		}
-		// float: right;
-
-		img {
-			width: 32px;
-		}
-	}
-
-	.social-header {
-		text-align: center;
-        color: $brand-secondary;
-		font-size: 12px;
-		letter-spacing: 1px;
-		line-height: 20px;
-		margin-bottom: 8px;
-		text-transform: uppercase;
-        font-weight: 600;
-	}
-
-	@media (min-width: $screen-md) {
-		& {
-			padding: 164px 0 264px;
-		}
-
-		.footer-brand {
-			max-width: 75%;
-		}
-
-		.social-header {
-			text-align: left;
-		}
-
-		.social {
-			max-width: 25%;
-
-			li {
-				&:last-of-type {
-					margin-right: auto;
-				}
-			}
 		}
 	}
 }

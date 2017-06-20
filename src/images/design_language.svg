@@ -2,10 +2,10 @@
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g>
             <rect fill="#272833" x="0" y="0" width="720" height="720"></rect>
-            <ellipse fill="#FF6060" cx="223" cy="437.171921" rx="132" ry="131.171921"></ellipse>
+            <ellipse fill="#4887FF" cx="223" cy="437.171921" rx="132" ry="131.171921"></ellipse>
             <rect fill="#6B6C7E" x="390" y="318.007349" width="240" height="240"></rect>
             <polygon fill="#FFFFFF" points="222.5 23.2373441 364 264.026119 81 264.026119"></polygon>
-            <g transform="translate(414.000000, 126.000000)" fill="#FF6060">
+            <g transform="translate(414.000000, 126.000000)" fill="#4887FF">
                 <rect x="46" y="7" width="20" height="9"></rect>
                 <rect x="86" y="7" width="20" height="9"></rect>
                 <rect x="126" y="7" width="20" height="9"></rect>
