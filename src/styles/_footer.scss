@@ -1,5 +1,4 @@
 .footer {
-	font-size: 14px;
 	margin-top: $base-size * 1.5;
 	min-height: $base-size * 5;
 	padding: $base-size / 2 0;
@@ -20,11 +19,17 @@
 	}
 
 	a {
-		color: #FFF;
+		padding-bottom: 2px;
+		border-bottom: 2px solid transparent;
 
-		&.dark {
+		&.bold {
 			color: $brand-dark;
 			font-weight: bold;
+
+			&:hover {
+				border-color: $action-color;
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -48,7 +53,7 @@
 	}
 
 	.sticker:hover {
-		background-color: $brand-dark;
+		background-color: $action-color;
 	}
 
 	.row img.logo {
