@@ -1075,33 +1075,68 @@ var ElectricSearchBase = function (_Component) {
 			this.on('queryChanged', this.handleQueryChange_.bind(this));
 		}
 	}, {
+		key: 'matchesArrayField_',
+		value: function matchesArrayField_(value, query) {
+			return value.some(function (itemName) {
+				return itemName.indexOf(query) > -1;
+			});
+		}
+	}, {
 		key: 'matchesQuery_',
 		value: function matchesQuery_(data, query) {
-			var childrenOnly = this.childrenOnly;
+			var childrenOnly = this.childrenOnly,
+			    excludePath = this.excludePath;
 
 			var path = this.path || location.pathname;
 
-			var content = data.content,
-			    description = data.description,
-			    hidden = data.hidden,
-			    title = data.title,
+			var hidden = data.hidden,
 			    url = data.url;
 
 
-			if (childrenOnly && url.indexOf(path) !== 0 && url !== path) {
+			if (childrenOnly && url.indexOf(path) !== 0 && url !== path || excludePath && url.indexOf(excludePath) === 0) {
+
 				return false;
 			}
 
-			content = content ? content.toLowerCase() : '';
-			description = description ? description.toLowerCase() : '';
-			title = title ? title.toLowerCase() : '';
+			return !hidden && this.matchesField_(data, query);
+		}
+	}, {
+		key: 'matchesField_',
+		value: function matchesField_(data, query) {
+			var _this2 = this;
 
-			return !hidden && (title.indexOf(query) > -1 || description.indexOf(query) > -1 || content.indexOf(query) > -1);
+			var fieldNames = this.fieldNames;
+
+
+			return fieldNames.some(function (fieldName) {
+				var value = data[fieldName];
+
+				var matches = false;
+
+				if (!value) {
+					return matches;
+				}
+
+				if (Array.isArray(value)) {
+					matches = _this2.matchesArrayField_(value, query);
+				} else if (typeof value === 'string') {
+					matches = _this2.matchesTextField_(value, query);
+				}
+
+				return matches;
+			});
+		}
+	}, {
+		key: 'matchesTextField_',
+		value: function matchesTextField_(value, query) {
+			value = value.toLowerCase();
+
+			return value.indexOf(query) > -1;
 		}
 	}, {
 		key: 'filterResults_',
 		value: function filterResults_(data, query) {
-			var _this2 = this;
+			var _this3 = this;
 
 			var children = data.children,
 			    childIds = data.childIds;
@@ -1117,7 +1152,7 @@ var ElectricSearchBase = function (_Component) {
 				childIds.forEach(function (childId) {
 					var child = children[childId];
 
-					results = results.concat(_this2.filterResults_(child, query));
+					results = results.concat(_this3.filterResults_(child, query));
 				});
 			}
 
@@ -1184,6 +1219,15 @@ ElectricSearchBase.STATE = {
 
 	data: {
 		validator: _metal2.default.isObject
+	},
+
+	excludePath: {
+		validator: _metal2.default.isString
+	},
+
+	fieldNames: {
+		validator: _metal2.default.isArray,
+		value: ['content', 'description', 'tags', 'title']
 	},
 
 	maxResults: {
@@ -2183,7 +2227,7 @@ function $footer(opt_data, opt_ignored, opt_ijData) {
           ie_open('span');
             itext('Brought to you by ');
             ie_open('a', null, null,
-                'class', 'dark',
+                'class', 'bold',
                 'href', 'http://www.liferay.com',
                 'target', '_blank');
               itext('Liferay, Inc.');
@@ -2192,6 +2236,26 @@ function $footer(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
         ie_open('div', null, null,
             'class', 'col-md-5 text-right-lg');
+          ie_open('a', null, null,
+              'class', 'sticker sticker-default sticker-rounded sticker-static',
+              'href', 'https://dribbble.com/liferay',
+              'target', '_blank');
+            ie_open('svg', null, null,
+                'class', 'lexicon-icon icon-monospace',
+                'version', '1.1',
+                'id', 'Dribbble',
+                'xmlns', 'http://www.w3.org/2000/svg',
+                'xmlns:xlink', 'http://www.w3.org/1999/xlink',
+                'x', '0px',
+                'y', '0px',
+                'viewBox', '0 0 511.9 511.9',
+                'style', 'enable-background:new 0 0 511.9 511.9;',
+                'xml:space', 'preserve');
+              ie_void('path', null, null,
+                  'id', 'ball',
+                  'd', 'M256,511.9C114.8,511.9,0,397.1,0,256S114.8,0,256,0s256,114.8,256,256S397.1,511.9,256,511.9z M471.8,291 c-7.5-2.4-67.7-20.3-136.2-9.3c28.6,78.6,40.2,142.6,42.5,155.9C427.2,404.4,462.1,351.8,471.8,291L471.8,291z M341.4,457.5 c-3.3-19.2-15.9-86-46.6-165.8c-0.5,0.2-1,0.3-1.4,0.5c-123.3,43-167.6,128.5-171.5,136.5C184.3,477.5,268.4,488.6,341.4,457.5z M93.5,402.5c5-8.5,65-107.8,177.7-144.3c2.8-0.9,5.7-1.8,8.6-2.6c-5.5-12.4-11.5-24.9-17.7-37.1C153,251.2,47,249.8,37.4,249.6 c-0.1,2.2-0.1,4.4-0.1,6.7C37.3,310.3,57.3,362.4,93.5,402.5z M41.9,211.5c9.8,0.1,99.9,0.5,202.1-26.6 C207.8,120.5,168.8,66.3,163,58.4C101.8,87.3,56.1,143.7,41.9,211.5z M204.7,43.7c6,8.1,45.8,62.2,81.6,128 c77.7-29.1,110.7-73.4,114.6-79C347.5,45.3,274.2,27,204.7,43.7z M425.2,118c-4.6,6.2-41.2,53.2-122.1,86.2 c5.1,10.4,10,21,14.5,31.7c1.6,3.8,3.2,7.5,4.7,11.3c72.7-9.1,145,5.5,152.2,7C474.1,204.5,456.7,156.5,425.2,118z');
+            ie_close('svg');
+          ie_close('a');
           ie_open('a', null, null,
               'class', 'sticker sticker-default sticker-rounded sticker-static',
               'href', 'https://twitter.com/Liferay_Lexicon',
@@ -2469,6 +2533,10 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
 var _metal = __webpack_require__(2);
 
 var _metal2 = _interopRequireDefault(_metal);
@@ -2503,7 +2571,7 @@ var Toggler = function (_State) {
 	function Toggler(opt_config) {
 		_classCallCheck(this, Toggler);
 
-		var _this = _possibleConstructorReturn(this, _State.call(this, opt_config));
+		var _this = _possibleConstructorReturn(this, (Toggler.__proto__ || Object.getPrototypeOf(Toggler)).call(this, opt_config));
 
 		_this.headerEventHandler_ = new _metalEvents.EventHandler();
 
@@ -2517,96 +2585,169 @@ var Toggler = function (_State) {
   */
 
 
-	Toggler.prototype.disposeInternal = function disposeInternal() {
-		_State.prototype.disposeInternal.call(this);
-		this.headerEventHandler_.removeAllListeners();
-	};
-
-	/**
-  * Gets the content to be toggled by the given header element.
-  * @param {!Element} header
-  * @protected
-  */
-
-
-	Toggler.prototype.getContentElement_ = function getContentElement_(header) {
-		if (_metal2.default.isElement(this.content)) {
-			return this.content;
+	_createClass(Toggler, [{
+		key: 'disposeInternal',
+		value: function disposeInternal() {
+			_get(Toggler.prototype.__proto__ || Object.getPrototypeOf(Toggler.prototype), 'disposeInternal', this).call(this);
+			this.headerEventHandler_.removeAllListeners();
 		}
 
-		var content = _metalDom2.default.next(header, this.content);
-		if (content) {
-			return content;
-		}
-
-		content = header.querySelector(this.content);
-		if (content) {
-			return content;
-		}
-
-		return this.container.querySelector(this.content);
-	};
-
-	/**
-  * Handles a `click` event on the header.
-  * @param {!Event} event
-  * @protected
+		/**
+  * Manually collapse the content's visibility.
+  * @param {string|!Element} header
   */
 
+	}, {
+		key: 'collapse',
+		value: function collapse(header) {
+			var headerElements = this.getHeaderElements_(header);
+			var content = this.getContentElement_(headerElements);
+			_metalDom2.default.removeClasses(content, this.expandedClasses);
+			_metalDom2.default.addClasses(content, this.collapsedClasses);
+			_metalDom2.default.removeClasses(headerElements, this.headerExpandedClasses);
+			_metalDom2.default.addClasses(headerElements, this.headerCollapsedClasses);
+		}
 
-	Toggler.prototype.handleClick_ = function handleClick_(event) {
-		this.toggle(event.delegateTarget || event.currentTarget);
-	};
-
-	/**
-  * Handles a `keydown` event on the header.
-  * @param {!Event} event
-  * @protected
+		/**
+  * Manually expand the content's visibility.
+  * @param {string|!Element} header
   */
 
+	}, {
+		key: 'expand',
+		value: function expand(header) {
+			var headerElements = this.getHeaderElements_(header);
+			var content = this.getContentElement_(headerElements);
+			_metalDom2.default.addClasses(content, this.expandedClasses);
+			_metalDom2.default.removeClasses(content, this.collapsedClasses);
+			_metalDom2.default.addClasses(headerElements, this.headerExpandedClasses);
+			_metalDom2.default.removeClasses(headerElements, this.headerCollapsedClasses);
+		}
 
-	Toggler.prototype.handleKeydown_ = function handleKeydown_(event) {
-		if (event.keyCode === 13 || event.keyCode === 32) {
+		/**
+   * Gets the content to be toggled by the given header element.
+   * @param {!Element} header
+   * @returns {!Element}
+   * @protected
+   */
+
+	}, {
+		key: 'getContentElement_',
+		value: function getContentElement_(header) {
+			if (_metal2.default.isElement(this.content)) {
+				return this.content;
+			}
+
+			var content = _metalDom2.default.next(header, this.content);
+			if (content) {
+				return content;
+			}
+
+			if (_metal2.default.isElement(header)) {
+				content = header.querySelector(this.content);
+				if (content) {
+					return content;
+				}
+			}
+
+			return this.container.querySelectorAll(this.content);
+		}
+
+		/**
+   * Gets the header elements by giving a selector.
+   * @param {string} header
+   * @returns {!Nodelist}
+   * @protected
+   */
+
+	}, {
+		key: 'getHeaderElements_',
+		value: function getHeaderElements_() {
+			var header = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.header;
+
+			if (_metal2.default.isElement(header) || _metal2.default.isElement(header[0])) {
+				return header;
+			}
+			return this.container.querySelectorAll(header);
+		}
+
+		/**
+   * Handles a `click` event on the header.
+   * @param {!Event} event
+   * @protected
+   */
+
+	}, {
+		key: 'handleClick_',
+		value: function handleClick_(event) {
 			this.toggle(event.delegateTarget || event.currentTarget);
-			event.preventDefault();
 		}
-	};
 
-	/**
-  * Syncs the component according to the value of the `header` state,
-  * attaching events to the new element and detaching from any previous one.
-  */
+		/**
+   * Handles a `keydown` event on the header.
+   * @param {!Event} event
+   * @protected
+   */
 
-
-	Toggler.prototype.syncHeader = function syncHeader() {
-		this.headerEventHandler_.removeAllListeners();
-		if (this.header) {
-			if (_metal2.default.isString(this.header)) {
-				this.headerEventHandler_.add(_metalDom2.default.delegate(this.container, 'click', this.header, this.handleClick_.bind(this)), _metalDom2.default.delegate(this.container, 'keydown', this.header, this.handleKeydown_.bind(this)));
-			} else {
-				this.headerEventHandler_.add(_metalDom2.default.on(this.header, 'click', this.handleClick_.bind(this)), _metalDom2.default.on(this.header, 'keydown', this.handleKeydown_.bind(this)));
+	}, {
+		key: 'handleKeydown_',
+		value: function handleKeydown_(event) {
+			if (event.keyCode === 13 || event.keyCode === 32) {
+				this.toggle(event.delegateTarget || event.currentTarget);
+				event.preventDefault();
 			}
 		}
-	};
 
-	/**
-  * Toggles the content's visibility.
-  */
+		/**
+   * Checks if there is any expanded header in the component context.
+   * @param {string|!Element} event
+   * @param {boolean}
+   * @protected
+   */
 
-
-	Toggler.prototype.toggle = function toggle(header) {
-		var content = this.getContentElement_(header);
-		_metalDom2.default.toggleClasses(content, Toggler.CSS_EXPANDED);
-		_metalDom2.default.toggleClasses(content, Toggler.CSS_COLLAPSED);
-
-		if (_metalDom2.default.hasClass(content, Toggler.CSS_EXPANDED)) {
-			_metalDom2.default.addClasses(header, Toggler.CSS_HEADER_EXPANDED);
-			_metalDom2.default.removeClasses(header, Toggler.CSS_HEADER_COLLAPSED);
-		} else {
-			_metalDom2.default.removeClasses(header, Toggler.CSS_HEADER_EXPANDED);
-			_metalDom2.default.addClasses(header, Toggler.CSS_HEADER_COLLAPSED);
+	}, {
+		key: 'hasExpanded_',
+		value: function hasExpanded_(header) {
+			if (_metal2.default.isElement(header)) {
+				return _metalDom2.default.hasClass(header, this.headerExpandedClasses);
+			}
+			return !!this.container.querySelectorAll('.' + this.headerExpandedClasses).length;
 		}
-	};
+
+		/**
+   * Syncs the component according to the value of the `header` state,
+   * attaching events to the new element and detaching from any previous one.
+   */
+
+	}, {
+		key: 'syncHeader',
+		value: function syncHeader() {
+			this.headerEventHandler_.removeAllListeners();
+			if (this.header) {
+				if (_metal2.default.isString(this.header)) {
+					this.headerEventHandler_.add(_metalDom2.default.delegate(this.container, 'click', this.header, this.handleClick_.bind(this)), _metalDom2.default.delegate(this.container, 'keydown', this.header, this.handleKeydown_.bind(this)));
+				} else {
+					this.headerEventHandler_.add(_metalDom2.default.on(this.header, 'click', this.handleClick_.bind(this)), _metalDom2.default.on(this.header, 'keydown', this.handleKeydown_.bind(this)));
+				}
+			}
+		}
+
+		/**
+   * Toggles the content's visibility.
+   * @param {string|!Element} header
+   */
+
+	}, {
+		key: 'toggle',
+		value: function toggle(header) {
+			var headerElements = this.getHeaderElements_(header);
+			if (this.hasExpanded_(headerElements)) {
+				this.collapse(headerElements);
+			} else {
+				this.expand(headerElements);
+			}
+		}
+	}]);
 
 	return Toggler;
 }(_metalState2.default);
@@ -2617,6 +2758,14 @@ var Toggler = function (_State) {
 
 
 Toggler.STATE = {
+	/**
+  * The CSS classes added to the content when it's collapsed.
+  */
+	collapsedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-collapsed'
+	},
+
 	/**
   * The element where the header/content selectors will be looked for.
   * @type {string|!Element}
@@ -2640,6 +2789,14 @@ Toggler.STATE = {
 	},
 
 	/**
+  * The CSS classes added to the content when it's expanded.
+  */
+	expandedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-expanded'
+	},
+
+	/**
   * The element that should be trigger toggling.
   * @type {string|!Element}
   */
@@ -2647,28 +2804,24 @@ Toggler.STATE = {
 		validator: function validator(value) {
 			return _metal2.default.isString(value) || _metal2.default.isElement(value);
 		}
+	},
+
+	/**
+  * The CSS classes added to the header when the content is collapsed.
+  */
+	headerCollapsedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-header-collapsed'
+	},
+
+	/**
+  * The CSS classes added to the header when the content is expanded.
+  */
+	headerExpandedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-header-expanded'
 	}
 };
-
-/**
- * The CSS class added to the content when it's collapsed.
- */
-Toggler.CSS_COLLAPSED = 'toggler-collapsed';
-
-/**
- * The CSS class added to the content when it's expanded.
- */
-Toggler.CSS_EXPANDED = 'toggler-expanded';
-
-/**
- * The CSS class added to the header when the content is collapsed.
- */
-Toggler.CSS_HEADER_COLLAPSED = 'toggler-header-collapsed';
-
-/**
- * The CSS class added to the header when the content is expanded.
- */
-Toggler.CSS_HEADER_EXPANDED = 'toggler-header-expanded';
 
 exports.default = Toggler;
 
@@ -4989,9 +5142,13 @@ var Ajax = function () {
 				clearTimeout(timeout);
 			});
 
+			url = new _metalUri2.default(url);
+
 			if (opt_params) {
-				url = new _metalUri2.default(url).addParametersFromMultiMap(opt_params).toString();
+				url.addParametersFromMultiMap(opt_params).toString();
 			}
+
+			url = url.toString();
 
 			request.open(method, url, !opt_sync);
 
@@ -8441,7 +8598,7 @@ var Tabs = function (_Component) {
    * @inheritDoc
    */
 		value: function attached() {
-			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'a').setCircularLength(this.tabs.length).start();
+			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'button').setCircularLength(this.tabs.length).start();
 		}
 
 		/**
@@ -8542,7 +8699,7 @@ var Tabs = function (_Component) {
 		}
 
 		/**
-   * Removes the tab at the given index from the tabs array.
+   * Finds the first enabled tab and returns its index.
    * @return {number} Returns the index of the first tab which is not disabled.
    */
 
@@ -8823,20 +8980,21 @@ goog.loadModule(function (exports) {
         }
         iattr('role', 'presentation');
         ie_open_end();
-        ie_open_start('a');
+        ie_open_start('button');
+        iattr('aria-disabled', isDisabled__soy10 ? 'true' : 'false');
         iattr('aria-expanded', isCurrentTab__soy11 ? 'true' : 'false');
-        iattr('data-toggle', 'tab');
         iattr('data-unfocusable', isDisabled__soy10 ? 'true' : 'false');
-        if (!isDisabled__soy10) {
-          iattr('href', '#');
+        iattr('data-toggle', 'tab');
+        if (isDisabled__soy10) {
+          iattr('disabled', '');
         }
         iattr('ref', 'tab-' + currentTabIndex37);
         iattr('role', 'tab');
-        iattr('tabindex', isCurrentTab__soy11 ? '0' : '-1');
+        iattr('type', 'button');
         ie_open_end();
         var dyn0 = currentTabData37.label;
         if (typeof dyn0 == 'function') dyn0();else if (dyn0 != null) itext(dyn0);
-        ie_close('a');
+        ie_close('button');
         ie_close('li');
       }
       ie_close('ul');
@@ -9871,8 +10029,8 @@ var Uri = function () {
 		}
 
 		/**
-   * Normalizes the parsed object to be in the expected standard.
-   * @param {!Object}
+   * Parses the given uri string into an object.
+   * @param {*=} opt_uri Optional string URI to parse
    */
 
 	}, {
@@ -10043,24 +10201,9 @@ var Uri = function () {
 			return parseFn_;
 		}
 	}, {
-		key: 'normalizeObject',
-		value: function normalizeObject(parsed) {
-			var length = parsed.pathname ? parsed.pathname.length : 0;
-			if (length > 1 && parsed.pathname[length - 1] === '/') {
-				parsed.pathname = parsed.pathname.substr(0, length - 1);
-			}
-			return parsed;
-		}
-
-		/**
-   * Parses the given uri string into an object.
-   * @param {*=} opt_uri Optional string URI to parse
-   */
-
-	}, {
 		key: 'parse',
 		value: function parse(opt_uri) {
-			return Uri.normalizeObject(parseFn_(opt_uri));
+			return parseFn_(opt_uri);
 		}
 	}, {
 		key: 'setParseFn',
@@ -10108,7 +10251,11 @@ var Uri = function () {
  */
 
 
-Uri.DEFAULT_PROTOCOL = 'http:';
+var isSecure = function isSecure() {
+	return typeof window !== 'undefined' && window.location && window.location.protocol && window.location.protocol.indexOf('https') === 0;
+};
+
+Uri.DEFAULT_PROTOCOL = isSecure() ? 'https:' : 'http:';
 
 /**
  * Hostname placeholder. Relevant to internal usage only.
@@ -10152,7 +10299,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 function parse(opt_uri) {
 	if ((0, _metal.isFunction)(URL) && URL.length) {
-		return new URL(opt_uri);
+		var url = new URL(opt_uri);
+
+		// Safari Browsers will cap port to the max 16-bit unsigned integer (65535) instead
+		// of throwing a TypeError as per spec. It will still keep the port number in the
+		// href attribute, so we can use this mismatch to raise the expected exception.
+		if (url.port && url.href.indexOf(url.port) === -1) {
+			throw new TypeError(opt_uri + ' is not a valid URL');
+		}
+
+		return url;
 	} else {
 		return (0, _parseFromAnchor2.default)(opt_uri);
 	}
@@ -10178,6 +10334,11 @@ Object.defineProperty(exports, "__esModule", {
 function parseFromAnchor(opt_uri) {
 	var link = document.createElement('a');
 	link.href = opt_uri;
+
+	if (link.protocol === ':' || !/:/.test(link.href)) {
+		throw new TypeError(opt_uri + ' is not a valid URL');
+	}
+
 	return {
 		hash: link.hash,
 		hostname: link.hostname,
@@ -10448,7 +10609,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(77)))
 
 /***/ }),
 /* 70 */
@@ -10987,7 +11148,7 @@ var substr = 'ab'.substr(-1) === 'b'
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(76)(module), __webpack_require__(77)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(76)(module), __webpack_require__(78)))
 
 /***/ }),
 /* 71 */
@@ -12039,8 +12200,7 @@ module.exports = function(module) {
 /* 139 */,
 /* 140 */,
 /* 141 */,
-/* 142 */,
-/* 143 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12102,6 +12262,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
     $intro(opt_data, null, opt_ijData);
     $teasers(opt_data, null, opt_ijData);
     $explore(opt_data, null, opt_ijData);
+    $claylink(null, null, opt_ijData);
     $contact(null, null, opt_ijData);
     $footer(null, null, opt_ijData);
   };
@@ -12179,7 +12340,7 @@ function $intro(opt_data, opt_ignored, opt_ijData) {
       ie_open('h1');
         itext('Let');
         ie_open('span');
-          itext('\u2019');
+          itext('\'');
         ie_close('span');
         itext('s play');
       ie_close('h1');
@@ -12187,7 +12348,7 @@ function $intro(opt_data, opt_ignored, opt_ijData) {
           'class', 'btn btn-home',
           'href', opt_data.site.index.children.docs.children.lexicon.url);
         itext('Get Started');
-      ie_close('button');
+      ie_close('a');
       ie_open('script', null, null,
           'type', 'template');
         ie_open('button', null, null,
@@ -12213,19 +12374,22 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $teasers(opt_data, opt_ignored, opt_ijData) {
-  var section__soy123 = opt_data.site.index.children.docs;
+  var section__soy124 = opt_data.site.index.children.docs;
   ie_open('div', null, null,
       'class', 'container teasers');
     ie_open('div', null, null,
-        'class', 'row d-flex align-items-center');
+        'class', 'row');
       ie_open('div', null, null,
           'class', 'col-sm-6 col-xs-12');
         ie_open('div', null, null,
             'class', 'media');
-          ie_open('img', null, null,
-              'src', 'images/design_language.svg',
-              'alt', '');
-          ie_close('img');
+          ie_open('a', null, null,
+              'href', opt_data.site.index.children.docs.children.lexicon.url + '#design-language');
+            ie_open('img', null, null,
+                'src', 'images/design_language.svg',
+                'alt', '');
+            ie_close('img');
+          ie_close('a');
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
@@ -12250,15 +12414,18 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'row d-flex align-items-center');
+        'class', 'row');
       ie_open('div', null, null,
           'class', 'col-sm-6 col-xs-12 col-sm-push-6');
         ie_open('div', null, null,
             'class', 'media');
-          ie_open('img', null, null,
-              'src', 'images/modular_approach.svg',
-              'alt', '');
-          ie_close('img');
+          ie_open('a', null, null,
+              'href', opt_data.site.index.children.docs.children.lexicon.url + '#modular-approach');
+            ie_open('img', null, null,
+                'src', 'images/modular_approach.svg',
+                'alt', '');
+            ie_close('img');
+          ie_close('a');
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
@@ -12283,15 +12450,18 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
     ie_open('div', null, null,
-        'class', 'row d-flex align-items-center');
+        'class', 'row');
       ie_open('div', null, null,
           'class', 'col-sm-6 col-xs-12');
         ie_open('div', null, null,
             'class', 'media');
-          ie_open('img', null, null,
-              'src', 'images/open_platform.svg',
-              'alt', '');
-          ie_close('img');
+          ie_open('a', null, null,
+              'href', opt_data.site.index.children.docs.children.lexicon.url + '#lexicon-site');
+            ie_open('img', null, null,
+                'src', 'images/open_platform.svg',
+                'alt', '');
+            ie_close('img');
+          ie_close('a');
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
@@ -12344,20 +12514,20 @@ function $explore(opt_data, opt_ignored, opt_ijData) {
         ie_close('br');
         itext('and aware of the latest technologies and trends. Feel yourself free to explore it.');
       ie_close('h3');
-      var section__soy139 = opt_data.site.index.children.docs;
+      var section__soy146 = opt_data.site.index.children.docs;
       ie_open('ul', null, null,
           'class', 'list-unstyled');
-        var childIdList151 = section__soy139.childIds;
-        var childIdListLen151 = childIdList151.length;
-        for (var childIdIndex151 = 0; childIdIndex151 < childIdListLen151; childIdIndex151++) {
-          var childIdData151 = childIdList151[childIdIndex151];
-          var page__soy141 = section__soy139.children[childIdData151];
-          if (! page__soy141.hidden) {
+        var childIdList158 = section__soy146.childIds;
+        var childIdListLen158 = childIdList158.length;
+        for (var childIdIndex158 = 0; childIdIndex158 < childIdListLen158; childIdIndex158++) {
+          var childIdData158 = childIdList158[childIdIndex158];
+          var page__soy148 = section__soy146.children[childIdData158];
+          if (! page__soy148.hidden) {
             ie_open('li', null, null,
-                'class', page__soy141.icon);
+                'class', page__soy148.icon);
               ie_open('a', null, null,
-                  'href', page__soy141.url);
-                var dyn5 = page__soy141.title;
+                  'href', page__soy148.url);
+                var dyn5 = page__soy148.title;
                 if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
               ie_close('a');
             ie_close('li');
@@ -12370,6 +12540,61 @@ function $explore(opt_data, opt_ignored, opt_ijData) {
 exports.explore = $explore;
 if (goog.DEBUG) {
   $explore.soyTemplateName = 'pageIndex.explore';
+}
+
+
+/**
+ * @param {Object<string, *>=} opt_data
+ * @param {(null|undefined)=} opt_ignored
+ * @param {Object<string, *>=} opt_ijData
+ * @return {void}
+ * @suppress {checkTypes}
+ */
+function $claylink(opt_data, opt_ignored, opt_ijData) {
+  ie_open('div', null, null,
+      'class', 'section clay-link');
+    ie_open('div', null, null,
+        'class', 'container');
+      ie_open('div', null, null,
+          'class', 'row');
+        ie_open('div', null, null,
+            'class', 'col-md-4 col-sm-12');
+          ie_open('div', null, null,
+              'class', 'media');
+            ie_open('img', null, null,
+                'alt', 'Clay',
+                'class', 'clay-logo',
+                'src', 'images/clay_logo.svg');
+            ie_close('img');
+          ie_close('div');
+        ie_close('div');
+        ie_open('div', null, null,
+            'class', 'col-md-7 col-sm-12');
+          ie_open('div', null, null,
+              'class', 'media-body');
+            ie_open('p');
+              ie_open('span');
+                itext('Discover Clay.');
+              ie_close('span');
+              itext(' The web implementation ');
+              ie_open('br');
+              ie_close('br');
+              itext(' for Lexicon experience language.');
+            ie_close('p');
+            ie_open('a', null, null,
+                'href', 'http://claycss.wedeploy.io/',
+                'target', '_blank');
+              itext('Visit Clay');
+            ie_close('a');
+          ie_close('div');
+        ie_close('div');
+      ie_close('div');
+    ie_close('div');
+  ie_close('div');
+}
+exports.claylink = $claylink;
+if (goog.DEBUG) {
+  $claylink.soyTemplateName = 'pageIndex.claylink';
 }
 
 
@@ -12394,11 +12619,12 @@ function $contact(opt_data, opt_ignored, opt_ijData) {
         ie_close('br');
         itext('some feedback!');
       ie_close('h2');
-      ie_open('button', null, null,
+      ie_open('a', null, null,
           'class', 'btn btn-home',
-          'type', 'submit');
+          'href', 'https://github.com/liferay/lexicon-site/issues',
+          'target', '_blank');
         itext('Contact Us');
-      ie_close('button');
+      ie_close('a');
     ie_close('div');
   ie_close('div');
 }
@@ -12416,91 +12642,76 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $footer(opt_data, opt_ignored, opt_ijData) {
-  ie_open('footer');
+  ie_open('div', null, null,
+      'class', 'footer');
     ie_open('div', null, null,
         'class', 'container');
       ie_open('div', null, null,
-          'class', 'col-md-6');
-        ie_open('p', null, null,
-            'class', 'clay-link section');
-          ie_open('img', null, null,
-              'alt', 'Clay',
-              'class', 'clay-logo',
-              'src', 'images/clay_logo.svg');
-          ie_close('img');
-          ie_open('b', null, null,
-              'class', 'clay-call-to-action');
-            itext('Discover Clay.');
-          ie_close('b');
-          ie_open('span');
-            itext('The web implementation for Lexicon experience language.');
-          ie_close('span');
-          ie_open('a', null, null,
-              'href', 'http://claycss.wedeploy.io/');
-            itext('Visit Clay');
-          ie_close('a');
-        ie_close('p');
-      ie_close('div');
-      ie_open('div', null, null,
-          'class', 'col-md-6');
+          'class', 'row');
         ie_open('div', null, null,
-            'class', 'footer-brand d-flex align-items-center');
-          ie_open('a', null, null,
-              'href', 'http://liferay.com');
-            ie_open('img', null, null,
-                'class', 'logo-liferay',
-                'src', 'images/liferay_logo.svg',
-                'alt', '');
-            ie_close('img');
-          ie_close('a');
-          ie_open('p');
+            'class', 'col-md-7');
+          ie_open('img', null, null,
+              'class', 'logo',
+              'src', '/images/liferayLogo.png');
+          ie_close('img');
+          ie_void('div', null, null,
+              'class', 'clearfix hidden-lg hidden-md');
+          ie_open('span');
             itext('Brought to you by ');
             ie_open('a', null, null,
-                'href', '');
+                'class', 'bold',
+                'href', 'http://www.liferay.com',
+                'target', '_blank');
               itext('Liferay, Inc.');
             ie_close('a');
-          ie_close('p');
+          ie_close('span');
         ie_close('div');
-        ie_open('h3', null, null,
-            'class', 'social-header');
-          itext('Follow Us');
-        ie_close('h3');
-        ie_open('ul', null, null,
-            'class', 'social nav');
-          ie_open('li', null, null,
-              'class', 'nav-item mr-2');
-            ie_open('a', null, null,
-                'href', 'https://dribbble.com/liferay');
-              ie_open('img', null, null,
-                  'src', 'images/dribble.png',
-                  'alt', 'Dribbble');
-              ie_close('img');
-            ie_close('a');
-          ie_close('li');
-          ie_open('li', null, null,
-              'class', 'nav-item mr-2');
-            ie_open('a', null, null,
-                'href', '');
-              ie_open('img', null, null,
-                  'src', 'images/mail.png',
-                  'alt', 'Mail');
-              ie_close('img');
-            ie_close('a');
-          ie_close('li');
-          ie_open('li', null, null,
-              'class', 'nav-item');
-            ie_open('a', null, null,
-                'href', 'https://twitter.com/Liferay_Lexicon');
-              ie_open('img', null, null,
-                  'src', 'images/twitter.png',
-                  'alt', 'Twitter');
-              ie_close('img');
-            ie_close('a');
-          ie_close('li');
-        ie_close('ul');
+        ie_open('div', null, null,
+            'class', 'col-md-5 text-right-lg');
+          ie_open('a', null, null,
+              'class', 'sticker sticker-default sticker-rounded sticker-static',
+              'href', 'https://dribbble.com/liferay',
+              'target', '_blank');
+            ie_open('svg', null, null,
+                'class', 'lexicon-icon icon-monospace',
+                'version', '1.1',
+                'id', 'Dribbble',
+                'xmlns', 'http://www.w3.org/2000/svg',
+                'xmlns:xlink', 'http://www.w3.org/1999/xlink',
+                'x', '0px',
+                'y', '0px',
+                'viewBox', '0 0 511.9 511.9',
+                'style', 'enable-background:new 0 0 511.9 511.9;',
+                'xml:space', 'preserve');
+              ie_void('path', null, null,
+                  'id', 'ball',
+                  'd', 'M256,511.9C114.8,511.9,0,397.1,0,256S114.8,0,256,0s256,114.8,256,256S397.1,511.9,256,511.9z M471.8,291 c-7.5-2.4-67.7-20.3-136.2-9.3c28.6,78.6,40.2,142.6,42.5,155.9C427.2,404.4,462.1,351.8,471.8,291L471.8,291z M341.4,457.5 c-3.3-19.2-15.9-86-46.6-165.8c-0.5,0.2-1,0.3-1.4,0.5c-123.3,43-167.6,128.5-171.5,136.5C184.3,477.5,268.4,488.6,341.4,457.5z M93.5,402.5c5-8.5,65-107.8,177.7-144.3c2.8-0.9,5.7-1.8,8.6-2.6c-5.5-12.4-11.5-24.9-17.7-37.1C153,251.2,47,249.8,37.4,249.6 c-0.1,2.2-0.1,4.4-0.1,6.7C37.3,310.3,57.3,362.4,93.5,402.5z M41.9,211.5c9.8,0.1,99.9,0.5,202.1-26.6 C207.8,120.5,168.8,66.3,163,58.4C101.8,87.3,56.1,143.7,41.9,211.5z M204.7,43.7c6,8.1,45.8,62.2,81.6,128 c77.7-29.1,110.7-73.4,114.6-79C347.5,45.3,274.2,27,204.7,43.7z M425.2,118c-4.6,6.2-41.2,53.2-122.1,86.2 c5.1,10.4,10,21,14.5,31.7c1.6,3.8,3.2,7.5,4.7,11.3c72.7-9.1,145,5.5,152.2,7C474.1,204.5,456.7,156.5,425.2,118z');
+            ie_close('svg');
+          ie_close('a');
+          ie_open('a', null, null,
+              'class', 'sticker sticker-default sticker-rounded sticker-static',
+              'href', 'https://twitter.com/Liferay_Lexicon',
+              'target', '_blank');
+            ie_open('svg', null, null,
+                'class', 'lexicon-icon');
+              ie_void('use', null, null,
+                  'xlink:href', '/vendor/lexicon/icons.svg#twitter');
+            ie_close('svg');
+          ie_close('a');
+          ie_open('a', null, null,
+              'class', 'sticker sticker-default sticker-rounded sticker-static',
+              'href', 'https://github.com/liferay/lexicon-site/issues',
+              'target', '_blank');
+            ie_open('svg', null, null,
+                'class', 'lexicon-icon');
+              ie_void('use', null, null,
+                  'xlink:href', '/vendor/lexicon/icons.svg#comments');
+            ie_close('svg');
+          ie_close('a');
+        ie_close('div');
       ie_close('div');
     ie_close('div');
-  ie_close('footer');
+  ie_close('div');
 }
 exports.footer = $footer;
 if (goog.DEBUG) {
@@ -12517,6 +12728,8 @@ exports.teasers.params = ["site"];
 exports.teasers.types = {"site":"any"};
 exports.explore.params = ["site"];
 exports.explore.types = {"site":"any"};
+exports.claylink.params = [];
+exports.claylink.types = {};
 exports.contact.params = [];
 exports.contact.types = {};
 exports.footer.params = [];
@@ -12534,6 +12747,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 
 
 /***/ }),
+/* 143 */,
 /* 144 */,
 /* 145 */,
 /* 146 */,
@@ -12608,7 +12822,8 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 /* 215 */,
 /* 216 */,
 /* 217 */,
-/* 218 */
+/* 218 */,
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12636,7 +12851,7 @@ __webpack_require__(15);
 
 __webpack_require__(16);
 
-var _indexSoy = __webpack_require__(143);
+var _indexSoy = __webpack_require__(142);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -12667,4 +12882,4 @@ _metalSoy2.default.register(pageIndex, _indexSoy2.default);
 exports.default = pageIndex;
 
 /***/ })
-],[218]);
+],[219]);

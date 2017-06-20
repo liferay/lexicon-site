@@ -5960,6 +5960,10 @@ button.close {
   bottom: auto;
   top: 0; }
 
+.aspect-ratio-center.aspect-ratio-middle img {
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 .aspect-ratio-3-to-2 {
   padding-bottom: 66.66667%; }
 
@@ -12000,7 +12004,6 @@ button.loading > .linear.loading-animation {
   top: 0; }
 
 .footer {
-  font-size: 14px;
   margin-top: 48px;
   min-height: 160px;
   padding: 16px 0; }
@@ -12015,10 +12018,14 @@ button.loading > .linear.loading-animation {
     .footer .text-right-lg {
       text-align: right; } }
   .footer a {
-    color: #FFF; }
-    .footer a.dark {
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent; }
+    .footer a.bold {
       color: #272833;
       font-weight: bold; }
+      .footer a.bold:hover {
+        border-color: #4887FF;
+        text-decoration: none; }
   .footer span {
     line-height: 32px; }
   .footer .sticker {
@@ -12030,9 +12037,9 @@ button.loading > .linear.loading-animation {
       width: 14px; }
     @media (min-width: 992px) {
       .footer .sticker {
-        margin: 0 0 0 16px; } }
+        margin: 0 0 0 10.66667px; } }
   .footer .sticker:hover {
-    background-color: #272833; }
+    background-color: #4887FF; }
   .footer .row img.logo {
     margin: 16px 10.66667px;
     max-height: 32px;
@@ -12159,7 +12166,7 @@ button.loading > .linear.loading-animation {
   text-transform: uppercase; }
 
 .content .sidebar-offset h3 {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 32px; }
 
 .content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
@@ -12179,7 +12186,7 @@ button.loading > .linear.loading-animation {
 
 .content .sidebar-offset h5 {
   color: #8D8FA8;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 1px;
   line-height: 20px;
   margin-bottom: 8px;
@@ -12200,7 +12207,7 @@ button.loading > .linear.loading-animation {
     font-weight: 700;
     margin-bottom: 100px; }
     .content .sidebar-offset .intro h1 span {
-      color: #FF6060; }
+      color: #4887FF; }
   .content .sidebar-offset .intro h3 {
     width: 400px;
     margin-bottom: 48px;
@@ -12209,7 +12216,7 @@ button.loading > .linear.loading-animation {
     font-size: 21px; }
   .content .sidebar-offset .intro p {
     font-size: 32px;
-    color: #777777;
+    color: #8D8FA8;
     max-width: 600px;
     margin: 0 auto 56px auto; }
 
@@ -12226,12 +12233,12 @@ button.loading > .linear.loading-animation {
   padding: 8px 0; }
   @media (min-width: 900px) {
     .navbar-lexicon-site {
-      padding: 32px 0 24px 12px; } }
+      padding: 32px 0 27px 12px; } }
   .navbar-lexicon-site .logo {
     display: inline-block;
     margin-right: 16px;
     padding-bottom: 3px;
-    width: 121px; }
+    width: 118px; }
   .navbar-lexicon-site .label-version {
     background-color: #393A4A;
     border-radius: 50px;
@@ -12283,11 +12290,11 @@ button.loading > .linear.loading-animation {
     border-radius: 4px;
     color: transparent; }
   .sidebar-lexicon-site::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.25);
+    background: #272833;
     box-shadow: inset 0 -2px, inset 0 -3px, inset 0 2px, inset 0 3px;
     color: #272833; }
   .sidebar-toggler-content:hover .sidebar-lexicon-site::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.7); }
+    background: rgba(141, 143, 168, 0.4); }
   .sidebar-lexicon-site a, .sidebar-lexicon-site .nav .lexicon-icon {
     color: #8D8FA8; }
   .sidebar-lexicon-site .sidebar-header {
@@ -12342,8 +12349,9 @@ button.loading > .linear.loading-animation {
     font-size: 16px;
     font-weight: 600;
     line-height: 22px;
+    margin-left: 48px;
     min-height: 40px;
-    padding-left: 64px; }
+    padding-left: 16px; }
   .sidebar-lexicon-site .nav-pills > li > ul > li > ul > li > a, .sidebar-lexicon-site .nav-pills > li > .nav .nav > li > a {
     margin-left: 64px;
     padding-left: 16px; }
@@ -12357,20 +12365,23 @@ button.loading > .linear.loading-animation {
     position: absolute;
     left: 0; }
   .sidebar-lexicon-site .nav-pills > li > a.lexicon-site-about:before {
-    width: 25px;
-    height: 25px;
+    left: -43.424px;
+    width: 21px;
+    height: 21px;
     background: #6B6C7E; }
   .sidebar-lexicon-site .nav-pills > li > a.lexicon-site-docs:before {
+    left: -44.8px;
     background-color: transparent;
     border-style: solid;
-    border-width: 0 12.5px 21.7px;
+    border-width: 0 12px 20.8px;
     border-color: transparent transparent #FFF transparent;
     height: 0;
     width: 0; }
   .sidebar-lexicon-site .nav-pills > li > a.lexicon-site-news:before {
-    width: 25px;
-    height: 25px;
-    background: #FF6060;
+    left: -44.8px;
+    width: 24px;
+    height: 24px;
+    background: #4887FF;
     border-radius: 50%; }
   .sidebar-lexicon-site .nav-pills > li > ul > li.active > a, .sidebar-lexicon-site .nav-pills > li > ul > li.active > a:hover, .sidebar-lexicon-site .nav-pills > li > ul > li.active > a:focus {
     background-color: #2E2F3C;
@@ -12436,6 +12447,14 @@ table {
       padding-left: 12px;
       padding-right: 12px;
       max-width: 920px; } }
+  .home h3 {
+    text-transform: uppercase;
+    color: #8D8FA8;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 4px;
+    margin: 0 auto;
+    max-width: 100%; }
   .home .navbar.sticky-top {
     position: sticky;
     top: 0;
@@ -12476,9 +12495,9 @@ table {
         transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
         width: 100%; }
         .home .navbar .form-inline .form-control:focus {
-          background-color: #FF6060;
+          background-color: #4887FF;
           background-position: 10px 50%;
-          border-color: #FF6060;
+          border-color: #4887FF;
           min-height: 104px;
           padding-left: 35px;
           position: absolute;
@@ -12531,10 +12550,54 @@ table {
       font-weight: 600;
       padding: 5px 14px 7px;
       border-radius: 50px; }
+  .home .footer {
+    font-size: 16px;
+    margin-top: 48px;
+    min-height: 160px;
+    padding: 16px 0;
+    color: #fff; }
+    @media (max-width: 992px) {
+      .home .footer {
+        text-align: center; } }
+    @media (min-width: 992px) {
+      .home .footer {
+        padding: 140px 0; } }
+    @media (min-width: 992px) {
+      .home .footer .text-right-lg {
+        text-align: right; } }
+    .home .footer a {
+      color: #FFF;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent; }
+      .home .footer a.bold {
+        font-weight: bold; }
+        .home .footer a.bold:hover {
+          border-color: #4887FF;
+          text-decoration: none; }
+    .home .footer .sticker {
+      background-color: #fff;
+      border-radius: 20px;
+      color: #272833;
+      margin: 16px 8px; }
+      .home .footer .sticker .lexicon-icon {
+        width: 14px; }
+      @media (min-width: 992px) {
+        .home .footer .sticker {
+          margin: 0 0 0 10.66667px; } }
+    .home .footer .sticker:hover {
+      background-color: #4887FF;
+      color: #fff; }
+    .home .footer .row img.logo {
+      margin: 16px 10.66667px;
+      max-height: 32px;
+      padding: 0; }
+      @media (min-width: 992px) {
+        .home .footer .row img.logo {
+          margin: 0 16px 0 0; } }
 
 .btn-home {
   background-color: transparent;
-  border: 2px solid #FF6060;
+  border: 2px solid #4887FF;
   color: #fff;
   padding: 16px 32px;
   font-weight: 700;
@@ -12545,7 +12608,7 @@ table {
   letter-spacing: 1.5px;
   transition: 0.1s; }
   .btn-home:focus, .btn-home:hover, .btn-home .focus {
-    background-color: #FF6060;
+    background-color: #4887FF;
     color: #FFF; }
 
 .btn-teaser {
@@ -12557,15 +12620,6 @@ table {
   line-height: 38px;
   font-weight: 600;
   letter-spacing: 0; }
-
-h3 {
-  text-transform: uppercase;
-  color: #777777;
-  font-size: 20px;
-  line-height: 32px;
-  letter-spacing: 4px;
-  margin: 0 auto;
-  max-width: 100%; }
 
 .intro {
   padding: 56px 0;
@@ -12579,7 +12633,7 @@ h3 {
     margin-bottom: 100px;
     margin-top: 0; }
     .intro h1 span {
-      color: #FF6060; }
+      color: #4887FF; }
     @media (min-width: 900px) {
       .intro h1 {
         font-size: 210px; } }
@@ -12591,7 +12645,7 @@ h3 {
     font-size: 21px; }
   .intro p {
     font-size: 32px;
-    color: #777777;
+    color: #8D8FA8;
     max-width: 600px;
     margin: 0 auto 56px auto; }
 
@@ -12601,13 +12655,16 @@ h3 {
     display: none; }
   @media (min-width: 900px) {
     .teasers {
-      text-align: left; } }
+      text-align: left; }
+      .teasers .row {
+        display: flex;
+        align-items: center; } }
   .teasers .row {
     margin-bottom: 144px; }
   .teasers .media {
     text-align: center; }
   .teasers img {
-    width: 360px;
+    width: 340px;
     max-width: 100%; }
   .teasers h2 {
     color: #FFF;
@@ -12617,13 +12674,14 @@ h3 {
     letter-spacing: 0.4px;
     padding-bottom: 4px;
     border-bottom: 2px solid #272833;
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 0; }
     .teasers h2:hover {
-      border-color: #FF6060;
+      border-color: #4887FF;
       transition: 0.1s; }
   .teasers p {
     font-size: 22px;
-    color: #777777;
+    color: #8D8FA8;
     margin-bottom: 32px;
     line-height: 34px;
     letter-spacing: 0.2px; }
@@ -12663,7 +12721,7 @@ h3 {
       border-bottom: 2px solid #333333;
       text-decoration: none; }
       .explore-lexicon li a:hover {
-        border-color: #FF6060;
+        border-color: #4887FF;
         transition: 0.1s; }
     .explore-lexicon li.lexicon-site-about:before, .explore-lexicon li.lexicon-site-docs:before, .explore-lexicon li.lexicon-site-news:before {
       content: '';
@@ -12675,8 +12733,8 @@ h3 {
       position: static;
       vertical-align: middle; }
     .explore-lexicon li.lexicon-site-about:before {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       background: #6B6C7E; }
     .explore-lexicon li.lexicon-site-docs:before {
       background-color: transparent;
@@ -12688,29 +12746,37 @@ h3 {
     .explore-lexicon li.lexicon-site-news:before {
       width: 44px;
       height: 44px;
-      background: #FF6060;
+      background: #4887FF;
       border-radius: 50%; }
 
 .clay-link {
-  margin-bottom: 1em; }
-  @media (min-width: 992px) {
-    .clay-link {
-      margin-bottom: 0; } }
-  .clay-link .clay-logo {
-    float: left;
-    margin-right: 16px;
-    width: 44px; }
+  background-color: #393A4A;
+  padding: 88px 0; }
+  .clay-link .container {
+    width: 700px; }
+  .clay-link p {
+    font-size: 20px;
+    line-height: 28px;
+    color: #fff; }
+    .clay-link p span {
+      font-weight: 700; }
   .clay-link a {
-    color: #FF6060;
-    display: block;
+    font-weight: 700;
+    color: #4887FF;
+    padding-bottom: 1px;
+    border-bottom: 2px solid transparent;
     font-size: 14px;
-    font-weight: bold;
-    margin-top: 10px; }
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: 0.1s; }
     .clay-link a:hover {
-      border-width: 0; }
+      border-color: #4887FF; }
+  .clay-link img {
+    width: 53px;
+    float: right; }
 
 .contact-us {
-  background-color: #FF6060;
+  background-color: #4887FF;
   padding: 88px 0;
   text-align: center;
   color: #fff;
@@ -12724,13 +12790,10 @@ h3 {
     height: 0;
     border-left: 0px solid transparent;
     border-right: 104px solid transparent;
-    border-top: 48px solid #FF6060;
+    border-top: 48px solid #4887FF;
     left: 60%;
     position: absolute;
     top: 100%; }
-    @media (min-width: 480px) {
-      .contact-us:after {
-        left: 70%; } }
   @media (min-width: 900px) {
     .contact-us {
       padding: 96px 0; } }
@@ -12743,68 +12806,7 @@ h3 {
     border-color: #fff; }
     .contact-us .btn:hover {
       background-color: #fff;
-      color: #FF6060; }
-
-footer {
-  background-color: #30313F;
-  padding: 100px 0; }
-  footer h3 {
-    color: #FFF;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-transform: uppercase; }
-  footer > .container > div {
-    padding-top: 20px; }
-  @media (min-width: 992px) {
-    footer > .container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between; }
-      footer > .container > div {
-        padding-top: 0; } }
-  footer .logo-liferay {
-    width: 32px;
-    margin-right: 16px; }
-  footer p {
-    font-size: 16px;
-    margin-bottom: 3px;
-    color: #fff; }
-    footer p a {
-      font-weight: 700;
-      color: #fff;
-      padding-bottom: 2px;
-      border-bottom: 2px solid #333333; }
-      footer p a:hover {
-        border-color: #FF6060; }
-  footer .footer-brand {
-    display: flex;
-    align-items: center;
-    flex: 0 0 75%;
-    margin-bottom: 20px; }
-  footer .social {
-    display: flex;
-    justify-content: space-between; }
-    footer .social li {
-      margin-right: .75rem; }
-    footer .social a {
-      padding: 0; }
-    footer .social img {
-      width: 32px; }
-  footer .social-header {
-    text-align: center; }
-  @media (min-width: 992px) {
-    footer {
-      padding: 164px 0 264px; }
-    footer .footer-brand {
-      max-width: 75%; }
-    footer .social-header {
-      text-align: left; }
-    footer .social {
-      max-width: 25%; }
-      footer .social li:last-of-type {
-        margin-right: auto; } }
+      color: #4887FF; }
 
 body {
   color: #272833;
