@@ -6,7 +6,7 @@ icon: "lexicon-site-news"
 weight: 3
 ---
 
-##### March 30th, 2017
+##### June 16th, 2017
 
 ### Lexicon site release
 

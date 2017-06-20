@@ -23,6 +23,7 @@ class: "foo"
 			{call .explore}
 				{param site: $site /}
 			{/call}
+			{call .claylink /}
 			{call .contact /}
 			{call .footer /}
 		{/param}
@@ -58,7 +59,7 @@ class: "foo"
 			<h3>Crafting beautiful UI</h3>
 			<h1>Let<span>&rsquo;</span>s play</h1>
 
-			<a class="btn btn-home" href="{$site.index.children.docs.children.lexicon.url}">Get Started</button>
+			<a class="btn btn-home" href="{$site.index.children.docs.children.lexicon.url}">Get Started</a>
 			<script type="template"><button class="btn btn-home" type="submit">Get Started</button></script>
 		</div>
 	</div>
@@ -147,6 +148,18 @@ class: "foo"
 {/template}
 
 /**
+*
+*/
+{template .claylink}
+	<div class="section clay-link">
+		<img alt="Clay" class="clay-logo" src="images/clay_logo.svg">
+		<b class="clay-call-to-action">Discover Clay.</b>
+		<span>The web implementation for Lexicon experience language.</span>
+		<a href="http://claycss.com">Visit Clay</a>
+	</div>
+{/template}
+
+/**
  *
  */
 {template .contact}
@@ -164,32 +177,22 @@ class: "foo"
 {template .footer}
 	<footer>
 		<div class="container">
-			<div class="col-md-6">
-				<p class="clay-link section">
-					<img alt="Clay" class="clay-logo" src="images/clay_logo.svg">
-					<b class="clay-call-to-action">Discover Clay.</b>
-					<span>The web implementation for Lexicon experience language.</span>
-					<a href="http://claycss.com">Visit Clay</a>
-				</p>
+			<div class="footer-brand d-flex align-items-center">
+				<a href="http://liferay.com"><img class="logo-liferay" src="images/liferay_logo.svg" alt=""></a>
+				<p>Brought to you by <a href="">Liferay, Inc.</a></p>
 			</div>
-			<div class="col-md-6">
-				<div class="footer-brand d-flex align-items-center">
-					<a href="http://liferay.com"><img class="logo-liferay" src="images/liferay_logo.svg" alt=""></a>
-					<p>Brought to you by <a href="">Liferay, Inc.</a></p>
-				</div>
-				<h3 class="social-header">Follow Us</h3>
-				<ul class="social nav">
-					<li class="nav-item mr-2">
-						<a href="https://dribbble.com/liferay"><img src="images/dribble.png" alt="Dribbble"></a>
-					</li>
-					<li class="nav-item mr-2">
-						<a href=""><img src="images/mail.png" alt="Mail"></a>
-					</li>
-					<li class="nav-item">
-						<a href="https://twitter.com/Liferay_Lexicon"><img src="images/twitter.png" alt="Twitter"></a>
-					</li>
-				</ul>
-			</div>
+			<h3 class="social-header">Follow Us</h3>
+			<ul class="social nav">
+				<li class="nav-item mr-2">
+					<a href="https://dribbble.com/liferay"><img src="images/dribble.png" alt="Dribbble"></a>
+				</li>
+				<li class="nav-item mr-2">
+					<a href=""><img src="images/mail.png" alt="Mail"></a>
+				</li>
+				<li class="nav-item">
+					<a href="https://twitter.com/Liferay_Lexicon"><img src="images/twitter.png" alt="Twitter"></a>
+				</li>
+			</ul>
 		</div>
 	</footer>
 {/template}
