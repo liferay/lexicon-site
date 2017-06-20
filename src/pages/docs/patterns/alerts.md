@@ -1,13 +1,13 @@
 ---
 title: "Alerts"
-description: "Alerts are used to capture the attention of the user in an intrusive way"
+description: "Alerts are used to capture the attention of the user in an intrusive way. Sometimes just to say that something went right, others to say that something needs to be reviewed."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Alerts are used to capture the attention of the user in an intrusive way. Sometimes just to say that something went right, others to say that something needs to be reviewed.
+{$page.description}
 
 Alerts are possible to define in 4 different colors, grey for the default type of message and four other corresponding to status colors.
 
@@ -45,10 +45,10 @@ This alert is placed right below the navigation bar.
 
 ![dismiss error alert stripe](../../../images/alertDismissError.png)
 
-#### Alert notification				
+#### Alert notification
 Notifications display information about something that has happened or is happening in the system. These alerts are not related to actions that are being performed by the user at that moment. Unlike alerts, notifications are displayed on the top right corner of the screen. Both desktop and mobile notifications have similar dimensions.
 
-![set of four notification alerts](../../../images/alertsNotification.png) 
+![set of four notification alerts](../../../images/alertsNotification.png)
 
 ### Attributes
 

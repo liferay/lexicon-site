@@ -1,13 +1,13 @@
 ---
 title: "Forms"
-description: "Forms usage tips."
+description: "Forms is one of the most used patterns in Lexicon. Forms capture information from the user and transmits it to the system either to store, to produce an action or both at same time. Forms in Lexicon are defined to be full width."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Forms is one of the most used patterns in Lexicon. Forms capture information from the user and transmits it to the system either to store, to produce an action or both at same time. Forms in Lexicon are defined to be full width.
+{$page.description}
 
 ### Structure
 

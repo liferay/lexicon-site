@@ -1,13 +1,13 @@
 ---
 title: "Management bar"
-description: "Specific toolbar for dataset management."
+description: "Management Bar is an extension of Navbar. Combine different management-bar components to create a toolbar that fits your needs."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Management Bar is an extension of Navbar. Combine different management-bar components to create a toolbar that fits your needs.
+{$page.description}
 
 ![state one of the management bar](../../../images/managementBarState1.png)
 
@@ -16,7 +16,7 @@ Management Bar is an extension of Navbar. Combine different management-bar compo
 The Management Bar is always part of a bigger structure and works along with other data management patterns like tables, lists or cards, and its functionality is directly related to them.
 The Management Bar has two main states:
 
-#### State 1 
+#### State 1
 
 It is the default state.
 

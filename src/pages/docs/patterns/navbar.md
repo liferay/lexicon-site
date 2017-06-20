@@ -1,13 +1,13 @@
 ---
 title: "Navbar"
-description: "Defines navigation in applications or sites."
+description: "A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system.
+{$page.description}
 
 ![navigation bar with 2 entries and a search field](../../../images/Navbar.png)
 

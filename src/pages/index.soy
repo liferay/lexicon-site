@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: "Something nice and compelling about the project. Make it short and sweet."
+description: "Lexicon is a set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem."
 class: "foo"
 ---
 
@@ -8,6 +8,7 @@ class: "foo"
 
 /**
  * @param site
+ * @param page
  */
 {template .render}
 	{call main.render data="all"}
@@ -19,6 +20,7 @@ class: "foo"
 			{/call}
 			{call .teasers}
 				{param site: $site /}
+				{param page: $page /}
 			{/call}
 			{call .explore}
 				{param site: $site /}
@@ -67,6 +69,7 @@ class: "foo"
 
 /**
  * @param site
+ * @param page
  */
 {template .teasers}
 	{let $section: $site.index.children.docs /}
@@ -83,7 +86,7 @@ class: "foo"
 						<h2>Design System</h2>
 					</a>
 
-					<p>Lexicon is a set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.</p>
+					<p>{$page.description}</p>
 					<a class="btn btn-home btn-teaser" href="{$site.index.children.docs.children.lexicon.url}#design-language">+</a>
 				</div>
 			</div>
@@ -166,7 +169,6 @@ class: "foo"
                     </div>
                 </div>
             </div>
-        
         </div>
 	</div>
 {/template}

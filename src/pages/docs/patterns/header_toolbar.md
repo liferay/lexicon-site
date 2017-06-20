@@ -1,13 +1,13 @@
 ---
 title: "Header toolbar"
-description: "Usage and confiration."
+description: "Header toolbar is a Toolbar based component used in headings for portlets, mobile pages, and page sections."
 layout: "guide"
 weight: 1
 ---
 
 ### Introduction
 
-Header toolbar is a Toolbar based component used in headings for portlets, mobile pages, and page sections.
+{$page.description}
 
 ### Usage
 

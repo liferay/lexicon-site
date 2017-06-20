@@ -7,7 +7,7 @@ weight: 1
 
 ### Description
 
-Panels help to separate your content.
+{$page.description}
 
 ### Usage
 

@@ -1,13 +1,13 @@
 ---
 title: "Dataset template"
-description: "Dataset template description"
+description: "Dataset template shows how a dataset is displayed using Lexicon."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Dataset template shows how a dataset is displayed using Lexicon.
+{$page.description}
 
 ### Structure
 This template counts with several patterns listed as follown that can be directly mapped with the image.

@@ -1,13 +1,13 @@
 ---
 title: "Pager"
-description: "Navigation between pages of a process or task."
+description: "Pager allows navigation between pages of a process or task divided in subtasks or also called pages."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Pager allows navigation between pages of a process or task divided in subtasks or also called pages.
+{$page.description}
 
 ### Usage
 

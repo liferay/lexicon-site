@@ -1,13 +1,13 @@
 ---
 title: "Typography"
-description: "Typeface usage."
+description: "Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Lexicon uses Helvetica Neue as the default font face. You can use the font face you consider more appropiate for your system.
+{$page.description}
 
 ![helvetica neue example in regular, medium and bold](../../../images/HelveticaNeue.png)
 

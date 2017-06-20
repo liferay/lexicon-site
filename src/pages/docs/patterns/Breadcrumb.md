@@ -1,13 +1,13 @@
 ---
 title: "Breadcrumb"
-description: "Breadcrumb navigation"
+description: "Breadcrumb is a secondary navigation pattern that identifies the page position inside a hierarchy."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Breadcrumb is a secondary navigation pattern that identifies the page position inside a hierarchy.
+{$page.description}
 
 ![breadcrumb](../../../images/breadcrumb.png)
 

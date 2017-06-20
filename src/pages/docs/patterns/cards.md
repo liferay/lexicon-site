@@ -7,7 +7,7 @@ weight: 1
 
 ### Description
 
-Cards are a very specific visual representation of data.
+{$page.description}
 
 ### Usage
 Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images asociated to your content. A good example of this could be your users database or an image library.

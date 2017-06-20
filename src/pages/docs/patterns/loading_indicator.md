@@ -1,13 +1,13 @@
 ---
 title: "Loading indicator"
-description: "Providing feedback to users on processes."
+description: "Loading indicator shows the user that an external process, like a connection, is being executed."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Loading indicator shows the user that an external process, like a connection, is being executed.
+{$page.description}
 
 ### Usage
 

@@ -1,14 +1,13 @@
 ---
 title: "Icons"
-description: "Lexicon icon library and the use of external libraries."
+description: "Icon is a visual metaphor representing a concept that lies behind the idea and/or action."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Icon is a visual metaphor representing a concept that lies behind the idea and/or action.
-
+{$page.description}
 
 ### Liferay icon library
 

@@ -1,13 +1,13 @@
 ---
 title: "Collapsible search"
-description: "Simple search solution for small screens."
+description: "Collapsible search provides a solution for the search text field in mobile resolution as the viewport size is reduced."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Collapsible search provides a solution for the search text field in mobile resolution as the viewport size is reduced.
+{$page.description}
 
 ### Usage
 

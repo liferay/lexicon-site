@@ -7,12 +7,12 @@ weight: 1
 
 ### Description
 
-Tabs let the user move around parallel content in a same context.
+{$page.description}
 
 ### Usage
 
 * Use tabs when you need to move between views on the same context.
-* Split your information into groups that are easy to identify by your end users. 
+* Split your information into groups that are easy to identify by your end users.
 * Order your tabs in a natural way for your users.
 * Tabs are meant to be used when you don’t need to compare contents.
 * All tabs in a tab bar must follow the same style and type. Changing styles in tabs can produce the feeling of navigation and this is not the desired outcome for this pattern.

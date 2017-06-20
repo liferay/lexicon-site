@@ -1,13 +1,13 @@
 ---
 title: "Buttons"
-description: "Buttons communicate an action to happen on user interaction"
+description: "Buttons communicate an action to happen on user interaction."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Buttons communicate an action to happen on user interaction.
+{$page.description}
 
 ### Types
 

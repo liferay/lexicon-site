@@ -1,13 +1,13 @@
 ---
 title: "Form template"
-description: "Forms pattern description"
+description: "Form template helps you to understand how forms are built and composed using Lexicon. This template will allow you to understand how to create any form."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Form template helps you to understand how forms are built and composed using Lexicon. This template will allow you to understand how to create any form.
+{$page.description}
 
 ### Structure
 A form template count with several patterns that shape this pattern:
