@@ -249,7 +249,7 @@
 	.media {
 		text-align: center;
 	}
-
+    
 	img {
 		width: 360px;
 		max-width: 100%;
@@ -510,6 +510,13 @@ footer {
 
 	.social-header {
 		text-align: center;
+        color: $brand-secondary;
+		font-size: 12px;
+		letter-spacing: 1px;
+		line-height: 20px;
+		margin-bottom: 8px;
+		text-transform: uppercase;
+        font-weight: 600;
 	}
 
 	@media (min-width: $screen-md) {
