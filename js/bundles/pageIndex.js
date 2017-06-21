@@ -12199,8 +12199,7 @@ module.exports = function(module) {
 /* 138 */,
 /* 139 */,
 /* 140 */,
-/* 141 */,
-/* 142 */
+/* 141 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12374,7 +12373,7 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $teasers(opt_data, opt_ignored, opt_ijData) {
-  var section__soy124 = opt_data.site.index.children.docs;
+  var section__soy125 = opt_data.site.index.children.docs;
   ie_open('div', null, null,
       'class', 'container teasers');
     ie_open('div', null, null,
@@ -12403,7 +12402,8 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
             ie_close('h2');
           ie_close('a');
           ie_open('p');
-            itext('Lexicon is a set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.');
+            var dyn5 = opt_data.page.description;
+            if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
           ie_close('p');
           ie_open('a', null, null,
               'class', 'btn btn-home btn-teaser',
@@ -12514,21 +12514,21 @@ function $explore(opt_data, opt_ignored, opt_ijData) {
         ie_close('br');
         itext('and aware of the latest technologies and trends. Feel yourself free to explore it.');
       ie_close('h3');
-      var section__soy146 = opt_data.site.index.children.docs;
+      var section__soy149 = opt_data.site.index.children.docs;
       ie_open('ul', null, null,
           'class', 'list-unstyled');
-        var childIdList158 = section__soy146.childIds;
-        var childIdListLen158 = childIdList158.length;
-        for (var childIdIndex158 = 0; childIdIndex158 < childIdListLen158; childIdIndex158++) {
-          var childIdData158 = childIdList158[childIdIndex158];
-          var page__soy148 = section__soy146.children[childIdData158];
-          if (! page__soy148.hidden) {
+        var childIdList161 = section__soy149.childIds;
+        var childIdListLen161 = childIdList161.length;
+        for (var childIdIndex161 = 0; childIdIndex161 < childIdListLen161; childIdIndex161++) {
+          var childIdData161 = childIdList161[childIdIndex161];
+          var page__soy151 = section__soy149.children[childIdData161];
+          if (! page__soy151.hidden) {
             ie_open('li', null, null,
-                'class', page__soy148.icon);
+                'class', page__soy151.icon);
               ie_open('a', null, null,
-                  'href', page__soy148.url);
-                var dyn5 = page__soy148.title;
-                if (typeof dyn5 == 'function') dyn5(); else if (dyn5 != null) itext(dyn5);
+                  'href', page__soy151.url);
+                var dyn6 = page__soy151.title;
+                if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
               ie_close('a');
             ie_close('li');
           }
@@ -12718,14 +12718,14 @@ if (goog.DEBUG) {
   $footer.soyTemplateName = 'pageIndex.footer';
 }
 
-exports.render.params = ["site"];
-exports.render.types = {"site":"any"};
+exports.render.params = ["site","page"];
+exports.render.types = {"site":"any","page":"any"};
 exports.header.params = [];
 exports.header.types = {};
 exports.intro.params = ["site"];
 exports.intro.types = {"site":"any"};
-exports.teasers.params = ["site"];
-exports.teasers.types = {"site":"any"};
+exports.teasers.params = ["site","page"];
+exports.teasers.types = {"site":"any","page":"any"};
 exports.explore.params = ["site"];
 exports.explore.types = {"site":"any"};
 exports.claylink.params = [];
@@ -12747,6 +12747,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 
 
 /***/ }),
+/* 142 */,
 /* 143 */,
 /* 144 */,
 /* 145 */,
@@ -12822,8 +12823,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 /* 215 */,
 /* 216 */,
 /* 217 */,
-/* 218 */,
-/* 219 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12851,7 +12851,7 @@ __webpack_require__(15);
 
 __webpack_require__(16);
 
-var _indexSoy = __webpack_require__(142);
+var _indexSoy = __webpack_require__(141);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -12882,4 +12882,4 @@ _metalSoy2.default.register(pageIndex, _indexSoy2.default);
 exports.default = pageIndex;
 
 /***/ })
-],[219]);
+],[218]);

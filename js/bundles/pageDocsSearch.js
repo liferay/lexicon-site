@@ -12198,8 +12198,7 @@ module.exports = function(module) {
 /* 137 */,
 /* 138 */,
 /* 139 */,
-/* 140 */,
-/* 141 */
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12260,7 +12259,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param200 = function() {
+  var param179 = function() {
     $templateAlias2({section: opt_data.site.index.children['docs']}, null, opt_ijData);
     ie_open('div', null, null,
         'class', 'sidebar-offset');
@@ -12293,7 +12292,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param200}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param179}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -12315,6 +12314,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsSearch, templ
 
 
 /***/ }),
+/* 141 */,
 /* 142 */,
 /* 143 */,
 /* 144 */,
@@ -12349,8 +12349,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsSearch, templ
 /* 173 */,
 /* 174 */,
 /* 175 */,
-/* 176 */,
-/* 177 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12378,7 +12377,7 @@ __webpack_require__(15);
 
 __webpack_require__(16);
 
-var _searchSoy = __webpack_require__(141);
+var _searchSoy = __webpack_require__(140);
 
 var _searchSoy2 = _interopRequireDefault(_searchSoy);
 
@@ -12409,4 +12408,4 @@ _metalSoy2.default.register(pageDocsSearch, _searchSoy2.default);
 exports.default = pageDocsSearch;
 
 /***/ })
-],[177]);
+],[176]);

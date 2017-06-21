@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([45,46,47],[
+webpackJsonppageComponent([44,46,47],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -12201,12 +12201,6 @@ var ie_open_end = IncrementalDom.elementOpenEnd;
 var itext = IncrementalDom.text;
 var iattr = IncrementalDom.attr;
 
-var $templateAlias3 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('ElectricSearchAutocomplete.incrementaldom', 'render');
-
-var $templateAlias2 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('Sidebar.incrementaldom', 'render');
-
-var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTemplate('main.incrementaldom', 'render');
-
 
 /**
  * @param {Object<string, *>=} opt_data
@@ -12216,11 +12210,6 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param170 = function() {
-    $templateAlias2({section: opt_data.page}, null, opt_ijData);
-    $topics(opt_data, null, opt_ijData);
-  };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param170}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -12235,123 +12224,31 @@ if (goog.DEBUG) {
  * @return {void}
  * @suppress {checkTypes}
  */
-function $topics(opt_data, opt_ignored, opt_ijData) {
-  ie_open('div', null, null,
-      'class', 'sidebar-offset');
-    ie_open('div', null, null,
-        'class', 'container-hybrid docs-home-top');
-      ie_open('div', null, null,
-          'class', 'row');
-        ie_open('div', null, null,
-            'class', 'col-xs-16');
-          ie_open('h1', null, null,
-              'class', 'docs-home-top-title');
-            itext('Docs');
-          ie_close('h1');
-          ie_open('p', null, null,
-              'class', 'docs-home-top-description');
-            itext('Start learning how to leverage the power of ');
-            var dyn6 = opt_data.site.title;
-            if (typeof dyn6 == 'function') dyn6(); else if (dyn6 != null) itext(dyn6);
-            itext(' in your project.');
-          ie_close('p');
-        ie_close('div');
-      ie_close('div');
-      ie_open('div', null, null,
-          'class', 'row');
-        ie_open('div', null, null,
-            'class', 'container-hybrid docs-home-top-form');
-          ie_open('form', null, null,
-              'action', '/docs/search.html',
-              'method', 'GET',
-              'enctype', 'multipart/form-data');
-            ie_open('div', null, null,
-                'class', 'row');
-              ie_open('div', null, null,
-                  'class', 'col-md-7 col-md-offset-3 col-xs-16');
-                $templateAlias3({maxResults: 3, path: '/docs/', placeholder: 'Search Docs'}, null, opt_ijData);
-              ie_close('div');
-              ie_open('div', null, null,
-                  'class', 'col-md-3 col-xs-16');
-                ie_open('button', null, null,
-                    'class', 'btn btn-accent btn-block',
-                    'type', 'submit');
-                  itext('Search');
-                ie_close('button');
-              ie_close('div');
-            ie_close('div');
-          ie_close('form');
-        ie_close('div');
-      ie_close('div');
-    ie_close('div');
-    ie_open('div', null, null,
-        'class', 'docs-home-topics');
-      ie_open('div', null, null,
-          'class', 'container-hybrid');
-        ie_open('div', null, null,
-            'class', 'row');
-          ie_open('div', null, null,
-              'class', 'col-xs-16');
-            ie_open('section', null, null,
-                'class', 'docs-home-middle');
-              ie_open('h2', null, null,
-                  'class', 'docs-home-middle-subtitle');
-                itext('Choose a Guide');
-              ie_close('h2');
-              ie_open('p', null, null,
-                  'class', 'docs-home-middle-description');
-                itext('Each one provide step by step coverage for every core feature.');
-              ie_close('p');
-            ie_close('section');
-          ie_close('div');
-        ie_close('div');
-        ie_open('div', null, null,
-            'class', 'row');
-          ie_open('div', null, null,
-              'class', 'col-md-13 col-md-offset-3 col-xs-16');
-            ie_open('div', null, null,
-                'class', 'row');
-              var childIdList194 = opt_data.page.childIds;
-              var childIdListLen194 = childIdList194.length;
-              for (var childIdIndex194 = 0; childIdIndex194 < childIdListLen194; childIdIndex194++) {
-                var childIdData194 = childIdList194[childIdIndex194];
-                var topic__soy184 = opt_data.page.children[childIdData194];
-                if (! topic__soy184.hidden) {
-                  ie_open('div', null, null,
-                      'class', 'col-md-6 col-xs-16');
-                    ie_open('a', null, null,
-                        'class', 'topic radial-out',
-                        'href', topic__soy184.url);
-                      ie_open('div', null, null,
-                          'class', 'topic-icon');
-                        ie_void('span', null, null,
-                            'class', 'icon-16-' + topic__soy184.icon);
-                      ie_close('div');
-                      ie_open('h3', null, null,
-                          'class', 'topic-title');
-                        var dyn7 = topic__soy184.title;
-                        if (typeof dyn7 == 'function') dyn7(); else if (dyn7 != null) itext(dyn7);
-                      ie_close('h3');
-                    ie_close('a');
-                  ie_close('div');
-                }
-              }
-            ie_close('div');
-          ie_close('div');
-        ie_close('div');
-      ie_close('div');
-    ie_close('div');
-  ie_close('div');
-}
-exports.topics = $topics;
-if (goog.DEBUG) {
-  $topics.soyTemplateName = 'pageDocsIndex.topics';
-}
+function $soyweb(opt_data, opt_ignored, opt_ijData) {
+  ie_open('!DOCTYPE', null, null,
+      'html', '');
+    ie_open('html', null, null,
+        'lang', 'en');
+      ie_open('head');
+        ie_open('meta', null, null,
+            'charset', 'UTF-8');
+        ie_close('meta');
+        ie_open('meta', null, null,
+            'http-equiv', 'refresh',
+            'content', '0; URL=\'' + opt_data.page.url + '\'');
+        ie_close('meta');
+      ie_close('head');
+    ie_close('html');
+  }
+  exports.soyweb = $soyweb;
+  if (goog.DEBUG) {
+    $soyweb.soyTemplateName = 'pageDocsIndex.soyweb';
+  }
 
-exports.render.params = ["page"];
-exports.render.types = {"page":"any"};
-exports.topics.params = ["page","site"];
-exports.topics.types = {"page":"any","site":"any"};
+exports.render.params = [];
+exports.render.types = {};
+exports.soyweb.params = ["page"];
+exports.soyweb.types = {"page":"any"};
 templates = exports;
 return exports;
 
@@ -12442,8 +12339,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsIndex, templa
 /* 172 */,
 /* 173 */,
 /* 174 */,
-/* 175 */,
-/* 176 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12502,4 +12398,4 @@ _metalSoy2.default.register(pageDocsIndex, _indexSoy2.default);
 exports.default = pageDocsIndex;
 
 /***/ })
-],[176]);
+],[175]);
