@@ -1,15 +1,15 @@
 ---
 title: "Popovers and Tooltips"
-description: "Popovers and Tooltips usage."
+description: "Popovers are short helpful and/or descriptive pieces of information that appear on hover state."
 layout: "guide"
 weight: 1
 ---
 
 ## Popovers
 
-Popovers are short helpful and/or descriptive pieces of information that appear on hover state.
+{$page.description}
 
-![four different popovers with the arrow to the left, or right or top or down](../../../images/popovers.png) 
+![four different popovers with the arrow to the left, or right or top or down](../../../images/popovers.png)
 
 ### Usage
 
@@ -25,7 +25,7 @@ Popovers are used together with the question mark icon as an affordance to let t
 
 Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.
 
-![the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases](../../../images/tooltips.png) 
+![the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases](../../../images/tooltips.png)
 
 ### Usage
 

@@ -1,13 +1,13 @@
 ---
 title: "Pagination"
-description: "Navigation between chunks of a dataset."
+description: "Pagination allows navigation between chunks, also denominated pages, of a dataset."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Pagination allows navigation between chunks, also denominated pages, of a dataset.
+{$page.description}
 
 ### Sizes
 

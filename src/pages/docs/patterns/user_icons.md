@@ -1,13 +1,13 @@
 ---
 title: "User icons"
-description: "Visual representation of a user."
+description: "User icons are used to visually identify users in the system."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-User icons are used to visually identify users in the system.
+{$page.description}
 
 ### Usage
 
@@ -36,6 +36,6 @@ User images help to personalize the interface. In case you have your user image 
 
 #### User icon with text
 
-Sometimes you won’t have the user image or won’t be allowed to use it. In those cases use this pattern. The text must be always in capital letters and a maximum of 2 letters. Use first letter from Name and Surname (NS). 
+Sometimes you won’t have the user image or won’t be allowed to use it. In those cases use this pattern. The text must be always in capital letters and a maximum of 2 letters. Use first letter from Name and Surname (NS).
 
 ![all 6 user icons sizes with text](../../../images/userIcon.png)

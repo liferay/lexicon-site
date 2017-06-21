@@ -1,13 +1,13 @@
 ---
 title: "Table"
-description: "Dataset representation."
+description: "A table is a specific pattern for comparing datasets in a very direct an analytical way."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-A table is a specific pattern for comparing datasets in a very direct an analytical way.
+{$page.description}
 
 ### Usage
 

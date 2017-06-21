@@ -1,13 +1,13 @@
 ---
 title: "Dropdown"
-description: "Dropdown menu variations and usage."
+description: "Dropdowns are a list of options related to the element that triggers them."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Dropdowns are a list of options related to the element that triggers them.
+{$page.description}
 
 ### Usage
 Dropdowns are used to list a set of options that are not easy to manage in the screen. This mechanism helps to clean-up the screen making everything more implicit.

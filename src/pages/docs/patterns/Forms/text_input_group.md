@@ -1,13 +1,13 @@
 ---
 title: "Text input group"
-description: "Text input group variations and usage."
+description: "A text input group is a text field with extra elements that makes the pattern more complete for a common or frequent use case."
 layout: "guide"
 weight: 5
 ---
 
 ### Description
 
-A text input group is a text field with extra elements that makes the pattern more complete for a common or frequent use case.
+{$page.description}
 
 ### Layout
 The layout of an input has a bit of freedom. You are allowed to configure elements on the left or the right side of the field or both at same time.

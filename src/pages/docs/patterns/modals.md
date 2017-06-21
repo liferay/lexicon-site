@@ -1,13 +1,13 @@
 ---
 title: "Modals"
-description: "Capturing user attention in a process to solve a task of the process."
+description: "A modal is a box with content displayed on top of the page to capture the user’s attention for an specific action inside the same process. Modals are subordinated to pages."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-A modal is a box with content displayed on top of the page to capture the user’s attention for an specific action inside the same process. Modals are subordinated to pages.
+{$page.description}
 
 ### Usage
 

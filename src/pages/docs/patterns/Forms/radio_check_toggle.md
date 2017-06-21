@@ -1,13 +1,13 @@
 ---
 title: "Checkbox, Radio button, Toggle"
-description: "Checkbox, Radio button, Toggle usage."
+description: "A checkbox is a component that allows the user selecting something writen in its associatead text label. A list of consecutive checkboxes would allow the user to select multiple things."
 layout: "guide"
 weight: 2
 ---
 
 ## Checkbox
 
-A checkbox is a component that allows the user selecting something writen in its associatead text label. A list of consecutive checkboxes would allow the user to select multiple things.
+{$page.description}
 
 ### Usage
 
@@ -60,15 +60,15 @@ A radio button is a component that allows the user selecting something writen in
 
 It is a common case of doubt when to use radios or a dropdown menu instead when users need to choose one item out of a list of options. There is not a fixed rule for that but we propose this guidelines.
 
-#### Radio buttons: 
+#### Radio buttons:
 
 * When the number of options is small
-* When options need a long label to explain the differences of each option. 
-* Radio buttons are always listed vertically. 
+* When options need a long label to explain the differences of each option.
+* Radio buttons are always listed vertically.
 
-#### Dropdown menus: 
+#### Dropdown menus:
 
-* When the number of options is large, or has the potential to become large. 
+* When the number of options is large, or has the potential to become large.
 * Options should be of the same nature (e.g. a list of branches, or a list of people).
 
 

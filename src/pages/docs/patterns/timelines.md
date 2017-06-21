@@ -7,7 +7,7 @@ weight: 1
 
 ### Description
 
-Timelines visually represent events along the time.
+{$page.description}
 
 ### Usage
 
@@ -21,13 +21,13 @@ The point can be any kind of identifier. We recommend the default one, circle, b
 
 The icons are aligned to the left side of the screen.
 
-![default timeline left aligned](../../../images/timelineDefault.png) 
+![default timeline left aligned](../../../images/timelineDefault.png)
 
 #### Right timeline
 
 The icons are aligned to the right side of the screen.
 
-![timeline right aligned](../../../images/timelineRight.png) 
+![timeline right aligned](../../../images/timelineRight.png)
 
 #### Center timeline
 
@@ -43,11 +43,11 @@ Being in the center the panel can appear in alternate positions starting on the 
 ![timeline center aligned even order](../../../images/timelineCenterEven.png)
 
 ##### **Timeline Odd**
-![timeline center aligned odd order](../../../images/timelineCenterOdd.png) 
+![timeline center aligned odd order](../../../images/timelineCenterOdd.png)
 
 
 #### Right XS Timeline only
 
 On window resize to mobile viewport (<768), the timeline icon are always aligned to the left. In case you want to place on the right, it is also possible with this example.
 
-![timeline right aligned extra small ](../../../images/timelineCenterRightXSOnly.png) 
+![timeline right aligned extra small ](../../../images/timelineCenterRightXSOnly.png)

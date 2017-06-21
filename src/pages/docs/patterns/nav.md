@@ -1,13 +1,13 @@
 ---
 title: "Nav"
-description: "Nested navigation."
+description: "Nav is the pattern that defines the navigation pattern."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Nav is the pattern that defines the navigation pattern.
+{$page.description}
 
 ### Variations
 

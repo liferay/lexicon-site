@@ -1,13 +1,13 @@
 ---
 title: "Toolbar"
-description: "How to build your own toolbar."
+description: "A toolbar is a set of actions related to a context grouped in a bar."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-A toolbar is a set of actions related to a context grouped in a bar.
+{$page.description}
 
 ### Usage
 

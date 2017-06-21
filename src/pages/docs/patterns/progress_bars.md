@@ -1,13 +1,13 @@
 ---
 title: "Progress bars"
-description: "Progress indicator to show the process completion."
+description: "Progress bar is a progress indicator used to show the completion percentage of a task."
 layout: "guide"
 weight: 1
 ---
 
 ### Description
 
-Progress bar is a progress indicator used to show the completion percentage of a task.
+{$page.description}
 
 ### Usage
 
@@ -33,13 +33,13 @@ Indeterminate progress bars can be configured in 4 differents sizes
 This is an indeterminate progress bar. This progress bar can be used with or without label.
 If you foresee this pattern will be used in a process that can take long time to be completed, a label can be useful to the user. But there is not always the need to show the completion percentage.
 
-![indeterminate progress bar](../../../images/progressBarIndeterminate.png) 
+![indeterminate progress bar](../../../images/progressBarIndeterminate.png)
 
 #### Stripped contextual progress bar
 
 Lexicon provides an alternative to the previous progress bar based on stripes that could help your users to identify better the action progrees.
 
-![indeterminate stripped progress bar](../../../images/progressBarIndeterminateStriped.png) 
+![indeterminate stripped progress bar](../../../images/progressBarIndeterminateStriped.png)
 
 #### Multi step progress bar
 

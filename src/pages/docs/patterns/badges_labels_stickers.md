@@ -1,6 +1,6 @@
 ---
 title: "Badges, Labels and Stickers"
-description: "Badges, Labels and Stickers usage."
+description: "Badges help highlight important information such as notifications or new and unread messages. Badges have circular borders by default."
 layout: "guide"
 weight: 1
 ---
@@ -9,7 +9,7 @@ weight: 1
 
 ### Description
 
-Badges help highlight important information such as notifications or new and unread messages. Badges have circular borders by default.
+{$page.description}
 
 ### Sizes
 
