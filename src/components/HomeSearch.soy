@@ -1,0 +1,9 @@
+{namespace HomeSearch}
+
+/**
+ * @param? placeholder
+ */
+{template .render}
+	<input autocomplete="off" class="form-control" name="q" placeholder="{$placeholder ?: ''}" ref="input" type="text">
+	<button class="btn btn-clear" type="reset">&times;</button>
+{/template}

@@ -1,7 +1,6 @@
 ---
 title: "Home"
 description: "Lexicon is a set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem."
-class: "foo"
 ---
 
 {namespace pageIndex}
@@ -45,8 +44,10 @@ class: "foo"
 				<span class="label label-version">v. 1.0</span>
 			</div>
 			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control" type="text" placeholder="">
-				<button class="btn btn-clear" type="reset">&times;</button>
+				{call HomeSearch.render}
+					{param maxResults: 5 /}
+					{param path: '/docs/' /}
+				{/call}
 			</form>
 		</div>
 	</nav>
@@ -59,7 +60,7 @@ class: "foo"
 	<div class="intro">
 		<div class="container">
 			<h3>Crafting beautiful UI</h3>
-			<h1>Let<span>'</span>s play</h1>
+			<h1>Let<span>&rsquo;</span>s play</h1>
 
 			<a class="btn btn-home" href="{$site.index.children.docs.children.lexicon.url}">Get Started</a>
 			<script type="template"><button class="btn btn-home" type="submit">Get Started</button></script>
