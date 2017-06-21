@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([1,46,47],[
+webpackJsonppageComponent([1,46,47,48],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -15,27 +15,27 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ElectricUpdates = exports.ElectricSearchBase = exports.ElectricSearchAutocomplete = exports.ElectricSearch = exports.ElectricReadingProgress = exports.ElectricNavigation = exports.ElectricCodeTabs = exports.ElectricCode = undefined;
 
-var _ElectricCode = __webpack_require__(21);
+var _ElectricCode = __webpack_require__(23);
 
 var _ElectricCode2 = _interopRequireDefault(_ElectricCode);
 
-var _ElectricCodeTabs = __webpack_require__(22);
+var _ElectricCodeTabs = __webpack_require__(24);
 
 var _ElectricCodeTabs2 = _interopRequireDefault(_ElectricCodeTabs);
 
-var _ElectricNavigation = __webpack_require__(23);
+var _ElectricNavigation = __webpack_require__(25);
 
 var _ElectricNavigation2 = _interopRequireDefault(_ElectricNavigation);
 
-var _ElectricReadingProgress = __webpack_require__(24);
+var _ElectricReadingProgress = __webpack_require__(26);
 
 var _ElectricReadingProgress2 = _interopRequireDefault(_ElectricReadingProgress);
 
-var _ElectricSearch = __webpack_require__(25);
+var _ElectricSearch = __webpack_require__(27);
 
 var _ElectricSearch2 = _interopRequireDefault(_ElectricSearch);
 
-var _ElectricSearchAutocomplete = __webpack_require__(26);
+var _ElectricSearchAutocomplete = __webpack_require__(28);
 
 var _ElectricSearchAutocomplete2 = _interopRequireDefault(_ElectricSearchAutocomplete);
 
@@ -43,7 +43,7 @@ var _ElectricSearchBase = __webpack_require__(9);
 
 var _ElectricSearchBase2 = _interopRequireDefault(_ElectricSearchBase);
 
-var _ElectricUpdates = __webpack_require__(27);
+var _ElectricUpdates = __webpack_require__(29);
 
 var _ElectricUpdates2 = _interopRequireDefault(_ElectricUpdates);
 
@@ -73,15 +73,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Position = exports.Geometry = exports.Align = undefined;
 
-var _Align = __webpack_require__(52);
+var _Align = __webpack_require__(54);
 
 var _Align2 = _interopRequireDefault(_Align);
 
-var _Geometry = __webpack_require__(13);
+var _Geometry = __webpack_require__(12);
 
 var _Geometry2 = _interopRequireDefault(_Geometry);
 
-var _Position = __webpack_require__(14);
+var _Position = __webpack_require__(13);
 
 var _Position2 = _interopRequireDefault(_Position);
 
@@ -1038,7 +1038,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _metalAjax = __webpack_require__(41);
+var _metalAjax = __webpack_require__(43);
 
 var _metalAjax2 = _interopRequireDefault(_metalAjax);
 
@@ -1075,68 +1075,33 @@ var ElectricSearchBase = function (_Component) {
 			this.on('queryChanged', this.handleQueryChange_.bind(this));
 		}
 	}, {
-		key: 'matchesArrayField_',
-		value: function matchesArrayField_(value, query) {
-			return value.some(function (itemName) {
-				return itemName.indexOf(query) > -1;
-			});
-		}
-	}, {
 		key: 'matchesQuery_',
 		value: function matchesQuery_(data, query) {
-			var childrenOnly = this.childrenOnly,
-			    excludePath = this.excludePath;
+			var childrenOnly = this.childrenOnly;
 
 			var path = this.path || location.pathname;
 
-			var hidden = data.hidden,
+			var content = data.content,
+			    description = data.description,
+			    hidden = data.hidden,
+			    title = data.title,
 			    url = data.url;
 
 
-			if (childrenOnly && url.indexOf(path) !== 0 && url !== path || excludePath && url.indexOf(excludePath) === 0) {
-
+			if (childrenOnly && url.indexOf(path) !== 0 && url !== path) {
 				return false;
 			}
 
-			return !hidden && this.matchesField_(data, query);
-		}
-	}, {
-		key: 'matchesField_',
-		value: function matchesField_(data, query) {
-			var _this2 = this;
+			content = content ? content.toLowerCase() : '';
+			description = description ? description.toLowerCase() : '';
+			title = title ? title.toLowerCase() : '';
 
-			var fieldNames = this.fieldNames;
-
-
-			return fieldNames.some(function (fieldName) {
-				var value = data[fieldName];
-
-				var matches = false;
-
-				if (!value) {
-					return matches;
-				}
-
-				if (Array.isArray(value)) {
-					matches = _this2.matchesArrayField_(value, query);
-				} else if (typeof value === 'string') {
-					matches = _this2.matchesTextField_(value, query);
-				}
-
-				return matches;
-			});
-		}
-	}, {
-		key: 'matchesTextField_',
-		value: function matchesTextField_(value, query) {
-			value = value.toLowerCase();
-
-			return value.indexOf(query) > -1;
+			return !hidden && (title.indexOf(query) > -1 || description.indexOf(query) > -1 || content.indexOf(query) > -1);
 		}
 	}, {
 		key: 'filterResults_',
 		value: function filterResults_(data, query) {
-			var _this3 = this;
+			var _this2 = this;
 
 			var children = data.children,
 			    childIds = data.childIds;
@@ -1152,7 +1117,7 @@ var ElectricSearchBase = function (_Component) {
 				childIds.forEach(function (childId) {
 					var child = children[childId];
 
-					results = results.concat(_this3.filterResults_(child, query));
+					results = results.concat(_this2.filterResults_(child, query));
 				});
 			}
 
@@ -1221,15 +1186,6 @@ ElectricSearchBase.STATE = {
 		validator: _metal2.default.isObject
 	},
 
-	excludePath: {
-		validator: _metal2.default.isString
-	},
-
-	fieldNames: {
-		validator: _metal2.default.isArray,
-		value: ['content', 'description', 'tags', 'title']
-	},
-
 	maxResults: {
 		validator: _metal2.default.isNumber,
 		value: 4
@@ -1263,138 +1219,44 @@ exports.default = ElectricSearchBase;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+exports.ElectricUpdates = exports.ElectricSearchAutocomplete = exports.ElectricSearch = exports.ElectricReadingProgress = exports.ElectricNavigation = exports.ElectricCode = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _ElectricCode = __webpack_require__(30);
 
-var _metalComponent = __webpack_require__(1);
+var _ElectricCode2 = _interopRequireDefault(_ElectricCode);
 
-var _metalComponent2 = _interopRequireDefault(_metalComponent);
+var _ElectricNavigation = __webpack_require__(32);
 
-var _metalDom = __webpack_require__(3);
+var _ElectricNavigation2 = _interopRequireDefault(_ElectricNavigation);
 
-var _metalDom2 = _interopRequireDefault(_metalDom);
+var _ElectricReadingProgress = __webpack_require__(34);
 
-var _metalSoy = __webpack_require__(0);
+var _ElectricReadingProgress2 = _interopRequireDefault(_ElectricReadingProgress);
 
-var _metalSoy2 = _interopRequireDefault(_metalSoy);
+var _ElectricSearch = __webpack_require__(36);
 
-var _MainNavigation = __webpack_require__(19);
+var _ElectricSearch2 = _interopRequireDefault(_ElectricSearch);
 
-var _MainNavigation2 = _interopRequireDefault(_MainNavigation);
+var _ElectricSearchAutocomplete = __webpack_require__(38);
+
+var _ElectricSearchAutocomplete2 = _interopRequireDefault(_ElectricSearchAutocomplete);
+
+var _ElectricUpdates = __webpack_require__(40);
+
+var _ElectricUpdates2 = _interopRequireDefault(_ElectricUpdates);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MainNavigation = function (_Component) {
-	_inherits(MainNavigation, _Component);
-
-	function MainNavigation() {
-		_classCallCheck(this, MainNavigation);
-
-		return _possibleConstructorReturn(this, (MainNavigation.__proto__ || Object.getPrototypeOf(MainNavigation)).apply(this, arguments));
-	}
-
-	_createClass(MainNavigation, [{
-		key: 'handleCollapseClick_',
-		value: function handleCollapseClick_(event) {
-			event.preventDefault();
-
-			var parent = _metalDom2.default.parent(event.target, 'li');
-
-			var cssClass = 'active';
-
-			_metalDom2.default.toggleClasses(parent, cssClass);
-		}
-	}]);
-
-	return MainNavigation;
-}(_metalComponent2.default);
-
-;
-
-_metalSoy2.default.register(MainNavigation, _MainNavigation2.default);
-
-exports.default = MainNavigation;
+exports.ElectricCode = _ElectricCode2.default;
+exports.ElectricNavigation = _ElectricNavigation2.default;
+exports.ElectricReadingProgress = _ElectricReadingProgress2.default;
+exports.ElectricSearch = _ElectricSearch2.default;
+exports.ElectricSearchAutocomplete = _ElectricSearchAutocomplete2.default;
+exports.ElectricUpdates = _ElectricUpdates2.default;
+exports.default = _ElectricNavigation2.default;
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _metalComponent = __webpack_require__(1);
-
-var _metalComponent2 = _interopRequireDefault(_metalComponent);
-
-var _metalSoy = __webpack_require__(0);
-
-var _metalSoy2 = _interopRequireDefault(_metalSoy);
-
-var _metalToggler = __webpack_require__(18);
-
-var _metalToggler2 = _interopRequireDefault(_metalToggler);
-
-var _Sidebar = __webpack_require__(20);
-
-var _Sidebar2 = _interopRequireDefault(_Sidebar);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Sidebar = function (_Component) {
-	_inherits(Sidebar, _Component);
-
-	function Sidebar() {
-		_classCallCheck(this, Sidebar);
-
-		return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
-	}
-
-	_createClass(Sidebar, [{
-		key: 'attached',
-		value: function attached() {
-			_metalToggler2.default.CSS_EXPANDED = 'open'; /* Until metal-toggler can manage classenames on states */
-
-			this._toggler = new _metalToggler2.default({
-				content: '.sidebar-toggler-content',
-				header: '.sidebar-toggler'
-			});
-		}
-	}, {
-		key: 'disposed',
-		value: function disposed() {
-			this._toggler.dispose();
-		}
-	}]);
-
-	return Sidebar;
-}(_metalComponent2.default);
-
-;
-
-_metalSoy2.default.register(Sidebar, _Sidebar2.default);
-
-exports.default = Sidebar;
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1621,7 +1483,7 @@ AutocompleteBase.STATE = {
 exports.default = AutocompleteBase;
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1682,7 +1544,7 @@ var Geometry = function () {
 exports.default = Geometry;
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1698,7 +1560,7 @@ var _metal = __webpack_require__(2);
 
 var _metal2 = _interopRequireDefault(_metal);
 
-var _Geometry = __webpack_require__(13);
+var _Geometry = __webpack_require__(12);
 
 var _Geometry2 = _interopRequireDefault(_Geometry);
 
@@ -2086,7 +1948,215 @@ var Position = function () {
 exports.default = Position;
 
 /***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _metalComponent = __webpack_require__(1);
+
+var _metalComponent2 = _interopRequireDefault(_metalComponent);
+
+var _metalDom = __webpack_require__(3);
+
+var _metalDom2 = _interopRequireDefault(_metalDom);
+
+var _metalSoy = __webpack_require__(0);
+
+var _metalSoy2 = _interopRequireDefault(_metalSoy);
+
+var _electricQuartzComponents = __webpack_require__(10);
+
+var _HomeSearch = __webpack_require__(20);
+
+var _HomeSearch2 = _interopRequireDefault(_HomeSearch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeSearch = function (_ElectricSearchAutoco) {
+	_inherits(HomeSearch, _ElectricSearchAutoco);
+
+	function HomeSearch() {
+		_classCallCheck(this, HomeSearch);
+
+		return _possibleConstructorReturn(this, (HomeSearch.__proto__ || Object.getPrototypeOf(HomeSearch)).apply(this, arguments));
+	}
+
+	_createClass(HomeSearch, [{
+		key: 'attached',
+		value: function attached() {
+			_get(HomeSearch.prototype.__proto__ || Object.getPrototypeOf(HomeSearch.prototype), 'attached', this).call(this);
+
+			this.autocomplete.elementClasses = 'home-search';
+		}
+	}]);
+
+	return HomeSearch;
+}(_electricQuartzComponents.ElectricSearchAutocomplete);
+
+;
+
+_metalSoy2.default.register(HomeSearch, _HomeSearch2.default);
+
+exports.default = HomeSearch;
+
+/***/ }),
 /* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _metalComponent = __webpack_require__(1);
+
+var _metalComponent2 = _interopRequireDefault(_metalComponent);
+
+var _metalDom = __webpack_require__(3);
+
+var _metalDom2 = _interopRequireDefault(_metalDom);
+
+var _metalSoy = __webpack_require__(0);
+
+var _metalSoy2 = _interopRequireDefault(_metalSoy);
+
+var _MainNavigation = __webpack_require__(21);
+
+var _MainNavigation2 = _interopRequireDefault(_MainNavigation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MainNavigation = function (_Component) {
+	_inherits(MainNavigation, _Component);
+
+	function MainNavigation() {
+		_classCallCheck(this, MainNavigation);
+
+		return _possibleConstructorReturn(this, (MainNavigation.__proto__ || Object.getPrototypeOf(MainNavigation)).apply(this, arguments));
+	}
+
+	_createClass(MainNavigation, [{
+		key: 'handleCollapseClick_',
+		value: function handleCollapseClick_(event) {
+			event.preventDefault();
+
+			var parent = _metalDom2.default.parent(event.target, 'li');
+
+			var cssClass = 'active';
+
+			_metalDom2.default.toggleClasses(parent, cssClass);
+		}
+	}]);
+
+	return MainNavigation;
+}(_metalComponent2.default);
+
+;
+
+_metalSoy2.default.register(MainNavigation, _MainNavigation2.default);
+
+exports.default = MainNavigation;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _metalComponent = __webpack_require__(1);
+
+var _metalComponent2 = _interopRequireDefault(_metalComponent);
+
+var _metalSoy = __webpack_require__(0);
+
+var _metalSoy2 = _interopRequireDefault(_metalSoy);
+
+var _metalToggler = __webpack_require__(19);
+
+var _metalToggler2 = _interopRequireDefault(_metalToggler);
+
+var _Sidebar = __webpack_require__(22);
+
+var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Sidebar = function (_Component) {
+	_inherits(Sidebar, _Component);
+
+	function Sidebar() {
+		_classCallCheck(this, Sidebar);
+
+		return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
+	}
+
+	_createClass(Sidebar, [{
+		key: 'attached',
+		value: function attached() {
+			_metalToggler2.default.CSS_EXPANDED = 'open'; /* Until metal-toggler can manage classenames on states */
+
+			this._toggler = new _metalToggler2.default({
+				content: '.sidebar-toggler-content',
+				header: '.sidebar-toggler'
+			});
+		}
+	}, {
+		key: 'disposed',
+		value: function disposed() {
+			this._toggler.dispose();
+		}
+	}]);
+
+	return Sidebar;
+}(_metalComponent2.default);
+
+;
+
+_metalSoy2.default.register(Sidebar, _Sidebar2.default);
+
+exports.default = Sidebar;
+
+/***/ }),
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2147,11 +2217,11 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param60 = function() {
+  var param4 = function() {
     $templateAlias2(soy.$$assignDefaults({section: opt_data.site.index.children['docs']}, opt_data), null, opt_ijData);
     $guide(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param60}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param4}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -2173,8 +2243,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null,
           'class', 'container-fluid');
         ie_open('h1');
-          var dyn1 = opt_data.page.title;
-          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
+          var dyn0 = opt_data.page.title;
+          if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
         ie_close('h1');
       ie_close('div');
     ie_close('header');
@@ -2184,8 +2254,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
           'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-12');
-          var dyn2 = opt_data.content;
-          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
+          var dyn1 = opt_data.content;
+          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
         ie_close('div');
         ie_open('nav', null, null,
             'class', 'col-md-5 col-md-offset-2 col-xs-12');
@@ -2305,7 +2375,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(guide, templates);
 
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2367,8 +2437,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', ($$temp = opt_data.elementClasses) == null ? 'main' : $$temp);
     ie_open('main', null, null,
         'class', 'content');
-      var dyn3 = opt_data.content;
-      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
+      var dyn2 = opt_data.content;
+      if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
     ie_close('main');
   ie_close('div');
 }
@@ -2410,8 +2480,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
     ie_open('a', null, null,
         'class', 'navbar-brand',
         'href', '/');
-      var dyn4 = opt_data.site.title;
-      if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
+      var dyn3 = opt_data.site.title;
+      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
     ie_close('a');
   ie_close('div');
 }
@@ -2477,7 +2547,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(main, templates);
 
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2486,56 +2556,6 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(main, templates);
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.ElectricUpdates = exports.ElectricSearchAutocomplete = exports.ElectricSearch = exports.ElectricReadingProgress = exports.ElectricNavigation = exports.ElectricCode = undefined;
-
-var _ElectricCode = __webpack_require__(28);
-
-var _ElectricCode2 = _interopRequireDefault(_ElectricCode);
-
-var _ElectricNavigation = __webpack_require__(30);
-
-var _ElectricNavigation2 = _interopRequireDefault(_ElectricNavigation);
-
-var _ElectricReadingProgress = __webpack_require__(32);
-
-var _ElectricReadingProgress2 = _interopRequireDefault(_ElectricReadingProgress);
-
-var _ElectricSearch = __webpack_require__(34);
-
-var _ElectricSearch2 = _interopRequireDefault(_ElectricSearch);
-
-var _ElectricSearchAutocomplete = __webpack_require__(36);
-
-var _ElectricSearchAutocomplete2 = _interopRequireDefault(_ElectricSearchAutocomplete);
-
-var _ElectricUpdates = __webpack_require__(38);
-
-var _ElectricUpdates2 = _interopRequireDefault(_ElectricUpdates);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.ElectricCode = _ElectricCode2.default;
-exports.ElectricNavigation = _ElectricNavigation2.default;
-exports.ElectricReadingProgress = _ElectricReadingProgress2.default;
-exports.ElectricSearch = _ElectricSearch2.default;
-exports.ElectricSearchAutocomplete = _ElectricSearchAutocomplete2.default;
-exports.ElectricUpdates = _ElectricUpdates2.default;
-exports.default = _ElectricNavigation2.default;
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
 var _metal = __webpack_require__(2);
 
@@ -2571,7 +2591,7 @@ var Toggler = function (_State) {
 	function Toggler(opt_config) {
 		_classCallCheck(this, Toggler);
 
-		var _this = _possibleConstructorReturn(this, (Toggler.__proto__ || Object.getPrototypeOf(Toggler)).call(this, opt_config));
+		var _this = _possibleConstructorReturn(this, _State.call(this, opt_config));
 
 		_this.headerEventHandler_ = new _metalEvents.EventHandler();
 
@@ -2585,169 +2605,96 @@ var Toggler = function (_State) {
   */
 
 
-	_createClass(Toggler, [{
-		key: 'disposeInternal',
-		value: function disposeInternal() {
-			_get(Toggler.prototype.__proto__ || Object.getPrototypeOf(Toggler.prototype), 'disposeInternal', this).call(this);
-			this.headerEventHandler_.removeAllListeners();
-		}
+	Toggler.prototype.disposeInternal = function disposeInternal() {
+		_State.prototype.disposeInternal.call(this);
+		this.headerEventHandler_.removeAllListeners();
+	};
 
-		/**
-  * Manually collapse the content's visibility.
-  * @param {string|!Element} header
+	/**
+  * Gets the content to be toggled by the given header element.
+  * @param {!Element} header
+  * @protected
   */
 
-	}, {
-		key: 'collapse',
-		value: function collapse(header) {
-			var headerElements = this.getHeaderElements_(header);
-			var content = this.getContentElement_(headerElements);
-			_metalDom2.default.removeClasses(content, this.expandedClasses);
-			_metalDom2.default.addClasses(content, this.collapsedClasses);
-			_metalDom2.default.removeClasses(headerElements, this.headerExpandedClasses);
-			_metalDom2.default.addClasses(headerElements, this.headerCollapsedClasses);
+
+	Toggler.prototype.getContentElement_ = function getContentElement_(header) {
+		if (_metal2.default.isElement(this.content)) {
+			return this.content;
 		}
 
-		/**
-  * Manually expand the content's visibility.
-  * @param {string|!Element} header
+		var content = _metalDom2.default.next(header, this.content);
+		if (content) {
+			return content;
+		}
+
+		content = header.querySelector(this.content);
+		if (content) {
+			return content;
+		}
+
+		return this.container.querySelector(this.content);
+	};
+
+	/**
+  * Handles a `click` event on the header.
+  * @param {!Event} event
+  * @protected
   */
 
-	}, {
-		key: 'expand',
-		value: function expand(header) {
-			var headerElements = this.getHeaderElements_(header);
-			var content = this.getContentElement_(headerElements);
-			_metalDom2.default.addClasses(content, this.expandedClasses);
-			_metalDom2.default.removeClasses(content, this.collapsedClasses);
-			_metalDom2.default.addClasses(headerElements, this.headerExpandedClasses);
-			_metalDom2.default.removeClasses(headerElements, this.headerCollapsedClasses);
-		}
 
-		/**
-   * Gets the content to be toggled by the given header element.
-   * @param {!Element} header
-   * @returns {!Element}
-   * @protected
-   */
+	Toggler.prototype.handleClick_ = function handleClick_(event) {
+		this.toggle(event.delegateTarget || event.currentTarget);
+	};
 
-	}, {
-		key: 'getContentElement_',
-		value: function getContentElement_(header) {
-			if (_metal2.default.isElement(this.content)) {
-				return this.content;
-			}
+	/**
+  * Handles a `keydown` event on the header.
+  * @param {!Event} event
+  * @protected
+  */
 
-			var content = _metalDom2.default.next(header, this.content);
-			if (content) {
-				return content;
-			}
 
-			if (_metal2.default.isElement(header)) {
-				content = header.querySelector(this.content);
-				if (content) {
-					return content;
-				}
-			}
-
-			return this.container.querySelectorAll(this.content);
-		}
-
-		/**
-   * Gets the header elements by giving a selector.
-   * @param {string} header
-   * @returns {!Nodelist}
-   * @protected
-   */
-
-	}, {
-		key: 'getHeaderElements_',
-		value: function getHeaderElements_() {
-			var header = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.header;
-
-			if (_metal2.default.isElement(header) || _metal2.default.isElement(header[0])) {
-				return header;
-			}
-			return this.container.querySelectorAll(header);
-		}
-
-		/**
-   * Handles a `click` event on the header.
-   * @param {!Event} event
-   * @protected
-   */
-
-	}, {
-		key: 'handleClick_',
-		value: function handleClick_(event) {
+	Toggler.prototype.handleKeydown_ = function handleKeydown_(event) {
+		if (event.keyCode === 13 || event.keyCode === 32) {
 			this.toggle(event.delegateTarget || event.currentTarget);
+			event.preventDefault();
 		}
+	};
 
-		/**
-   * Handles a `keydown` event on the header.
-   * @param {!Event} event
-   * @protected
-   */
+	/**
+  * Syncs the component according to the value of the `header` state,
+  * attaching events to the new element and detaching from any previous one.
+  */
 
-	}, {
-		key: 'handleKeydown_',
-		value: function handleKeydown_(event) {
-			if (event.keyCode === 13 || event.keyCode === 32) {
-				this.toggle(event.delegateTarget || event.currentTarget);
-				event.preventDefault();
-			}
-		}
 
-		/**
-   * Checks if there is any expanded header in the component context.
-   * @param {string|!Element} event
-   * @param {boolean}
-   * @protected
-   */
-
-	}, {
-		key: 'hasExpanded_',
-		value: function hasExpanded_(header) {
-			if (_metal2.default.isElement(header)) {
-				return _metalDom2.default.hasClass(header, this.headerExpandedClasses);
-			}
-			return !!this.container.querySelectorAll('.' + this.headerExpandedClasses).length;
-		}
-
-		/**
-   * Syncs the component according to the value of the `header` state,
-   * attaching events to the new element and detaching from any previous one.
-   */
-
-	}, {
-		key: 'syncHeader',
-		value: function syncHeader() {
-			this.headerEventHandler_.removeAllListeners();
-			if (this.header) {
-				if (_metal2.default.isString(this.header)) {
-					this.headerEventHandler_.add(_metalDom2.default.delegate(this.container, 'click', this.header, this.handleClick_.bind(this)), _metalDom2.default.delegate(this.container, 'keydown', this.header, this.handleKeydown_.bind(this)));
-				} else {
-					this.headerEventHandler_.add(_metalDom2.default.on(this.header, 'click', this.handleClick_.bind(this)), _metalDom2.default.on(this.header, 'keydown', this.handleKeydown_.bind(this)));
-				}
-			}
-		}
-
-		/**
-   * Toggles the content's visibility.
-   * @param {string|!Element} header
-   */
-
-	}, {
-		key: 'toggle',
-		value: function toggle(header) {
-			var headerElements = this.getHeaderElements_(header);
-			if (this.hasExpanded_(headerElements)) {
-				this.collapse(headerElements);
+	Toggler.prototype.syncHeader = function syncHeader() {
+		this.headerEventHandler_.removeAllListeners();
+		if (this.header) {
+			if (_metal2.default.isString(this.header)) {
+				this.headerEventHandler_.add(_metalDom2.default.delegate(this.container, 'click', this.header, this.handleClick_.bind(this)), _metalDom2.default.delegate(this.container, 'keydown', this.header, this.handleKeydown_.bind(this)));
 			} else {
-				this.expand(headerElements);
+				this.headerEventHandler_.add(_metalDom2.default.on(this.header, 'click', this.handleClick_.bind(this)), _metalDom2.default.on(this.header, 'keydown', this.handleKeydown_.bind(this)));
 			}
 		}
-	}]);
+	};
+
+	/**
+  * Toggles the content's visibility.
+  */
+
+
+	Toggler.prototype.toggle = function toggle(header) {
+		var content = this.getContentElement_(header);
+		_metalDom2.default.toggleClasses(content, Toggler.CSS_EXPANDED);
+		_metalDom2.default.toggleClasses(content, Toggler.CSS_COLLAPSED);
+
+		if (_metalDom2.default.hasClass(content, Toggler.CSS_EXPANDED)) {
+			_metalDom2.default.addClasses(header, Toggler.CSS_HEADER_EXPANDED);
+			_metalDom2.default.removeClasses(header, Toggler.CSS_HEADER_COLLAPSED);
+		} else {
+			_metalDom2.default.removeClasses(header, Toggler.CSS_HEADER_EXPANDED);
+			_metalDom2.default.addClasses(header, Toggler.CSS_HEADER_COLLAPSED);
+		}
+	};
 
 	return Toggler;
 }(_metalState2.default);
@@ -2758,14 +2705,6 @@ var Toggler = function (_State) {
 
 
 Toggler.STATE = {
-	/**
-  * The CSS classes added to the content when it's collapsed.
-  */
-	collapsedClasses: {
-		validator: _metal2.default.isString,
-		value: 'toggler-collapsed'
-	},
-
 	/**
   * The element where the header/content selectors will be looked for.
   * @type {string|!Element}
@@ -2789,14 +2728,6 @@ Toggler.STATE = {
 	},
 
 	/**
-  * The CSS classes added to the content when it's expanded.
-  */
-	expandedClasses: {
-		validator: _metal2.default.isString,
-		value: 'toggler-expanded'
-	},
-
-	/**
   * The element that should be trigger toggling.
   * @type {string|!Element}
   */
@@ -2804,29 +2735,124 @@ Toggler.STATE = {
 		validator: function validator(value) {
 			return _metal2.default.isString(value) || _metal2.default.isElement(value);
 		}
-	},
-
-	/**
-  * The CSS classes added to the header when the content is collapsed.
-  */
-	headerCollapsedClasses: {
-		validator: _metal2.default.isString,
-		value: 'toggler-header-collapsed'
-	},
-
-	/**
-  * The CSS classes added to the header when the content is expanded.
-  */
-	headerExpandedClasses: {
-		validator: _metal2.default.isString,
-		value: 'toggler-header-expanded'
 	}
 };
+
+/**
+ * The CSS class added to the content when it's collapsed.
+ */
+Toggler.CSS_COLLAPSED = 'toggler-collapsed';
+
+/**
+ * The CSS class added to the content when it's expanded.
+ */
+Toggler.CSS_EXPANDED = 'toggler-expanded';
+
+/**
+ * The CSS class added to the header when the content is collapsed.
+ */
+Toggler.CSS_HEADER_COLLAPSED = 'toggler-header-collapsed';
+
+/**
+ * The CSS class added to the header when the content is expanded.
+ */
+Toggler.CSS_HEADER_EXPANDED = 'toggler-header-expanded';
 
 exports.default = Toggler;
 
 /***/ }),
-/* 19 */
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeSearch", function() { return HomeSearch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "templates", function() { return templates; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_metal_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_metal_component__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_metal_soy__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_metal_soy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_metal_soy__);
+/* jshint ignore:start */
+
+
+var templates;
+goog.loadModule(function(exports) {
+
+// This file was automatically generated from HomeSearch.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace HomeSearch.
+ * @public
+ */
+
+goog.module('HomeSearch.incrementaldom');
+
+/** @suppress {extraRequire} */
+var soy = goog.require('soy');
+/** @suppress {extraRequire} */
+var soydata = goog.require('soydata');
+/** @suppress {extraRequire} */
+goog.require('goog.i18n.bidi');
+/** @suppress {extraRequire} */
+goog.require('goog.asserts');
+/** @suppress {extraRequire} */
+goog.require('goog.string');
+var IncrementalDom = goog.require('incrementaldom');
+var ie_open = IncrementalDom.elementOpen;
+var ie_close = IncrementalDom.elementClose;
+var ie_void = IncrementalDom.elementVoid;
+var ie_open_start = IncrementalDom.elementOpenStart;
+var ie_open_end = IncrementalDom.elementOpenEnd;
+var itext = IncrementalDom.text;
+var iattr = IncrementalDom.attr;
+
+
+/**
+ * @param {Object<string, *>=} opt_data
+ * @param {(null|undefined)=} opt_ignored
+ * @param {Object<string, *>=} opt_ijData
+ * @return {void}
+ * @suppress {checkTypes}
+ */
+function $render(opt_data, opt_ignored, opt_ijData) {
+  var $$temp;
+  opt_data = opt_data || {};
+  ie_open('input', null, null,
+      'autocomplete', 'off',
+      'class', 'form-control',
+      'name', 'q',
+      'placeholder', ($$temp = opt_data.placeholder) == null ? '' : $$temp,
+      'ref', 'input',
+      'type', 'text');
+  ie_close('input');
+  ie_open('button', null, null,
+      'class', 'btn btn-clear',
+      'type', 'reset');
+    itext('\u00D7');
+  ie_close('button');
+}
+exports.render = $render;
+if (goog.DEBUG) {
+  $render.soyTemplateName = 'HomeSearch.render';
+}
+
+exports.render.params = ["placeholder"];
+exports.render.types = {"placeholder":"any"};
+templates = exports;
+return exports;
+
+});
+
+class HomeSearch extends __WEBPACK_IMPORTED_MODULE_0_metal_component___default.a {}
+__WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(HomeSearch, templates);
+
+/* harmony default export */ __webpack_exports__["default"] = (templates);
+/* jshint ignore:end */
+
+
+/***/ }),
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2882,21 +2908,21 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
-  var localCurrentDepth__soy3 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
+  var localCurrentDepth__soy53 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
   if (opt_data.section.children) {
     ie_open('ul', null, null,
         'class', 'nav nav-nested nav-pills nav-stacked');
-      var childIdList24 = opt_data.section.childIds;
-      var childIdListLen24 = childIdList24.length;
-      for (var childIdIndex24 = 0; childIdIndex24 < childIdListLen24; childIdIndex24++) {
-        var childIdData24 = childIdList24[childIdIndex24];
-        var page__soy7 = opt_data.section.children[childIdData24];
-        if (! page__soy7.hidden) {
+      var childIdList74 = opt_data.section.childIds;
+      var childIdListLen74 = childIdList74.length;
+      for (var childIdIndex74 = 0; childIdIndex74 < childIdListLen74; childIdIndex74++) {
+        var childIdData74 = childIdList74[childIdIndex74];
+        var page__soy57 = opt_data.section.children[childIdData74];
+        if (! page__soy57.hidden) {
           ie_open('li', null, null,
-              'class', (page__soy7.active ? 'active' : '') + ' ' + (page__soy7.children ? 'nav-heading' : ''));
-            $anchor(soy.$$assignDefaults({page: page__soy7}, opt_data), null, opt_ijData);
-            if (! opt_data.depth || localCurrentDepth__soy3 + 1 < opt_data.depth) {
-              $render({currentDepth: localCurrentDepth__soy3 + 1, depth: opt_data.depth, section: page__soy7}, null, opt_ijData);
+              'class', (page__soy57.active ? 'active' : '') + ' ' + (page__soy57.children ? 'nav-heading' : ''));
+            $anchor(soy.$$assignDefaults({page: page__soy57}, opt_data), null, opt_ijData);
+            if (! opt_data.depth || localCurrentDepth__soy53 + 1 < opt_data.depth) {
+              $render({currentDepth: localCurrentDepth__soy53 + 1, depth: opt_data.depth, section: page__soy57}, null, opt_ijData);
             }
           ie_close('li');
         }
@@ -2930,8 +2956,8 @@ function $anchor(opt_data, opt_ignored, opt_ijData) {
           'href', 'javascript:;');
       }
       ie_open('span');
-        var dyn0 = opt_data.page.title;
-        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
+        var dyn4 = opt_data.page.title;
+        if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
       ie_close('span');
       if (opt_data.page.children) {
         ie_open('svg', null, null,
@@ -2964,7 +2990,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(MainNavigation, templ
 
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3095,7 +3121,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(Sidebar, templates);
 
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3107,7 +3133,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _metalClipboard = __webpack_require__(45);
+var _metalClipboard = __webpack_require__(47);
 
 var _metalClipboard2 = _interopRequireDefault(_metalClipboard);
 
@@ -3115,7 +3141,7 @@ var _metalComponent = __webpack_require__(1);
 
 var _metalComponent2 = _interopRequireDefault(_metalComponent);
 
-var _metalTooltip = __webpack_require__(62);
+var _metalTooltip = __webpack_require__(64);
 
 var _metalTooltip2 = _interopRequireDefault(_metalTooltip);
 
@@ -3178,7 +3204,7 @@ var ElectricCode = function (_Component) {
 exports.default = ElectricCode;
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3190,7 +3216,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _metalTabs = __webpack_require__(60);
+var _metalTabs = __webpack_require__(62);
 
 var _metalTabs2 = _interopRequireDefault(_metalTabs);
 
@@ -3362,7 +3388,7 @@ window.ElectricCodeTabs = ElectricCodeTabs;
 exports.default = ElectricCodeTabs;
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3397,7 +3423,8 @@ var ElectricNavigation = function (_Component) {
 
 	_createClass(ElectricNavigation, [{
 		key: 'attached',
-		value: function attached() {}
+		value: function attached() {
+		}
 	}]);
 
 	return ElectricNavigation;
@@ -3408,7 +3435,7 @@ var ElectricNavigation = function (_Component) {
 exports.default = ElectricNavigation;
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3420,7 +3447,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _metalAffix = __webpack_require__(40);
+var _metalAffix = __webpack_require__(42);
 
 var _metalAffix2 = _interopRequireDefault(_metalAffix);
 
@@ -3436,7 +3463,7 @@ var _metalDom = __webpack_require__(3);
 
 var _metalDom2 = _interopRequireDefault(_metalDom);
 
-var _metalReadingProgress = __webpack_require__(53);
+var _metalReadingProgress = __webpack_require__(55);
 
 var _metalReadingProgress2 = _interopRequireDefault(_metalReadingProgress);
 
@@ -3547,7 +3574,7 @@ ElectricReadingProgress.STATE = {
 exports.default = ElectricReadingProgress;
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3620,7 +3647,7 @@ ElectricSearch.STATE = {
 exports.default = ElectricSearch;
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3632,7 +3659,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _metalAutocomplete = __webpack_require__(44);
+var _metalAutocomplete = __webpack_require__(46);
 
 var _metalAutocomplete2 = _interopRequireDefault(_metalAutocomplete);
 
@@ -3667,7 +3694,7 @@ var ElectricSearchAutocomplete = function (_ElectricSearchBase) {
 			var element = this.element;
 			var input = this.refs.input;
 
-
+console.log('hello....', element);
 			if (input) {
 				this.autocomplete = new _metalAutocomplete2.default({
 					autoBestAlign: false,
@@ -3719,7 +3746,7 @@ var ElectricSearchAutocomplete = function (_ElectricSearchBase) {
 exports.default = ElectricSearchAutocomplete;
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3776,7 +3803,7 @@ ElectricUpdates.STATE = {
 exports.default = ElectricUpdates;
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3792,7 +3819,7 @@ var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
 var _electricBaseComponents = __webpack_require__(4);
 
-var _ElectricCode = __webpack_require__(29);
+var _ElectricCode = __webpack_require__(31);
 
 var _ElectricCode2 = _interopRequireDefault(_ElectricCode);
 
@@ -3803,7 +3830,7 @@ _metalSoy2.default.register(_electricBaseComponents.ElectricCode, _ElectricCode2
 exports.default = _electricBaseComponents.ElectricCode;
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3917,7 +3944,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3933,7 +3960,7 @@ var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
 var _electricBaseComponents = __webpack_require__(4);
 
-var _ElectricNavigation = __webpack_require__(31);
+var _ElectricNavigation = __webpack_require__(33);
 
 var _ElectricNavigation2 = _interopRequireDefault(_ElectricNavigation);
 
@@ -3944,7 +3971,7 @@ _metalSoy2.default.register(_electricBaseComponents.ElectricNavigation, _Electri
 exports.default = _electricBaseComponents.ElectricNavigation;
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4096,7 +4123,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4112,7 +4139,7 @@ var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
 var _electricBaseComponents = __webpack_require__(4);
 
-var _ElectricReadingProgress = __webpack_require__(33);
+var _ElectricReadingProgress = __webpack_require__(35);
 
 var _ElectricReadingProgress2 = _interopRequireDefault(_ElectricReadingProgress);
 
@@ -4123,7 +4150,7 @@ _metalSoy2.default.register(_electricBaseComponents.ElectricReadingProgress, _El
 exports.default = _electricBaseComponents.ElectricReadingProgress;
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4226,7 +4253,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4242,7 +4269,7 @@ var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
 var _electricBaseComponents = __webpack_require__(4);
 
-var _ElectricSearch = __webpack_require__(35);
+var _ElectricSearch = __webpack_require__(37);
 
 var _ElectricSearch2 = _interopRequireDefault(_ElectricSearch);
 
@@ -4253,7 +4280,7 @@ _metalSoy2.default.register(_electricBaseComponents.ElectricSearch, _ElectricSea
 exports.default = _electricBaseComponents.ElectricSearch;
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4455,7 +4482,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 36 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4471,7 +4498,7 @@ var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
 var _electricBaseComponents = __webpack_require__(4);
 
-var _ElectricSearchAutocomplete = __webpack_require__(37);
+var _ElectricSearchAutocomplete = __webpack_require__(39);
 
 var _ElectricSearchAutocomplete2 = _interopRequireDefault(_ElectricSearchAutocomplete);
 
@@ -4482,7 +4509,7 @@ _metalSoy2.default.register(_electricBaseComponents.ElectricSearchAutocomplete, 
 exports.default = _electricBaseComponents.ElectricSearchAutocomplete;
 
 /***/ }),
-/* 37 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4597,7 +4624,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 38 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4613,7 +4640,7 @@ var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
 var _electricBaseComponents = __webpack_require__(4);
 
-var _ElectricUpdates = __webpack_require__(39);
+var _ElectricUpdates = __webpack_require__(41);
 
 var _ElectricUpdates2 = _interopRequireDefault(_ElectricUpdates);
 
@@ -4624,7 +4651,7 @@ _metalSoy2.default.register(_electricBaseComponents.ElectricUpdates, _ElectricUp
 exports.default = _electricBaseComponents.ElectricUpdates;
 
 /***/ }),
-/* 39 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4835,7 +4862,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 40 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5038,7 +5065,7 @@ Affix.STATE = {
 exports.default = Affix;
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5052,7 +5079,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _metal = __webpack_require__(2);
 
-var _metalUri = __webpack_require__(68);
+var _metalUri = __webpack_require__(70);
 
 var _metalUri2 = _interopRequireDefault(_metalUri);
 
@@ -5142,13 +5169,9 @@ var Ajax = function () {
 				clearTimeout(timeout);
 			});
 
-			url = new _metalUri2.default(url);
-
 			if (opt_params) {
-				url.addParametersFromMultiMap(opt_params).toString();
+				url = new _metalUri2.default(url).addParametersFromMultiMap(opt_params).toString();
 			}
-
-			url = url.toString();
 
 			request.open(method, url, !opt_sync);
 
@@ -5180,7 +5203,7 @@ var Ajax = function () {
 exports.default = Ajax;
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5198,7 +5221,7 @@ var _metal = __webpack_require__(2);
 
 var _metal2 = _interopRequireDefault(_metal);
 
-var _metalDebounce = __webpack_require__(46);
+var _metalDebounce = __webpack_require__(48);
 
 var _metalDebounce2 = _interopRequireDefault(_metalDebounce);
 
@@ -5210,7 +5233,7 @@ var _metalPromise = __webpack_require__(8);
 
 var _metalPosition = __webpack_require__(7);
 
-var _AutocompleteBase2 = __webpack_require__(12);
+var _AutocompleteBase2 = __webpack_require__(11);
 
 var _AutocompleteBase3 = _interopRequireDefault(_AutocompleteBase2);
 
@@ -5218,9 +5241,9 @@ var _metalSoy = __webpack_require__(0);
 
 var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
-__webpack_require__(48);
+__webpack_require__(50);
 
-var _AutocompleteSoy = __webpack_require__(43);
+var _AutocompleteSoy = __webpack_require__(45);
 
 var _AutocompleteSoy2 = _interopRequireDefault(_AutocompleteSoy);
 
@@ -5618,7 +5641,7 @@ Autocomplete.STATE = {
 exports.default = Autocomplete;
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5723,7 +5746,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5734,11 +5757,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.AutocompleteBase = exports.Autocomplete = undefined;
 
-var _Autocomplete = __webpack_require__(42);
+var _Autocomplete = __webpack_require__(44);
 
 var _Autocomplete2 = _interopRequireDefault(_Autocomplete);
 
-var _AutocompleteBase = __webpack_require__(12);
+var _AutocompleteBase = __webpack_require__(11);
 
 var _AutocompleteBase2 = _interopRequireDefault(_AutocompleteBase);
 
@@ -5749,7 +5772,7 @@ exports.Autocomplete = _Autocomplete2.default;
 exports.AutocompleteBase = _AutocompleteBase2.default;
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6103,7 +6126,7 @@ ClipboardAction.STATE = {
 exports.default = Clipboard;
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6141,7 +6164,7 @@ exports.cancelDebounce = cancelDebounce;
 exports.debounce = debounce;
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6414,7 +6437,7 @@ KeyboardFocusManager.REF_REGEX = /.+-(\d+)$/;
 exports.default = KeyboardFocusManager;
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6440,9 +6463,9 @@ var _metalSoy = __webpack_require__(0);
 
 var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
-__webpack_require__(50);
+__webpack_require__(52);
 
-var _ListSoy = __webpack_require__(49);
+var _ListSoy = __webpack_require__(51);
 
 var _ListSoy2 = _interopRequireDefault(_ListSoy);
 
@@ -6534,7 +6557,7 @@ List.STATE = {
 exports.default = List;
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6666,7 +6689,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6688,7 +6711,7 @@ var _metalSoy = __webpack_require__(0);
 
 var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
-var _ListItemSoy = __webpack_require__(51);
+var _ListItemSoy = __webpack_require__(53);
 
 var _ListItemSoy2 = _interopRequireDefault(_ListItemSoy);
 
@@ -6775,7 +6798,7 @@ ListItem.STATE = {
 exports.default = ListItem;
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6936,7 +6959,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6948,7 +6971,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Position = __webpack_require__(14);
+var _Position = __webpack_require__(13);
 
 var _Position2 = _interopRequireDefault(_Position);
 
@@ -7193,7 +7216,7 @@ Align.Left = Align.LeftCenter;
 exports.default = Align;
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7205,7 +7228,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _metal = __webpack_require__(2);
 
-var _ReadingProgress = __webpack_require__(54);
+var _ReadingProgress = __webpack_require__(56);
 
 var _ReadingProgress2 = _interopRequireDefault(_ReadingProgress);
 
@@ -7213,7 +7236,7 @@ var _metalComponent = __webpack_require__(1);
 
 var _metalComponent2 = _interopRequireDefault(_metalComponent);
 
-var _ReadingProgressTracker = __webpack_require__(55);
+var _ReadingProgressTracker = __webpack_require__(57);
 
 var _ReadingProgressTracker2 = _interopRequireDefault(_ReadingProgressTracker);
 
@@ -7384,7 +7407,7 @@ ReadingProgress.STATE = {
 exports.default = ReadingProgress;
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7524,7 +7547,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7542,7 +7565,7 @@ var _metalDom = __webpack_require__(3);
 
 var _metalDom2 = _interopRequireDefault(_metalDom);
 
-var _metalScrollspy = __webpack_require__(56);
+var _metalScrollspy = __webpack_require__(58);
 
 var _metalScrollspy2 = _interopRequireDefault(_metalScrollspy);
 
@@ -7693,7 +7716,7 @@ ReadingProgressTracker.STATE = {
 exports.default = ReadingProgressTracker;
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8045,7 +8068,7 @@ Scrollspy.STATE = {
 exports.default = Scrollspy;
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8255,7 +8278,7 @@ var MultiMap = function (_Disposable) {
 exports.default = MultiMap;
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8514,7 +8537,7 @@ var assertChildHasNoParent = function assertChildHasNoParent(child) {
 exports.default = TreeNode;
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8525,11 +8548,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TreeNode = exports.MultiMap = undefined;
 
-var _MultiMap = __webpack_require__(57);
+var _MultiMap = __webpack_require__(59);
 
 var _MultiMap2 = _interopRequireDefault(_MultiMap);
 
-var _TreeNode = __webpack_require__(58);
+var _TreeNode = __webpack_require__(60);
 
 var _TreeNode2 = _interopRequireDefault(_TreeNode);
 
@@ -8539,7 +8562,7 @@ exports.MultiMap = _MultiMap2.default;
 exports.TreeNode = _TreeNode2.default;
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8555,7 +8578,7 @@ var _metal = __webpack_require__(2);
 
 var _metal2 = _interopRequireDefault(_metal);
 
-var _TabsSoy = __webpack_require__(61);
+var _TabsSoy = __webpack_require__(63);
 
 var _TabsSoy2 = _interopRequireDefault(_TabsSoy);
 
@@ -8563,7 +8586,7 @@ var _metalComponent = __webpack_require__(1);
 
 var _metalComponent2 = _interopRequireDefault(_metalComponent);
 
-var _metalKeyboardFocus = __webpack_require__(47);
+var _metalKeyboardFocus = __webpack_require__(49);
 
 var _metalKeyboardFocus2 = _interopRequireDefault(_metalKeyboardFocus);
 
@@ -8598,7 +8621,7 @@ var Tabs = function (_Component) {
    * @inheritDoc
    */
 		value: function attached() {
-			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'button').setCircularLength(this.tabs.length).start();
+			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'a').setCircularLength(this.tabs.length).start();
 		}
 
 		/**
@@ -8699,7 +8722,7 @@ var Tabs = function (_Component) {
 		}
 
 		/**
-   * Finds the first enabled tab and returns its index.
+   * Removes the tab at the given index from the tabs array.
    * @return {number} Returns the index of the first tab which is not disabled.
    */
 
@@ -8895,7 +8918,7 @@ Tabs.STATE = {
 exports.default = Tabs;
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8980,21 +9003,20 @@ goog.loadModule(function (exports) {
         }
         iattr('role', 'presentation');
         ie_open_end();
-        ie_open_start('button');
-        iattr('aria-disabled', isDisabled__soy10 ? 'true' : 'false');
+        ie_open_start('a');
         iattr('aria-expanded', isCurrentTab__soy11 ? 'true' : 'false');
-        iattr('data-unfocusable', isDisabled__soy10 ? 'true' : 'false');
         iattr('data-toggle', 'tab');
-        if (isDisabled__soy10) {
-          iattr('disabled', '');
+        iattr('data-unfocusable', isDisabled__soy10 ? 'true' : 'false');
+        if (!isDisabled__soy10) {
+          iattr('href', '#');
         }
         iattr('ref', 'tab-' + currentTabIndex37);
         iattr('role', 'tab');
-        iattr('type', 'button');
+        iattr('tabindex', isCurrentTab__soy11 ? '0' : '-1');
         ie_open_end();
         var dyn0 = currentTabData37.label;
         if (typeof dyn0 == 'function') dyn0();else if (dyn0 != null) itext(dyn0);
-        ie_close('button');
+        ie_close('a');
         ie_close('li');
       }
       ie_close('ul');
@@ -9030,7 +9052,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9053,11 +9075,11 @@ var _metalSoy = __webpack_require__(0);
 
 var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
-var _TooltipBase2 = __webpack_require__(64);
+var _TooltipBase2 = __webpack_require__(66);
 
 var _TooltipBase3 = _interopRequireDefault(_TooltipBase2);
 
-var _TooltipSoy = __webpack_require__(63);
+var _TooltipSoy = __webpack_require__(65);
 
 var _TooltipSoy2 = _interopRequireDefault(_TooltipSoy);
 
@@ -9133,7 +9155,7 @@ exports.Tooltip = Tooltip;
 exports.TooltipBase = _TooltipBase3.default;
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9254,7 +9276,7 @@ exports.default = templates;
 /* jshint ignore:end */
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9649,7 +9671,7 @@ TooltipBase.PositionClasses = ['top', 'right', 'bottom', 'left'];
 exports.default = TooltipBase;
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9665,11 +9687,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _metal = __webpack_require__(2);
 
-var _parse = __webpack_require__(66);
+var _parse = __webpack_require__(68);
 
 var _parse2 = _interopRequireDefault(_parse);
 
-var _metalStructs = __webpack_require__(59);
+var _metalStructs = __webpack_require__(61);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -10029,8 +10051,8 @@ var Uri = function () {
 		}
 
 		/**
-   * Parses the given uri string into an object.
-   * @param {*=} opt_uri Optional string URI to parse
+   * Normalizes the parsed object to be in the expected standard.
+   * @param {!Object}
    */
 
 	}, {
@@ -10201,9 +10223,24 @@ var Uri = function () {
 			return parseFn_;
 		}
 	}, {
+		key: 'normalizeObject',
+		value: function normalizeObject(parsed) {
+			var length = parsed.pathname ? parsed.pathname.length : 0;
+			if (length > 1 && parsed.pathname[length - 1] === '/') {
+				parsed.pathname = parsed.pathname.substr(0, length - 1);
+			}
+			return parsed;
+		}
+
+		/**
+   * Parses the given uri string into an object.
+   * @param {*=} opt_uri Optional string URI to parse
+   */
+
+	}, {
 		key: 'parse',
 		value: function parse(opt_uri) {
-			return parseFn_(opt_uri);
+			return Uri.normalizeObject(parseFn_(opt_uri));
 		}
 	}, {
 		key: 'setParseFn',
@@ -10251,11 +10288,7 @@ var Uri = function () {
  */
 
 
-var isSecure = function isSecure() {
-	return typeof window !== 'undefined' && window.location && window.location.protocol && window.location.protocol.indexOf('https') === 0;
-};
-
-Uri.DEFAULT_PROTOCOL = isSecure() ? 'https:' : 'http:';
+Uri.DEFAULT_PROTOCOL = 'http:';
 
 /**
  * Hostname placeholder. Relevant to internal usage only.
@@ -10274,7 +10307,7 @@ Uri.RANDOM_PARAM = 'zx';
 exports.default = Uri;
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10286,7 +10319,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _metal = __webpack_require__(2);
 
-var _parseFromAnchor = __webpack_require__(67);
+var _parseFromAnchor = __webpack_require__(69);
 
 var _parseFromAnchor2 = _interopRequireDefault(_parseFromAnchor);
 
@@ -10299,16 +10332,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 function parse(opt_uri) {
 	if ((0, _metal.isFunction)(URL) && URL.length) {
-		var url = new URL(opt_uri);
-
-		// Safari Browsers will cap port to the max 16-bit unsigned integer (65535) instead
-		// of throwing a TypeError as per spec. It will still keep the port number in the
-		// href attribute, so we can use this mismatch to raise the expected exception.
-		if (url.port && url.href.indexOf(url.port) === -1) {
-			throw new TypeError(opt_uri + ' is not a valid URL');
-		}
-
-		return url;
+		return new URL(opt_uri);
 	} else {
 		return (0, _parseFromAnchor2.default)(opt_uri);
 	}
@@ -10317,7 +10341,7 @@ function parse(opt_uri) {
 exports.default = parse;
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10334,11 +10358,6 @@ Object.defineProperty(exports, "__esModule", {
 function parseFromAnchor(opt_uri) {
 	var link = document.createElement('a');
 	link.href = opt_uri;
-
-	if (link.protocol === ':' || !/:/.test(link.href)) {
-		throw new TypeError(opt_uri + ' is not a valid URL');
-	}
-
 	return {
 		hash: link.hash,
 		hostname: link.hostname,
@@ -10354,21 +10373,21 @@ function parseFromAnchor(opt_uri) {
 exports.default = parseFromAnchor;
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Uri = __webpack_require__(65).default;
+var Uri = __webpack_require__(67).default;
 
 if (typeof URL === 'undefined' && "function" !== 'undefined') {
 	// If there is no "document", then this should be running in NodeJS or in ReactNative env and
 	// in this case we should use the "url" NPM module as the parse function.
 	// In ReactNative env "path" will be replaced with "path-browserify".
 
-	var path = __webpack_require__(69);
-	var url = __webpack_require__(74);
+	var path = __webpack_require__(71);
+	var url = __webpack_require__(76);
 
 	Uri.setParseFn(function(urlStr) {
 		var parsed = url.parse(urlStr);
@@ -10381,7 +10400,7 @@ module.exports = Uri;
 
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -10609,10 +10628,10 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(77)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(80)))
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -11148,10 +11167,10 @@ var substr = 'ab'.substr(-1) === 'b'
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(76)(module), __webpack_require__(78)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)(module), __webpack_require__(79)))
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11242,7 +11261,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11334,18 +11353,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(71);
-exports.encode = exports.stringify = __webpack_require__(72);
+exports.decode = exports.parse = __webpack_require__(73);
+exports.encode = exports.stringify = __webpack_require__(74);
 
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11372,8 +11391,8 @@ exports.encode = exports.stringify = __webpack_require__(72);
 
 
 
-var punycode = __webpack_require__(70);
-var util = __webpack_require__(75);
+var punycode = __webpack_require__(72);
+var util = __webpack_require__(77);
 
 exports.parse = urlParse;
 exports.resolve = urlResolve;
@@ -11448,7 +11467,7 @@ var protocolPattern = /^([a-z0-9.+-]+:)/i,
       'gopher:': true,
       'file:': true
     },
-    querystring = __webpack_require__(73);
+    querystring = __webpack_require__(75);
 
 function urlParse(url, parseQueryString, slashesDenoteHost) {
   if (url && util.isObject(url) && url instanceof Url) return url;
@@ -12084,7 +12103,7 @@ Url.prototype.parseHost = function() {
 
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12107,7 +12126,7 @@ module.exports = {
 
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -12135,8 +12154,6 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 77 */,
-/* 78 */,
 /* 79 */,
 /* 80 */,
 /* 81 */,
@@ -12199,7 +12216,10 @@ module.exports = function(module) {
 /* 138 */,
 /* 139 */,
 /* 140 */,
-/* 141 */
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12260,7 +12280,7 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param179 = function() {
+  var param188 = function() {
     $templateAlias2({section: opt_data.site.index.children['docs']}, null, opt_ijData);
     ie_open('div', null, null,
         'class', 'sidebar-offset');
@@ -12293,7 +12313,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_close('div');
     ie_close('div');
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param179}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param188}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -12315,9 +12335,6 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsSearch, templ
 
 
 /***/ }),
-/* 142 */,
-/* 143 */,
-/* 144 */,
 /* 145 */,
 /* 146 */,
 /* 147 */,
@@ -12350,7 +12367,8 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsSearch, templ
 /* 174 */,
 /* 175 */,
 /* 176 */,
-/* 177 */
+/* 177 */,
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12368,17 +12386,19 @@ var _metalSoy = __webpack_require__(0);
 
 var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
-__webpack_require__(17);
-
 __webpack_require__(10);
 
-__webpack_require__(11);
+__webpack_require__(14);
 
 __webpack_require__(15);
 
 __webpack_require__(16);
 
-var _searchSoy = __webpack_require__(141);
+__webpack_require__(17);
+
+__webpack_require__(18);
+
+var _searchSoy = __webpack_require__(144);
 
 var _searchSoy2 = _interopRequireDefault(_searchSoy);
 
@@ -12409,4 +12429,4 @@ _metalSoy2.default.register(pageDocsSearch, _searchSoy2.default);
 exports.default = pageDocsSearch;
 
 /***/ })
-],[177]);
+],[178]);

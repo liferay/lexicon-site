@@ -1,7 +1,7 @@
 var pageComponent =
-webpackJsonppageComponent([47],{
+webpackJsonppageComponent([48],{
 
-/***/ 10:
+/***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25,7 +25,7 @@ var _metalSoy = __webpack_require__(0);
 
 var _metalSoy2 = _interopRequireDefault(_metalSoy);
 
-var _MainNavigation = __webpack_require__(19);
+var _MainNavigation = __webpack_require__(21);
 
 var _MainNavigation2 = _interopRequireDefault(_MainNavigation);
 
@@ -70,7 +70,7 @@ exports.default = MainNavigation;
 
 /***/ }),
 
-/***/ 19:
+/***/ 21:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -126,21 +126,21 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
-  var localCurrentDepth__soy3 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
+  var localCurrentDepth__soy53 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
   if (opt_data.section.children) {
     ie_open('ul', null, null,
         'class', 'nav nav-nested nav-pills nav-stacked');
-      var childIdList24 = opt_data.section.childIds;
-      var childIdListLen24 = childIdList24.length;
-      for (var childIdIndex24 = 0; childIdIndex24 < childIdListLen24; childIdIndex24++) {
-        var childIdData24 = childIdList24[childIdIndex24];
-        var page__soy7 = opt_data.section.children[childIdData24];
-        if (! page__soy7.hidden) {
+      var childIdList74 = opt_data.section.childIds;
+      var childIdListLen74 = childIdList74.length;
+      for (var childIdIndex74 = 0; childIdIndex74 < childIdListLen74; childIdIndex74++) {
+        var childIdData74 = childIdList74[childIdIndex74];
+        var page__soy57 = opt_data.section.children[childIdData74];
+        if (! page__soy57.hidden) {
           ie_open('li', null, null,
-              'class', (page__soy7.active ? 'active' : '') + ' ' + (page__soy7.children ? 'nav-heading' : ''));
-            $anchor(soy.$$assignDefaults({page: page__soy7}, opt_data), null, opt_ijData);
-            if (! opt_data.depth || localCurrentDepth__soy3 + 1 < opt_data.depth) {
-              $render({currentDepth: localCurrentDepth__soy3 + 1, depth: opt_data.depth, section: page__soy7}, null, opt_ijData);
+              'class', (page__soy57.active ? 'active' : '') + ' ' + (page__soy57.children ? 'nav-heading' : ''));
+            $anchor(soy.$$assignDefaults({page: page__soy57}, opt_data), null, opt_ijData);
+            if (! opt_data.depth || localCurrentDepth__soy53 + 1 < opt_data.depth) {
+              $render({currentDepth: localCurrentDepth__soy53 + 1, depth: opt_data.depth, section: page__soy57}, null, opt_ijData);
             }
           ie_close('li');
         }
@@ -174,8 +174,8 @@ function $anchor(opt_data, opt_ignored, opt_ijData) {
           'href', 'javascript:;');
       }
       ie_open('span');
-        var dyn0 = opt_data.page.title;
-        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
+        var dyn4 = opt_data.page.title;
+        if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
       ie_close('span');
       if (opt_data.page.children) {
         ie_open('svg', null, null,
@@ -209,4 +209,4 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(MainNavigation, templ
 
 /***/ })
 
-},[10]);
+},[15]);
