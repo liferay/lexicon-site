@@ -75,14 +75,20 @@
 				transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 				width: 100%;
 
+				@media (max-width: $screen-xs * 1.25) {
+					text-indent: 40px;
+					width: 40px;
+				}
+
 				&:focus {
 					background-color: $action-color;
 					background-position: 10px 50%;
 					border-color: $action-color;
+					left: 0;
 					min-height: 104px;
 					padding-left: 35px;
 					position: absolute;
-					left: 0;
+					text-indent: 0;
 					top: 0;
 					width: 100%;
 				}
@@ -107,7 +113,6 @@
 
 		@media (min-width: $screen-sm) {
 			.form-inline {
-				width: 25%;
 				position: relative;
 
 				.form-control {
@@ -121,13 +126,15 @@
 
 		@media (min-width: $screen-xs * 1.25) {
 			.form-inline {
+				width: 315px;
+
 				.form-control {
 					border-radius: 50px;
 
 					&:focus {
 						position: static;
 						min-height: auto;
-						width: 280px;
+						width: 315px;
 					}
 				}
 			}
