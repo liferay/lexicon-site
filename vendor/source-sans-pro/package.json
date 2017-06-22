@@ -1,37 +1,61 @@
 {
   "_args": [
     [
-      "source-sans-pro@https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-      "/Users/ncavanaugh/Dev/Work/lexicon-site"
+      {
+        "raw": "source-sans-pro@^2.0.10",
+        "scope": null,
+        "escapedName": "source-sans-pro",
+        "name": "source-sans-pro",
+        "rawSpec": "^2.0.10",
+        "spec": ">=2.0.10 <3.0.0",
+        "type": "range"
+      },
+      "/Users/victorvalle/Documents/Liferay/Lexicon Site 1/lexicon-site"
     ]
   ],
-  "_from": "source-sans-pro@https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
+  "_from": "source-sans-pro@>=2.0.10 <3.0.0",
   "_id": "source-sans-pro@2.0.10",
-  "_inBundle": false,
-  "_integrity": "sha1-wcqFnPFkoIiUTF6DdFCF6HzVM6k=",
+  "_inCache": true,
   "_location": "/source-sans-pro",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "name": "flosse",
+    "email": "mail@markus-kohlhase.de"
+  },
+  "_npmVersion": "2.5.1",
   "_phantomChildren": {},
   "_requested": {
-    "type": "remote",
-    "raw": "source-sans-pro@https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-    "name": "source-sans-pro",
+    "raw": "source-sans-pro@^2.0.10",
+    "scope": null,
     "escapedName": "source-sans-pro",
-    "rawSpec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-    "saveSpec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-    "fetchSpec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz"
+    "name": "source-sans-pro",
+    "rawSpec": "^2.0.10",
+    "spec": ">=2.0.10 <3.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_spec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-  "_where": "/Users/ncavanaugh/Dev/Work/lexicon-site",
+  "_resolved": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
+  "_shasum": "c1ca859cf164a088944c5e83745085e87cd533a9",
+  "_shrinkwrap": null,
+  "_spec": "source-sans-pro@^2.0.10",
+  "_where": "/Users/victorvalle/Documents/Liferay/Lexicon Site 1/lexicon-site",
   "author": {
     "name": "Paul D. Hunt"
   },
   "bugs": {
     "url": "https://github.com/flosse/npm-source-sans-pro/issues"
   },
+  "dependencies": {},
   "description": "Source Sans Pro font family by Adobe",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "c1ca859cf164a088944c5e83745085e87cd533a9",
+    "tarball": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz"
+  },
+  "gitHead": "afdc97f281fcd627b606a6da8c5f689a0827b993",
   "homepage": "https://github.com/flosse/npm-source-sans-pro",
   "keywords": [
     "font",
@@ -39,10 +63,19 @@
   ],
   "license": "SIL OFL 1.1",
   "main": "source-sans-pro.css",
+  "maintainers": [
+    {
+      "name": "flosse",
+      "email": "mail@markus-kohlhase.de"
+    }
+  ],
   "name": "source-sans-pro",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flosse/npm-source-sans-pro.git"
   },
-  "version": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz"
+  "scripts": {},
+  "version": "2.0.10"
 }

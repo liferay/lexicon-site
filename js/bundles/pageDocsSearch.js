@@ -1075,33 +1075,68 @@ var ElectricSearchBase = function (_Component) {
 			this.on('queryChanged', this.handleQueryChange_.bind(this));
 		}
 	}, {
+		key: 'matchesArrayField_',
+		value: function matchesArrayField_(value, query) {
+			return value.some(function (itemName) {
+				return itemName.indexOf(query) > -1;
+			});
+		}
+	}, {
 		key: 'matchesQuery_',
 		value: function matchesQuery_(data, query) {
-			var childrenOnly = this.childrenOnly;
+			var childrenOnly = this.childrenOnly,
+			    excludePath = this.excludePath;
 
 			var path = this.path || location.pathname;
 
-			var content = data.content,
-			    description = data.description,
-			    hidden = data.hidden,
-			    title = data.title,
+			var hidden = data.hidden,
 			    url = data.url;
 
 
-			if (childrenOnly && url.indexOf(path) !== 0 && url !== path) {
+			if (childrenOnly && url.indexOf(path) !== 0 && url !== path || excludePath && url.indexOf(excludePath) === 0) {
+
 				return false;
 			}
 
-			content = content ? content.toLowerCase() : '';
-			description = description ? description.toLowerCase() : '';
-			title = title ? title.toLowerCase() : '';
+			return !hidden && this.matchesField_(data, query);
+		}
+	}, {
+		key: 'matchesField_',
+		value: function matchesField_(data, query) {
+			var _this2 = this;
 
-			return !hidden && (title.indexOf(query) > -1 || description.indexOf(query) > -1 || content.indexOf(query) > -1);
+			var fieldNames = this.fieldNames;
+
+
+			return fieldNames.some(function (fieldName) {
+				var value = data[fieldName];
+
+				var matches = false;
+
+				if (!value) {
+					return matches;
+				}
+
+				if (Array.isArray(value)) {
+					matches = _this2.matchesArrayField_(value, query);
+				} else if (typeof value === 'string') {
+					matches = _this2.matchesTextField_(value, query);
+				}
+
+				return matches;
+			});
+		}
+	}, {
+		key: 'matchesTextField_',
+		value: function matchesTextField_(value, query) {
+			value = value.toLowerCase();
+
+			return value.indexOf(query) > -1;
 		}
 	}, {
 		key: 'filterResults_',
 		value: function filterResults_(data, query) {
-			var _this2 = this;
+			var _this3 = this;
 
 			var children = data.children,
 			    childIds = data.childIds;
@@ -1117,7 +1152,7 @@ var ElectricSearchBase = function (_Component) {
 				childIds.forEach(function (childId) {
 					var child = children[childId];
 
-					results = results.concat(_this2.filterResults_(child, query));
+					results = results.concat(_this3.filterResults_(child, query));
 				});
 			}
 
@@ -1184,6 +1219,15 @@ ElectricSearchBase.STATE = {
 
 	data: {
 		validator: _metal2.default.isObject
+	},
+
+	excludePath: {
+		validator: _metal2.default.isString
+	},
+
+	fieldNames: {
+		validator: _metal2.default.isArray,
+		value: ['content', 'description', 'tags', 'title']
 	},
 
 	maxResults: {
@@ -2217,11 +2261,11 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param4 = function() {
+  var param65 = function() {
     $templateAlias2(soy.$$assignDefaults({section: opt_data.site.index.children['docs']}, opt_data), null, opt_ijData);
     $guide(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param4}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param65}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -2243,8 +2287,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null,
           'class', 'container-fluid');
         ie_open('h1');
-          var dyn0 = opt_data.page.title;
-          if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
+          var dyn1 = opt_data.page.title;
+          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
         ie_close('h1');
       ie_close('div');
     ie_close('header');
@@ -2254,8 +2298,8 @@ function $guide(opt_data, opt_ignored, opt_ijData) {
           'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-12');
-          var dyn1 = opt_data.content;
-          if (typeof dyn1 == 'function') dyn1(); else if (dyn1 != null) itext(dyn1);
+          var dyn2 = opt_data.content;
+          if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
         ie_close('div');
         ie_open('nav', null, null,
             'class', 'col-md-5 col-md-offset-2 col-xs-12');
@@ -2437,8 +2481,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       'class', ($$temp = opt_data.elementClasses) == null ? 'main' : $$temp);
     ie_open('main', null, null,
         'class', 'content');
-      var dyn2 = opt_data.content;
-      if (typeof dyn2 == 'function') dyn2(); else if (dyn2 != null) itext(dyn2);
+      var dyn3 = opt_data.content;
+      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
     ie_close('main');
   ie_close('div');
 }
@@ -2480,8 +2524,8 @@ function $logo(opt_data, opt_ignored, opt_ijData) {
     ie_open('a', null, null,
         'class', 'navbar-brand',
         'href', '/');
-      var dyn3 = opt_data.site.title;
-      if (typeof dyn3 == 'function') dyn3(); else if (dyn3 != null) itext(dyn3);
+      var dyn4 = opt_data.site.title;
+      if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
     ie_close('a');
   ie_close('div');
 }
@@ -2557,6 +2601,10 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
 var _metal = __webpack_require__(2);
 
 var _metal2 = _interopRequireDefault(_metal);
@@ -2591,7 +2639,7 @@ var Toggler = function (_State) {
 	function Toggler(opt_config) {
 		_classCallCheck(this, Toggler);
 
-		var _this = _possibleConstructorReturn(this, _State.call(this, opt_config));
+		var _this = _possibleConstructorReturn(this, (Toggler.__proto__ || Object.getPrototypeOf(Toggler)).call(this, opt_config));
 
 		_this.headerEventHandler_ = new _metalEvents.EventHandler();
 
@@ -2605,96 +2653,169 @@ var Toggler = function (_State) {
   */
 
 
-	Toggler.prototype.disposeInternal = function disposeInternal() {
-		_State.prototype.disposeInternal.call(this);
-		this.headerEventHandler_.removeAllListeners();
-	};
-
-	/**
-  * Gets the content to be toggled by the given header element.
-  * @param {!Element} header
-  * @protected
-  */
-
-
-	Toggler.prototype.getContentElement_ = function getContentElement_(header) {
-		if (_metal2.default.isElement(this.content)) {
-			return this.content;
+	_createClass(Toggler, [{
+		key: 'disposeInternal',
+		value: function disposeInternal() {
+			_get(Toggler.prototype.__proto__ || Object.getPrototypeOf(Toggler.prototype), 'disposeInternal', this).call(this);
+			this.headerEventHandler_.removeAllListeners();
 		}
 
-		var content = _metalDom2.default.next(header, this.content);
-		if (content) {
-			return content;
-		}
-
-		content = header.querySelector(this.content);
-		if (content) {
-			return content;
-		}
-
-		return this.container.querySelector(this.content);
-	};
-
-	/**
-  * Handles a `click` event on the header.
-  * @param {!Event} event
-  * @protected
+		/**
+  * Manually collapse the content's visibility.
+  * @param {string|!Element} header
   */
 
+	}, {
+		key: 'collapse',
+		value: function collapse(header) {
+			var headerElements = this.getHeaderElements_(header);
+			var content = this.getContentElement_(headerElements);
+			_metalDom2.default.removeClasses(content, this.expandedClasses);
+			_metalDom2.default.addClasses(content, this.collapsedClasses);
+			_metalDom2.default.removeClasses(headerElements, this.headerExpandedClasses);
+			_metalDom2.default.addClasses(headerElements, this.headerCollapsedClasses);
+		}
 
-	Toggler.prototype.handleClick_ = function handleClick_(event) {
-		this.toggle(event.delegateTarget || event.currentTarget);
-	};
-
-	/**
-  * Handles a `keydown` event on the header.
-  * @param {!Event} event
-  * @protected
+		/**
+  * Manually expand the content's visibility.
+  * @param {string|!Element} header
   */
 
+	}, {
+		key: 'expand',
+		value: function expand(header) {
+			var headerElements = this.getHeaderElements_(header);
+			var content = this.getContentElement_(headerElements);
+			_metalDom2.default.addClasses(content, this.expandedClasses);
+			_metalDom2.default.removeClasses(content, this.collapsedClasses);
+			_metalDom2.default.addClasses(headerElements, this.headerExpandedClasses);
+			_metalDom2.default.removeClasses(headerElements, this.headerCollapsedClasses);
+		}
 
-	Toggler.prototype.handleKeydown_ = function handleKeydown_(event) {
-		if (event.keyCode === 13 || event.keyCode === 32) {
+		/**
+   * Gets the content to be toggled by the given header element.
+   * @param {!Element} header
+   * @returns {!Element}
+   * @protected
+   */
+
+	}, {
+		key: 'getContentElement_',
+		value: function getContentElement_(header) {
+			if (_metal2.default.isElement(this.content)) {
+				return this.content;
+			}
+
+			var content = _metalDom2.default.next(header, this.content);
+			if (content) {
+				return content;
+			}
+
+			if (_metal2.default.isElement(header)) {
+				content = header.querySelector(this.content);
+				if (content) {
+					return content;
+				}
+			}
+
+			return this.container.querySelectorAll(this.content);
+		}
+
+		/**
+   * Gets the header elements by giving a selector.
+   * @param {string} header
+   * @returns {!Nodelist}
+   * @protected
+   */
+
+	}, {
+		key: 'getHeaderElements_',
+		value: function getHeaderElements_() {
+			var header = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.header;
+
+			if (_metal2.default.isElement(header) || _metal2.default.isElement(header[0])) {
+				return header;
+			}
+			return this.container.querySelectorAll(header);
+		}
+
+		/**
+   * Handles a `click` event on the header.
+   * @param {!Event} event
+   * @protected
+   */
+
+	}, {
+		key: 'handleClick_',
+		value: function handleClick_(event) {
 			this.toggle(event.delegateTarget || event.currentTarget);
-			event.preventDefault();
 		}
-	};
 
-	/**
-  * Syncs the component according to the value of the `header` state,
-  * attaching events to the new element and detaching from any previous one.
-  */
+		/**
+   * Handles a `keydown` event on the header.
+   * @param {!Event} event
+   * @protected
+   */
 
-
-	Toggler.prototype.syncHeader = function syncHeader() {
-		this.headerEventHandler_.removeAllListeners();
-		if (this.header) {
-			if (_metal2.default.isString(this.header)) {
-				this.headerEventHandler_.add(_metalDom2.default.delegate(this.container, 'click', this.header, this.handleClick_.bind(this)), _metalDom2.default.delegate(this.container, 'keydown', this.header, this.handleKeydown_.bind(this)));
-			} else {
-				this.headerEventHandler_.add(_metalDom2.default.on(this.header, 'click', this.handleClick_.bind(this)), _metalDom2.default.on(this.header, 'keydown', this.handleKeydown_.bind(this)));
+	}, {
+		key: 'handleKeydown_',
+		value: function handleKeydown_(event) {
+			if (event.keyCode === 13 || event.keyCode === 32) {
+				this.toggle(event.delegateTarget || event.currentTarget);
+				event.preventDefault();
 			}
 		}
-	};
 
-	/**
-  * Toggles the content's visibility.
-  */
+		/**
+   * Checks if there is any expanded header in the component context.
+   * @param {string|!Element} event
+   * @param {boolean}
+   * @protected
+   */
 
-
-	Toggler.prototype.toggle = function toggle(header) {
-		var content = this.getContentElement_(header);
-		_metalDom2.default.toggleClasses(content, Toggler.CSS_EXPANDED);
-		_metalDom2.default.toggleClasses(content, Toggler.CSS_COLLAPSED);
-
-		if (_metalDom2.default.hasClass(content, Toggler.CSS_EXPANDED)) {
-			_metalDom2.default.addClasses(header, Toggler.CSS_HEADER_EXPANDED);
-			_metalDom2.default.removeClasses(header, Toggler.CSS_HEADER_COLLAPSED);
-		} else {
-			_metalDom2.default.removeClasses(header, Toggler.CSS_HEADER_EXPANDED);
-			_metalDom2.default.addClasses(header, Toggler.CSS_HEADER_COLLAPSED);
+	}, {
+		key: 'hasExpanded_',
+		value: function hasExpanded_(header) {
+			if (_metal2.default.isElement(header)) {
+				return _metalDom2.default.hasClass(header, this.headerExpandedClasses);
+			}
+			return !!this.container.querySelectorAll('.' + this.headerExpandedClasses).length;
 		}
-	};
+
+		/**
+   * Syncs the component according to the value of the `header` state,
+   * attaching events to the new element and detaching from any previous one.
+   */
+
+	}, {
+		key: 'syncHeader',
+		value: function syncHeader() {
+			this.headerEventHandler_.removeAllListeners();
+			if (this.header) {
+				if (_metal2.default.isString(this.header)) {
+					this.headerEventHandler_.add(_metalDom2.default.delegate(this.container, 'click', this.header, this.handleClick_.bind(this)), _metalDom2.default.delegate(this.container, 'keydown', this.header, this.handleKeydown_.bind(this)));
+				} else {
+					this.headerEventHandler_.add(_metalDom2.default.on(this.header, 'click', this.handleClick_.bind(this)), _metalDom2.default.on(this.header, 'keydown', this.handleKeydown_.bind(this)));
+				}
+			}
+		}
+
+		/**
+   * Toggles the content's visibility.
+   * @param {string|!Element} header
+   */
+
+	}, {
+		key: 'toggle',
+		value: function toggle(header) {
+			var headerElements = this.getHeaderElements_(header);
+			if (this.hasExpanded_(headerElements)) {
+				this.collapse(headerElements);
+			} else {
+				this.expand(headerElements);
+			}
+		}
+	}]);
 
 	return Toggler;
 }(_metalState2.default);
@@ -2705,6 +2826,14 @@ var Toggler = function (_State) {
 
 
 Toggler.STATE = {
+	/**
+  * The CSS classes added to the content when it's collapsed.
+  */
+	collapsedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-collapsed'
+	},
+
 	/**
   * The element where the header/content selectors will be looked for.
   * @type {string|!Element}
@@ -2728,6 +2857,14 @@ Toggler.STATE = {
 	},
 
 	/**
+  * The CSS classes added to the content when it's expanded.
+  */
+	expandedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-expanded'
+	},
+
+	/**
   * The element that should be trigger toggling.
   * @type {string|!Element}
   */
@@ -2735,28 +2872,24 @@ Toggler.STATE = {
 		validator: function validator(value) {
 			return _metal2.default.isString(value) || _metal2.default.isElement(value);
 		}
+	},
+
+	/**
+  * The CSS classes added to the header when the content is collapsed.
+  */
+	headerCollapsedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-header-collapsed'
+	},
+
+	/**
+  * The CSS classes added to the header when the content is expanded.
+  */
+	headerExpandedClasses: {
+		validator: _metal2.default.isString,
+		value: 'toggler-header-expanded'
 	}
 };
-
-/**
- * The CSS class added to the content when it's collapsed.
- */
-Toggler.CSS_COLLAPSED = 'toggler-collapsed';
-
-/**
- * The CSS class added to the content when it's expanded.
- */
-Toggler.CSS_EXPANDED = 'toggler-expanded';
-
-/**
- * The CSS class added to the header when the content is collapsed.
- */
-Toggler.CSS_HEADER_COLLAPSED = 'toggler-header-collapsed';
-
-/**
- * The CSS class added to the header when the content is expanded.
- */
-Toggler.CSS_HEADER_EXPANDED = 'toggler-header-expanded';
 
 exports.default = Toggler;
 
@@ -2908,21 +3041,21 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
-  var localCurrentDepth__soy53 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
+  var localCurrentDepth__soy8 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
   if (opt_data.section.children) {
     ie_open('ul', null, null,
         'class', 'nav nav-nested nav-pills nav-stacked');
-      var childIdList74 = opt_data.section.childIds;
-      var childIdListLen74 = childIdList74.length;
-      for (var childIdIndex74 = 0; childIdIndex74 < childIdListLen74; childIdIndex74++) {
-        var childIdData74 = childIdList74[childIdIndex74];
-        var page__soy57 = opt_data.section.children[childIdData74];
-        if (! page__soy57.hidden) {
+      var childIdList29 = opt_data.section.childIds;
+      var childIdListLen29 = childIdList29.length;
+      for (var childIdIndex29 = 0; childIdIndex29 < childIdListLen29; childIdIndex29++) {
+        var childIdData29 = childIdList29[childIdIndex29];
+        var page__soy12 = opt_data.section.children[childIdData29];
+        if (! page__soy12.hidden) {
           ie_open('li', null, null,
-              'class', (page__soy57.active ? 'active' : '') + ' ' + (page__soy57.children ? 'nav-heading' : ''));
-            $anchor(soy.$$assignDefaults({page: page__soy57}, opt_data), null, opt_ijData);
-            if (! opt_data.depth || localCurrentDepth__soy53 + 1 < opt_data.depth) {
-              $render({currentDepth: localCurrentDepth__soy53 + 1, depth: opt_data.depth, section: page__soy57}, null, opt_ijData);
+              'class', (page__soy12.active ? 'active' : '') + ' ' + (page__soy12.children ? 'nav-heading' : ''));
+            $anchor(soy.$$assignDefaults({page: page__soy12}, opt_data), null, opt_ijData);
+            if (! opt_data.depth || localCurrentDepth__soy8 + 1 < opt_data.depth) {
+              $render({currentDepth: localCurrentDepth__soy8 + 1, depth: opt_data.depth, section: page__soy12}, null, opt_ijData);
             }
           ie_close('li');
         }
@@ -2956,8 +3089,8 @@ function $anchor(opt_data, opt_ignored, opt_ijData) {
           'href', 'javascript:;');
       }
       ie_open('span');
-        var dyn4 = opt_data.page.title;
-        if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
+        var dyn0 = opt_data.page.title;
+        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
       ie_close('span');
       if (opt_data.page.children) {
         ie_open('svg', null, null,
@@ -3423,8 +3556,7 @@ var ElectricNavigation = function (_Component) {
 
 	_createClass(ElectricNavigation, [{
 		key: 'attached',
-		value: function attached() {
-		}
+		value: function attached() {}
 	}]);
 
 	return ElectricNavigation;
@@ -3694,7 +3826,7 @@ var ElectricSearchAutocomplete = function (_ElectricSearchBase) {
 			var element = this.element;
 			var input = this.refs.input;
 
-console.log('hello....', element);
+
 			if (input) {
 				this.autocomplete = new _metalAutocomplete2.default({
 					autoBestAlign: false,
@@ -5169,9 +5301,13 @@ var Ajax = function () {
 				clearTimeout(timeout);
 			});
 
+			url = new _metalUri2.default(url);
+
 			if (opt_params) {
-				url = new _metalUri2.default(url).addParametersFromMultiMap(opt_params).toString();
+				url.addParametersFromMultiMap(opt_params).toString();
 			}
+
+			url = url.toString();
 
 			request.open(method, url, !opt_sync);
 
@@ -8621,7 +8757,7 @@ var Tabs = function (_Component) {
    * @inheritDoc
    */
 		value: function attached() {
-			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'a').setCircularLength(this.tabs.length).start();
+			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'button').setCircularLength(this.tabs.length).start();
 		}
 
 		/**
@@ -8722,7 +8858,7 @@ var Tabs = function (_Component) {
 		}
 
 		/**
-   * Removes the tab at the given index from the tabs array.
+   * Finds the first enabled tab and returns its index.
    * @return {number} Returns the index of the first tab which is not disabled.
    */
 
@@ -9003,20 +9139,21 @@ goog.loadModule(function (exports) {
         }
         iattr('role', 'presentation');
         ie_open_end();
-        ie_open_start('a');
+        ie_open_start('button');
+        iattr('aria-disabled', isDisabled__soy10 ? 'true' : 'false');
         iattr('aria-expanded', isCurrentTab__soy11 ? 'true' : 'false');
-        iattr('data-toggle', 'tab');
         iattr('data-unfocusable', isDisabled__soy10 ? 'true' : 'false');
-        if (!isDisabled__soy10) {
-          iattr('href', '#');
+        iattr('data-toggle', 'tab');
+        if (isDisabled__soy10) {
+          iattr('disabled', '');
         }
         iattr('ref', 'tab-' + currentTabIndex37);
         iattr('role', 'tab');
-        iattr('tabindex', isCurrentTab__soy11 ? '0' : '-1');
+        iattr('type', 'button');
         ie_open_end();
         var dyn0 = currentTabData37.label;
         if (typeof dyn0 == 'function') dyn0();else if (dyn0 != null) itext(dyn0);
-        ie_close('a');
+        ie_close('button');
         ie_close('li');
       }
       ie_close('ul');
@@ -10051,8 +10188,8 @@ var Uri = function () {
 		}
 
 		/**
-   * Normalizes the parsed object to be in the expected standard.
-   * @param {!Object}
+   * Parses the given uri string into an object.
+   * @param {*=} opt_uri Optional string URI to parse
    */
 
 	}, {
@@ -10223,24 +10360,9 @@ var Uri = function () {
 			return parseFn_;
 		}
 	}, {
-		key: 'normalizeObject',
-		value: function normalizeObject(parsed) {
-			var length = parsed.pathname ? parsed.pathname.length : 0;
-			if (length > 1 && parsed.pathname[length - 1] === '/') {
-				parsed.pathname = parsed.pathname.substr(0, length - 1);
-			}
-			return parsed;
-		}
-
-		/**
-   * Parses the given uri string into an object.
-   * @param {*=} opt_uri Optional string URI to parse
-   */
-
-	}, {
 		key: 'parse',
 		value: function parse(opt_uri) {
-			return Uri.normalizeObject(parseFn_(opt_uri));
+			return parseFn_(opt_uri);
 		}
 	}, {
 		key: 'setParseFn',
@@ -10288,7 +10410,11 @@ var Uri = function () {
  */
 
 
-Uri.DEFAULT_PROTOCOL = 'http:';
+var isSecure = function isSecure() {
+	return typeof window !== 'undefined' && window.location && window.location.protocol && window.location.protocol.indexOf('https') === 0;
+};
+
+Uri.DEFAULT_PROTOCOL = isSecure() ? 'https:' : 'http:';
 
 /**
  * Hostname placeholder. Relevant to internal usage only.
@@ -10332,7 +10458,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 function parse(opt_uri) {
 	if ((0, _metal.isFunction)(URL) && URL.length) {
-		return new URL(opt_uri);
+		var url = new URL(opt_uri);
+
+		// Safari Browsers will cap port to the max 16-bit unsigned integer (65535) instead
+		// of throwing a TypeError as per spec. It will still keep the port number in the
+		// href attribute, so we can use this mismatch to raise the expected exception.
+		if (url.port && url.href.indexOf(url.port) === -1) {
+			throw new TypeError(opt_uri + ' is not a valid URL');
+		}
+
+		return url;
 	} else {
 		return (0, _parseFromAnchor2.default)(opt_uri);
 	}
@@ -10358,6 +10493,11 @@ Object.defineProperty(exports, "__esModule", {
 function parseFromAnchor(opt_uri) {
 	var link = document.createElement('a');
 	link.href = opt_uri;
+
+	if (link.protocol === ':' || !/:/.test(link.href)) {
+		throw new TypeError(opt_uri + ' is not a valid URL');
+	}
+
 	return {
 		hash: link.hash,
 		hostname: link.hostname,
@@ -10628,7 +10768,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(80)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(79)))
 
 /***/ }),
 /* 72 */
@@ -11167,7 +11307,7 @@ var substr = 'ab'.substr(-1) === 'b'
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)(module), __webpack_require__(79)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)(module), __webpack_require__(80)))
 
 /***/ }),
 /* 73 */
@@ -12218,8 +12358,7 @@ module.exports = function(module) {
 /* 140 */,
 /* 141 */,
 /* 142 */,
-/* 143 */,
-/* 144 */
+/* 143 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12335,6 +12474,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsSearch, templ
 
 
 /***/ }),
+/* 144 */,
 /* 145 */,
 /* 146 */,
 /* 147 */,
@@ -12368,7 +12508,8 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsSearch, templ
 /* 175 */,
 /* 176 */,
 /* 177 */,
-/* 178 */
+/* 178 */,
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12398,7 +12539,7 @@ __webpack_require__(17);
 
 __webpack_require__(18);
 
-var _searchSoy = __webpack_require__(144);
+var _searchSoy = __webpack_require__(143);
 
 var _searchSoy2 = _interopRequireDefault(_searchSoy);
 
@@ -12429,4 +12570,4 @@ _metalSoy2.default.register(pageDocsSearch, _searchSoy2.default);
 exports.default = pageDocsSearch;
 
 /***/ })
-],[178]);
+],[179]);
