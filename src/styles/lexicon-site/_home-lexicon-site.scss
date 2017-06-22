@@ -5,9 +5,11 @@
 
 .home {
 	background: $brand-dark svg-url('<svg width="1225px" height="1200px" viewBox="0 0 1225 1200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g fill="#30313F"><ellipse cx="446.231021" cy="986" rx="215.099389" ry="213.75"></ellipse><rect x="819.236909" y="370" width="404.956122" height="401.980106"></rect><polygon points="234.473139 0 468.946279 399 0 399"></polygon></g></svg>') no-repeat center 108px;
-	background-size: 612px;
+	background-size: 400px;
 
-	@media (min-width: $screen-md) {
+	@media (min-width: $screen-sm) {
+        background-size: 612px;
+        
 		.container {
 			padding-left: 12px;
 			padding-right: 12px;
@@ -18,12 +20,12 @@
 	h3 {
 		text-transform: uppercase;
 		color: $brand-secondary;
-		font-size: 20px;
-		line-height: 32px;
 		letter-spacing: 4px;
 		margin: 0 auto;
 		max-width: 100%;
-	}
+        font-size: 14px;
+        line-height: 1.5;
+    }
 
 	.navbar.sticky-top {
 		position: sticky;
@@ -169,9 +171,9 @@
 
 	.footer {
 		font-size: 16px;
-		margin-top: $base-size * 1.5;
+		margin-top: 0;
 		min-height: $base-size * 5;
-		padding: $base-size / 2 0;
+		padding: 88px 0;
 		color: #fff;
 
 		@media (max-width: $screen-md) {
@@ -266,16 +268,21 @@
 }
 
 .intro {
-	padding: 56px 0;
-	margin-bottom: 120px;
+	padding: 16px 0;
+	margin-bottom: 80px;
 	text-align: center;
+    
+    @media (min-width: $screen-sm) {
+        padding: 56px 0;
+        margin-bottom: 120px;
+    }
 
 	h1 {
-		font-size: 120px;
+		font-size: 140px;
 		color: #fff;
 		font-weight: bold;
-		line-height: 1.1;
-		margin-bottom: 100px;
+		line-height: 1;
+		margin-bottom: 72px;
 		margin-top: 0;
 
 		span {
@@ -285,6 +292,8 @@
 
 		@media (min-width: $screen-sm) {
 			font-size: 210px;
+            margin-bottom: 100px;
+            line-height: 1.1;
 
 			span {
 				letter-spacing: -1.5rem;
@@ -294,10 +303,15 @@
 
 	h3 {
 		width: 400px;
-		margin-bottom: 48px;
+		margin-bottom: 16px;
 		font-weight: 600;
-		letter-spacing: 7px;
-		font-size: 21px;
+        
+        @media (min-width: $screen-sm) {
+			font-size: 21px;
+            margin-bottom: 48px;
+            letter-spacing: 7px;
+        }
+        
 	}
 
 	p {
@@ -324,7 +338,11 @@
 	}
 
 	.row {
-		margin-bottom: 144px;
+		margin-bottom: 88px;
+        
+        @media (min-width: $screen-sm) {
+            margin-bottom: 144px;
+        }
 	}
 
 	.media {
@@ -332,13 +350,19 @@
 	}
 
 	img {
-		width: 340px;
+		width: 270px;
 		max-width: 100%;
+        margin-bottom: 24px;
+        
+        	@media (min-width: $screen-sm) {
+                width: 340px;
+                margin-bottom: 0;
+        }
 	}
 
 	h2 {
 		color: #FFF;
-		font-size: 30px;
+		font-size: 24px;
 		font-weight: 700;
 		margin-bottom: 14px;
 		letter-spacing: 0.4px;
@@ -351,31 +375,41 @@
 			border-color: $action-color;
 			transition: 0.1s;
 		}
+        
+        @media (min-width: $screen-sm) {
+            font-size: 30px;
+        }
 	}
 
 	p {
-		font-size: 22px;
+		font-size: 20px;
 		color: $brand-secondary;
 		margin-bottom: 32px;
-		line-height: 34px;
+		line-height: 1.5;
 		letter-spacing: 0.2px;
+        
+        @media (min-width: $screen-sm) {
+            font-size: 22px;
+        }
 	}
 
 }
 
 
 .explore-lexicon {
-	margin-top: 224px;
+	margin-top: 88px;
 	background-color: #30313F;
-	padding: 90px 0;
+	padding: 64px 0;
 	text-align: center;
 
 	background-image: svg-url('<svg width="1680px" height="1560px" viewBox="0 0 1680 1560" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><rect fill="#30313F" x="0" y="0" width="1680" height="1560"></rect><ellipse stroke="#393A4A" stroke-width="8" cx="1279.33589" cy="1174.5" rx="296.359158" ry="294.5"></ellipse><rect stroke="#393A4A" stroke-width="8" x="849" y="97.5806779" width="539" height="534.980106"></rect><polygon stroke="#393A4A" stroke-width="8" points="424.517402 444 745.034804 989.420443 104 989.420443"></polygon></g></g></svg>');
 	background-position: center;
-	background-size: 50%;
+	background-size: 100%;
 
 	@media (min-width: $screen-md) {
-		padding: 184px 0;
+		margin-top: 224px;
+        padding: 184px 0;
+        background-size: 50%;
 	}
 
 
@@ -387,13 +421,23 @@
 	h2 {
 		color: #fff;
 		font-weight: 700;
-		font-size: 56px;
-		margin-bottom: 40px;
+		font-size: 32px;
+		margin-bottom: 24px;
+        
+        @media (min-width: $screen-md) {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
 	}
 
 	h3 {
 		width: 720px;
+        max-width: 100%;
 		margin-bottom: 64px;
+        
+        @media (min-width: $screen-md) {
+            font-size: 20px;
+        }
 	}
 
 	li {
@@ -446,9 +490,11 @@
 .clay-link {
 	background-color: #393A4A;
 	padding: 88px 0;
+    text-align: center;
 
 	.container {
 		width: 700px;
+        max-width: 100%;
 	}
 
 	p {
@@ -479,14 +525,21 @@
 
 	img {
 		width: 53px;
-		float: right;
+        margin-bottom: 24px;
 	}
+    
+    	@media (min-width: $screen-md) {
+            text-align: left;
+            img {
+                float: right; 
+            }
+    }
 
 }
 
 .contact-us {
 	background-color: $action-color;
-	padding: 88px 0;
+	padding: 64px 0 88px;
 	text-align: center;
 	color: #fff;
 
@@ -497,24 +550,34 @@
 			width: 0;
 			height: 0;
 			border-left: 0px solid transparent;
-			border-right: 104px solid transparent;
-			border-top: 48px solid $action-color;
+			border-right: 72px solid transparent;
+			border-top: 36px solid $action-color;
 			left: 60%;
 			position: absolute;
 			top: 100%;
+            
+            @media (min-width: $screen-sm) {
+		        border-right: 104px solid transparent;
+			    border-top: 48px solid $action-color;
+	        }
 
 		}
 	// }
 
 	@media (min-width: $screen-sm) {
-		padding: 96px 0;
+		padding: 96px 0 124px;
 	}
 
 	h2 {
-		font-size: 40px;
-		line-height: 56px;
-		margin-bottom: 56px;
+		font-size: 28px;
+		line-height: 1.5;
+		margin-bottom: 48px;
 		font-style: italic;
+        
+        @media (min-width: $screen-sm) {
+		    font-size: 40px;
+            margin-bottom: 56px;
+	}
 
 	}
 
