@@ -39,17 +39,3 @@ SVG gives us and you a greater amount of freedom in styling the icons, as well a
 #### Help icon
 
 Help icon is used in lexicon together with tooltips or popovers. As an example, it gives a better visual clue to users to reach an explanation about a field in a form.
-
-### Sizes
-
-| Size | Usage |
-| ---- | ----- |
-| Icon-large | Icon-large (x1.33) |
-| Icon-2x | Icon-2x (x2) |
-| Icon-3x | Icon-3x (x3) |
-| Icon-4x | Icon-4x (x4) |
-| Icon-5x | Icon-5x (x5) |
-| Icon-2x | Icon-2x (x2) |
-
-
-
