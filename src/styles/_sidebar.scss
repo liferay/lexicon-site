@@ -1,15 +1,17 @@
 .sidebar-content {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding-top: 80px;
+
 	@media (min-width: $grid-float-breakpoint) {
 		margin-left: $sidebar-width - 100px;
 	}
 
 	@media (min-width: $screen-sm) {
+		padding-top: 0;
 		margin-left: $sidebar-width;
 	}
-
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
 
 	.container-fluid {
 		flex: 1;
