@@ -126,21 +126,21 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   var $$temp;
-  var localCurrentDepth__soy8 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
+  var localCurrentDepth__soy53 = ($$temp = opt_data.currentDepth) == null ? 0 : $$temp;
   if (opt_data.section.children) {
     ie_open('ul', null, null,
         'class', 'nav nav-nested nav-pills nav-stacked');
-      var childIdList29 = opt_data.section.childIds;
-      var childIdListLen29 = childIdList29.length;
-      for (var childIdIndex29 = 0; childIdIndex29 < childIdListLen29; childIdIndex29++) {
-        var childIdData29 = childIdList29[childIdIndex29];
-        var page__soy12 = opt_data.section.children[childIdData29];
-        if (! page__soy12.hidden) {
+      var childIdList74 = opt_data.section.childIds;
+      var childIdListLen74 = childIdList74.length;
+      for (var childIdIndex74 = 0; childIdIndex74 < childIdListLen74; childIdIndex74++) {
+        var childIdData74 = childIdList74[childIdIndex74];
+        var page__soy57 = opt_data.section.children[childIdData74];
+        if (! page__soy57.hidden) {
           ie_open('li', null, null,
-              'class', (page__soy12.active ? 'active' : '') + ' ' + (page__soy12.children ? 'nav-heading' : ''));
-            $anchor(soy.$$assignDefaults({page: page__soy12}, opt_data), null, opt_ijData);
-            if (! opt_data.depth || localCurrentDepth__soy8 + 1 < opt_data.depth) {
-              $render({currentDepth: localCurrentDepth__soy8 + 1, depth: opt_data.depth, section: page__soy12}, null, opt_ijData);
+              'class', (page__soy57.active ? 'active' : '') + ' ' + (page__soy57.children ? 'nav-heading' : ''));
+            $anchor(soy.$$assignDefaults({page: page__soy57}, opt_data), null, opt_ijData);
+            if (! opt_data.depth || localCurrentDepth__soy53 + 1 < opt_data.depth) {
+              $render({currentDepth: localCurrentDepth__soy53 + 1, depth: opt_data.depth, section: page__soy57}, null, opt_ijData);
             }
           ie_close('li');
         }
@@ -174,8 +174,8 @@ function $anchor(opt_data, opt_ignored, opt_ijData) {
           'href', 'javascript:;');
       }
       ie_open('span');
-        var dyn0 = opt_data.page.title;
-        if (typeof dyn0 == 'function') dyn0(); else if (dyn0 != null) itext(dyn0);
+        var dyn4 = opt_data.page.title;
+        if (typeof dyn4 == 'function') dyn4(); else if (dyn4 != null) itext(dyn4);
       ie_close('span');
       if (opt_data.page.children) {
         ie_open('svg', null, null,

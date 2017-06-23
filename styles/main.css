@@ -5960,10 +5960,6 @@ button.close {
   bottom: auto;
   top: 0; }
 
-.aspect-ratio-center.aspect-ratio-middle img {
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
 .aspect-ratio-3-to-2 {
   padding-bottom: 66.66667%; }
 
@@ -12076,25 +12072,27 @@ button.loading > .linear.loading-animation {
     .navbar-fixed {
       width: 376px; } }
 
-.sidebar-offset {
+.sidebar-content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; }
+  min-height: 100vh;
+  padding-top: 80px; }
   @media (min-width: 900px) {
-    .sidebar-offset {
+    .sidebar-content {
       margin-left: 276px; } }
   @media (min-width: 900px) {
-    .sidebar-offset {
+    .sidebar-content {
+      padding-top: 0;
       margin-left: 376px; } }
-  .sidebar-offset .container-fluid {
+  .sidebar-content .container-fluid {
     flex: 1;
     max-width: 960px; }
     @media (min-width: 480px) {
-      .sidebar-offset .container-fluid {
+      .sidebar-content .container-fluid {
         padding-left: 32px;
         padding-right: 64px; } }
     @media (min-width: 992px) {
-      .sidebar-offset .container-fluid {
+      .sidebar-content .container-fluid {
         padding-left: 64px;
         padding-right: 128px; } }
 
@@ -12131,60 +12129,60 @@ button.loading > .linear.loading-animation {
     .sidenav-fixed.sidenav-menu-slider .sidenav-menu {
       top: 128px; } }
 
-.content .sidebar-offset p {
+.content .sidebar-content p {
   line-height: 24px;
   margin-bottom: 20px; }
-  .content .sidebar-offset p a {
+  .content .sidebar-content p a {
     color: #4887FF; }
 
-.content .sidebar-offset img {
+.content .sidebar-content img {
   margin-bottom: 24px;
   margin-top: 12px;
   max-width: 100%; }
 
-.content .sidebar-offset table img {
+.content .sidebar-content table img {
   margin-bottom: 8px;
   margin-top: 4px; }
 
-.content .sidebar-offset ul {
+.content .sidebar-content ul {
   margin-bottom: 24px; }
-  .content .sidebar-offset ul li {
+  .content .sidebar-content ul li {
     line-height: 24px; }
 
-.content .sidebar-offset h1 {
+.content .sidebar-content h1 {
   font-size: 28px;
   line-height: 64px; }
   @media (min-width: 900px) {
-    .content .sidebar-offset h1 {
+    .content .sidebar-content h1 {
       font-size: 32px; } }
 
-.content .sidebar-offset h2 {
+.content .sidebar-content h2 {
   color: #8D8FA8;
   font-size: 22px;
   letter-spacing: 0.5px;
   line-height: 32px;
   text-transform: uppercase; }
 
-.content .sidebar-offset h3 {
+.content .sidebar-content h3 {
   font-size: 22px;
   line-height: 32px; }
 
-.content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
+.content .sidebar-content h1, .content .sidebar-content h2, .content .sidebar-content h3 {
   font-weight: bold;
   margin: 32px 0; }
   @media (min-width: 900px) {
-    .content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
+    .content .sidebar-content h1, .content .sidebar-content h2, .content .sidebar-content h3 {
       margin-bottom: 24px;
       margin-top: 48px; } }
 
-.content .sidebar-offset h4 {
+.content .sidebar-content h4 {
   font-size: 16px;
   font-weight: bold;
   line-height: 24px;
   margin-bottom: 12px;
   margin-top: 0; }
 
-.content .sidebar-offset h5 {
+.content .sidebar-content h5 {
   color: #8D8FA8;
   font-size: 14px;
   letter-spacing: 1px;
@@ -12192,35 +12190,35 @@ button.loading > .linear.loading-animation {
   margin-bottom: 8px;
   text-transform: uppercase; }
 
-.content .sidebar-offset header {
+.content .sidebar-content header {
   margin: 0; }
-  .content .sidebar-offset header .container-fluid > h1 {
+  .content .sidebar-content header .container-fluid > h1 {
     margin: 0; }
 
-.content .sidebar-offset .intro {
+.content .sidebar-content .intro {
   padding: 56px 0;
   margin-bottom: 120px;
   text-align: center; }
-  .content .sidebar-offset .intro h1 {
+  .content .sidebar-content .intro h1 {
     font-size: 210px;
     color: #fff;
     font-weight: 700;
     margin-bottom: 100px; }
-    .content .sidebar-offset .intro h1 span {
+    .content .sidebar-content .intro h1 span {
       color: #4887FF; }
-  .content .sidebar-offset .intro h3 {
+  .content .sidebar-content .intro h3 {
     width: 400px;
     margin-bottom: 48px;
     font-weight: 600;
     letter-spacing: 7px;
     font-size: 21px; }
-  .content .sidebar-offset .intro p {
+  .content .sidebar-content .intro p {
     font-size: 32px;
     color: #8D8FA8;
     max-width: 600px;
     margin: 0 auto 56px auto; }
 
-.News .content .sidebar-offset h3 {
+.News .content .sidebar-content h3 {
   margin-top: 0; }
 
 .News h5 {
