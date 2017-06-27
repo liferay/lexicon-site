@@ -1075,33 +1075,68 @@ var ElectricSearchBase = function (_Component) {
 			this.on('queryChanged', this.handleQueryChange_.bind(this));
 		}
 	}, {
+		key: 'matchesArrayField_',
+		value: function matchesArrayField_(value, query) {
+			return value.some(function (itemName) {
+				return itemName.indexOf(query) > -1;
+			});
+		}
+	}, {
 		key: 'matchesQuery_',
 		value: function matchesQuery_(data, query) {
-			var childrenOnly = this.childrenOnly;
+			var childrenOnly = this.childrenOnly,
+			    excludePath = this.excludePath;
 
 			var path = this.path || location.pathname;
 
-			var content = data.content,
-			    description = data.description,
-			    hidden = data.hidden,
-			    title = data.title,
+			var hidden = data.hidden,
 			    url = data.url;
 
 
-			if (childrenOnly && url.indexOf(path) !== 0 && url !== path) {
+			if (childrenOnly && url.indexOf(path) !== 0 && url !== path || excludePath && url.indexOf(excludePath) === 0) {
+
 				return false;
 			}
 
-			content = content ? content.toLowerCase() : '';
-			description = description ? description.toLowerCase() : '';
-			title = title ? title.toLowerCase() : '';
+			return !hidden && this.matchesField_(data, query);
+		}
+	}, {
+		key: 'matchesField_',
+		value: function matchesField_(data, query) {
+			var _this2 = this;
 
-			return !hidden && (title.indexOf(query) > -1 || description.indexOf(query) > -1 || content.indexOf(query) > -1);
+			var fieldNames = this.fieldNames;
+
+
+			return fieldNames.some(function (fieldName) {
+				var value = data[fieldName];
+
+				var matches = false;
+
+				if (!value) {
+					return matches;
+				}
+
+				if (Array.isArray(value)) {
+					matches = _this2.matchesArrayField_(value, query);
+				} else if (typeof value === 'string') {
+					matches = _this2.matchesTextField_(value, query);
+				}
+
+				return matches;
+			});
+		}
+	}, {
+		key: 'matchesTextField_',
+		value: function matchesTextField_(value, query) {
+			value = value.toLowerCase();
+
+			return value.indexOf(query) > -1;
 		}
 	}, {
 		key: 'filterResults_',
 		value: function filterResults_(data, query) {
-			var _this2 = this;
+			var _this3 = this;
 
 			var children = data.children,
 			    childIds = data.childIds;
@@ -1117,7 +1152,7 @@ var ElectricSearchBase = function (_Component) {
 				childIds.forEach(function (childId) {
 					var child = children[childId];
 
-					results = results.concat(_this2.filterResults_(child, query));
+					results = results.concat(_this3.filterResults_(child, query));
 				});
 			}
 
@@ -1184,6 +1219,15 @@ ElectricSearchBase.STATE = {
 
 	data: {
 		validator: _metal2.default.isObject
+	},
+
+	excludePath: {
+		validator: _metal2.default.isString
+	},
+
+	fieldNames: {
+		validator: _metal2.default.isArray,
+		value: ['content', 'description', 'tags', 'title']
 	},
 
 	maxResults: {
@@ -2416,8 +2460,7 @@ var ElectricNavigation = function (_Component) {
 
 	_createClass(ElectricNavigation, [{
 		key: 'attached',
-		value: function attached() {
-		}
+		value: function attached() {}
 	}]);
 
 	return ElectricNavigation;
@@ -2687,7 +2730,7 @@ var ElectricSearchAutocomplete = function (_ElectricSearchBase) {
 			var element = this.element;
 			var input = this.refs.input;
 
-console.log('hello....', element);
+
 			if (input) {
 				this.autocomplete = new _metalAutocomplete2.default({
 					autoBestAlign: false,
@@ -4162,9 +4205,13 @@ var Ajax = function () {
 				clearTimeout(timeout);
 			});
 
+			url = new _metalUri2.default(url);
+
 			if (opt_params) {
-				url = new _metalUri2.default(url).addParametersFromMultiMap(opt_params).toString();
+				url.addParametersFromMultiMap(opt_params).toString();
 			}
+
+			url = url.toString();
 
 			request.open(method, url, !opt_sync);
 
@@ -7614,7 +7661,7 @@ var Tabs = function (_Component) {
    * @inheritDoc
    */
 		value: function attached() {
-			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'a').setCircularLength(this.tabs.length).start();
+			this.keyboardFocusManager_ = new _metalKeyboardFocus2.default(this, 'button').setCircularLength(this.tabs.length).start();
 		}
 
 		/**
@@ -7715,7 +7762,7 @@ var Tabs = function (_Component) {
 		}
 
 		/**
-   * Removes the tab at the given index from the tabs array.
+   * Finds the first enabled tab and returns its index.
    * @return {number} Returns the index of the first tab which is not disabled.
    */
 
@@ -7996,20 +8043,21 @@ goog.loadModule(function (exports) {
         }
         iattr('role', 'presentation');
         ie_open_end();
-        ie_open_start('a');
+        ie_open_start('button');
+        iattr('aria-disabled', isDisabled__soy10 ? 'true' : 'false');
         iattr('aria-expanded', isCurrentTab__soy11 ? 'true' : 'false');
-        iattr('data-toggle', 'tab');
         iattr('data-unfocusable', isDisabled__soy10 ? 'true' : 'false');
-        if (!isDisabled__soy10) {
-          iattr('href', '#');
+        iattr('data-toggle', 'tab');
+        if (isDisabled__soy10) {
+          iattr('disabled', '');
         }
         iattr('ref', 'tab-' + currentTabIndex37);
         iattr('role', 'tab');
-        iattr('tabindex', isCurrentTab__soy11 ? '0' : '-1');
+        iattr('type', 'button');
         ie_open_end();
         var dyn0 = currentTabData37.label;
         if (typeof dyn0 == 'function') dyn0();else if (dyn0 != null) itext(dyn0);
-        ie_close('a');
+        ie_close('button');
         ie_close('li');
       }
       ie_close('ul');
@@ -9044,8 +9092,8 @@ var Uri = function () {
 		}
 
 		/**
-   * Normalizes the parsed object to be in the expected standard.
-   * @param {!Object}
+   * Parses the given uri string into an object.
+   * @param {*=} opt_uri Optional string URI to parse
    */
 
 	}, {
@@ -9216,24 +9264,9 @@ var Uri = function () {
 			return parseFn_;
 		}
 	}, {
-		key: 'normalizeObject',
-		value: function normalizeObject(parsed) {
-			var length = parsed.pathname ? parsed.pathname.length : 0;
-			if (length > 1 && parsed.pathname[length - 1] === '/') {
-				parsed.pathname = parsed.pathname.substr(0, length - 1);
-			}
-			return parsed;
-		}
-
-		/**
-   * Parses the given uri string into an object.
-   * @param {*=} opt_uri Optional string URI to parse
-   */
-
-	}, {
 		key: 'parse',
 		value: function parse(opt_uri) {
-			return Uri.normalizeObject(parseFn_(opt_uri));
+			return parseFn_(opt_uri);
 		}
 	}, {
 		key: 'setParseFn',
@@ -9281,7 +9314,11 @@ var Uri = function () {
  */
 
 
-Uri.DEFAULT_PROTOCOL = 'http:';
+var isSecure = function isSecure() {
+	return typeof window !== 'undefined' && window.location && window.location.protocol && window.location.protocol.indexOf('https') === 0;
+};
+
+Uri.DEFAULT_PROTOCOL = isSecure() ? 'https:' : 'http:';
 
 /**
  * Hostname placeholder. Relevant to internal usage only.
@@ -9325,7 +9362,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 function parse(opt_uri) {
 	if ((0, _metal.isFunction)(URL) && URL.length) {
-		return new URL(opt_uri);
+		var url = new URL(opt_uri);
+
+		// Safari Browsers will cap port to the max 16-bit unsigned integer (65535) instead
+		// of throwing a TypeError as per spec. It will still keep the port number in the
+		// href attribute, so we can use this mismatch to raise the expected exception.
+		if (url.port && url.href.indexOf(url.port) === -1) {
+			throw new TypeError(opt_uri + ' is not a valid URL');
+		}
+
+		return url;
 	} else {
 		return (0, _parseFromAnchor2.default)(opt_uri);
 	}
@@ -9351,6 +9397,11 @@ Object.defineProperty(exports, "__esModule", {
 function parseFromAnchor(opt_uri) {
 	var link = document.createElement('a');
 	link.href = opt_uri;
+
+	if (link.protocol === ':' || !/:/.test(link.href)) {
+		throw new TypeError(opt_uri + ' is not a valid URL');
+	}
+
 	return {
 		hash: link.hash,
 		hostname: link.hostname,
@@ -9621,7 +9672,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(80)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(79)))
 
 /***/ }),
 /* 72 */
@@ -10160,7 +10211,7 @@ var substr = 'ab'.substr(-1) === 'b'
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)(module), __webpack_require__(79)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)(module), __webpack_require__(80)))
 
 /***/ }),
 /* 73 */
