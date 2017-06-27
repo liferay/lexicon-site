@@ -67,13 +67,17 @@
 		margin-top: 0;
 	}
 
-	h5 {
+	time {
 		color: $brand-secondary;
 		font-size: 14px;
 		letter-spacing: 1px;
 		line-height: 20px;
 		margin-bottom: 8px;
 		text-transform: uppercase;
+
+		& + h3 {
+			margin-top: 4px;
+		}
 	}
 
 	header {

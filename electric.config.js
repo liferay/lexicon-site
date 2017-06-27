@@ -32,8 +32,11 @@ module.exports = {
 	markdownRenderer: function(md) {
 		var headings = require('./markdown_plugins/heading_ids');
 		var images = require('./markdown_plugins/retina_images');
+		var time = require('./markdown_plugins/time');
+
 		md.use(headings)
-		.use(images);
+		.use(images)
+		.use(time);
 
 		return md;
 	},
