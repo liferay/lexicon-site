@@ -53,18 +53,6 @@ function parser(md) {
 			if (indexes.length) {
 				_.pullAt(state.tokens, indexes);
 			}
-			// for (i = 0; i < indexes.length; i++) {
-			// 	var index = indexes[i];
-
-			// 	var token = tokens[index];
-
-			// 	var prevToken = tokens[index - 1];
-			// 	var nextToken = tokens[index + 1];
-
-			// 	if (prevToken && nextToken && prevToken.type === 'paragraph_open' && nextToken.type == 'paragraph_close') {
-
-			// 	}
-			// }
 		}
 	};
 }
@@ -79,7 +67,7 @@ function timestamp(str) {
 			attrs = attrs || '';
 
 			var date = fecha.parse(content, 'MMMM Do, YYYY');
-console.log(content, date);
+
 			if (date) {
 				attrs += ` datetime="${date.toISOString()}"`;
 			}
