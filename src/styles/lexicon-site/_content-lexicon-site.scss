@@ -72,11 +72,12 @@
 		font-size: 14px;
 		letter-spacing: 1px;
 		line-height: 20px;
-		margin-bottom: 8px;
+		margin-top: 40px;
 		text-transform: uppercase;
+		display: inline-block;
 
 		& + h3 {
-			margin-top: 4px;
+			margin-top: 0px;
 		}
 	}
 
