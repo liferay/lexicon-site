@@ -1,30 +1,32 @@
 {
   "_args": [
     [
-      "source-sans-pro@https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-      "/Users/ncavanaugh/Dev/Work/lexicon-site"
+      "source-sans-pro@2.0.10",
+      "/Users/victorvalle/Documents/Liferay/Lexicon Site 1/lexicon-site"
     ]
   ],
-  "_from": "source-sans-pro@https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
+  "_from": "source-sans-pro@2.0.10",
   "_id": "source-sans-pro@2.0.10",
   "_inBundle": false,
   "_integrity": "sha1-wcqFnPFkoIiUTF6DdFCF6HzVM6k=",
   "_location": "/source-sans-pro",
   "_phantomChildren": {},
   "_requested": {
-    "type": "remote",
-    "raw": "source-sans-pro@https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
+    "type": "version",
+    "registry": true,
+    "raw": "source-sans-pro@2.0.10",
     "name": "source-sans-pro",
     "escapedName": "source-sans-pro",
-    "rawSpec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-    "saveSpec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-    "fetchSpec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz"
+    "rawSpec": "2.0.10",
+    "saveSpec": null,
+    "fetchSpec": "2.0.10"
   },
   "_requiredBy": [
     "/"
   ],
-  "_spec": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-  "_where": "/Users/ncavanaugh/Dev/Work/lexicon-site",
+  "_resolved": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
+  "_spec": "2.0.10",
+  "_where": "/Users/victorvalle/Documents/Liferay/Lexicon Site 1/lexicon-site",
   "author": {
     "name": "Paul D. Hunt"
   },
@@ -44,5 +46,5 @@
     "type": "git",
     "url": "git+https://github.com/flosse/npm-source-sans-pro.git"
   },
-  "version": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz"
+  "version": "2.0.10"
 }

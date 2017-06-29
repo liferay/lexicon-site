@@ -5960,6 +5960,10 @@ button.close {
   bottom: auto;
   top: 0; }
 
+.aspect-ratio-center.aspect-ratio-middle img {
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 .aspect-ratio-3-to-2 {
   padding-bottom: 66.66667%; }
 
@@ -12182,13 +12186,16 @@ button.loading > .linear.loading-animation {
   margin-bottom: 12px;
   margin-top: 0; }
 
-.content .sidebar-content h5 {
+.content .sidebar-content time {
   color: #8D8FA8;
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 20px;
-  margin-bottom: 8px;
-  text-transform: uppercase; }
+  margin-top: 40px;
+  text-transform: uppercase;
+  display: inline-block; }
+  .content .sidebar-content time + h3 {
+    margin-top: 0px; }
 
 .content .sidebar-content header {
   margin: 0; }
