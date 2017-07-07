@@ -40,7 +40,7 @@ Secondary colors are frequently used colors, also important as primary but do no
 | Red | Error |
 | Grey | Secondary light |
 
-Each of the color has a variation. These colors and its variations are normally used together, one for text color and the second one as a brackground color for the message.
+Each of the color has a variation. These colors and its variations are normally used together, one for text color and the second one as a background color for the message.
 
 ## Changing Lexicon color palette
 
