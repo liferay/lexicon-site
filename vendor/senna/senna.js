@@ -4274,7 +4274,6 @@ var globalEval = function () {
 		value: function run(text, opt_appendFn) {
 			var script = document.createElement('script');
 			script.text = text;
-
 			if (opt_appendFn) {
 				opt_appendFn(script);
 			} else {
@@ -4378,11 +4377,6 @@ var globalEval = function () {
 	}, {
 		key: 'runScriptsInOrder',
 		value: function runScriptsInOrder(scripts, index, opt_callback, opt_appendFn) {
-      [...scripts].forEach(function(item, index) {
-        if (item.src) {
-          console.log('item.src', item.src);
-        }
-      })
 			globalEval.runScript(scripts.item(index), function () {
 				if (index < scripts.length - 1) {
 					globalEval.runScriptsInOrder(scripts, index + 1, opt_callback, opt_appendFn);
@@ -7368,7 +7362,6 @@ var App$1 = function (_EventEmitter) {
 	}, {
 		key: 'onBeforeNavigate_',
 		value: function onBeforeNavigate_(event) {
-      console.log('1. onBeforeNavigate_', event);
 			if (globals.capturedFormElement) {
 				event.form = globals.capturedFormElement;
 			}
@@ -7384,7 +7377,6 @@ var App$1 = function (_EventEmitter) {
 	}, {
 		key: 'onBeforeNavigateDefault_',
 		value: function onBeforeNavigateDefault_(event) {
-      console.log('2. onBeforeNavigateDefault_', event);
 			if (this.pendingNavigate) {
 				if (this.pendingNavigate.path === event.path) {
 					void 0;
@@ -7542,7 +7534,7 @@ var App$1 = function (_EventEmitter) {
 		key: 'onStartNavigate_',
 		value: function onStartNavigate_(event) {
 			var _this8 = this;
-console.log('3. onStartNavigate_', event);
+
 			this.maybeDisableNativeScrollRestoration();
 			this.captureScrollPositionFromScrollEvent = false;
 			addClasses(globals.document.documentElement, this.loadingCssClass);
@@ -7561,7 +7553,6 @@ console.log('3. onStartNavigate_', event);
 					_this8.maybeRestoreNativeScrollRestoration();
 					_this8.captureScrollPositionFromScrollEvent = true;
 				}
-        console.log('4. endNavigate');
 				_this8.emit('endNavigate', endNavigatePayload);
 			});
 
