@@ -1,7 +1,7 @@
 .footer {
 	margin-top: $base-size * 1.5;
 	min-height: $base-size * 5;
-	padding: $base-size / 2 0;
+	padding: $base-size / 2 0 $base-size;
 
 	@media (max-width: $screen-md) {
 		text-align: center;
@@ -11,6 +11,12 @@
 		margin-top: $base-size * 4;
 		padding: 47px 0;
 	}
+    
+    .legal-info {
+        color: #6B6C7E;
+        font-size: $base-size / 2.3;
+        margin-bottom: $base-size;
+    }
 
 	.text-right-lg {
 		@media (min-width: $screen-md) {
