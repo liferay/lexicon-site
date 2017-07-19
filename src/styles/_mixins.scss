@@ -71,27 +71,3 @@
 	width: 0;
 }
 
-@mixin pentagon($width, $color) {
-  $side: ($width / sin(108deg)) * sin(36deg);
-  $top_height: sin(36deg) * $side;
-  $bottom_height: sin(72deg) * $side;
-  $side_border_width: ($width - $side) / 2;
-  
-  width: #{$side}px;
-  border-width: #{$bottom_height}px #{$side_border_width}px 0;
-  border-style: solid;
-  border-color: $color transparent;
-  height: 0;
-  
-  &::before {
-    content: "";
-    border-style: solid;
-    border-width: 0 #{$width/2}px #{$top_height}px;
-    position: absolute;
-    height: 0;
-    width: 0;
-    top: #{ceil(-$bottom_height) - floor($top_height)}px;
-    left: -#{$side_border_width}px;
-    border-color: transparent transparent $color; 
-  }
-}
