@@ -2,7 +2,7 @@
 title: "Design Principles"
 description: "Design Principles section"
 layout: "guide"
-icon: "lexicon-site-doc"
+icon: "lexicon-site-principles"
 weight: 2
 ---
 

@@ -460,7 +460,7 @@
 			}
 		}
 
-		&.lexicon-site-about, &.lexicon-site-docs, &.lexicon-site-news {
+		&.lexicon-site-about, &.lexicon-site-docs, &.lexicon-site-news, &.lexicon-site-principles {
 			@include psuedo() {
 				display: inline-block;
 				margin-right: 32px;
@@ -478,6 +478,10 @@
 		}
 
 		&.lexicon-site-news:before {
+			@include circle(44px, #4887FF);
+		}
+
+		&.lexicon-site-principles:before {
 			@include circle(44px, #4887FF);
 		}
 	}

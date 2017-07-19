@@ -107,7 +107,7 @@
 			}
 
 			a {
-				&.lexicon-site-about, &.lexicon-site-docs, &.lexicon-site-news {
+				&.lexicon-site-about, &.lexicon-site-docs, &.lexicon-site-news, &.lexicon-site-principles {
 					@include psuedo();
 				}
 
@@ -127,6 +127,12 @@
                     left: - $base-size * 1.4;
 
                     @include circle(24px, #4887FF);
+				}
+
+				&.lexicon-site-principles:before {
+					left: - $base-size * 1.4;
+
+					@include circle(24px, #4887FF);
 				}
 			}
 		}
