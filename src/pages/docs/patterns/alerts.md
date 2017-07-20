@@ -11,9 +11,10 @@ weight: 1
 
 ### Usage
 
-Alerts are possible to define in 4 different colors, grey for the default type of message and four other corresponding to status colors.
-
-All alerts types can contain links. Those links are defined in primary color.
+* Alerts are possible to define in 4 different colors corresponding to status colors.
+* Alerts must always have the status icon and the keyword that defines the message type and in semibold.
+* Alerts can have multiple text lines.
+* All alerts types can contain links. Those links are defined in primary color.
 
 ### Types
 

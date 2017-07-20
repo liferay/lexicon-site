@@ -21,6 +21,7 @@ This header is used in almost every page in the system. It can have different co
 * Left area: Used for actions as triggering the side menu and back navigation
 * Center area: Used for the page or application title and help
 * Right area: Used for actions, explicit when it is possible and a maximum number of 3. Implicit inside a kebab menu when the metaphor is not clear.
+    * These actions are application level actions.
 
 ##### Main page header
 

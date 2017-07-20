@@ -58,7 +58,7 @@ When the row is selected the action do not appear in hover state.
 TODO:
 
 
-### Table header
+### Header
 
 All column headers are always left-aligned, 14px, and regular weight.
 
@@ -70,6 +70,11 @@ Table header can be interactive:
 * In case drag & drop is avilable
 
 In both cases the column header changes to bold in hover.
+
+### Sections
+Table sections help to separate different contents by a certain categorization or typology.
+
+![table section](../../../images/TableViewGroupSeparator.png)
 
 ### Columns drag and drop
 
@@ -98,9 +103,12 @@ While main column must be always placed on the leftmost side, depending on the n
 
 #### Example
 
+![table row in selected state](../../../images/TableExample.png)
+
+More examples can be found in [dataset template](./Templates/datasetTemplate.html).
+
 Please visit [inVision](https://liferay.invisionapp.com/share/SYAH0QADM) example to visually understand the behaviours.
 
-![table row in selected state](../../../images/TableExample.png)
 
 ### Mobile
 

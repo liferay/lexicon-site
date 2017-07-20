@@ -35,18 +35,11 @@ Do never use it to collapse content without a disclosure arrow. Use an accordion
 
 #### Accordion
 
-Panels can be collapsible. Whenever there is a collapsible panel the header must include a disclosure icon as an affordance to let the user understand that open and close actions can be performed. Please, see that when a panel is open the header is highlighted with a blue line below it marking the active state.
+Panels can be collapsible. Whenever there is a collapsible panel the header must include a disclosure icon as an affordance to let the user understand that open and close actions can be performed.
 
 It is not a good practice to anidate accordions. Please try to avoid it.
 
-![collapsable panels](../../../images/panelCollasable.png)
+![accordion closed and accordion open](../../../images/Accordion.png)
 
-In the following example you can see the accordion working. It is also optional to close all entries when a diferent entry opens.
-
-![collapsable panels](../../../images/panelCollapsibleExample.gif)
-
-### Attributes
-
-![panel attributes](../../../images/panelAttributes.png)
 
 

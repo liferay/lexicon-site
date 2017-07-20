@@ -1,6 +1,6 @@
 ---
-title: "Vertical navigation"
-description: "Vertical navigation allows the navigation between the different pages."
+title: "Nested navigation"
+description: "Nested navigation allows the navigation between the different pages."
 layout: "guide"
 weight: 2
 ---
@@ -9,11 +9,11 @@ weight: 2
 
 {$page.description}
 
-![vertical navigation nested levels open](../../../images/NavigationVerticalOpen.png)
+![nested navigation nested levels open](../../../images/NavigationVerticalOpen.png)
 
 ### Usage
 
-This pattern is always vertical and placed to the left of the form allowing the navigation between different pages.
+This pattern is always vertical and placed to the left of the form allowing the navigation between different pages. Normally this navigation pattern is used in lower navigation levels to reach the lowest level pages.
 
 This pattern is used in form templates. Remember *Lexicon recommmends* to split long forms into smaller forms to make easier the task. Therefore, this navigation pattern is needed to access the different forms.
 
@@ -24,4 +24,4 @@ Attributes:
 
 In mobile devices the navigation is translated into a dropdown menu.
 
-![vertical navigation translated into a selector with a dropdown menu](../../../images/NavigationVerticalMobile.png)
+![nested navigation translated into a selector with a dropdown menu](../../../images/NavigationVerticalMobile.png)

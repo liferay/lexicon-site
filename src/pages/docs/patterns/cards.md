@@ -86,6 +86,11 @@ This card variation is meant to have horizontal representations of information. 
 
 ![default card layout](../../../images/CardFolder.png)
 
+### Sections
+Card sections help to separate different contents by a certain categorization or typology.
+
+![card section](../../../images/CardViewGroupSeparator.png)
+
 ### Attributes
 
 ![default card layout](../../../images/lexiconDefault.png)
@@ -94,4 +99,5 @@ This card variation is meant to have horizontal representations of information. 
 
 ![three different examples of card configuration](../../../images/lexiconDefault.png)
 
+More examples can be found in [dataset template](./Templates/datasetTemplate.html).
 

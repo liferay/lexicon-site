@@ -18,17 +18,23 @@ When applying columns take into account that the reading directions is left-righ
 ### Distancies
 
 As a general thumb rule apply the follolwing sizes for distances:
+* Form padding: 24px
 * Vertical distances
-	* 24px between consecutive components
+	* 24px between consecutive components: title, fields, section...
 	* 48px between consecutive sections
 * Horizontal distances: 16px between consecutive fields
 
-Please visit [inVision](https://liferay.invisionapp.com/share/PWAGWSZHG) example to visually understand the behaviours.
-
 ### Sections
 
-* Sections are identified with primary text with font-size of 14px.
+* Sections are identified with primary text with font-size of 14px and always in capital letters.
 * Some forms may require a full with underline for a better visual separation of content. This is usually used in configuration forms.
+
+![Form section identifier line](../../../images/DividerTitle+Line.png)
+
+### Separations
+A form may need of a division to produce a better sense of groupings. You can achieve this by using a divider line. This line goes full width inside the form box.
+
+![divider line](../../../images/DividerLine.png)
 
 ### Fields’ order
 
@@ -94,7 +100,7 @@ General form actions always placed at the end of the form and they are always pl
 
 #### Interior form actions
 
-Interior form actions should not be as notorious as general actions. Therefore they use default button size.
+Interior form actions should not be as notorious as general actions. Therefore they use secondary button in default size.
 
 
 

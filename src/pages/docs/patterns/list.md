@@ -21,13 +21,6 @@ Not all the element in a list entry are mandatory, feel free to delete and inclu
 
 When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.
 
-### List group
-
-Whenever you need to group series of list entries, you can use the list group heading for that.
-
-![list group includes a heading](../../../images/listGroup.png)
-
-
 ### Row states
 
 #### Default states
@@ -59,14 +52,20 @@ Whenever you need to group series of list entries, you can use the list group he
 
 * Main text must be always in semibold.
 
+### Sections
+List sections help to separate different contents by a certain categorization or typology.
 
-### Attributes
+![List section](../../../images/ListViewGroupSeparator.png)
+
+### Row Attributes
 
 TODO:
 
 #### Example of use
 
 ![list view example with 3 different states in different entries](../../../images/ListViewExample.png)
+
+More examples can be found in [dataset template](./Templates/datasetTemplate.html).
 
 #### Example
 

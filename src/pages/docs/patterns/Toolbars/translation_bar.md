@@ -3,6 +3,7 @@ title: "Translation bar"
 description: "The translation bar is a toolbar that allows the user choose the languages to translate content."
 layout: "guide"
 weight: 2
+hidden: "yes"
 ---
 
 ### Description

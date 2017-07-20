@@ -20,7 +20,7 @@ weight: 1
 * Tab label must be short, maximum two words, clear and concise.
 * Do not use all caps in the label, this complicates the readability of the tab.
 * One of the tabs must be always pre selected
-
+* Tabs must collapse below "More" tab when the don't fit in the screen. More dropdown tab can exist if the tabs fit in the available width. This tab will be always the last one.
 
 ### Variations
 
