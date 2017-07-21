@@ -13,9 +13,16 @@ weight: 1
 
 Liferay has its own icon library created for the porpuses of the projects that use Lexicon. You can also use other icon libraries. [Check our icon library](http://liferay.github.io/clay/content/icons-lexicon/).
 
-![icon set column 1](../../../images/icons1.png)
-![icon set column 2](../../../images/icons2.png)
-![icon set column 3](../../../images/icons3.png)
+<ul class="lexicon-icon-list list-unstyled">
+{foreach $icon in $page.icons}
+	<li>
+		<svg class="lexicon-icon lexicon-icon-{$icon}">
+			<use xlink:href="/vendor/lexicon/icons.svg#{$icon}" />
+		</svg>
+		<span>{$icon}</span>
+	</li>
+{/foreach}
+</ul>
 
 #### Language flags
 
@@ -23,6 +30,16 @@ People tend to have pretty strong opinions on whether flags should be used as a 
 
 While we understand that reasoning, we've found that the times they are actually needed (when a user is not familiar with the currently displayed language) somewhat eliminates using other mechanisms, such as the name of the language (since the current language could be in an entirely different character set). Given this, there is often at least some familiarity with the identity of a country that speaks a shared language. [Check our flags library](http://liferay.github.io/clay/content/icons-lexicon/).
 
+<ul class="lexicon-icon-list list-unstyled">
+{foreach $flag in $page.flags}
+	<li>
+		<svg class="lexicon-icon lexicon-icon-{$flag}">
+			<use xlink:href="/vendor/lexicon/icons.svg#{$flag}" />
+		</svg>
+		<span>{$page.flagData[$flag]} ({$flag})</span>
+	</li>
+{/foreach}
+</ul>
 
 #### Other icon libraries
 
