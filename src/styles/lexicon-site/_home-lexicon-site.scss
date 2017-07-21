@@ -8,8 +8,8 @@
 	background-size: 400px;
 
 	@media (min-width: $screen-sm) {
-        background-size: 612px;
-        
+		background-size: 612px;
+
 		.container {
 			padding-left: 12px;
 			padding-right: 12px;
@@ -23,9 +23,9 @@
 		letter-spacing: 4px;
 		margin: 0 auto;
 		max-width: 100%;
-        font-size: 14px;
-        line-height: 1.5;
-    }
+		font-size: 14px;
+		line-height: 1.5;
+	}
 
 	.navbar.sticky-top {
 		position: sticky;
@@ -271,11 +271,11 @@
 	padding: 16px 0;
 	margin-bottom: 80px;
 	text-align: center;
-    
-    @media (min-width: $screen-sm) {
-        padding: 56px 0;
-        margin-bottom: 120px;
-    }
+
+	@media (min-width: $screen-sm) {
+		padding: 56px 0;
+		margin-bottom: 120px;
+	}
 
 	h1 {
 		font-size: 140px;
@@ -292,8 +292,8 @@
 
 		@media (min-width: $screen-sm) {
 			font-size: 210px;
-            margin-bottom: 100px;
-            line-height: 1.1;
+			margin-bottom: 100px;
+			line-height: 1.1;
 
 			span {
 				letter-spacing: -1.5rem;
@@ -305,13 +305,13 @@
 		width: 400px;
 		margin-bottom: 16px;
 		font-weight: 600;
-        
-        @media (min-width: $screen-sm) {
+
+		@media (min-width: $screen-sm) {
 			font-size: 21px;
-            margin-bottom: 48px;
-            letter-spacing: 7px;
-        }
-        
+			margin-bottom: 48px;
+			letter-spacing: 7px;
+		}
+
 	}
 
 	p {
@@ -339,10 +339,10 @@
 
 	.row {
 		margin-bottom: 88px;
-        
-        @media (min-width: $screen-sm) {
-            margin-bottom: 144px;
-        }
+
+		@media (min-width: $screen-sm) {
+			margin-bottom: 144px;
+		}
 	}
 
 	.media {
@@ -352,12 +352,12 @@
 	img {
 		width: 270px;
 		max-width: 100%;
-        margin-bottom: 24px;
-        
-        	@media (min-width: $screen-sm) {
-                width: 340px;
-                margin-bottom: 0;
-        }
+		margin-bottom: 24px;
+
+			@media (min-width: $screen-sm) {
+				width: 340px;
+				margin-bottom: 0;
+		}
 	}
 
 	h2 {
@@ -375,10 +375,10 @@
 			border-color: $action-color;
 			transition: 0.1s;
 		}
-        
-        @media (min-width: $screen-sm) {
-            font-size: 30px;
-        }
+
+		@media (min-width: $screen-sm) {
+			font-size: 30px;
+		}
 	}
 
 	p {
@@ -387,10 +387,10 @@
 		margin-bottom: 32px;
 		line-height: 1.5;
 		letter-spacing: 0.2px;
-        
-        @media (min-width: $screen-sm) {
-            font-size: 22px;
-        }
+
+		@media (min-width: $screen-sm) {
+			font-size: 22px;
+		}
 	}
 
 }
@@ -408,8 +408,8 @@
 
 	@media (min-width: $screen-md) {
 		margin-top: 224px;
-        padding: 184px 0;
-        background-size: 50%;
+		padding: 184px 0;
+		background-size: 50%;
 	}
 
 
@@ -423,21 +423,21 @@
 		font-weight: 700;
 		font-size: 32px;
 		margin-bottom: 24px;
-        
-        @media (min-width: $screen-md) {
-            font-size: 48px;
-            margin-bottom: 40px;
-        }
+
+		@media (min-width: $screen-md) {
+			font-size: 48px;
+			margin-bottom: 40px;
+		}
 	}
 
 	h3 {
 		width: 720px;
-        max-width: 100%;
+		max-width: 100%;
 		margin-bottom: 64px;
-        
-        @media (min-width: $screen-md) {
-            font-size: 20px;
-        }
+
+		@media (min-width: $screen-md) {
+			font-size: 20px;
+		}
 	}
 
 	li {
@@ -490,11 +490,11 @@
 .clay-link {
 	background-color: #393A4A;
 	padding: 88px 0;
-    text-align: center;
+	text-align: center;
 
 	.container {
 		width: 700px;
-        max-width: 100%;
+		max-width: 100%;
 	}
 
 	p {
@@ -525,15 +525,15 @@
 
 	img {
 		width: 53px;
-        margin-bottom: 24px;
+		margin-bottom: 24px;
 	}
-    
-    	@media (min-width: $screen-md) {
-            text-align: left;
-            img {
-                float: right; 
-            }
-    }
+
+		@media (min-width: $screen-md) {
+			text-align: left;
+			img {
+				float: right;
+			}
+	}
 
 }
 
@@ -555,11 +555,11 @@
 			left: 60%;
 			position: absolute;
 			top: 100%;
-            
-            @media (min-width: $screen-sm) {
-		        border-right: 104px solid transparent;
-			    border-top: 48px solid $action-color;
-	        }
+
+			@media (min-width: $screen-sm) {
+				border-right: 104px solid transparent;
+				border-top: 48px solid $action-color;
+			}
 
 		}
 	// }
@@ -573,10 +573,10 @@
 		line-height: 1.5;
 		margin-bottom: 48px;
 		font-style: italic;
-        
-        @media (min-width: $screen-sm) {
-		    font-size: 40px;
-            margin-bottom: 56px;
+
+		@media (min-width: $screen-sm) {
+			font-size: 40px;
+			margin-bottom: 56px;
 	}
 
 	}
@@ -589,5 +589,27 @@
 			color: $action-color;
 
 		}
+	}
+}
+
+.lexicon-icon-list {
+	&:after {
+		clear: both;
+		content: ".";
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+
+	li span {
+		margin-left: 4px;
+	}
+}
+
+@media (min-width: $screen-xs) {
+	.lexicon-icon-list li {
+		float: left;
+		padding: 5px;
+		width: 33%;
 	}
 }
