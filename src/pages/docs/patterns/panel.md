@@ -1,5 +1,5 @@
 ---
-title: "Panel"
+title: "Panel WIP"
 description: "Panels separate your content."
 layout: "guide"
 weight: 1

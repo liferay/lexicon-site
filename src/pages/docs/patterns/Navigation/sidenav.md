@@ -15,7 +15,7 @@ This pattern is always placed to the left side of the screen and ocuppies the fu
 
 ### Variations
 
-#### Side nav for DE
+#### Side nav for DE WIP
 
 This pattern is created to include portal main navigation in portal. This navigation is divided is 3 main areas: Control panel, User, and the Site. Different applications are contained inside each of this sections. On interaction with the product menu icon at the header, the side nav slides in or out.
 
