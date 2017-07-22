@@ -29,7 +29,7 @@ As a general thumb rule apply the follolwing sizes for distances:
 * Sections are identified with primary text with font-size of 14px and always in capital letters.
 * Some forms may require a full with underline for a better visual separation of content. This is usually used in configuration forms.
 
-![form section](../../../images/DividerTitle+Line.png)
+![Form section identifier line](../../../images/DividerTitle+Line.png)
 
 ### Fields’ order
 
