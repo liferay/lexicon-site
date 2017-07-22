@@ -10,7 +10,7 @@ weight: 3
 
 ### License update
 
-Lexicon site has been update with the legal terms and conditions. Lexicon is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
+Lexicon site has been updated with the legal terms and conditions. Lexicon is licensed under [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) 4.0 license.
 
 <time>June 16th, 2017</time>
 
