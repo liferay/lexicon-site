@@ -29,12 +29,7 @@ As a general thumb rule apply the follolwing sizes for distances:
 * Sections are identified with primary text with font-size of 14px and always in capital letters.
 * Some forms may require a full with underline for a better visual separation of content. This is usually used in configuration forms.
 
-![Form section identifier line](../../../images/DividerTitle+Line.png)
-
-### Separations
-A form may need of a division to produce a better sense of groupings. You can achieve this by using a divider line. This line goes full width inside the form box.
-
-![divider line](../../../images/DividerLine.png)
+![form section](../../../images/DividerTitle+Line.png)
 
 ### Fields’ order
 
@@ -76,13 +71,13 @@ TODO: create a gif to express the interaction
 
 ### Repeatable fields
 
-### Single repeatable field
+#### Single repeatable field
 Single repeable field is useful when the user must instroduce several data of the same type from different inputs, no matter the number nor the order.
 
 TODO: complete
 ![Content block example](../../../images/lexiconDefault.png)
 
-### Set of repeatable fields
+#### Set of repeatable fields
 This allow you let the user add contents of a same type in a form. This is usually used to contribute with more form pieces that allow the user to specify more information. A set always bring the possibility to add or remove sets. See the following example:
 
 TODO: complete
@@ -100,9 +95,9 @@ General form actions always placed at the end of the form and they are always pl
 
 #### Interior form actions
 
-Interior form actions should not be as notorious as general actions. Therefore they use secondary button in default size.
+Interior form actions should not be as notorious as general actions. Therefore, use the secondary button.
 
-
+![button primary default size defuault state](../../../images/ButtonIconSecondary.png)   
 
 
 

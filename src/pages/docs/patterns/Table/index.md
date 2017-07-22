@@ -1,6 +1,6 @@
 ---
 title: "Table"
-description: "Table"
+description: "Table section"
 layout: "guide"
 weight: 1
 ---

@@ -42,8 +42,8 @@ weight: 1
 
 | Size | Usage |
 | ---- | ----- |
-| ![button primary large size disable state](../../../images/ButtonPrimary.png) | **Default**: Used for main page actions like Save or Cancel. |
-| ![button primary default size disable state](../../../images/ButtonPrimarySmall.png) | **Small**: Used for actions inside a page, like dropdowns, button groups, split buttons. |
+| ![button primary large size disable state](../../../images/ButtonPrimary.png) | **Default**: Used for main page actions like Save or Cancel. 40px height. |
+| ![button primary default size disable state](../../../images/ButtonPrimarySmall.png) | **Small**: Used for actions inside a page, like dropdowns, button groups, split buttons. 32px height. |
 
 ### Variations
 

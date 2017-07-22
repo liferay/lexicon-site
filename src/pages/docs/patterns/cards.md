@@ -41,6 +41,12 @@ As you can see in the following image, a card is shaped by:
 
 Among these elements, the only one that can't be removed for the pattern meaning is the image.
 
+### Card group
+
+Whenever you need to group series of cards, you can use the card group separator.
+
+![card group](../../../images/CardViewGroupSeparator.png)
+
 ### Image card
 
 Used in image galeries.
@@ -64,7 +70,6 @@ It is important to highlight that images can have different sizes. To provide th
 ![default card layout](../../../images/CardImageAspectRatio1.png)
 ![default card layout](../../../images/CardImageAspectRatio2.png)
 ![default card layout](../../../images/CardImageAspectRatio3.png)
-
 
 ### User card
 

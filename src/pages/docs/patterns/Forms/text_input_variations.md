@@ -42,6 +42,8 @@ Please visit [inVision](https://liferay.invisionapp.com/share/PSAI8IVRY#/2284313
 
 ## Numeric field
 
+Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisims to increase and decrease the value.
+
 TODO: 
 
 ## Password field

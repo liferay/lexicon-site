@@ -21,6 +21,12 @@ Not all the element in a list entry are mandatory, feel free to delete and inclu
 
 When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.
 
+### List group
+
+Whenever you need to group series of list entries, you can use the list group separator.
+
+![list group includes a heading](../../../images/ListViewGroupSeparator.png)
+
 ### Row states
 
 #### Default states
