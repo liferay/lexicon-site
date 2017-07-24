@@ -2329,18 +2329,6 @@ function $footer(opt_data, opt_ignored, opt_ijData) {
     ie_open('div', null, null,
         'class', 'container-fluid');
       ie_open('div', null, null,
-          'class', 'legal-info');
-        ie_open('p');
-          itext('Except as otherwise noted, the content of this page is licensed under ');
-          ie_open('a', null, null,
-              'href', 'https://creativecommons.org/licenses/by-sa/4.0/',
-              'target', '_blank');
-            itext('CC BY-SA');
-          ie_close('a');
-          itext(' 4.0 license');
-        ie_close('p');
-      ie_close('div');
-      ie_open('div', null, null,
           'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-7');

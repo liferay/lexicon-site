@@ -12012,7 +12012,7 @@ button.loading > .linear.loading-animation {
 .footer {
   margin-top: 48px;
   min-height: 160px;
-  padding: 16px 0 32px; }
+  padding: 16px 0; }
   @media (max-width: 992px) {
     .footer {
       text-align: center; } }
@@ -12020,10 +12020,6 @@ button.loading > .linear.loading-animation {
     .footer {
       margin-top: 128px;
       padding: 47px 0; } }
-  .footer .legal-info p {
-    color: #6B6C7E;
-    font-size: 13.91304px;
-    margin-bottom: 32px; }
   @media (min-width: 992px) {
     .footer .text-right-lg {
       text-align: right; } }
@@ -12884,22 +12880,6 @@ table {
     .contact-us .btn:hover {
       background-color: #fff;
       color: #4887FF; }
-
-.lexicon-icon-list:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  visibility: hidden; }
-
-.lexicon-icon-list li span {
-  margin-left: 4px; }
-
-@media (min-width: 480px) {
-  .lexicon-icon-list li {
-    float: left;
-    padding: 5px;
-    width: 33%; } }
 
 body {
   color: #272833;

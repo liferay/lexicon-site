@@ -2329,18 +2329,6 @@ function $footer(opt_data, opt_ignored, opt_ijData) {
     ie_open('div', null, null,
         'class', 'container-fluid');
       ie_open('div', null, null,
-          'class', 'legal-info');
-        ie_open('p');
-          itext('Except as otherwise noted, the content of this page is licensed under ');
-          ie_open('a', null, null,
-              'href', 'https://creativecommons.org/licenses/by-sa/4.0/',
-              'target', '_blank');
-            itext('CC BY-SA');
-          ie_close('a');
-          itext(' 4.0 license');
-        ie_close('p');
-      ie_close('div');
-      ie_open('div', null, null,
           'class', 'row');
         ie_open('div', null, null,
             'class', 'col-md-7');
@@ -12545,13 +12533,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pagePatternLibrary, t
 /* 209 */,
 /* 210 */,
 /* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12612,4 +12594,4 @@ _metalSoy2.default.register(pagePatternLibrary, _indexSoy2.default);
 exports.default = pagePatternLibrary;
 
 /***/ })
-],[218]);
+],[212]);
