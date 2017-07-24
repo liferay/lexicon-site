@@ -1,3 +1,10 @@
+/**
+ * Senna.js - A blazing-fast Single Page Application engine
+ * @author Liferay, Inc.
+ * @version v2.3.0
+ * @link http://sennajs.com
+ * @license BSD-3-Clause
+ */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -2247,29 +2254,6 @@ var utils = function () {
 		}
 
 		/**
-   * Gets the given node offset coordinates.
-   * @return {!object}
-   * @static
-   */
-
-	}, {
-		key: 'getNodeOffset',
-		value: function getNodeOffset(node) {
-			var offsetLeft = 0,
-			    offsetTop = 0;
-
-			do {
-				offsetLeft += node.offsetLeft;
-				offsetTop += node.offsetTop;
-				node = node.offsetParent;
-			} while (node);
-			return {
-				offsetLeft: offsetLeft,
-				offsetTop: offsetTop
-			};
-		}
-
-		/**
    * Extracts the path part of an url.
    * @return {!string}
    * @static
@@ -2352,7 +2336,7 @@ var utils = function () {
 			try {
 				return new Uri(url);
 			} catch (err) {
-				console.error(err.message + ' ' + url);
+				void 0;
 				return false;
 			}
 		}
@@ -5932,7 +5916,7 @@ var Screen = function (_Cacheable) {
 	createClass(Screen, [{
 		key: 'activate',
 		value: function activate() {
-			console.log('Screen [' + this + '] activate');
+			void 0;
 		}
 
 		/**
@@ -5947,7 +5931,7 @@ var Screen = function (_Cacheable) {
 	}, {
 		key: 'beforeDeactivate',
 		value: function beforeDeactivate() {
-			console.log('Screen [' + this + '] beforeDeactivate');
+			void 0;
 		}
 
 		/**
@@ -5983,7 +5967,7 @@ var Screen = function (_Cacheable) {
 	}, {
 		key: 'deactivate',
 		value: function deactivate() {
-			console.log('Screen [' + this + '] deactivate');
+			void 0;
 		}
 
 		/**
@@ -5996,7 +5980,7 @@ var Screen = function (_Cacheable) {
 		key: 'disposeInternal',
 		value: function disposeInternal() {
 			get(Screen.prototype.__proto__ || Object.getPrototypeOf(Screen.prototype), 'disposeInternal', this).call(this);
-			console.log('Screen [' + this + '] dispose');
+			void 0;
 		}
 
 		/**
@@ -6045,7 +6029,7 @@ var Screen = function (_Cacheable) {
 		value: function flip(surfaces) {
 			var _this2 = this;
 
-			console.log('Screen [' + this + '] flip');
+			void 0;
 
 			var transitions = [];
 
@@ -6083,7 +6067,7 @@ var Screen = function (_Cacheable) {
 	}, {
 		key: 'getSurfaceContent',
 		value: function getSurfaceContent() {
-			console.log('Screen [' + this + '] getSurfaceContent');
+			void 0;
 		}
 
 		/**
@@ -6110,7 +6094,7 @@ var Screen = function (_Cacheable) {
 	}, {
 		key: 'load',
 		value: function load() {
-			console.log('Screen [' + this + '] load');
+			void 0;
 			return CancellablePromise.resolve();
 		}
 
@@ -6609,7 +6593,7 @@ var App$1 = function (_EventEmitter) {
    * @default a:not([data-senna-off])
    * @protected
    */
-		_this.linkSelector = 'a:not([data-senna-off]):not([target="_blank"])';
+		_this.linkSelector = 'a:not([data-senna-off])';
 
 		/**
    * Holds the loading css class.
@@ -6815,11 +6799,11 @@ var App$1 = function (_EventEmitter) {
 			var path = utils.getUrlPath(url);
 
 			if (!this.isLinkSameOrigin_(uri.getHostname())) {
-				console.log('Offsite link clicked');
+				void 0;
 				return false;
 			}
 			if (!this.isSameBasePath_(path)) {
-				console.log('Link clicked outside app\'s base path');
+				void 0;
 				return false;
 			}
 			// Prevents navigation if it's a hash change on the same url.
@@ -6827,7 +6811,7 @@ var App$1 = function (_EventEmitter) {
 				return false;
 			}
 			if (!this.findRoute(path)) {
-				console.log('No route for ' + path);
+				void 0;
 				return false;
 			}
 
@@ -6863,7 +6847,7 @@ var App$1 = function (_EventEmitter) {
 		key: 'createScreenInstance',
 		value: function createScreenInstance(path, route) {
 			if (!this.pendingNavigate && path === this.activePath) {
-				console.log('Already at destination, refresh navigation');
+				void 0;
 				return this.activeScreen;
 			}
 			/* jshint newcap: false */
@@ -6875,7 +6859,7 @@ var App$1 = function (_EventEmitter) {
 				} else {
 					screen = handler(route) || new Screen();
 				}
-				console.log('Create screen for [' + path + '] [' + screen + ']');
+				void 0;
 			}
 			return screen;
 		}
@@ -6932,7 +6916,7 @@ var App$1 = function (_EventEmitter) {
 				return this.pendingNavigate;
 			}
 
-			console.log('Navigate to [' + path + ']');
+			void 0;
 
 			this.stopPendingNavigate_();
 			this.isNavigationPending = true;
@@ -7003,7 +6987,7 @@ var App$1 = function (_EventEmitter) {
 			this.pendingNavigate = null;
 			globals.capturedFormElement = null;
 			globals.capturedFormButtonElement = null;
-			console.log('Navigation done');
+			void 0;
 		}
 
 		/**
@@ -7149,7 +7133,7 @@ var App$1 = function (_EventEmitter) {
 		value: function handleNavigateError_(path, nextScreen, err) {
 			var _this6 = this;
 
-			console.log('Navigation error for [' + nextScreen + '] (' + err + ')');
+			void 0;
 			if (!utils.isCurrentBrowserPath(path)) {
 				if (this.isNavigationPending && this.pendingNavigate) {
 					this.pendingNavigate.thenAlways(function () {
@@ -7287,11 +7271,7 @@ var App$1 = function (_EventEmitter) {
 			if (hash) {
 				var anchorElement = globals.document.getElementById(hash.substring(1));
 				if (anchorElement) {
-					var _utils$getNodeOffset = utils.getNodeOffset(anchorElement),
-					    offsetLeft = _utils$getNodeOffset.offsetLeft,
-					    offsetTop = _utils$getNodeOffset.offsetTop;
-
-					globals.window.scrollTo(offsetLeft, offsetTop);
+					globals.window.scrollTo(anchorElement.offsetLeft, anchorElement.offsetTop);
 				}
 			}
 		}
@@ -7338,11 +7318,7 @@ var App$1 = function (_EventEmitter) {
 			var hash = globals.window.location.hash;
 			var anchorElement = globals.document.getElementById(hash.substring(1));
 			if (anchorElement) {
-				var _utils$getNodeOffset2 = utils.getNodeOffset(anchorElement),
-				    offsetLeft = _utils$getNodeOffset2.offsetLeft,
-				    offsetTop = _utils$getNodeOffset2.offsetTop;
-
-				this.saveHistoryCurrentPageScrollPosition_(offsetTop, offsetLeft);
+				this.saveHistoryCurrentPageScrollPosition_(anchorElement.offsetTop, anchorElement.offsetLeft);
 			}
 		}
 
@@ -7403,7 +7379,7 @@ var App$1 = function (_EventEmitter) {
 		value: function onBeforeNavigateDefault_(event) {
 			if (this.pendingNavigate) {
 				if (this.pendingNavigate.path === event.path) {
-					console.log('Waiting...');
+					void 0;
 					return;
 				}
 			}
@@ -7426,7 +7402,7 @@ var App$1 = function (_EventEmitter) {
 		key: 'onDocClickDelegate_',
 		value: function onDocClickDelegate_(event) {
 			if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.button) {
-				console.log('Navigate aborted, invalid mouse button or modifier key pressed.');
+				void 0;
 				return;
 			}
 			this.maybeNavigate_(event.delegateTarget.href, event);
@@ -7444,7 +7420,7 @@ var App$1 = function (_EventEmitter) {
 		value: function onDocSubmitDelegate_(event) {
 			var form = event.delegateTarget;
 			if (form.method === 'get') {
-				console.log('GET method not supported');
+				void 0;
 				return;
 			}
 			event.capturedFormElement = form;
@@ -7523,7 +7499,7 @@ var App$1 = function (_EventEmitter) {
 			}
 
 			if (state.senna) {
-				console.log('History navigation to [' + state.path + ']');
+				void 0;
 				this.popstateScrollTop = state.scrollTop;
 				this.popstateScrollLeft = state.scrollLeft;
 				if (!this.nativeScrollRestorationSupported) {
@@ -7599,7 +7575,7 @@ var App$1 = function (_EventEmitter) {
 				return CancellablePromise.reject(new CancellablePromise.CancellationError('No route for ' + path));
 			}
 
-			console.log('Prefetching [' + path + ']');
+			void 0;
 
 			var nextScreen = this.createScreenInstance(path, route);
 
@@ -7657,7 +7633,7 @@ var App$1 = function (_EventEmitter) {
 			Object.keys(surfaces).forEach(function (id) {
 				var surfaceContent = nextScreen.getSurfaceContent(id, params);
 				surfaces[id].addContent(nextScreen.getId(), surfaceContent);
-				console.log('Screen [' + nextScreen.getId() + '] add content to surface ' + '[' + surfaces[id] + '] [' + (isDefAndNotNull(surfaceContent) ? '...' : 'empty') + ']');
+				void 0;
 			});
 		}
 
@@ -8466,7 +8442,7 @@ var RequestScreen = function (_Screen) {
 			});
 			if (globals.capturedFormElement) {
 				body = new FormData(globals.capturedFormElement);
-				this.maybeAppendSubmitButtonValue_(body);
+				this.maybeAppendSubmitButtonValue(body);
 				httpMethod = RequestScreen.POST;
 				if (UA.isIeOrEdge) {
 					headers.add('If-None-Match', '"0"');
@@ -8498,12 +8474,11 @@ var RequestScreen = function (_Screen) {
    * Adds aditional data to the body of the request in case a submit button
    * is captured during form submission.
    * @param {!FormData} body The FormData containing the request body.
-   * @protected
    */
 
 	}, {
-		key: 'maybeAppendSubmitButtonValue_',
-		value: function maybeAppendSubmitButtonValue_(body) {
+		key: 'maybeAppendSubmitButtonValue',
+		value: function maybeAppendSubmitButtonValue(body) {
 			var button = globals.capturedFormButtonElement;
 			if (button && button.name) {
 				body.append(button.name, button.value);
@@ -9072,7 +9047,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 			}
 
 			if (!this.baseElement.hasAttribute(dataAttributes.senna)) {
-				console.log('Senna was not initialized from data attributes. ' + 'In order to enable its usage from data attributes try setting ' + 'in the base element, e.g. `<body data-senna>`.');
+				void 0;
 				return;
 			}
 
@@ -9080,7 +9055,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 				throw new Error('Senna app was already initialized.');
 			}
 
-			console.log('Senna initialized from data attribute.');
+			void 0;
 
 			this.app = new App$1();
 			this.maybeAddRoutes_();
@@ -9142,7 +9117,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 			});
 			if (!this.app.hasRoutes()) {
 				this.app.addRoutes(new Route(/.*/, HtmlScreen));
-				console.log('Senna can\'t find route elements, adding default.');
+				void 0;
 			}
 		}
 
@@ -9185,7 +9160,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 		value: function maybeParseLinkRoute_(link) {
 			var route = new Route(this.maybeParseLinkRoutePath_(link), this.maybeParseLinkRouteHandler_(link));
 			this.app.addRoutes(route);
-			console.log('Senna scanned route ' + route.getPath());
+			void 0;
 		}
 
 		/**
@@ -9232,7 +9207,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 			var basePath = this.baseElement.getAttribute(dataAttributes.basePath);
 			if (isDefAndNotNull(basePath)) {
 				this.app.setBasePath(basePath);
-				console.log('Senna scanned base path ' + basePath);
+				void 0;
 			}
 		}
 
@@ -9247,7 +9222,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 			var linkSelector = this.baseElement.getAttribute(dataAttributes.linkSelector);
 			if (isDefAndNotNull(linkSelector)) {
 				this.app.setLinkSelector(linkSelector);
-				console.log('Senna scanned link selector ' + linkSelector);
+				void 0;
 			}
 		}
 
@@ -9262,7 +9237,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 			var loadingCssClass = this.baseElement.getAttribute(dataAttributes.loadingCssClass);
 			if (isDefAndNotNull(loadingCssClass)) {
 				this.app.setLoadingCssClass(loadingCssClass);
-				console.log('Senna scanned loading css class ' + loadingCssClass);
+				void 0;
 			}
 		}
 
@@ -9281,7 +9256,7 @@ var AppDataAttributeHandler = function (_Disposable) {
 				} else {
 					this.app.setUpdateScrollPosition(true);
 				}
-				console.log('Senna scanned update scroll position ' + updateScrollPosition);
+				void 0;
 			}
 		}
 
