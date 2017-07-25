@@ -39,10 +39,6 @@ Liferay has its own icon library created for the porpuses of the projects that u
 
 Please, read this [guide](https://gist.github.com/natecavanaugh/b9546c4215e5d5ef88a1b9d6ae2041a3#lexicon-icon-design-guidelines) on how to create icons for Lexicon.
 
-
-Please, read this [guide](https://gist.github.com/natecavanaugh/b9546c4215e5d5ef88a1b9d6ae2041a3#lexicon-icon-design-guidelines) on how to create icons for Lexicon.
-
-
 #### Language flags
 
 People tend to have pretty strong opinions on whether flags should be used as a visual cue for indicating a language, mainly because in many parts of the world, the flag may have cultural and geographic meanings that we might not be aware of, or the flag itself isn't fully accurate to the dialects spoken in that region.
