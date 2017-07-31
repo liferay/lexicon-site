@@ -3660,7 +3660,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 48px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   border: 1px solid transparent; }
   .navbar:before, .navbar:after {
     content: " ";
@@ -7650,8 +7650,7 @@ button.list-group-heading {
 .nav-heading > span {
   display: block;
   padding: 9px 16px;
-  position: relative;
-  word-wrap: break-word; }
+  position: relative; }
 
 .nav > li > a:focus {
   z-index: 1; }
@@ -7787,12 +7786,6 @@ button.list-group-heading {
 
 .nav-nested-margins > li .nav > li {
   margin-left: 15px; }
-
-.nav-nested > .active > a,
-.nav-nested .nav > .active > a,
-.nav-nested-margins > .active > a,
-.nav-nested-margins .nav > .active > a {
-  color: #40a4ec; }
 
 .nav-pills a[aria-expanded="true"], .nav-pills a[aria-expanded="true"]:hover, .nav-pills a[aria-expanded="true"]:focus {
   background-color: #869CAD;
@@ -8002,6 +7995,7 @@ button.list-group-heading {
 
 .navbar {
   border-width: 0 0 1px 0;
+  margin-bottom: 0;
   min-height: 48px; }
   @media (min-width: 900px) {
     .navbar {
