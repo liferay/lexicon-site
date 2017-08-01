@@ -13,7 +13,7 @@ weight: 1
 
 A table view is useful for comparing entries among them that need exhaustive comparison. Tables are very heavy in text display, if you need to display images we recommend you to take a look at lists and cards.
 
-A table entry or row don't allow you to display 2 different data types in one same column. The reason behing this decision are comparison and sorting problems.
+A table entry or row don't allow you to display 2 different data types in one same column. The reason behind this decision are comparison and sorting problems.
 
 When a table is used together with management bar, the table entries must include the checkbox, as the selection and actions are reflected in the management bar.
 
@@ -67,7 +67,7 @@ All column headers are always left-aligned, 14px, and regular weight.
 Table header can be interactive:
 * In case sorting is available
 	In this case, the sort reference column is highlighted with an arrow marking the sort direction.
-* In case drag & drop is avilable
+* In case drag & drop is available
 
 In both cases the column header changes to bold in hover.
 
@@ -83,17 +83,17 @@ Drag and drop is configurable in tables. Tables that allow drag and drop handle 
 
 ### Columns visibility
 
-Columns in a table can be shown or hidden only when the table goes together with the managament bar and the mangement bar implements this feature. All columns can be hidden except the first one as it is the reference column.
+Columns in a table can be shown or hidden only when the table goes together with the management bar and the management bar implements this feature. All columns can be hidden except the first one as it is the reference column.
 
 ### Columns layout
 
 A table contains 1 to many columns and how to place them properly can be cumbersome. We provide you a set of advices so you can take quick and easy decisions.
 
-While main column must be always placed on the leftmost side, depending on the number of colums and its content you could prefer different table layouts:
-* **2 columns**: Place the second column right next to the first column respectin the margins.
+While main column must be always placed on the leftmost side, depending on the number of columns and its content you would prefer different table layouts:
+* **2 columns**: Place the second column right next to the first column respecting the margins.
 * **N columns**: Place columns equidistant.
 
-### Content format and aligment
+### Content format and alignment
 
 * Headers must be always left-aligned and semibold.
 * First column value must be always in semibold.
@@ -104,7 +104,7 @@ While main column must be always placed on the leftmost side, depending on the n
 
 #### Example
 
-Please visit [inVision](https://liferay.invisionapp.com/share/SYAH0QADM) example to visually understand the behaviours.
+Please visit [inVision](https://liferay.invisionapp.com/share/SYAH0QADM) example to visually understand the behaviors.
 
 ![table row in selected state](../../../images/TableExample.png)
 
@@ -112,7 +112,7 @@ Please visit [inVision](https://liferay.invisionapp.com/share/SYAH0QADM) example
 
 #### Example
 
-Please visit [inVision](https://liferay.invisionapp.com/share/YMAHIR749) example to visually understand the behaviours.
+Please visit [inVision](https://liferay.invisionapp.com/share/YMAHIR749) example to visually understand the behaviors.
 
 
 

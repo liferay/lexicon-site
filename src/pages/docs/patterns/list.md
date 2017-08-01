@@ -5,7 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-### Introduction
+### Description
 
 {$page.description}
 
@@ -20,12 +20,6 @@ A list allows you a free way of displaying information. While the table isn't me
 Not all the element in a list entry are mandatory, feel free to delete and include the ones you need.
 
 When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.
-
-### List group
-
-Whenever you need to group series of list entries, you can use the list group separator.
-
-![list group includes a heading](../../../images/ListViewGroupSeparator.png)
 
 ### Row states
 
@@ -54,9 +48,14 @@ Whenever you need to group series of list entries, you can use the list group se
 	* Do never use it for preview. Preview is always a secondary action placed in the row action menu.
 * If the link drives the user out of the site, please identify visually that this link will open in a new page.
 
-### Content format and aligment
+### Content format and alignment
 
 * Main text must be always in semibold.
+* In order to favour legibility an easiest way to identify content within a list item, the width of the main content won’t go further than the 50% of the row on wide screens.
+* Inside the main content group there won’t be more than three elements stacked. However, the row can grow vertically if the elements need more vertical space, but never more than two lines.
+* In those cases when a short description is needed this would be placed, as said before, aligned on the right of the main content and will extend until the tools. This description won’t be more than two lines long.
+* Text elements can’t fill more than two lines. In the case that a text element is longer, we will use an ellipsis.
+
 
 ### Sections
 List sections help to separate different contents by a certain categorization or typology.
@@ -77,7 +76,11 @@ More examples can be found in [dataset template](./Templates/datasetTemplate.htm
 
 Please visit [inVision](https://liferay.invisionapp.com/share/YAAFKJ4WN) example to visually understand the behaviours.
 
-### Mobile
+### Responsiness
+
+* Text elements can’t fill more than two lines.
+* Ellipsis will be used to suggest more content available when is impossible to show all in a small screen. These ellipsis won’t be actionable. They are only indicative. The whole content will be showed on the item full description state.
+* In case a list row has tags they can’t occupy more than one line. In the case that a tags row is longer, use an ellipsis.
 
 #### Example
 

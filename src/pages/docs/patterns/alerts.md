@@ -15,6 +15,11 @@ weight: 1
 * Alerts must always have the status icon and the keyword that defines the message type and in semibold.
 * Alerts can have multiple text lines.
 * All alerts types can contain links. Those links are defined in primary color.
+* Alerts can be defined as temporary in the case of toast and stripe. In these cases the delay time is:
+    * 10 sec if there are actions associated.
+    * 5 sec if there are no actions associated.
+    * In both cases the time freezes on hover to allow more time to the user to interact with the alert message. On mouse out the countdown continues.
+
 
 ### Types
 
@@ -32,7 +37,7 @@ Definir el uso de comfirm messages.
 
 #### Toast
 
-This type of alert is specific for toast messages. This type of messages appear on the top right corner of the screen. The maximum with of a toast message is 360px and the height can vary depending on the number of rows. It always have a close action.
+This type of alert is specific for toast messages. This type of messages appear on the top right corner of the screen. The maximum width of a toast message is 360px and the height can vary depending on the number of rows. It always have a close action.
 
 ![four differet toast alert colors](../../../images/AlertToast.png)
 

@@ -13,8 +13,8 @@ weight: 1
 
 | Type | Usage |
 | ---- | ----- |
-| ![button primary default size defuault state](../../../images/ButtonPrimary.png) | **Primary**: The primary button is always use for the most important actions. There can't be two primery actions together or near by. |
-| ![button primary default size defuault state](../../../images/ButtonSecondary.png) | **Secondary**: The seconday button is always use for the secondary actions. There can be several secondary actions near by. |
+| ![button primary default size defuault state](../../../images/ButtonPrimary.png) | **Primary**: The primary button is always use for the most important actions. There can't be two primary actions together or near by. |
+| ![button primary default size defuault state](../../../images/ButtonSecondary.png) | **Secondary**: The secondary button is always use for the secondary actions. There can be several secondary actions near by. |
 | ![button primary default size defuault state](../../../images/ButtonBorderless.png) | **Borderless**: Use in those cases as toolbars where the secondary button would be too heavy for the pattern design. In this way the design gets cleaner. |
 | ![button primary default size defuault state](../../../images/ButtonLink.png) | **Link**: Used for many Cancel actions. |
 
@@ -49,7 +49,7 @@ weight: 1
 
 #### Icon button
 
-Buttons can icons insted of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in [management bars](./management_bar.html). This button variation can be primary, secondary or borderless type.
+Buttons can icons instead of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in [management bars](./management_bar.html). This button variation can be primary, secondary or borderless type.
 
 ![button primary default size defuault state](../../../images/ButtonIconPrimary.png)  
 ![button primary default size defuault state](../../../images/ButtonIconSecondary.png)   
@@ -77,7 +77,7 @@ Dropdown buttons are always used together with a dropdown menu. This button vari
 
 #### Split button
 
-Split buttons are used in those cases where you need to offer the user a quick main action but salso secondary actions.
+Split buttons are used in those cases where you need to offer the user a quick main action but also secondary actions.
 
 ![button splitted default size](../../../images/lexiconDefault.png)
 

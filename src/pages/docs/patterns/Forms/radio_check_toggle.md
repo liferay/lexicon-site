@@ -1,6 +1,6 @@
 ---
 title: "Checkbox, Radio button, Toggle"
-description: "A checkbox is a component that allows the user selecting something writen in its associatead text label. A list of consecutive checkboxes would allow the user to select multiple things."
+description: "A checkbox is a component that allows the user selecting something written in its associated text label. A list of consecutive checkboxes would allow the user to select multiple things."
 layout: "guide"
 weight: 2
 ---

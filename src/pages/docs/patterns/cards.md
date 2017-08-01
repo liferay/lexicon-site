@@ -11,9 +11,9 @@ weight: 1
 {$page.description}
 
 ### Usage
-Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images asociated to your content. A good example of this could be your users database or an image library.
+Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images associated to your content. A good example of this could be your users database or an image library.
 
-Cards are not meant to compare information in an exhautive way but a light way. In case you need exhaustive comparison and not based on image comparison, you must use a table.
+Cards are not meant to compare information in an exhaustive way but a light way. In case you need exhaustive comparison and not based on image comparison, you must use a table.
 
 Cards in Lexicon are open to many configurations. We provide a flexible card layout for you to configure it as you want. Later on this page we provide a series of examples we use in our systems for you to get inspired.
 
@@ -41,15 +41,9 @@ As you can see in the following image, a card is shaped by:
 
 Among these elements, the only one that can't be removed for the pattern meaning is the image.
 
-### Card group
-
-Whenever you need to group series of cards, you can use the card group separator.
-
-![card group](../../../images/CardViewGroupSeparator.png)
-
 ### Image card
 
-Used in image galeries.
+Used in image/document galleries.
 
 #### Default 
 ![default card layout](../../../images/CardImage.jpg)
@@ -81,7 +75,7 @@ User card is used to represent users. The user can be represented by its user im
 
 ### File card
 
-Fild card is used to represent files different to images.
+File card is used to represent files different to images.
 
 ![default card layout](../../../images/CardFile.png)
 

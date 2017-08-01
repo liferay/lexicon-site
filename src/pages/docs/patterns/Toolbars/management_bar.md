@@ -30,7 +30,7 @@ It displays tools focused on filtering, sorting and data visualization.
 
 1. Checkbox: To select all elements in the current page
 2. Filter and order: dropdown with dropdown menu associated. Please see [dropdown with groups](../dropdowns.html)
-3. Sort toggle button: The arrow idenfies the sorting order depending on the selected option inside Filter and order dropdown. The main attribute, usually the name, states the default sort parameter.
+3. Sort toggle button: The arrow identifies the sorting order depending on the selected option inside Filter and order dropdown. The main attribute, usually the name, states the default sort parameter.
 4. Search bar to filter out the current dataset.
 5. Visualization button to select the desired visualization.
 6. Plus button to add content and folders into the dataset.
@@ -46,7 +46,7 @@ The background color and the way to show the icons of the bar in this state chan
 1. Checkbox: To select all elements in the current page
 2. Counter: Selected elements counter
 3. Select all: To select all elements in the dataset
-4. Qucik actions: set of quick actions with a visual representation
+4. Quick actions: set of quick actions with a visual representation
 5. Actions menu: on interaction displays a dropdown menu with all the actions that can be applied over the selected dataset.
 
 ### Requirements
@@ -106,7 +106,7 @@ By tapping on the magnifying lense icon button, the management bar gets into thi
 
 #### Search results 
 
-After tapping on intro int he search field the management bar return to state 1 with a summary line of the results found.
+After tapping on intro in the search field the management bar return to state 1 with a summary line of the results found.
 
 ![state two of the management bar mobile](../../../images/ManagementBarMobileResults.png)
 

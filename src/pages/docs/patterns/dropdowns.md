@@ -112,7 +112,7 @@ The left configuration suggest the user the possibility of having favorites elem
 
 Out of the favorites the order is ruled as follows:
 * First two elements are the most used ones.
-* The rest are displayed in alphabeticall order
+* The rest are displayed in alphabetical order
 
 ![dropdown menu actions in plus button with favorites configuration and scroll bar case](../../../images/DropdownPlusButtonCase2.png)
 

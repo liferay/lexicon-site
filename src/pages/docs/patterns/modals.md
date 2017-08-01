@@ -36,7 +36,7 @@ Modals can be configured in 4 different size and they are defined as table shows
 
 ### Configurations
 
-Lexicon allows your modal to have different configurations related to your needs. These needs vary from case to case and that is why not every modal in the system needs to be equal, but needs to follow certain rules.
+Lexicon allows your modal window to have different configurations related to your needs. These needs vary from case to case and that is why not every modal in the system needs to be equal, but needs to follow certain rules.
 
 #### Header, body and footer
 
@@ -62,7 +62,7 @@ It is always possible to bring an iFrame inside the body. For more information a
 
 #### Modals for status messages
 
-Modal headers can be configured to use modals as status messages. This solution is proposed to give more emphasis on blocking actions that the use must read and pay carefull attention.
+Modal headers can be configured to use modals as status messages. This solution is proposed to give more emphasis on blocking actions that the use must read and pay careful attention.
 
 Do never remove the icon in the title as it provides the modal with a better accessibility level.
 

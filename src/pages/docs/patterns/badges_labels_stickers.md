@@ -20,7 +20,7 @@ Badges help highlight important information such as notifications or new and unr
 * Badges can not be close or link to another a page. They are only used as informative text.
 * Badges are not thought to always indicate the exact number of elements. In that case please use plain text. Badges work for exact numbers up to 999. From there we use K from Thousands (5K for 5.231) , M for Millions (2M for 2.100.523).
 * Red background color badge is only dedicated to notifications. Any other kind of counter in the system must have another color.
-In case you need a pattern where to write non-numeric values, labels is the pattern to use.
+* In case you need a pattern where to write non-numeric values, labels is the pattern to use.
 
 ### Attributes
 
@@ -50,13 +50,13 @@ Use labels to organize groups of items in your application. Labels have rounded 
 
 #### Label simple
 
-Used to identify, tag contente, show status, to filter content or even to provide navigation to elements of same identification.
+Used to identify, tag contente, show status, to filter content or even to provide navigation to elements of same identification. It can be used with status colors.
 
 ![defualt size default color close option label](../../../images/LabelDefault.png)
 
 #### Label removable
 
-Used in filter bars, categories, etc. Always in default size and without status color.
+Used in filter bars, categories, etc. Always in default size and without status color. Use it only in default size.
 
 ![defualt size default color close option label](../../../images/LabelRemovable.png)
 
@@ -92,12 +92,12 @@ Use stickers to visually identify elements in a dataset that are part of a same 
 
 ### Sizes
 
-| Size | Usage |
-| ---- | ----- |
-| ![small size default color sticker](../../../images/StickerSquaredSmall+Text.png) | 24x24. Use it in smaller contexts where you only need visual identification but not manual interaction with this element. |
-| ![defualt size default color sticker](../../../images/StickerSquared+Text.png) | 32x32. Use it in cards that are image based, allowing to see more parts of the image. |
-| ![defualt size default color sticker](../../../images/StickerRounded+Text40.png) | 40x40. Use it in sites to identify the user in a comment in comments portlet. Only rounded.|
-| ![defualt size default color sticker](../../../images/StickerRounded+Text48.png) | 48x48. Use it in sites to identify the user in a blog entry or article. Only rounded.|
+| Sticker Size | Icon Size | Usage |
+| ------------ | --------- | ----- |
+| 24px | 12px | Use it in smaller contexts where you only need visual identification but not manual interaction with this element. |
+| 32px | 16px | Use it in cards that are image based, allowing to see more parts of the image. |
+| 40px | 20px | Use it in sites to identify the user in a comment in comments portlet. Only rounded.|
+| 48px | 24px | Use it in sites to identify the user in a blog entry or article. Only rounded.|
 
 ### Variations
 
