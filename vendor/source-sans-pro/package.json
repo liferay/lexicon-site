@@ -1,38 +1,35 @@
 {
-  "_args": [
-    [
-      "source-sans-pro@2.0.10",
-      "/Users/victorvalle/Documents/Liferay/Lexicon Site 1/lexicon-site"
-    ]
-  ],
-  "_from": "source-sans-pro@2.0.10",
+  "_from": "source-sans-pro@^2.0.10",
   "_id": "source-sans-pro@2.0.10",
   "_inBundle": false,
   "_integrity": "sha1-wcqFnPFkoIiUTF6DdFCF6HzVM6k=",
   "_location": "/source-sans-pro",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "source-sans-pro@2.0.10",
+    "raw": "source-sans-pro@^2.0.10",
     "name": "source-sans-pro",
     "escapedName": "source-sans-pro",
-    "rawSpec": "2.0.10",
+    "rawSpec": "^2.0.10",
     "saveSpec": null,
-    "fetchSpec": "2.0.10"
+    "fetchSpec": "^2.0.10"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
-  "_spec": "2.0.10",
-  "_where": "/Users/victorvalle/Documents/Liferay/Lexicon Site 1/lexicon-site",
+  "_shasum": "c1ca859cf164a088944c5e83745085e87cd533a9",
+  "_spec": "source-sans-pro@^2.0.10",
+  "_where": "/Users/ncavanaugh/Dev/Work/lexicon-site",
   "author": {
     "name": "Paul D. Hunt"
   },
   "bugs": {
     "url": "https://github.com/flosse/npm-source-sans-pro/issues"
   },
+  "bundleDependencies": false,
+  "deprecated": false,
   "description": "Source Sans Pro font family by Adobe",
   "homepage": "https://github.com/flosse/npm-source-sans-pro",
   "keywords": [
