@@ -31,7 +31,7 @@ weight: 2
 
 ## Radio button
 
-A radio button is a component that allows the user selecting something writen in its associatead text label. A list of consecutive radio buttons would allow the user to select just one thing.
+A radio button is a component that allows the user selecting something written in its associated text label. A list of consecutive radio buttons would allow the user to select just one thing.
 
 ![radio button](../../../images/RadioButton+Label+Active.png)
 
@@ -69,13 +69,13 @@ It is a common case of doubt when to use radios or a dropdown menu instead when 
 
 ## Toggle
 
-A toogle is an interface element that by its activation or deactivation provokes a inmediate action in the screen.
+A toggle is an interface element that by its activation or deactivation provokes an immediate action in the screen.
 
 ![switch default state](../../../images/SwitchLabel+ON.png)
 
 ### Usage
 
-* Use a toggle to present the user mutually exclusive options that have an action that is possible to perceive inmediately.
+* Use a toggle to present the user mutually exclusive options that have an action that is possible to perceive immediately.
 
 **Use doubt cases**
 

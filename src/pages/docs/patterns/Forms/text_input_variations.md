@@ -37,7 +37,7 @@ Date selector allows to select a date. This date selector is similar to the one 
 
 ![multiple selector active state](../../../images/DatePickerOpen.png)
 
-Please visit [inVision](https://liferay.invisionapp.com/share/PSAI8IVRY#/228431317_Calendar_Text_Field) example to visually understand the behaviour.
+Please visit [inVision](https://liferay.invisionapp.com/share/PSAI8IVRY#/228431317_Calendar_Text_Field) example to visually understand the behavior.
 
 
 ## Numeric field

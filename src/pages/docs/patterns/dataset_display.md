@@ -10,7 +10,7 @@ weight: 1
 A dataset display is the combination of a [management bar](./management_bar.html) with one or many data visualization types and a possible mechanism of pagination. The most common visualization types used are [table](./table.html), [list](./list.html) and [card](./card.html).
 
 ### Usage
-This pattern is used when the elements of the visualization require colective management, therefore the management bar becomes important as it facilitates tools needed to work with the dataset.
+This pattern is used when the elements of the visualization require collective management, therefore the management bar becomes important as it facilitates tools needed to work with the dataset.
 
 * This pattern can be only used one time in a page.
 * Use it is you want to have several visualizations for a set of data.
@@ -40,7 +40,7 @@ This pattern is used when the elements of the visualization require colective ma
 
 ### Empty state
 
-It is important to let the user know what happens in empty states and let them know what has happend and how to perform actions to move out from that empty state.
+It is important to let the user know what happens in empty states and let them know what has happened and how to perform actions to move out from that empty state.
 
 #### Empty dataset
 
@@ -50,7 +50,7 @@ This is the initial state for a dataset without elements. The formula for the me
 
 ![Card View empty state](../../../images/CardViewEmpty.png)
 
-As stated in the previous case, it is important to help the user understanding what happens in empty states. Please follow this formula for expresing the empty search result:
+As stated in the previous case, it is important to help the user understanding what happens in empty states. Please follow this formula for expressing the empty search result:
 * No [document type] were found matching with: **query**.
 	* Example: *No web contents were found matching: **water***
 
@@ -62,17 +62,17 @@ In case this result could be inside a repository as is the case of Documents and
 
 ![Card View Search Without Result](../../../images/CardViewSearchWithoutResultWithTabs.png)
 
-### Invidual actions
+### Individual actions
 
-Individual actions are all those actions that an element has. This actions are always possible to reach from the element it self throw the actions menu. Some of this actions are also placed in the management bar when only one element fromt the dataset is selected. These actions are always represented by a metaphor, , they are buttons with icon. Only those actions that can be easily represented by an icon will be there. Not all possible represented by an icon must be there, only the ones considered as more relevant.
+Individual actions are all those actions that an element has. This actions are always possible to reach from the element itself through the actions menu. Some of this actions are also placed in the management bar when only one element fromt the dataset is selected. These actions are always represented by a metaphor, , they are buttons with icon. Only those actions that can be easily represented by an icon will be there. Not all possible represented by an icon must be there, only the ones considered as more relevant.
 
 ![individual actions displayed both in management bar and from actions menu](../../../images/DatasetDisplayIndividualActions.png)
 
-### Colective actions
+### Collective actions
 
-Colective actions are shown in the management bar when more than one element is selected in the dataset. In case there are  colective actions that don't have an icon representation the can be placed in a dropdown triggered from the actions button.
+Collective actions are shown in the management bar when more than one element is selected in the dataset. In case there are  collective actions that don't have an icon representation the can be placed in a dropdown triggered from the actions button.
 
-![colective actions displayed both in management bar and from actions menu](../../../images/DatasetDisplayGroupActions.png)
+![collective actions displayed both in management bar and from actions menu](../../../images/DatasetDisplayGroupActions.png)
 
 ### Filtering
 * Use filter only when you need them.

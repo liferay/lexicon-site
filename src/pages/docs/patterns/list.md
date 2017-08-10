@@ -74,7 +74,7 @@ More examples can be found in [dataset template](./Templates/datasetTemplate.htm
 
 #### Example
 
-Please visit [inVision](https://liferay.invisionapp.com/share/YAAFKJ4WN) example to visually understand the behaviours.
+Please visit [inVision](https://liferay.invisionapp.com/share/YAAFKJ4WN) example to visually understand the behaviors.
 
 ### Responsiness
 
@@ -84,4 +84,4 @@ Please visit [inVision](https://liferay.invisionapp.com/share/YAAFKJ4WN) example
 
 #### Example
 
-Please visit [inVision](https://liferay.invisionapp.com/share/HEAGTZBRV) example to visually understand the behaviours.
+Please visit [inVision](https://liferay.invisionapp.com/share/HEAGTZBRV) example to visually understand the behaviors.

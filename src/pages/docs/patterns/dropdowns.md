@@ -21,9 +21,9 @@ Closing a dropdown can be done by:
 
 A dropdown menu can contain any kind of basic form component / element like text field, list of options, list of options with radio buttons, list of options with checkboxes, or button.
 
-Dropdowns have a maximum witdh of 240px. When an entry text doesn't fit into the available space, use 2 lines. The text in each entry should be short and specific enought to not use more than one line.
+Dropdowns have a maximum width of 240px. When an entry text doesn't fit into the available space, use 2 lines. The text in each entry should be short and specific enough to not use more than one line.
 
-Maximun height is established in 600px for desktop and 400px in mobile. Vertical scroll is allowed when the content exceeds the limit.
+Maximum height is established in 600px for desktop and 400px in mobile. Vertical scroll is allowed when the content exceeds the limit.
 
 The distance from the button to the dropdown is 8px.
 
@@ -69,7 +69,7 @@ Dropdown menus with left icons are suitable for process bars (wizards) where the
 
 This dropdown menu variation is created to be used with the management bar Filter and Order dropdown button. This configuration is thought to clean the management bar providing the user with more specific mechanisms to find data. 
 
-The button in a dropdown menu can be either primary or seconday depending on the application needs.
+The button in a dropdown menu can be either primary or secondary depending on the application needs.
 
 ![dropdown menu with groups](../../../images/DropdownMultiple.png)
 

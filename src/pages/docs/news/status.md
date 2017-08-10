@@ -8,7 +8,7 @@ Hidden: "no"
 
 ## Last update
 
-2017.07.22
+2017.08.10
 
 ## Updates
 
@@ -24,7 +24,7 @@ NOTE:
 | ---- | ----- |
 | Accessibility | 2017.06.14 Starting description from a design perspective |
 | Color | 2017.07.12 Updated with field borders colors |
-| Grid | **2017.07.19 WIP** |
+| Grid | 2017.07.19 WIP |
 | Typography | 2017.06.25 Adapted with the advices |
 | Writing style | 2017.06.14 Done |
 
@@ -37,19 +37,20 @@ NOTE:
 | Badges, labels, stickers | 2017.07.12 Updated with new sticker sizes, label link. |
 | Buttons | 2017.07.12 Button with icon and text. |
 | Cards | 2017.06.25 Included user card, image card. Missing folder card, file card. |
+| Confirmation message | **2017.08.10 NEW. Complete** |
 | Dataset display | 2017.07.12 Updated with examples for empty states. |
 | Dropdown menu | 2017.07.12 Distance to button specification |
-| File upload | **2017.07.22 WIP** |
-| Forms > forms | **2017.07.22 Updated** |
+| File upload | 2017.07.22 WIP |
+| Forms > forms | 2017.07.22 Updated |
 | Forms > CRT | 2017.06.14 Complete. |
-| Forms > Multi Step Form | **2017.07.22 Process bar renamed and placed in forms.** |
+| Forms > Multi Step Form | 2017.07.22 Process bar renamed and placed in forms. |
 | Forms > Selectors | 2017.06.14 In process. Missing multiple selector |
 | Forms > Text input | 2017.07.12 Variations extracted to other page |
 | Forms > Text input variations | 2017.07.13 Search autocomplete |
 | Forms > Text input group | 2017.07.12 Style changed. |
-| Icons | 2017.07.12 Updated Icon 32. |
+| Icons | **2017.08.10 Updated with new icons**. |
 | Link | 2017.07.11 NEW. Complete |
-| List | **2017.07.22 Updated with sections** |
+| List | 2017.07.22 Updated with sections |
 | Loading indicator | 2017.06.14 Pending. |
 | Modals | 2017.06.14 Done. Missing attributes |
 | Navigation > Navigation | 2017.07.13 Specification. |
@@ -65,8 +66,8 @@ NOTE:
 | Process bar | 2017.07.12 Complete. Modified examples and included mobile |
 | Progress bar | 2017.06.14 In process. |
 | Sidebar | 2017.06.14 Pending. Old one. |
-| Table > Table | **2017.07.22 Updated with sections** |
-| Table > Inline edit table | **2017.07.22 WIP** |
+| Table > Table | 2017.07.22 Updated with sections |
+| Table > Inline edit table | 2017.07.22 WIP |
 | Tabs | 2017.06.14 Done. Missing attributes. |
 | Timelines | 2017.06.14 Pending. Old |
 | Toolbar > Toolbar | 2017.06.14 Done |
