@@ -5,95 +5,130 @@ layout: "guide"
 weight: 1
 ---
 
-### Description
+### Introduction
 
-Lexicon grid is build from the main values of the base font style: 16px font size and 24px (1.5rem) line height.
+The aim of the Lexicon layout framework is to provide a common structural reference that contributes to streamlining the component construction and page composition processes as well as favoring visual consistency between the different elements of the interface.
 
-![grid desktop](../../../images/Grid_desktop_00.png)
+### Base Grid
 
-![grid desktop](../../../images/Grid_desktop_00b.png)
+The Base Grid is the main metric reference of our system from which the rest of the layout structures are built. It is at the same time the starting point when defining the dimensions, paddings and margins of the elements of the interface.
 
-This line height of 24 px becomes then the reference to define the baseline of the grid.
+This grid is constructed from a base 8px module, so that both the dimensions of the elements and the distances between them will always be multiples of 8; 16, 24, 32, 40, 48 …
 
-![grid desktop](../../../images/Grid_desktop_01.png)
+![grid 8 pixels detail](../../../images/Grid01.png)
 
-### Large Viewports
+![two images. Left side with grid elements distribution. Right one same as left one but with distances between elements](../../../images/Grid02.png)  
 
-The column system is configured based in 12 columns
+In this way we provide a common metric pattern that contributes to create visual coherence and consistency between the different elements of the system and their spatial relationships.
 
-![grid desktop](../../../images/Grid_desktop_02.png)
+The use of this reference grid favors an efficient workflow, reducing the number of design decisions as well as improving communication between designers and developers.
 
-The gutter between columns takes the same value of 24px from the baseline.
+Establishing a minimum metric unit that is not too small can help us limit the chances of distorting the visual consistency and taking advantage of its other benefits. However there will always be specific situations in which it is convenient to work with values ​​smaller than 8px. In these cases, the system also provides a downward scaling allowing the use of the 4px unit.
 
-![grid desktop](../../../images/Grid_desktop_03.png)
+Either way, values ​​less than 8 px will be primarily associated with the anatomy of the interface's basic elements rather than the specification of distances between elements and page composition. Making use of the terminology proposed by atomic design, these minimum measures would be used almost exclusively to define the internal anatomy of elements like atoms or molecules. Taking care at all times that the block that forms the element fits the base grid of 8 px. 
 
-According to this values, we set the reference container for large viewports to 1248 px width.
+As for example the molecule formed by a label and a text input, or the one formed by a label, an input an a helper text.
 
-![grid desktop](../../../images/Grid_desktop_04.png)
+![form element internal spacing](../../../images/Grid03.png)  
 
-This defines a column width of 80 px.
+To know a little more about the grid of 8 px we recommend checking some of the articles that have served as reference and inspiration for us to adopt this pattern.
 
-![grid desktop](../../../images/Grid_desktop_05.png)
+* [8pt Grid](https://spec.fm/specifics/8-pt-grid)
+* [Intro to The 8-Point Grid System](https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632)
 
-This way, every basic structural element fits on a 8 px base grid.
+### Column System
 
-![grid desktop](../../../images/Grid_desktop_06.png)
+The column system is the main structural pattern when organizing and arranging elements on page horizontally.
 
-The 8px module becomes then the main reference for the metrics of the elements, the distances between them and the structures they make up
+It is not so much a reference to establish the distances between small elements like the different icons or buttons that can coexist in a toolbar for example. It is more a layout framework oriented to organize and establish divisions between medium and large blocks of content.
 
-![grid desktop](../../../images/Grid_desktop_07.png)
+![form element internal spacing](../../../images/Grid04.png)
 
-Then every element of the interface is designed from this 8px grid.
+![form element internal spacing](../../../images/Grid05.png)
 
-![grid desktop](../../../images/Grid_desktop_08.png)
+The lexicon system is a 12 column structure based on the Bootstrap CSS Grid, where we introduce a change in the value of the gutter to fit our base grid. In this case the gutter would be 24px. A value that we find repeated in other basic structural references of the system.
 
-![grid desktop](../../../images/Grid_desktop_08b.png)
+![form element internal spacing](../../../images/Grid06.png)
 
-This value of 8 px (and its multiples) becomes the reference value for distances between elements.
+The columns behave in a fluid manner, so that their width will always be a relative value that varies depending on the size of their parent container. The gutter is the only value that remains fixed.
 
-![grid desktop](../../../images/Grid_desktop_09.png)
+For small viewport sizes a gutter value of 16 px is set.
 
-And for larger distances between components vertically the main reference value is the baseline value of 24px.
+In small devices we also reduce the possibilities of combining columns with the aim of defining a horizontal compositional reference adapted to their spatial constraints.
 
-![grid desktop](../../../images/Grid_desktop_10.png)
+This way, for example, for viewports between 576 px and 768 px we define a maximum of 4 reference columns formed by a combinations of 3 system columns (4 x 3 = 12). 
 
-![grid desktop](../../../images/Grid_desktop_11.png)
+![form element internal spacing](../../../images/GridTablet01.png)
 
-![grid desktop](../../../images/Grid_desktop_12.png)
+![form element internal spacing](../../../images/GridTablet02.png)
 
-### Small Viewports
+For viewports smaller than 576 px we define a maximum of 2 reference columns formed by a combinations of 6 system columns (6 x 2 = 12). 
 
-The column system is configured based in 4 columns.
-
-![grid mobile](../../../images/Grid_mobile_01.png)
-
-The gutter between columns takes the value of 16 px.
-
-![grid mobile](../../../images/Grid_mobile_02.png)
-
-The container will have a 16px padding left and right.
-
-![grid mobile](../../../images/Grid_mobile_03.png)
-
-The width of the columns will depend on the width of the container.
-The width of the container will depend of the width of the viewport of each device
-For a viewport of 320px width:
-
-![grid mobile](../../../images/Grid_mobile_04.png)
-
-### Sizes and Spaces values
-
-TODO: REVIEW
-
-![Sizes and spacing](../../../images/SizesSpacing.png)
-
-| Value | Usage |
-| ----- | ----- |
-| 4px | Exceptional value. used only in margins to adjust distances with line heights |
-| 8px | Used as minimum unit and reference value to build all elements |
-| 12px | Exceptional value. used only in margins. |
-| 16px | Used as general margin size in every container. |
-| 24px | Used margin distance between sections in forms. |
-| 48px | Used margin distance between sections in forms. |
+The proposed combinations associated with the different viewport sizes are detailed in the breakpoints table.
 
 
+![form element internal spacing](../../../images/GridMob01.png)    ![form element internal spacing](../../../images/GridMob02.png)
+
+
+### Vertical Rhythm
+
+The grid base of 8 px is also established as baseline in order to set the distances between elements at vertical level. 
+
+But when defining the vertical spacing between paragraphs of text and elements or groups of elements that somehow configure medium and large size structural blocks is better to have a greater value as a reference. Taking the name from bootstrap variables, we call it “spacer-y”.
+
+To set this value, we will refer to the line height of the main system font style; 24px. With this reference we seek to establish a pattern that helps to avoid the dance of measures and favors the consistency in the vertical rhythm.
+
+![form element internal spacing](../../../images/GridVertRhythm01.png)
+
+![form element internal spacing](../../../images/GridVertRhythm02.png)
+
+![form element internal spacing](../../../images/GridVertRhythm03.png)
+
+For small viewports, we can make adjustments with the aim of optimizing vertical space but always respecting the base grid. Normally in these cases we use the 16px spacer-y as we do for the gutter between columns and the lateral space of the container.
+
+![form element internal spacing](../../../images/GridVertRhythm04.png)
+
+It is understood that this metric pattern does not solve the vertical space needs of all possible cases. Either way it is established as a starting point on which to make timely adjustments when necessary.
+
+### Grid Containers
+
+Lexicon provides two types. A  fixed width container and a fluid container with relative width.
+
+
+#### Fixed width container
+
+This container is defined by a value of maximum width. This value is adjusted to the sizes of the different viewports according to predefined breakpoints.
+
+![form element internal spacing](../../../images/GridContainer01.png)
+
+![form element internal spacing](../../../images/GridContainer02.png)
+
+#### Fluid width container
+
+The width of this container is adjusted fluidly according to the size of the viewport.
+
+![form element internal spacing](../../../images/GridContainerFluid01.png)
+
+![form element internal spacing](../../../images/GridContainerFluid02.png)
+
+This container can have lateral padding or not depending on the needs of component displayed. We clear this lateral padding for the tables or lists we use in FARO for example.
+
+![form element internal spacing](../../../images/GridContainerFluid03.png)
+
+Or when we displayed this components on a small viewport either in FARO or DE in order to optimize the horizontal space.
+
+TODO:
+
+![form element internal spacing](../../../images/GridContainerFluid04.png)
+
+### Breakpoint table
+
+In this table you can visualize all the variations of the layout system values according to the different breakpoints.
+
+| Breakpoint | Device Size | Container Max Width | Reference Columns | Gutter | Spacer-y |
+| ---------- | ----------- | ------------------- | ----------------- | ------ | -------- |
+| > 0px | Extra small devices (Portrait phones) |  | 2 | 16px | 16px |
+| > 576px | Small devices (Landscape phones) | 540px | 4 | 16px | 16px |
+| > 768px | Medium devices (Tablets) | 768px | 4 | 24px | 24px |
+| > 992px | Large devices (Desktops) | 960px | 12 | 24px | 24px |
+| > 1280px | Extra large devices (Large desktops) | 1248px | 12 | 24px | 24px |

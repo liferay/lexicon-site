@@ -12,7 +12,7 @@ weight: 2
 ### Usage
 
 * Inline edit table is the pattern to use when listing information that may require a quick edition. This pattern is oriented to scenarios like ecommerce where edition is a frequent action.
-* This table type always has the "Edit" button visible as its main identifying caracteristic.
+* This table type always has the "Edit" button visible as its main identifying characteristic.
 * Each row has two different modes:
 	* View mode
 	* Edit mode

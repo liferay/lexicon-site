@@ -24,7 +24,7 @@ NOTE:
 | ---- | ----- |
 | Accessibility | 2017.06.14 Starting description from a design perspective |
 | Color | 2017.07.12 Updated with field borders colors |
-| Grid | 2017.07.19 WIP |
+| Grid | **2017.08.16 updated** |
 | Typography | 2017.06.25 Adapted with the advices |
 | Writing style | 2017.06.14 Done |
 

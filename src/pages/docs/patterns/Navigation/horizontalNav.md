@@ -13,7 +13,7 @@ weight: 2
 
 ### Usage
 
-Navbars in are used inside applications to provide navigation among their different pieces.
+Navbars in are used inside applications to provide navigation among their different application sections.
 
 A navbar is always horizontal and can contain one or several entry points placed from left to right. Place first the most important ones.
 

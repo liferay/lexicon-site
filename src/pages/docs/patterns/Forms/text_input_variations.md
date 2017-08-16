@@ -33,7 +33,7 @@ A search field can have autocompletition showing a list of options below the fie
 
 ## Date field or Date selector
 
-Date selector allows to select a date. This date selector is similar to the one in HTML5 and includes same functionlaties. Lexicon recommends to use native date selectors as users are used to them. Use this one in desktop viewport.
+Date selector allows to select a date. This date selector is similar to the one in HTML5 and includes same functionalities. Lexicon recommends to use native date selectors as users are used to them. Use this one in desktop viewport.
 
 ![multiple selector active state](../../../images/DatePickerOpen.png)
 
