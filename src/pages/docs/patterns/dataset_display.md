@@ -95,9 +95,4 @@ The check box in the management bar selects/unselects all elements in the visual
 
 
 ### Drag and drop example
-
-The following animations shows how a drag and drop action works in a list view.
-
-TODO: Update
-
-![table drag and drop example](../../../images/tableDragDrop.gif)
+TODO

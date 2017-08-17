@@ -44,12 +44,13 @@ NOTE:
 | Forms > forms | 2017.07.22 Updated |
 | Forms > CRT | 2017.06.14 Complete. |
 | Forms > Multi Step Form | 2017.07.22 Process bar renamed and placed in forms. |
+| Forms > Multi Step Simplified | **2017.08.17 NEW.** |
 | Forms > Selectors | 2017.06.14 In process. Missing multiple selector |
 | Forms > Text input | 2017.07.12 Variations extracted to other page |
 | Forms > Text input variations | 2017.07.13 Search autocomplete |
 | Forms > Text input group | 2017.07.12 Style changed. |
 | Icons | **2017.08.10 Updated with new icons**. |
-| Link | 2017.07.11 NEW. Complete |
+| Link | **2017.08.17 NEW. Complete** |
 | List | 2017.07.22 Updated with sections |
 | Loading indicator | 2017.06.14 Pending. |
 | Modals | 2017.06.14 Done. Missing attributes |
@@ -60,14 +61,14 @@ NOTE:
 | Navigation > SideNav | 2017.07.12 Updated style in DE |
 | Navigation > Vertical navigation | 2017.07.12 Updated with nested example |
 | Pager | 2017.06.14 Pending. |
-| Pagination | 2017.06.14 In process. Missing attributes |
+| Pagination | **2017.08.17 Updated** |
 | Panel | 2017.06.14 Pending. |
 | Popover and tooltips | 2017.07.12 Popver attributes updated. |
 | Process bar | 2017.07.12 Complete. Modified examples and included mobile |
 | Progress bar | 2017.06.14 In process. |
 | Sidebar | 2017.06.14 Pending. Old one. |
 | Table > Table | 2017.07.22 Updated with sections |
-| Table > Inline edit table | 2017.07.22 WIP |
+| Table > Inline edit table | **2017.08.17 NEW** |
 | Tabs | 2017.06.14 Done. Missing attributes. |
 | Timelines | 2017.06.14 Pending. Old |
 | Toolbar > Toolbar | 2017.06.14 Done |

@@ -9,6 +9,8 @@ weight: 2
 
 {$page.description}
 
+![table inline edition, view mode](../../../images/TableInlineEdition.png)
+
 ### Usage
 
 * Inline edit table is the pattern to use when listing information that may require a quick edition. This pattern is oriented to scenarios like ecommerce where edition is a frequent action.
@@ -25,7 +27,7 @@ weight: 2
 * To enter edit mode the user has to click on Edit button.
 * More actions are possible under the actions button. In case there is an edition screen for the element name it "Advanced edit".
 
-TODO: Plot view mode row
+![table inline edition row view configuration](../../../images/TableInlineEditRowView.png)
 
 #### Edit mode
 * In this mode those row entries that are possible to edit get transformed into a certain input field: text field, numeric field, selector, etc.
@@ -33,8 +35,8 @@ TODO: Plot view mode row
 	* Save: saves the changes and gets into view mode.
 	* Cancel: discards the changes and into view mode.
 
-TODO: Plot view mode row
+![table inline edition row edit configuration](../../../images/TableInlineEditRowEdit.png)
 
 ### Example
 
-TODO: Plot a table with 4 rows and 1 in edit mode
+![table inline edition with first row in edition mode and first field on focus](../../../images/TableInlineEditionFocus.png)

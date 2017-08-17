@@ -66,7 +66,15 @@ Attributes
 * Font weight: inherit
 * Hover: underline
 
-
-### Example
-
 ![link example in asset context with several pointers on hover](../../../images/LinkExampleInContext.png)
+
+
+#### External Link
+
+For hyperlinks that point at (target) any domain other than the domain the link exists on (source) we provide a tooltip specifying this behavior.
+
+![external link with tooltip on hover action](../../../images/LinkExternalTooltip.png)
+
+For accessibility purposes we also provide an icon to illustrate this behavior. This icon is visually hidden by default and only accessible on focus or when using assistive technologies such as screen readers. 
+
+![external link with external link icon on focus action](../../../images/LinkExternalFocus.png)
