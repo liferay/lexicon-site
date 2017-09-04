@@ -22,7 +22,7 @@ It is very important to use this pattern only when it is needed as it is a very 
 #### When must not use it
 
 * Error prevention: put first the effort on your interface to guide the user on what is going to happen. Clear copy’s prevent the usage of confirmation messages.
-* Feedback: providing extremely clear feedback can prevent the usage ocn confirmation messages.
+* Feedback: providing extremely clear feedback can prevent the usage on confirmation messages.
 * Undo actions: if action has an undo action you must never use a confirmation message. A clear example is “Move to Recycle Bin”.
 * Don’t use it if it is not really needed.
 
@@ -32,9 +32,7 @@ Writing a good confirmation message is relevant to make it really effective in s
 * Do not write generic and open questions. Ex: Are you sure?
 * Be clear and concise.
 * Provide exact data to your user so there is no uncertainty on the action to be confirmed.
-* Do not use Yes/No texts in the buttons:
-    * Use clear text in button answers reinforcing the action if necessary. Ex: “Yes, delete site.” & “No, keep site.”
-    * Use pairs as Agree/Disagree, Save/Discard
+* Address your questions and statements so they can be easily answered with "Ok" and "Cancel" as they are forced by the browser.
 
 ### Implementation
 Confirmation messages are browser native. Therefore Lexicon does not style them. Browser native confirmation messages are accessible, and work perfectly in every device.

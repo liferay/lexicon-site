@@ -50,25 +50,7 @@ The lexicon system is a 12 column structure based on the Bootstrap CSS Grid, whe
 
 ![form element internal spacing](../../../images/Grid06.png)
 
-The columns behave in a fluid manner, so that their width will always be a relative value that varies depending on the size of their parent container. The gutter is the only value that remains fixed.
-
-For small viewport sizes a gutter value of 16 px is set.
-
-In small devices we also reduce the possibilities of combining columns with the aim of defining a horizontal compositional reference adapted to their spatial constraints.
-
-This way, for example, for viewports between 576 px and 768 px we define a maximum of 4 reference columns formed by a combinations of 3 system columns (4 x 3 = 12). 
-
-![form element internal spacing](../../../images/GridTablet01.png)
-
-![form element internal spacing](../../../images/GridTablet02.png)
-
-For viewports smaller than 576 px we define a maximum of 2 reference columns formed by a combinations of 6 system columns (6 x 2 = 12). 
-
-The proposed combinations associated with the different viewport sizes are detailed in the breakpoints table.
-
-
-![form element internal spacing](../../../images/GridMob01.png)    ![form element internal spacing](../../../images/GridMob02.png)
-
+The columns behave in a fluid manner, so that their width will always be a relative value that varies depending on the size of their parent container. The gutter is the only value that remains fixed when the viewport resizes.
 
 ### Vertical Rhythm
 
@@ -90,45 +72,34 @@ For small viewports, we can make adjustments with the aim of optimizing vertical
 
 It is understood that this metric pattern does not solve the vertical space needs of all possible cases. Either way it is established as a starting point on which to make timely adjustments when necessary.
 
-### Grid Containers
+### Containers
 
 Lexicon provides two types. A  fixed width container and a fluid container with relative width.
 
+#### Fluid container
+
+The width of this container is adjusted fluidly according to the size of the viewport.
+
+![form element internal spacing](../../../images/grid_container_fluid.png)
+
+![form element internal spacing](../../../images/grid_container_fluid_g.png)
 
 #### Fixed width container
 
 This container is defined by a value of maximum width. This value is adjusted to the sizes of the different viewports according to predefined breakpoints.
 
-![form element internal spacing](../../../images/GridContainer01.png)
+![form element internal spacing](../../../images/grid_container_fixed.png)
 
-![form element internal spacing](../../../images/GridContainer02.png)
-
-#### Fluid width container
-
-The width of this container is adjusted fluidly according to the size of the viewport.
-
-![form element internal spacing](../../../images/GridContainerFluid01.png)
-
-![form element internal spacing](../../../images/GridContainerFluid02.png)
-
-This container can have lateral padding or not depending on the needs of component displayed. We clear this lateral padding for the tables or lists we use in FARO for example.
-
-![form element internal spacing](../../../images/GridContainerFluid03.png)
-
-Or when we displayed this components on a small viewport either in FARO or DE in order to optimize the horizontal space.
-
-TODO:
-
-![form element internal spacing](../../../images/GridContainerFluid04.png)
+![form element internal spacing](../../../images/grid_container_fixed_g.png)
 
 ### Breakpoint table
 
 In this table you can visualize all the variations of the layout system values according to the different breakpoints.
 
-| Breakpoint | Device Size | Container Max Width | Reference Columns | Gutter | Spacer-y |
-| ---------- | ----------- | ------------------- | ----------------- | ------ | -------- |
-| > 0px | Extra small devices (Portrait phones) |  | 2 | 16px | 16px |
-| > 576px | Small devices (Landscape phones) | 540px | 4 | 16px | 16px |
-| > 768px | Medium devices (Tablets) | 768px | 4 | 24px | 24px |
-| > 992px | Large devices (Desktops) | 960px | 12 | 24px | 24px |
-| > 1280px | Extra large devices (Large desktops) | 1248px | 12 | 24px | 24px |
+| Breakpoint | Device Size | Container Max Width | Spacer-y |
+| ---------- | ----------- | ------------------- | -------- |
+| < 576px | Extra small devices (Portrait phones) | None (auto) | 16px |
+| &ge; 576px | Small devices (Landscape phones) | 540px | 24px |
+| &ge; 768px | Medium devices (Tablets) | 720px | 24px |
+| &ge; 992px | Large devices (Desktops) | 960px | 24px |
+| &ge; 1280px | Extra large devices (Large desktops) | 1248px | 24px |
