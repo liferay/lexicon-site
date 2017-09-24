@@ -11,10 +11,14 @@ weight: 1
 
 ### Usage
 
-Sidebar is basically an information container where to display information. This information can be of the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy. The side bar can be configured in light background color or inverse (dark).
+Sidebar is basically an information container where to display information relevant information that does not fit into the table, list, card or any other visualization. This information can be of the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy.
 
-![sidebar example for an image in documents and media](../../../images/sidebarExamples.png)
+On multiple selection, this panel shows the last selected item.
 
-The following example shows the information panel for an element in the document library. In this case, we want to show differnt information as the image itself, the urls, and other metadata are shown.
+![side bar example with cards view. The sidebar is triggered from the management bar and open in the right side of the screen](../../../images/SidebarExample.png) 
 
-![sidebar example for an image in documents and media](../../../images/sidebarExample.gif)
+Sidebar is pretty similar in mobile, but it covers the complete height of the screen. A tap in the shadowed area closes the side bar.
+
+![side bar example with cards view. The sidebar is triggered from the management bar and open in the right side of the screen in mobile](../../../images/SidebarExampleMobile.png) 
+
+

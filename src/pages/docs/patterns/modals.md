@@ -13,15 +13,23 @@ weight: 1
 
 * Modals can be build in different sizes and configurations. Depending on the amount of content you have you will decide one of them.
 * Lexicon recommends to not use full-width size as it will be like a complete new page. If you are in this situation please consider creating a new page instead of a modal.
-* Modals belong to a screen, therefore a modal window must never be triggered from another modal window.
+* Modals belong to a screen, therefore a modal should not be triggered from another modal window (read below Modal over modal).
 * When a modal has footer, the actions are placed inside and aligned to the left. There is an order of importance and the sequence is: Primary button (only one), secondary button, and button link.
 
 | Do's | Dont's |
 | ---- | ------ |
 | Use it to capture the user attention to something that is more important. | Do not use it for complex cases where you need to display a lot of information or complete a long form. In this case thing about using a new page. |
-| Use it for simple content cases. | Do never call a modal window from another modal window. Modal windows are subordinated to pages.     |
+| Use it for simple content cases. | Try not triggering a modal window from another modal window. Modal windows are subordinated to pages.     |
 | Use it if you need to cut the user flow to display concrete and certain information, or if you need to capture certain data from the user. | Do never blind completely the background page information. |
 
+#### Selection inside a modal
+
+* Multiple selection is done using checkboxes and clicking in "Done" labeled button.
+* Single selection is done without radio buttons, just clicking anywhere in the row. There is not need of modal footer.
+
+#### Modal over modal
+
+Modal over modal is a not desired situation. Please, try to solve this situation in another way, like using a full page or driving the process to the correct place. In case this happens, make sure to provide a good experience preventing first modal closing by accidental interaction (as an example).
 
 ### Size
 

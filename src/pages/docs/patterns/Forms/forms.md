@@ -100,6 +100,13 @@ Interior form actions should not be as notorious as general actions. Therefore, 
 ![button primary default size defuault state](../../../images/ButtonIconSecondary.png)   
 
 
+### Boolean situations
+
+Boolean situations are those yes/no situations usually solved with checkboxes.
+* Try to be always as explicit as possible to let the user know what is the outcome of the decision. 
+* Do not hide helpful information to the user in popovers, alerts, or secondary text.
+
+![boolean situations solved with checkboxes, relevant information/help is explicit](../../../images/FormBooleanSituations.png)
 
 
 

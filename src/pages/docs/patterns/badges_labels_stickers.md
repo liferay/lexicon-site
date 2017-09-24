@@ -19,7 +19,9 @@ Badges help highlight important information such as notifications or new and unr
 * Badges are used only for integers. 
 * Badges can not be close or link to another a page. They are only used as informative text.
 * Badges are not thought to always indicate the exact number of elements. In that case please use plain text. Badges work for exact numbers up to 999. From there we use K from Thousands (5K for 5.231) , M for Millions (2M for 2.100.523).
-* Red background color badge is only dedicated to notifications. Any other kind of counter in the system must have another color.
+* Red background color badge is only dedicated to:
+	* Notifications: always placed nearby a user profile or a Product menu option.
+	* Errors: in tables and/or lists.
 * In case you need a pattern where to write non-numeric values, labels is the pattern to use.
 
 ### Attributes

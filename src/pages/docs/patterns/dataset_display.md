@@ -96,3 +96,7 @@ The check box in the management bar selects/unselects all elements in the visual
 
 ### Drag and drop example
 TODO
+
+### Breakpoints
+
+Please visit this [InVision](https://liferay.invisionapp.com/share/VHD8PYBEZ) to see the breakpoint definition for the dataset displays.

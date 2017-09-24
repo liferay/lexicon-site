@@ -41,9 +41,9 @@ Dropdown menu with dividers are thought to be used in actions menus. Dividing th
 
 ![dropdown menu with search field](../../../images/DropdownActions.png)
 
-#### Dropdown with checkbox
+#### Dropdown with checkbox or radio button
 
-This dropdown configuration is suitable to filter in or out dataset elements.
+Dropdowns can be configured to have checkboxes and/or radio button groups. A checkbox configuration can be suitable to filter in or out dataset elements. While, a radio button configuration can be suitable to establish the order criteria in a dataset.
 
 ![dropdown menu with a list of checkbox options](../../../images/DropdownCheckbox.png)
 
@@ -121,7 +121,7 @@ The previous image shows a case with scrollbar to let your understand the scroll
 Guideline:
 
 1. The menu must be splitted in 2 areas:
-	- Primary actions: always contain the generic actions. Example: folder, basic web content
+	- Primary actions: always contain the generic actions. Example: folder.
 	- Secondary actions: are sets of actions that attend a certain category, for example: structures, document types…
 2. Secondary organization:
 	- Make a first group of favorites in case they exist.
