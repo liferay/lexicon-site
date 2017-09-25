@@ -1,5 +1,5 @@
 ---
-title: "Image Selector WIP"
+title: "Image Selector"
 description: "Image selector allows the user to select images from a grids images in a visual way that primes the images over other metadata that an image file can have."
 layout: "guide"
 weight: 1
@@ -19,11 +19,27 @@ weight: 1
 * Hovering an image allows to see its title name. Long titles have ellipsis in the middle allowing to see the end of the title to differentiate between image versions.
     * Image titles are always shown in touch interfaces.
 
-#### Desktop
 
-#### Mobile
+### Image status
 
-### Attributes
+#### Default
 
-See more [InVision file](https://liferay.invisionapp.com/d/main/#/console/11698269/246909656/preview).
+![image default state](../../../images/ImageSelectorImageDefault.jpg)
+
+#### Hover
+
+![image hover state](../../../images/ImageSelectorImageHover.jpg)
+
+#### Selected
+
+![image hover state](../../../images/ImageSelectorImageSelected.jpg)
+
+Image selector example in deskop:
+
+![image selector example in desktop size](../../../images/ImageSelector.jpg)
+
+In mobile as there is no hover state all images are forced to have always the title present.
+
+![image selector example in mobile size](../../../images/ImageSelectorMobile.jpg)
+
 

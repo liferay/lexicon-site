@@ -1,6 +1,6 @@
 ---
-title: "Columns View"
-description: "Columns view, also knows as Miller columns or Cascading columns, is a visualization type that allows to move faster in a tree view seeing several depth levels at same time."
+title: "Columns View WIP"
+description: "Columns view, also known as Miller columns or Cascading list, is a visualization type that allows to move faster in a tree view seeing several depth levels at same time."
 layout: "guide"
 weight: 1
 ---
@@ -19,10 +19,12 @@ Columns view is a good pattern to navigate through dictionaries being able to se
 
 Do not use this pattern if you need to show information further from the item title.
 
+#### Behaviour
+
+In this pattern it is pretty important to always update the row state in each of the columns and it is also important to update the breadcrumb as it is an important component in this pattern as it provides feedback on the element position in the tree.
+
 
 TODO:
 Plot different states of the row
-
 Example previous to search
-
 Example after search

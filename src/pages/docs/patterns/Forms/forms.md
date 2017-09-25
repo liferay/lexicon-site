@@ -59,7 +59,7 @@ It can be the case that inside a form or a fieldset only one of the input fields
 1. Set mandatory mark in the fieldset title.
 2. It is recommended to include a short help text below the title. "Please enter at least one of the following fields."
 3. All fields must be marked with the validation color as it corresponds.
-4. The only validation message, in this case, is shown as an alert message at the top of the form. A good help message allows the user identifying the error and how to solve it.
+4. The only validation message is shown for just one (better the first) input in the fields group. A good help message allows the user identifying the error and how to solve it.
 5. Once the validation conditions are met, the alert message disappears.
 6. Losing focus triggers validation unless one field in the group field is focused.
 
