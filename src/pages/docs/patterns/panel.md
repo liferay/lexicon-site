@@ -1,5 +1,5 @@
 ---
-title: "Panel WIP"
+title: "Panel"
 description: "Panels separate your content."
 layout: "guide"
 weight: 1
@@ -8,6 +8,8 @@ weight: 1
 ### Description
 
 {$page.description}
+
+*Work in progress*
 
 ### Usage
 

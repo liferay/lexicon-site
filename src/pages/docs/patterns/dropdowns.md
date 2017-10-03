@@ -135,7 +135,6 @@ Guideline:
 4. The limit of this dropdown menu is 15 actions.
 
 
-
 ### Attributes
 
 * Max width of a dropdown menu: 288px

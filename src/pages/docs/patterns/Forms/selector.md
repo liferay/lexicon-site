@@ -34,12 +34,3 @@ This pattern is completely different from a dropdown as a selector is a native e
 
 Select button used to select more than one option from a simple list.
 
-### States
-
-#### Default
-
-![multiple selector default state](../../../images/lexiconDefault.png)
-
-#### Active
-
-![multiple selector active state](../../../images/lexiconDefault.png)

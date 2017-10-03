@@ -93,9 +93,3 @@ Images can be in different states:
 * It can be the case that the image uploader requires of checkboxes for a specific requirement
 
 ![image default and selected state](../../../images/FileUploadImageStatesChecbox.png)
-
-
-### Attributes
-
-See more in [InVision](https://liferay.invisionapp.com/d/main/#/projects/prototypes/11697649).
-

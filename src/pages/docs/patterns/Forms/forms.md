@@ -67,21 +67,14 @@ It can be the case that inside a form or a fieldset only one of the input fields
 
 ![Form At Least One Field Validation](../../../images/FormAtLeastOneFieldValidation.png)
 
-TODO: create a gif to express the interaction
-
 ### Repeatable fields
 
 #### Single repeatable field
 Single repeable field is useful when the user must instroduce several data of the same type from different inputs, no matter the number nor the order.
 
-TODO: complete
-![Content block example](../../../images/lexiconDefault.png)
-
 #### Set of repeatable fields
 This allow you let the user add contents of a same type in a form. This is usually used to contribute with more form pieces that allow the user to specify more information. A set always bring the possibility to add or remove sets. See the following example:
 
-TODO: complete
-![Content block example](../../../images/lexiconDefault.png)
 
 ### Actions
 

@@ -79,13 +79,10 @@ Dropdown buttons are always used together with a dropdown menu. This button vari
 
 Split buttons are used in those cases where you need to offer the user a quick main action but also secondary actions.
 
-![button splitted default size](../../../images/lexiconDefault.png)
 
 #### Button group
 
 Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.
-
-![button gruop or segmented button, 3 segments, default size](../../../images/lexiconDefault.png)
 
 #### Action button
 
@@ -99,7 +96,4 @@ Actions buttons can be found in two different ways:
 
 ![Actions or kebab button](../../../images/ButtonActionKebab.png)  
 
-### Attributes
-
-![button attributtes](../../../images/lexiconDefault.png)
 

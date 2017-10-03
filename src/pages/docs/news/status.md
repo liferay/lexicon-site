@@ -3,20 +3,16 @@ title: "Status"
 description: "Lexicon upcoming site status"
 layout: "guide"
 weight: 1
-Hidden: "no"
+Hidden: "yes"
 ---
 
 ## Last update
 
-2017.09.25
+2017.10.03
 
 ## Updates
 
-NOTE:
-
-*Many patterns include now links to inVision so you can check complex interactions. These links will be removed when the site is published.*
-
-*Attributes will be included at the very end of the project. Please go to [Master file](https://liferay.invisionapp.com/share/PSAI8IVRY) to know more about attributes with the inspector tool provided by inVision*
+NOTE: InVision files removed.
 
 ### Design principles
 

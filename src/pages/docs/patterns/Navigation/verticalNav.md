@@ -24,7 +24,4 @@ Attributes:
 
 In mobile devices the navigation is translated into a dropdown menu.
 
-TODO: Plot image
-
-
 ![nested navigation translated into a selector with a dropdown menu](../../../images/NavigationVerticalMobile.png)

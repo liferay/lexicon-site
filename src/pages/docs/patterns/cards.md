@@ -90,13 +90,8 @@ Card sections help to separate different contents by a certain categorization or
 
 ![card section](../../../images/CardViewGroupSeparator.png)
 
-### Attributes
-
-![default card layout](../../../images/lexiconDefault.png)
 
 ### Examples of use
 
-![three different examples of card configuration](../../../images/lexiconDefault.png)
-
-More examples can be found in [dataset template](./Templates/datasetTemplate.html).
+Examples can be found in [dataset template](./Templates/datasetTemplate.html).
 

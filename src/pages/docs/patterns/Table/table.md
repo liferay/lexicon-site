@@ -53,11 +53,6 @@ When the row is selected the action do not appear in hover state.
 * Drag and drop is possible for moving selected elements into a folder. A click and drag over a non selected element implies selection.
 
 
-### Row attributes
-
-TODO:
-
-
 ### Table header
 
 All column headers are always left-aligned, 14px, and regular weight.
@@ -104,15 +99,8 @@ While main column must be always placed on the leftmost side, depending on the n
 
 #### Example
 
-Please visit [inVision](https://liferay.invisionapp.com/share/SYAH0QADM) example to visually understand the behaviors.
-
 ![table row in selected state](../../../images/TableExample.png)
 
-### Mobile
-
-#### Example
-
-Please visit [inVision](https://liferay.invisionapp.com/share/YMAHIR749) example to visually understand the behaviors.
 
 
 

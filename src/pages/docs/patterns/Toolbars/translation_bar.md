@@ -18,6 +18,4 @@ hide: "yes"
 * Changing the default language is possible using the link, which triggers a modal where to change the default language.
 
 
-TODO: images
-
 

@@ -62,19 +62,11 @@ List sections help to separate different contents by a certain categorization or
 
 ![List section](../../../images/ListViewGroupSeparator.png)
 
-### Row Attributes
-
-TODO:
-
 #### Example of use
 
 ![list view example with 3 different states in different entries](../../../images/ListViewExample.png)
 
 More examples can be found in [dataset template](./Templates/datasetTemplate.html).
-
-#### Example
-
-Please visit [inVision](https://liferay.invisionapp.com/share/YAAFKJ4WN) example to visually understand the behaviors.
 
 ### Responsiness
 
@@ -82,6 +74,3 @@ Please visit [inVision](https://liferay.invisionapp.com/share/YAAFKJ4WN) example
 * Ellipsis will be used to suggest more content available when is impossible to show all in a small screen. These ellipsis won’t be actionable. They are only indicative. The whole content will be showed on the item full description state.
 * In case a list row has tags they can’t occupy more than one line. In the case that a tags row is longer, use an ellipsis.
 
-#### Example
-
-Please visit [inVision](https://liferay.invisionapp.com/share/HEAGTZBRV) example to visually understand the behaviors.

@@ -82,9 +82,6 @@ How selection works using the management bar:
 * State 2: There is a "Select all" that selects all elements in the dataset.
 * State 2: Unselecting the checkbox deselects all selection done over the dataset.
 
-### Attributes
-
-TODO:
 
 ### Mobile
 

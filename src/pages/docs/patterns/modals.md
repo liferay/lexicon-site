@@ -68,6 +68,10 @@ This case is thought for those cases where you need to just show text and button
 
 It is always possible to bring an iFrame inside the body. For more information about this check Clay.
 
+#### Modal overlay color
+
+Modal overlay color is main lighten 8% color with an alpha value of 0.8.
+
 #### Modals for status messages
 
 Modal headers can be configured to use modals as status messages. This solution is proposed to give more emphasis on blocking actions that the use must read and pay careful attention.
@@ -85,6 +89,3 @@ When a modal reaches the mobile viewport size its look and feel is transformed t
 
 ![modal window mobile version always full screen](../../../images/ModalMobile.png)
 
-### Attributes
-
-TODO

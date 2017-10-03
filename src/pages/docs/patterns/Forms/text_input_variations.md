@@ -37,14 +37,10 @@ Date selector allows to select a date. This date selector is similar to the one 
 
 ![multiple selector active state](../../../images/DatePickerOpen.png)
 
-Please visit [inVision](https://liferay.invisionapp.com/share/PSAI8IVRY#/228431317_Calendar_Text_Field) example to visually understand the behavior.
-
-
 ## Numeric field
 
 Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisims to increase and decrease the value.
 
-TODO: 
 
 ## Password field
 

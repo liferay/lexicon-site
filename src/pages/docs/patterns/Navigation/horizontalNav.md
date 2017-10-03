@@ -43,9 +43,6 @@ Positive navigation bar is defined for Sites.
 Negative navigation bar is defined for Admin. It is always placed right below the header.
 ![navigation bar with 5 entries, first one seleted](../../../images/Navbar.png)
 
-### Attributes
-
-TODO:
 
 
 

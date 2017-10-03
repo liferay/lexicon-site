@@ -66,8 +66,4 @@ Example of use:
 
 ![push alert example. Placed right below the last horizontal navigation label](../../../images/AlertPushExample.png)
 
-### Attributes
-
-TODO:
-Font size 14px
 
