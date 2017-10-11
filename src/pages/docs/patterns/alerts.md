@@ -32,7 +32,6 @@ weight: 1
 
 ### Variations
 
-TODO: example of each one in use and clear placement definition.
 Definir el uso de comfirm messages.
 
 #### Toast

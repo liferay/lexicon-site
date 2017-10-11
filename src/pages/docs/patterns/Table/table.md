@@ -52,6 +52,9 @@ When the row is selected the action do not appear in hover state.
 * A cell entry could include a button as main action of a table entry. An example could be "Execute".
 * Drag and drop is possible for moving selected elements into a folder. A click and drag over a non selected element implies selection.
 
+#### Row hover
+
+![table view row hover](../../../images/TableViewRowHover.gif)
 
 ### Table header
 

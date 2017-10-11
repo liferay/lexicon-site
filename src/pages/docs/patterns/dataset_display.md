@@ -97,3 +97,7 @@ The check box in the management bar selects/unselects all elements in the visual
 ### Drag and drop example
 
 ![collective actions displayed both in management bar and from actions menu](../../../images/DatasetDisplayDragDrop.png)
+
+### Change view
+
+![dataset display view change animation](../../../images/DatasetDisplayChangeView.gif)
