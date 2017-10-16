@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 const fs = require('fs');
-const lexicon = require('lexicon-ux');
+const clay = require('clay');
 const path = require('path');
 
 const args = process.argv.slice(2);
@@ -69,7 +69,7 @@ module.exports = {
 		var iconsDoc = _.get(data, 'index.children.docs.children.patterns.children.icons');
 
 		if (iconsDoc) {
-			var iconsPath = path.join(lexicon.buildDir, 'images', 'icons');
+			var iconsPath = path.join(clay.buildDir, 'images', 'icons');
 
 			var files = fs.readdirSync(iconsPath);
 
@@ -118,7 +118,7 @@ module.exports = {
 	},
 	metalComponents: ['electric-quartz-components'],
 	sassOptions: {
-		includePaths: ['node_modules', lexicon.includePaths]
+		includePaths: ['node_modules', clay.includePaths]
 	},
 	vendorSrc: [
 		{
@@ -126,11 +126,11 @@ module.exports = {
 			src: 'node_modules/source-sans-pro/**'
 		},
 		{
-			dest: 'dist/vendor/lexicon',
-			src: path.join(lexicon.buildDir, 'images', 'icons', '*')
+			dest: 'dist/vendor/clay',
+			src: path.join(clay.buildDir, 'images', 'icons', '*')
 		},
 		{
-			src: path.join(lexicon.srcDir, 'js', 'svg4everybody.js')
+			src: path.join(clay.srcDir, 'js', 'svg4everybody.js')
 		}
 	]
 };
