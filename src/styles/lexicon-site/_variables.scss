@@ -1,12 +1,36 @@
 $output-bourbon-deprecation-warnings: false;
 
+$base-size: 24px; // 1.5rem aprox
+
+$screen-md: 900px;
 $screen-sm: 900px;
+$screen-xs: 768px;
+
+$grid-float-breakpoint: $screen-sm;
 
 $content-max-width: 960px;
 
 $sidebar-width: 376px;
 
+// Color
+
+$bg-color: #F5F5F8;
+$footer-bg-color: #272833;
+
+$brand-primary: #4887FF !default;
+
 $brand-dark: #272833;
+$brand-dark-lighter: #F1F2F5;
+
+$brand-light: #FFF;
+
+$brand-light-secondary-text: #A7A9BC;
+$brand-light-text: $brand-light;
+
+$brand-lighten: #FBF8F5;
+
+$text-color: #000 !default;
+
 $brand-dark-active: #2E2F3C;
 $brand-dark-hover: #2B2D39;
 $brand-darker: #1E1F27;
@@ -17,6 +41,8 @@ $brand-blue: #4887FF;
 $brand-border-color: #CDCED9;
 $content-header-bg: #F7F8FA;
 
-$base-size: 32px;
-
 $action-color: #4887FF;
+
+// Sizes
+
+$margin-top-body: $base-size * 4;

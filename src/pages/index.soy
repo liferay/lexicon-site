@@ -6,28 +6,14 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 {namespace pageIndex}
 
 /**
- * @param site
- * @param page
+ *
  */
 {template .render}
 	{call main.render data="all"}
-		{param elementClasses: 'home' /}
 		{param content kind="html"}
-			{call .header /}
-			{call .intro}
-				{param site: $site /}
-			{/call}
-			{call .teasers}
-				{param site: $site /}
-				{param page: $page /}
-			{/call}
-			{call .explore}
-				{param site: $site /}
-			{/call}
-			{call .claylink /}
-			{call .contact /}
-			{call .footer /}
+			{call .header data="all" /}
 		{/param}
+		{param elementClasses: 'home' /}
 	{/call}
 {/template}
 
@@ -35,155 +21,168 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
  *
  */
 {template .header}
-	<nav class="navbar sticky-top navbar-toggleable-md">
-		<div class="container">
-			<div class="navbar-brand mr-auto">
-				<a href="/">
-					<img src="/images/logo_lexicon_b.png" alt="">
-				</a>
-				<span class="label label-version">v 1.x</span>
-			</div>
-			<form class="form-inline my-2 my-lg-0">
-				{call HomeSearch.render}
-					{param maxResults: 5 /}
-					{param path: '/docs/' /}
-				{/call}
-			</form>
-		</div>
-	</nav>
-{/template}
-
-/**
- * @param site
- */
-{template .intro}
-	<div class="intro">
-		<div class="container">
-			<h3>Crafting beautiful UI</h3>
-			<h1>Let<span>&rsquo;</span>s play</h1>
-
-			<a class="btn btn-home" href="{$site.index.children.docs.children.lexicon.url}">Get Started</a>
-			<script type="template"><button class="btn btn-home" type="submit">Get Started</button></script>
-		</div>
-	</div>
-{/template}
-
-/**
- * @param site
- * @param page
- */
-{template .teasers}
-	{let $section: $site.index.children.docs /}
-	<div class="container teasers">
-		<div class="row">
-			<div class="col-sm-6 col-xs-12">
-				<div class="media">
-					<a href="{$site.index.children.docs.children.lexicon.url}#design-language"><img src="images/design_language.svg" alt=""></a>
+	<header class="header">
+		<nav class="navbar fixed-top navbar-lexicon-site navbar-expand-lg navbar-dark">
+			<div class="container-fluid container-fluid-max-lg">
+				<div class="navbar-brand">
+					<img class="logo mr-2" src="/images/home/clay_logo_w.svg" alt="">
+					<span class="title align-middle">Lexicon</span>
 				</div>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link ml-3" href="/docs/components/alerts.html">Components Library</a>
+					</li>
+					<li class="nav-item">
+						<a class="mx-3 mr-lg-0" href="https://github.com/liferay/lexicon" target="_blank">
+							<img src="/images/home/GitHub-Mark-64px.svg" alt="">
+						</a>
+					</li>
+				</ul>
 			</div>
-			<div class="col-sm-6 col-xs-12">
-				<div class="media-body">
-					<a href="{$site.index.children.docs.children.lexicon.url}#design-language">
-						<h2>Design System</h2>
-					</a>
+		</nav>
 
-					<p>{$page.description}</p>
-					<a class="btn btn-home btn-teaser" href="{$site.index.children.docs.children.lexicon.url}#design-language">+</a>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="intro text-center col">
+					<div class="container-fluid container-fluid-max-lg">
+						<h1 class="h1">Lexicon</h1>
+						<h2 class="h3">Lexicon Experience Language</h2>
+						<a class="btn btn-lg btn-light font-weight-bold mx-3 mb-4" href="/docs">
+							Get Started
+						</a>
+						<a class="btn btn-lg btn-outline-light font-weight-bold mx-3 mb-4" href="https://github.com/liferay/clay" target="_blank">
+							<img class="mr-2" src="/images/home/file-download.svg" alt="">Download
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-6 col-xs-12 col-sm-push-6">
-				<div class="media">
-					<a href="{$site.index.children.docs.children.lexicon.url}#modular-approach"><img src="images/modular_approach.svg" alt=""></a>
-				</div>
-			</div>
-			<div class="col-sm-6 col-xs-12 col-sm-pull-6">
-				<div class="media-body">
-					<a href="{$site.index.children.docs.children.lexicon.url}#modular-approach">
-						<h2>Modular Approach</h2>
-					</a>
-					<p>The lexicon approach to interface design is based on modularity. A flexible and consistent system that is able to respond to the multiple needs of modern digital products.</p>
-					<a class="btn btn-home btn-teaser" href="{$site.index.children.docs.children.lexicon.url}#modular-approach">+</a>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 col-xs-12">
-				<div class="media">
-					<a href="{$site.index.children.docs.children.lexicon.url}#lexicon-site"><img src="images/open_platform.svg" alt=""></a>
-				</div>
-			</div>
-			<div class="col-sm-6 col-xs-12">
-				<div class="media-body">
-					<a href="{$site.index.children.docs.children.lexicon.url}#lexicon-site">
-						<h2>Open Platform</h2>
-					</a>
-					<p>An open space for designers, developers or any other person involved in the creation of digital products who want to contribute with their own proposals and suggestions.</p>
-					<a class="btn btn-home btn-teaser" href="{$site.index.children.docs.children.lexicon.url}#lexicon-site">+</a>
-				</div>
-			</div>
-		</div>
-	</div>
-{/template}
+	</header>
 
+	{call .teasers data="all" /}
 
-/**
- * @param site
- */
-{template .explore}
-	<div class="section explore-lexicon">
-		<div class="container">
-			<h2>Explore Lexicon</h2>
-			<h3>Lexicon is a live project, always growing and aware of the latest technologies and trends. Feel yourself free to explore it.</h3>
+	{call .contactus data="all" /}
 
-			{let $section: $site.index.children.docs /}
-			<ul class="list-unstyled">
-				{foreach $childId in $section.childIds}
-					{let $page: $section.children[$childId] /}
+	{call .linkblocks data="all" /}
 
-					{if not $page.hidden}
-						<li class="{$page.icon}"><a href="{$page.url}">{$page.title}</a></li>
-					{/if}
-				{/foreach}
-			</ul>
-		</div>
-	</div>
-{/template}
-
-/**
-*
-*/
-{template .claylink}
-	<div class="section clay-link">
-    <div class="container">
-        <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="media">
-                        <img alt="Clay" class="clay-logo" src="images/clay_logo.svg">
-                    </div>
-                </div>
-                <div class="col-md-7 col-sm-12">
-                    <div class="media-body">
-                        <p><span>Discover Clay.</span> The web implementation <br> for Lexicon experience language.</p>
-                        <a href="http://claycss.com/" target="_blank">Visit Clay</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-	</div>
+	{call .footer data="all" /}
 {/template}
 
 /**
  *
  */
-{template .contact}
-	<div class="section contact-us">
-		<div class="container">
-			<h2>We really care about your opinion. It would be awesome if you could give us some feedback!</h2>
-			<a class="btn btn-home" href="https://github.com/liferay/lexicon-site/issues" target="_blank">Contact Us</a>
+{template .teasers}
+	<section class="teasers" id="teasers">
+		<div class="container-fluid container-fluid-max-lg">
+			<div class="row mb-4">
+				<div class="col-1 d-none d-md-block">
+					<div class="vertical-title text-uppercase text-nowrap">Explore Clay</div>
+				</div>
+
+				<div class="col-md-5 text-center">
+					<div class="card text-center wow fadeInUp">
+						<div class="card-body mx-4 text-center">
+							<img class="mx-auto" src="/images/home/what.svg" alt="">
+							<h2 class="font-weight-bold">What is Lexicon?</h2>
+							<p>Liferay's Experience Language.</p>
+							<a href="/docs" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 text-center mt-4 mt-md-0">
+					<div class="card wow fadeInUp" data-wow-delay="0.1s">
+						<div class="card-body mx-4">
+							<img class="mx-auto" src="/images/home/news.svg" alt="">
+							<h2 class="font-weight-bold">Release Notes</h2>
+							<p>fixed issues, and new features by visiting our Release Notes.</p>
+							<a href="/docs/news/" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10 mx-auto">
+					<div class="card wow fadeInLeft" data-wow-offset="100">
+						<div class="row">
+							<div class="col-md-6 text-center">
+								<div class="card-body mx-4">
+									<img class="pt-5" src="/images/home/library03.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-6 text-center text-md-left">
+								<div class="card-body mx-4 pl-md-0 pt-5">
+									<h2 class="font-weight-bold">Component Library</h2>
+									<p>Browse Clay's extensive Component Library, where you'll find useful components—with extensive code examples—for your web application.</p>
+									<a href="/docs/components/alerts.html" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+	</section>
+{/template}
+
+/**
+ *
+ */
+{template .contactus}
+	<section class="contact-us">
+		<div class="container-fluid container-fluid-max-lg">
+			<div class="row">
+				<div class="col-md-4 ml-auto mr-lg-4 wow zoomIn" data-wow-duration="1.2s">
+					<div class="text-center text-lg-right">
+						<img src="/images/home/participate02.svg" alt="">
+					</div>
+				</div>
+				<div class="col-md-6 mr-auto wow zoomIn" data-wow-duration="0.8s">
+					<div class="media-body mt-4 text-center text-lg-left">
+						<p class="h1 font-weight-bold">Want to contribute? Found an issue? Head on over to the <a class="font-weight-bold" href="https://github.com/liferay/clay" target="_blank">GitHub repo.</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{/template}
+
+/**
+ *
+ */
+{template .linkblocks}
+	<section class="link-blocks text-center">
+		<div class="container-fluid container-fluid-max-lg">
+			<div class="row">
+				<div class="body ml-auto col-md-9 mr-auto">
+					<h2 class="h1 font-weight-bold">A web implementation of Lexicon</h2>
+					<p class="pb-5 pt-4">There's always been a distinction between Lexicon as a design system, and Lexicon as a web implementation. Naming them like this didn't help with the distinction, so <span class="font-weight-bold">the web implementation of Lexicon is now called Clay</span>.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-5 ml-auto mb-4">
+					<div class="card h-100 wow fadeInUp">
+						<div class="card-body mx-5">
+							<img class="mx-auto" src="/images/home/lexicon_symbol.svg" alt="">
+							<p>Visit the current Lexicon </br>
+							Experience Language site</p>
+							<a class="mb-3" target="_blank" href="https://lexicondesign.io/">Lexicon v 1.2</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5 mr-auto mb-4">
+					<div class="card h-100 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="card-body mx-5">
+							<img class="mx-auto" src="/images/home/clay_logo_w.svg" alt="">
+							<p>Visit the previous version of </br>
+							Clay at Lexicon CSS project site</p>
+							<a class="mb-3" target="_blank" href="http://liferay.github.io/">Lexicon CSS</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 {/template}
 
 /**
@@ -191,41 +190,26 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
  */
 {template .footer}
 	<div class="footer">
-		<div class="container">
+		<div class="container-fluid container-fluid-max-lg">
 			<div class="row">
-				<div class="col-md-7">
-					<img class="logo" src="/images/liferayLogo.png"/>
+				<div class="col-lg text-center text-lg-left mb-4 mb-lg-0">
+					<img class="logo" src="/images/liferayLogo.png">
 
-					<div class="clearfix hidden-lg hidden-md"></div>
+					<div class="clearfix d-lg-none"></div>
 
-					<span>Brought to you by <a class="bold" href="http://www.liferay.com" target="_blank">Liferay, Inc.</a></span>
+					Brought to you by <a class="font-weight-bold" href="http://www.liferay.com" target="_blank">Liferay, Inc.</a>
 				</div>
-				<div class="col-md-5 text-right-lg">
-                    <a class="sticker sticker-default sticker-rounded sticker-static" href="https://dribbble.com/liferay" target="_blank">
-						<svg class="lexicon-icon icon-monospace" version="1.1" id="Dribbble" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 511.9 511.9" style="enable-background:new 0 0 511.9 511.9;" xml:space="preserve">
-<path id="ball" d="M256,511.9C114.8,511.9,0,397.1,0,256S114.8,0,256,0s256,114.8,256,256S397.1,511.9,256,511.9z M471.8,291
-	c-7.5-2.4-67.7-20.3-136.2-9.3c28.6,78.6,40.2,142.6,42.5,155.9C427.2,404.4,462.1,351.8,471.8,291L471.8,291z M341.4,457.5
-	c-3.3-19.2-15.9-86-46.6-165.8c-0.5,0.2-1,0.3-1.4,0.5c-123.3,43-167.6,128.5-171.5,136.5C184.3,477.5,268.4,488.6,341.4,457.5z
-	 M93.5,402.5c5-8.5,65-107.8,177.7-144.3c2.8-0.9,5.7-1.8,8.6-2.6c-5.5-12.4-11.5-24.9-17.7-37.1C153,251.2,47,249.8,37.4,249.6
-	c-0.1,2.2-0.1,4.4-0.1,6.7C37.3,310.3,57.3,362.4,93.5,402.5z M41.9,211.5c9.8,0.1,99.9,0.5,202.1-26.6
-	C207.8,120.5,168.8,66.3,163,58.4C101.8,87.3,56.1,143.7,41.9,211.5z M204.7,43.7c6,8.1,45.8,62.2,81.6,128
-	c77.7-29.1,110.7-73.4,114.6-79C347.5,45.3,274.2,27,204.7,43.7z M425.2,118c-4.6,6.2-41.2,53.2-122.1,86.2
-	c5.1,10.4,10,21,14.5,31.7c1.6,3.8,3.2,7.5,4.7,11.3c72.7-9.1,145,5.5,152.2,7C474.1,204.5,456.7,156.5,425.2,118z"/>
-</svg>
-					</a>
-					<a class="sticker sticker-default sticker-rounded sticker-static" href="https://twitter.com/Liferay_Lexicon" target="_blank">
-						<svg class="lexicon-icon">
-							<use xlink:href="/vendor/lexicon/icons.svg#twitter" />
-						</svg>
-					</a>
-					<a class="sticker sticker-default sticker-rounded sticker-static" href="https://github.com/liferay/lexicon-site/issues" target="_blank">
-						<svg class="lexicon-icon">
-							<use xlink:href="/vendor/lexicon/icons.svg#comments" />
-						</svg>
-					</a>
+
+				<div class="col-lg text-center text-lg-right">
+					<div>Powered by <a class="font-weight-bold" href="https://wedeploy.com/" target="_blank">WeDeploy™</a></div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script src="/scripts/wow.min.js"></script>
+	<script src="/scripts/home.js"></script>
+	<script>
+		new WOW().init();
+	</script>
 {/template}

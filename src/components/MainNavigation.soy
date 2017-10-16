@@ -14,7 +14,7 @@
 				{let $page: $section.children[$childId] /}
 
 				{if not $page.hidden}
-					<li class="{$page.active ? 'active' : ''} {$page.children ? 'nav-heading' : ''}">
+					<li class="nav-item {$page.active ? 'active' : ''} {$page.children ? 'nav-heading' : ''}">
 						{call .anchor data="all"}
 							{param page: $page /}
 						{/call}
@@ -38,9 +38,9 @@
  */
 {template .anchor}
 	{if not $page.children}
-		<a class="{$page.icon ?: ''}" href="{$page.url}">
+		<a class="nav-link {$page.icon ?: ''}" href="{$page.url}">
 	{else}
-		<a class="{$page.icon ?: ''}" data-onclick="handleCollapseClick_" href="javascript:;">
+		<a class="nav-link {$page.icon ?: ''}" data-onclick="handleCollapseClick_" href="javascript:;">
 	{/if}
 
 		<span>{$page.title}</span>
