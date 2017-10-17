@@ -18,7 +18,7 @@
 	}
 
 	.autocomplete-title {
-		color: $brand-dark;
+		color: $text-color;
 		font-weight: 600;
 	}
 
@@ -26,7 +26,7 @@
 		border-width: 0;
 
 		&:hover, &.active {
-			background-color: #EDEFF3;
+			background-color: #F5F8FF;
 		}
 
 		&:first-child {

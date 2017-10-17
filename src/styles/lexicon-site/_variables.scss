@@ -11,16 +11,17 @@ $grid-float-breakpoint: $screen-sm;
 $content-max-width: 960px;
 
 $sidebar-width: 376px;
+$sidebar-bg-color: #F5F5F8;
 
 // Color
 
-$bg-color: #F5F5F8;
+$bg-color: #FFF;
 $footer-bg-color: #272833;
 
-$brand-primary: #4887FF !default;
+$brand-primary: #0058FF !default;
 
-$brand-dark: #272833;
-$brand-dark-lighter: #F1F2F5;
+$brand-dark: #0058FF;
+$brand-dark-lighter: #EBECF1;
 
 $brand-light: #FFF;
 
@@ -34,12 +35,11 @@ $text-color: #000 !default;
 $brand-dark-active: #2E2F3C;
 $brand-dark-hover: #2B2D39;
 $brand-darker: #1E1F27;
-$brand-secondary: #8D8FA8;
+$brand-secondary: #30313F;
 
 $brand-blue: #4887FF;
 
 $brand-border-color: #CDCED9;
-$content-header-bg: #F7F8FA;
 
 $action-color: #4887FF;
 

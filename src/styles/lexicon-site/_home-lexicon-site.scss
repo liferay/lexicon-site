@@ -13,22 +13,16 @@
     transform: rotate(-90deg);
 }
 
+
 .home {
-    .font-weight-bold {
-        font-weight: 900 !important;
+    .label-lexicon-site {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-color: transparent;
+        border-radius: 0;
     }
 
-    .navbar-lexicon-site {
-        background-color: transparent;
-        transition: all 0.4s ease-in-out;
-
-        &.scroll {
-            background-color: $brand-dark;
-        }
-
-        .logo {
-            width: 24px;
-        }
+    .font-weight-bold {
+        font-weight: 900 !important;
     }
 
     .card {
@@ -40,7 +34,7 @@
         min-height: 100%;
 
         &:hover {
-            background-color: #FFF6F5;
+            background-color: #F2F6FF;
             border-color: $brand-dark;
             box-shadow: 6px 9px 36px rgba(48, 49, 63, 0.2);
             transform: translateY(-3px);
@@ -85,10 +79,6 @@
     margin-bottom: 32px;
     padding: 88px 0;
 
-    @media (max-width: $grid-float-breakpoint - 1) {
-        margin-top: - $margin-top-body;
-    }
-
     @include media-breakpoint-up(sm) {
         background-attachment: fixed;
         background-position: center -144px;
@@ -111,16 +101,6 @@
         letter-spacing: 1.5px;
         line-height: $base-size;
         text-transform: uppercase;
-    }
-
-    .btn-outline-light {
-        font-size: 16px;
-        color: $brand-light;
-
-        &:hover, &:focus {
-            background-color: transparent;
-            color: inherit;
-        }
     }
 
     .h1 {
@@ -210,7 +190,6 @@
     p {
         color: #8D8FA8;
         font-size: 20px;
-        line-height: 1.7;
     }
 
     .card {
@@ -228,7 +207,7 @@
         }
 
         a {
-            border-bottom: 3px solid #B3472D;
+            border-bottom: 3px solid $brand-primary;
             color: $brand-light;
             display: inline-block;
             font-weight: 700;
@@ -236,7 +215,7 @@
             padding-bottom: 4px;
 
             &:hover {
-                border-color: #DA816C;
+                border-color: darken($brand-primary, 20%);
                 text-decoration: none;
             }
         }
