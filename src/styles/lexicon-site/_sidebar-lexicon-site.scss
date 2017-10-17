@@ -1,28 +1,23 @@
 .sidebar-lexicon-site {
-	background-color: $brand-dark;
-	border-right: 0.5rem solid transparent;
+	background-color: $sidebar-bg-color;
+	min-width: 370px;
 
-	&::-webkit-scrollbar {
-		-webkit-appearance: none;
-		width: 8px;
-	}
+	.navbar-brand {
+		font-size: $base-size * 1.1666;
+		font-weight: 700;
 
-	&::-webkit-scrollbar-thumb, &::-webkit-scrollbar-track {
-		background: transparent;
-		border-radius: 4px;
-		color: transparent;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background: $brand-dark;
-		box-shadow: inset 0 -2px, inset 0 -3px, inset 0 2px, inset 0 3px;
-		color: $brand-dark;
-	}
-
-	.sidebar-toggler-content:hover & {
-		&::-webkit-scrollbar-thumb {
-			background: rgba($brand-secondary, 0.4);
+		small {
+			font-size: 0.875rem;
 		}
+
+		.label-lexicon-site {
+			background-color: transparent;
+		}
+	}
+
+	.logo {
+		height: 2.5rem;
+		padding-bottom: 0.1875rem;
 	}
 
 	a, .nav .lexicon-icon {
@@ -30,18 +25,33 @@
 	}
 
 	.sidebar-header {
-		padding: $base-size * 0.75  $base-size * 0.75 12px;
+		padding: 0;
 
-		@media (max-width: $grid-float-breakpoint - 1px) {
-			padding: 16px;
+		@media (min-width: $grid-float-breakpoint) {
+			padding: $base-size * 1.33 $base-size $base-size * 0.66 $base-size * 0.33;
+		}
+
+		@media (max-width: $grid-float-breakpoint - 1) {
+			display: none;
 		}
 	}
 
 	.sidebar-body {
-		padding-top: 0;
+		padding-bottom: $base-size * 2;
+		padding-top: $base-size;
+		overflow: visible;
+	}
 
-		@media (max-width: $grid-float-breakpoint - 1px) {
-			padding: 0 16px 16px;
+	.nav-icons {
+		padding: 0 $base-size $base-size * 4 $base-size * 1.66;
+
+		.sticker-secondary {
+			background-color: #CDCED9;
+		}
+
+		.lexicon-icon {
+			fill: $brand-light;
+			width: 1.3em;
 		}
 	}
 
@@ -49,29 +59,52 @@
 		width: 100%;
 
 		.input-group-addon {
-			@include position(absolute, 4px 16px null null);
-
 			background-color: transparent;
 			border-color: transparent;
 			color: $brand-secondary;
+			position: absolute;
+			right: 2px;
+			top: 1px;
 			z-index: 9;
 		}
 
 		> input.form-control {
-			background-color: $brand-darker;
+			background-color: $brand-light;
 			border-radius: 4px;
-			color: $brand-dark;
+			border-width: 0;
+			box-shadow: 2px 3px 12px 0px rgba(231, 231, 237, 1);
+			color: $brand-light-secondary-text;
+			padding-left: 0.875rem;
 			padding-right: $base-size * 1.5;
 
-			&::placeholder {
-				color: $brand-secondary;
+			&::-moz-placeholder {
+				color: $brand-light-secondary-text;
+				opacity: 1;
+			}
+
+			&:-ms-input-placeholder {
+				color: $brand-light-secondary-text;
+			}
+
+			&::-webkit-input-placeholder {
+				color: $brand-light-secondary-text;
 			}
 
 			&:active, &:focus {
-				background-color: #FFF;
-				color: $brand-dark;
+				border-color: $brand-primary;
+				border-width: 1px;
+				color: $brand-secondary;
 
-				&::placeholder {
+				&::-moz-placeholder {
+					color: $brand-secondary;
+					opacity: 1;
+				}
+
+				&:-ms-input-placeholder {
+					color: $brand-secondary;
+				}
+
+				&::-webkit-input-placeholder {
 					color: $brand-secondary;
 				}
 			}
@@ -87,20 +120,41 @@
 	}
 
 	.nav-pills {
+		.nav-heading {
+			display: block;
+		}
+
 		& > li > {
+			ul > li {
+				padding-left: $base-size;
+			}
+
 			a {
 				background-color: transparent;
-				color: #FFF;
-				font-size: 16px;
+				display: block;
+				font-size: 1rem;
 				font-weight: 600;
-				line-height: 22px;
-                margin-left: $base-size * 1.5;
-				min-height: $base-size * 1.25;
-				padding-left: $base-size / 2;
+				line-height: $base-size / 1.375;
+				min-height: $base-size * 1.675;
+				padding: 0.55rem 1rem;
+				position: relative;
+
+				span {
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				.lexicon-icon {
+					display: inline-block;
+					fill: currentColor;
+					height: 16px;
+					transform: translateZ(0);
+					vertical-align: middle;
+					width: 16px;
+				}
 			}
 
 			& ul > li > ul > li > a, .nav .nav > li > a {
-				margin-left: $base-size * 2;
 				padding-left: $base-size / 2;
 			}
 
@@ -109,46 +163,19 @@
 				height: 40px;
 				padding: 2px;
 			}
-
-			a {
-				&.lexicon-site-about, &.lexicon-site-docs, &.lexicon-site-news, &.lexicon-site-principles {
-					@include psuedo();
-				}
-
-				&.lexicon-site-about:before {
-                    left: - $base-size * 1.357;
-
-                    @include square(21px, #6B6C7E);
-				}
-
-				&.lexicon-site-docs:before {
-                    left: - $base-size * 1.4;
-
-                    @include triangle(24px, #FFF);
-				}
-
-				&.lexicon-site-news:before {
-                    left: - $base-size * 1.4;
-
-                    @include circle(24px, #4887FF);
-				}
-
-				&.lexicon-site-principles:before {
-					left: - $base-size * 1.4;
-
-					@include circle(24px, #4887FF);
-				}
-			}
 		}
 
-		& > li > ul > li.active > a, & > li > ul > li.active > a:hover, & > li > ul > li.active > a:focus {
-			background-color: $brand-dark-active;
-			color: #FFF;
-			font-weight: normal;
+		& > li.active > a,
+		& > li > ul > li.active > a,
+		& > li > ul > li.active > a:focus,
+		& > li > a:focus {
+			background-color: $brand-dark-lighter;
+			border-radius: 6px;
+			font-weight: 600;
 		}
 
-		& > li > a:hover, & > li > ul > li:hover > a, & > li > a:focus {
-			background-color: $brand-dark-hover;
+		& > li a:hover {
+			background-color: $brand-dark-lighter;
 		}
 
 		& li > ul > li > a {
@@ -162,7 +189,7 @@
 			}
 
 			&:hover {
-				background-color: $brand-dark-hover;
+				background-color: $brand-dark-lighter;
 			}
 		}
 
@@ -176,15 +203,22 @@
 				position: absolute;
 				right: 0;
 				top: 0;
+				transform: rotate(-90deg);
+				transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 				width: 40px;
-
-				@include transform(rotate(-90deg));
-				@include transition(all 0.2s $ease-in-out-back);
 			}
 
 			&.active > a > .collapse-toggle {
-				@include transform(rotate(0));
+				transform: rotate(0);
 			}
 		}
+	}
+}
+
+.sidebar-toggler {
+	display: none;
+
+	@media (max-width: $screen-sm - 1) {
+		display: block;
 	}
 }

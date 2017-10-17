@@ -1,19 +1,13 @@
-.sidebar-content {
+.sidebar-offset {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	padding-top: 80px;
-
-	@media (min-width: $grid-float-breakpoint) {
-		margin-left: $sidebar-width - 100px;
-	}
 
 	@media (min-width: $screen-sm) {
-		padding-top: 0;
 		margin-left: $sidebar-width;
 	}
 
-	.container-fluid {
+	.lexicon-site-container {
 		flex: 1;
 		max-width: $content-max-width;
 
@@ -44,13 +38,13 @@
 .sidenav-fixed.sidenav-menu-slider {
 	visibility: visible;
 
-	&.open, &.toggler-expanded {
+	&.toggler-expanded {
 		width: 100%;
 	}
 
-	&, &.open, &.toggler-expanded {
-		@media (max-width: $grid-float-breakpoint - 1px) {
-			@include transition(all 0.3s $ease-out-quint);
+	&, &.toggler-expanded {
+		@media (max-width: $grid-float-breakpoint - 1) {
+			transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 		}
 
 		@media (min-width: $grid-float-breakpoint) {
@@ -66,9 +60,13 @@
 .sidenav-fixed.sidenav-menu-slider .sidenav-menu {
 	bottom: 0;
 	height: initial;
-	top: $base-size * 2;
+	top: $base-size * 2.9;
 
 	@media (min-width: $grid-float-breakpoint) {
-		top: $base-size * 4;
+		top: 0;
 	}
+}
+
+.sidebar-search {
+	margin-bottom: $base-size * 1.8;
 }

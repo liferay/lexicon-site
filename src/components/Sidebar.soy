@@ -4,26 +4,32 @@
  * @param section
  */
 {template .render}
-	<nav class="navbar navbar-fixed navbar-inverse navbar-lexicon-site">
-		<div class="navbar-header navbar-header-left-xs">
-			<a class="navbar-brand" href="/">
-				<img class="logo" src="/images/LexiconLogo_b.png"/>
-				<span class="label label-version">v 1.x</span>
+	<div class="navbar navbar-mobile navbar-expand-lg navbar-header">
+		<a class="navbar-brand d-flex" href="/">
+			<img class="logo mr-2" src="/images/lexicon_symbol_blue.svg" alt="" />
+			<span class="title h1 font-weight-bold mb-0 p-1">Lexicon</span>
+		</a>
 
-			</a>
-		</div>
-
-		<button aria-controls="bs-navbar" aria-expanded="false" class="btn-link collapsed navbar-toggle sidebar-toggler" type="button">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="sr-only">Toggle navigation</span>
+		<button class="navbar-toggler sidebar-toggler p-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<svg aria-hidden="true" class="lexicon-icon lexicon-icon-bars">
+				<use xlink:href="/vendor/lexicon/icons.svg#bars" />
+			</svg>
 		</button>
-	</nav>
+	</div>
 
-	<nav class="sidebar-toggler-content sidenav-fixed sidenav-menu-slider">
-		<div class="sidebar sidebar-inverse sidebar-lexicon-site sidenav-menu">
+	<nav class="sidebar-toggler-content sidenav-fixed sidenav-menu-slider" id="lexicon-sidebar">
+		<div class="sidebar sidebar-lexicon-site sidenav-menu d-flex flex-column">
 			<div class="sidebar-header">
+				<div class="navbar navbar-expand-lg navbar-header">
+					<a class="navbar-brand" href="/">
+						<img class="logo mr-2" src="/images/lexicon_symbol_blue.svg" alt="Lexicon" />
+						<span class="title">Lexicon</span>
+						<span class="label label-lg label-secondary label-lexicon-site align-middle ml-3 px-2">v2.0</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="sidebar-body mb-auto">
 				<div class="sidebar-search">
 					{call ElectricSearchAutocomplete.render}
 						{param maxResults: 5 /}
@@ -31,13 +37,26 @@
 						{param placeholder: 'Search' /}
 					{/call}
 				</div>
-			</div>
 
-			<div class="sidebar-body">
 				{call MainNavigation.render}
 					{param section: $section /}
 				{/call}
 			</div>
+
+			<ul class="nav-icons">
+				<li class="d-block mb-3">
+					<a class="rounded-circle sticker sticker-secondary" href="https://github.com/liferay/lexicon/issues" target="_blank">
+						<svg aria-hidden="true" class="lexicon-icon lexicon-icon-bars">
+							<use xlink:href="/vendor/lexicon/icons.svg#comments" />
+						</svg>
+					</a>
+				</li>
+				<li class="d-block">
+					<a class="rounded-circle sticker sticker-secondary" href="https://github.com/liferay/lexicon" target="_blank">
+						<img class="lexicon-icon" src="/images/home/GitHub-Mark-64px.svg" alt="">
+					</a>
+				</li>
+			</ul>
 		</div>
 	</nav>
 {/template}
