@@ -126,7 +126,7 @@ module.exports = {
 			src: 'node_modules/source-sans-pro/**'
 		},
 		{
-			dest: 'dist/vendor/clay',
+			dest: 'dist/vendor/lexicon',
 			src: path.join(clay.buildDir, 'images', 'icons', '*')
 		},
 		{
