@@ -19,6 +19,9 @@
         background-color: rgba(255, 255, 255, 0.3);
         border-color: transparent;
         border-radius: 0;
+        text-transform: none;
+        font-weight: $font-weight-bold;
+        font-size: 13px;
     }
 
     .font-weight-bold {
@@ -32,6 +35,10 @@
         margin-bottom: 32px;
         transition: all 0.4s;
         min-height: 100%;
+        
+        .card-body {
+            padding: 32px 32px 16px 32px;
+        }
 
         &:hover {
             background-color: #F2F6FF;
@@ -50,7 +57,8 @@
         .btn {
             color: #393A4A;
             font-size: 11px;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
+            display: inline-flex;
         }
 
         p {
@@ -82,14 +90,13 @@
     @include media-breakpoint-up(sm) {
         background-attachment: fixed;
         background-position: center -144px;
-        padding: 184px 0 264px;
+        padding: 212px 0 272px;
     }
 
     .btn-lg {
         border-radius: 0;
         border-width: 2px;
         font-size: 1rem;
-        font-weight: 700;
         min-height: 64px;
         padding: 18px 64px;
     }
@@ -115,13 +122,13 @@
         }
 
         @include media-breakpoint-up(lg) {
-            font-size: 96px;
+            font-size: 82px;
             margin-bottom: 48px;
         }
     }
 
     .h3 {
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.5);
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 4px;
@@ -131,7 +138,7 @@
 
         @include media-breakpoint-up(sm) {
             font-size: 18px;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             margin-bottom: 72px;
         }
     }
@@ -141,7 +148,7 @@
     background-color: $brand-light;
 
     @include media-breakpoint-up(sm) {
-        margin-top: -100px;
+        margin-top: -120px;
    }
 }
 
@@ -151,11 +158,14 @@
     background-image: url(/images/home/bg_white.svg);
     background-position: center;
     padding: 96px 0;
+    color: #393A4A;
 
     @include media-breakpoint-up(sm) {
         background-size: 140%;
         margin-top: -60px;
         padding: 244px 0 212px;
+        padding: 244px 0 212px;
+        background-size: 120%;
     }
 
     .media-body {
@@ -166,12 +176,10 @@
         a {
             border-bottom: 5px solid $brand-dark;
             color: #393A4A;
-            font-weight: 700;
             padding-bottom: 4px;
             transition: all 0.4s;
 
             &:hover {
-                border-color: #DA816C;
                 text-decoration: none;
             }
         }
@@ -203,7 +211,7 @@
 
         img.mx-auto {
             height: 60px;
-            margin: 32px 0 40px;
+            margin: 32px 0;
         }
 
         a {
@@ -211,13 +219,8 @@
             color: $brand-light;
             display: inline-block;
             font-weight: 700;
-            margin: 8px 0;
             padding-bottom: 4px;
-
-            &:hover {
-                border-color: darken($brand-primary, 20%);
-                text-decoration: none;
-            }
+            text-decoration: none;
         }
     }
 }
