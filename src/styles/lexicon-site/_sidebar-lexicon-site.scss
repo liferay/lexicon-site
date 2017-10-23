@@ -11,7 +11,10 @@
 		}
 
 		.label-lexicon-site {
-			background-color: transparent;
+            border: none;
+            text-transform: none;
+            color: #393A4A;
+            font-size: 13px;
 		}
 	}
 
@@ -21,7 +24,7 @@
 	}
 
 	a, .nav .lexicon-icon {
-		color: $brand-secondary;
+		color: $text-color;
 	}
 
 	.sidebar-header {
@@ -61,7 +64,7 @@
 		.input-group-addon {
 			background-color: transparent;
 			border-color: transparent;
-			color: $brand-secondary;
+			color: $text-color;
 			position: absolute;
 			right: 2px;
 			top: 1px;
@@ -71,9 +74,8 @@
 		> input.form-control {
 			background-color: $brand-light;
 			border-radius: 4px;
-			border-width: 0;
-			box-shadow: 2px 3px 12px 0px rgba(231, 231, 237, 1);
-			color: $brand-light-secondary-text;
+			border-width: 1px;
+			color: $text-color;
 			padding-left: 0.875rem;
 			padding-right: $base-size * 1.5;
 
@@ -91,21 +93,19 @@
 			}
 
 			&:active, &:focus {
-				border-color: $brand-primary;
-				border-width: 1px;
-				color: $brand-secondary;
+                box-shadow: 2px 3px 12px 0px rgba(231, 231, 237, 1);
+                border-color: #e8e8ec;
 
 				&::-moz-placeholder {
-					color: $brand-secondary;
-					opacity: 1;
+					color: transparent;
 				}
 
 				&:-ms-input-placeholder {
-					color: $brand-secondary;
+					color: transparent;
 				}
 
 				&::-webkit-input-placeholder {
-					color: $brand-secondary;
+					color: transparent;
 				}
 			}
 		}
@@ -179,7 +179,7 @@
 		}
 
 		& li > ul > li > a {
-			color: $brand-secondary;
+			color: $text-color;
 			font-weight: normal;
 		}
 
