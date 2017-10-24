@@ -53,14 +53,14 @@
 		}
 
 		h2 {
-			color: #393A4A;
+			color: $text-color-light;
 			font-size: 21px;
 			line-height: 1.6;
 			margin-bottom: 16px;
 		}
 
 		.btn {
-			color: #393A4A;
+			color: $text-color-light;
 			display: inline-flex;
 			font-size: 11px;
 			letter-spacing: 1px;
@@ -167,7 +167,7 @@
 	background-color: $brand-light;
 	background-image: url(/images/home/bg_white.svg);
 	background-position: center;
-	color: #393A4A;
+	color: $text-color-light;
 	padding: 136px 0 96px;
 
 	@include media-breakpoint-up(sm) {
@@ -183,7 +183,7 @@
 
 		a {
 			border-bottom: 5px solid $brand-dark;
-			color: #393A4A;
+			color: $text-color-light;
 			padding-bottom: 4px;
 			transition: all 0.4s;
 
@@ -195,7 +195,7 @@
 }
 
 .link-blocks {
-	background-color: #393A4A;
+	background-color: $text-color-light;
 	color: $brand-light;
 	padding: 56px 0;
 
