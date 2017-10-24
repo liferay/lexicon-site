@@ -86,6 +86,10 @@
 	header {
 		margin: 0;
 
+		@media (max-width: $grid-float-breakpoint - 1) {
+			margin-top: 80px;
+		}
+
 		.container-fluid > h1 {
 			margin: 0;
 		}
