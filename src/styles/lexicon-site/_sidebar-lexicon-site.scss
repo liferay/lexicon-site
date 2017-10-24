@@ -11,10 +11,10 @@
 		}
 
 		.label-lexicon-site {
-            border: none;
-            text-transform: none;
+            border-width: 0;
             color: #393A4A;
             font-size: 13px;
+            text-transform: none;
 		}
 	}
 
@@ -40,9 +40,9 @@
 	}
 
 	.sidebar-body {
+		overflow: visible;
 		padding-bottom: $base-size * 2;
 		padding-top: $base-size;
-		overflow: visible;
 	}
 
 	.nav-icons {
@@ -93,8 +93,8 @@
 			}
 
 			&:active, &:focus {
-                box-shadow: 2px 3px 12px 0px rgba(231, 231, 237, 1);
-                border-color: #e8e8ec;
+                border-color: #E8E8EC;
+                box-shadow: 2px 3px 12px 0 rgba(231, 231, 237, 1);
 
 				&::-moz-placeholder {
 					color: transparent;

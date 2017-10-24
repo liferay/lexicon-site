@@ -33,17 +33,17 @@
 
 		@media (min-width: $grid-float-breakpoint) {
 			font-size: 36px;
-            padding-top: 24px;
+			padding-top: 24px;
 		}
 	}
 
 	h2 {
+		color: $brand-secondary;
 		font-size: $base-size;
 		letter-spacing: 0.5px;
 		line-height: $base-size;
+		padding-bottom: 24px;
 		text-transform: uppercase;
-        color: $brand-secondary;
-        padding-bottom: 24px;
 	}
 
 	h3 {
@@ -64,22 +64,22 @@
 	h4 {
 		font-size: $base-size * 0.65;
 		font-weight: 700;
+		letter-spacing: 0.5px;
 		line-height: $base-size * 0.75;
 		padding: 24px 0;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
+		text-transform: uppercase;
 	}
 
 	time {
+		display: inline-block;
 		font-size: 14px;
 		letter-spacing: 1px;
 		line-height: 20px;
 		margin-top: 40px;
 		text-transform: uppercase;
-		display: inline-block;
 
 		& + h3 {
-			margin-top: 0px;
+			margin-top: 0;
 		}
 	}
 
@@ -104,5 +104,5 @@
 }
 
 @media (max-width: $grid-float-breakpoint - 1) {
-    margin-top: 80px;
+	margin-top: 80px;
 }

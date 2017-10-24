@@ -3,11 +3,11 @@
 	padding-bottom: 32px;
 	padding-top: 32px;
 	transition: all 0.4s ease-in-out;
-    
-    @include media-breakpoint-up(sm) {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+
+	@include media-breakpoint-up(sm) {
+		padding-bottom: 40px;
+		padding-top: 40px;
+	}
 
 	&.scroll {
 		background-color: $brand-dark;
