@@ -93,7 +93,7 @@
 			}
 
 			&:active, &:focus {
-				border-color: #E8E8EC;
+				border-color: $brand-border-color-light;
 				box-shadow: 2px 3px 12px 0 rgba(231, 231, 237, 1);
 
 				&::-moz-placeholder {
