@@ -10,6 +10,13 @@
 
 	a {
 		color: $brand-light-text;
+		font-weight: 700;
+		padding-bottom: 4px;
+		text-decoration: none;
+
+	&:hover {
+			border-bottom: 3px solid $brand-primary;
+		}
 	}
 
 	span {

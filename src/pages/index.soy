@@ -22,19 +22,19 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
  */
 {template .header}
 	<header class="header">
-		<nav class="navbar fixed-top navbar-lexicon-site navbar-expand-lg navbar-dark">
+		<nav class="navbar fixed-top navbar-lexicon-site navbar-expand-lg navbar-dark px-0 px-sm-3">
 			<div class="container-fluid container-fluid-max-lg">
 				<div class="navbar-brand">
-					<img class="logo mr-2" src="/images/home/lexicon_symbol.svg" alt="">
+					<img class="logo mr-2 mr-sm-3" src="/images/home/lexicon_symbol.svg" alt="">
 					<span class="title align-middle">Lexicon</span>
-					<span class="label label-lg label-light label-lexicon-site align-bottom ml-3 px-2">v2.0</span>
+					<span class="label label-lg label-light label-lexicon-site ml-3 px-2">v 2.0</span>
 				</div>
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
+					<li class="nav-item d-none d-sm-flex">
 						<a class="nav-link ml-3" href="docs/lexicon/">Get Started</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link ml-3" href="docs/patterns/alerts.html">Pattern Library</a>
+						<a class="nav-link ml-3" href="docs/patterns/actionsDefinition.html">Pattern Library</a>
 					</li>
 				</ul>
 			</div>
@@ -45,7 +45,7 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 				<div class="intro text-center col">
 					<div class="container-fluid container-fluid-max-lg">
 						<h1 class="h1">This is Lexicon</h1>
-						<h2 class="h3">An Experience Laguage for Crafting Beautiful UI</h2>
+						<h2 class="h3">An Experience Language for Crafting Beautiful UI</h2>
 						<a class="btn btn-lg btn-light font-weight-bold mx-3 mb-4" href="/docs/lexicon/">
 							Get Started
 						</a>
@@ -72,26 +72,26 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 		<div class="container-fluid container-fluid-max-lg">
 			<div class="row mb-4">
 				<div class="col-1 d-none d-md-block">
-					<div class="vertical-title text-uppercase text-nowrap">Explore Clay</div>
+					<div class="vertical-title text-uppercase text-nowrap">Explore Lexicon</div>
 				</div>
 
 				<div class="col-md-5 text-center">
 					<div class="card text-center wow fadeInUp">
-						<div class="card-body mx-4 text-center">
+						<div class="card-body text-center">
 							<img class="mx-auto" src="/images/home/what.svg" alt="">
 							<h2 class="font-weight-bold">What is Lexicon?</h2>
-							<p>Liferay's Experience Language.</p>
-							<a href="/docs/patterns/alerts.html" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+							<p>A set of principles, patterns and tools created to rpovide a common design framework for crafting user interfaces within Liferay product ecosystem.</p>
+							<a href="/docs/lexicon/" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-5 text-center mt-4 mt-md-0">
 					<div class="card wow fadeInUp" data-wow-delay="0.1s">
-						<div class="card-body mx-4">
-							<img class="mx-auto" src="/images/home/news.svg" alt="">
-							<h2 class="font-weight-bold">Release Notes</h2>
-							<p>fixed issues, and new features by visiting our Release Notes.</p>
-							<a href="/docs/news/" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+						<div class="card-body">
+							<img class="mx-auto" src="/images/home/principles02.svg" alt="">
+							<h2 class="font-weight-bold">Design Principles</h2>
+							<p>An open space for designers, developers or any other person involved in the creation of digital products who want to use it and participate.</p>
+							<a href="/docs/designPrinciples/accessibility.html" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
 						</div>
 					</div>
 				</div>
@@ -102,15 +102,15 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 					<div class="card wow fadeInLeft" data-wow-offset="100">
 						<div class="row">
 							<div class="col-md-6 text-center">
-								<div class="card-body mx-4">
-									<img class="pt-5" src="/images/home/library03.svg" alt="">
+								<div class="card-body pb-0">
+									<img class="pt-4 pt-md-5 mobile-size" src="/images/home/library03.svg" alt="">
 								</div>
 							</div>
 							<div class="col-md-6 text-center text-md-left">
-								<div class="card-body mx-4 pl-md-0 pt-5">
-									<h2 class="font-weight-bold">Component Library</h2>
-									<p>Browse Clay's extensive Component Library, where you'll find useful components—with extensive code examples—for your web application.</p>
-									<a href="/docs/components/alerts.html" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+								<div class="card-body pl-md-0 pt-4 pt-md-5 pb-4">
+									<h2 class="font-weight-bold pt-1">Pattern Library</h2>
+									<p>A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem all over the world.</p>
+									<a href="/docs/patterns/actionsDefinition.html" class="btn btn-sm text-uppercase font-weight-bold pl-md-0"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
 								</div>
 							</div>
 						</div>
@@ -121,26 +121,36 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 			<div class="row mt-4">
 				<div class="col-md-5 text-center ml-auto">
 					<div class="card text-center wow fadeInUp">
-						<div class="card-body mx-4 text-center">
-							<img class="mx-auto" src="/images/home/what.svg" alt="">
-							<h2 class="font-weight-bold">What is Lexicon?</h2>
-							<p>Liferay's Experience Language.</p>
-							<a href="/docs/patterns/alerts.html" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-5 text-center">
-					<div class="card wow fadeInUp" data-wow-delay="0.1s">
-						<div class="card-body mx-4">
+						<div class="card-body text-center">
 							<img class="mx-auto" src="/images/home/news.svg" alt="">
-							<h2 class="font-weight-bold">Release Notes</h2>
-							<p>fixed issues, and new features by visiting our Release Notes.</p>
-							<a href="/docs/news/" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+							<h2 class="font-weight-bold">News & Updates</h2>
+							<p>A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.</p>
+							<a href="/docs/news/News.html" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-1 d-none d-md-block">
-					<div class="vertical-title text-uppercase text-nowrap">Social links</div>
+				<div class="col-md-5 text-center mt-4 mt-md-0">
+					<div class="card wow fadeInUp" data-wow-delay="0.1s">
+						<div class="card-body">
+							<img class="mx-auto" src="/images/home/folder.svg" alt="">
+							<h2 class="font-weight-bold">Resources</h2>
+							<p>A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.</p>
+							<a href="/docs/resources.html" class="btn btn-sm text-uppercase font-weight-bold"><img class="mr-2" src="/images/home/chevron-right.svg" alt="">Learn More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-1">
+					<ul class="social-icons">
+                        <li>
+                            <a href=""><img src="/images/home/dribble.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="/images/home/GitHub-Mark-64px.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="/images/home/twitter.svg" alt=""></a>
+                        </li>
+                    </ul>
 				</div>
 			</div>
 		</div>
@@ -160,8 +170,8 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 					</div>
 				</div>
 				<div class="col-md-6 mr-auto wow zoomIn" data-wow-duration="0.8s">
-					<div class="media-body mt-4 text-center text-lg-left">
-						<p class="h1 font-weight-bold">Want to contribute? Found an issue? Head on over to the <a class="font-weight-bold" href="https://github.com/liferay/clay" target="_blank">GitHub repo.</a></p>
+					<div class="media-body mt-4 text-center mr-3 text-lg-left">
+						<h1 class="font-weight-bold">Want to contribute? Found an issue? Head on over to the <a href="https://github.com/liferay/clay" target="_blank">GitHub repo.</a></h1>
 					</div>
 				</div>
 			</div>
@@ -177,18 +187,18 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 		<div class="container-fluid container-fluid-max-lg">
 			<div class="row">
 				<div class="body ml-auto col-md-9 mr-auto">
-					<h2 class="h1 font-weight-bold">A web implementation of Lexicon</h2>
-					<p class="pb-5 pt-4">There's always been a distinction between Lexicon as a design system, and Lexicon as a web implementation. Naming them like this didn't help with the distinction, so <span class="font-weight-bold">the web implementation of Lexicon is now called Clay</span>.</p>
+					<h1 class="font-weight-bold">A web implementation of Lexicon</h1>
+					<p class="pb-5 pt-4">There's always been a distinction between Lexicon as a design system, and Lexicon as a web implementation. Naming them like this didn't help with the distinction, so the web implementation of Lexicon is now called Clay.</p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-5 mx-auto mb-4">
+				<div class="col-md-6 mx-auto mb-4">
 					<div class="card h-100 wow fadeInUp">
 						<div class="card-body mx-5">
-							<img class="mx-auto" src="/images/home/lexicon_symbol.svg" alt="">
-							<p>Visit the current Clay site </br>
+							<img class="mx-auto" src="/images/home/clay_logo_w.svg" alt="">
+							<p>Visit the current Clay site <br>
 							Our CSS framework</p>
-							<a class="mb-3" target="_blank" href="https://claycss.com">Clay v.1</a>
+							<a class="mb-3 font-weight-bold" target="_blank" href="https://claycss.com">Clay v 1.0</a>
 						</div>
 					</div>
 				</div>
@@ -209,11 +219,11 @@ description: "Lexicon is a set of principles, patterns and tools created to prov
 
 					<div class="clearfix d-lg-none"></div>
 
-					Brought to you by <a class="font-weight-bold" href="http://www.liferay.com" target="_blank">Liferay, Inc.</a>
+					Brought to you by <a href="http://www.liferay.com" target="_blank">Liferay, Inc.</a>
 				</div>
 
 				<div class="col-lg text-center text-lg-right">
-					<div>Powered by <a class="font-weight-bold" href="https://wedeploy.com/" target="_blank">WeDeploy™</a></div>
+					<div>Powered by <a href="https://wedeploy.com/" target="_blank">WeDeploy™</a></div>
 				</div>
 			</div>
 		</div>

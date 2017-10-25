@@ -1,8 +1,13 @@
 .navbar-lexicon-site {
 	background-color: transparent;
-	padding-bottom: 30px;
-	padding-top: 30px;
+	padding-bottom: 32px;
+	padding-top: 32px;
 	transition: all 0.4s ease-in-out;
+
+	@include media-breakpoint-up(sm) {
+		padding-bottom: 40px;
+		padding-top: 40px;
+	}
 
 	&.scroll {
 		background-color: $brand-dark;
@@ -12,7 +17,7 @@
 
 	.navbar-brand {
 		.title {
-			font-size: 30px;
+			font-size: 26px;
 			font-weight: 700;
 			line-height: 1;
 		}
