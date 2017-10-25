@@ -1,0 +1,50 @@
+{
+  "_args": [
+    [
+      "source-sans-pro@2.0.10",
+      "/Users/victorvalle/Documents/Liferay/Lexicon Site upcoming/lexicon-site"
+    ]
+  ],
+  "_from": "source-sans-pro@2.0.10",
+  "_id": "source-sans-pro@2.0.10",
+  "_inBundle": false,
+  "_integrity": "sha1-wcqFnPFkoIiUTF6DdFCF6HzVM6k=",
+  "_location": "/source-sans-pro",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "source-sans-pro@2.0.10",
+    "name": "source-sans-pro",
+    "escapedName": "source-sans-pro",
+    "rawSpec": "2.0.10",
+    "saveSpec": null,
+    "fetchSpec": "2.0.10"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/source-sans-pro/-/source-sans-pro-2.0.10.tgz",
+  "_spec": "2.0.10",
+  "_where": "/Users/victorvalle/Documents/Liferay/Lexicon Site upcoming/lexicon-site",
+  "author": {
+    "name": "Paul D. Hunt"
+  },
+  "bugs": {
+    "url": "https://github.com/flosse/npm-source-sans-pro/issues"
+  },
+  "description": "Source Sans Pro font family by Adobe",
+  "homepage": "https://github.com/flosse/npm-source-sans-pro",
+  "keywords": [
+    "font",
+    "sans"
+  ],
+  "license": "SIL OFL 1.1",
+  "main": "source-sans-pro.css",
+  "name": "source-sans-pro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flosse/npm-source-sans-pro.git"
+  },
+  "version": "2.0.10"
+}
