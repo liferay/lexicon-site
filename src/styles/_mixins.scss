@@ -4,6 +4,7 @@
 
 	@for $i from 1 through 10 {
 		$x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+
 		$x0: $x1;
 	}
 

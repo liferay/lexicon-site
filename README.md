@@ -30,7 +30,7 @@ npm i
 electric run
 ```
 
-* Deploy to production (send build files to `wedeploy` branch):
+* Deploy to production (send build files to `wedeploy-lexicon2` branch):
 
 ```
 electric deploy

@@ -1,7 +1,7 @@
 table {
 	@extend .table;
 
-	margin-bottom: 48px;
+	margin: 36px 0 48px;
 
 	& > tbody > tr > td, & > thead > tr > th {
 		border-bottom: 1px solid $brand-border-color;
@@ -10,9 +10,10 @@ table {
 	}
 
 	thead > tr > th {
-		border-bottom: 2px solid $brand-border-color;
+		background-color: $sidebar-bg-color;
+		border-top-width: 0;
 		color: $brand-secondary;
-		font-size: 12;
+		font-size: 12px;
 		font-weight: 600;
 		text-transform: uppercase;
 		vertical-align: bottom;

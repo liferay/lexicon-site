@@ -120,6 +120,9 @@ module.exports = {
 	sassOptions: {
 		includePaths: ['node_modules', clay.includePaths]
 	},
+	deployOptions: {
+		branch: 'wedeploy-lexicon2'
+	},
 	vendorSrc: [
 		{
 			dest: 'dist/vendor/source-sans-pro',

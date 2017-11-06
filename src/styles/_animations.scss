@@ -1,51 +1,51 @@
 .animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
+	animation-duration: 1s;
+	animation-fill-mode: both;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 20%, 0);
-  }
+	from {
+		opacity: 0;
+		transform: translate3d(0, 20%, 0);
+	}
 
-  to {
-    opacity: 1;
-    transform: none;
-  }
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }
 
 .fadeInUp {
-  animation-name: fadeInUp;
+	animation-name: fadeInUp;
 }
 
 @keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(-20%, 0, 0);
-  }
+	from {
+		opacity: 0;
+		transform: translate3d(-20%, 0, 0);
+	}
 
-  to {
-    opacity: 1;
-    transform: none;
-  }
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }
 
 .fadeInLeft {
-  animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
 }
 
 @keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale3d(0.9, 0.9, 0.9);
-  }
+	from {
+		opacity: 0;
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
 
-  50% {
-    opacity: 1;
-  }
+	50% {
+		opacity: 1;
+	}
 }
 
 .zoomIn {
-  animation-name: zoomIn;
+	animation-name: zoomIn;
 }

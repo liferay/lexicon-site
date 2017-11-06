@@ -9,7 +9,7 @@
 	}
 
 	img {
-		margin-bottom: $base-size * 0.75;
+		margin-bottom: $base-size;
 		margin-top: 12px;
 		max-width: 100%;
 	}
@@ -32,20 +32,22 @@
 		line-height: $base-size * 2;
 
 		@media (min-width: $grid-float-breakpoint) {
-			font-size: 32px;
+			font-size: 36px;
+			padding-top: 24px;
 		}
 	}
 
 	h2 {
 		color: $brand-secondary;
-		font-size: 22px;
+		font-size: $base-size;
 		letter-spacing: 0.5px;
 		line-height: $base-size;
+		padding-bottom: 24px;
 		text-transform: uppercase;
 	}
 
 	h3 {
-		font-size: 22px;
+		font-size: $base-size;
 		line-height: $base-size;
 	}
 
@@ -54,35 +56,39 @@
 		margin: $base-size 0;
 
 		@media (min-width: $grid-float-breakpoint) {
-			margin-bottom: $base-size * 0.75;
-			margin-top: $base-size * 1.5;
+			margin-bottom: $base-size;
+			margin-top: $base-size * 3;
 		}
 	}
 
 	h4 {
-		font-size: $base-size / 2;
-		font-weight: bold;
+		font-size: $base-size * 0.65;
+		font-weight: 700;
+		letter-spacing: 0.5px;
 		line-height: $base-size * 0.75;
-		margin-bottom: 12px;
-		margin-top: 0;
+		padding: 24px 0;
+		text-transform: uppercase;
 	}
 
 	time {
-		color: $brand-secondary;
+		display: inline-block;
 		font-size: 14px;
 		letter-spacing: 1px;
 		line-height: 20px;
 		margin-top: 40px;
 		text-transform: uppercase;
-		display: inline-block;
 
 		& + h3 {
-			margin-top: 0px;
+			margin-top: 0;
 		}
 	}
 
 	header {
 		margin: 0;
+
+		@media (max-width: $grid-float-breakpoint - 1) {
+			margin-top: 80px;
+		}
 
 		.container-fluid > h1 {
 			margin: 0;
@@ -99,4 +105,8 @@
 		color: $text-color;
 		margin-top: 48px;
 	}
+}
+
+@media (max-width: $grid-float-breakpoint - 1) {
+	margin-top: 80px;
 }
