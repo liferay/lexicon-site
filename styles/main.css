@@ -12738,11 +12738,12 @@ button.loading > .linear.loading-animation {
     font-weight: 700; }
     .sidebar-lexicon-site .navbar-brand small {
       font-size: 0.875rem; }
-    .sidebar-lexicon-site .navbar-brand .label-lexicon-site {
-      border-width: 0;
-      color: #393A4A;
-      font-size: 13px;
-      text-transform: none; }
+  .sidebar-lexicon-site .btn-version .btn {
+    background-color: #FFF;
+    padding: 3px 8px 3px 12px;
+    text-transform: none; }
+  .sidebar-lexicon-site .btn-version .dropdown-menu {
+    min-width: 116px; }
   .sidebar-lexicon-site .logo {
     height: 2.5rem;
     padding-bottom: 0.1875rem; }
@@ -12752,7 +12753,7 @@ button.loading > .linear.loading-animation {
     padding: 0; }
     @media (min-width: 900px) {
       .sidebar-lexicon-site .sidebar-header {
-        padding: 31.92px 24px 15.84px 7.92px; } }
+        padding: 31.92px 24px 57.6px 7.92px; } }
     @media (max-width: 899px) {
       .sidebar-lexicon-site .sidebar-header {
         display: none; } }
@@ -12779,8 +12780,8 @@ button.loading > .linear.loading-animation {
       z-index: 9; }
     .sidebar-lexicon-site .input-group > input.form-control {
       background-color: #FFF;
+      border-color: #FFF;
       border-radius: 4px;
-      border-width: 1px;
       color: #30313F;
       padding-left: 0.875rem;
       padding-right: 36px; }
@@ -12792,8 +12793,7 @@ button.loading > .linear.loading-animation {
       .sidebar-lexicon-site .input-group > input.form-control::-webkit-input-placeholder {
         color: #A7A9BC; }
       .sidebar-lexicon-site .input-group > input.form-control:active, .sidebar-lexicon-site .input-group > input.form-control:focus {
-        border-color: #E8E8EC;
-        box-shadow: 2px 3px 12px 0 #e7e7ed; }
+        box-shadow: 2px 3px 12px 0 #E7E7ED; }
         .sidebar-lexicon-site .input-group > input.form-control:active::-moz-placeholder, .sidebar-lexicon-site .input-group > input.form-control:focus::-moz-placeholder {
           color: transparent; }
         .sidebar-lexicon-site .input-group > input.form-control:active:-ms-input-placeholder, .sidebar-lexicon-site .input-group > input.form-control:focus:-ms-input-placeholder {
@@ -12902,20 +12902,24 @@ table {
   .mobile-size {
     width: 98px; } }
 
-.home .label-lexicon-site {
+.home .btn-version .btn {
   background-color: rgba(255, 255, 255, 0.3);
   border-color: transparent;
-  border-radius: 0;
+  color: #FFF;
   font-size: 13px;
   font-weight: bold;
+  padding: 3px 8px 3px 12px;
   text-transform: none; }
+
+.home .btn-version .dropdown-menu {
+  min-width: 116px; }
 
 .home .font-weight-bold {
   font-weight: 900 !important; }
 
 .home .card {
-  border-bottom: 14px solid #FFF;
-  border-radius: 0;
+  border-bottom: 12px solid #FFF;
+  border-radius: 12px;
   box-shadow: 4px 6px 36px rgba(48, 49, 63, 0.15);
   margin-bottom: 24px;
   min-height: 100%;
@@ -12926,7 +12930,7 @@ table {
     box-shadow: 6px 9px 36px rgba(48, 49, 63, 0.2);
     transform: translateY(-3px); }
   .home .card .card-body {
-    padding: 32px 32px 16px 32px; }
+    padding: 32px; }
   .home .card h2 {
     color: #393A4A;
     font-size: 21px;
@@ -12962,13 +12966,14 @@ table {
       background-position: center -144px;
       padding: 212px 0 272px; } }
   .intro .btn-lg, .intro .btn-group-lg > .btn, .intro .btn-group-lg .btn-group > .btn, .btn-group-lg .intro .btn-group > .btn {
-    border-radius: 0;
+    border-radius: 6px;
     border-width: 2px;
     font-size: 1rem;
     min-height: 64px;
     padding: 18px 64px; }
   .intro .btn-light {
-    border-color: #FFF;
+    background-color: #fff;
+    border-color: #fff;
     color: #0058FF;
     font-size: 13px;
     letter-spacing: 1.5px;

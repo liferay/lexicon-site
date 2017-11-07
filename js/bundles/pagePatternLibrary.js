@@ -3133,7 +3133,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null,
           'class', 'sidebar-header');
         ie_open('div', null, null,
-            'class', 'navbar navbar-expand-lg navbar-header');
+            'class', 'navbar navbar-header justify-content-start');
           ie_open('a', null, null,
               'class', 'navbar-brand',
               'href', '/');
@@ -3146,11 +3146,33 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'class', 'title');
               itext('Lexicon');
             ie_close('span');
-            ie_open('span', null, null,
-                'class', 'label label-lg label-secondary label-lexicon-site align-middle ml-3');
-              itext('v 2.0');
-            ie_close('span');
           ie_close('a');
+          ie_open('div', null, null,
+              'class', 'btn-group btn-version');
+            ie_open('button', null, null,
+                'aria-expanded', 'false',
+                'aria-haspopup', 'true',
+                'class', 'btn btn-sm dropdown-toggle ml-2 mt-1',
+                'data-toggle', 'dropdown',
+                'type', 'button');
+              itext('v 2.0');
+              ie_open('svg', null, null,
+                  'aria-hidden', 'true',
+                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1 mt-0');
+                ie_void('use', null, null,
+                    'xmlns:xlink', 'http://www.w3.org/1999/xlink',
+                    'xlink:href', '/vendor/lexicon/icons.svg#caret-bottom');
+              ie_close('svg');
+            ie_close('button');
+            ie_open('div', null, null,
+                'class', 'dropdown-menu ml-3 mt-2');
+              ie_open('a', null, null,
+                  'class', 'dropdown-item',
+                  'href', 'https://v1.lexicondesign.io/');
+                itext('Version 1.0');
+              ie_close('a');
+            ie_close('div');
+          ie_close('div');
         ie_close('div');
       ie_close('div');
       ie_open('div', null, null,
@@ -12533,9 +12555,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pagePatternLibrary, t
 /* 249 */,
 /* 250 */,
 /* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12596,4 +12616,4 @@ _metalSoy2.default.register(pagePatternLibrary, _indexSoy2.default);
 exports.default = pagePatternLibrary;
 
 /***/ })
-],[254]);
+],[252]);
