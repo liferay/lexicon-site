@@ -20,22 +20,28 @@
 }
 
 .home {
-	.label-lexicon-site {
-		background-color: rgba(255, 255, 255, 0.3);
-		border-color: transparent;
-		border-radius: 0;
-		font-size: 13px;
-		font-weight: $font-weight-bold;
-		text-transform: none;
-	}
+    .btn-version {
+    .btn {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-color: transparent;
+        font-size: 13px;
+        color: #FFF;
+        font-weight: bold;
+        text-transform: none;
+        padding: 3px 8px 3px 12px;
+        }
+        .dropdown-menu {
+            min-width: 116px;
+        }
+    }
 
 	.font-weight-bold {
 		font-weight: 900 !important;
 	}
 
 	.card {
-		border-bottom: 14px solid $brand-light;
-		border-radius: 0;
+		border-bottom: 12px solid $brand-light;
+		border-radius: 12px;
 		box-shadow: 4px 6px 36px rgba(48, 49, 63, 0.15);
 		margin-bottom: 24px;
 		min-height: 100%;
@@ -49,7 +55,7 @@
 		}
 
 		.card-body {
-			padding: 32px 32px 16px 32px;
+			padding: 32px;
 		}
 
 		h2 {
@@ -99,7 +105,7 @@
 	}
 
 	.btn-lg {
-		border-radius: 0;
+		border-radius: 6px;
 		border-width: 2px;
 		font-size: 1rem;
 		min-height: 64px;
@@ -107,7 +113,8 @@
 	}
 
 	.btn-light {
-		border-color: $brand-light;
+		border-color: $white;
+        background-color: $white;
 		color: $brand-dark;
 		font-size: 13px;
 		letter-spacing: 1.5px;

@@ -20,12 +20,22 @@
 	<nav class="sidebar-toggler-content sidenav-fixed sidenav-menu-slider" id="lexicon-sidebar">
 		<div class="sidebar sidebar-lexicon-site sidenav-menu d-flex flex-column">
 			<div class="sidebar-header">
-				<div class="navbar navbar-expand-lg navbar-header">
+				<div class="navbar navbar-header justify-content-start">
 					<a class="navbar-brand" href="/">
 						<img class="logo mr-2" src="/images/lexicon_symbol_blue.svg" alt="Lexicon" />
 						<span class="title">Lexicon</span>
-						<span class="label label-lg label-secondary label-lexicon-site align-middle ml-3">v 2.0</span>
 					</a>
+					<div class="btn-group btn-version">
+                       <button aria-expanded="false" aria-haspopup="true" class="btn btn-sm dropdown-toggle ml-2 mt-1" data-toggle="dropdown" type="button">
+                          v 2.0
+                          <svg aria-hidden="true" class="lexicon-icon lexicon-icon-caret-bottom ml-1 mt-0">
+                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/vendor/lexicon/icons.svg#caret-bottom"></use>
+                          </svg>
+                       </button>
+                       <div class="dropdown-menu ml-3 mt-2">
+                          <a class="dropdown-item" href="https://v1.lexicondesign.io/">Version 1.0</a>
+                       </div>
+                    </div>
 				</div>
 			</div>
 
