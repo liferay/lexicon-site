@@ -12555,7 +12555,9 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pagePatternLibrary, t
 /* 249 */,
 /* 250 */,
 /* 251 */,
-/* 252 */
+/* 252 */,
+/* 253 */,
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12616,4 +12618,4 @@ _metalSoy2.default.register(pagePatternLibrary, _indexSoy2.default);
 exports.default = pagePatternLibrary;
 
 /***/ })
-],[252]);
+],[254]);
