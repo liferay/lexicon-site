@@ -9,12 +9,17 @@
 		small {
 			font-size: 0.875rem;
 		}
+	}
 
-		.label-lexicon-site {
-			border-width: 0;
-			color: $text-color-light;
-			font-size: 13px;
+	.btn-version {
+		.btn {
+			background-color: $brand-light;
+			padding: 3px 8px 3px 12px;
 			text-transform: none;
+		}
+
+		.dropdown-menu {
+			min-width: 116px;
 		}
 	}
 
@@ -31,7 +36,7 @@
 		padding: 0;
 
 		@media (min-width: $grid-float-breakpoint) {
-			padding: $base-size * 1.33 $base-size $base-size * 0.66 $base-size * 0.33;
+			padding: $base-size * 1.33 $base-size $base-size * 2.4 $base-size * 0.33;
 		}
 
 		@media (max-width: $grid-float-breakpoint - 1) {
@@ -73,8 +78,8 @@
 
 		> input.form-control {
 			background-color: $brand-light;
+			border-color: $brand-light;
 			border-radius: 4px;
-			border-width: 1px;
 			color: $text-color;
 			padding-left: 0.875rem;
 			padding-right: $base-size * 1.5;
@@ -93,8 +98,7 @@
 			}
 
 			&:active, &:focus {
-				border-color: $brand-border-color-light;
-				box-shadow: 2px 3px 12px 0 rgba(231, 231, 237, 1);
+				box-shadow: 2px 3px 12px 0 #E7E7ED;
 
 				&::-moz-placeholder {
 					color: transparent;
