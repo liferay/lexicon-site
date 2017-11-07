@@ -133,7 +133,10 @@ module.exports = {
 			src: path.join(clay.buildDir, 'images', 'icons', '*')
 		},
 		{
-			src: path.join(clay.srcDir, 'js', 'svg4everybody.js')
+			src: [
+				path.join(clay.srcDir, 'js', 'svg4everybody.js'),
+				path.join(clay.srcDir, 'js', 'bootstrap.js')
+			]
 		}
 	]
 };
