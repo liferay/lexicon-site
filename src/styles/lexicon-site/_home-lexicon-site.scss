@@ -20,20 +20,21 @@
 }
 
 .home {
-    .btn-version {
-    .btn {
-        background-color: rgba(255, 255, 255, 0.3);
-        border-color: transparent;
-        font-size: 13px;
-        color: #FFF;
-        font-weight: bold;
-        text-transform: none;
-        padding: 3px 8px 3px 12px;
-        }
-        .dropdown-menu {
-            min-width: 116px;
-        }
-    }
+	.btn-version {
+		.btn {
+			background-color: rgba(255, 255, 255, 0.3);
+			border-color: transparent;
+			color: #FFF;
+			font-size: 13px;
+			font-weight: bold;
+			padding: 3px 8px 3px 12px;
+			text-transform: none;
+		}
+
+		.dropdown-menu {
+			min-width: 116px;
+		}
+	}
 
 	.font-weight-bold {
 		font-weight: 900 !important;
@@ -113,8 +114,8 @@
 	}
 
 	.btn-light {
+		background-color: $white;
 		border-color: $white;
-        background-color: $white;
 		color: $brand-dark;
 		font-size: 13px;
 		letter-spacing: 1.5px;

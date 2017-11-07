@@ -3,23 +3,25 @@
 	min-width: 370px;
 
 	.navbar-brand {
-	    font-size: $base-size * 1.1666;
-	    font-weight: 700;
-	    small {
-	        font-size: 0.875rem;
-	    }
+		font-size: $base-size * 1.1666;
+		font-weight: 700;
+
+		small {
+			font-size: 0.875rem;
+		}
 	}
-    
-    .btn-version {
-        .btn {
-            background-color: $brand-light;
-            text-transform: none;
-            padding: 3px 8px 3px 12px;
-        }
-        .dropdown-menu {
-            min-width: 116px;
-        }
-    }
+
+	.btn-version {
+		.btn {
+			background-color: $brand-light;
+			padding: 3px 8px 3px 12px;
+			text-transform: none;
+		}
+
+		.dropdown-menu {
+			min-width: 116px;
+		}
+	}
 
 	.logo {
 		height: 2.5rem;
@@ -76,7 +78,7 @@
 
 		> input.form-control {
 			background-color: $brand-light;
-            border-color: $brand-light;
+			border-color: $brand-light;
 			border-radius: 4px;
 			color: $text-color;
 			padding-left: 0.875rem;
@@ -96,8 +98,7 @@
 			}
 
 			&:active, &:focus {
-	
-				box-shadow: 2px 3px 12px 0 rgba(231, 231, 237, 1);
+				box-shadow: 2px 3px 12px 0 #E7E7ED;
 
 				&::-moz-placeholder {
 					color: transparent;
