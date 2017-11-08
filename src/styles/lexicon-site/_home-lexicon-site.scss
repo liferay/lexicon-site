@@ -7,7 +7,7 @@
 	color: $brand-border-color;
 	font-size: 13px;
 	font-weight: 700;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	margin-top: 250px;
 	text-transform: uppercase;
 	transform: rotate(-90deg);
@@ -25,14 +25,16 @@
 			background-color: rgba(255, 255, 255, 0.3);
 			border-color: transparent;
 			color: #FFF;
-			font-size: 13px;
-			font-weight: bold;
 			padding: 3px 8px 3px 12px;
 			text-transform: none;
+
+			.lexicon-icon-caret-bottom {
+				margin-top: 0.03rem;
+			}
 		}
 
 		.dropdown-menu {
-			min-width: 116px;
+			min-width: 140px;
 		}
 	}
 
@@ -41,8 +43,8 @@
 	}
 
 	.card {
-		border-bottom: 12px solid $brand-light;
-		border-radius: 12px;
+		border-bottom: 14px solid $brand-light;
+		border-radius: 14px;
 		box-shadow: 4px 6px 36px rgba(48, 49, 63, 0.15);
 		margin-bottom: 24px;
 		min-height: 100%;
@@ -128,7 +130,7 @@
 	}
 
 	.h1 {
-		font-size: 36px;
+		font-size: 40px;
 		font-weight: 900;
 		line-height: 1;
 		margin: 52px 0 24px;
@@ -148,7 +150,7 @@
 		color: rgba(255, 255, 255, 0.5);
 		font-size: 16px;
 		font-weight: 700;
-		letter-spacing: 4px;
+		letter-spacing: 3px;
 		line-height: 1.7;
 		margin-bottom: 48px;
 		text-transform: uppercase;

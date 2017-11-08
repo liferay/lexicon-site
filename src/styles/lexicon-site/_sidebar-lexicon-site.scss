@@ -16,10 +16,14 @@
 			background-color: $brand-light;
 			padding: 3px 8px 3px 12px;
 			text-transform: none;
+
+			.lexicon-icon-caret-bottom {
+				margin-top: 0.03rem;
+			}
 		}
 
 		.dropdown-menu {
-			min-width: 116px;
+			min-width: 140px;
 		}
 	}
 
@@ -225,4 +229,8 @@
 	@media (max-width: $screen-sm - 1) {
 		display: block;
 	}
+}
+
+.legal {
+	color: $brand-secondary;
 }
