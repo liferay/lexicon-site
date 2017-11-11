@@ -1,5 +1,5 @@
 ---
-title: "Header"
+title: "Header WIP"
 description: "Header is toolbar that allows identification, navigation and display actions."
 layout: "guide"
 weight: 2

@@ -9,6 +9,8 @@ weight: 1
 
 {$page.description}
 
+![modal window over a dark transparent background](../../../images/Modal.png)
+
 ### Usage
 
 * Modals can be build in different sizes and configurations. Depending on the amount of content you have you will decide one of them.
