@@ -8,11 +8,9 @@ hidden: yes
 
 ## Last update
 
-2017.10.03
+2017.11.11
 
 ## Updates
-
-NOTE: InVision files removed.
 
 ### Design principles
 
@@ -30,24 +28,25 @@ NOTE: InVision files removed.
 | ---- | ----- |
 | Actions definition | 2017.07.13 Update with examples. Missing attributes. |
 | Alerts | 2017.06.26 Update with examples. Missing attributes. |
-| Badges, labels, stickers | 2017.07.12 Updated with new sticker sizes, label link. |
+| Badges | **2017.11.11 Stand alone pattern** |
 | Buttons | 2017.07.12 Button with icon and text. |
 | Cards | 2017.06.25 Included user card, image card. Missing folder card, file card. |
-| Columns View | **2017.09.24 Working in description** |
+| Columns View | 2017.09.24 Working in description |
 | Confirmation message | 2017.08.10 Complete |
 | Dataset display | 2017.07.12 Updated with examples for empty states. |
 | Dropdown menu | 2017.07.12 Distance to button specification |
-| File upload | **2017.09.24 Working in description** |
-| Forms > forms | **2017.09.24 Updated: boolean situations** |
+| File upload | 2017.09.24 Working in description |
+| Forms > forms | 2017.09.24 Updated: boolean situations |
 | Forms > CRT | 2017.06.14 Complete. |
 | Forms > Multi Step Form | 2017.07.22 Process bar renamed and placed in forms. |
 | Forms > Multi Step Simplified | 2017.08.17 Complete |
-| Forms > Selectors | 2017.06.14 In process. Missing multiple selector |
+| Forms > Selectors | **2017.06.14 Selector corrected** |
 | Forms > Text input | 2017.07.12 Variations extracted to other page |
-| Forms > Text input variations | 2017.07.13 Search autocomplete |
+| Forms > Text input variations | **2017.11.11 Autocomplete and Labels input field added.** |
 | Forms > Text input group | 2017.07.12 Style changed. |
 | Icons | 2017.08.10 Updated with new icons |
-| Image Selector | **2017.09.24 Working in description** |
+| Image Selector | 2017.09.24 Working in description |
+| Labels | **2017.11.11 Stand alone pattern** |
 | Link | 2017.08.17 Complete |
 | List | 2017.07.22 Updated with sections |
 | Loading indicator | 2017.06.14 Pending. |
@@ -64,7 +63,8 @@ NOTE: InVision files removed.
 | Popover and tooltips | 2017.07.12 Popver attributes updated. |
 | Process bar | 2017.07.12 Complete. Modified examples and included mobile |
 | Progress bar | 2017.06.14 In process. |
-| Sidebar | **2017.09.24 Complete.** |
+| Sidebar | 2017.09.24 Complete. |
+| Stickers | **2017.11.11 Stand alone pattern** |
 | Table > Table | 2017.07.22 Updated with sections |
 | Table > Inline edit table | 2017.08.17 Complete |
 | Tabs | 2017.06.14 Done. Missing attributes. |
