@@ -100,4 +100,6 @@ The check box in the management bar selects/unselects all elements in the visual
 
 ### Change view
 
+Changing view is something to have only when there is more than one visualization. Otherwise, this pattern must not appear in the management bar.
+
 ![dataset display view change animation](../../../images/DatasetDisplayChangeView.gif)
