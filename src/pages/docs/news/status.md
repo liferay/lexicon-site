@@ -3,7 +3,7 @@ title: "Status"
 description: "Lexicon upcoming site status"
 layout: "guide"
 weight: 1
-Hidden: "yes"
+hidden: yes
 ---
 
 ## Last update

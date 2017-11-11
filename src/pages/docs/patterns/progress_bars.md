@@ -21,7 +21,7 @@ Progress bar are used as a feedback mechanism for system tasks. As long as the p
 #### States
 
 Progress bars can be in different states:
-- Loading: the bar process grows in primary color and the label changes with the completion percentage.
+- Loading: the bar progress grows in primary color and the label changes with the completion percentage.
 
 	![indeterminate progress bar](../../../images/ProgressBar30.png) 
 
