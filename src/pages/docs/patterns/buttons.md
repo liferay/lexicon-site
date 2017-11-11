@@ -26,11 +26,11 @@ weight: 1
 
 ![set of three button types in default state](../../../images/ButtonDefault.png)
 
-#### Hover states
+#### Hover state
 
 ![set of three button types in active state](../../../images/ButtonHover.png)
 
-#### Active states
+#### Active state
 
 ![set of three button types in active state](../../../images/ButtonActive.png)
 
