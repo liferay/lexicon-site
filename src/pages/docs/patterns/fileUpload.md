@@ -9,12 +9,12 @@ weight: 1
 
 {$page.description}
 
-### Simple file upload
+### Simple File Upload
 Simple file upload is used to upload a simple file element.
 
 ![file upload simple](../../../images/FileUploadSimple.png)
 
-### Multiple file upload
+### Multiple File Upload
 Inside this categorization we have two different patterns: file uploader and image uploader. Both are pretty similar but the second one is more visual and adapted to the situation.
 
 Both uploders share the same **upload area** which works in the following way:
@@ -35,7 +35,7 @@ Both uploders share the same **upload area** which works in the following way:
 * Each file can be deleted individually.
 * Each file can retry the upload individually
 
-#### File uploader
+#### File Uploader
 
 ![file upload simple](../../../images/FileUpload.png)
 
@@ -63,7 +63,7 @@ Files can be in different states:
 ![file upload list row error state](../../../images/FileUploadListError.png)
 
 
-#### Image uploader
+#### Image Uploader
 
 ![file upload simple](../../../images/FileUploadImageUpload.png)
 
