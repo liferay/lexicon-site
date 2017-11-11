@@ -1,5 +1,5 @@
 ---
-title: "File upload"
+title: "File Upload"
 description: "File upload loads one or many files into the system."
 layout: "guide"
 weight: 1

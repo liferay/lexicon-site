@@ -1,5 +1,5 @@
 ---
-title: "Dropdown menu"
+title: "Dropdown Menu"
 description: "A dropdown is a list of options related to the element that triggers it."
 layout: "guide"
 weight: 1

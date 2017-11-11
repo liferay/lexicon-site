@@ -1,5 +1,5 @@
 ---
-title: "Progress bars"
+title: "Progress Bar"
 description: "Progress bar is a progress indicator used to show the completion percentage of a task."
 layout: "guide"
 weight: 1

@@ -1,5 +1,5 @@
 ---
-title: "Dataset display"
+title: "Dataset Display"
 description: "A dataset display is the combination of a management bar with one or many data visualization types and a possible mechanism of pagination. The most common visualization types used are table, list and card."
 layout: "guide"
 weight: 1
