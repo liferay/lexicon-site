@@ -1,5 +1,5 @@
 ---
-title: "News & Resources"
+title: "News"
 description: "Keep updated."
 layout: "guide"
 icon: "lexicon-site-news"
