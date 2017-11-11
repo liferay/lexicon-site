@@ -84,15 +84,15 @@ Split buttons are used in those cases where you need to offer the user a quick m
 
 Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.
 
-#### Action button
+#### Plus button
 
-Actions buttons can be found in two different ways:
-
-* Plus button: normally placed in toolbars, allows to have adding actions over a dataset. The kind of elements to add with this button are of the same nature and folders. Sometimes it only has a unique action, some others it has more. Visit Dropdown menu > Sorting actions to know more.
+Normally placed in toolbars, allows to have adding actions over a dataset. The kind of elements to add with this button are of the same nature and folders. Sometimes it only has a unique action, some others it has more. Visit Dropdown menu > Sorting actions to know more.
 
 ![Plus button](../../../images/ButtonActionPlus.png) 
 
-* Action button: can be found everywhere when a set of contextual actions are needed over an element or a dataset. This button displays a set of actions inside a dropdown menu. The actions must be sorted in an specific way, please visit Dropdown menu > Sorting actions to know more.
+#### Action button
+
+It is used when a set of contextual actions are needed over an element or a dataset. This button displays a set of actions inside a dropdown menu. The actions must be sorted in an specific way, please visit Dropdown menu > Sorting actions to know more.
 
 ![Actions or kebab button](../../../images/ButtonActionKebab.png)  
 
