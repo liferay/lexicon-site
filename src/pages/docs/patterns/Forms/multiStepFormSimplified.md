@@ -1,5 +1,5 @@
 ---
-title: "Multi step form simplified"
+title: "Multi Step Form Simplified"
 description: "Multi step form simplified is used as a progressive disclosure method to guide the user through a task divided in several steps in a light way."
 layout: "guide"
 weight: 1

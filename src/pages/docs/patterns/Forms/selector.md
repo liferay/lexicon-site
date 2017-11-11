@@ -11,24 +11,14 @@ weight: 3
 
 ![selector default state](../../../images/Selector.png)
 
+
 ### Usage
 
-This pattern is completely different from a dropdown as a selector is a native element with a list asociated. A dropdown instead opens a panel where the panel could contain multiple different things.
+This pattern is completely different from a dropdown as a selector is a native component with a data provider. A dropdown, instead, opens a panel where the panel could contain multiple and different nature elements.
 
 ### States
 
-#### Default
-
-![selector default state](../../../images/Selector.png)
-
-#### Active
-
-![selector active state](../../../images/Selector+Focus.png)
-
-#### Disabled
-
-![selector disabled state](../../../images/Selector+Disabled.png)
-
+The states for a selector are the same as for a text input.
 
 ## Multiple selector
 
