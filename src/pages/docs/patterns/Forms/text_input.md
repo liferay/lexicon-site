@@ -1,13 +1,15 @@
 ---
-title: "Text input"
+title: "Text Input"
 description: "Text input types, usage and validations."
 layout: "guide"
 weight: 4
 ---
 
-## Text field
+## Text Field
 
-{$page.description}
+A text field allow users write data in the system with the end of this data to be processed.
+
+![default empty state](../../../images/Input.png)
 
 A textfield has at least the following elements:
 - Label
@@ -65,6 +67,7 @@ Validation text for fields are placed right below the field box and before the h
 #### Error
 
 ![default error state](../../../images/Input+Error.png)
+
 ![default error state](../../../images/Input+HelpText+Error.png)
 
 
@@ -73,6 +76,7 @@ Validation text for fields are placed right below the field box and before the h
 A text area is similar to a text field input but for several lines of text. Text areas allow users to introduce long description of products as an example.
 
 ![text area](../../../images/InputTextArea.png)
+
 ![text area](../../../images/InputTextArea+HelpText.png)
 
 ### Usage

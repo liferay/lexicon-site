@@ -1,5 +1,5 @@
 ---
-title: "Dataset display"
+title: "Dataset Display"
 description: "A dataset display is the combination of a management bar with one or many data visualization types and a possible mechanism of pagination. The most common visualization types used are table, list and card."
 layout: "guide"
 weight: 1
@@ -99,5 +99,7 @@ The check box in the management bar selects/unselects all elements in the visual
 ![collective actions displayed both in management bar and from actions menu](../../../images/DatasetDisplayDragDrop.png)
 
 ### Change view
+
+Changing view is something to have only when there is more than one visualization. Otherwise, this pattern must not appear in the management bar.
 
 ![dataset display view change animation](../../../images/DatasetDisplayChangeView.gif)

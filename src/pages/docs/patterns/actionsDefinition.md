@@ -1,5 +1,5 @@
 ---
-title: "Actions definition"
+title: "Actions Definition"
 description: "This page defines the usage of certain actions as Delete vs Send to Recycle Bin, Select vs Choose ..."
 layout: "guide"
 weight: 1

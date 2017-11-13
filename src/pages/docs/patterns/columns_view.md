@@ -3,7 +3,7 @@ title: "Columns View WIP"
 description: "Columns view, also known as Miller columns or Cascading list, is a visualization type that allows to move faster in a tree view seeing several depth levels at same time."
 layout: "guide"
 weight: 1
-hide: "yes"
+hidden: yes
 ---
 
 ### Description

@@ -1,13 +1,20 @@
 ---
-title: "Text input variations"
-description: "Text input variations offer a set of variations over the text input: search field, date field or date selector, numeric field"
+title: "Text Input Variations"
+description: "search, autocomplete, labels input, date, numeric, password"
 layout: "guide"
 weight: 4
 ---
 
+## Autocomplete Text Field
+
+Autocomplete textfield is the input that has a data provider associated offering the user text suggestions while typing.
+
+![autocomple text field with list open](../../../images/AutocompleteTexfield.png)
+
+
 ## Search field
 
-Is the specific field type to search for content. It is used in those situations where there is a potentially big amount of information and this mechanism can help the user to find specific content.
+Search field is pretty similar to autocomplete text field but the field states are defined better to adapt to search scenario.
 
 ### Usage
 A search field can have autocompletition showing a list of options below the field.
@@ -30,6 +37,15 @@ A search field can have autocompletition showing a list of options below the fie
 #### Active
 
 ![search field active state](../../../images/InputSearch+Active.png)
+
+## Labels Input Field
+
+Labels input field is specially focus on writing categories or tags.
+
+![search field active state](../../../images/LabelInputField.png)
+
+![search field active state](../../../images/LabelInputFieldMultipleLines.png)
+
 
 ## Date field or Date selector
 

@@ -1,5 +1,5 @@
 ---
-title: "Progress bars"
+title: "Progress Bar"
 description: "Progress bar is a progress indicator used to show the completion percentage of a task."
 layout: "guide"
 weight: 1
@@ -21,7 +21,7 @@ Progress bar are used as a feedback mechanism for system tasks. As long as the p
 #### States
 
 Progress bars can be in different states:
-- Loading: the bar process grows in primary color and the label changes with the completion percentage.
+- Loading: the bar progress grows in primary color and the label changes with the completion percentage.
 
 	![indeterminate progress bar](../../../images/ProgressBar30.png) 
 

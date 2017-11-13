@@ -1,5 +1,5 @@
 ---
-title: "Text input group"
+title: "Text Input Group"
 description: "A text input group is a text field with extra elements that makes the pattern more complete for a common or frequent use case."
 layout: "guide"
 weight: 5

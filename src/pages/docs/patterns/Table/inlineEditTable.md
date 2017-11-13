@@ -1,5 +1,5 @@
 ---
-title: "Inline edit table"
+title: "Inline Edit Table"
 description: "An inline edit table allows the user to modify certain values of the entry without going to an entry detail page."
 layout: "guide"
 weight: 2

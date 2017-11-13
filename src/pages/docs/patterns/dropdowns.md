@@ -1,5 +1,5 @@
 ---
-title: "Dropdown menu"
+title: "Dropdown Menu"
 description: "A dropdown is a list of options related to the element that triggers it."
 layout: "guide"
 weight: 1
@@ -8,6 +8,8 @@ weight: 1
 ### Description
 
 {$page.description}
+
+![default dropdown menu](../../../images/DropdownRegular.png)
 
 ### Usage
 Dropdowns are used to list a set of options that are not easy to manage in the screen. This mechanism helps to clean-up the screen making everything more implicit.
@@ -141,6 +143,3 @@ Guideline:
 * Max height: maximum of 11 visible elements of any type.
 * Each entry must be in one line, if it doesn't fit use ellipsis.
 
-### Example of use
-
-TODO:
