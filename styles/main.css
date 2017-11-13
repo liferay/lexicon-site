@@ -12742,6 +12742,8 @@ button.loading > .linear.loading-animation {
     background-color: #FFF;
     padding: 3px 8px 3px 12px;
     text-transform: none; }
+    .sidebar-lexicon-site .btn-version .btn:active {
+      color: #000; }
     .sidebar-lexicon-site .btn-version .btn .lexicon-icon-caret-bottom {
       margin-top: 0.03rem; }
   .sidebar-lexicon-site .btn-version .dropdown-menu {
