@@ -17,6 +17,10 @@
 			padding: 3px 8px 3px 12px;
 			text-transform: none;
 
+			&:active {
+				color: #000;
+			}
+
 			.lexicon-icon-caret-bottom {
 				margin-top: 0.03rem;
 			}
