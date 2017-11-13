@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([14,65,66,67],[
+webpackJsonppageComponent([17,67,68,69],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3143,7 +3143,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'alt', 'Lexicon');
             ie_close('img');
             ie_open('span', null, null,
-                'class', 'title');
+                'class', 'title ml-1');
               itext('Lexicon');
             ie_close('span');
           ie_close('a');
@@ -3155,21 +3155,26 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'class', 'btn btn-sm dropdown-toggle ml-2 mt-1',
                 'data-toggle', 'dropdown',
                 'type', 'button');
-              itext('v 2.0');
+              itext('v 2.0 alpha');
               ie_open('svg', null, null,
                   'aria-hidden', 'true',
-                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1 mt-0');
+                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1');
                 ie_void('use', null, null,
                     'xmlns:xlink', 'http://www.w3.org/1999/xlink',
                     'xlink:href', '/vendor/lexicon/icons.svg#caret-bottom');
               ie_close('svg');
             ie_close('button');
             ie_open('div', null, null,
-                'class', 'dropdown-menu ml-3 mt-2');
+                'class', 'dropdown-menu ml-2 mt-2');
+              ie_open('a', null, null,
+                  'class', 'dropdown-item active',
+                  'href', '#');
+                itext('v 2.0 alpha');
+              ie_close('a');
               ie_open('a', null, null,
                   'class', 'dropdown-item',
                   'href', 'https://v1.lexicondesign.io/');
-                itext('Version 1.0');
+                itext('v 1.0');
               ie_close('a');
             ie_close('div');
           ie_close('div');
@@ -3183,11 +3188,22 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
         $templateAlias2(opt_data, null, opt_ijData);
       ie_close('div');
+      ie_open('p', null, null,
+          'class', 'legal sidebar-body pb-0 mb-0');
+        itext('Except as otherwise noted, the content of this site is licensed under ');
+        ie_open('a', null, null,
+            'href', 'https://creativecommons.org/licenses/by-sa/4.0/',
+            'target', '_blank');
+          itext('CC BY-SA');
+        ie_close('a');
+        itext(' 4.0 license.');
+      ie_close('p');
       ie_open('ul', null, null,
           'class', 'social-icons ml-4 text-left');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://dribbble.com/liferay',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/dribble.png',
                 'alt', '');
@@ -3196,7 +3212,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('li');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://github.com/liferay/lexicon-site',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/GitHub-Mark-64px.svg',
                 'alt', '');
@@ -3205,7 +3222,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('li');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://twitter.com/Liferay_Lexicon',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/twitter.svg',
                 'alt', '');
@@ -12345,8 +12363,7 @@ module.exports = function(module) {
 /* 145 */,
 /* 146 */,
 /* 147 */,
-/* 148 */,
-/* 149 */
+/* 148 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12453,6 +12470,7 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pagePatternLibrary, t
 
 
 /***/ }),
+/* 149 */,
 /* 150 */,
 /* 151 */,
 /* 152 */,
@@ -12557,7 +12575,10 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pagePatternLibrary, t
 /* 251 */,
 /* 252 */,
 /* 253 */,
-/* 254 */
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12587,7 +12608,7 @@ __webpack_require__(17);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(149);
+var _indexSoy = __webpack_require__(148);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -12618,4 +12639,4 @@ _metalSoy2.default.register(pagePatternLibrary, _indexSoy2.default);
 exports.default = pagePatternLibrary;
 
 /***/ })
-],[254]);
+],[257]);

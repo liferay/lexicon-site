@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([58,65,66,67],[
+webpackJsonppageComponent([60,67,68,69],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3143,7 +3143,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'alt', 'Lexicon');
             ie_close('img');
             ie_open('span', null, null,
-                'class', 'title');
+                'class', 'title ml-1');
               itext('Lexicon');
             ie_close('span');
           ie_close('a');
@@ -3155,21 +3155,26 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'class', 'btn btn-sm dropdown-toggle ml-2 mt-1',
                 'data-toggle', 'dropdown',
                 'type', 'button');
-              itext('v 2.0');
+              itext('v 2.0 alpha');
               ie_open('svg', null, null,
                   'aria-hidden', 'true',
-                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1 mt-0');
+                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1');
                 ie_void('use', null, null,
                     'xmlns:xlink', 'http://www.w3.org/1999/xlink',
                     'xlink:href', '/vendor/lexicon/icons.svg#caret-bottom');
               ie_close('svg');
             ie_close('button');
             ie_open('div', null, null,
-                'class', 'dropdown-menu ml-3 mt-2');
+                'class', 'dropdown-menu ml-2 mt-2');
+              ie_open('a', null, null,
+                  'class', 'dropdown-item active',
+                  'href', '#');
+                itext('v 2.0 alpha');
+              ie_close('a');
               ie_open('a', null, null,
                   'class', 'dropdown-item',
                   'href', 'https://v1.lexicondesign.io/');
-                itext('Version 1.0');
+                itext('v 1.0');
               ie_close('a');
             ie_close('div');
           ie_close('div');
@@ -3183,11 +3188,22 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
         $templateAlias2(opt_data, null, opt_ijData);
       ie_close('div');
+      ie_open('p', null, null,
+          'class', 'legal sidebar-body pb-0 mb-0');
+        itext('Except as otherwise noted, the content of this site is licensed under ');
+        ie_open('a', null, null,
+            'href', 'https://creativecommons.org/licenses/by-sa/4.0/',
+            'target', '_blank');
+          itext('CC BY-SA');
+        ie_close('a');
+        itext(' 4.0 license.');
+      ie_close('p');
       ie_open('ul', null, null,
           'class', 'social-icons ml-4 text-left');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://dribbble.com/liferay',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/dribble.png',
                 'alt', '');
@@ -3196,7 +3212,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('li');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://github.com/liferay/lexicon-site',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/GitHub-Mark-64px.svg',
                 'alt', '');
@@ -3205,7 +3222,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('li');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://twitter.com/Liferay_Lexicon',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/twitter.svg',
                 'alt', '');
@@ -12508,7 +12526,9 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageDocsIndex, templa
 /* 202 */,
 /* 203 */,
 /* 204 */,
-/* 205 */
+/* 205 */,
+/* 206 */,
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12569,4 +12589,4 @@ _metalSoy2.default.register(pageDocsIndex, _indexSoy2.default);
 exports.default = pageDocsIndex;
 
 /***/ })
-],[205]);
+],[207]);

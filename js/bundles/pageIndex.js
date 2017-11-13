@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([0,65,66,67],[
+webpackJsonppageComponent([0,67,68,69],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -3143,7 +3143,7 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'alt', 'Lexicon');
             ie_close('img');
             ie_open('span', null, null,
-                'class', 'title');
+                'class', 'title ml-1');
               itext('Lexicon');
             ie_close('span');
           ie_close('a');
@@ -3155,21 +3155,26 @@ function $render(opt_data, opt_ignored, opt_ijData) {
                 'class', 'btn btn-sm dropdown-toggle ml-2 mt-1',
                 'data-toggle', 'dropdown',
                 'type', 'button');
-              itext('v 2.0');
+              itext('v 2.0 alpha');
               ie_open('svg', null, null,
                   'aria-hidden', 'true',
-                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1 mt-0');
+                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1');
                 ie_void('use', null, null,
                     'xmlns:xlink', 'http://www.w3.org/1999/xlink',
                     'xlink:href', '/vendor/lexicon/icons.svg#caret-bottom');
               ie_close('svg');
             ie_close('button');
             ie_open('div', null, null,
-                'class', 'dropdown-menu ml-3 mt-2');
+                'class', 'dropdown-menu ml-2 mt-2');
+              ie_open('a', null, null,
+                  'class', 'dropdown-item active',
+                  'href', '#');
+                itext('v 2.0 alpha');
+              ie_close('a');
               ie_open('a', null, null,
                   'class', 'dropdown-item',
                   'href', 'https://v1.lexicondesign.io/');
-                itext('Version 1.0');
+                itext('v 1.0');
               ie_close('a');
             ie_close('div');
           ie_close('div');
@@ -3183,11 +3188,22 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('div');
         $templateAlias2(opt_data, null, opt_ijData);
       ie_close('div');
+      ie_open('p', null, null,
+          'class', 'legal sidebar-body pb-0 mb-0');
+        itext('Except as otherwise noted, the content of this site is licensed under ');
+        ie_open('a', null, null,
+            'href', 'https://creativecommons.org/licenses/by-sa/4.0/',
+            'target', '_blank');
+          itext('CC BY-SA');
+        ie_close('a');
+        itext(' 4.0 license.');
+      ie_close('p');
       ie_open('ul', null, null,
           'class', 'social-icons ml-4 text-left');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://dribbble.com/liferay',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/dribble.png',
                 'alt', '');
@@ -3196,7 +3212,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('li');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://github.com/liferay/lexicon-site',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/GitHub-Mark-64px.svg',
                 'alt', '');
@@ -3205,7 +3222,8 @@ function $render(opt_data, opt_ignored, opt_ijData) {
         ie_close('li');
         ie_open('li');
           ie_open('a', null, null,
-              'href', '');
+              'href', 'https://twitter.com/Liferay_Lexicon',
+              'target', '_blank');
             ie_open('img', null, null,
                 'src', '/images/home/twitter.svg',
                 'alt', '');
@@ -12360,7 +12378,9 @@ module.exports = function(module) {
 /* 160 */,
 /* 161 */,
 /* 162 */,
-/* 163 */
+/* 163 */,
+/* 164 */,
+/* 165 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12447,12 +12467,12 @@ function $header(opt_data, opt_ignored, opt_ijData) {
         ie_open('div', null, null,
             'class', 'navbar-brand');
           ie_open('img', null, null,
-              'class', 'logo mr-2 mr-sm-3',
+              'class', 'logo mr-2 mr-sm-2',
               'src', '/images/home/lexicon_symbol.svg',
               'alt', '');
           ie_close('img');
           ie_open('span', null, null,
-              'class', 'title align-middle');
+              'class', 'title align-middle ml-1');
             itext('Lexicon');
           ie_close('span');
           ie_open('div', null, null,
@@ -12463,10 +12483,10 @@ function $header(opt_data, opt_ignored, opt_ijData) {
                 'class', 'btn btn-sm dropdown-toggle ml-3 mt-1',
                 'data-toggle', 'dropdown',
                 'type', 'button');
-              itext('v 2.0');
+              itext('v 2.0 alpha');
               ie_open('svg', null, null,
                   'aria-hidden', 'true',
-                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1 mt-0');
+                  'class', 'lexicon-icon lexicon-icon-caret-bottom ml-1');
                 ie_void('use', null, null,
                     'xmlns:xlink', 'http://www.w3.org/1999/xlink',
                     'xlink:href', '/vendor/lexicon/icons.svg#caret-bottom');
@@ -12475,9 +12495,14 @@ function $header(opt_data, opt_ignored, opt_ijData) {
             ie_open('div', null, null,
                 'class', 'dropdown-menu ml-3 mt-2');
               ie_open('a', null, null,
+                  'class', 'dropdown-item active',
+                  'href', '#');
+                itext('v 2.0 alpha');
+              ie_close('a');
+              ie_open('a', null, null,
                   'class', 'dropdown-item',
                   'href', 'https://v1.lexicondesign.io/');
-                itext('Version 1.0');
+                itext('v 1.0');
               ie_close('a');
             ie_close('div');
           ie_close('div');
@@ -12493,7 +12518,7 @@ function $header(opt_data, opt_ignored, opt_ijData) {
             ie_close('a');
           ie_close('li');
           ie_open('li', null, null,
-              'class', 'nav-item');
+              'class', 'nav-item d-none d-sm-flex');
             ie_open('a', null, null,
                 'class', 'nav-link ml-3',
                 'href', 'docs/patterns/actionsDefinition.html');
@@ -12578,7 +12603,7 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
                 itext('What is Lexicon?');
               ie_close('h2');
               ie_open('p');
-                itext('A set of principles, patterns and tools created to rpovide a common design framework for crafting user interfaces within Liferay product ecosystem.');
+                itext('A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.');
               ie_close('p');
               ie_open('a', null, null,
                   'href', '/docs/lexicon/',
@@ -12610,7 +12635,7 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
                 itext('Design Principles');
               ie_close('h2');
               ie_open('p');
-                itext('An open space for designers, developers or any other person involved in the creation of digital products who want to use it and participate.');
+                itext('Basic guidelines that lay on the base of the design library to provide guidance and robustness to build up patterns and interfaces.');
               ie_close('p');
               ie_open('a', null, null,
                   'href', '/docs/designPrinciples/accessibility.html',
@@ -12655,7 +12680,7 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
                     itext('Pattern Library');
                   ie_close('h2');
                   ie_open('p');
-                    itext('A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem all over the world.');
+                    itext('A set of pieces based on Atomic Design concept that allows you to build interafaces by using and composing and extending the different patterns in combination with the Design Principles.');
                   ie_close('p');
                   ie_open('a', null, null,
                       'href', '/docs/patterns/actionsDefinition.html',
@@ -12691,7 +12716,7 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
                 itext('News & Updates');
               ie_close('h2');
               ie_open('p');
-                itext('A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.');
+                itext('Keep updated as Lexicon evolves with new patterns and needs that Liferay interfaces have as they grow.');
               ie_close('p');
               ie_open('a', null, null,
                   'href', '/docs/news/News.html',
@@ -12723,10 +12748,10 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
                 itext('Resources');
               ie_close('h2');
               ie_open('p');
-                itext('A set of principles, patterns and tools created to provide a common design framework for crafting user interfaces within Liferay product ecosystem.');
+                itext('For you to learn more about Lexicon with our presentation and keep track of the evolution from previous versions.');
               ie_close('p');
               ie_open('a', null, null,
-                  'href', '/docs/resources.html',
+                  'href', '/docs/resources/index.html',
                   'class', 'btn btn-sm text-uppercase font-weight-bold');
                 ie_open('img', null, null,
                     'class', 'mr-2',
@@ -12744,7 +12769,8 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
               'class', 'social-icons');
             ie_open('li');
               ie_open('a', null, null,
-                  'href', '');
+                  'href', 'https://dribbble.com/liferay',
+                  'target', '_blank');
                 ie_open('img', null, null,
                     'src', '/images/home/dribble.png',
                     'alt', '');
@@ -12753,7 +12779,8 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
             ie_close('li');
             ie_open('li');
               ie_open('a', null, null,
-                  'href', '');
+                  'href', 'https://github.com/liferay/lexicon-site',
+                  'target', '_blank');
                 ie_open('img', null, null,
                     'src', '/images/home/GitHub-Mark-64px.svg',
                     'alt', '');
@@ -12762,7 +12789,8 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
             ie_close('li');
             ie_open('li');
               ie_open('a', null, null,
-                  'href', '');
+                  'href', 'https://twitter.com/Liferay_Lexicon',
+                  'target', '_blank');
                 ie_open('img', null, null,
                     'src', '/images/home/twitter.svg',
                     'alt', '');
@@ -12977,8 +13005,6 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 
 
 /***/ }),
-/* 164 */,
-/* 165 */,
 /* 166 */,
 /* 167 */,
 /* 168 */,
@@ -13072,7 +13098,11 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 /* 256 */,
 /* 257 */,
 /* 258 */,
-/* 259 */
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13102,7 +13132,7 @@ __webpack_require__(17);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(163);
+var _indexSoy = __webpack_require__(165);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -13133,4 +13163,4 @@ _metalSoy2.default.register(pageIndex, _indexSoy2.default);
 exports.default = pageIndex;
 
 /***/ })
-],[259]);
+],[263]);

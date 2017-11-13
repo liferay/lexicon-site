@@ -12742,8 +12742,10 @@ button.loading > .linear.loading-animation {
     background-color: #FFF;
     padding: 3px 8px 3px 12px;
     text-transform: none; }
+    .sidebar-lexicon-site .btn-version .btn .lexicon-icon-caret-bottom {
+      margin-top: 0.03rem; }
   .sidebar-lexicon-site .btn-version .dropdown-menu {
-    min-width: 116px; }
+    min-width: 140px; }
   .sidebar-lexicon-site .logo {
     height: 2.5rem;
     padding-bottom: 0.1875rem; }
@@ -12837,18 +12839,18 @@ button.loading > .linear.loading-animation {
   .sidebar-lexicon-site .nav-pills > li > ul > li.active > a,
   .sidebar-lexicon-site .nav-pills > li > ul > li.active > a:focus,
   .sidebar-lexicon-site .nav-pills > li > a:focus {
-    background-color: #ECECF2;
+    background-color: #EFEFF4;
     border-radius: 6px;
     font-weight: 600; }
   .sidebar-lexicon-site .nav-pills > li a:hover {
-    background-color: #ECECF2; }
+    background-color: #EFEFF4; }
   .sidebar-lexicon-site .nav-pills li > ul > li > a {
     color: #30313F;
     font-weight: normal; }
   .sidebar-lexicon-site .nav-pills > li.nav-heading > a, .sidebar-lexicon-site .nav-pills > li.nav-heading > a:focus, .sidebar-lexicon-site .nav-pills > li > ul > li.nav-heading > a, .sidebar-lexicon-site .nav-pills > li > ul > li.nav-heading > a:focus {
     background-color: transparent; }
   .sidebar-lexicon-site .nav-pills > li.nav-heading > a:hover, .sidebar-lexicon-site .nav-pills > li > ul > li.nav-heading > a:hover {
-    background-color: #ECECF2; }
+    background-color: #EFEFF4; }
   .sidebar-lexicon-site .nav-pills li > a > .collapse-toggle {
     display: inline-block;
     height: 40px;
@@ -12869,6 +12871,9 @@ button.loading > .linear.loading-animation {
   @media (max-width: 899px) {
     .sidebar-toggler {
       display: block; } }
+
+.legal {
+  color: #6B6C7E; }
 
 table {
   margin: 36px 0 48px; }
@@ -12893,7 +12898,7 @@ table {
   color: #CDCED9;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   margin-top: 250px;
   text-transform: uppercase;
   transform: rotate(-90deg); }
@@ -12906,20 +12911,20 @@ table {
   background-color: rgba(255, 255, 255, 0.3);
   border-color: transparent;
   color: #FFF;
-  font-size: 13px;
-  font-weight: bold;
   padding: 3px 8px 3px 12px;
   text-transform: none; }
+  .home .btn-version .btn .lexicon-icon-caret-bottom {
+    margin-top: 0.03rem; }
 
 .home .btn-version .dropdown-menu {
-  min-width: 116px; }
+  min-width: 140px; }
 
 .home .font-weight-bold {
   font-weight: 900 !important; }
 
 .home .card {
-  border-bottom: 12px solid #FFF;
-  border-radius: 12px;
+  border-bottom: 14px solid #FFF;
+  border-radius: 14px;
   box-shadow: 4px 6px 36px rgba(48, 49, 63, 0.15);
   margin-bottom: 24px;
   min-height: 100%;
@@ -12982,7 +12987,7 @@ table {
     .intro .btn-light:hover {
       background-color: #F2F6FF; }
   .intro .h1 {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 900;
     line-height: 1;
     margin: 52px 0 24px;
@@ -12998,7 +13003,7 @@ table {
     color: rgba(255, 255, 255, 0.5);
     font-size: 16px;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     line-height: 1.7;
     margin-bottom: 48px;
     text-transform: uppercase; }
