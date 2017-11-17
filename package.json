@@ -9,6 +9,7 @@
   "dependencies": {
     "bourbon": "^4.3.3",
     "clay": "^2.0.0-alpha.10",
+    "lexicon-ux": "^1.0.25",
     "source-sans-pro": "^2.0.10"
   },
   "devDependencies": {
