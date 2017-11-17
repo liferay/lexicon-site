@@ -10,7 +10,8 @@
 	.lexicon-site-container {
 		flex: 1;
 		max-width: $content-max-width;
-
+		padding-bottom: $base-size * 2;
+		
 		@media (min-width: $screen-xs) {
 			padding-left: $base-size;
 			padding-right: $base-size * 2;
