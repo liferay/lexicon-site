@@ -55,7 +55,9 @@ Date selector allows to select a date. This date selector is similar to the one 
 
 ## Numeric field
 
-Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisims to increase and decrease the value.
+Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisims to increase and decrease the value by using arrow keys and inside field buttons.
+
+![numeric input field](../../../images/InputNumeric.png)
 
 
 ## Password field
