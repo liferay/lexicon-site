@@ -68,7 +68,7 @@ List sections help to separate different contents by a certain categorization or
 
 More examples can be found in [dataset template](./Templates/datasetTemplate.html).
 
-### Responsiness
+### Responsive
 
 * Text elements can’t fill more than two lines.
 * Ellipsis will be used to suggest more content available when is impossible to show all in a small screen. These ellipsis won’t be actionable. They are only indicative. The whole content will be showed on the item full description state.
