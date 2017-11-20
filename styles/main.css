@@ -12555,6 +12555,22 @@ button.loading > .linear.loading-animation {
   font-size: 18px;
   padding: 24px 0; }
 
+.lexicon-icon-list:after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden; }
+
+.lexicon-icon-list li span {
+  margin-left: 4px; }
+
+@media (min-width: 768px) {
+  .lexicon-icon-list li {
+    float: left;
+    padding: 5px;
+    width: 33%; } }
+
 .navbar-lexicon-site {
   background-color: transparent;
   padding-bottom: 32px;
@@ -12602,7 +12618,8 @@ button.loading > .linear.loading-animation {
       margin-left: 376px; } }
   .sidebar-offset .lexicon-site-container {
     flex: 1;
-    max-width: 960px; }
+    max-width: 960px;
+    padding-bottom: 48px; }
     @media (min-width: 768px) {
       .sidebar-offset .lexicon-site-container {
         padding-left: 24px;
