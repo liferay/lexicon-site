@@ -20,6 +20,6 @@ Sites tackles widgets for sites. Lexicon faces a huge improvement in this area t
 
 ### Updates
 
-Liferay is happy to announce a new version of Lexicon in alpha state. This Lexicon Evolution brings you a wider range of possibilities, new components and brand new color palette. Lexicon now worries more about accessibily, shorter interactions, and ways to achieve a better uxer experience never seen before in Liferay.
+Liferay is happy to announce a new version of Lexicon in alpha state. This Lexicon Evolution brings you a wider range of possibilities, new components and brand new color palette. Lexicon now worries more about accessibility, shorter interactions, and ways to achieve a better user experience never seen before in Liferay.
 
 This alpha version will become into beta as soon as Lexicon and Clay aligns.

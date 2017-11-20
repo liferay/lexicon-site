@@ -25,7 +25,7 @@ Use labels to organize groups of items in your application. Labels have rounded 
 
 #### Label simple
 
-Used to identify, tag contente, show status, to filter content or even to provide navigation to elements of same identification. It can be used with status colors.
+Used to identify, tag content, show status, to filter content or even to provide navigation to elements of same identification. It can be used with status colors.
 
 ![defualt size default color close option label](../../../images/LabelDefault.png)
 

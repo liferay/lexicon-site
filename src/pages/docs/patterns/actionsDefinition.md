@@ -14,7 +14,7 @@ weight: 1
 #### Delete
 
 The action of deleting an element or a set of elements implies that it is not possible to recover them from anywhere and they will disappear forever.
-As this is a strong action, you must trigger the user with a confimation message, always native and not styled by Lexicon.
+As this is a strong action, you must trigger the user with a confirmation message, always native and not styled by Lexicon.
 
 The icon to use for this action is:
 ![delete or times icon](../../../images/delete.png)

@@ -32,7 +32,7 @@ weight: 1
 
 ### Variations
 
-Definir el uso de comfirm messages.
+Definir el uso de confirm messages.
 
 #### Toast
 

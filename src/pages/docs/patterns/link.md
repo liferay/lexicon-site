@@ -17,7 +17,7 @@ weight: 1
 
 #### Inline Link
 
-Use an inline link text element inside of a text sentence or paragragraph. A inline link element flows with other text elements.
+Use an inline link text element inside of a text sentence or paragraph. A inline link element flows with other text elements.
 
 ![inline link example in a paragraph](../../../images/LinkInline.png)
 

@@ -17,7 +17,7 @@ Simple file upload is used to upload a simple file element.
 ### Multiple File Upload
 Inside this categorization we have two different patterns: file uploader and image uploader. Both are pretty similar but the second one is more visual and adapted to the situation.
 
-Both uploders share the same **upload area** which works in the following way:
+Both uploaders share the same **upload area** which works in the following way:
 * It must always have 2 different states:
     * Default
         * Message: to clarify file extension permitted, max size of each file.

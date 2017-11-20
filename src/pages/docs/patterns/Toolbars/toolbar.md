@@ -11,16 +11,16 @@ weight: 1
 
 ### Usage
 
-A toolbar is a generic bar that helps grouping actions in a way that they are visually organized for any context of use in Lexicon. Its height changes depending on the heigth of the elements it contains. The toolbat always maintais the vertical alignment.
+A toolbar is a generic bar that helps grouping actions in a way that they are visually organized for any context of use in Lexicon. Its height changes depending on the height of the elements it contains. The toolbar always maintains the vertical alignment.
 
 You only need to define the number of blocks or containers that you want to have in your toolbar and place the elements inside it. These blocks or containers are of 2 different types:
 
 * Field: is used to make tight groups.
-* Content: is used to span as much as possible in the rest of the space. In case there are severral contents the available space is equally divided.
+* Content: is used to span as much as possible in the rest of the space. In case there are several contents the available space is equally divided.
 
 ### Layout
 
-For a better understading of the previous sections, here are some example layouts:
+For a better understanding of the previous sections, here are some example layouts:
 
 Example 1: Three consecutive fields
 

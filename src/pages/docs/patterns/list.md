@@ -51,7 +51,7 @@ When a list is used together with management bar, the list entries must include 
 ### Content format and alignment
 
 * Main text must be always in semibold.
-* In order to favour legibility an easiest way to identify content within a list item, the width of the main content won’t go further than the 50% of the row on wide screens.
+* In order to favor legibility an easiest way to identify content within a list item, the width of the main content won’t go further than the 50% of the row on wide screens.
 * Inside the main content group there won’t be more than three elements stacked. However, the row can grow vertically if the elements need more vertical space, but never more than two lines.
 * In those cases when a short description is needed this would be placed, as said before, aligned on the right of the main content and will extend until the tools. This description won’t be more than two lines long.
 * Text elements can’t fill more than two lines. In the case that a text element is longer, we will use an ellipsis.

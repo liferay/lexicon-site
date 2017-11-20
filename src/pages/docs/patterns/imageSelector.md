@@ -34,7 +34,7 @@ weight: 1
 
 ![image hover state](../../../images/ImageSelectorImageSelected.jpg)
 
-Image selector example in deskop:
+Image selector example in desktop:
 
 ![image selector example in desktop size](../../../images/ImageSelector.jpg)
 

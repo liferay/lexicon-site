@@ -46,7 +46,7 @@ It is not so much a reference to establish the distances between small elements 
 
 ![form element internal spacing](../../../images/Grid05.png)
 
-The lexicon system is a 12 column structure based on the Bootstrap CSS Grid, where we introduce a change in the value of the gutter to fit our base grid. In this case the gutter would be 24px. A value that we find repeated in other basic structural references of the system.
+The Lexicon system is a 12 column structure based on the Bootstrap CSS Grid, where we introduce a change in the value of the gutter to fit our base grid. In this case the gutter would be 24px. A value that we find repeated in other basic structural references of the system.
 
 ![form element internal spacing](../../../images/Grid06.png)
 

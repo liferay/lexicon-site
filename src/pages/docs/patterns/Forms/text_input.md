@@ -32,7 +32,7 @@ Text fields can be as simple as:
 
 ![default empty state](../../../images/Input.png)
 
-They can include a placeholder text, although we do not recommmed using placeholders as users interpret them as final content.
+They can include a placeholder text, although we do not recommend using placeholders as users interpret them as final content.
 
 ![default empty state](../../../images/Input+Placeholder.png)
 
