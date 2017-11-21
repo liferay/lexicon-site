@@ -84,6 +84,8 @@ Split buttons are used in those cases where you need to offer the user a quick m
 
 Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.
 
+![button group, two examples. First one without disabled button, second one with disabled button](../../../images/ButtonGroup.png)
+
 #### Plus button
 
 Normally placed in toolbars, allows to have adding actions over a dataset. The kind of elements to add with this button are of the same nature and folders. Sometimes it only has a unique action, some others it has more. Visit Dropdown menu > Sorting actions to know more.

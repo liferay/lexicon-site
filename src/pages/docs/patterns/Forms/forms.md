@@ -17,7 +17,7 @@ When applying columns take into account that the reading directions is left-righ
 
 ### Distancies
 
-As a general thumb rule apply the follolwing sizes for distances:
+As a general thumb rule apply the following sizes for distances:
 * Form padding: 24px
 * Vertical distances
 	* 24px between consecutive components: title, fields, section...
@@ -54,7 +54,7 @@ Forms have inline validation. All form fields that can be checked against a set 
 
 #### At least one field required
 
-It can be the case that inside a form or a fieldset only one of the input fields is required withouh a concrete decision on which of them must be required. In that case:
+It can be the case that inside a form or a fieldset only one of the input fields is required without a concrete decision on which of them must be required. In that case:
 
 1. Set mandatory mark in the fieldset title.
 2. It is recommended to include a short help text below the title. "Please enter at least one of the following fields."
@@ -70,7 +70,7 @@ It can be the case that inside a form or a fieldset only one of the input fields
 ### Repeatable fields
 
 #### Single repeatable field
-Single repeable field is useful when the user must instroduce several data of the same type from different inputs, no matter the number nor the order.
+Single repeable field is useful when the user must introduce several data of the same type from different inputs, no matter the number nor the order.
 
 #### Set of repeatable fields
 This allow you let the user add contents of a same type in a form. This is usually used to contribute with more form pieces that allow the user to specify more information. A set always bring the possibility to add or remove sets. See the following example:

@@ -17,10 +17,10 @@ Autocomplete textfield is the input that has a data provider associated offering
 Search field is pretty similar to autocomplete text field but the field states are defined better to adapt to search scenario.
 
 ### Usage
-A search field can have autocompletition showing a list of options below the field.
+A search field can have auto completion showing a list of options below the field.
 * The list below must be as wide as the search field.
 * The list must update its content as the user types.
-* Caracters in each entry must be semibold and marked in regular as the user types.
+* Characters in each entry must be semibold and marked in regular as the user types.
 
 ![search field with autocompletion](../../../images/SearchAutocomplete.png)
 
@@ -55,7 +55,9 @@ Date selector allows to select a date. This date selector is similar to the one 
 
 ## Numeric field
 
-Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisims to increase and decrease the value.
+Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisms to increase and decrease the value by using arrow keys and inside field buttons.
+
+![numeric input field](../../../images/InputNumeric.png)
 
 
 ## Password field

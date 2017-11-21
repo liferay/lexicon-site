@@ -11,7 +11,7 @@ Color defines a set of colors to be used in the system. Each of the colors has a
 
 ### Usage
 
-Colors have a huge impact in a system as they define the visual identity, they bring armony, they communicate, among other caracteristics. Lexicon defines the following color palette that you are free to change for your own.
+Colors have a huge impact in a system as they define the visual identity, they bring harmony, they communicate, among other characteristics. Lexicon defines the following color palette that you are free to change for your own.
 
 ### Primary colors
 Primary colors define part of the visual identity of Lexicon as a system. These colors have been carefully thought to be easily combined and be sure that accessibility is well covered.
@@ -79,4 +79,4 @@ Last color definition row is used in input fields to reduce the impact of the co
 
 ## Changing Lexicon color palette
 
-Changing the prestablished color palette is always possible. From Lexicon we understand that our color palette might not fit your needs or requirements as you can have a different corporate image. You just need to set you colors instead of our colors.
+Changing the pre-established color palette is always possible. From Lexicon we understand that our color palette might not fit your needs or requirements as you can have a different corporate image. You just need to set you colors instead of our colors.

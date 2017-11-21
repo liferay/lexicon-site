@@ -97,7 +97,7 @@ In contrast to the desktop version, no actions are facilitated outside the actio
 
 #### Search
 
-By tapping on the magnifying lense icon button, the management bar gets into this state. The search field hovers the whole bar providing a better interaction space.
+By tapping on the magnifying glass icon button, the management bar gets into this state. The search field hovers the whole bar providing a better interaction space.
 
 ![state two of the management bar mobile](../../../images/ManagementBarMobileSearch.png)
 

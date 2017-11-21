@@ -11,7 +11,7 @@ weight: 2
 
 ### Usage
 
-This pattern is always placed to the left side of the screen and ocuppies the full height.
+This pattern is always placed to the left side of the screen and occupies the full height.
 
 ### Variations
 

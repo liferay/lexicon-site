@@ -7,7 +7,7 @@ weight: 1
 
 ### Description
 
-Lexicon uses OpenSans Source as the default font face. You can use the font face you consider more appropiate for your system.
+Lexicon uses OpenSans Source as the default font face. You can use the font face you consider more appropriate for your system.
 
 ### Types
 

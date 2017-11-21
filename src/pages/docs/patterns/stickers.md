@@ -37,11 +37,11 @@ Use it only with people. You can places up to 2 characters inside it or an image
 
 #### Squared with badge
 
-Use it only in FARO. While the squared area with icon can change the background color, the small circle must remain in priamry blue color.
+Use it only in FARO. While the squared area with icon can change the background color, the small circle must remain in primary blue color.
 
 ![squared + badge sticker](../../../images/StickerSquared+Badge.png)
 
 ### Position
-A sticker can be placed in a Image Card. Its position is always bottm left as you can see in the following example.
+A sticker can be placed in a Image Card. Its position is always bottom left as you can see in the following example.
 
 ![sticker position example in Card Image](../../../images/CardImage.jpg)

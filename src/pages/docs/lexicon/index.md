@@ -15,7 +15,7 @@ Lexicon is a constantly evolving project. An iterative work that seeks to improv
 
 ### Modular approach
 
-The lexicon approach to interface design is based essentially on modularity. It is configured as a system that from a controlled number of components is able to respond to the multiple and different needs of liferay products. An exercise in synthesis, abstraction and coordination that seeks to simplify processes, reduce production times and, above all, to guarantee the consistency we want for the use experience.
+The Lexicon approach to interface design is based essentially on modularity. It is configured as a system that from a controlled number of components is able to respond to the multiple and different needs of liferay products. An exercise in synthesis, abstraction and coordination that seeks to simplify processes, reduce production times and, above all, to guarantee the consistency we want for the use experience.
 
 For this, the construction of Lexicon is based on the Atomic Design theoretical approach. A work methodology based on modularity that seeks to give a more hierarchical and organized logic to the creation of interfaces design systems. This methodology has been ideated and developed by the designer Brad Frost and is based on nonlinear process organized across five stages: Atoms, Molecules, Organisms, Templates and Pages.
 

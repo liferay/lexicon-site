@@ -69,7 +69,7 @@ Table header can be interactive:
 
 In both cases the column header changes to bold in hover.
 
-### Table group
+### Sections
 
 Whenever you need to group series of table entries, you can use the table group separator.
 

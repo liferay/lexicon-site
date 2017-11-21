@@ -30,7 +30,7 @@ Icons can be used only when the metaphor is direct and clear. In case there is n
 
 ### Liferay icon library
 
-Liferay has its own icon library created for the porpuses of the projects that use Lexicon.
+Liferay has its own icon library created for the purposes of the projects that use Lexicon.
 
 <ul class="lexicon-icon-list list-unstyled">
 {foreach $icon in $page.icons}
