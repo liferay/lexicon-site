@@ -12918,7 +12918,7 @@ function $linkblocks(opt_data, opt_ignored, opt_ijData) {
                   'class', 'mb-3 font-weight-bold',
                   'target', '_blank',
                   'href', 'https://claycss.com');
-                itext('Clay v 1.0');
+                itext('Clay v 2.0');
               ie_close('a');
             ie_close('div');
           ie_close('div');
