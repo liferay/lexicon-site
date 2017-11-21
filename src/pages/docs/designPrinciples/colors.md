@@ -16,7 +16,7 @@ Colors have a huge impact in a system as they define the visual identity, they b
 ### Primary colors
 Primary colors define part of the visual identity of Lexicon as a system. These colors have been carefully thought to be easily combined and be sure that accessibility is well covered.
 
-![set of 4 primary colors](../../../images/ColorPrimary.png)
+![Primary colors set](../../../images/ColorsPrimary.jpg)
 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
@@ -28,7 +28,8 @@ Primary colors define part of the visual identity of Lexicon as a system. These 
 
 #### Main color variations
 
-![set one of 8 main variation colors](../../../images/ColorMainVariation.png)
+![Main color scale](../../../images/ColorMainScale.jpg)
+
 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
@@ -43,10 +44,12 @@ Primary colors define part of the visual identity of Lexicon as a system. These 
 
 #### Primary blue color variations
 
-![set of 4 primary blue variation colors](../../../images/ColorPrimaryBlueVariation.png)
+![Primary color scale](../../../images/ColorPrimaryScale.jpg)
 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
+| Primary Darken 10%| #004AD7 | Active button and links color. |
+| Primary Darken 5% | #0053f0 | Hover button and links color. |
 | Primary | #0B5FFF | Main action and links. |
 | Primary Lighthen 23% | #80ACFF | Links on the navigation section. |
 | Primary Lighthen 33% | #B3CDFF | Disabled background. | 
@@ -57,26 +60,45 @@ Primary colors define part of the visual identity of Lexicon as a system. These 
 
 Secondary colors are frequently used colors, also important as primary but do not define the visual identity in a stronger way as Primary colors do.
 
-![set of 4 secondary color and its 4 variation colors](../../../images/ColorSecondaryAndVariation.png)
+![Secondary colors set](../../../images/ColorsSecondary.jpg)
 
-| Type | Usage |
-| ----- | ----- |
-| Secondary | Used as main color in status messages. |
-| Variations | Used as background color in status messages like alerts. |
+A closer definition of each color, its variations and usage:
+
+![Reds color scale](../../../images/ColorRedScale.jpg)
 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
-| Error | #272833 | Text color in error messages. |
-| Error Lighthen 50% | #30313F | Background color in error messages like alerts. |
-| Success | #393A4A | Text color in success messages. | 
-| Success Lighthen 63% desat 5% | #6B6C7E | Background color in success messages like alerts. | 
-| Warning | #A7A9BC | Text color in warning messages. | 
-| Warning Lighthen 60% | #CDCED9 | Background color in warning messages like alerts. |
-| Info | #E7E7ED | Text color in information messages. |
-| Info Lighthen 53% | #F7F8F9 | Background color in information messages like alerts. |
+| Error | #DA1414 | Text color in error messages. |
+| Error Lighthen 28% | #F48989 | Border color in error status messages. |
+| Error Lighthen 50% | #FEEFEF | Background color in error status messages. |
+
+![Green color scale](../../../images/ColorGreenScale.jpg)
+
+| Color | Code | Usage |
+| ----- | ---- | ----- |
+| Success | #287D3C | Text color in success messages. | 
+| Success Lighthen 35% | #5ACA75 | Border color in success status messages. | 
+| Success Lighthen 63% | #EDE79F0 | Background color in success messages like alerts. | 
+
+![Orange color scale](../../../images/ColorOrangeScale.jpg)
+
+| Color | Code | Usage |
+| ----- | ---- | ----- |
+| Warning | #B95000 | Text color in warning messages. | 
+| Warning Lighthen 25% | #F48989 | Border color in warning messages like alerts. |
+| Warning Lighthen 60% | #30313F | Background color in warning messages like alerts. |
+
+![Blue info color scale](../../../images/ColorBlueInfoScale.jpg)
+
+| Color | Code | Usage |
+| ----- | ---- | ----- |
+| Info | #2E5AAC | Text color in error messages. |
+| Info Lighthen 28% | #89A7E0 | Border color in info status messages. |
+| Info Lighthen 53% | #EEF2FA | Background color in info status messages. |
+
 
 Last color definition row is used in input fields to reduce the impact of the color saturation in the borders.
 
-## Changing Lexicon color palette
+### Changing Lexicon color palette
 
 Changing the pre-established color palette is always possible. From Lexicon we understand that our color palette might not fit your needs or requirements as you can have a different corporate image. You just need to set you colors instead of our colors.
