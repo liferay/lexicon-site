@@ -18,8 +18,6 @@ Longer messaging is not always more helpful. Be concise; understand your user’
 | **Do:** | Initiates the process. |
 | **Don’t:** | If you click this button, then you will initiate a process that does something. Doing something is essential for something else. |
 
-If you click this button, then you will initiate a process that does something. Doing something is essential for something else.
-
 ### Be Confident
 
 Be bold! Take confidence in what you say! The way you provide information sets the tone for what users expect. Products that exude confidence put users at ease when making difficult decisions.
