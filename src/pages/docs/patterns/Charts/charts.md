@@ -3,6 +3,7 @@ title: "Charts"
 description: "Charts provide a graphical way to analysis data. This section also offers a dedicated color palette for charts and properties to make your charts more accessible."
 layout: "guide"
 weight: 1
+hidden: yes
 ---
 
 ### Description
@@ -46,12 +47,12 @@ This patterns are thought to be used only when areas don't overlap, as in a pie 
 ![Pie Chart using different area patterns](../../../images/ChartAreaPatternExample.png)
 
 
-### Chart bubbles
+### Chart Tooltip
 
-Chart bubbles allow you to display specific data for a exact point or exact area that is interactive. This is just a different usage of the popover pattern.
+Chart tooltip allow you to display specific data for a exact point or exact area that is interactive. This is just a different usage of the popover pattern.
 
-![Bubble or popover](../../../images/ChartBubble.png)
+![Tooltip or popover](../../../images/ChartBubble.png)
 
-The following half donut chart shows a chart bubble in action.
+The following half donut chart shows a chart tooltip in action.
 
-![bubble usage in a half donut chart](../../../images/ChartBubbleExample.png)
+![tooltip usage in a half donut chart](../../../images/ChartBubbleExample.png)
