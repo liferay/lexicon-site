@@ -47,11 +47,11 @@ Labels input field is specially focus on writing categories or tags.
 ![search field active state](../../../images/LabelInputFieldMultipleLines.png)
 
 
-## Date field or Date selector
+## Date Field or Date Select
 
-Date selector allows to select a date. This date selector is similar to the one in HTML5 and includes same functionalities. Lexicon recommends to use native date selectors as users are used to them. Use this one in desktop viewport.
+Date select allows to select a date. This date select is similar to the one in HTML5 and includes same functionalities. Lexicon recommends to use native date selects as users are used to them. Use this one in desktop viewport.
 
-![multiple selector active state](../../../images/DatePickerOpen.png)
+![multiple select active state](../../../images/DatePickerOpen.png)
 
 ## Numeric field
 

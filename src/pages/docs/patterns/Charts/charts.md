@@ -13,16 +13,20 @@ weight: 1
 
 Lexicon provides a dedicated color palette and a color order for this colors to be used in your charts.
 
-![charts color palette. 1. Blue, 2. Orange, 3. Red, 4. green, 5. Pink, 6. Grass green, 7. Purple, 8. Yellow, 9. Sky blue](../../../images/ChartsColorPalette.png)
+![charts color palette chunk 1: 1. Blue, 2. Orange, 3. Red](../../../images/ColorCharts1.jpg)
+
+![charts color palette chunk 2: 4. green, 5. Pink, 6. Grass green](../../../images/ColorCharts2.jpg)
+
+![charts color palette chunk 3: 6. Grass green, 7. Purple, 8. Yellow, 9. Sky blue](../../../images/ColorCharts3.jpg)
 
 
 ### Accessibility
 
 Lexicon wants to offer you a possibility to make your charts more accessible in case you need this option. Therefore, we have created a series of complements for your charts to improve their accessibility.
 
-#### Shapes and Lines
+#### Lines and Shapes
 
-Shapes and lines can help you to establish patterns in line charts.
+Lines and shapes can help you to establish patterns in line charts.
 
 ![Charts shape types. 1. circle, 2. square, 3. triangle point up, 4. rhomnbus, 5. triangle point down, 6. semicircle down, 7. semicirle up, 8. rectangle laid, 9. rectangle up](../../../images/ChartsShapeTypes.png)
 
@@ -46,12 +50,12 @@ This patterns are thought to be used only when areas don't overlap, as in a pie 
 ![Pie Chart using different area patterns](../../../images/ChartAreaPatternExample.png)
 
 
-### Chart bubbles
+### Chart Tooltip
 
-Chart bubbles allow you to display specific data for a exact point or exact area that is interactive. This is just a different usage of the popover pattern.
+Chart tooltip allow you to display specific data for a exact point or exact area that is interactive. This is just a different usage of the popover pattern.
 
-![Bubble or popover](../../../images/ChartBubble.png)
+![Tooltip or popover](../../../images/ChartBubble.png)
 
-The following half donut chart shows a chart bubble in action.
+The following half donut chart shows a chart tooltip in action.
 
-![bubble usage in a half donut chart](../../../images/ChartBubbleExample.png)
+![tooltip usage in a half donut chart](../../../images/ChartBubbleExample.png)

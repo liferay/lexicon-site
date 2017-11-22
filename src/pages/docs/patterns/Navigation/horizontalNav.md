@@ -33,12 +33,12 @@ When the number of tabs goes over the physical size of the navbar, the overflowi
 
 ### Variations
 
-#### Positive
+#### Default
 
 Positive navigation bar is defined for Sites.
 ![navigation bar with 5 entries, first one seleted](../../../images/NavbarPositive.png)
 
-#### Negative
+#### Inverted
 
 Negative navigation bar is defined for Admin. It is always placed right below the header.
 ![navigation bar with 5 entries, first one seleted](../../../images/Navbar.png)

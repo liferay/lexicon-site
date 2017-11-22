@@ -3,7 +3,7 @@ title: "Timelines WIP"
 description: "Timelines visually represent events along the time."
 layout: "guide"
 weight: 1
-hide: "yes"
+hidden: yes
 ---
 
 ### Description

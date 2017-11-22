@@ -5,22 +5,22 @@ layout: "guide"
 weight: 3
 ---
 
-## Selector
+## Select
 
 {$page.description}
 
-![selector default state](../../../images/Selector.png)
+![select default state](../../../images/Selector.png)
 
 
 ### Usage
 
-This pattern is completely different from a dropdown as a selector is a native component with a data provider. A dropdown, instead, opens a panel where the panel could contain multiple and different nature elements.
+This pattern is completely different from a dropdown as a select is a native component with a data provider. A dropdown, instead, opens a panel where the panel could contain multiple and different nature elements.
 
 ### States
 
-The states for a selector are the same as for a text input.
+The states for a select are the same as for a text input.
 
-## Multiple selector
+## Multiple select
 
 Select button used to select more than one option from a simple list.
 

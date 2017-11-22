@@ -24,4 +24,4 @@ Attributes:
 
 In mobile devices the navigation is translated into a dropdown menu.
 
-![nested navigation translated into a selector with a dropdown menu](../../../images/NavigationVerticalMobile.png)
+![nested navigation translated into a select with a dropdown menu](../../../images/NavigationVerticalMobile.png)

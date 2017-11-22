@@ -30,7 +30,7 @@ weight: 2
 ![table inline edition row view configuration](../../../images/TableInlineEditRowView.png)
 
 #### Edit mode
-* In this mode those row entries that are possible to edit get transformed into a certain input field: text field, numeric field, selector, etc.
+* In this mode those row entries that are possible to edit get transformed into a certain input field: text field, numeric field, select, etc.
 * This mode has two different actions:
 	* Save: saves the changes and gets into view mode.
 	* Cancel: discards the changes and into view mode.

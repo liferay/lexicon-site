@@ -21,6 +21,9 @@ Use stickers to visually identify elements in a dataset that are part of a same 
 | 40px | 20px | Use it in sites to identify the user in a comment in comments portlet. Only rounded.|
 | 48px | 24px | Use it in sites to identify the user in a blog entry or article. Only rounded.|
 
+### Colors
+Stickers can have any possible color.
+
 ### Variations
 
 #### Square
@@ -34,12 +37,6 @@ Use it only with files and folders. You can place up to 3 characters inside it o
 Use it only with people. You can places up to 2 characters inside it or an image. Always capital letters.
 
 ![rounded sticker](../../../images/StickerRounded.png)
-
-#### Squared with badge
-
-Use it only in FARO. While the squared area with icon can change the background color, the small circle must remain in primary blue color.
-
-![squared + badge sticker](../../../images/StickerSquared+Badge.png)
 
 ### Position
 A sticker can be placed in a Image Card. Its position is always bottom left as you can see in the following example.

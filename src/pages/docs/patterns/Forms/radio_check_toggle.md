@@ -1,13 +1,14 @@
 ---
-title: "Checkbox, Radio button, Toggle"
-description: "A checkbox is a component that allows the user selecting something written in its associated text label. A list of consecutive checkboxes would allow the user to select multiple things."
+title: "Checkbox, Radio, Toggle"
+description: "Checkbox, radio and toggles provide users with seletion and activation tools"
 layout: "guide"
 weight: 2
 ---
 
 ## Checkbox
 
-{$page.description}
+A checkbox is a component that allows the user selecting something written in its associated text label. A list of consecutive checkboxes would allow the user to select multiple things."
+
 
 ![checkbox](../../../images/CheckboxLabel.png)
 
@@ -29,27 +30,27 @@ weight: 2
 | ![checkbox off disabled](../../../images/Checkbox+Disabled.png) | Off disabled |
 | ![checkbox variable for multiple selection](../../../images/CheckboxMultiple+Active.png) | Checkbox Variable for multiple selection |
 
-## Radio button
+## Radio
 
-A radio button is a component that allows the user selecting something written in its associated text label. A list of consecutive radio buttons would allow the user to select just one thing.
+A radio is a component that allows the user selecting something written in its associated text label. A list of consecutive radio would allow the user to select just one thing.
 
-![radio button](../../../images/RadioButton+Label+Active.png)
+![radio](../../../images/RadioButton+Label+Active.png)
 
 ### Usage
 
-* As a general rule of thumb, radio buttons should be used when there’s a range of options and only one option can be chosen.
+* As a general rule of thumb, radio should be used when there’s a range of options and only one option can be chosen.
 * Better if they are stacked.
 * Do not use for a single binary option.
-* Note that although we have visually defined the radio button, we use the native radio button as it is easier to identify by the end user using different web browsers.
+* Note that although we have visually defined the radio, we use the native radio as it is easier to identify by the end user using different web browsers.
 
 ### States
 
 | State | Definition |
 | ----- | ---------- |
-| ![radio button on](../../../images/RadioButton+Active.png) | On |
-| ![radio button off](../../../images/RadioButton.png) | Off |
-| ![radio button on disabled](../../../images/RadioButton+Active+Disabled.png) | On disabled |
-| ![radio button off disabled](../../../images/RadioButton+Disabled.png) | Off disabled |
+| ![radio on](../../../images/RadioButton+Active.png) | On |
+| ![radio off](../../../images/RadioButton.png) | Off |
+| ![radio on disabled](../../../images/RadioButton+Active+Disabled.png) | On disabled |
+| ![radio off disabled](../../../images/RadioButton+Disabled.png) | Off disabled |
 
 ### Radio vs Dropdown Menu
 
@@ -79,7 +80,7 @@ A toggle is an interface element that by its activation or deactivation provokes
 
 **Use doubt cases**
 
-* Use a radio button or drop down rather than an on/off switch if the two states in question are separate options.
+* Use a radio or drop down rather than an on/off switch if the two states in question are separate options.
 
 * In confirmation messages use always a checkbox instead of a toggle as it is a single  binary option.
 

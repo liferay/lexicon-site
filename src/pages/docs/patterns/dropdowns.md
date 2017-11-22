@@ -21,7 +21,7 @@ Closing a dropdown can be done by:
 * Clicking on the button that triggered it.
 * Clicking outside the panel.
 
-A dropdown menu can contain any kind of basic form component / element like text field, list of options, list of options with radio buttons, list of options with checkboxes, or button.
+A dropdown menu can contain any kind of basic form component / element like text field, list of options, list of options with radios, list of options with checkboxes, or button.
 
 Dropdowns have a maximum width of 240px. When an entry text doesn't fit into the available space, use 2 lines. The text in each entry should be short and specific enough to not use more than one line.
 
@@ -43,9 +43,9 @@ Dropdown menu with dividers are thought to be used in actions menus. Dividing th
 
 ![dropdown menu with search field](../../../images/DropdownActions.png)
 
-#### Dropdown with checkbox or radio button
+#### Dropdown with checkbox or radio
 
-Dropdowns can be configured to have checkboxes and/or radio button groups. A checkbox configuration can be suitable to filter in or out dataset elements. While, a radio button configuration can be suitable to establish the order criteria in a dataset.
+Dropdowns can be configured to have checkboxes and/or radio groups. A checkbox configuration can be suitable to filter in or out dataset elements. While, a radio configuration can be suitable to establish the order criteria in a dataset.
 
 ![dropdown menu with a list of checkbox options](../../../images/DropdownCheckbox.png)
 
