@@ -12618,8 +12618,7 @@ button.loading > .linear.loading-animation {
       margin-left: 376px; } }
   .sidebar-offset .lexicon-site-container {
     flex: 1;
-    max-width: 960px;
-    padding-bottom: 48px; }
+    max-width: 960px; }
     @media (min-width: 768px) {
       .sidebar-offset .lexicon-site-container {
         padding-left: 24px;
