@@ -1,13 +1,14 @@
 ---
-title: "Checkbox, Radio button, Toggle"
-description: "A checkbox is a component that allows the user selecting something written in its associated text label. A list of consecutive checkboxes would allow the user to select multiple things."
+title: "Checkbox, Radio, Toggle"
+description: "Checkbox, radio and toggles provide users with seletion and activation tools"
 layout: "guide"
 weight: 2
 ---
 
 ## Checkbox
 
-{$page.description}
+A checkbox is a component that allows the user selecting something written in its associated text label. A list of consecutive checkboxes would allow the user to select multiple things."
+
 
 ![checkbox](../../../images/CheckboxLabel.png)
 
