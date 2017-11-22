@@ -37,8 +37,8 @@ When a list is used together with management bar, the list entries must include 
 
 ### Row interactions
 
-* A list entry can have a checkbox, a radio button or none of them.
-* Selecting a row is only possible by using the checkbox or radio button depending on the selection type desired in the list. An interaction with the background does not produce row selection.
+* A list entry can have a checkbox, a radio or none of them.
+* Selecting a row is only possible by using the checkbox or radio depending on the selection type desired in the list. An interaction with the background does not produce row selection.
 * Text elements in the row can be configured as links to navigate.
 * A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don't need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.
 * The main text is usually used as an action:

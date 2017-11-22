@@ -27,7 +27,7 @@ weight: 1
 #### Selection inside a modal
 
 * Multiple selection is done using checkboxes and clicking in "Done" labeled button.
-* Single selection is done without radio buttons, just clicking anywhere in the row. There is not need of modal footer.
+* Single selection is done without radios, just clicking anywhere in the row. There is not need of modal footer.
 
 #### Modal over modal
 

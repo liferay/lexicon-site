@@ -21,8 +21,8 @@ Cards in Lexicon are open to many configurations. We provide a flexible card lay
 
 ### Card interaction
 
-* A card can have a checkbox, a radio button or none of them.
-* Selecting a card is only possible by using the checkbox or radio button, and the image area. 
+* A card can have a checkbox, a radio or none of them.
+* Selecting a card is only possible by using the checkbox or radio, and the image area. 
 * Main text in the card can be configured to navigate
 	* In case of:
 		* Folder: it navigates to the next level.
@@ -35,7 +35,7 @@ By providing a flexible layout, Lexicon opens you a wider range of possible conf
 
 As you can see in the following image, a card is shaped by:
 * Image area: main element in this pattern. 16:9.
-* Checkbox or radio button: useful when working together as a visualization type with a management bar.
+* Checkbox or radio: useful when working together as a visualization type with a management bar.
 * Sticker or User image: Useful to identify the file type or the owner.
 * Information area
 	* Text lines of different importance: relevant information.
