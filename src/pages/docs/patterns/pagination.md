@@ -32,7 +32,7 @@ Pagination includes several mechanisms to move between pages:
 
 #### Pagination bar
 
-A pagination bar is pagination with additional functionality. This added functionality comes with a page size selector placed on the left side of the bar. To the right side we incorporate a label to provide feedback on the exact chunk of information displayed from the dataset. On the right side of the pagination bar there is the classic pagination that adapts depending on the number of pages.
+A pagination bar is pagination with additional functionality. This added functionality comes with a page size select placed on the left side of the bar. To the right side we incorporate a label to provide feedback on the exact chunk of information displayed from the dataset. On the right side of the pagination bar there is the classic pagination that adapts depending on the number of pages.
 
 Use it when you need a complex pagination pattern that requires changing the page size and re-calculating the number of pages. This pattern gives feedback about the chunk of dataset you are viewing.
 
