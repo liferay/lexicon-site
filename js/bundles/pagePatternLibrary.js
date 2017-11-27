@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([17,77,78,79],[
+webpackJsonppageComponent([17,81,82,83],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2261,11 +2261,11 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param65 = function() {
+  var param85 = function() {
     $templateAlias2(soy.$$assignDefaults({section: opt_data.site.index.children['docs']}, opt_data), null, opt_ijData);
     $guide(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param65}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param85}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -12373,7 +12373,11 @@ module.exports = function(module) {
 /* 155 */,
 /* 156 */,
 /* 157 */,
-/* 158 */
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12480,10 +12484,6 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pagePatternLibrary, t
 
 
 /***/ }),
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
 /* 163 */,
 /* 164 */,
 /* 165 */,
@@ -12598,7 +12598,15 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pagePatternLibrary, t
 /* 274 */,
 /* 275 */,
 /* 276 */,
-/* 277 */
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12628,7 +12636,7 @@ __webpack_require__(17);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(158);
+var _indexSoy = __webpack_require__(162);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -12659,4 +12667,4 @@ _metalSoy2.default.register(pagePatternLibrary, _indexSoy2.default);
 exports.default = pagePatternLibrary;
 
 /***/ })
-],[277]);
+],[285]);

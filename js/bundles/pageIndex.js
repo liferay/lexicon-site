@@ -1,5 +1,5 @@
 var pageComponent =
-webpackJsonppageComponent([0,77,78,79],[
+webpackJsonppageComponent([0,81,82,83],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -2261,11 +2261,11 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  * @suppress {checkTypes}
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
-  var param65 = function() {
+  var param85 = function() {
     $templateAlias2(soy.$$assignDefaults({section: opt_data.site.index.children['docs']}, opt_data), null, opt_ijData);
     $guide(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param65}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({elementClasses: 'docs', content: param85}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -12390,7 +12390,11 @@ module.exports = function(module) {
 /* 172 */,
 /* 173 */,
 /* 174 */,
-/* 175 */
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12448,10 +12452,10 @@ var $templateAlias1 = __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.getTempl
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   opt_data = opt_data || {};
-  var param105 = function() {
+  var param64 = function() {
     $header(opt_data, null, opt_ijData);
   };
-  $templateAlias1(soy.$$assignDefaults({content: param105, elementClasses: 'home'}, opt_data), null, opt_ijData);
+  $templateAlias1(soy.$$assignDefaults({content: param64, elementClasses: 'home'}, opt_data), null, opt_ijData);
 }
 exports.render = $render;
 if (goog.DEBUG) {
@@ -13015,10 +13019,6 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 
 
 /***/ }),
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
 /* 180 */,
 /* 181 */,
 /* 182 */,
@@ -13122,7 +13122,15 @@ __WEBPACK_IMPORTED_MODULE_1_metal_soy___default.a.register(pageIndex, templates)
 /* 280 */,
 /* 281 */,
 /* 282 */,
-/* 283 */
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13152,7 +13160,7 @@ __webpack_require__(17);
 
 __webpack_require__(18);
 
-var _indexSoy = __webpack_require__(175);
+var _indexSoy = __webpack_require__(179);
 
 var _indexSoy2 = _interopRequireDefault(_indexSoy);
 
@@ -13183,4 +13191,4 @@ _metalSoy2.default.register(pageIndex, _indexSoy2.default);
 exports.default = pageIndex;
 
 /***/ })
-],[283]);
+],[291]);
