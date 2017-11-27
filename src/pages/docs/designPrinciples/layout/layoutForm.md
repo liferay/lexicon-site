@@ -1,0 +1,26 @@
+---
+title: "Form Box"
+description: "The Form Box is an specific layout used to contain form structures. This layout is composed of a box that occupies 8 columns of the grid with 2 offset columns on both sides."
+layout: "guide"
+weight: 2
+---
+
+### Description
+
+{$page.description} 
+
+![layout form box 1440px width screen](../../../images/layoutformbox.jpg)
+
+#### Responsive behavior
+
+The main point to take into account in its adaptation to the different viewport sizes is the change from 8 to 12 columns on viewport sizes equal or less than 768px in order to optimize space for content.
+
+![layout form box responsive summary](../../../images/layoutformboxsummary.jpg)
+
+#### Metrics
+
+![layout form box metrics](../../../images/layoutformboxmetrics.jpg)
+
+#### Example
+
+![layout form box example](../../../images/layoutformboxexample.jpg)
