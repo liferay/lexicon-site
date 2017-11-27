@@ -51,3 +51,15 @@ The main point to take into account is the change from 8 to 9 columns on viewpor
 #### Example
 
 ![layout sidebar + box 8 columns example](../../../images/layoutsidebarbox8example.jpg)
+
+### Exceptions
+
+3+9 columns and 3+8 columns are the most common situations to have in Lexicon interafaces, but 2 other exceptional scenarios are possible.
+* Scenario 1: 3+9 columns configuration turns into 2+10 columns configuration.
+* Scenario 2: 3+8 columns configuration turns into 2+9 columns configuration.
+
+These two scenarios are only desirable when you are sure that the sidebar width is enough with 2 columns. Reasons to move into these configurations can be:
+* Really short vertical navigation titles. Please make sure this happens in all the languages that your site manages.
+* More space in the main box to fit a table with many columns.
+
+Please if you move into these configuration make sure you apply 2 columns for the sidebar in all application sections instead of 2 in some and 3 in others for the shake of consistancy in your application.
