@@ -23,6 +23,9 @@ Use stickers to visually identify elements in a dataset that are part of a same 
 
 ### Colors
 Stickers can have any possible color.
+There default color for stickers is: Main Lighthen 28% desat 5%, that corresponds to #6B6C7E
+
+![sticker default color](../../../images/StickerDefaultColor.png)
 
 ### Variations
 
