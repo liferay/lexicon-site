@@ -16,8 +16,9 @@ weight: 1
 | Page | Status |
 | ---- | ----- |
 | Accessibility | 2017.06.14 Starting description from a design perspective |
-| Color | 2017.07.12 Updated with field borders colors |
+| Color | **2017.11.28 Update in the way colors are communicated** |
 | Grid | 2017.08.16 updated |
+| Layout | **2017.11.28 Layout Full Box, Form Box, Sidebar + Box** |
 | Typography | 2017.06.25 Adapted with the advices |
 | Writing style | 2017.06.14 Done |
 
@@ -28,22 +29,23 @@ weight: 1
 | Actions definition | 2017.07.13 Update with examples. Missing attributes. |
 | Alerts | 2017.06.26 Update with examples. Missing attributes. |
 | Badges | 2017.11.11 Stand alone pattern |
-| Buttons | **2017.11.17 Button group included** |
+| Buttons | 2017.11.17 Button group included |
 | Cards | 2017.06.25 Included user card, image card. Missing folder card, file card. |
-| Charts | **2017.11.17 Charts initial description with color palettern, lines and patterns included. Details for each chart coming up.** |
+| Charts | 2017.11.17 Charts initial description with color palettern, lines and patterns included. Details for each chart coming up. |
 | Columns View | 2017.09.24 Working in description |
 | Confirmation message | 2017.08.10 Complete |
 | Dataset display | 2017.07.12 Updated with examples for empty states. |
 | Dropdown menu | 2017.07.12 Distance to button specification |
 | File upload | 2017.09.24 Working in description |
 | Forms > forms | 2017.09.24 Updated: boolean situations |
-| Forms > CRT | 2017.06.14 Complete. |
+| Forms > form hierarchy | **2018.11.28 Documented** |
+| Forms > CRT | **2017.11.28 Updates in namings to better match with Clay.** |
 | Forms > Multi Step Form | 2017.07.22 Process bar renamed and placed in forms. |
 | Forms > Multi Step Simplified | 2017.08.17 Complete |
-| Forms > Selectors | 2017.06.14 Selector corrected |
-| Forms > Slider | **2017.11.17 Documentation started** |
+| Forms > Selectors | **2017.11.28 Updates in namings to better match with Clay.** |
+| Forms > Slider | **2017.11.28 Documented** |
 | Forms > Text input | 2017.07.12 Variations extracted to other page |
-| Forms > Text input variations | **2017.11.17 Numeric text field** |
+| Forms > Text input variations | 2017.11.17 Numeric text field |
 | Forms > Text input group | 2017.07.12 Style changed. |
 | Icons | 2017.08.10 Updated with new icons |
 | Image Selector | 2017.09.24 Working in description |
@@ -75,4 +77,4 @@ weight: 1
 | Toolbar > Translation bar | 2017.06.14 In progress |
 | Templates > Dataset | 2017.07.12 Updated with new examples |
 | Templates > Form | 2017.07.12 Updated with new exaples |
-| Sites | **2017.11.17 Documentation started** |
+| Sites | 2017.11.17 Documentation started |
