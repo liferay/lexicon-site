@@ -34,12 +34,12 @@ Primary colors define part of the visual identity of Lexicon as a system. These 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
 | Main | #272833 | First level navigation background and primary texts. |
-| Main Lighthen 4% | #30313F | Second level navigation background. |
-| Main Lighthen 8% | #393A4A | Third level navigation background and active state on navigation. | 
-| Main Lighthen 28% desat 5% | #6B6C7E | Secondary texts. | 
-| Main Lighthen 52% | #A7A9BC | Disabled texts. | 
-| Main Lighthen 65% | #CDCED9 | Border for clickable elements like buttons. |
-| Main Lighthen 74% | #E7E7ED | Disabled Background and Border for dividers. |
+| Main Lighten 4% | #30313F | Second level navigation background. |
+| Main Lighten 8% | #393A4A | Third level navigation background and active state on navigation. | 
+| Main Lighten 28% desat 5% | #6B6C7E | Secondary texts. | 
+| Main Lighten 52% | #A7A9BC | Disabled texts. | 
+| Main Lighten 65% | #CDCED9 | Border for clickable elements like buttons. |
+| Main Lighten 74% | #E7E7ED | Disabled Background and Border for dividers. |
 | Secondary Hover | #F7F8F9 | Hover State for the Secondary button. |
 
 #### Primary blue color variations
@@ -51,9 +51,9 @@ Primary colors define part of the visual identity of Lexicon as a system. These 
 | Primary Darken 10%| #004AD7 | Active button and links color. |
 | Primary Darken 5% | #0053f0 | Hover button and links color. |
 | Primary | #0B5FFF | Main action and links. |
-| Primary Lighthen 23% | #80ACFF | Links on the navigation section. |
-| Primary Lighthen 33% | #B3CDFF | Disabled background. | 
-| Primary Lighthen 45% | #F0F5FF | Hover and active background in tables and lists. | 
+| Primary Lighten 23% | #80ACFF | Links on the navigation section. |
+| Primary Lighten 33% | #B3CDFF | Disabled background. | 
+| Primary Lighten 45% | #F0F5FF | Hover and active background in tables and lists. | 
 
 
 ### Secondary colors
@@ -69,32 +69,32 @@ A closer definition of each color, its variations and usage:
 | Color | Code | Usage |
 | ----- | ---- | ----- |
 | Error | #DA1414 | Text color in error messages. |
-| Error Lighthen 28% | #F48989 | Border color in error status messages. |
-| Error Lighthen 50% | #FEEFEF | Background color in error status messages. |
+| Error Lighten 28% | #F48989 | Border color in error status messages. |
+| Error Lighten 50% | #FEEFEF | Background color in error status messages. |
 
 ![Green color scale](../../../images/ColorGreenScale.jpg)
 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
 | Success | #287D3C | Text color in success messages. | 
-| Success Lighthen 35% | #5ACA75 | Border color in success status messages. | 
-| Success Lighthen 63% | #EDE79F0 | Background color in success messages like alerts. | 
+| Success Lighten 35% | #5ACA75 | Border color in success status messages. | 
+| Success Lighten 63% | #EDE79F0 | Background color in success messages like alerts. | 
 
 ![Orange color scale](../../../images/ColorOrangeScale.jpg)
 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
 | Warning | #B95000 | Text color in warning messages. | 
-| Warning Lighthen 25% | #F48989 | Border color in warning messages like alerts. |
-| Warning Lighthen 60% | #30313F | Background color in warning messages like alerts. |
+| Warning Lighten 25% | #F48989 | Border color in warning messages like alerts. |
+| Warning Lighten 60% | #30313F | Background color in warning messages like alerts. |
 
 ![Blue info color scale](../../../images/ColorBlueInfoScale.jpg)
 
 | Color | Code | Usage |
 | ----- | ---- | ----- |
 | Info | #2E5AAC | Text color in error messages. |
-| Info Lighthen 28% | #89A7E0 | Border color in info status messages. |
-| Info Lighthen 53% | #EEF2FA | Background color in info status messages. |
+| Info Lighten 28% | #89A7E0 | Border color in info status messages. |
+| Info Lighten 53% | #EEF2FA | Background color in info status messages. |
 
 
 Last color definition row is used in input fields to reduce the impact of the color saturation in the borders.
