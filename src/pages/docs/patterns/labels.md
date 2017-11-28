@@ -18,7 +18,7 @@ Use labels to organize groups of items in your application. Labels have rounded 
 
 | Size | Usage |
 | ---- | ----- |
-| ![defualt label small size](../../../images/LabelSmall.png) | **Small**: Use it in contexts where its relevante is not major. Use it always in capital letters. Mar |
+| ![defualt label small size](../../../images/LabelSmall.png) | **Small**: Use it in contexts where its relevante is not major. Use it always in capital letters. |
 | ![defualt label default size](../../../images/LabelDefault.png) | **Default**: Use it for marking states. The use of lowercase is valid in this option|
 
 ### Variations
