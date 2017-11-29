@@ -12694,7 +12694,7 @@ function $teasers(opt_data, opt_ignored, opt_ijData) {
                     itext('Pattern Library');
                   ie_close('h2');
                   ie_open('p');
-                    itext('A set of pieces based on Atomic Design concept that allows you to build interafaces by using and composing and extending the different patterns in combination with the Design Principles.');
+                    itext('A set of pieces based on Atomic Design concept that allows you to build interfaces by using and composing and extending the different patterns in combination with the Design Principles.');
                   ie_close('p');
                   ie_open('a', null, null,
                       'href', '/docs/patterns/actionsDefinition.html',
