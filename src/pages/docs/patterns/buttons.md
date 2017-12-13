@@ -14,8 +14,7 @@ weight: 1
 | Type | Usage |
 | ---- | ----- |
 | ![button primary default size defuault state](../../../images/ButtonPrimary.png) | **Primary**: The primary button is always use for the most important actions. There can't be two primary actions together or near by. |
-| ![button primary default size defuault state](../../../images/ButtonSecondary.png) | **Secondary**: The secondary button is always use for the secondary actions. There can be several secondary actions near by. |
-| ![button primary default size defuault state](../../../images/ButtonBorderless.png) | **Borderless**: Use in those cases as toolbars where the secondary button would be too heavy for the pattern design. In this way the design gets cleaner. |
+| ![button secondary default size defuault state](../../../images/ButtonSecondary.png) | **Secondary**: The secondary button is always use for the secondary actions. There can be several secondary actions near by. |
 | ![button primary default size defuault state](../../../images/ButtonLink.png) | **Link**: Used for many Cancel actions. |
 
 
@@ -46,6 +45,12 @@ weight: 1
 | ![button primary default size disable state](../../../images/ButtonPrimarySmall.png) | **Small**: Used for actions inside a page, like dropdowns, button groups, split buttons. 32px height. |
 
 ### Variations
+
+#### Secondary borderless
+
+Secondary borderless button is meant to be used in those cases as toolbars where the secondary button would be too heavy for the pattern design. In this way the design gets cleaner.
+
+![button secondary borderless default size defuault state](../../../images/ButtonBorderless.png)
 
 #### Icon button
 
