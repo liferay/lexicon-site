@@ -96,10 +96,10 @@ This container is defined by a value of maximum width. This value is adjusted to
 
 In this table you can visualize all the variations of the layout system values according to the different breakpoints.
 
-| Breakpoint | Device Size | Container Max Width | Spacer-y |
-| ---------- | ----------- | ------------------- | -------- |
-| < 576px | Extra small devices (Portrait phones) | None (auto) | 16px |
-| &ge; 576px | Small devices (Landscape phones) | 540px | 24px |
-| &ge; 768px | Medium devices (Tablets) | 720px | 24px |
-| &ge; 992px | Large devices (Desktops) | 960px | 24px |
-| &ge; 1280px | Extra large devices (Large desktops) | 1248px | 24px |
+| Breakpoint | Device Size | Container Width |
+| ---------- | ----------- | ------------------- |
+| < 576px | Extra small devices (Portrait phones) | Auto |
+| &ge; 576px | Small devices (Landscape phones) | Auto |
+| &ge; 768px | Medium devices (Tablets) | Auto |
+| &ge; 992px | Large devices (Desktops) | Auto |
+| &ge; 1280px | Extra large devices (Large desktops) | 1248px |
