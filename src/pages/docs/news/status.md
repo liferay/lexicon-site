@@ -16,9 +16,9 @@ weight: 1
 | Page | Status |
 | ---- | ----- |
 | Accessibility | 2017.06.14 Starting description from a design perspective |
-| Color | **2017.11.28 Update in the way colors are communicated** |
+| Color | 2017.11.28 Update in the way colors are communicated |
 | Grid | 2017.08.16 updated |
-| Layout | **2017.11.28 Layout Full Box, Form Box, Sidebar + Box** |
+| Layout | 2017.11.28 Layout Full Box, Form Box, Sidebar + Box |
 | Typography | 2017.06.25 Adapted with the advices |
 | Writing style | 2017.06.14 Done |
 
@@ -38,12 +38,12 @@ weight: 1
 | Dropdown menu | 2017.07.12 Distance to button specification |
 | File upload | 2017.09.24 Working in description |
 | Forms > forms | 2017.09.24 Updated: boolean situations |
-| Forms > form hierarchy | **2018.11.28 Documented** |
-| Forms > CRT | **2017.11.28 Updates in namings to better match with Clay.** |
+| Forms > form hierarchy | 2017.11.28 Documented** |
+| Forms > CRT | 2017.11.28 Updates in namings to better match with Clay. |
 | Forms > Multi Step Form | 2017.07.22 Process bar renamed and placed in forms. |
 | Forms > Multi Step Simplified | 2017.08.17 Complete |
-| Forms > Selectors | **2017.11.28 Updates in namings to better match with Clay.** |
-| Forms > Slider | **2017.11.28 Documented** |
+| Forms > Selectors | 2017.11.28 Updates in namings to better match with Clay. |
+| Forms > Slider | 2017.11.28 Documented |
 | Forms > Text input | 2017.07.12 Variations extracted to other page |
 | Forms > Text input variations | 2017.11.17 Numeric text field |
 | Forms > Text input group | 2017.07.12 Style changed. |
@@ -66,7 +66,7 @@ weight: 1
 | Popover and tooltips | 2017.07.12 Popver attributes updated. |
 | Process bar | 2017.07.12 Complete. Modified examples and included mobile |
 | Progress bar | 2017.06.14 In process. |
-| Sidebar | 2017.09.24 Complete. |
+| Sidebar Info Panel | **2018.01.03 Completed with breakpoints, height info, carousel navigation on selection.** |
 | Stickers | 2017.11.11 Stand alone pattern |
 | Table > Table | 2017.07.22 Updated with sections |
 | Table > Inline edit table | 2017.08.17 Complete |
@@ -77,4 +77,4 @@ weight: 1
 | Toolbar > Translation bar | 2017.06.14 In progress |
 | Templates > Dataset | 2017.07.12 Updated with new examples |
 | Templates > Form | 2017.07.12 Updated with new exaples |
-| Sites | 2017.11.17 Documentation started |
+| Sites | **2018.01.03 Documentation finished with basic patterns** |
