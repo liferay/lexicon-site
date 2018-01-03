@@ -5,6 +5,12 @@ layout: "guide"
 weight: 1
 ---
 
+<time>January 3rd, 2018</time>
+
+### Sites 
+
+A full set of components inside [sites section](../patterns/Sites/sites.html) is already available to build you own site widgets. This will allow you to transform old widgets into new ones towards looking for a better information architecture, structure, and refreshing design.
+
 <time>November 28th, 2017</time>
 
 ### Layouts and Form Hierarchy 
