@@ -11,6 +11,23 @@ weight: 2
 
 ### Variations
 
+#### Primary button icon + text
+
+Primary buttons with icon and text can be used either in logged or not logged environments.
+
+**Default**
+
+![Button Primary Icon plus Text default state](../../../images/sites/ButtonSitesPrimaryIconTextDefault.png)
+
+**Hover**
+
+![Button Primary Icon plus Text hover state](../../../images/sites/ButtonSitesPrimaryIconTextHover.png)
+
+**Active**
+
+![Button Primary Icon plus Text active state](../../../images/sites/ButtonSitesPrimaryIconTextActive.png)
+
+
 #### Secondary button icon + text
 
 On the one hand we have the button with icon and text. This button is an extension of Lexicon's secondary button and is built based on the styles of this one. In this way they can be regular or without borders.
