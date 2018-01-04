@@ -12,6 +12,11 @@ A checkbox is a component that allows the user selecting something written in it
 
 ![checkbox](../../../images/CheckboxLabel.png)
 
+#### Metrics
+
+![checkbox list metrics](../../../images/CheckboxList.png)
+
+
 ### Usage
 
 * Checkboxes should be used when more than one option can be selected.
@@ -35,6 +40,10 @@ A checkbox is a component that allows the user selecting something written in it
 A radio is a component that allows the user selecting something written in its associated text label. A list of consecutive radio would allow the user to select just one thing.
 
 ![radio](../../../images/RadioButton+Label+Active.png)
+
+#### Metrics
+
+![radio list metrics](../../../images/RadioList.png)
 
 ### Usage
 
