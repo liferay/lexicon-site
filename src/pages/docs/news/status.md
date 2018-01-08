@@ -39,8 +39,8 @@ weight: 1
 | File upload | 2017.09.24 Working in description |
 | Forms > forms | 2017.09.24 Updated: boolean situations |
 | Forms > form hierarchy | 2017.11.28 Documented** |
-| Forms > CRT | 2017.11.28 Updates in namings to better match with Clay. |
-| Forms > Multi Step Form | 2017.07.22 Process bar renamed and placed in forms. |
+| Forms > CRT | **2018.01.08 Example of use and metrix** |
+| Forms > Multi Step Form | **2018.01.08 Example of use in context** |
 | Forms > Multi Step Simplified | 2017.08.17 Complete |
 | Forms > Selectors | 2017.11.28 Updates in namings to better match with Clay. |
 | Forms > Slider | 2017.11.28 Documented |
@@ -68,7 +68,7 @@ weight: 1
 | Progress bar | 2017.06.14 In process. |
 | Sidebar Info Panel | **2018.01.03 Completed with breakpoints, height info, carousel navigation on selection.** |
 | Stickers | 2017.11.11 Stand alone pattern |
-| Table > Table | 2017.07.22 Updated with sections |
+| Table > Table | **2018.01.08 Updated with example of use in rows** |
 | Table > Inline edit table | 2017.08.17 Complete |
 | Tabs | 2017.06.14 Done. Missing attributes. |
 | Timelines | 2017.06.14 Pending. Old |

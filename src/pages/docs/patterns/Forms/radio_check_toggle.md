@@ -12,10 +12,6 @@ A checkbox is a component that allows the user selecting something written in it
 
 ![checkbox](../../../images/CheckboxLabel.png)
 
-#### Metrics
-
-![checkbox list metrics](../../../images/CheckboxList.png)
-
 
 ### Usage
 
@@ -35,15 +31,19 @@ A checkbox is a component that allows the user selecting something written in it
 | ![checkbox off disabled](../../../images/Checkbox+Disabled.png) | Off disabled |
 | ![checkbox variable for multiple selection](../../../images/CheckboxMultiple+Active.png) | Checkbox Variable for multiple selection |
 
+### Checkbox group
+
+On of the most common ways to find checkboxes in a form is grouped offering a set of options.
+
+![checkbox list metrics](../../../images/CheckboxList.png)
+
+
+
 ## Radio
 
 A radio is a component that allows the user selecting something written in its associated text label. A list of consecutive radio would allow the user to select just one thing.
 
 ![radio](../../../images/RadioButton+Label+Active.png)
-
-#### Metrics
-
-![radio list metrics](../../../images/RadioList.png)
 
 ### Usage
 
@@ -75,6 +75,22 @@ It is a common case of doubt when to use radios or a dropdown menu instead when 
 
 * When the number of options is large, or has the potential to become large.
 * Options should be of the same nature (e.g. a list of branches, or a list of people).
+
+### Radio Group
+
+On of the most common ways to find checkboxes in a form is grouped offering a set of options.
+
+![radio list metrics](../../../images/RadioList.png)
+
+It is very common to have the need of spliting a long list of options in several columns to reduce space. How to decide can be difficult:
+
+* 1 column:
+    * It is always easier and faster to read as the eye doesn’t have to jump.
+    * Use it always when you have long descriptions.
+* Splitting in many columns:
+    * Make sure to have really many options and to have at least 6 elements per column, otherwise there is no real benefit.
+
+![radio group example with 2 columns, 6 elements per column and radio group example with 3 columns, 6 elements per column](../../../images/RadioGroupExample.png)
 
 
 ## Toggle

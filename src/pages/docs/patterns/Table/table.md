@@ -60,13 +60,13 @@ When the row is selected the action do not appear in hover state.
 Concerning the use of the actions menu on hover there is a limitation. It is not possible to have a row with a button in the default state because it would be impossible to click on it while the actions menu is active in the hover state.
 
 #### Do
-Default State without button and Hover State with actions menu
+Hover must never hide a action in the table as both static actions in the row and quick actions are not compatible.
 
 ![table view row default do](../../../images/TableViewRowDefaultDo.jpg)
 ![table view row hover do](../../../images/TableViewRowHoverDo.jpg)
 
 #### Don't
-Default State with an unclickable button and Hover State
+In this case quick actions will be hovering an action and it will be imposible to reach "Edit" button.
 
 ![table view row default dont](../../../images/TableViewRowDefaultDont.jpg)
 ![table view row hover dont](../../../images/TableViewRowHoverDont.jpg)
