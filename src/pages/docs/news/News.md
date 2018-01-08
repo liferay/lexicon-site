@@ -5,6 +5,12 @@ layout: "guide"
 weight: 1
 ---
 
+<time>January 8th, 2018</time>
+
+### Examples 
+
+Examples of use have been added into table to make more clear the row hover action with images on what can be done or not. Moreover, multistep form has been updated with a layout example in a form to better understand how it must be applied. Last but not least, checkbox groups and radio groups examples with metrix have been offered.
+
 <time>January 3rd, 2018</time>
 
 ### Sites 
