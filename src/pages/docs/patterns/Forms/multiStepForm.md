@@ -39,6 +39,11 @@ But in case you need to implement more steps to make the process easier to your 
 
 ![Multi step form two steps](../../../images/ProcessBarNSteps.png)
 
+#### Example
+
+![Multi step form example](../../../images/ProcessBarExample.png)
+
+![Multi step form example grid](../../../images/ProcessBarExampleGrid.png)
 
 ### Mobile
 
@@ -46,7 +51,9 @@ Due to the reduce space in mobile the process bar is reduced to a maximum of 5 s
 
 ![Multi step form N steps mobile](../../../images/ProcessBarNSteps+Mobile.png)
 
+#### Example
 
+![Multi step form example mobile](../../../images/ProcessBarExampleMobile.png)
 
 
 

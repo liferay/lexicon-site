@@ -56,6 +56,21 @@ When the row is selected the action do not appear in hover state.
 
 ![table view row hover](../../../images/TableViewRowHover.gif)
 
+### Row Interaction Limitation
+Concerning the use of the actions menu on hover there is a limitation. It is not possible to have a row with a button in the default state because it would be impossible to click on it while the actions menu is active in the hover state.
+
+#### Do
+Default State without button and Hover State with actions menu
+
+![table view row default do](../../../images/TableViewRowDefaultDo.jpg)
+![table view row hover do](../../../images/TableViewRowHoverDo.jpg)
+
+#### Don't
+Default State with an unclickable button and Hover State
+
+![table view row default dont](../../../images/TableViewRowDefaultDont.jpg)
+![table view row hover dont](../../../images/TableViewRowHoverDont.jpg)
+
 ### Table header
 
 All column headers are always left-aligned, 14px, and regular weight.
