@@ -23,13 +23,13 @@ When the number of tabs goes over the physical size of the navbar, the overflowi
 ![navigation bar with 5 entries, second one seleted. The user interaction is in the sixth tab, named more, where the dropdown menu is open](../../../images/NavBarSecondSelectedDropMenuOpen.png)
 
 * The has selected the option Sixth in the dropdown menu.
-![navigation bar with 6 entries, second one seleted. The user interaction is in the sixth tab where the dropdown menu is open](../../../images/NavBarLastSelected.png)
+![navigation bar with 6 entries, second one seleted. The user interaction is in the sixth tab where the dropdown menu is open](../../../images/NavbarLastSelected.png)
 
 * When the user opens the dropdown menu Sixth option appears marked as selected.
 ![navigation bar with 6 entries, second one seleted. The user interaction is in the sixth tab where the dropdown menu is open](../../../images/NavBarLastSelectedDropMenuOpen.png)
 
 * Once a tab is selected outside the dropdown menu, the dropdown menu tab changes its label to "More" as default value.
-![navigation bar with 6 entries, second one seleted. The user interaction is in the sixth tab where the dropdown menu is open](../../../images/Navbar+Dropdown.png)
+![navigation bar with 6 entries, second one seleted. The user interaction is in the sixth tab where the dropdown menu is open](../../../images/NavBar+Dropdown.png)
 
 ### Variations
 

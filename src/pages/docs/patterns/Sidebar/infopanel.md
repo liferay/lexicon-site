@@ -1,15 +1,13 @@
 ---
-title: "Sidebar Info Panel"
-description: "Sidebar is a vertical panel that appears from the right side of the screen on interactions like the info button."
+title: "Info Panel"
+description: "Information panel is an information container where to display relevant information that does not fit into the table, list, card or any other visualization. This information can be the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy."
 layout: "guide"
-weight: 1
+weight: 2
 ---
 
 ### Description
 
 {$page.description}
-
-Sidebar is basically an information container where to display relevant information that does not fit into the table, list, card or any other visualization. This information can be the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy.
 
 ### Visual Description
 This sidebar appears always from the right side of the viewport and pushes the container in large viewports and slides over it in small viewports. See responsive behavior for more details.
@@ -29,35 +27,35 @@ The components used in the “Info Panel” can vary depending on the applicatio
 #### Sidebar Height
 The sidebar always adjusts to the maximum height of the viewport extending the white background color as much as necessary. 
 
-![](../../../images/SidebarInfoPanelHeight1.jpg) 
+![sidebar height lot of content to see it in the panel](../../../images/SidebarInfoPanelHeight1.jpg) 
 
-![](../../../images/SidebarInfoPanelHeight2.jpg) 
+![sidebar height few content to see it in the panel](../../../images/SidebarInfoPanelHeight2.jpg) 
 
-![](../../../images/SidebarInfoPanelHeight3.jpg) 
+![sidebar with scroll bar](../../../images/SidebarInfoPanelHeight3.jpg) 
 
 ### Item Selection and Navigation
 
 #### Single item selection
 The information of the item is displayed in the sidebar.
 
-![](../../../images/SidebarInfoPanelSelectionSingle.jpg) 
+![first card in visualization selected, infor from first card loaded in the info paneñ](../../../images/SidebarInfoPanelSelectionSingle.jpg) 
 
 #### Multiple item selection
 The information of the last selected item is displayed in the sidebar.
 
-![](../../../images/SidebarInfoPanelSelectionMulti1.jpg) 
+![first, second, seventh cards selected in the visualization and the seventh displayed in the info panel](../../../images/SidebarInfoPanelSelectionMulti1.jpg) 
 
 If you deselect one item, the info of the following numeric item will be shown on the Sidebar Info Panel.
 
-![](../../../images/SidebarInfoPanelSelectionMulti2.jpg) 
+![from previous selection, hover first card to later unselect it](../../../images/SidebarInfoPanelSelectionMulti2.jpg) 
 
-![](../../../images/SidebarInfoPanelSelectionMulti3.jpg) 
+![once unselected the first card, the next one in the buffer is the second one, which is show in the info panel](../../../images/SidebarInfoPanelSelectionMulti3.jpg) 
 
 #### Item Carousel
 
 When there is more than one selected items, you can browse the information of each of them using a carousel element located on the top of the panel.
 
-![](../../../images/SidebarInfoPanelCarousel1.jpg) 
+![The info panel has a carousel to navigate throught the selected list](../../../images/SidebarInfoPanelCarousel1.jpg) 
 
 ### Responsive Behavior
 
@@ -69,19 +67,13 @@ All of these examples also show how the grid of cards would behave in each of th
 
 #### No Sidebar Opened
 
-![](../../../images/SidebarInfoPanelRespIPClose.jpg) 
+![responsive schema of the card view with the panel closed](../../../images/SidebarInfoPanelRespIPClose.jpg) 
 
 
 #### Info Panel opened
 In viewport sizes under 768px width, the “Info Panel” slides over the container instead of pushing it.
 
-![](../../../images/SidebarInfoPanelRespIPOpen.jpg) 
+![esponsive schema of the card view with the panel open](../../../images/SidebarInfoPanelRespIPOpen.jpg) 
 
 
-#### Product Menu + Info Panel
 
-In viewport sizes under 768px width, the “Product Menu” slides over the container instead of pushing it.
-
-In viewport sizes under 992px width, the “Info Panel” slides over the container instead of pushing it.
-
-![](../../../images/SidebarInfoPanelRespPM-IP-Open.jpg) 

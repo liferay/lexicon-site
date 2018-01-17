@@ -9,9 +9,15 @@ weight: 5
 
 ### Presentations
 
+**2017 October**
+
 Lexicon Evolution was presented in DEVCON, LNAS and LRESP in October 2017. This presentation shows the news and updates, and lines of work of our design system.
 
 <script async class="speakerdeck-embed" data-id="2e287bdf09a44bb78231e707a84a26a5" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+### Files
+
+<a href="../../../resources/LexiconLogoSet.zip" download>Lexicon Logo Set</a>
 
 ### Previous Lexicon Versions
 

@@ -1,6 +1,6 @@
 ---
-title: "Nested Navigation"
-description: "Nested navigation allows the navigation between the different pages."
+title: "Vertical Navigation"
+description: "Verical navigation allows the navigation between the different pages."
 layout: "guide"
 weight: 2
 ---
@@ -9,19 +9,19 @@ weight: 2
 
 {$page.description}
 
-![nested navigation nested levels open](../../../images/NavigationVerticalOpen.png)
+![vertical navigation nested levels open](../../../images/NavigationVerticalOpen.png)
 
 ### Usage
 
-This pattern is always vertical and placed to the left of the form allowing the navigation between different pages. Normally this navigation pattern is used in lower navigation levels to reach the lowest level pages.
+This pattern is always vertical and placed to the left of the form allowing the navigation between different pages/forms. Normally, this navigation pattern is used in lower navigation levels to reach the lowest level pages.
 
-This pattern is used in form templates. Remember *Lexicon recommends* to split long forms into smaller forms to make easier the task. Therefore, this navigation pattern is needed to access the different forms.
+This pattern is used in form templates. Remember *Lexicon recommends* to split long forms into smaller forms to make task easier. Therefore, this navigation pattern is needed to access the different forms.
 
-Attributes:
-* The selected option is marked in semibold.
 
 ### Mobile
 
-In mobile devices the navigation is translated into a dropdown menu.
+In mobile devices the navigation is translated into a full-width collapsible menu displayed right before the form. When this menu opens it never pushes down the content, it is displayed over the form.
 
-![nested navigation translated into a select with a dropdown menu](../../../images/NavigationVerticalMobile.png)
+![Nested navigation translated into a select with a collapsible panel. Closed panel example.](../../../images/NavigationVerticalMobileClosed.png)
+
+![nested navigation translated into a select with a dropdown menu](../../../images/NavigationVerticalMobileOpen.png)

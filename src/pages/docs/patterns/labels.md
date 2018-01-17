@@ -21,6 +21,47 @@ Use labels to organize groups of items in your application. Labels have rounded 
 | ![defualt label small size](../../../images/LabelSmall.png) | **Small**: Use it in contexts where its relevante is not major. Use it always in capital letters. |
 | ![defualt label default size](../../../images/LabelDefault.png) | **Default**: Use it for marking states. The use of lowercase is valid in this option|
 
+### Do's and Don'ts
+
+Labels can't be used together with badges.
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/LabelSmallDo.png" alt="Simple label">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/LabelSmallDont.png" alt="Label with sticker inside">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Labels can only have only line of text displaying the entire content.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/LabelTextDo.png" alt="default label">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/LabelTextDontLines.png" alt="defualt label with 2 lines of text">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Labels never allow ellipis.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/LabelTextDo.png" alt="default label">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/LabelTextDontEllipsis.png" alt="defualt label with ellipsis">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+
 ### Variations
 
 #### Label simple

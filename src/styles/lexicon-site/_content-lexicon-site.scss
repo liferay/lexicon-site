@@ -94,6 +94,35 @@
 			margin: 0;
 		}
 	}
+
+	.dodont {
+		margin-right: 32px;
+	
+		img {
+			margin-bottom: 8px;
+			
+			&.do {
+				border-bottom: 4px solid $brand-do;
+			}
+	
+			&.dont {
+				border-bottom: 4px solid $brand-dont;
+			}
+		}
+	
+		p {
+			font-weight: 600;
+			
+			&.do {
+				color: $brand-do;
+			}
+	
+			&.dont {
+				color: $brand-dont;
+			}
+		}
+	
+	}
 }
 
 .News {
