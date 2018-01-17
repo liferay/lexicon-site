@@ -12736,6 +12736,21 @@ button.loading > .linear.loading-animation {
   .content .sidebar-offset header .container-fluid > h1 {
     margin: 0; }
 
+.content .sidebar-offset .dodont {
+  margin-right: 32px; }
+  .content .sidebar-offset .dodont img {
+    margin-bottom: 8px; }
+    .content .sidebar-offset .dodont img.do {
+      border-bottom: 4px solid #287D34; }
+    .content .sidebar-offset .dodont img.dont {
+      border-bottom: 4px solid #DA1414; }
+  .content .sidebar-offset .dodont p {
+    font-weight: 600; }
+    .content .sidebar-offset .dodont p.do {
+      color: #287D34; }
+    .content .sidebar-offset .dodont p.dont {
+      color: #DA1414; }
+
 .News .content .sidebar-offset h3 {
   margin-top: 0; }
 
