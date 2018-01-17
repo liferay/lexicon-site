@@ -24,6 +24,21 @@ Badges have circular borders and are only used to specify a number.
 	* Errors: in tables and/or lists.
 * In case you need a pattern where to write non-numeric values, labels is the pattern to use.
 
+### Do's and Don'ts
+
+Badges can be use near text but a minimum distance of 8px must be always kept.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/BadgeDoDistance.png" alt="badge distance to an element is 8 pixels">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/BadgeDontDistance.png" alt="don't place a badge closer than 8 pixels to any element in horizontal">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
 ### Attributes
 
 * Height: 16px (total 20px)

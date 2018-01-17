@@ -59,17 +59,20 @@ When the row is selected the action do not appear in hover state.
 ### Row Interaction Limitation
 Concerning the use of the actions menu on hover there is a limitation. It is not possible to have a row with a button in the default state because it would be impossible to click on it while the actions menu is active in the hover state.
 
-#### Do
-Hover must never hide a action in the table as both static actions in the row and quick actions are not compatible.
+#### Do's and Don'ts
 
-![table view row default do](../../../images/TableViewRowDefaultDo.jpg)
-![table view row hover do](../../../images/TableViewRowHoverDo.jpg)
+Do never hide a action in the table as both static actions in the row and quick actions are not compatible. Quick actions will always hover an action placed in the table row and it will be imposible to reach, in this example, "Edit" button.
 
-#### Don't
-In this case quick actions will be hovering an action and it will be imposible to reach "Edit" button.
+<div class="dodont">
+	<img class="do" src="../../../images/TableRowInteractionDo.png" alt="first, table view row default, second, table view row hover. Theres is no action to hover in the row. Correct.">
+	<p class="do">Do</p>
+</div>
 
-![table view row default dont](../../../images/TableViewRowDefaultDont.jpg)
-![table view row hover dont](../../../images/TableViewRowHoverDont.jpg)
+<div class="dodont">
+	<img class="dont" src="../../../images/TableRowInteractionDont.png" alt="first, table view row default, second, table view row hover. Theres is an action hovered in the row. Incorrect.">
+	<p class="dont">Don't</p>
+</div>
+
 
 ### Table header
 
@@ -78,11 +81,8 @@ All column headers are always left-aligned, 14px, and regular weight.
 ![table header](../../../images/TableHeader.png)
 
 Table header can be interactive:
-* In case sorting is available
-	In this case, the sort reference column is highlighted with an arrow marking the sort direction.
-* In case drag & drop is available
-
-In both cases the column header changes to bold in hover.
+* Sorting (if available): the column header has an arrow next to it indicating the sort direction, A-z down arrow and Z-a up arrow. The text is underlined on hover state.
+* Drag & drop (if available): the column header shows a drag-icon on hover state.
 
 ### Sections
 

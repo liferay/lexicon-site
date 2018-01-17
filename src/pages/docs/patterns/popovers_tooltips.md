@@ -17,6 +17,18 @@ Popovers are used together with the question mark icon as an affordance to let t
 
 ![help icon](../../../images/PopoverFromIcon.png)
 
+### Do's and Don'ts
+
+Keep a distance of 8px between a text and the icon so it is easy to recognize and associate.
+
+<img class="dodont" src="../../../images/PopoverTitleIconDo.png" alt="keep 8 pixel between title and help icon">
+<img class="dodont" src="../../../images/PopoverTitleIconDont.png" alt="dont place it nearer than 8 pixels">
+
+Similar to the previous case happens with sections, in this case the distance is 16px.
+
+<img class="dodont" src="../../../images/PopoverSectionIconDo.png" alt="keep 16 pixel between section title and help icon">
+<img class="dodont" src="../../../images/PopoverSectionIconDont.png" alt="dont place it nearer than 16 pixels">
+
 ### Attributes
 
 * Width: 232px fixed

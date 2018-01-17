@@ -13,16 +13,23 @@ weight: 1
 
 Forms can be created in one single column or two columns. If your form is divided in several sections that are stacked consider not changing the internal layout between sections, it can affect the experience of filling the whole form.
 
-When applying columns take into account that the reading directions is left-right, and up-down, in each column. So expect your user to read first column one and then column two.
+When applying columns take into account that the reading direction is left-right, and up-down, in each column. So expect your user to read first column one and then column two.
 
 ### Distancies
 
+Respecting the distancies between form elements such as texts, fields, sections, etc, is very important. Please take a closer look to our [hierarchy](./formsHierarchy.html) page to understand it.
+
 As a general thumb rule apply the following sizes for distances:
-* Form padding: 24px
-* Vertical distances
-	* 24px between consecutive components: title, fields, section...
-	* 48px between consecutive sections
-* Horizontal distances: 16px between consecutive fields
+
+| Description | Desktop | Mobile |
+| --- | --- | --- | 
+| Form padding | 24px | 16px |
+| Horizontal |  |  |
+| - Between consecutive components | 16px | 16px |
+| - Between non-consecutive components | 24px | 24px |
+| Vertical |  |  |
+| - Between consecutive components: title, fields, section... | 24px | 16px |
+| - Between form title or title + description for next component | 48px | 32px |
 
 ### Sections
 
@@ -92,6 +99,33 @@ Interior form actions should not be as notorious as general actions. Therefore, 
 
 ![button primary default size defuault state](../../../images/ButtonIconSecondary.png)   
 
+#### Do's and Don'ts
+
+Do never use two primary buttons together. There must only be one primary button that represents the most important action.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/FormButtonPrimaryDo.png" alt="Two butons, primary and secondary.">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/FormButtonPrimaryDont.png" alt="Two butons, both primary">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Do always use concrete words rather than general as "Ok".
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/FormButtonPrimaryTextDo.png" alt="Primary button with text Done">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/FormButtonPrimaryTextDont.png" alt="Primary button with text Ok">
+		<p class="dont">Don't</p>
+	</div>
+</div>
 
 ### Boolean situations
 
