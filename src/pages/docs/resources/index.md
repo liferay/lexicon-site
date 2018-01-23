@@ -9,6 +9,14 @@ weight: 5
 
 ### Presentations
 
+**2018 January**
+
+Principles, grid, distances... are important elements to know how to craft inferfaces using Lexicon. This slide deck will help you to understand how to build your own components and how to use the most common templates.
+
+<div class="videoContainer">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSfh3xT-ogqij9lmxzJ3n1BmmweFu9XSYahZATIbt7R6jZpqrXEp3iGNSkGwIbGsXKDLGe9d5zs6PnH/embed?start=false&loop=false&delayms=3000" class="video"></iframe>
+</div>
+
 **2017 October**
 
 Lexicon Evolution was presented in DEVCON, LNAS and LRESP in October 2017. This presentation shows the news and updates, and lines of work of our design system.
