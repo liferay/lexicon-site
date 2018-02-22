@@ -6,7 +6,7 @@ import Soy from 'metal-soy';
 
 import {ElectricSearchAutocomplete} from 'electric-quartz-components';
 
-import templates from './HomeSearch.soy';
+import templates from './HomeSearch.soy.js';
 
 class HomeSearch extends ElectricSearchAutocomplete {
 	attached() {
