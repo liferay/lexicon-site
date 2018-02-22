@@ -1,11 +1,12 @@
 {namespace MainNavigation}
 
 /**
- * @param section
- * @param? currentDepth
- * @param? depth
  */
 {template .render}
+	{@param section: ?}
+	{@param? currentDepth: ?}
+	{@param? depth: ?}
+
 	{let $localCurrentDepth: $currentDepth ?: 0 /}
 
 	{if $section.children}
@@ -34,9 +35,10 @@
 {/template}
 
 /**
- * @param page
  */
 {template .anchor}
+	{@param page: ?}
+
 	{if not $page.children}
 		<a class="nav-link {$page.icon ?: ''}" href="{$page.url}">
 	{else}
@@ -51,5 +53,4 @@
 			</svg>
 		{/if}
 	</a>
-
 {/template}
