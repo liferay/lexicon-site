@@ -7,32 +7,42 @@ weight: 1
 
 ### Description
 
-Lexicon uses OpenSans Source as the default font face. You can use the font face you consider more appropriate for your system.
+Lexicon does not provide a typography inside the design system. System font is the decision taken.
 
-### Types
+### System Font
 
-#### App title regular
-Text size for titles in forms
+#### What is a System Font?
+System Font is the font used by the OS. Each OS has a different one based on their own preferrence. Some examples are:
 
-![Set of different font sizes and usage](../../../images/TypographyGroup1.png)
+| OS | Version | System Font |
+| -- | ------- | ----------- |
+| Mac OS X | El Capitan | San Francisco | 
+| Mac OS X | Yosemite | Helvetica Neue | 
+| Windows | Vista | Segoe UI |
+| Android | Ice Cream Sandwich (4.0)+ | Roboto |
+| Ubuntu | All versions | Ubuntu |
 
+#### Some benefits of System Font
+This decision reinforces the following points:
+* There is no access problem to it. It doesn't depend on CDN.
+* System fonts are thought to work in a wide range of languages.
+* It reduces significantly the amount of css to download.
+* Wider range of font weights is provided without the download cost.
+* The system font is always usually more readable.
+* The system font is more natural as the user is used to it from the OS.
 
-#### Main title regular
-Text size for header text in applications.
+#### Changing system font for other font
+It is always possible to change the system font by any of your choice. Please when making this change, take into account that not modifying the line height is essential and to play with the font body. You will probably have to look for a rule that allows you to make this quick change.
 
-![Set of different font sizes and usage](../../../images/TypographyGroup2.png)
+An example is provided with Source Sans Pro:
 
-#### Body text regular
-Text size for content.
+| | System Font | Source Sans Pro |
+|-|----|----|
+| Large | 15px | 18px |
+| Base | 14px | 16px |
+| Small | 13px | 14px |
+| Extra Small | 11px | 12px |
 
-![Set of different font sizes and usage](../../../images/TypographyGroup3.png)
+The base line heigth used in Lexicon is 1.5 for the previous font sizes.
 
-#### Secondary text regular
-Text size for labels and details in lists and tables.
-
-![Set of different font sizes and usage](../../../images/TypographyGroup4.png)
-
-#### Small text regular
-Text size for low importance text.
-
-![Set of different font sizes and usage](../../../images/TypographyGroup5.png)
+Lexicon also provides values all headings but they are not so restrisctive as the previous table values.
