@@ -4,9 +4,9 @@ import Component from 'metal-component';
 import dom from 'metal-dom';
 import Soy from 'metal-soy';
 
-import {ElectricSearchAutocomplete} from 'electric-quartz-components';
+import {ElectricSearchAutocomplete} from 'electric-clay-components';
 
-import templates from './HomeSearch.soy';
+import templates from './HomeSearch.soy.js';
 
 class HomeSearch extends ElectricSearchAutocomplete {
 	attached() {
