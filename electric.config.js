@@ -116,7 +116,7 @@ module.exports = {
 
 		return md;
 	},
-	metalComponents: ['electric-quartz-components'],
+	metalComponents: ['electric-clay-components'],
 	sassOptions: {
 		includePaths: ['node_modules', clay.includePaths]
 	},
