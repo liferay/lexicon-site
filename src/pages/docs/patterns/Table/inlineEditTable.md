@@ -5,6 +5,8 @@ layout: "guide"
 weight: 2
 ---
 
+<span class="label label-secondary">PENDING</span>
+
 ### Description
 
 {$page.description}

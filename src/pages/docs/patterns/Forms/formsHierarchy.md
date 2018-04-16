@@ -4,10 +4,6 @@ description: "Definition of the content hierarchy inside a form structure and th
 layout: "guide"
 weight: 2
 ---
-{call ClayLabel.render}
-	{param label: 'CLAY' /}
-    {param style: 'warning' /}
-{/call}
 
 ### Description
 

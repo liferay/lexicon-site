@@ -4,6 +4,7 @@ description: "Panels separate your content."
 layout: "guide"
 weight: 1
 ---
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/panels.html" target="_blank">CLAY</a>
 
 ### Description
 

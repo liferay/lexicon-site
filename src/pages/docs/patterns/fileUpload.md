@@ -5,6 +5,8 @@ layout: "guide"
 weight: 1
 ---
 
+<span class="label label-info">PORTAL</span>
+
 ### Description
 
 {$page.description}

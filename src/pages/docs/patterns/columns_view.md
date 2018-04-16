@@ -5,6 +5,7 @@ layout: "guide"
 weight: 1
 hidden: yes
 ---
+<span class="label label-info">PORTAL</span>
 
 ### Description
 
