@@ -85,8 +85,8 @@ A closer definition of each color, its variations and usage:
 | Color | Code | Usage |
 | ----- | ---- | ----- |
 | Warning | #B95000 | Text color in warning messages. | 
-| Warning Lighten 25% | #F48989 | Border color in warning messages like alerts. |
-| Warning Lighten 60% | #30313F | Background color in warning messages like alerts. |
+| Warning Lighten 25% | #FF8F39 | Border color in warning messages like alerts. |
+| Warning Lighten 60% | #FFF4EC | Background color in warning messages like alerts. |
 
 ![Blue info color scale](../../../images/ColorBlueInfoScale.jpg)
 

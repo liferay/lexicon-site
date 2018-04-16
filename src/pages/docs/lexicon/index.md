@@ -22,3 +22,11 @@ For this, the construction of Lexicon is based on the Atomic Design theoretical 
 ### Lexicon site
 
 Lexicon Site is then presented as the necessary platform for the diffusion and access to Lexicon system by designers, developers or any other person involved in the creation of digital products. Mainly focused on Liferay community, but open to anyone who wants to make use of its content and also want to contribute with their own proposals and suggestions.
+
+Lexicon Site tries to collect all patterns created using Lexicon in Liferay products. This doesn't mean that all of them are reflected in Clay. Clay only implements those patterns that are of common use in several of our products and/or applications, providing a maintenance as they are more important not only for us but also for you. In this way, the components are labeled in the following way
+
+| Label | Usage |
+| ---- | ----- |
+| <a class="label-link label label-warning" href="https://clayui.com/" target="_blank">CLAY</a> | Providing a link to the pattern implementation. |
+| <span class="label label-info">PORTAL</span> | Informing that the pattern is use in a concrete product or application. |
+| <span class="label label-secondary">PENDING</span> | The pattern has been designed and will be implemented either in Clay or a Product/Application. |

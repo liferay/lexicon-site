@@ -4,10 +4,6 @@ description: "Forms is one of the most used patterns in Lexicon. Forms capture i
 layout: "guide"
 weight: 1
 ---
-{call ClayLabel.render}
-	{param label: 'CLAY' /}
-    {param style: 'warning' /}
-{/call}
 
 ### Description
 

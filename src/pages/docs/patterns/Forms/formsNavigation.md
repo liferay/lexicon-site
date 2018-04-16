@@ -4,10 +4,6 @@ description: "Forms can have navigation and this can appear in form in two diffe
 layout: "guide"
 weight: 2
 ---
-{call ClayLabel.render}
-	{param label: 'CLAY' /}
-    {param style: 'warning' /}
-{/call}
 
 ### Description
 

@@ -4,14 +4,8 @@ description: "Slider allows the user to select values in a linear range of value
 layout: "guide"
 weight: 3
 ---
-{call ClayLabel.render}
-	{param label: 'CLAY' /}
-    {param style: 'warning' /}
-{/call}
-{call ClayLabel.render}
-	{param label: 'PENDING' /}
-    {param style: 'danger' /}
-{/call}
+
+<span class="label label-secondary">PENDING</span>
 
 ### Description
 
