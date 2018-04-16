@@ -5,6 +5,11 @@ layout: "guide"
 weight: 4
 ---
 
+{call ClayLabel.render}
+	{param label: 'CLAY' /}
+    {param style: 'warning' /}
+{/call}
+
 ## Text Field
 
 A text field allow users write data in the system with the end of this data to be processed.

@@ -5,6 +5,11 @@ layout: "guide"
 weight: 3
 ---
 
+{call ClayLabel.render}
+	{param label: 'CLAY' /}
+    {param style: 'warning' /}
+{/call}
+
 ## Select
 
 {$page.description}

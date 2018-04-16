@@ -5,6 +5,11 @@ layout: "guide"
 weight: 4
 ---
 
+{call ClayLabel.render}
+	{param label: 'PORTAL' /}
+    {param style: 'info' /}
+{/call}
+
 ### Description
 
 {$page.description}

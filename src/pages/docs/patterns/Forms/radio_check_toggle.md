@@ -2,7 +2,7 @@
 title: "Checkbox, Radio, Toggle"
 description: "Checkbox, radio and toggles provide users with seletion and activation tools"
 layout: "guide"
-weight: 2
+weight: 3
 ---
 
 ## Checkbox

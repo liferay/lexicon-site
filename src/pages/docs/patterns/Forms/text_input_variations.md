@@ -11,7 +11,6 @@ Autocomplete textfield is the input that has a data provider associated offering
 
 ![autocomple text field with list open](../../../images/AutocompleteTexfield.png)
 
-
 ## Search field
 
 Search field is pretty similar to autocomplete text field but the field states are defined better to adapt to search scenario.
@@ -53,7 +52,7 @@ Date select allows to select a date. This date select is similar to the one in H
 
 ![multiple select active state](../../../images/DatePickerOpen.png)
 
-## Numeric field
+## Numeric field 
 
 Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisms to increase and decrease the value by using arrow keys and inside field buttons.
 

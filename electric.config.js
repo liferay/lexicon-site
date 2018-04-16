@@ -60,6 +60,9 @@ const getLangInfo = function (code) {
 	return lang;
 }
 
+const metalComponents = ['electric-clay-components']
+	.concat(fs.readdirSync('./node_modules').filter(f => f.match(/^clay-.*/)));
+
 module.exports = {
 	frontMatterHook: function(data) {
 		if (NODE_ENV === 'development') {
@@ -116,7 +119,7 @@ module.exports = {
 
 		return md;
 	},
-	metalComponents: ['electric-clay-components'],
+	metalComponents: metalComponents,
 	sassOptions: {
 		includePaths: ['node_modules', clay.includePaths]
 	},
