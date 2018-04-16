@@ -2,8 +2,13 @@
 title: "Multi Step Form"
 description: "A multi step form, also known as wizard, is a determinate progress bar. This progress bar is used in long processes dividing the main task in subtasks that will help your users completing the process."
 layout: "guide"
-weight: 1
+weight: 3
 ---
+
+{call ClayLabel.render}
+	{param label: 'CLAY' /}
+    {param style: 'warning' /}
+{/call}
 
 ### Description
 

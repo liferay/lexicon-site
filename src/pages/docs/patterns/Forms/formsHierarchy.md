@@ -2,14 +2,18 @@
 title: "Forms Hierarchy"
 description: "Definition of the content hierarchy inside a form structure and the components used to identify the different content blocks."
 layout: "guide"
-weight: 1
+weight: 2
 ---
+{call ClayLabel.render}
+	{param label: 'CLAY' /}
+    {param style: 'warning' /}
+{/call}
 
 ### Description
 
 {$page.description}
 
-This page contemplates the visual definition of the hierarchy, the measurements and the definition of the components that establish that hierarchy
+This page contemplates the visual definition of the hierarchy, the measurements and the definition of the components that establish that hierarchy 
 
 ### Visual Definition
 
