@@ -3,6 +3,7 @@ title: "Side Nav"
 description: "Side navigation is a rich vertical navigation panel."
 layout: "guide"
 weight: 2
+hidden: yes
 ---
 
 ### Description

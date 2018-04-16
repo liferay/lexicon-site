@@ -5,6 +5,8 @@ layout: "guide"
 weight: 1
 ---
 
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/popovers.html" target="_blank">CLAY</a>
+
 ## Popovers
 
 {$page.description}

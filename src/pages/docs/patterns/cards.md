@@ -6,6 +6,8 @@ layout: "guide"
 weight: 1
 ---
 
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/cards.html" target="_blank">CLAY</a>
+
 ### Description
 
 {$page.description}

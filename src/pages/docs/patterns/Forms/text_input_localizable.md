@@ -5,10 +5,7 @@ layout: "guide"
 weight: 4
 ---
 
-{call ClayLabel.render}
-	{param label: 'PORTAL' /}
-    {param style: 'info' /}
-{/call}
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/form_elements_input_groups.html#input-group-mixed" target="_blank">CLAY</a>
 
 ### Description
 

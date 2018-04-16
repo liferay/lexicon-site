@@ -4,6 +4,7 @@ description: "Header is toolbar that allows identification, navigation and displ
 layout: "guide"
 weight: 2
 ---
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/header.html" target="_blank">CLAY</a>
 
 ### Description
 
