@@ -4,6 +4,7 @@ description: "Labels are a mechanism to categorize information providing quick r
 layout: "guide"
 weight: 1
 ---
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/labels.html" target="_blank">CLAY</a>
 
 ### Description
 

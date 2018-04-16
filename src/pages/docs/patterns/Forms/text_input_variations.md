@@ -5,7 +5,7 @@ layout: "guide"
 weight: 4
 ---
 
-## Autocomplete Text Field
+## Autocomplete text field
 
 Autocomplete textfield is the input that has a data provider associated offering the user text suggestions while typing.
 

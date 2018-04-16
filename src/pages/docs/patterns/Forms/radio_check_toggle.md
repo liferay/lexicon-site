@@ -5,6 +5,8 @@ layout: "guide"
 weight: 3
 ---
 
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/form_custom.html" target="_blank">CLAY</a>
+
 ## Checkbox
 
 A checkbox is a component that allows the user selecting something written in its associated text label. A list of consecutive checkboxes would allow the user to select multiple things."

@@ -5,10 +5,7 @@ layout: "guide"
 weight: 3
 ---
 
-{call ClayLabel.render}
-	{param label: 'CLAY' /}
-    {param style: 'warning' /}
-{/call}
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/multi_step_form_simplified.html" target="_blank">CLAY</a>
 
 ### Description
 

@@ -5,6 +5,8 @@ layout: "guide"
 weight: 2
 ---
 
+<a class="label-link label label-warning" href="https://clayui.com/docs/components/panels.html" target="_blank">CLAY</a>
+
 ### Description
 
 {$page.description}
