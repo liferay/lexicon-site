@@ -18,4 +18,24 @@ table {
 		text-transform: uppercase;
 		vertical-align: bottom;
 	}
+
+	td > p {
+		display: inline;
+
+		&.dotDone {
+			color: #5ACA75;
+		}
+		&.dotProgress {
+			color: #FF8F39;
+		}
+		&.dotWait {
+			color: $brand-light-secondary-text;
+		}
+		&.tableSection {
+			font-size: 14px;
+			color: $brand-secondary;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
 }

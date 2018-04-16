@@ -7,76 +7,99 @@ weight: 1
 
 ## Last update
 
-2018.01.17
+2018.04.16
 
-## Updates
+### Status
 
-### Design principles
+| Legend |
+| ---- |
+| <p class="dotDone">&#9679;</p><p> Done</p> |
+| <p class="dotProgress">&#9679;</p><p> In Progress</p> |
+| <p class="dotWait">&#9679;</p><p> Pending</p> |
 
-| Page | Status |
-| ---- | ----- |
-| Accessibility | 2017.06.14 Starting description from a design perspective |
-| Color | 2017.11.28 Update in the way colors are communicated |
-| Grid | 2017.08.16 updated |
-| Layout | **2018.01.17 Cards layout** |
-| Typography | 2017.06.25 Adapted with the advices |
-| Writing style | 2017.06.14 Done |
 
-### Pattern library
-
-| Page | Status |
-| ---- | ----- |
-| Actions definition | **2018.01.17 Do's and Dont's.** |
-| Alerts | 2017.06.26 Update with examples. Missing attributes. |
-| Badges | 2017.11.11 **2018.01.17 Do's and Dont's.** |
-| Buttons | 2017.11.17 Button group included |
-| Cards | 2017.06.25 Included user card, image card. Missing folder card, file card. |
-| Charts | 2017.11.17 Charts initial description with color palettern, lines and patterns included. Details for each chart coming up. |
-| Columns View | 2017.09.24 Working in description |
-| Confirmation message | 2017.08.10 Complete |
-| Dataset display | 2017.07.12 Updated with examples for empty states. |
-| Dropdown menu | 2017.07.12 Distance to button specification |
-| File upload | 2017.09.24 Working in description |
-| Forms > forms | **2018.01.17 Do's and Dont's.** |
-| Forms > form hierarchy | 2017.11.28 Documented |
-| Forms > CRT | **2018.01.17 Do's and Dont's.** |
-| Forms > Multi Step Form | 2018.01.08 Example of use in context |
-| Forms > Multi Step Simplified | 2017.08.17 Complete |
-| Forms > Selectors | 2017.11.28 Updates in namings to better match with Clay. |
-| Forms > Slider | 2017.11.28 Documented |
-| Forms > Text input | 2017.07.12 Variations extracted to other page |
-| Forms > Text input localizable | **2018.01.17 New** |
-| Forms > Text input variations | 2017.11.17 Numeric text field |
-| Forms > Text input group | 2017.07.12 Style changed. |
-| Icons | 2017.08.10 Updated with new icons |
-| Image Selector | 2017.09.24 Working in description |
-| Labels | **2018.01.17 Do's and Dont's.** |
-| Link | 2017.08.17 Complete |
-| List | 2017.07.22 Updated with sections |
-| Loading indicator | 2017.06.14 Pending. |
-| Modals | 2017.06.14 Done. Missing attributes |
-| Navigation > Navigation | 2017.07.13 Specification. |
-| Navigation > Breadcrumb | 2017.07.12 Updated style. |
-| Navigation > Header | 2017.07.12 Updated for DE. |
-| Navigation > Navbar | 2017.07.12 Updated |
-| Navigation > SideNav | 2017.07.12 Updated style in DE |
-| Navigation > Vertical navigation | 2017.07.12 Updated with nested example |
-| Pager | 2017.06.14 Pending. |
-| Pagination | 2017.08.17 Complete |
-| Panel | 2017.06.14 Pending. |
-| Popover and tooltips | **2018.01.17 Do's and Dont's.** |
-| Process bar | 2017.07.12 Complete. Modified examples and included mobile |
-| Progress bar | 2017.06.14 In process. |
-| Sidebar | **2018.01.17 Splitted in concrete cases.** |
-| Sidebar > Info Panel | 2018.01.03 Completed with breakpoints, height info, carousel navigation on selection. |
-| Stickers | 2017.11.11 Stand alone pattern |
-| Table > Table | **2018.01.17 Do's and Dont's.** |
-| Table > Inline edit table | 2017.08.17 Complete |
-| Tabs | 2017.06.14 Done. Missing attributes. |
-| Timelines | 2017.06.14 Pending. Old |
-| Toolbar > Toolbar | 2017.06.14 Done |
-| Toolbar > Manag Bar | 2017.06.14 Updated with dropdown cases & Mobile. Missing attributes |
-| Toolbar > Translation bar | 2017.06.14 In progress |
-| Templates > Dataset | 2017.07.12 Updated with new examples |
-| Templates > Form | 2017.07.12 Updated with new exaples |
-| Sites | 2018.01.03 Documentation finished with basic patterns |
+| Page | Lexicon | CSS | Clay |
+| ---- | ----- | ----- |----- |
+| <p class="tableSection">ALERT</p> |
+| Alert Toast | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Alert Embedded | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Alert Stripe | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">BADGE</p> |
+| Badge | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">BUTTON</p> |
+| Button | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Button icon | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Button icon and text | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Button dropdown | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Button group | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">CARD</p> |
+| Card image | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Card user | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Card file | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Card folder | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">CHART</p> |
+| Chart bar | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Chart line | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Chart pie | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Chart scatterplot | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">CONFIRMATION MESSAGE</p> |
+| Confirmation Message | <p class="dotDone">&#9679;</p> | NA | NA |
+| <p class="tableSection">DROPDOWN MENU</p> |
+| Dropdown menu | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">FILE UPLOAD</p> |
+| File upload | <p class="dotDone">&#9679;</p> | NA | NA  |
+| <p class="tableSection">FORM</p> |
+| Checkbox, Radio, Toggle | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Actions definition | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Multi Step Form | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Multi Step Form Simplified | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Selectors | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Slider | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Text Input | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Text Input Group | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Text Input Localizable | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Text Input Variation > Autocomplete text field | <p class="dotDone">&#9679;</p> | <p class="dotProgress">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Text Input Variation > Search field | <p class="dotDone">&#9679;</p> | <p class="dotProgress">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Text Input Variation > Labels input field | <p class="dotDone">&#9679;</p> | <p class="dotProgress">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Text Input Variation > Date field | <p class="dotDone">&#9679;</p> | <p class="dotProgress">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Text Input Variation > Numeric field | <p class="dotDone">&#9679;</p> | <p class="dotProgress">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Text Input Variation > Password field | <p class="dotDone">&#9679;</p> | <p class="dotProgress">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| <p class="tableSection">ICONS</p> |
+| Icons | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">IMAGE SELECTOR</p> |
+| Image selector | <p class="dotDone">&#9679;</p> | NA | NA  |
+| <p class="tableSection">LABEL</p> |
+| Labels | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">LINK</p> |
+| Link | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">LIST</p> |
+| List | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">LOADING INDICATOR</p> |
+| Loading indicator | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">MODALS</p> |
+| Modals | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">NAVIGATION</p> |
+| Breadcrumb | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Header | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Navbar | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Vertical Nav | <p class="dotDone">&#9679;</p> | <p class="dotProgress">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| <p class="tableSection">PAGINATION</p> |
+| Pagination | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Pagination bar | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">PANEL</p> |
+| Panel | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">POPOVER & TOOLTIPS</p> |
+| Popover | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Tooltips | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">PROGRESS BAR</p> |
+| Progress bar | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">SIDEBAR</p> |
+| Sidebar | <p class="dotDone">&#9679;</p> | NA | NA |
+| Info Panel | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| <p class="tableSection">TABLE</p> |
+| Table | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Inline Edit Table | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| <p class="tableSection">TABS</p> |
+| Tabs | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| <p class="tableSection">TOOLBAR</p> |
+| Toolbar Management | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
