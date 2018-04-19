@@ -14424,6 +14424,12 @@ mark,
 .content .sidebar-offset .label-link {
   color: #b95000; }
 
+.content .sidebar-offset .linkDecor {
+  text-decoration: none; }
+
+.content .sidebar-offset .labelbg {
+  background: white; }
+
 .News .content .sidebar-offset h3 {
   margin-top: 0; }
 
