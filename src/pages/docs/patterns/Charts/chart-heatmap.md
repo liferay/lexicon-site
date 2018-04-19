@@ -1,11 +1,11 @@
 ---
-title: "Heatmap Chart"
+title: "Heatmap chart"
 description: "The Heatmap chart is a visual representation of the data using colors to indicate the level of the values."
 layout: "guide"
-weight: 2
+weight: 3
 ---
 
-<span class="label label-default">PENDING</span>
+<span class="label label-secondary">PENDING</span>
 
 ### Description
 

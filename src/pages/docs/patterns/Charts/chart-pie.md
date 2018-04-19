@@ -1,8 +1,8 @@
 ---
-title: "Pie Chart"
+title: "Pie chart"
 description: "Pie chart allows to divide data by numerical proportions of a total value (always 100%)."
 layout: "guide"
-weight: 2
+weight: 3
 ---
 
 <a class="label-link label label-warning" href="https://clayui.com/docs/components/charts/basic/pie_chart.html" target="_blank">CLAY</a>

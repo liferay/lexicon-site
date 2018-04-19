@@ -2,7 +2,7 @@
 title: "Bar chart"
 description: "Bar chart is a graphical data representation consisting on proportional rectangle bars with proportional lengths and heights for the presented data. Bars can be used either horizontally or vertically."
 layout: "guide"
-weight: 2
+weight: 3
 ---
 <a class="label-link label label-warning" href="https://clayui.com/docs/components/charts/basic/bar_chart.html" target="_blank">CLAY</a>
 

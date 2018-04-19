@@ -1,8 +1,8 @@
 ---
-title: "Line Chart"
+title: "Line chart"
 description: "A line chart is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments.The measurement points are ordered (typically by their x-axis value) and joined with straight line segments. A line chart is often used to visualize a trend in data over intervals of time – a time series – thus the line is often drawn chronologically."
 layout: "guide"
-weight: 2
+weight: 3
 ---
 
 <a class="label-link label label-warning" href="https://clayui.com/docs/components/charts/basic/bar_chart.html" target="_blank">CLAY</a>
