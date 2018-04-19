@@ -24,6 +24,8 @@ weight: 1
 | Alert Toast | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Alert Embedded | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Alert Stripe | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| <p class="tableSection">ANIMATIONS</p> |
+| Animations | <p class="dotDone">&#9679;</p> | N/A | N/A |
 | <p class="tableSection">BADGE</p> |
 | Badge | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | <p class="tableSection">BUTTON</p> |
