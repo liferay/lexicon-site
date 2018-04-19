@@ -9,53 +9,141 @@ weight: 1
 
 {$page.description}
 
-### Color Palette
+### Color
 
-Lexicon provides a dedicated color palette and a color order for this colors to be used in your charts.
+[Colors](./chart-color-palette.hmtl) must be the last choice you make to differentiate elements. Lexicon provides a specific color order, combinations and rules to follow when you create a new chart component, including patterns, dash lines and shapes.
 
-![charts color palette chunk 1: 1. Blue, 2. Orange, 3. Red](../../../images/ColorCharts1.jpg)
+### Interaction
 
-![charts color palette chunk 2: 4. green, 5. Pink, 6. Grass green](../../../images/ColorCharts2.jpg)
+Lexicon states a series of [basic behaviors](./chart-interaction.hmtl) for all its charts so the user always know what to expect. This behaviors reinforce consistancy and reduces the learning curve.
 
-![charts color palette chunk 3: 6. Grass green, 7. Purple, 8. Yellow, 9. Sky blue](../../../images/ColorCharts3.jpg)
+### Collection
 
+This collection of charts grow with Liferay products' necesities. So come back every now and then or review our [news](./../../news/News.html) to be updated.
 
-### Accessibility
-
-Lexicon wants to offer you a possibility to make your charts more accessible in case you need this option. Therefore, we have created a series of complements for your charts to improve their accessibility.
-
-#### Lines and Shapes
-
-Lines and shapes can help you to establish patterns in line charts.
-
-![Charts shape types. 1. circle, 2. square, 3. triangle point up, 4. rhomnbus, 5. triangle point down, 6. semicircle down, 7. semicirle up, 8. rectangle laid, 9. rectangle up](../../../images/ChartsShapeTypes.png)
-
-
-![Charts line types different stroke width and interior distance](../../../images/ChartsLineTypes.png)
-
-This example shows you both elements in action.
-
-![Charts line example with different lines types and shape types](../../../images/ChartLineAndShapeExample1.png)
-
-![Charts line previous example with one line selected](../../../images/ChartLineAndShapeExample2.png)
-
-#### Area pattern
-
-Area pattern helps identifying better areas due to the shapes each section has plotted. Lexicon provides 9 patterns for areas show below.
-
-![Charts area patterns, 9 different types](../../../images/ChartsAreaPattern.png)
-
-This patterns are thought to be used only when areas don't overlap, as in a pie chart.
-
-![Pie Chart using different area patterns](../../../images/ChartAreaPatternExample.png)
-
-
-### Chart Tooltip
-
-Chart tooltip allow you to display specific data for a exact point or exact area that is interactive. This is just a different usage of the popover pattern.
-
-![Tooltip or popover](../../../images/ChartBubble.png)
-
-The following half donut chart shows a chart tooltip in action.
-
-![tooltip usage in a half donut chart](../../../images/ChartBubbleExample.png)
+<div class="row">
+    <div class="col-lg">
+        <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
+            <a class="card linkDecor" href="./chart-bar.html">
+                <div class="aspect-ratio card-item-first">
+                    <div class="custom-control custom-checkbox">
+                        <label class="labelbg">
+                            <img alt="thumbnail"class="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="../../../images/ChartBarCard.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="autofit-col autofit-col-expand">
+                            <div class="card-title text-truncate" title="ChartBarCard.png">Bar Chart</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg">
+        <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
+            <a class="card linkDecor" href="./chart-doughnut.html">
+                <div class="aspect-ratio card-item-first">
+                    <div class="custom-control custom-checkbox">
+                        <label class="labelbg">
+                            <img alt="thumbnail"class="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="../../../images/ChartDoughnutCard.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="autofit-col autofit-col-expand">
+                            <div class="card-title text-truncate" title="ChartDoughnutCard.png">Doughnut Chart</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg">
+        <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
+            <a class="card linkDecor" href="./chart-heatmap.html">
+                <div class="aspect-ratio card-item-first">
+                    <div class="custom-control custom-checkbox">
+                        <label class="labelbg">
+                            <img alt="thumbnail"class="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="../../../images/ChartHeatmapCard.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="autofit-col autofit-col-expand">
+                            <div class="card-title text-truncate" title="ChartHeatmapCard.png">Heatmap Chart</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg">
+        <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
+            <a class="card linkDecor" href="./chart-line.html">
+                <div class="aspect-ratio card-item-first">
+                    <div class="custom-control custom-checkbox">
+                        <label class="labelbg">
+                            <img alt="thumbnail"class="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="../../../images/ChartLineCard.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="autofit-col autofit-col-expand">
+                            <div class="card-title text-truncate" title="ChartLineCard.png">Line Chart</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg">
+        <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
+            <a class="card linkDecor" href="./chart-pie.html">
+                <div class="aspect-ratio card-item-first">
+                    <div class="custom-control custom-checkbox">
+                        <label class="labelbg">
+                            <img alt="thumbnail"class="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="../../../images/ChartPieCard.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="autofit-col autofit-col-expand">
+                            <div class="card-title text-truncate" title="ChartPieCard.png">Pie Chart</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg">
+        <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
+            <a class="card linkDecor" href="./chart-stacked-bar.html">
+                <div class="aspect-ratio card-item-first">
+                    <div class="custom-control custom-checkbox">
+                        <label class="labelbg">
+                            <img alt="thumbnail"class="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="../../../images/ChartStackedBarCard.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="autofit-col autofit-col-expand">
+                            <div class="card-title text-truncate" title="ChartStackedBarCard.png">Stacked Bar Chart</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
