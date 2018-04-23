@@ -30,3 +30,7 @@ Lexicon Site tries to collect all patterns created using Lexicon in Liferay prod
 | <a class="label-link label label-warning" href="https://clayui.com/" target="_blank">CLAY</a> | Providing a link to the pattern implementation. |
 | <span class="label label-info">PORTAL</span> | Informing that the pattern is use in a concrete product or application. |
 | <span class="label label-secondary">PENDING</span> | The pattern has been designed and will be implemented either in Clay or a Product/Application. |
+
+### Implement Lexicon
+
+Lexicon is not an implementation, it is just a set of patterns, rules and behaviors. Many different libraries could implement Lexicon. Liferay's Lexicon Experience Language web implementation is [Clay](https://clayui.com/).
