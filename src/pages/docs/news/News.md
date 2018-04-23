@@ -5,6 +5,18 @@ layout: "guide"
 weight: 1
 ---
 
+<time>April 20th, 2018</time>
+
+### General Update
+
+This update comes with many tiny improvements that allow us to communicate better:
+* Charts: base layer interaction and different chart examples
+* Forms: re-organized for better understanding
+* Animations: pending to include the real animation. But a first introduction is there as reference.
+* Labels: patterns have labelled to know if they are implemented by Clay or they are owned by any other team/application.
+* Status table: to know in what status the design and implementation is.
+
+
 <time>January 17th, 2018</time>
 
 ### General Update

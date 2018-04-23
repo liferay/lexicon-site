@@ -18,7 +18,7 @@ weight: 1
 | <p class="dotWait">&#9679;</p><p> Pending</p> |
 
 
-| Page | Lexicon | CSS | Clay |
+| Page | Lexicon | Clay CSS | Clay Component |
 | ---- | ----- | ----- |----- |
 | <p class="tableSection">ALERT</p> |
 | Alert Toast | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
