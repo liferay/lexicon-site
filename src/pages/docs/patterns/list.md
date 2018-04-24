@@ -76,3 +76,10 @@ More examples can be found in [dataset template](./Templates/datasetTemplate.htm
 * Ellipsis will be used to suggest more content available when is impossible to show all in a small screen. These ellipsis won’t be actionable. They are only indicative. The whole content will be showed on the item full description state.
 * In case a list row has tags they can’t occupy more than one line. In the case that a tags row is longer, use an ellipsis.
 
+## NOTIFICATIONS
+<span class="label label-info">PORTAL</span>
+
+List entries may need support for notifications. This is solved visually by placing a 8px width line on the left side of the row.
+
+![list notification default state has a blue line on the left side of the row](../../../images/ListNotificationDefault.png)
+![list notification active state has a blue line on the left side of the row](../../../images/ListNotificationActive.png)
