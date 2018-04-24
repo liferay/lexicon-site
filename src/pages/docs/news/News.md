@@ -5,6 +5,12 @@ layout: "guide"
 weight: 1
 ---
 
+<time>April 24th, 2018</time>
+
+### Beta release
+
+We are glad to announce that we are on beta right now. We will update style changes, already compromised, before leaving beta status.
+
 <time>April 20th, 2018</time>
 
 ### General Update
