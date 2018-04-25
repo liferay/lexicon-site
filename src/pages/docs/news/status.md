@@ -20,12 +20,17 @@ weight: 1
 
 | Page | Lexicon | Clay CSS | Clay Component |
 | ---- | ----- | ----- |----- |
+| <p class="tableSection">DESING PRINCIPLES</p> |
+| Animations | <p class="dotDone">&#9679;</p> | NA | <p class="dotWait">&#9679;</p> |
+| Colors | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Grid | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Layout | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Typography | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Writing style | <p class="dotDone">&#9679;</p> | NA | NA |
 | <p class="tableSection">ALERT</p> |
 | Alert Toast | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Alert Embedded | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Alert Stripe | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
-| <p class="tableSection">ANIMATIONS</p> |
-| Animations | <p class="dotDone">&#9679;</p> | N/A | N/A |
 | <p class="tableSection">BADGE</p> |
 | Badge | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | <p class="tableSection">BUTTON</p> |

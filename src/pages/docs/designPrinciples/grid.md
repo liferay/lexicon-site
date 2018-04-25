@@ -5,6 +5,8 @@ layout: "guide"
 weight: 1
 ---
 
+<a class="label-link label label-warning" href="https://clayui.com/docs/layout/grid.html" target="_blank">CLAY</a>
+
 ### Introduction
 
 The aim of the Lexicon layout framework is to provide a common structural reference that contributes to streamlining the component construction and page composition processes as well as favoring visual consistency between the different elements of the interface.
