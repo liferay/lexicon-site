@@ -5,7 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-<span class="label label-info">PORTAL</a>
+<a class="label-link label label-warning" href="https://clayui.com/" target="_blank">CLAY</a>
 
 ### Description
 
@@ -35,3 +35,7 @@ Use this animation for empty search results or empty results on while applying f
 
 The spaceship taking off represents a successful state.
 Use this animation when a list has been emptied that worths to celebrate this state. For example, when a notifications list gets emptied.
+
+### Changing animations
+
+Changing animations is possible. This is just the set of animations that Lexicon provides for Liferay products. Your business may have its own necesities and this is one of the points where your brand can have an impact by customizing the animations. Our advice is to choose a theme and create a story behind it. In our case, we have bet for a space theme, an we have created several animated scenes to support our messages. 
