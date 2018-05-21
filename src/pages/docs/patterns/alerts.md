@@ -34,13 +34,13 @@ weight: 1
 
 ### Variations
 
-Definir el uso de confirm messages.
-
 #### Toast
 
 This type of alert is specific for toast messages. This type of messages appear on the top right corner of the screen. The maximum width of a toast message is 360px and the height can vary depending on the number of rows. It always have a close action.
 
 ![four differet toast alert colors](../../../images/AlertToast.png)
+
+This alert type must appear at the bottom left side of the screen. 24px separation from the left and from the bottom. In case they are configured to close automatically, the time will be 8 seconds.
 
 Example of use:
 
