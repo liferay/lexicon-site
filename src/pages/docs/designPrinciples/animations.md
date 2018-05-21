@@ -19,7 +19,7 @@ Lexicon provides different types of animation for certain purposes. We use these
 
 ![satellite navigating in the space](../../../images/empty_state.gif)
 
-The satallite expreses that the dataset is empty not being anything the collection.
+The satellite express that the dataset is empty not being anything the collection.
 Use this animation when your initial dataset is empty or a folder is empty.
 
 #### Empty search
@@ -29,13 +29,13 @@ Use this animation when your initial dataset is empty or a folder is empty.
 The telescope represents the idea of looking for something in the space a nothing has been found.
 Use this animation for empty search results or empty results on while applying filters over a data set. 
 
-#### Succesful empty state
+#### Successful empty state
 
 ![satellite navigating in the space](../../../images/success_state.gif)
 
 The spaceship taking off represents a successful state.
-Use this animation when a list has been emptied that worths to celebrate this state. For example, when a notifications list gets emptied.
+Use this animation when a list has been emptied that is worthy of celebration. For example, when a notifications list gets emptied.
 
 ### Changing animations
 
-Changing animations is possible. This is just the set of animations that Lexicon provides for Liferay products. Your business may have its own necesities and this is one of the points where your brand can have an impact by customizing the animations. Our advice is to choose a theme and create a story behind it. In our case, we have bet for a space theme, an we have created several animated scenes to support our messages. 
+Changing animations is possible. This is just the set of animations that Lexicon provides for Liferay products. Your business may have its own needs and this is one of the points where your brand can have an impact by customizing the animations. Our advice is to choose a theme and create a story behind it. In our case, we have bet for a space theme, an we have created several animated scenes to support our messages.
