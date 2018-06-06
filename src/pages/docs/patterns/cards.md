@@ -12,7 +12,7 @@ weight: 1
 
 {$page.description}
 
-![default card layout](../../../images/CardImage.jpg)
+![card with image default state](../../../images/CardImage.jpg)
 
 ### Usage
 Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images associated to your content. A good example of this could be your users database or an image library.
@@ -50,44 +50,60 @@ Among these elements, the only one that can't be removed for the pattern meaning
 Used in image/document galleries.
 
 #### Default 
-![default card layout](../../../images/CardImage.jpg)
+![card with image default state](../../../images/CardImage.jpg)
 
 #### Hover
-![default card layout](../../../images/CardImage+Hover.jpg)
+![card with image hover state, blue border](../../../images/CardImageHover.jpg)
 
 #### Active 
-![default card layout](../../../images/CardImage+Active.jpg)
+![card with image selected state, blue border and check marked](../../../images/CardImageActive.jpg)
 
 #### Empty
-![default card layout](../../../images/CardImage+Empty.png)
+![card with image empty state, no image, gray background grid](../../../images/CardImageEmpty.jpg)
 
 #### Image with different ratios
 
 It is important to highlight that images can have different sizes. To provide the end user with that relevant data about the image Lexicon incorporates cards that allow this feature.
 
-![default card layout](../../../images/CardImageAspectRatio1.png)
-![default card layout](../../../images/CardImageAspectRatio2.png)
-![default card layout](../../../images/CardImageAspectRatio3.png)
+<div class="row">
+	<div class="dodont col-lg">
+        <img src="../../../images/CardImageAspectRatio1.jpg" alt="Card Image Aspect Ratio 1">
+	</div>
+	<div class="dodont col-lg">
+		<img src="../../../images/CardImageAspectRatio2.jpg" alt="Card Image Aspect Ratio 2">
+	</div>
+</div>
+<div class="row">
+	<div class="dodont col-lg">
+        <img src="../../../images/CardImageAspectRatio3.jpg" alt="Card Image Aspect Ratio 3">
+	</div>
+</div>
+
 
 ### User card
 
-User card is used to represent users. The user can be represented by its user image or up to two initials extracted from the uses name or name + surname. 
+User card is used to represent users. The user can be represented by its user image or up to two initials extracted from the uses name or name + surname.
 
-![default card layout](../../../images/CardUser.png)
-![default card layout](../../../images/CardUserImage.png)
-
+<div class="row">
+	<div class="dodont col-lg">
+        <img src="../../../images/CardUser.jpg" alt="User card without image but initials">
+	</div>
+	<div class="dodont col-lg">
+		<img src="../../../images/CardUserImage.jpg" alt="User card with image">
+	</div>
+</div>
 
 ### File card
 
 File card is used to represent files different to images.
 
-![default card layout](../../../images/CardFile.png)
+![file card is identified with file icon type as center image](../../../images/CardFile.jpg)
 
 ### Folder card
 
 This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type. In this case, only the checkbox is used to select.
 
-![default card layout](../../../images/CardFolder.png)
+![folder card, similar to a stripe card](../../../images/CardFolder.jpg)
 
 ### Sections
 Card sections help to separate different contents by a certain categorization or typology.

@@ -13,17 +13,21 @@ weight: 1
 
 #### Delete
 
-The action of deleting an element or a set of elements implies that it is not possible to recover them from anywhere and they will disappear forever.
+The action of deleting an element or a set of elements implies that it is not possible to recover them from anywhere and they will disappear forever. This icon can be also used for clearing actions like clear an input field content.
 
 As this is a strong action, you must trigger the user with a confirmation message, always native and not styled by Lexicon.
 
 <div class="row">
 	<div class="dodont col-lg">
-		<img class="do" src="../../../images/delete.png" alt="delete icon">
+        <img class="do" src="../../../images/Delete.jpg" alt="delete icon">
 		<p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/trash.png" alt="trash icon">
+		<img class="dont" src="../../../images/Trash.jpg" alt="trash icon">
+		<p class="dont">Don't</p>
+	</div>
+		<div class="dodont col-lg">
+		<img class="dont" src="../../../images/Cancel.jpg" alt="cancel icon">
 		<p class="dont">Don't</p>
 	</div>
 </div>
@@ -35,14 +39,38 @@ The action of sending to recycle bin implies that recovering the element is poss
 
 <div class="row">
 	<div class="dodont col-lg">
-        <img class="do" src="../../../images/trash.png" alt="trash icon">
+        <img class="do" src="../../../images/Trash.jpg" alt="trash icon">
 		<p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/delete.png" alt="delete icon">
+		<img class="dont" src="../../../images/Delete.jpg" alt="delete icon">
+		<p class="dont">Don't</p>
+	</div>
+		<div class="dodont col-lg">
+		<img class="dont" src="../../../images/Cancel.jpg" alt="cancel icon">
 		<p class="dont">Don't</p>
 	</div>
 </div>
+
+#### Cancel
+
+Cancel and close differ much from deleting or sending to the Recycle Bin. This action can be found in modals at the top right corner. 
+
+<div class="row">
+	<div class="dodont col-lg">
+        <img class="do" src="../../../images/Cancel.jpg" alt="cancel icon">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/Delete.jpg" alt="delete icon">
+		<p class="dont">Don't</p>
+	</div>
+		<div class="dodont col-lg">
+		<img class="dont" src="../../../images/Trash.jpg" alt="trash icon">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
 
 ### Done
 
@@ -50,11 +78,11 @@ Use it as the primary button copy in all modal that display a table / list  / ca
 
 <div class="row">
 	<div class="dodont col-lg">
-		<img class="do" src="../../../images/FormButtonPrimaryTextDo.png" alt="Primary button with text Done">
+		<img class="do" src="../../../images/FormButtonPrimaryTextDo.jpg" alt="Primary button with text Done">
 		<p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/FormButtonPrimaryTextDont.png" alt="Primary button with text Ok">
+		<img class="dont" src="../../../images/FormButtonPrimaryTextDont.jpg" alt="Primary button with text Ok">
 		<p class="dont">Don't</p>
 	</div>
 </div>
@@ -67,11 +95,11 @@ Select means "to carefully choose"; it also means "to use a mouse or keystrokes 
 
 <div class="row">
 	<div class="dodont col-lg">
-		<img class="do" src="../../../images/ActionsSelectDo.png" alt="Secondary button with text Select">
+		<img class="do" src="../../../images/ActionsSelectDo.jpg" alt="Secondary button with text Select">
 		<p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/ActionsSelectDont.png" alt="Secondary button with text Choose">
+		<img class="dont" src="../../../images/ActionsSelectDont.jpg" alt="Secondary button with text Choose">
 		<p class="dont">Don't</p>
 	</div>
 </div>

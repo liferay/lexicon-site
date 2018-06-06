@@ -82,7 +82,7 @@ General form actions always placed at the end of the form and they are always pl
 
 Interior form actions should not be as notorious as general actions. Therefore, use the secondary button.
 
-![button primary default size defuault state](../../../images/ButtonIconSecondary.png)   
+![button primary default size defuault state](../../../images/ButtonIconSecondary.jpg)   
 
 #### Do's and Don'ts
 
@@ -103,11 +103,11 @@ Do always use concrete words rather than general as "Ok".
 
 <div class="row">
 	<div class="dodont col-lg">
-		<img class="do" src="../../../images/FormButtonPrimaryTextDo.png" alt="Primary button with text Done">
+		<img class="do" src="../../../images/FormButtonPrimaryTextDo.jpg" alt="Primary button with text Done">
 		<p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/FormButtonPrimaryTextDont.png" alt="Primary button with text Ok">
+		<img class="dont" src="../../../images/FormButtonPrimaryTextDont.jpg" alt="Primary button with text Ok">
 		<p class="dont">Don't</p>
 	</div>
 </div>
