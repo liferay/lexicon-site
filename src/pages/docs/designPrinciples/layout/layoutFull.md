@@ -19,7 +19,7 @@ The main aspect to take into account in the responsive behavior of this layout i
 
 ![layout full box responsive summary](../../../images/layoutfbsummary.jpg)
 
-#### Metrics
+#### Attributes
 
 ![layout full box metrics](../../../images/layoutfbmetrics01.jpg)
 
@@ -36,7 +36,7 @@ The card layout adapts 100% to the width of the container adjusting the size of 
 
 ![layout full box responsive summary](../../../images/layoutfbcardssummary.jpg)
 
-#### Metrics
+#### Attributes
 
 ![layout full box cards metrics](../../../images/layoutfbcardsmetrics.jpg)
 

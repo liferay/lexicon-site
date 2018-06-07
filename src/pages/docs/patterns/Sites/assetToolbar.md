@@ -9,7 +9,7 @@ weight: 2
 
 {$page.description}
 
-### Visual Description
+### Layout
 It is important to reflect the flexibility of this toolbar type showcasing different examples of use:
 
 ![Asset toolbar visual description for Asset Publisher Asset, Knoledge Base Article, Blog Entry, Blog Lit Item and Comments in Desktop](../../../images/sites/AssetToolbarVisualDescriptionDesktop.jpg)

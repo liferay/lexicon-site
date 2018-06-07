@@ -17,7 +17,7 @@ The main point to take into account in its adaptation to the different viewport 
 
 ![layout form box responsive summary](../../../images/layoutformboxsummary.jpg)
 
-#### Metrics
+#### Attributes
 
 ![layout form box metrics](../../../images/layoutformboxmetrics.jpg)
 

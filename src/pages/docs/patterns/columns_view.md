@@ -21,7 +21,7 @@ Columns view is a good pattern to navigate through dictionaries being able to se
 
 Do not use this pattern if you need to show information further from the item title.
 
-#### Behaviour
+#### Interaction
 
 In this pattern it is pretty important to always update the row state in each of the columns and it is also important to update the breadcrumb as it is an important component in this pattern as it provides feedback on the element position in the tree.
 

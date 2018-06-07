@@ -9,7 +9,7 @@ weight: 1
 
 {$page.description}
 
-### Structure
+### Layout
 This template counts with several patterns listed as follows that can be directly mapped with the image.
 
 1. Header toolbar: the actions menu must only contain direct actions over the application in question as import, export, permissions.

@@ -13,7 +13,7 @@ weight: 2
 
 ![layout full box responsive summary](../../../images/layoutfbcardssummary.jpg)
 
-#### Metrics
+#### Attributes
 
 ![layout full box cards metrics](../../../images/layoutfbcardsmetrics.jpg)
 

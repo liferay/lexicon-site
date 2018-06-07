@@ -10,13 +10,13 @@ weight: 2
 
 {$page.description}
 
-### Structure
+### Layout
 
 Forms can be created in one single column or two columns. If your form is divided in several sections that are stacked consider not changing the internal layout between sections, it can affect the experience of filling the whole form.
 
 When applying columns take into account that the reading direction is left-right, and up-down, in each column. So expect your user to read first column one and then column two.
 
-### Distancies
+### Attributes
 
 Respecting the distancies between form elements such as texts, fields, sections, etc, is very important. Please take a closer look to our [hierarchy](./formsHierarchy.html) page to understand it.
 
