@@ -9,7 +9,7 @@ weight: 1
 
 {$page.description}
 
-### Structures and examples
+#### Layout and examples
 A form template count with several patterns that shape this pattern:
 
 #### Form without side navigation example
@@ -35,4 +35,3 @@ A form template count with several patterns that shape this pattern:
 	2. Right side: form piece
 
 ![Form without side navigation example](../../../images/FormVerticalNavigation.png)
-

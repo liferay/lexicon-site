@@ -11,10 +11,10 @@ weight: 2
 
 This page contemplates the visual definition of the hierarchy, the measurements and the definition of the components that establish that hierarchy 
 
-### Visual Definition
+### Layout
 
 There are defined three main elements to define the form hierarchy:
-1. Form structure title
+1. Form title
 2. First level section header. This one can be either:
     1. The header of a fixed section
     2. The header of a collapsible section
@@ -28,7 +28,7 @@ Including examplanatory texts:
 
 ![Form hierarchy example 2](../../../images/FormHierarchy2.png)
 
-### Metrics
+### Attributes
 
 Metrics definition is important to understand how forms are build and the vertical spacing logic work in our forms.
 

@@ -13,7 +13,7 @@ Lexicon defines different types of sidebar:
 * **Product Menu:** That allows the user to navigated through the different applications inside the Control Panel and the Site.
 * **Info Panel:** An information container where to display relevant information that does not fit into the table, list, card or any other visualization.
 
-### Behaviour
+### Interaction
 
 The way a sidebar panel works is similar regarless the place they are triggerd. In desktop viewports, the panel always pushes the content, while in mobile viewports, the panel is played over the content.
 

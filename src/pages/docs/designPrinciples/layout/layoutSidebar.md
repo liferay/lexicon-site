@@ -24,7 +24,7 @@ On viewport sizes equal or less than 768px we introduce to changes of the layout
 
 ![layout sidebar + box responsive summary](../../../images/layoutsidebarsummary.jpg)
 
-#### Metrics
+#### Attributes
 
 ![layout sidebar + box metrics](../../../images/layoutsidebarmetrics.jpg)
 
@@ -44,7 +44,7 @@ The main point to take into account is the change from 8 to 9 columns on viewpor
 
 ![layout sidebar + box 8 columns responsive summary](../../../images/layoutsidebarbox8summary.jpg)
 
-#### Metrics
+#### Attributes
 
 ![layout sidebar + box 8 columns metrics](../../../images/layoutsidebarbox8metrics.jpg)
 

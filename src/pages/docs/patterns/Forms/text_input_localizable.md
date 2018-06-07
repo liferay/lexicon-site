@@ -11,7 +11,7 @@ weight: 4
 
 {$page.description}
 
-### Structure
+### Layout
 
 This component is composed by two elements: 
 
@@ -30,7 +30,7 @@ This dropdown menu must always contain in each entry:
 
 ![input localizable](../../../images/InputLocalizableOpen.png)
 
-### Behaviour
+### Interaction
 
 Changing a language through the localization button only changes field content, not the title label, and the help text. The help text is used to display the default language text to provide a hint to the user.
 

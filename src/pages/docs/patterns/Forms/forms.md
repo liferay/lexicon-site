@@ -39,7 +39,7 @@ When applying columns take into account that the reading direction is left-right
 
 
 
-### Metrics
+### Attributes
 
 Respecting the distancies between form elements such as texts, fields, sections, etc, is very important. Please take a closer look to our [hierarchy](./formsHierarchy.html) page to understand it.
 

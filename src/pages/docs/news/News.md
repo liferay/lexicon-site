@@ -31,7 +31,7 @@ This update comes with many tiny improvements that allow us to communicate bette
 * Do's and Don'ts have been included for several patterns as: badges, labels, table, actions definition and popover. This provides us with a more graphic way of defining examples.
 * Multiple step form now includes an example to understand how the pattern is build in an use case.
 * Text input localizable has been released.
-* Card layout has been added inside layouts at Design Principles.
+* Card layout has been added inside layouts at Foundation.
 * Vertical navigation has been updated with an example of collapsible menu in mobile.
 * Sidebar documentation has been splitted in several pages for a better documentation purpose focusing on special needs.
 

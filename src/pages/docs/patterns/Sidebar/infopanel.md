@@ -9,7 +9,6 @@ weight: 2
 
 {$page.description}
 
-### Visual Description
 This sidebar appears always from the right side of the viewport and pushes the container in large viewports and slides over it in small viewports. See responsive behavior for more details.
 
 In these two images belong to a “Documents and Media” application case as a visual example.
