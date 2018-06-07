@@ -9,7 +9,7 @@ weight: 1
 
 {$page.description}
 
-![confirmation message](../../../images/ConfirmationMessage.png)
+![confirmation message](../../../images/ConfirmationMessage.jpg)
 
 ### Usage
 
@@ -36,7 +36,7 @@ Writing a good confirmation message is relevant to make it really effective in s
 * Provide exact data to your user so there is no uncertainty on the action to be confirmed.
 * Address your questions and statements so they can be easily answered with "Ok" and "Cancel" as they are forced by the browser.
 
-![confirmation message](../../../images/ConfirmationMessage.png)
+![confirmation message](../../../images/ConfirmationMessage.jpg)
 
 ### Implementation
 Confirmation messages are browser native. Therefore Lexicon does not style them. Browser native confirmation messages are accessible, and work perfectly in every device.

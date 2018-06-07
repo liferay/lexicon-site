@@ -51,7 +51,7 @@ A full set of components inside [sites section](../patterns/Sites/sites.html) is
 
 ### Layouts and Form Hierarchy 
 
-As part of the improvement in Lexicon we want to clearly defined the different layout possibilities the we usually find in admin pages. Layout is part of our design principles as it belong to a series of principles to start builing interfaces with our system.
+As part of the improvement in Lexicon we want to clearly defined the different layout possibilities the we usually find in admin pages. Layout is part of our foundations as it belong to a series of principles to start builing interfaces with our system.
 
 Forms are now better definied as the [hierarchy](../patterns/Forms/formsHierarchy.html) is expressed in a dedicated page. [Slider](../patterns/Forms/slider.html) has been defined also inside Forms section.
 

@@ -11,25 +11,41 @@ weight: 1
 
 {$page.description}
 
-![four different popovers with the arrow to the left, or right or top or down](../../../images/Popover.png) 
+![four different popovers with the arrow to the left, or right or top or down](../../../images/Popover.jpg) 
 
 ### Usage
 
 Popovers are used together with the question mark icon as an affordance to let the user understand there is something to read that can be useful. Popovers contain information such as help to understand a context.
 
-![help icon](../../../images/PopoverFromIcon.png)
+![help icon](../../../images/PopoverFromIcon.jpg)
 
 ### Do's and Don'ts
 
 Keep a distance of 8px between a text and the icon so it is easy to recognize and associate.
 
-<img class="dodont" src="../../../images/PopoverTitleIconDo.png" alt="keep 8 pixel between title and help icon">
-<img class="dodont" src="../../../images/PopoverTitleIconDont.png" alt="dont place it nearer than 8 pixels">
+<div class="row">
+	<div class="dodont col-lg">
+        <img class="do" src="../../../images/PopoverTitleIconDo.jpg" alt="keep 8 pixel between title and help icon">
+        <p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/PopoverTitleIconDont.jpg" alt="dont place it nearer than 8 pixels">
+		<p class="dont">Don't</p>
+	</div>
+</div>
 
 Similar to the previous case happens with sections, in this case the distance is 16px.
 
-<img class="dodont" src="../../../images/PopoverSectionIconDo.png" alt="keep 16 pixel between section title and help icon">
-<img class="dodont" src="../../../images/PopoverSectionIconDont.png" alt="dont place it nearer than 16 pixels">
+<div class="row">
+    <div class="dodont col-lg">
+        <img class="do" src="../../../images/PopoverSectionIconDo.jpg" alt="keep 16 pixel between section title and help icon">
+        <p class="do">Do</p>
+    </div>
+    <div class="dodont col-lg">
+        <img class="dont" src="../../../images/PopoverSectionIconDont.jpg" alt="dont place it nearer than 16 pixels">
+        <p class="dont">Don't</p>
+    </div>
+</div>
 
 ### Attributes
 
@@ -40,7 +56,7 @@ Similar to the previous case happens with sections, in this case the distance is
 
 Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.
 
-![the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases](../../../images/Tooltip.png) 
+![the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases](../../../images/Tooltip.jpg)
 
 ### Usage
 
@@ -54,4 +70,3 @@ Tooltips are brief pieces of information that appear on hover state over an elem
 ### Attributes
 
 * Width: 232px maximum
-

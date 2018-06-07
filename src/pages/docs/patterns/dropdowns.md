@@ -11,7 +11,7 @@ weight: 1
 
 {$page.description}
 
-![default dropdown menu](../../../images/DropdownRegular.png)
+![default dropdown menu](../../../images/DropdownRegular.jpg)
 
 ### Usage
 Dropdowns are used to list a set of options that are not easy to manage in the screen. This mechanism helps to clean-up the screen making everything more implicit.
@@ -37,37 +37,37 @@ The distance from the button to the dropdown is 8px.
 
 The default dropdown is just a panel not prepared for scrolling the content inside it. Use this type when the number of options you want to offer is short or the panel is big enough to contain all the elements you want to use.
 
-![default dropdown menu](../../../images/DropdownRegular.png)
+![default dropdown menu](../../../images/DropdownRegular.jpg)
 
 #### Dropdown with dividers
 
 Dropdown menu with dividers are thought to be used in actions menus. Dividing the actions by context of use help users to find actions.
 
-![dropdown menu with search field](../../../images/DropdownActions.png)
+![dropdown menu with search field](../../../images/DropdownActions.jpg)
 
 #### Dropdown with checkbox or radio
 
 Dropdowns can be configured to have checkboxes and/or radio groups. A checkbox configuration can be suitable to filter in or out dataset elements. While, a radio configuration can be suitable to establish the order criteria in a dataset.
 
-![dropdown menu with a list of checkbox options](../../../images/DropdownCheckbox.png)
+![dropdown menu with a list of checkbox options](../../../images/DropdownCheckbox.jpg)
 
 #### Dropdown with search field
 
 Sometimes action menus face problems with the number of elements they contain. This dropdown menu variation helps in those contexts where the set of options is large and a search mechanism helps to reduce the search time and task complexity.
 
-![dropdown menu with search field](../../../images/DropdownSearch.png)
+![dropdown menu with search field](../../../images/DropdownSearch.jpg)
 
 #### Dropdown with left icons
 
 Dropdown menus with left icons are suitable for process bars (wizards) where there is a need to display a dropdown menu when the number of steps do not fit the screen.
 
-![dropdown menu with icons to the left](../../../images/DropdownRegular+LeftIcons.png)
+![dropdown menu with icons to the left](../../../images/DropdownRegularLeftIcons.jpg)
 
 #### Dropdown with right icons
 
 Dropdown menus with left icons are suitable for process bars (wizards) where there is a need to display a dropdown menu when the number of steps do not fit the screen. In this case, the step number has a high relevance, therefore the icon is placed on the right side.
 
-![dropdown menu with icons to the right](../../../images/DropdownRegular+RightIcons.png)
+![dropdown menu with icons to the right](../../../images/DropdownRegularRightIcons.jpg)
 
 #### Dropdown with groups
 
@@ -75,13 +75,13 @@ This dropdown menu variation is created to be used with the management bar Filte
 
 The button in a dropdown menu can be either primary or secondary depending on the application needs.
 
-![dropdown menu with groups](../../../images/DropdownMultiple.png)
+![dropdown menu with groups](../../../images/DropdownMultiple.jpg)
 
 ### Sorting actions
 
 #### Dropdown menu from actions button
 
-![dropdown menu actions sort](../../../images/DropdownActionSort.png)
+![dropdown menu actions sort](../../../images/DropdownActionSort.jpg)
 
 Guideline: (not all steps are always in use)
 
@@ -110,7 +110,7 @@ Guideline: (not all steps are always in use)
 
 Sometimes the plus button use in certain contexts need more than a single action. For those cases please follow the following set of rules:
 
-![dropdown menu actions in plus button with favorites configuration](../../../images/DropdownPlusButtonCase1.png)
+![dropdown menu actions in plus button with favorites configuration](../../../images/DropdownPlusButtonCase1.jpg)
 
 The left configuration suggest the user the possibility of having favorites elements. Favorites are selected in a modal window and the outcome is reflected as in the right image.
 
@@ -118,7 +118,7 @@ Out of the favorites the order is ruled as follows:
 * First two elements are the most used ones.
 * The rest are displayed in alphabetical order
 
-![dropdown menu actions in plus button with favorites configuration and scroll bar case](../../../images/DropdownPlusButtonCase2.png)
+![dropdown menu actions in plus button with favorites configuration and scroll bar case](../../../images/DropdownPlusButtonCase2.jpg)
 
 The previous image shows a case with scrollbar to let your understand the scrollable area.
 
@@ -144,4 +144,3 @@ Guideline:
 * Max width of a dropdown menu: 288px
 * Max height: maximum of 11 visible elements of any type.
 * Each entry must be in one line, if it doesn't fit use ellipsis.
-

@@ -9,7 +9,7 @@ weight: 1
 
 ### Design language
 
-Lexicon is a design language created with the aim of providing a common framework for building interfaces within the Liferay product ecosystem. A guide to design principles, components, patterns and contexts of use that contributes to give consistency and coherence to these products and, ultimately, provide a satisfactory and unified experience to its users.
+Lexicon is a design language created with the aim of providing a common framework for building interfaces within the Liferay product ecosystem. A guide to foundations, components, patterns and contexts of use that contributes to give consistency and coherence to these products and, ultimately, provide a satisfactory and unified experience to its users.
 
 Lexicon is a constantly evolving project. An iterative work that seeks to improve and gradually adapt to the evolution of technology and people.
 

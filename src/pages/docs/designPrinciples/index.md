@@ -1,5 +1,5 @@
 ---
-title: "Design Principles"
+title: "Foundations"
 description: "Keep updated."
 layout: "guide"
 icon: "lexicon-site-principles"
