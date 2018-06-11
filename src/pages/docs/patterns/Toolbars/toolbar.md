@@ -24,23 +24,30 @@ For a better understanding of the previous sections, here are some example layou
 
 Example 1: Three consecutive fields
 
-![toolbar layout example with three fields](../../../images/toolbarLayoutExample1.png)
+![toolbar layout example with three fields](../../../images/ToolbarLayout1.jpg)
 
 Example 2: Three consecutive contents
 
-![toolbar layout example with three contents](../../../images/toolbarLayoutExample2.png)
+![toolbar layout example with three contents](../../../images/ToolbarLayout2.jpg)
 
 Example 3: Field - Content - Field
 
-![toolbar layout example with field - content - field](../../../images/toolbarLayoutExample3.png)
+![toolbar layout example with field - content - field](../../../images/ToolbarLayout3.jpg)
 
-Example 4: Field - Field - Content - Content
+To set a better context the folling examples over the management bar will help you to understand the previous images better:
 
-![toolbar layout example with field - field - content - content](../../../images/toolbarLayoutExample4.png)
+![toolbar layout example with field - content - field](../../../images/ToolbarLayoutExample1.jpg)
+
+![toolbar layout example with field - content - field](../../../images/ToolbarLayoutExample3.jpg)
+
 
 ### Attributes
 
-* A toolbar has a maximum height of 56px.
-* The top and bottom margins are 12px to small size components and 8px to default size components as the search field.
-* Left and right margins are always 16px.
-* The distance between components inside a toolbar is 16px.
+The horizantal distance between elements is always 16px. This change into 8px in mobile viewports.
+
+![toolbar layout example with field - content - field](../../../images/ToolbarLayoutMetricsHor.jpg)
+
+When talking about vertical distances, the minimum will be always 16px. There is an exception of the search field that we want it to take a higher relevance and its height is 40px. In this case, the bar top and bottom margins are 12px.
+
+![toolbar layout example with field - content - field](../../../images/ToolbarLayoutMetricsVert.jpg)
+
