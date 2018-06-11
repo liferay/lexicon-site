@@ -11,9 +11,9 @@ weight: 2
 
 {$page.description}
 
-![state one of the management bar](../../../images/ManagementBarState1.png)
+![state one of the management bar](../../../images/ManagementBarState1.jpg)
 
-![state two of the management bar](../../../images/ManagementBarState2.png)
+![state two of the management bar](../../../images/ManagementBarState2.jpg)
 
 *Note: The management bar doesn't have borders. They are used here to provide you with feedback about its height.*
 
@@ -28,7 +28,7 @@ It is the default state.
 
 It displays tools focused on filtering, sorting and data visualization.
 
-![state one of the management bar with points to explain the different components inside it](../../../images/ManagementBarState1Elements.png)
+![state one of the management bar with points to explain the different components inside it](../../../images/ManagementBarState1Parts.jpg)
 
 1. Checkbox: To select all elements in the current page
 2. Filter and Order: dropdown with dropdown menu associated. Please see [dropdown with groups](../dropdowns.html)
@@ -43,7 +43,7 @@ It displays contextual tools associated to specific items selected. It is only a
 
 The background color and the way to show the icons of the bar in this state changes to differentiate from the default state and establish a visual relation with other forms of showing this tools.
 
-![state two of the management bar with points to explain the different components inside it](../../../images/ManagementBarState2Elements.png)
+![state two of the management bar with points to explain the different components inside it](../../../images/ManagementBarState2Parts.jpg)
 
 1. Checkbox: To select all elements in the current page
 2. Counter: Selected elements counter
@@ -74,7 +74,7 @@ How selection works using the management bar:
 
 A dropdown button triggers a dropdowm menu with groups. This configuration is thought to clean the management bar providing the user with more specific mechanisms to find data.
 
-![dropdown menu displayed from filter and order dropdown button to filter and sort](../../../images/ManagementBarFilterOrder.png)
+![dropdown menu displayed from filter and order dropdown button to filter and sort](../../../images/ManagementBarFilterOrder.jpg)
 
 **Filter by**: used to filter in/out elements from the dataset.
 
@@ -86,7 +86,7 @@ A dropdown button triggers a dropdowm menu with groups. This configuration is th
 
 This icon button allows to change visualization among tables, lists and cards.
 
-![dropdown menu displayed from change view button dropdown button to change view](../../../images/ManagementBarViewChange.png)
+![dropdown menu displayed from change view button dropdown button to change view](../../../images/ManagementBarViewChange.jpg)
 
 This button must not appear if there is only one possible visualization.
 
@@ -101,41 +101,41 @@ The functionalities that are not going to be used in the management bar disappea
 
 The general exemple with all the functionalities:
 
-![state one of the management bar](../../../images/ManagementBarState1.png)
+![state one of the management bar](../../../images/ManagementBarState1.jpg)
 
 Some scenarios might force you to not have selection or filters. In this case you can freely remove what is not needed for your specific use case. In this example, we only need the search field, a button to change visualizations and the plus button to add elements into the dataset.
 
-![state three without selection checkbox filter and order](../../../images/ManagementBarState3.png)
+![state three without selection checkbox filter and order](../../../images/ManagementBarState3.jpg)
 
 Another possible scenario might not require you to have the visualizations and the plus buttons. In this case, the management bar layout will be as follows:
 
-![state four without view change and plus button](../../../images/ManagementBarState4.png)
+![state four without view change and plus button](../../../images/ManagementBarState4.jpg)
 
 Having the management toolbar only configured with the search field is the minimum possible configuration.
 
-![state five only with search fild](../../../images/ManagementBarState5.png)
+![state five only with search fild](../../../images/ManagementBarState5.jpg)
 
 Last but not least, a very common case, and aforementioned in View Case section, is to go without the visualizations button.
 
-![state six without view change](../../../images/ManagementBarState6.png)
+![state six without view change](../../../images/ManagementBarState6.jpg)
 
 ### Mobile
 
 #### State 1
 In mobile version all actions have been transformed into icons to reduce spaces and limit the bar to only one line providing the interface with more space for content rather than tools.
 
-![state one of the management bar mobile](../../../images/ManagementBarMobileState1.png)
+![state one of the management bar mobile](../../../images/ManagementBarMobileState1.jpg)
 
 #### State 2
 In contrast to the desktop version, no actions are facilitated outside the actions menu to clean the bar.
 
-![state two of the management bar mobile](../../../images/ManagementBarMobileState2.png)
+![state two of the management bar mobile](../../../images/ManagementBarMobileState2.jpg)
 
 #### Search
 
 By tapping on the magnifying glass icon button, the management bar gets into this state. The search field hovers the whole bar providing a better interaction space.
 
-![state two of the management bar mobile](../../../images/ManagementBarMobileSearch.png)
+![state two of the management bar mobile](../../../images/ManagementBarMobileSearch.jpg)
 
 #### Search results 
 
@@ -149,22 +149,22 @@ When not every feature appears in the management bar, the Search field grows tow
 
 The general case, with all the features:
 
-![state one of the management bar mobile](../../../images/ManagementBarMobileState1.png)
+![state one of the management bar mobile](../../../images/ManagementBarMobileState1.jpg)
 
 The dataset has only the options of changing the view mode and adding new elements which is the example below.
 
-![state three of the management bar mobile without selection filter and order](../../../images/ManagementBarMobileState3.png)
+![state three of the management bar mobile without selection filter and order](../../../images/ManagementBarMobileState3.jpg)
 
 In this case, the options of selection and filter and order are available. 
 
-![state four of the management bar mobile without view change and plus button](../../../images/ManagementBarMobileState4.png)
+![state four of the management bar mobile without view change and plus button](../../../images/ManagementBarMobileState4.jpg)
 
 The dataset display in this case, only allows to Search.
 
-![state five of the management bar mobile only with the search field](../../../images/ManagementBarMobileState5.png)
+![state five of the management bar mobile only with the search field](../../../images/ManagementBarMobileState5.jpg)
 
 The most common option allows all possibilities except the way to change the view.
 
-![state six of the management bar mobile without change view](../../../images/ManagementBarMobileState6.png)
+![state six of the management bar mobile without change view](../../../images/ManagementBarMobileState6.jpg)
 
 *Note: The management bar doesn't have borders. They are used here to provide you with feedback about its height.*
