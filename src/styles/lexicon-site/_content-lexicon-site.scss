@@ -150,6 +150,71 @@
 	.labelbg {
 		background: white;
 	}
+	
+	.code-text {
+		font-family: monospace;
+		font-size: 16px;
+	}
+
+	.type-scale {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+		&.type-scale-10 {
+			font-size: 10px;
+		}
+	
+		&.type-scale-12 {
+			font-size: 12px;
+		}
+	
+		&.type-scale-14 {
+			font-size: 14px;
+		}
+	
+		&.type-scale-16 {
+			font-size: 16px;
+		}
+	
+		&.type-scale-18 {
+			font-size: 18px;
+		}
+	
+		&.type-scale-20 {
+			font-size: 20px;
+		}
+	
+		&.type-scale-24 {
+			font-size: 24px;
+		}
+	
+		&.type-scale-28 {
+			font-size: 28px;
+		}
+	
+		&.type-scale-32 {
+			font-size: 32px;
+		}
+	
+		&.type-scale-36 {
+			font-size: 36px;
+		}
+	
+		&.type-scale-40 {
+			font-size: 40px;
+		}
+
+		&.type-regular {
+			font-weight: $weight-regular;
+		}
+		
+		&.type-semibold {
+			font-weight: $weight-semibold;
+		}
+
+		&.type-bold {
+			font-weight: $weight-bold;
+		}
+	}
 
 }
 
