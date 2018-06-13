@@ -14430,6 +14430,41 @@ mark,
 .content .sidebar-offset .labelbg {
   background: white; }
 
+.content .sidebar-offset .code-text {
+  font-family: monospace;
+  font-size: 16px; }
+
+.content .sidebar-offset .type-scale {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+  .content .sidebar-offset .type-scale.type-scale-10 {
+    font-size: 10px; }
+  .content .sidebar-offset .type-scale.type-scale-12 {
+    font-size: 12px; }
+  .content .sidebar-offset .type-scale.type-scale-14 {
+    font-size: 14px; }
+  .content .sidebar-offset .type-scale.type-scale-16 {
+    font-size: 16px; }
+  .content .sidebar-offset .type-scale.type-scale-18 {
+    font-size: 18px; }
+  .content .sidebar-offset .type-scale.type-scale-20 {
+    font-size: 20px; }
+  .content .sidebar-offset .type-scale.type-scale-24 {
+    font-size: 24px; }
+  .content .sidebar-offset .type-scale.type-scale-28 {
+    font-size: 28px; }
+  .content .sidebar-offset .type-scale.type-scale-32 {
+    font-size: 32px; }
+  .content .sidebar-offset .type-scale.type-scale-36 {
+    font-size: 36px; }
+  .content .sidebar-offset .type-scale.type-scale-40 {
+    font-size: 40px; }
+  .content .sidebar-offset .type-scale.type-regular {
+    font-weight: 400; }
+  .content .sidebar-offset .type-scale.type-semibold {
+    font-weight: 600; }
+  .content .sidebar-offset .type-scale.type-bold {
+    font-weight: 700; }
+
 .News .content .sidebar-offset h3 {
   margin-top: 0; }
 
