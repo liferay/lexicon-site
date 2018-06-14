@@ -19,7 +19,7 @@ weight: 1
 
 Use an inline link text element inside of a text sentence or paragraph. A inline link element flows with other text elements.
 
-![inline link example in a paragraph](../../../images/LinkInline.png)
+![inline link example in a paragraph](../../../images/LinkInline.jpg)
 
 Attributes:
 * Color: primary blue
@@ -30,7 +30,7 @@ Attributes:
 
 Used for stand-alone hyperlinks. Can be a text or an image.
 
-![single link example, text not surrounded](../../../images/LinkSingle.png)
+![single link example, text not surrounded](../../../images/LinkSingle.jpg)
 
 Attributes:
 * Primary Text Alone Link
@@ -51,30 +51,33 @@ Used for links associated to list item titles like Dataset Display (stacked list
 
 Example 1:
 
-![title link example in a table](../../../images/LinkTitleTable.png)
+![title link example in a table](../../../images/LinkTitleTable.jpg)
 
 Example 2:
 
-![title link example in a list](../../../images/LinkTitleList.png)
+![title link example in a list](../../../images/LinkTitleList.jpg)
 
 Example 3:
 
-![title link example in an asset](../../../images/LinkTitleAsset.png)
+![title link example in an asset](../../../images/LinkTitleAsset.jpg)
 
-Attributes
+Attributes:
 * Color: inherit
 * Font weight: inherit
 * Hover: underline
 
-![link example in asset context with several pointers on hover](../../../images/LinkExampleInContext.png)
+As a summary and to see all acting at same time:
+
+![link example in asset context with several pointers on hover](../../../images/LinkExampleInContext.jpg)
 
 
 #### External Link
 
 For hyperlinks that point at (target) any domain other than the domain the link exists on (source) we provide a tooltip specifying this behavior.
 
-![external link with tooltip on hover action](../../../images/LinkExternalTooltip.png)
+![external link with tooltip on hover action](../../../images/LinkExternalTooltip.jpg)
 
-For accessibility purposes we also provide an icon to illustrate this behavior. This icon is visually hidden by default and only accessible on focus or when using assistive technologies such as screen readers. 
+For accessibility purposes we also provide an icon to illustrate this behavior. This icon is visually hidden by default and only accessible on focus or when using assistive technologies such as screen readers.
 
-![external link with external link icon on focus action](../../../images/LinkExternalFocus.png)
+![external link with external link icon on focus action](../../../images/LinkExternalFocus.jpg)
+

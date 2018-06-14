@@ -39,6 +39,6 @@ It can be the case that inside a form or a fieldset only one of the input fields
 
 Forms are validated on submit action through the "Save" action. When a form is completely validated it will first do the partial validation of all mandatory fields. If this is successful, a service will be called.
 
-In this section we focus on the return of that service call, that we reflect as an [alert stripe](../alerts.html).
+In this section we focus on the return of that service call, that we reflect as an [alert embedded](../alerts.html).
 
-![push alert example. Placed right below the last horizontal navigation label](../../../images/AlertPushExample.png)
+![push alert example. Placed right below the last horizontal navigation label](../../../images/AlertEmbeddedExample.jpg)
