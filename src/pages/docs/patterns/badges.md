@@ -13,7 +13,7 @@ weight: 1
 
 Badges have circular borders and are only used to specify a number.
 
-![defualt size default color badge](../../../images/Badges.png)
+![defualt size default color badge](../../../images/Badges.jpg)
 
 ### Usage
 
@@ -32,17 +32,19 @@ Badges can be use near text but a minimum distance of 8px must be always kept.
 
 <div class="row">
 	<div class="dodont col-lg">
-		<img class="do" src="../../../images/BadgeDoDistance.png" alt="badge distance to an element is 8 pixels">
+		<img class="do" src="../../../images/BadgeDoDistance.jpg" alt="badge distance to an element is 8 pixels">
 		<p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/BadgeDontDistance.png" alt="don't place a badge closer than 8 pixels to any element in horizontal">
+		<img class="dont" src="../../../images/BadgeDontDistance.jpg" alt="don't place a badge closer than 8 pixels to any element in horizontal">
 		<p class="dont">Don't</p>
 	</div>
 </div>
 
 ### Attributes
 
-* Height: 16px (total 20px)
-* Border: 2px
+![badge metrics](../../../images/BadgesMetrics.jpg)
+
+* Height: 18px
+* Border: 1px
 * Font-size: 12
