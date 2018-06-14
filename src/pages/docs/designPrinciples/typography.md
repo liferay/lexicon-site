@@ -56,7 +56,7 @@ Being Mac OS the most widely used operating system for design tasks within Lifer
 
 ### Type Scale
 
-In the same line of looking for the simplification and standardization of the elements that make up the foundations of the system, the lexicon scale is based on the values initially provided by Bootstrap and follows the most used type scales in web products nowadays. 
+In the same line of looking for the simplification and standardization of the elements that make up the foundations of the system, the lexicon scale is based on the values initially provided by Bootstrap and follows one of the most used type scales in web products nowadays. 
 
 A scale based on an initial increase of 2px that grows to 4px in larger font sizes to favor contrast and hierarchical identification. A non-linear arithmetic progression that does not exactly fit any of the classic ratios, but provides an understandable and easy to remember set which is quite helpful dealing with complex products.
 
@@ -140,7 +140,7 @@ Also, regarding accessibility concerns, using a minimum value of 1.5 for line-he
 
 In large font sizes, the optical perception we have of the spaces between lines is different. The white space between lines acquire more light and more prominence. Therefore, it is considered good legibility practice to reduce the line height in font sizes starting from 20px and above.
 
-The same applies to uppercase texts. The white spaces between text lines in uppercase they are shown as more defined white blocks than those created by lowercase letters with which have ascending and descending strokes. That's why uppercase headings in Lexicon, despite being 12px and 14px are also applied a ratio of 1: 1.25
+The same applies to uppercase texts. The white spaces between text lines in uppercase are shown as more defined white blocks than those created by lowercase letters which have ascending and descending strokes. That's why uppercase headings in Lexicon, despite being 12px and 14px are also applied a ratio of 1: 1.25
 
 | Line Height | ratio |
 | -- | ----------- |
@@ -177,7 +177,7 @@ Lexicon incorporates three font weights in order to provide enough options to so
 </table>
 
 
-The specific cases of use of the different weights are defined in the "Type Styles" section.
+The specific use cases of the different weights are defined in the "Type Styles" section.
 
 #### Letter Case
 
@@ -187,7 +187,7 @@ The specific cases of use of the different weights are defined in the "Type Styl
 
 #### Line Length
 
-In order to provide a comfortable continuous reading we recommend that, as far as possible, we recommend to adjust the texts of medium and long length to a line width within a range between 60 and 100 characters including spacing. In this way we favor an adequate reading rhythm avoiding too long lines that can force the look excessively and lose the horizontal reference, or too short lines that interrupt the reading very often and force a constant eye movement.
+In order to provide a comfortable continuous reading we recommend to adjust the texts of medium and long length to a line width within a range between 60 and 100 characters including spacing. In this way we favor an adequate reading rhythm avoiding too long lines that can force the look excessively and lose the horizontal reference, or too short lines that interrupt the reading very often and force a constant eye movement.
 
 ![line length expalanatory image](../../../images/LineLength.png)
 
@@ -212,7 +212,7 @@ These tables show the different format combinations that can be found in Lexicon
 | --------- | ----------- | ----------- | ----------- | ----------- |
 | 16px / 1rem | 1.5 | 400 (regular) | Lowercase | Mid-long read text |
 
-The paragraph element incorporates a margin margin of 0.75rem (12px) to define the separation between the different text blocks.
+The paragraph element incorporates a margin bottom of 0.75rem (12px) to define the separation between the different text blocks.
 
 #### General UI Elements
 
