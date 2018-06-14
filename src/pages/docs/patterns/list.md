@@ -13,7 +13,7 @@ weight: 1
 
 ### Usage
 
-![list entry in default state](../../../images/ListViewDefault.png)
+![list entry in default state](../../../images/ListViewDefault.jpg)
 
 A list view is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.
 
@@ -27,15 +27,15 @@ When a list is used together with management bar, the list entries must include 
 
 #### Default states
 
-![list entry in default state](../../../images/ListViewDefault.png)
+![list entry in default state](../../../images/ListViewDefault.jpg)
 
 #### Hover state
 
-![list entry in hover state](../../../images/ListViewHover.png)
+![list entry in hover state](../../../images/ListViewHover.jpg)
 
 #### Selected state
 
-![list entry in selected state](../../../images/ListViewActive.png)
+![list entry in selected state](../../../images/ListViewActive.jpg)
 
 ### Row interactions
 
@@ -62,11 +62,11 @@ When a list is used together with management bar, the list entries must include 
 ### Sections
 List sections help to separate different contents by a certain categorization or typology.
 
-![List section](../../../images/ListViewGroupSeparator.png)
+![List section](../../../images/ListViewGroupSeparator.jpg)
 
 #### Example of use
 
-![list view example with 3 different states in different entries](../../../images/ListViewExample.png)
+![list view example with 3 different states in different entries](../../../images/ListViewExample.jpg)
 
 More examples can be found in [dataset template](./Templates/datasetTemplate.html).
 
@@ -81,5 +81,6 @@ More examples can be found in [dataset template](./Templates/datasetTemplate.htm
 
 List entries may need support for notifications. This is solved visually by placing a 8px width line on the left side of the row.
 
-![list notification default state has a blue line on the left side of the row](../../../images/ListNotificationDefault.png)
-![list notification active state has a blue line on the left side of the row](../../../images/ListNotificationActive.png)
+![list notification default state has a blue line on the left side of the row](../../../images/ListNotificationDefault.jpg)
+![list notification active state has a blue line on the left side of the row](../../../images/ListNotificationActive.jpg)
+![list notification hover state has a blue line on the left side of the row](../../../images/ListNotificationHover.jpg)
