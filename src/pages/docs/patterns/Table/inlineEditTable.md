@@ -11,7 +11,7 @@ weight: 2
 
 {$page.description}
 
-![table inline edition, view mode](../../../images/TableInlineEdition.png)
+![table inline edition, view mode](../../../images/TableInlineEdition.jpg)
 
 ### Usage
 
@@ -29,7 +29,7 @@ weight: 2
 * To enter edit mode the user has to click on Edit button.
 * More actions are possible under the actions button. In case there is an edition screen for the element name it "Advanced edit".
 
-![table inline edition row view configuration](../../../images/TableInlineEditRowView.png)
+![table inline edition row view configuration](../../../images/TableInlineEditRowView.jpg)
 
 #### Edit mode
 * In this mode those row entries that are possible to edit get transformed into a certain input field: text field, numeric field, select, etc.
@@ -37,8 +37,25 @@ weight: 2
 	* Save: saves the changes and gets into view mode.
 	* Cancel: discards the changes and into view mode.
 
-![table inline edition row edit configuration](../../../images/TableInlineEditRowEdit.png)
+![table inline edition row edit configuration](../../../images/TableInlineEditRowEdit.jpg)
+
 
 ### Example
 
-![table inline edition with first row in edition mode and first field on focus](../../../images/TableInlineEditionFocus.png)
+![table inline edition with first row in edition mode and first field on focus](../../../images/TableInlineEditionFocus.jpg)
+
+### Attributes
+
+![table row attributes](../../../images/TableInlineEditRowDesc.jpg)
+
+The editable row can contain the same elements as a normal table row. We describe the previous example:
+
+1. Checkbox.
+2. Main column text.
+3. Other columns, where different components may appear.
+4. Edit button.
+5. Actions button.
+
+It is important to remark that the minimum distance between two columns is 24px.
+
+![table row metrics](../../../images/TableInlineEditRowMetrics1.jpg)

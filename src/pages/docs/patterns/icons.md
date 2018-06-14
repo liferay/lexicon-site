@@ -17,15 +17,13 @@ Icons can be used only when the metaphor is direct and clear. In case there is n
 
 ### Size usage for designers
 
-| Size | Usage |
-| ---- | ----- |
-| ![Icon 12px box 16px](../../../images/Icon12.png) | 16px box with icons of 12px |
-| ![Icon 16px box 16px](../../../images/Icon16.png) | 16px box with icons of 16px |
-| ![Icon 24px box 32px](../../../images/Icon20.png) | 32px box with icons of 20px |
+Use a 16px box for icons of 16px.
+
+![Icon 16px box 16px](../../../images/Icon16.jpg)
 
 ### Size usage for developers
 
-* Icons in lexicon have no size.
+* Icons in Lexicon have no size.
 * The size of the icon is established by its container.
 * By default it would be 16px.
 * All the icons available to use are in the Lexicon Icon Library. Don't use icons from outside this library. Switch icon libraries completely in case Lexicon icons set is not enough for you.
