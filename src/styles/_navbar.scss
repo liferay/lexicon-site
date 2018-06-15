@@ -45,6 +45,10 @@
 		display: none;
 	}
 
+	@media (max-width: $screen-xs) {
+		padding-left: 4px;
+		}
+
 	.navbar-brand {
 		color: $text-color;
 	}
