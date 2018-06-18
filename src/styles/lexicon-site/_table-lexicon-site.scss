@@ -1,7 +1,9 @@
 table {
 	@extend .table;
 
-	margin: 36px 0 48px;
+	font-size: 0.875rem;
+	margin: 32px 0 24px;
+
 
 	& > tbody > tr > td, & > thead > tr > th {
 		border-bottom: 1px solid $brand-border-color;
@@ -10,12 +12,10 @@ table {
 	}
 
 	thead > tr > th {
-		background-color: $sidebar-bg-color;
 		border-top-width: 0;
+		border-bottom-width: 1px;
 		color: $brand-secondary;
-		font-size: 12px;
 		font-weight: 600;
-		text-transform: uppercase;
 		vertical-align: bottom;
 	}
 
@@ -25,15 +25,18 @@ table {
 		&.dotDone {
 			color: #5ACA75;
 		}
+
 		&.dotProgress {
 			color: #FF8F39;
 		}
+
 		&.dotWait {
 			color: $brand-light-secondary-text;
 		}
+
 		&.tableSection {
-			font-size: 14px;
 			color: $brand-secondary;
+			font-size: 14px;
 			font-weight: 700;
 			text-transform: uppercase;
 		}

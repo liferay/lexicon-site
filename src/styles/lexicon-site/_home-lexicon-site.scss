@@ -25,7 +25,9 @@
 			background-color: rgba(255, 255, 255, 0.3);
 			border-color: transparent;
 			color: #FFF;
-			padding: 3px 8px 3px 12px;
+			font-size: 12px;
+			height: 24px;
+			padding: 1px 6px 0 8px;
 			text-transform: none;
 
 			.lexicon-icon-caret-bottom {
@@ -131,7 +133,7 @@
 
 	.h1 {
 		font-size: 40px;
-		font-weight: 900;
+		font-weight: 800;
 		line-height: 1;
 		margin: 52px 0 24px;
 		word-break: normal;

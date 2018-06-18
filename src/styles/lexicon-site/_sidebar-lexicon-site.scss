@@ -1,10 +1,15 @@
 .sidebar-lexicon-site {
 	background-color: $sidebar-bg-color;
-	min-width: 370px;
+	
+	@media (min-width: $grid-float-breakpoint) {
+		min-width: 370px;
+	}
 
 	.navbar-brand {
-		font-size: $base-size * 1.1666;
-		font-weight: 700;
+		display: flex;
+		align-items: center;
+		font-size: $base-size;
+		font-weight: 800;
 
 		small {
 			font-size: 0.875rem;
@@ -14,7 +19,9 @@
 	.btn-version {
 		.btn {
 			background-color: $brand-light;
-			padding: 3px 8px 3px 12px;
+			font-size: 12px;
+			height: 24px;
+			padding: 0 6px 0 9px;
 			text-transform: none;
 
 			&:active {
@@ -32,8 +39,7 @@
 	}
 
 	.logo {
-		height: 2.5rem;
-		padding-bottom: 0.1875rem;
+		height: 38px;
 	}
 
 	a, .nav .lexicon-icon {
@@ -150,11 +156,10 @@
 			a {
 				background-color: transparent;
 				display: block;
-				font-size: 1rem;
-				font-weight: 600;
-				line-height: $base-size / 1.375;
-				min-height: $base-size * 1.675;
-				padding: 0.55rem 1rem;
+				font-size: 0.875rem;
+				font-weight: 700;
+				line-height: 20px;
+				padding: 0.59375rem 1rem;
 				position: relative;
 
 				span {
@@ -189,7 +194,7 @@
 		& > li > a:focus {
 			background-color: $brand-dark-lighter;
 			border-radius: 6px;
-			font-weight: 600;
+			font-weight: 700;
 		}
 
 		& > li a:hover {
