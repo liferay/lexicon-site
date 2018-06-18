@@ -79,6 +79,19 @@ It is important to highlight that images can have different sizes. To provide th
 	</div>
 </div>
 
+### Attributes
+
+![7 possible parts of a card](../../../images/CardParts.jpg)
+
+1. Checkbox
+2. Image
+3. Sticker: file type
+4. Title
+5. Actions button
+6. Detail or short descriptive text
+7. Label: status identifier
+
+![card medtrics](../../../images/CardMetrics.jpg)
 
 ### User card
 

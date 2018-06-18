@@ -21,10 +21,8 @@ Please don’t use spinners inside buttons. In case you need a spinner for an ac
 
 ### Types
 
-| Types | Description |
-| ---- | ----- |
-| <div class="loading-icon loading-icon"></div> | Dotted spinner default |
-| <div class="loading-icon linear"></div> | Linear spinner default |
+#### Default
+![loading indicator default size](../../../images/LoadingIndicator.jpg)
 
 ### Size
 
@@ -37,5 +35,12 @@ Make a responsive usage of the sizes that help the user to understand that somet
 | Medium | 32px |
 | Large | 64px |
 
+### Variations
 
+#### Positive
 
+![loading indicator default positive](../../../images/LoadingIndicator.jpg)
+
+#### Negative
+
+![loading indicator default negative](../../../images/LoadingIndicatorInverted.jpg)

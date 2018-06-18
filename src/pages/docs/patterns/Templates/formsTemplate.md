@@ -16,22 +16,16 @@ A form template count with several patterns that shape this pattern:
 
 1. Header toolbar
 2. Navigation bar
-3. Breadcrumb
-4. Page title
-5. Tab bar (not always needed)
-6. Form
+3. Form
 
-![Form without side navigation example](../../../images/FormRegular.png)
+![Form without side navigation example](../../../images/FormRegular.jpg)
 
 #### Form with side navigation example
 
 1. Header toolbar
 2. Navigation bar
-3. Breadcrumb
-4. Page title
-5. Tab bar (not always needed)
-6. Form
+4. Form
 	1. Left side: vertical navigation
-	2. Right side: form piece
+	2. Right side: form sheet
 
-![Form without side navigation example](../../../images/FormVerticalNavigation.png)
+![Form without side navigation example](../../../images/FormVerticalNavigation.jpg)

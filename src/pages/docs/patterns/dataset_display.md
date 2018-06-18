@@ -9,6 +9,34 @@ weight: 1
 
 A dataset display is the combination of a [management bar](./management_bar.html) with one or many data visualization types and a possible mechanism of pagination. The most common visualization types used are [table](./table.html), [list](./list.html) and [card](./card.html).
 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../../../images/DTTableView.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../../../images/DTListView.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../../../images/DTCardView.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
 ### Usage
 This pattern is used when the elements of the visualization require collective management, therefore the management bar becomes important as it facilitates tools needed to work with the dataset.
 
@@ -40,27 +68,7 @@ This pattern is used when the elements of the visualization require collective m
 
 ### Empty state
 
-It is important to let the user know what happens in empty states and let them know what has happened and how to perform actions to move out from that empty state.
-
-#### Empty dataset
-
-This is the initial state for a dataset without elements. The formula for the message is:
-* Application collection is empty. Please, add elements.
-	* Example: *Web Content collection is empty. Please, add elements.*
-
-![Card View empty state](../../../images/DDisplayEmpty.jpg)
-
-As stated in the previous case, it is important to help the user understanding what happens in empty states. Please follow this formula for expressing the empty search result:
-* No [document type] were found matching with: **query**.
-	* Example: *No web contents were found matching: **water***
-
-![Card View Search Without Result](../../../images/DDisplayEmptySearch.jpg)
-
-In case this result could be inside a repository as is the case of Documents and Media, follow:
-* Sorry, no [document type] were found [in repository] matching with: **query**.
-	* Example: *No documents were found in Local matching: **water***
-
-![Card View Search Without Result](../../../images/DDisplayEmptySearchTabs.jpg)
+It is important to let the user know what happens in empty states and let them know what has happened and how to perform actions to move out from that empty state. All these scenarios can be found in detail at [empty states](./emptyStates.html) page.
 
 ### Individual actions
 

@@ -22,13 +22,13 @@ This template counts with several patterns listed as follows that can be directl
 
 ### Table view example
 
-![Dataset template Table example](../../../images/TableViewTemplate1.png)
+![Dataset template Table example](../../../images/DTTableView.jpg)
 
 ### List view example
-![Dataset template List template example](../../../images/ListViewTemplate1.png)
+![Dataset template List template example](../../../images/DTListView.jpg)
 
 ### Card view example
-![Dataset template Card template example](../../../images/CardViewTemplate2.jpg)
+![Dataset template Card template example](../../../images/DTCardView.jpg)
 
 ### Empty state
 
