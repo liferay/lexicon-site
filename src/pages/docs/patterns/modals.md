@@ -11,7 +11,7 @@ weight: 1
 
 {$page.description}
 
-![modal window over a dark transparent background](../../../images/Modal.png)
+![modal window over a dark transparent background](../../../images/Modal.jpg)
 
 ### Usage
 
@@ -46,6 +46,22 @@ Modals can be configured in 4 different size and they are defined as table shows
 | Large | 896px wide modal in window sizes greater than 992px. 600px wide modal in window sizes between 768px and 992px. |
 | Full width | A modal that stretches to fit the browser window with 45px padding on every side. |
 
+![modal sizes](../../../images/ModalSize.jpg)
+
+### Attributes
+
+![modal window parts](../../../images/ModalParts.jpg)
+
+1. Modal header
+    1. Title
+    2. Close button
+2. Body
+    1. Content: form, text, image...
+3. Footer
+    1. Modal buttons
+
+![modal window metrics](../../../images/ModalMetrics.jpg)
+
 ### Configurations
 
 Lexicon allows your modal window to have different configurations related to your needs. These needs vary from case to case and that is why not every modal in the system needs to be equal, but needs to follow certain rules.
@@ -54,19 +70,19 @@ Lexicon allows your modal window to have different configurations related to you
 
 This is the classic composition of a modal window with its three main parts: header, body and footer.
 
-![modal window over a dark transparent background](../../../images/Modal.png)
+![modal window over a dark transparent background](../../../images/Modal.jpg)
 
 #### Header and body
 
 This is the case when you don't need a footer bar to place your icons.
 
-![modal window over a dark transparent background only header and body](../../../images/ModalFooterless.png)
+![modal window over a dark transparent background only header and body](../../../images/ModalFooterless.jpg)
 
 #### Body and Footer
 
 This case is thought for those cases where you need to just show text and buttons to agree or cancel.
 
-![modal window over a dark transparent background only body and footer](../../../images/ModalBodyFooter.png)
+![modal window over a dark transparent background only body and footer](../../../images/ModalBodyFooter.jpg)
 
 #### iFrame in the body
 
@@ -84,12 +100,10 @@ Do never remove the icon in the title as it provides the modal with a better acc
 
 Use direct and concrete titles.
 
-![info, success, warning, error modal configurations in headers](../../../images/ModalStatus.png)
-
+![info, success, warning, error modal configurations in headers](../../../images/ModalStatus.jpg)
 
 ### Mobile
 
 When a modal reaches the mobile viewport size its look and feel is transformed to the one you see below offering a mobile friendly version. Modal occupies the hole screen allowing only the interaction with the modal and its content.
 
-![modal window mobile version always full screen](../../../images/ModalMobile.png)
-
+![modal window mobile version always full screen](../../../images/ModalMobile.jpg)

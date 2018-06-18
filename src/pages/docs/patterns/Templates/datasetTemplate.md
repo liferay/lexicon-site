@@ -32,8 +32,8 @@ This template counts with several patterns listed as follows that can be directl
 
 ### Empty state
 
-![Card View Search empty state](../../../images/CardViewEmpty.png)
+![Card View Search empty state](../../../images/DDisplayEmpty.jpg)
 
 ### Empty state on search result
 
-![Card View Search Without Result](../../../images/CardViewSearchWithoutResult.png)
+![Card View Search Without Result](../../../images/DDisplayEmptySearch.jpg)
