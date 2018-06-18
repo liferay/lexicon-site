@@ -14,7 +14,7 @@
 		padding-bottom: 4px;
 		text-decoration: none;
 
-	&:hover {
+		&:hover {
 			border-bottom: 3px solid $brand-primary;
 		}
 	}
@@ -34,6 +34,31 @@
 
 		@media (min-width: $screen-md) {
 			margin: 0 $base-size / 2 0 0;
+		}
+	}
+}
+
+.sidebar-offset footer {
+	font-size: 14px;
+	margin-top: 48px;
+
+	.row {
+		border-top: 1px solid $brand-border-color;
+		padding: 16px 0 48px;
+
+		.social-icons {
+			margin: 0;
+			text-align: right;
+
+			li {
+				height: 32px;
+				width: 32px;
+
+				img {
+					margin: 0;
+					width: 16px;
+				}
+			}
 		}
 	}
 }

@@ -1,7 +1,7 @@
 .content .sidebar-offset {
 	p {
-		line-height: $base-size * 1;
-		margin-bottom: 20px;
+		line-height: 1.5;
+		margin-bottom: $base-size * 0.5;
 
 		a {
 			color: $brand-blue;
@@ -9,7 +9,6 @@
 	}
 
 	img {
-		margin-bottom: $base-size;
 		margin-top: 12px;
 		max-width: 100%;
 	}
@@ -21,16 +20,24 @@
 
 	ul {
 		margin-bottom: $base-size * 1;
+		padding-left: 18px;
 
-		li {
-			line-height: $base-size * 1;
+	}
+
+	h1, h2, h3 {
+		font-weight: bold;
+		margin: $base-size 0;
+		line-height: 1.25;
+		letter-spacing: 0.4px;
+		@media (min-width: $grid-float-breakpoint) {
+			margin-bottom: $base-size;
+			margin-top: $base-size * 2;
 		}
 	}
 
 	h1 {
 		font-size: 28px;
-		line-height: $base-size * 2;
-
+		font-weight: 800;
 		@media (min-width: $grid-float-breakpoint) {
 			font-size: 36px;
 			padding-top: 24px;
@@ -38,37 +45,27 @@
 	}
 
 	h2 {
-		color: $brand-secondary;
-		font-size: $base-size;
-		letter-spacing: 0.5px;
+		font-size: ($base-size*1.25);
 		line-height: $base-size;
 		padding-bottom: 24px;
-		text-transform: uppercase;
 	}
 
 	h3 {
 		font-size: $base-size;
-		line-height: $base-size;
-	}
-
-	h1, h2, h3 {
-		font-weight: bold;
-		margin: $base-size 0;
-
-		@media (min-width: $grid-float-breakpoint) {
-			margin-bottom: $base-size;
-			margin-top: $base-size * 3;
+		font-weight: 800;
+		& + h4 {
+			padding-top: 16px;
 		}
 	}
 
+
 	h4 {
-		font-size: $base-size * 0.65;
-		font-weight: 700;
-		letter-spacing: 0.5px;
-		line-height: $base-size * 0.75;
-		padding: 24px 0;
-		text-transform: uppercase;
+		font-size: $base-size * 0.675;
+		font-weight: 800;
+		line-height: 1.25;
+		padding: 24px 0 16px;
 	}
+
 
 	time {
 		display: inline-block;
@@ -77,10 +74,6 @@
 		line-height: 20px;
 		margin-top: 40px;
 		text-transform: uppercase;
-
-		& + h3 {
-			margin-top: 0;
-		}
 	}
 
 	header {
@@ -97,31 +90,31 @@
 
 	.dodont {
 		margin-right: 32px;
-	
+
 		img {
 			margin-bottom: 8px;
-			
+
 			&.do {
 				border-bottom: 4px solid $brand-do;
 			}
-	
+
 			&.dont {
 				border-bottom: 4px solid $brand-dont;
 			}
 		}
-	
+
 		p {
 			font-weight: 600;
-			
+
 			&.do {
 				color: $brand-do;
 			}
-	
+
 			&.dont {
 				color: $brand-dont;
 			}
 		}
-	
+
 	}
 
 	.videoContainer {
@@ -131,6 +124,7 @@
 		padding-bottom: 56.25%;
 		margin-bottom: 40px;
 	}
+
 	.video {
 		position: absolute;
 		top: 0;
@@ -150,7 +144,7 @@
 	.labelbg {
 		background: white;
 	}
-	
+
 	.code-text {
 		font-family: monospace;
 		font-size: 16px;
@@ -162,43 +156,43 @@
 		&.type-scale-10 {
 			font-size: 10px;
 		}
-	
+
 		&.type-scale-12 {
 			font-size: 12px;
 		}
-	
+
 		&.type-scale-14 {
 			font-size: 14px;
 		}
-	
+
 		&.type-scale-16 {
 			font-size: 16px;
 		}
-	
+
 		&.type-scale-18 {
 			font-size: 18px;
 		}
-	
+
 		&.type-scale-20 {
 			font-size: 20px;
 		}
-	
+
 		&.type-scale-24 {
 			font-size: 24px;
 		}
-	
+
 		&.type-scale-28 {
 			font-size: 28px;
 		}
-	
+
 		&.type-scale-32 {
 			font-size: 32px;
 		}
-	
+
 		&.type-scale-36 {
 			font-size: 36px;
 		}
-	
+
 		&.type-scale-40 {
 			font-size: 40px;
 		}
@@ -206,7 +200,7 @@
 		&.type-regular {
 			font-weight: $weight-regular;
 		}
-		
+
 		&.type-semibold {
 			font-weight: $weight-semibold;
 		}
@@ -215,7 +209,6 @@
 			font-weight: $weight-bold;
 		}
 	}
-
 }
 
 .News {
@@ -231,4 +224,56 @@
 
 @media (max-width: $grid-float-breakpoint - 1) {
 	margin-top: 80px;
+}
+
+.label {
+	font-size: 10px;
+	margin: 2rem 0 0 0.5rem;
+	padding-left: 4px;
+	padding-right: 4px;
+	@media (max-width: $grid-float-breakpoint - 1) {
+		margin-top: 0.45rem;
+	}
+}
+
+h2 + p > .label {
+	position: relative;
+	top: -2.5rem;
+}
+
+.page-description {
+	color: $brand-secondary;
+	font-size: 28px;
+	max-width: 700px;
+	margin: 24px 0 80px;
+	line-height: 1.25;
+
+	@media (max-width: $grid-float-breakpoint - 1) {
+		font-size: 24px;
+		 margin-top: 8px;
+	}
+}
+
+.page-description:after {
+	background-color: $blue;
+	content: '';
+	display: block;
+	height: 0.25rem;
+	position: relative;
+	left: 0;
+	bottom: -24px;
+	width: 2rem;
+}
+
+.clay-link {
+	font-size: 14px;
+	margin-top: 64px;
+
+	@media (max-width: $grid-float-breakpoint - 1) {
+		margin-top: 32px;
+	}
+
+	a {
+		font-weight: 600;
+	}
 }

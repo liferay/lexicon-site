@@ -15,12 +15,10 @@
 		padding: $base-size * 0.583;
 	}
 
-	.navbar-brand {
-		.title {
-			font-size: 26px;
-			font-weight: 700;
-			line-height: 1;
-		}
+	.navbar-brand .title {
+		font-size: 1.5rem;
+		font-weight: 800;
+		line-height: 1;
 	}
 
 	.navbar-nav .nav-link {
@@ -28,7 +26,7 @@
 	}
 
 	.logo {
-		max-height: 40px;
+		max-height: 36px;
 	}
 }
 
@@ -45,11 +43,16 @@
 		display: none;
 	}
 
-	.navbar-brand {
-		color: $text-color;
+	@media (max-width: $screen-xs) {
+		padding-left: 4px;
 	}
 
-	.logo {
-		max-height: 40px;
+	.navbar-brand {
+		color: $text-color;
+
+		.title {
+			font-weight: 800;
+			font-size: 1.4rem;
+		}
 	}
 }
