@@ -48,19 +48,19 @@ This is the initial state for a dataset without elements. The formula for the me
 * Application collection is empty. Please, add elements.
 	* Example: *Web Content collection is empty. Please, add elements.*
 
-![Card View empty state](../../../images/CardViewEmpty.png)
+![Card View empty state](../../../images/DDisplayEmpty.jpg)
 
 As stated in the previous case, it is important to help the user understanding what happens in empty states. Please follow this formula for expressing the empty search result:
 * No [document type] were found matching with: **query**.
 	* Example: *No web contents were found matching: **water***
 
-![Card View Search Without Result](../../../images/CardViewSearchWithoutResult.png)
+![Card View Search Without Result](../../../images/DDisplayEmptySearch.jpg)
 
 In case this result could be inside a repository as is the case of Documents and Media, follow:
 * Sorry, no [document type] were found [in repository] matching with: **query**.
 	* Example: *No documents were found in Local matching: **water***
 
-![Card View Search Without Result](../../../images/CardViewSearchWithoutResultWithTabs.png)
+![Card View Search Without Result](../../../images/DDisplayEmptySearchTabs.jpg)
 
 ### Individual actions
 
