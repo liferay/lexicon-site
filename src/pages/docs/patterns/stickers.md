@@ -11,23 +11,52 @@ weight: 1
 
 {$page.description}
 
+![sticker types](../../../images/Sticker.jpg)
+
 ### Usage
 Use stickers to visually identify elements in a dataset that are part of a same group. You can use any color you want for stickers.
 
 ### Sizes
 
-| Sticker Size | Icon Size | Usage |
-| ------------ | --------- | ----- |
-| 24px | 12px | Use it in smaller contexts where you only need visual identification but not manual interaction with this element. |
-| 32px | 16px | Use it in cards that are image based, allowing to see more parts of the image. |
-| 40px | 20px | Use it in sites to identify the user in a comment in comments portlet. Only rounded.|
-| 48px | 24px | Use it in sites to identify the user in a blog entry or article. Only rounded.|
+#### 24px
+
+![sticker 24x squared and rounded](../../../images/Sticker24.jpg)
+
+Use it in smaller contexts where you only need visual identification but not manual interaction with this element.
+
+![metrics sticker 24x squared and rounded](../../../images/Sticker24Metrics.jpg)
+
+#### 32px
+
+![sticker 32x squared and rounded](../../../images/Sticker32.jpg)
+
+Use it in cards that are image based, allowing to see more parts of the image.
+
+![metrics for sticker 32x squared and rounded](../../../images/Sticker32Metrics.jpg)
+
+#### 40px
+
+![sticker 40x rounded](../../../images/Sticker40.jpg)
+
+Use it in sites to identify the user in a comment in comments portlet. Only rounded.
+
+![metrics for sticker 40x rounded](../../../images/Sticker40Metrics.jpg)
+
+#### 48px
+
+![sticker 48x rounded](../../../images/Sticker48.jpg)
+
+Use it in sites to identify the user in a blog entry or article. Only rounded.
+
+![metrics for sticker 48x rounded](../../../images/Sticker48Metrics.jpg)
 
 ### Colors
 Stickers can have any possible color.
 There default color for stickers is: Main Lighten 28% desat 5%, that corresponds to #6B6C7E
 
-![sticker default color](../../../images/StickerDefaultColor.png)
+![sticker default colors](../../../images/StickerColors.jpg)
+
+![sticker color legend](../../../images/StickerColorLegend.jpg)
 
 ### Variations
 
@@ -35,13 +64,13 @@ There default color for stickers is: Main Lighten 28% desat 5%, that corresponds
 
 Use it only with files and folders. You can place up to 3 characters inside it or an icon. Always capital letters.
 
-![squared sticker](../../../images/StickerSquared.png)
+![squared sticker](../../../images/StickerSquared.jpg)
 
 #### Round
 
 Use it only with people. You can places up to 2 characters inside it or an image. Always capital letters.
 
-![rounded sticker](../../../images/StickerRounded.png)
+![rounded sticker](../../../images/StickerRounded.jpg)
 
 ### Position
 A sticker can be placed in a Image Card. Its position is always bottom left as you can see in the following example.

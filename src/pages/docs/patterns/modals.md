@@ -37,7 +37,7 @@ Modal over modal is a not desired situation. Please, try to solve this situation
 
 ### Size
 
-Modals can be configured in 4 different size and they are defined as table shows:
+Modals are always displayed at the center of the screen and can be configured in 4 different size and they are defined as table shows:
 
 | Size | Description |
 | ---- | ----- |
