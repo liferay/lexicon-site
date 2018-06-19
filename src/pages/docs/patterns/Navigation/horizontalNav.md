@@ -1,16 +1,13 @@
 ---
 title: "Navbar"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/navigation/navbar.html"
 description: "A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system."
 layout: "guide"
 weight: 2
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/navigation/navbar.html
-" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![navigation bar with 5 entries, first one seleted](../../../images/Navbar.png)
 

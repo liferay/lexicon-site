@@ -6,9 +6,9 @@ weight: 2
 hidden: yes
 ---
 
-### Description
 
-{$page.description}
+
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

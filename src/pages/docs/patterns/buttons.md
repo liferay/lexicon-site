@@ -1,15 +1,13 @@
 ---
 title: "Buttons"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/buttons.html"
 description: "Buttons communicate an action to happen on user interaction."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/buttons.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Types
 
@@ -18,7 +16,6 @@ weight: 1
 | ![button primary default size defuault state](../../../images/ButtonPrimary.jpg) | **Primary**: The primary button is always use for the most important actions. There can't be two primary actions together or near by. |
 | ![button secondary default size defuault state](../../../images/ButtonSecondary.jpg) | **Secondary**: The secondary button is always use for the secondary actions. There can be several secondary actions near by. |
 | ![button primary default size defuault state](../../../images/ButtonLink.jpg) | **Link**: Used for many Cancel actions. |
-
 
 
 ### States

@@ -30,9 +30,13 @@
 				<h1>{$page.title}</h1>
 
 				{if not $page.titleLabel == '' and not $page.titleLabelLink == ''}
-					<a href="{$page.titleLabelLink}" class="label label-secondary">
+					<a href="{$page.titleLabelLink}" class="label label-warning">
 						<span class="label-item label-item-expand">{$page.titleLabel}</span>
 					</a>
+				{elseif $page.titleLabel == 'Portal'}
+					<span class="label label-info">
+						<span class="label-item label-item-expand">{$page.titleLabel}</span>
+					</span>
 				{elseif not $page.titleLabel == ''}
 					<span class="label label-secondary">
 						<span class="label-item label-item-expand">{$page.titleLabel}</span>

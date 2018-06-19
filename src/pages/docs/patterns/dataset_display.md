@@ -1,11 +1,11 @@
 ---
 title: "Dataset Display"
-description: "A dataset display is the combination of a management bar with one or many data visualization types and a possible mechanism of pagination. The most common visualization types used are table, list and card."
+description: "The combination of a management bar with one or many data visualization types and a possible mechanism of pagination."
 layout: "guide"
 weight: 1
 ---
 
-### Description
+<div class="page-description">{$page.description}</div>
 
 A dataset display is the combination of a [management bar](./management_bar.html) with one or many data visualization types and a possible mechanism of pagination. The most common visualization types used are [table](./table.html), [list](./list.html) and [card](./card.html).
 

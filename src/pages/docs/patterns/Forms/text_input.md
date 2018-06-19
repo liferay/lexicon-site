@@ -1,11 +1,11 @@
 ---
 title: "Text Input"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/form_elements.html"
 description: "Text input types, usage and validations."
 layout: "guide"
 weight: 4
 ---
-
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/form_elements.html" target="_blank">CLAY</a>
 
 ## Text Field
 

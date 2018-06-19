@@ -1,11 +1,11 @@
 ---
 title: "Grid"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/layout/grid.html"
 description: "Grid, measures and distances."
 layout: "guide"
 weight: 1
 ---
-
-<a class="label-link label label-warning" href="https://clayui.com/docs/layout/grid.html" target="_blank">CLAY</a>
 
 ### Introduction
 

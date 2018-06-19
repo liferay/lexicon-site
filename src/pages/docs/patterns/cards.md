@@ -1,16 +1,13 @@
 ---
 title: "Cards"
-description: "Cards are a very specific visual representation of data.
-"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/cards.html"
+description: "Cards are a very specific visual representation of data."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/cards.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![card with image default state](../../../images/CardImage.jpg)
 

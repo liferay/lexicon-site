@@ -4,10 +4,7 @@ description: "Form template helps you to understand how forms are built and comp
 layout: "guide"
 weight: 1
 ---
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 #### Layout and examples
 A form template count with several patterns that shape this pattern:

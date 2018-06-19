@@ -5,9 +5,7 @@ layout: "guide"
 weight: 2
 ---
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Layout
 It is important to reflect the flexibility of this toolbar type showcasing different examples of use:

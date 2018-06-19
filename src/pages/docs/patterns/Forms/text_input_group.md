@@ -1,15 +1,13 @@
 ---
 title: "Text Input Group"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/form_elements_input_groups.html"
 description: "A text input group is a text field with extra elements that makes the pattern more complete for a common or frequent use case."
 layout: "guide"
 weight: 4
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/form_elements_input_groups.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Layout
 The layout of an input has a bit of freedom. You are allowed to configure elements on the left or the right side of the field or both at same time.

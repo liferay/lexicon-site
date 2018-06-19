@@ -7,9 +7,9 @@ weight: 3
 
 <span class="label label-secondary">PENDING</span>
 
-### Description
 
-{$page.description}
+
+<div class="page-description">{$page.description}</div>
 
 ![slider](../../../images/Slider.png)
 

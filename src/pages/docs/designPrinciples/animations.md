@@ -1,15 +1,13 @@
 ---
 title: "Animations"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/"
 description: "Animations are used to transmit messages while capturing the user attention in a different way."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

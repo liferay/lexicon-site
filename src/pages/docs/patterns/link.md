@@ -5,9 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 * Use links only for navigation. A link must not trigger other kind of action.

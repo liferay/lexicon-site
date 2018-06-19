@@ -1,14 +1,13 @@
 ---
 title: "Stacked b ar chart"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/charts/basic/bar_chart.html"
 description: "Stacked Bar chart allows to compare the single items value with the total data value.."
 layout: "guide"
 weight: 3
 ---
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/charts/basic/bar_chart.html" target="_blank">CLAY</a>
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 Stacked bar charts can be either plotted in vertical or horizontal. In this page, we focus on vertical bars but both possibilities are allowed.
 

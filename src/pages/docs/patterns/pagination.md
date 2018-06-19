@@ -1,15 +1,13 @@
 ---
 title: "Pagination"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/pagination.html"
 description: "Pagination allows navigation between chunks, also denominated pages, of a dataset."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/pagination.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Variations
 

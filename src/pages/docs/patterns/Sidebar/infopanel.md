@@ -5,9 +5,7 @@ layout: "guide"
 weight: 2
 ---
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 This sidebar appears always from the right side of the viewport and pushes the container in large viewports and slides over it in small viewports. See responsive behavior for more details.
 

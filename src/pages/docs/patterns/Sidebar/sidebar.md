@@ -5,9 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 Lexicon defines different types of sidebar:
 * **Product Menu:** That allows the user to navigated through the different applications inside the Control Panel and the Site.

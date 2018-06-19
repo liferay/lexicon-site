@@ -5,7 +5,7 @@ layout: "guide"
 weight: 5
 ---
 
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Presentations
 

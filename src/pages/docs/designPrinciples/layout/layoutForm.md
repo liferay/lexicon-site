@@ -5,9 +5,7 @@ layout: "guide"
 weight: 2
 ---
 
-### Description
-
-{$page.description} 
+<div class="page-description">{$page.description}</div> 
 
 ![layout form box 1440px width screen](../../../images/layoutformbox.jpg)
 

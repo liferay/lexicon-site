@@ -1,18 +1,17 @@
 ---
 title: "Selectors"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/form_elements.html#select-element"
 description: "Selectors are frequently used as a part of forms. This elements are used when we need to select one or more within several options. These options are displayed in the button once selected."
 layout: "guide"
 weight: 3
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/form_elements.html#select-element" target="_blank">CLAY</a>
-
 ## Select
 
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![select default state](../../../images/Selector.png)
-
 
 ### Usage
 

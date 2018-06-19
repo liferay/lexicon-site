@@ -1,15 +1,13 @@
 ---
 title: "Vertical Navigation"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/navigation/vertical_navigation.html"
 description: "Verical navigation allows the navigation between the different pages."
 layout: "guide"
 weight: 2
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/navigation/vertical_navigation.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![vertical navigation nested levels open](../../../images/NavigationVerticalOpen.png)
 
