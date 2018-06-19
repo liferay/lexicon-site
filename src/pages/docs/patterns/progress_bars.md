@@ -1,15 +1,13 @@
 ---
 title: "Progress Bar"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/progress_bars.html"
 description: "Progress bar is a progress indicator used to show the completion percentage of a task."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/progress_bars.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

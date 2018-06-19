@@ -1,15 +1,13 @@
 ---
 title: "Icons"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/icons.html"
 description: "Icon is a visual metaphor representing a concept that lies behind the idea and/or action."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/icons.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

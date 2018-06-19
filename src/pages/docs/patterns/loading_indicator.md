@@ -1,15 +1,12 @@
 ---
 title: "Loading Indicator"
+titleLabel: "Portal"
 description: "Loading indicator shows the user that an external process, like a connection, is being executed."
 layout: "guide"
 weight: 1
 ---
 
-<span class="label label-info">PORTAL</span>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

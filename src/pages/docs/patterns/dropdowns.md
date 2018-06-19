@@ -1,15 +1,13 @@
 ---
 title: "Dropdown Menu"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/dropdowns.html"
 description: "A dropdown is a list of options related to the element that triggers it."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/dropdowns.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![default dropdown menu](../../../images/DropdownRegular.jpg)
 

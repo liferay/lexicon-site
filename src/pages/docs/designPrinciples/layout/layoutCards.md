@@ -5,9 +5,7 @@ layout: "guide"
 weight: 2
 ---
 
-### Description
-
-{$page.description} This is a layout that we can find in templates like [Dataset Display](../../patterns/dataset_display.html).
+<div class="page-description">{$page.description}</div> This is a layout that we can find in templates like [Dataset Display](../../patterns/dataset_display.html).
 
 #### Responsive behavior
 

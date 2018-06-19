@@ -1,15 +1,13 @@
 ---
 title: "Doughnut chart"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/charts/basic/donut_chart.html"
 description: "Doughnut chart is a variation of the Pie chart and allows to divide data by numerical proportions of a total value (always 100%). "
 layout: "guide"
 weight: 3
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/charts/basic/donut_chart.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 We recommend you to use the Doughnut chart instead of the Pie chart due to:
 * When you first see the Pie Chart the eyes tend to be attracted to the center of the pie, then to the outside circle, and only after that the different parts of the chart. 

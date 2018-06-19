@@ -5,9 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Layout
 This template counts with several patterns listed as follows that can be directly mapped with the image.

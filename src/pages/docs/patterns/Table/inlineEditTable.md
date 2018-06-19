@@ -1,15 +1,12 @@
 ---
 title: "Inline Edit Table"
+titleLabel: "Pending"
 description: "An inline edit table allows the user to modify certain values of the entry without going to an entry detail page."
 layout: "guide"
 weight: 2
 ---
 
-<span class="label label-secondary">PENDING</span>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![table inline edition, view mode](../../../images/TableInlineEdition.jpg)
 

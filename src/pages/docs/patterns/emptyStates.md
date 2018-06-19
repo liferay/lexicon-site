@@ -1,15 +1,12 @@
 ---
 title: "Empty States"
+titleLabel: "Portal"
 description: "Empty states provide users with feedback on the reasons behind that fact and what is possible to be done."
 layout: "guide"
 weight: 1
 ---
 
-<span class="label label-info">PORTAL</span>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

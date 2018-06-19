@@ -226,13 +226,15 @@
 	margin-top: 80px;
 }
 
-.label {
-	font-size: 10px;
-	margin: 2rem 0 0 0.5rem;
-	padding-left: 4px;
-	padding-right: 4px;
-	@media (max-width: $grid-float-breakpoint - 1) {
-		margin-top: 0.45rem;
+header {
+	.label {
+		font-size: 10px;
+		margin: 2rem 0 0 0.5rem;
+		padding-left: 4px;
+		padding-right: 4px;
+		@media (max-width: $grid-float-breakpoint - 1) {
+			margin-top: 0.45rem;
+		}
 	}
 }
 

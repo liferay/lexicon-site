@@ -5,7 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![ADT example marking different points: 1. Widget Title bar, 2. Asset tittle bar, 3. Profile info, 4. Asset Toolbar, 5. Buttons](../../../images/sites/SitesExample.jpg)
 

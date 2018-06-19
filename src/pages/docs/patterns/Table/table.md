@@ -1,16 +1,13 @@
 ---
 title: "Table"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/table.html"
 description: "A table is a specific pattern for comparing datasets in a very direct an analytical way."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/table.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
-
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

@@ -1,15 +1,13 @@
 ---
 title: "Badges"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/badges.html"
 description: "Badges help highlight important information such as notifications or new and unread messages."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/badges.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 Badges have circular borders and are only used to specify a number.
 

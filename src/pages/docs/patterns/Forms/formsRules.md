@@ -5,10 +5,7 @@ layout: "guide"
 weight: 2
 ---
 
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Layout
 
@@ -57,7 +54,6 @@ Fields can be mandatory/required to fill in a form. The way to mark a field as m
 Try to place first as many mandatory fields when possible to make the user task short. Non mandatory fields should go in a second place as they are not so important and the user may like to skip them. In case non mandatory fields are in between mandatory fields the user would expend more time scanning the form.
 
 
-
 ### Repeatable fields
 
 #### Single repeatable field
@@ -65,8 +61,6 @@ Single repeable field is useful when the user must introduce several data of the
 
 #### Set of repeatable fields
 This allow you let the user add contents of a same type in a form. This is usually used to contribute with more form pieces that allow the user to specify more information. A set always bring the possibility to add or remove sets. See the following example:
-
-
 
 ### Actions
 

@@ -1,16 +1,14 @@
 ---
 title: "Pager"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/pagination.html"
 description: "Pager allows navigation between pages of a process or task divided in subtasks or also called pages."
 layout: "guide"
 weight: 1
 hidden: yes
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/pagination.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

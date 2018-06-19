@@ -5,9 +5,7 @@ layout: "guide"
 weight: 2
 ---
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 This page contemplates the visual definition of the hierarchy, the measurements and the definition of the components that establish that hierarchy 
 

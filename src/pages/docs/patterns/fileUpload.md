@@ -1,15 +1,12 @@
 ---
 title: "File Upload"
+titleLabel: "Portal"
 description: "File upload loads one or many files into the system."
 layout: "guide"
 weight: 1
 ---
 
-<span class="label label-info">PORTAL</span>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Simple File Upload
 Simple file upload is used to upload a simple file element.

@@ -5,10 +5,7 @@ layout: "guide"
 weight: 2
 ---
 
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Partial validation
 

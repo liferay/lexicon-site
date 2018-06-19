@@ -1,15 +1,12 @@
 ---
 title: "Heatmap chart"
+titleLabel: "Pending"
 description: "The Heatmap chart is a visual representation of the data using colors to indicate the level of the values."
 layout: "guide"
 weight: 3
 ---
 
-<span class="label label-secondary">PENDING</span>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![Heatmap chart](../../../images/ChartHeatmap.png)
 

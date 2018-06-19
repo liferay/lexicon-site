@@ -1,14 +1,13 @@
 ---
 title: "Labels"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/labels.html"
 description: "Labels are a mechanism to categorize information providing quick recognition."
 layout: "guide"
 weight: 1
 ---
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/labels.html" target="_blank">CLAY</a>
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 Use labels to organize groups of items in your application. Labels have rounded borders by default.

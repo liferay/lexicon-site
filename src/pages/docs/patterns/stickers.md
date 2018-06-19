@@ -1,15 +1,13 @@
 ---
 title: "Stickers"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/stickers.html"
 description: "Stickers are a visual way to quickly identify content in a different way than badges and labels."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/stickers.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![sticker types](../../../images/Sticker.jpg)
 

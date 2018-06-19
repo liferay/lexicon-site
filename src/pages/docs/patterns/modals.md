@@ -1,15 +1,13 @@
 ---
 title: "Modals"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/modals.html"
 description: "A modal is a box with content displayed on top of the page to capture the user’s attention for an specific action inside the same process. Modals are subordinated to pages."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/modals.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![modal window over a dark transparent background](../../../images/Modal.jpg)
 

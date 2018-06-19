@@ -5,9 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![confirmation message](../../../images/ConfirmationMessage.jpg)
 

@@ -1,16 +1,14 @@
 ---
 title: "Timelines WIP"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/timelines.html"
 description: "Timelines visually represent events along the time."
 layout: "guide"
 weight: 1
 hidden: yes
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/timelines.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

@@ -1,13 +1,9 @@
 ---
 title: "Writing Style"
-description: "Color palette definition and usage."
+description: "Words give meaning to your meticulously designed product. Without the proper messaging for your product’s navigation and functionality, uncertainty creeps into your user’s minds. The messages and naming conventions you use throughout your product complement its design. No matter how well-constructed your design, poor messaging can doom your product’s effectiveness. Clarity, confidence, and consistency in messaging promotes product reliability."
 layout: "guide"
 weight: 1
 ---
-
-### Description
-
-Words give meaning to your meticulously designed product. Without the proper messaging for your product’s navigation and functionality, uncertainty creeps into your user’s minds. The messages and naming conventions you use throughout your product complement its design. No matter how well-constructed your design, poor messaging can doom your product’s effectiveness. Clarity, confidence, and consistency in messaging promotes product reliability. 
 
 ### Be Clear
 

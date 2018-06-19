@@ -1,15 +1,12 @@
 ---
 title: "Image Selector"
+titleLabel: "Portal"
 description: "Image selector allows the user to select images from a grids images in a visual way that primes the images over other metadata that an image file can have."
 layout: "guide"
 weight: 1
 ---
 
-<span class="label label-info">PORTAL</span>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

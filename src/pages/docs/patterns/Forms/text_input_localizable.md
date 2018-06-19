@@ -1,15 +1,13 @@
 ---
 title: "Text Input Localizable"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/form_elements_input_groups.html#input-group-mixed"
 description: "Text input localizable is used in those fields that can be translated into multiple languages."
 layout: "guide"
 weight: 4
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/form_elements_input_groups.html#input-group-mixed" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Layout
 

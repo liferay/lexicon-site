@@ -1,15 +1,13 @@
 ---
 title: "Alerts"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/alerts.html"
 description: "Alerts are used to capture the attention of the user in an intrusive way. Sometimes just to say that something went right, others to say that something needs to be reviewed."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/alerts.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ![info alert colors](../../../images/Alert.jpg)
 

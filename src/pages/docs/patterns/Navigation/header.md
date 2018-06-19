@@ -1,14 +1,13 @@
 ---
 title: "Header WIP"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/header.html"
 description: "Header is toolbar that allows identification, navigation and display actions."
 layout: "guide"
 weight: 2
 ---
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/header.html" target="_blank">CLAY</a>
 
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 

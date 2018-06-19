@@ -1,15 +1,13 @@
 ---
 title: "List"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/list.html"
 description: "List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view."
 layout: "guide"
 weight: 1
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/list.html" target="_blank">CLAY</a>
-
-### Description
-
-{$page.description}
+<div class="page-description">{$page.description}</div>
 
 ### Usage
 
