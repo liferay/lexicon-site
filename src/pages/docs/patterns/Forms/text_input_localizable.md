@@ -2,7 +2,7 @@
 title: "Text Input Localizable"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/form_elements_input_groups.html#input-group-mixed"
-description: "Text input localizable is used in those fields that can be translated into multiple languages."
+description: "A text input viaration used in those fields that can be translated into multiple languages."
 layout: "guide"
 weight: 4
 ---

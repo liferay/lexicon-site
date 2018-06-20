@@ -1,6 +1,6 @@
 ---
 title: "Forms Validation"
-description: "Validating a form is an important action when data has to be submitted. This section will allow you understand how genereal validation must be displayed and how special group fields must behave towards a correct validation."
+description: "A description of how validation patterns must be displayed within form structures."
 layout: "guide"
 weight: 2
 ---

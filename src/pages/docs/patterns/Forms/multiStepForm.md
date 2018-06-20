@@ -2,7 +2,7 @@
 title: "Multi Step Form"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/multi_step_form.html"
-description: "A multi step form, also known as wizard, is a determinate progress bar. This progress bar is used in long processes dividing the main task in subtasks that will help your users completing the process."
+description: "A progress bar used to divide the main task in subtasks to help users completing long processes."
 layout: "guide"
 weight: 3
 ---

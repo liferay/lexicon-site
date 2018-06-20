@@ -2,10 +2,12 @@
 title: "Checkbox, Radio, Toggle"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/form_custom.html"
-description: "Checkbox, radio and toggles provide users with seletion and activation tools"
+description: "Checkboxes, radios and toggles provide users with different selection and activation tools."
 layout: "guide"
 weight: 3
 ---
+
+<div class="page-description">{$page.description}</div>
 
 ## Checkbox
 

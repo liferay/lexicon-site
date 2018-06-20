@@ -1,9 +1,11 @@
 ---
 title: "Text Input Variations"
-description: "search, autocomplete, labels input, date, numeric, password"
+description: "A description of the search, autocomplete, labels input, date, numeric and password input variations."
 layout: "guide"
 weight: 4
 ---
+
+<div class="page-description">{$page.description}</div>
 
 ## Autocomplete text field
 

@@ -1,6 +1,6 @@
 ---
 title: "Forms Rules"
-description: "Set of rules to know how patterns must be placed in portal."
+description: "Set of rules and recommendations to know how form patterns must be placed in portal."
 layout: "guide"
 weight: 2
 ---
