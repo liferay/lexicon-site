@@ -55,8 +55,9 @@ Secondary borderless button is meant to be used in those cases as toolbars where
 
 Buttons can icons instead of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in [management bars](./management_bar.html). This button variation can be primary, secondary or borderless type.
 
-![button primary default size defuault state](../../../images/ButtonIconPrimary.jpg)  
-![button primary default size defuault state](../../../images/ButtonIconSecondary.jpg)![button primary default size defuault state](../../../images/ButtonIconBorderless.jpg)
+![button icon primary default size defuault state](../../../images/ButtonIconPrimary.jpg)  
+![button icon secondary default size defuault state](../../../images/ButtonIconSecondary.jpg)
+![button icon secondary boderdeless default size defuault state](../../../images/ButtonIconBorderless.jpg)
 
 #### Icon and text button
 

@@ -13,9 +13,9 @@ This sidebar appears always from the right side of the viewport and pushes the c
 
 In these two images belong to a “Documents and Media” application case as a visual example.
 
-![SideBar Example for Documents and Media, details tab selected](../../../images/SideBarExampleDetails.jpg) 
+![SideBar Example for Documents and Media, details tab selected](../../../images/SidebarInfoPanelHeight1.jpg) 
 
-![SideBar Example for Documents and Media, versions tab selected](../../../images/SideBarExampleVersions.jpg) 
+![SideBar Example for Documents and Media, versions tab selected](../../../images/SidebarInfoPanelHeight2.jpg) 
 
 #### Components
 

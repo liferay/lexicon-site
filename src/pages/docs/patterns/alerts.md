@@ -39,7 +39,7 @@ More information about color definitions can be found at [colors page](../design
 
 ![info alert colors with numbers specifying each of its attributes](../../../images/AlertParts.jpg)
 
-An alert has 4 differnet attributes:
+An alert has 4 different attributes:
 1. The status icon.
 2. Type text.
 3. Descrition text.
