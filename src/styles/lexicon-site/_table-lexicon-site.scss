@@ -13,9 +13,10 @@ table {
 	thead > tr > th {
 		border-top-width: 0;
 		border-bottom-width: 1px;
-		color: $brand-secondary;
-		font-weight: 600;
+		color: $text-color;
+		font-weight: 700;
 		vertical-align: bottom;
+		background-color: $sidebar-bg-color;
 	}
 
 	td > p {
