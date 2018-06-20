@@ -2,7 +2,7 @@
 title: "Text Input Group"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/form_elements_input_groups.html"
-description: "A text input group is a text field with extra elements that makes the pattern more complete for a common or frequent use case."
+description: "A text field with added elements that configure a more complex input structure."
 layout: "guide"
 weight: 4
 ---

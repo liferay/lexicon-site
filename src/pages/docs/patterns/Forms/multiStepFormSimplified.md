@@ -2,7 +2,7 @@
 title: "Multi Step Form Simplified"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/multi_step_form_simplified.html"
-description: "Multi step form simplified is used as a progressive disclosure method to guide the user through a task divided in several steps in a light way."
+description: "A progressive disclosure method to guide the user through a task divided in several steps."
 layout: "guide"
 weight: 3
 ---

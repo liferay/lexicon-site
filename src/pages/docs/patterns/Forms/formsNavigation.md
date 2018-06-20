@@ -1,6 +1,6 @@
 ---
 title: "Forms Navigation"
-description: "Forms can have navigation and this can appear in form in two different ways: left navigation menu or wizard."
+description: "Forms can have navigation and this can appear in two different ways: left navigation menu or wizard."
 layout: "guide"
 weight: 2
 ---

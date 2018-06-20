@@ -2,10 +2,12 @@
 title: "Text Input"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/form_elements.html"
-description: "Text input types, usage and validations."
+description: "A description of the different text input types, including usage and validation states."
 layout: "guide"
 weight: 4
 ---
+
+<div class="page-description">{$page.description}</div>
 
 ## Text Field
 

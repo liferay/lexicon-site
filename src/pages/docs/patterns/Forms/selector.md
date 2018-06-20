@@ -2,7 +2,7 @@
 title: "Selectors"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/form_elements.html#select-element"
-description: "Selectors are frequently used as a part of forms. This elements are used when we need to select one or more within several options. These options are displayed in the button once selected."
+description: "A form control element used to select and entry data within several provided options."
 layout: "guide"
 weight: 3
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Slider"
 titleLabel: "Pending"
-description: "Slider allows the user to select values in a linear range of values."
+description: "The Slider control allows user to select and entry data from among a linear range of values."
 layout: "guide"
 weight: 3
 ---

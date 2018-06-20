@@ -1,6 +1,6 @@
 ---
 title: "Forms Hierarchy"
-description: "Definition of the content hierarchy inside a form structure and the components used to identify the different content blocks."
+description: "Definition of the content hierarchy inside a form structure and the components used to identify it."
 layout: "guide"
 weight: 2
 ---
