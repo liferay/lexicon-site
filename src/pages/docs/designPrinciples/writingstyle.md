@@ -15,8 +15,9 @@ Longer messaging is not always more helpful. Be concise; understand your user’
 
 | Case | Example |
 | ---- | ----- |
-| **Do:** | Initiates the process. |
-| **Don’t:** | If you click this button, then you will initiate a process that does something. Doing something is essential for something else. |
+| **Do** | Initiates the process. |
+| **Don’t** | If you click this button, then you will initiate a process that does something. Doing something is essential for something else. |
+
 
 ### Be Confident
 
@@ -24,8 +25,9 @@ Be bold! Take confidence in what you say! The way you provide information sets t
 
 | Case | Example |
 | ---- | ----- |
-| **Do:** | Click this to save your work. |
-| **Don’t:** | Clicking this should save your work. |
+| **Do** | Click this to save your work. |
+| **Don’t** | Clicking this should save your work. |
+
 
 ### Be Current
 
@@ -33,8 +35,9 @@ Use present tense throughout product messaging. Promote the product as being ali
 
 | Case | Example |
 | ---- | ----- |
-| **Do:** | Saves the form. |
-| **Don’t:** | This will save the form. |
+| **Do** | Saves the form. |
+| **Don’t** | This will save the form. |
+
 
 ### Be Consistent
 
@@ -52,8 +55,9 @@ Tone, capitalization, and punctuation should follow a similar style on any given
 
 | Case | Example |
 | ---- | ----- |
-| **Do:** | ![Writing Style Do Example with checkboxes](../../../images/WritingStyleDoExample.png) |
-| **Don’t:** | ![Writing Style Do Example with checkboxes](../../../images/WritingStyleDontExample.png) |
+| **Do** | ![Writing Style Do Example with checkboxes](../../../images/WritingStyleDoExample.png) |
+| **Don’t** | ![Writing Style Do Example with checkboxes](../../../images/WritingStyleDontExample.png) |
+
 
 #### 2. Address Your Users the Same Way
 
@@ -61,7 +65,8 @@ For example, don’t refer to them as we, the user, and you in the same context.
 
 | Case | Example |
 | ---- | ----- |
-| **Do:** | Click the button to continue. You can select the other button at any time. |
-| **Don’t:** | Click the button so we can continue. The user can select the other button at any time. |
+| **Do** | Click the button to continue. You can select the other button at any time. |
+| **Don’t** | Click the button so we can continue. The user can select the other button at any time. |
+
 
 Remember, your writing style sets the tone for your product. Show people you care by guiding them with sensible, consistent messaging.
