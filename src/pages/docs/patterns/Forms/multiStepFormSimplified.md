@@ -9,7 +9,7 @@ weight: 3
 
 <div class="page-description">{$page.description}</div>
 
-![Multi step form simplified](../../../images/ProcessBarSimplified.png)
+![Multi step form simplified](../../../images/MultiStepFormSimplified.jpg)
 
 ### Usage
 
@@ -20,10 +20,16 @@ Multi step form simplified is thought to be used in those context where the mult
 * The left side is reserved for the step name.
 * The right side is reserved for the step number that must always indicate the current step number of a total of steps.
 
+### Attributes
+
+![Multi step form parts](../../../images/MultiStepFormSimpliParts.jpg)
+
+1. Step title
+2. Step counter reference
+
+![Multi step form parts](../../../images/MultiStepFormSimpliMetrics.jpg)
+
+
 ### Example of use
 
-![Multi step form simplified example of use inside a modal](../../../images/MultiStepFormSimplifiedExample.png)
-
-
-
-
+![Multi step form simplified example of use inside a modal](../../../images/MultiStepFormSimplifiedExample.jpg)

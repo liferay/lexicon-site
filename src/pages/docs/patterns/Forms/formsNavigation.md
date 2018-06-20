@@ -12,7 +12,7 @@ weight: 2
 A left navigation menu allow us to break down the complexity of a form into many and more simple forms. A good rule to divide forms is context.
 When using a left navigation menu, it is pretty important to identify the form title with the same name the menu item has.
 
-![lexicon default](../../../images/lexiconDefault.png)
+![form with vertical navigation to the left](../../../images/FormLeftVerticalNavigation.jpg)
 
 ### Wizards
 
@@ -21,8 +21,8 @@ Forms can be used together with wizards, so called Multi step forms. Wizards all
 There are 2 types of wizards:
 * Multi Step Form. Or Wizard form is used to divide the main tasks of a form in subtasks so as not to have so many information and provide a progressing completion. See more about [Multi Steps Forms](./multiStepForm.html)
 
-![Multi step form example](../../../images/ProcessBarExample.jpg)
+![Multi step form example](../../../images/MultiStepFormExampleGrid.jpg)
 
 * Multi Step form Simplified is used as a progressive disclosure method to let the user know where he/she is. Example of Multi Step form **used in a Modal**. Visit [Multi Step Form Simplified](./multiStepFormSimplified.html) to have more information.
 
-![Multi step form simplified example of use inside a modal](../../../images/MultiStepFormSimplifiedExample.png)
+![Multi step form simplified example of use inside a modal](../../../images/MultiStepFormSimplifiedExample.jpg)

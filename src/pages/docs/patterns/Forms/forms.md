@@ -9,16 +9,16 @@ weight: 1
 
 ### Parts
 
-![lexicon default](../../../images/lexiconDefault.png)
+![lexicon default](../../../images/FormParts.jpg)
 
 1. Title. Required
 2. Description. Not required but very useful. It should describe the form usage.
 3. Form Elements:
-	1. Text Input. For more information visit [Text Input](./text_input.html). 
-	2. Selector. For more information visit [Selectors](./selector.html). 
-	3. Checkbox. Visit [Checkbox, Radio and Toggle](./radio_check_toggle.html) for more information. 	
+	1. Text input. For more information visit [Text Input](./text_input.html). 
+	2. Text input localizable. For more information visit [Text Input Localizable](./text_input_localizable.html).
+	3. Selector. For more information visit [Selectors](./selector.html). 
 	4. Radio. Visit [Checkbox, Radio and Toggle](./radio_check_toggle.html) for more information
-	5. There might be other input types that you can find under [selecors](./selector.hmtl) or [text input variations](./text_input_variations.html).
+	5. Checkbox. Visit [Checkbox, Radio and Toggle](./radio_check_toggle.html) for more information. 	
 4. Section.  Sections are identified with primary text with font-size of 14px and always in capital letters. Some forms may require a full width underline for a better visual separation of content. This is usually used in configuration forms.
 5. Buttons. Visit Actions to understand the use of buttons in forms.
 
@@ -27,17 +27,17 @@ weight: 1
 Forms can be created in one single column or two columns. If your form is divided in several sections that are stacked consider not changing the internal layout between sections, it can affect the experience of filling the whole form.
 When applying columns take into account that the reading direction is left-right,  and up-down, in each column. So expect your user to read first column one and then column two.
 
-1. One single form
+#### One single form
 
-![lexicon default](../../../images/lexiconDefault.png)
+![lexicon default](../../../images/Form1Column.jpg)
 
-2. Two columns form
+#### Two columns form
 
-![lexicon default](../../../images/lexiconDefault.png)
-
-
+![lexicon default](../../../images/Form2Columns.jpg)
 
 ### Attributes
+
+#### Spacing
 
 Respecting the distancies between form elements such as texts, fields, sections, etc, is very important. Please take a closer look to our [hierarchy](./formsHierarchy.html) page to understand it.
 
@@ -53,19 +53,16 @@ As a general thumb rule apply the following sizes for distances:
 | - Between consecutive components: title, fields, section... | 24px | 16px |
 | - Between form title or title + description for next component | 48px | 32px |
 
-![lexicon default](../../../images/lexiconDefault.png)
+#### Title
 
-![lexicon default](../../../images/lexiconDefault.png)
+![form title style and measures](../../../images/FormTitle.jpg)
 
+#### Sections
 
-### Sections
+First level sections can be either collapsible or not. On the other hand, second level sections are never collasible.
 
-* Sections are identified with primary text with font-size of 14px and always in capital letters.
-* Some forms may require a full with underline for a better visual separation of content. This is usually used in configuration forms.
+![form sections style and measures](../../../images/FormSections.jpg)
 
-![Form section identifier line](../../../images/DividerTitle+Line.png)
+#### Paragraph
 
-
-
-
-
+![form paragraph style and measures](../../../images/FormParagraph.jpg)

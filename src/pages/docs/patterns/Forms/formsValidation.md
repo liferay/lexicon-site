@@ -15,7 +15,7 @@ This type of validation is done even if the form is not complety full and withou
 
 Forms have inline validation. All [form fields](./text_input.hmtl) that can be checked against a set of rules while filling them must show success or error state to the user.
 
-![default error state](../../../images/Input+HelpText+Error.png)
+![default error state](../../../images/InputHelpTextError.jpg)
 
 #### At least one field required
 
@@ -24,13 +24,17 @@ It can be the case that inside a form or a fieldset only one of the input fields
 1. Set mandatory mark in the fieldset title.
 2. It is recommended to include a short help text below the title. "Please enter at least one of the following fields."
 3. All fields must be marked with the validation color as it corresponds.
-4. The only validation message is shown for just one (better the first) input in the fields group. A good help message allows the user identifying the error and how to solve it.
-5. Once the validation conditions are met, the alert message disappears.
-6. Losing focus triggers validation unless one field in the group field is focused.
+    1. The only validation message is shown for just one (better the first) input in the fields group. A good help message allows the user identifying the error and how to solve it.
 
-![Form At Least One Field](../../../images/FormAtLeastOneField.png)
+    ![Form At Least One Field](../../../images/FormAtLeastOneField.jpg)
 
-![Form At Least One Field Validation](../../../images/FormAtLeastOneFieldValidation.png)
+    2. Once the validation conditions are met, the alert message disappears.
+
+    ![Form At Least One Field Validation](../../../images/FormAtLeastOneFieldValidation.jpg)
+    
+    3. Losing focus triggers validation unless one field in the group field is focused.
+
+    ![Form At Least One Field Validation](../../../images/FormAtLeastOneFieldSuccess.jpg)
 
 ### Full validation
 

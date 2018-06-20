@@ -7,11 +7,9 @@ layout: "guide"
 weight: 3
 ---
 
-## Select
-
 <div class="page-description">{$page.description}</div>
 
-![select default state](../../../images/Selector.png)
+![select default state](../../../images/Selector.jpg)
 
 ### Usage
 
@@ -20,8 +18,3 @@ This pattern is completely different from a dropdown as a select is a native com
 ### States
 
 The states for a select are the same as for a text input.
-
-## Multiple select
-
-Select button used to select more than one option from a simple list.
-

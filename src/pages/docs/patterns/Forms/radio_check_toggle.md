@@ -1,19 +1,17 @@
 ---
 title: "Checkbox, Radio, Toggle"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/form_custom.html"
 description: "Checkbox, radio and toggles provide users with seletion and activation tools"
 layout: "guide"
 weight: 3
 ---
 
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/forms/form_custom.html" target="_blank">CLAY</a>
-
 ## Checkbox
 
 A checkbox is a component that allows the user selecting something written in its associated text label. A list of consecutive checkboxes would allow the user to select multiple things."
 
-
-![checkbox](../../../images/CheckboxLabel.png)
-
+![checkbox](../../../images/CheckboxLabel.jpg)
 
 ### Usage
 
@@ -27,25 +25,24 @@ A checkbox is a component that allows the user selecting something written in it
 
 | State | Definition |
 | ----- | ---------- |
-| ![checkbox on](../../../images/Checkbox+Active.png) | On |
-| ![checkbox off](../../../images/Checkbox.png) | Off |
-| ![checkbox on disabled](../../../images/Checkbox+Active+Disabled.png) | On disabled |
-| ![checkbox off disabled](../../../images/Checkbox+Disabled.png) | Off disabled |
-| ![checkbox variable for multiple selection](../../../images/CheckboxMultiple+Active.png) | Checkbox Variable for multiple selection |
+| ![checkbox on](../../../images/CheckboxActive.jpg) | On |
+| ![checkbox off](../../../images/Checkbox.jpg) | Off |
+| ![checkbox on disabled](../../../images/CheckboxActiveDisabled.jpg) | On disabled |
+| ![checkbox off disabled](../../../images/CheckboxDisabled.jpg) | Off disabled |
+| ![checkbox variable for multiple selection](../../../images/CheckboxMultiple.jpg) | Checkbox Variable for multiple selection |
 
 ### Checkbox group
 
 On of the most common ways to find checkboxes in a form is grouped offering a set of options.
 
-![checkbox list metrics](../../../images/CheckboxList.png)
-
+![checkbox list metrics](../../../images/CheckboxList.jpg)![checkbox list metrics](../../../images/CheckboxListMetrics.jpg)
 
 
 ## Radio
 
 A radio is a component that allows the user selecting something written in its associated text label. A list of consecutive radio would allow the user to select just one thing.
 
-![radio](../../../images/RadioButton+Label+Active.png)
+![radio](../../../images/RadioButtonLabelActive.jpg)
 
 ### Usage
 
@@ -58,10 +55,10 @@ A radio is a component that allows the user selecting something written in its a
 
 | State | Definition |
 | ----- | ---------- |
-| ![radio on](../../../images/RadioButton+Active.png) | On |
-| ![radio off](../../../images/RadioButton.png) | Off |
-| ![radio on disabled](../../../images/RadioButton+Active+Disabled.png) | On disabled |
-| ![radio off disabled](../../../images/RadioButton+Disabled.png) | Off disabled |
+| ![radio on](../../../images/RadioButtonActive.jpg) | On |
+| ![radio off](../../../images/RadioButton.jpg) | Off |
+| ![radio on disabled](../../../images/RadioButtonActiveDisabled.jpg) | On disabled |
+| ![radio off disabled](../../../images/RadioButtonDisabled.jpg) | Off disabled |
 
 ### Radio vs Dropdown Menu
 
@@ -82,7 +79,8 @@ It is a common case of doubt when to use radios or a dropdown menu instead when 
 
 On of the most common ways to find checkboxes in a form is grouped offering a set of options.
 
-![radio list metrics](../../../images/RadioList.png)
+![radio list metrics](../../../images/RadioList.jpg)![radio list metrics](../../../images/RadioListMetrics.jpg)
+
 
 It is very common to have the need of spliting a long list of options in several columns to reduce space. How to decide can be difficult:
 
@@ -92,14 +90,14 @@ It is very common to have the need of spliting a long list of options in several
 * Splitting in many columns:
     * Make sure to have really many options and to have at least 6 elements per column, otherwise there is no real benefit.
 
-![radio group example with 2 columns, 6 elements per column and radio group example with 3 columns, 6 elements per column](../../../images/RadioGroupExample.png)
+![radio group example with 2 columns, 6 elements per column and radio group example with 3 columns, 6 elements per column](../../../images/RadioGroupExample.jpg)
 
 
 ## Toggle
 
 A toggle is an interface element that by its activation or deactivation provokes an immediate action in the screen.
 
-![switch default state](../../../images/SwitchLabel+ON.png)
+![switch default state](../../../images/SwitchLabelOn.jpg)
 
 ### Usage
 
@@ -117,10 +115,10 @@ A switch can be in one of these four different status:
 
 | State | Definition |
 | ----- | ---------- |
-| ![switch on](../../../images/SwitchOn.png) | On |
-| ![switch off](../../../images/SwitchOff.png) | Off |
-| ![switch on disabled](../../../images/SwitchOn+Disabled.png) | On disabled |
-| ![switch off disabled](../../../images/SwitchOff+Disabled.png) | Off disabled |
+| ![switch on](../../../images/SwitchOn.jpg) | On |
+| ![switch off](../../../images/SwitchOff.jpg) | Off |
+| ![switch on disabled](../../../images/SwitchOnDisabled.jpg) | On disabled |
+| ![switch off disabled](../../../images/SwitchOffDisabled.jpg) | Off disabled |
 
 ### Variations
 
@@ -133,7 +131,4 @@ This type of toggles have labels around as the title label or other support labe
 
 Toggles can also have an icon inside the toggle circle that helps to identify the action. A toggles with icon can also have data attributes as the previous variation.
 
-![toggle with icon](../../../images/SwitchIcon.png)
-
-
-
+![toggle with icon](../../../images/SwitchIcon.jpg)
