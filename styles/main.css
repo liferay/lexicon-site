@@ -14201,11 +14201,30 @@ mark,
       .footer .row img.logo {
         margin: 0 12px 0 0; } }
 
+.sidebar-offset footer {
+  font-size: 14px;
+  margin-top: 48px; }
+  .sidebar-offset footer .row {
+    border-top: 1px solid #CDCED9;
+    padding: 16px 0 48px; }
+    .sidebar-offset footer .row .social-icons {
+      margin: 0;
+      text-align: right; }
+      .sidebar-offset footer .row .social-icons li {
+        height: 32px;
+        width: 32px; }
+        .sidebar-offset footer .row .social-icons li img {
+          margin: 0;
+          width: 16px; }
+
 .docs header {
-  padding: 12px 0; }
+  padding: 12px 0 0; }
   @media (min-width: 900px) {
     .docs header {
-      padding: 24px 0; } }
+      padding: 24px 0 0; } }
+  .docs header .lexicon-site-container {
+    display: flex;
+    align-items: flex-start; }
 
 .about {
   font-size: 18px;
@@ -14241,13 +14260,13 @@ mark,
     box-shadow: 0 2px 6px rgba(62, 28, 20, 0.2);
     padding: 13.992px; }
   .navbar-lexicon-site .navbar-brand .title {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     line-height: 1; }
   .navbar-lexicon-site .navbar-nav .nav-link {
     font-weight: 700; }
   .navbar-lexicon-site .logo {
-    max-height: 40px; }
+    max-height: 36px; }
 
 .navbar-mobile {
   background-color: #F5F5F8;
@@ -14260,10 +14279,14 @@ mark,
   @media (min-width: 900px) {
     .navbar-mobile {
       display: none; } }
+  @media (max-width: 768px) {
+    .navbar-mobile {
+      padding-left: 4px; } }
   .navbar-mobile .navbar-brand {
     color: #30313F; }
-  .navbar-mobile .logo {
-    max-height: 40px; }
+    .navbar-mobile .navbar-brand .title {
+      font-weight: 800;
+      font-size: 1.4rem; }
 
 .sidebar-offset {
   display: flex;
@@ -14282,7 +14305,7 @@ mark,
     @media (min-width: 900px) {
       .sidebar-offset .lexicon-site-container {
         padding-left: 48px;
-        padding-right: 96px; } }
+        padding-right: 48px; } }
 
 .sidenav-menu-slider .sidenav-menu {
   width: 100%; }
@@ -14319,14 +14342,13 @@ mark,
   margin-bottom: 43.2px; }
 
 .content .sidebar-offset p {
-  line-height: 24px;
-  margin-bottom: 20px; }
+  line-height: 1.5;
+  margin-bottom: 12px; }
   .content .sidebar-offset p a {
     color: #4887FF; }
 
 .content .sidebar-offset img {
-  margin-bottom: 24px;
-  margin-top: 12px;
+  margin: 12px 0;
   max-width: 100%; }
 
 .content .sidebar-offset table img {
@@ -14334,45 +14356,41 @@ mark,
   margin-top: 4px; }
 
 .content .sidebar-offset ul {
-  margin-bottom: 24px; }
-  .content .sidebar-offset ul li {
-    line-height: 24px; }
+  margin-bottom: 24px;
+  padding-left: 18px; }
+
+.content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
+  font-weight: 800;
+  margin: 24px 0;
+  line-height: 1.25;
+  letter-spacing: 0.4px; }
+  @media (min-width: 900px) {
+    .content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
+      margin-bottom: 24px;
+      margin-top: 48px; } }
 
 .content .sidebar-offset h1 {
-  font-size: 28px;
-  line-height: 48px; }
+  font-size: 28px; }
   @media (min-width: 900px) {
     .content .sidebar-offset h1 {
       font-size: 36px;
       padding-top: 24px; } }
 
 .content .sidebar-offset h2 {
-  color: #6B6C7E;
-  font-size: 24px;
-  letter-spacing: 0.5px;
+  font-size: 31.92px;
   line-height: 24px;
-  padding-bottom: 24px;
-  text-transform: uppercase; }
+  padding-bottom: 24px; }
 
 .content .sidebar-offset h3 {
-  font-size: 24px;
-  line-height: 24px; }
-
-.content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
-  font-weight: bold;
-  margin: 24px 0; }
-  @media (min-width: 900px) {
-    .content .sidebar-offset h1, .content .sidebar-offset h2, .content .sidebar-offset h3 {
-      margin-bottom: 24px;
-      margin-top: 72px; } }
+  font-size: 24px; }
+  .content .sidebar-offset h3 + h4 {
+    padding-top: 16px; }
 
 .content .sidebar-offset h4 {
-  font-size: 15.6px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  line-height: 18px;
-  padding: 24px 0;
-  text-transform: uppercase; }
+  font-size: 16.2px;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 24px 0 16px; }
 
 .content .sidebar-offset time {
   display: inline-block;
@@ -14381,8 +14399,6 @@ mark,
   line-height: 20px;
   margin-top: 40px;
   text-transform: uppercase; }
-  .content .sidebar-offset time + h3 {
-    margin-top: 0; }
 
 .content .sidebar-offset header {
   margin: 0; }
@@ -14475,17 +14491,96 @@ mark,
 @media (max-width: 899px) {
   margin-top: 80px; }
 
+header .label {
+  font-size: 10px;
+  margin: 2rem 0 0 0.5rem;
+  padding-left: 4px;
+  padding-right: 4px; }
+  @media (max-width: 899px) {
+    header .label {
+      margin-top: 0.45rem; } }
+
+h2 + p > .label {
+  position: relative;
+  top: -2.5rem; }
+
+.page-description {
+  color: #6B6C7E;
+  font-size: 28px;
+  max-width: 700px;
+  margin: 24px 0 80px;
+  line-height: 1.25; }
+  @media (max-width: 899px) {
+    .page-description {
+      font-size: 24px;
+      margin-top: 8px; } }
+
+.page-description:after {
+  background-color: #007bff;
+  content: '';
+  display: block;
+  height: 0.25rem;
+  position: relative;
+  left: 0;
+  bottom: -24px;
+  width: 2rem; }
+
+.clay-link {
+  font-size: 14px;
+  margin-top: 64px; }
+  @media (max-width: 899px) {
+    .clay-link {
+      margin-top: 32px; } }
+  .clay-link a {
+    font-weight: 600; }
+
+.carousel {
+  min-height: 570px;
+  background-color: #f1f2f5;
+  margin-top: 2rem; }
+  .carousel img.d-block {
+    margin: 0; }
+  .carousel .carousel-control-prev,
+  .carousel .carousel-control-next {
+    width: 7%;
+    opacity: 1; }
+    .carousel .carousel-control-prev .carousel-control-prev-icon,
+    .carousel .carousel-control-prev .carousel-control-next-icon,
+    .carousel .carousel-control-next .carousel-control-prev-icon,
+    .carousel .carousel-control-next .carousel-control-next-icon {
+      width: 16px;
+      height: 16px; }
+      .carousel .carousel-control-prev .carousel-control-prev-icon:hover,
+      .carousel .carousel-control-prev .carousel-control-next-icon:hover,
+      .carousel .carousel-control-next .carousel-control-prev-icon:hover,
+      .carousel .carousel-control-next .carousel-control-next-icon:hover {
+        opacity: 1; }
+  .carousel .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#6B6C7E' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"); }
+  .carousel .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#6B6C7E' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E"); }
+  .carousel .carousel-indicators li {
+    background-color: #6B6C7E; }
+    .carousel .carousel-indicators li.active {
+      background-color: #0B5FFF; }
+
 .sidebar-lexicon-site {
-  background-color: #F5F5F8;
-  min-width: 370px; }
+  background-color: #F5F5F8; }
+  @media (min-width: 900px) {
+    .sidebar-lexicon-site {
+      min-width: 370px; } }
   .sidebar-lexicon-site .navbar-brand {
-    font-size: 27.9984px;
-    font-weight: 700; }
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 800; }
     .sidebar-lexicon-site .navbar-brand small {
       font-size: 0.875rem; }
   .sidebar-lexicon-site .btn-version .btn {
     background-color: #FFF;
-    padding: 3px 8px 3px 12px;
+    font-size: 12px;
+    height: 24px;
+    padding: 0 6px 0 9px;
     text-transform: none; }
     .sidebar-lexicon-site .btn-version .btn:active {
       color: #000; }
@@ -14494,8 +14589,7 @@ mark,
   .sidebar-lexicon-site .btn-version .dropdown-menu {
     min-width: 140px; }
   .sidebar-lexicon-site .logo {
-    height: 2.5rem;
-    padding-bottom: 0.1875rem; }
+    height: 38px; }
   .sidebar-lexicon-site a, .sidebar-lexicon-site .nav .lexicon-icon {
     color: #30313F; }
   .sidebar-lexicon-site .sidebar-header {
@@ -14510,6 +14604,10 @@ mark,
     overflow: visible;
     padding-bottom: 48px;
     padding-top: 24px; }
+    @media (max-width: 768px) {
+      .sidebar-lexicon-site .sidebar-body {
+        padding-left: 12px;
+        padding-right: 12px; } }
   .sidebar-lexicon-site .nav-icons {
     padding: 0 24px 96px 39.84px; }
     .sidebar-lexicon-site .nav-icons .sticker-secondary {
@@ -14533,7 +14631,8 @@ mark,
       border-radius: 4px;
       color: #30313F;
       padding-left: 0.875rem;
-      padding-right: 36px; }
+      padding-right: 36px;
+      font-size: 1rem; }
       .sidebar-lexicon-site .input-group > input.form-control::-moz-placeholder {
         color: #A7A9BC;
         opacity: 1; }
@@ -14560,11 +14659,10 @@ mark,
   .sidebar-lexicon-site .nav-pills > li > a {
     background-color: transparent;
     display: block;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 17.45455px;
-    min-height: 40.2px;
-    padding: 0.55rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 0.59375rem 1rem;
     position: relative; }
     .sidebar-lexicon-site .nav-pills > li > a span {
       display: inline-block;
@@ -14588,7 +14686,7 @@ mark,
   .sidebar-lexicon-site .nav-pills > li > a:focus {
     background-color: #EFEFF4;
     border-radius: 6px;
-    font-weight: 600; }
+    font-weight: 700; }
   .sidebar-lexicon-site .nav-pills > li a:hover {
     background-color: #EFEFF4; }
   .sidebar-lexicon-site .nav-pills li > ul > li > a {
@@ -14623,19 +14721,19 @@ mark,
   color: #6B6C7E; }
 
 table {
-  margin: 36px 0 48px; }
+  font-size: 0.875rem;
+  margin: 32px 0 24px; }
   table > tbody > tr > td, table > thead > tr > th {
     border-bottom: 1px solid #CDCED9;
     line-height: 0px, 75;
     padding: 12px; }
   table thead > tr > th {
-    background-color: #F5F5F8;
     border-top-width: 0;
-    color: #6B6C7E;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    vertical-align: bottom; }
+    border-bottom-width: 1px;
+    color: #30313F;
+    font-weight: 700;
+    vertical-align: bottom;
+    background-color: #F7F8FA; }
   table td > p {
     display: inline; }
     table td > p.dotDone {
@@ -14645,8 +14743,8 @@ table {
     table td > p.dotWait {
       color: #A7A9BC; }
     table td > p.tableSection {
-      font-size: 14px;
       color: #6B6C7E;
+      font-size: 14px;
       font-weight: 700;
       text-transform: uppercase; }
 
@@ -14671,7 +14769,9 @@ table {
   background-color: rgba(255, 255, 255, 0.3);
   border-color: transparent;
   color: #FFF;
-  padding: 3px 8px 3px 12px;
+  font-size: 12px;
+  height: 24px;
+  padding: 1px 6px 0 8px;
   text-transform: none; }
   .home .btn-version .btn .lexicon-icon-caret-bottom {
     margin-top: 0.03rem; }
@@ -14748,7 +14848,7 @@ table {
       background-color: #F2F6FF; }
   .intro .h1 {
     font-size: 40px;
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1;
     margin: 52px 0 24px;
     word-break: normal; }
@@ -14857,5 +14957,4 @@ table {
 body {
   background-color: #FFF;
   color: #30313F;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1rem; }
