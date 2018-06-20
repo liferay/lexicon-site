@@ -277,3 +277,33 @@ h2 + p > .label {
 		font-weight: 600;
 	}
 }
+
+.carousel {
+	min-height: 570px;
+	background-color: #f1f2f5;
+	margin-top: 2rem;
+	img.d-block {
+		margin: 0;
+	}
+	.carousel-control-prev,
+	.carousel-control-next {
+		width: 7%;
+		opacity: 1;
+		.carousel-control-prev-icon,
+	.carousel-control-next-icon {
+		width: 16px;
+		height: 16px;
+		&:hover {
+			opacity: 1;
+			}
+		}
+	}
+	.carousel-indicators {
+		li {
+			background-color: #E7E7ED;
+			&.active {
+				background-color: #fff;
+			}
+		}
+	}
+}
