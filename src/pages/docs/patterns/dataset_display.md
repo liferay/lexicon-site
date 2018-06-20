@@ -1,6 +1,6 @@
 ---
 title: "Dataset Display"
-description: "The combination of a management bar with one or many data visualization types and a possible mechanism of pagination."
+description: "A combination of components that configure the main data management pattern of the system."
 layout: "guide"
 weight: 1
 ---

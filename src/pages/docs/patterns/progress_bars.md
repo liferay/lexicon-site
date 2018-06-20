@@ -2,7 +2,7 @@
 title: "Progress Bar"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/progress_bars.html"
-description: "Progress bar is a progress indicator used to show the completion percentage of a task."
+description: "Progress bar is an evolution indicator used to show the completion percentage of a task."
 layout: "guide"
 weight: 1
 ---

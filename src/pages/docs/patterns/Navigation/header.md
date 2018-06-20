@@ -2,7 +2,7 @@
 title: "Header WIP"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/header.html"
-description: "Header is toolbar that allows identification, navigation and display actions."
+description: "Header is toolbar that provides identification and allows the user to navigate and perform actions."
 layout: "guide"
 weight: 2
 ---

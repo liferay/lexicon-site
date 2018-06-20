@@ -1,7 +1,7 @@
 ---
 title: "Image Selector"
 titleLabel: "Portal"
-description: "Image selector allows the user to select images from a grids images in a visual way that primes the images over other metadata that an image file can have."
+description: "Image selector allows the user to select images from a grid prioritizing over other metadata."
 layout: "guide"
 weight: 1
 ---

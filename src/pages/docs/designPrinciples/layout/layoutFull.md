@@ -5,7 +5,10 @@ layout: "guide"
 weight: 1
 ---
 
-<div class="page-description">{$page.description}</div> This is a layout that we can find in templates like [Dataset Display](../../patterns/dataset_display.html).
+<div class="page-description">{$page.description}</div> 
+
+This is a layout that we can find in templates like [Dataset Display](../../patterns/dataset_display.html).
+
 
 ![layout full box 1440px width screen](../../../images/layoutfb01.jpg)
 

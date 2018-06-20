@@ -1,6 +1,6 @@
 ---
 title: "Confirmation Message"
-description: "Confirmation messages are used in those scenarios where a critical situation appears. Such situation can be a complete change of context, or an action that could be not reversed such as a site deletion."
+description: "Confirmation messages communicate the users critical situations and irreversible actions."
 layout: "guide"
 weight: 1
 ---
@@ -13,7 +13,7 @@ weight: 1
 
 #### When to use it
 
-There are two main use categories that helps you to identify the correct situations to use confirmation messages:
+Confirmation messages are used in those scenarios where a critical situation appears. Such situation can be a complete change of context, or an action that could be not reversed such as a site deletion. There are two main use categories that helps you to identify the correct situations to use confirmation messages:
 * Risk action: The action the user is going to perform has significant consequences that cannot be undone or easily undone. Ex: site deletion.
 * Unintended consequence: There is an important side effect on the action the user is taking that most probably will make her feel lost. Ex: Site switch, where there is a complete change of context including user permissions.
 

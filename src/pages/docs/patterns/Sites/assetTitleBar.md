@@ -1,11 +1,12 @@
 ---
 title: "Asset Title Bar"
-description: "Basic title bar for asset list item structure."
+description: "A bar used to display the title of an asset and its associated actions when specific ADTs are displayed."
 layout: "guide"
 weight: 2
 ---
 
 <div class="page-description">{$page.description}</div>
+
 
 ### Definition and Metrics
 

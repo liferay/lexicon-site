@@ -1,8 +1,7 @@
 ---
 title: "Tabs"
-description: "Tabs are used to distribute content, forms, etc, of a same nature. This tabs are in-page tabs, therefore they don't produce any kind of navigation."
+description: "Tabs are used to distribute content of a same nature in the same page without providing navigation."
 layout: "guide"
-weight: 1
 ---
 
 <div class="page-description">{$page.description}</div>

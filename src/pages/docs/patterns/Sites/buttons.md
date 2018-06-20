@@ -1,6 +1,6 @@
 ---
 title: "Buttons"
-description: "Specific set of buttons variations for sites."
+description: "Specific set of button variations specifically designed for sites environment widgets."
 layout: "guide"
 weight: 2
 ---

@@ -2,7 +2,7 @@
 title: "Buttons"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/buttons.html"
-description: "Buttons communicate an action to happen on user interaction."
+description: "Buttons are a basic ui elements that communicate and initilize actions when the user interacts with them."
 layout: "guide"
 weight: 1
 ---

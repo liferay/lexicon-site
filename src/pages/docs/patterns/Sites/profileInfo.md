@@ -1,6 +1,6 @@
 ---
 title: "Profile Info"
-description: "DElement used to identify the profile info of the author or owner and other related metadata of an asset or other content unity in sites environment."
+description: "Element used to identify the author or owner and other related metadata of an asset in sites environment."
 layout: "guide"
 weight: 2
 ---

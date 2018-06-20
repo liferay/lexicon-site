@@ -2,7 +2,7 @@
 title: "Icons"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/icons.html"
-description: "Icon is a visual metaphor representing a concept that lies behind the idea and/or action."
+description: "An icon is a visual metaphor that represents the concept that lie behind an idea and/or an action."
 layout: "guide"
 weight: 1
 ---

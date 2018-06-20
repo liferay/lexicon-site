@@ -1,6 +1,6 @@
 ---
 title: "Sidebar"
-description: "Sidebar is a vertical panel that appears from the right or the left side of the screen and that is triggered from certain buttons."
+description: "A vertical panel that appears from the right or the left side of the screen triggered from certain buttons."
 layout: "guide"
 weight: 1
 ---

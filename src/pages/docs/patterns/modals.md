@@ -2,7 +2,7 @@
 title: "Modals"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/modals.html"
-description: "A modal is a box with content displayed on top of the page to capture the user’s attention for an specific action inside the same process. Modals are subordinated to pages."
+description: "A modal is a secondary window that communicates or provides an action inside the same process."
 layout: "guide"
 weight: 1
 ---

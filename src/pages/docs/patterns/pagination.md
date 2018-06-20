@@ -2,7 +2,7 @@
 title: "Pagination"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/pagination.html"
-description: "Pagination allows navigation between chunks, also denominated pages, of a dataset."
+description: "Pagination allows horizontal navigation between chunks, also denominated pages, of a dataset."
 layout: "guide"
 weight: 1
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Interaction"
-description: "Lexicon states a series of basic behaviors for all its charts so the user always know what to expect. This behaviors reinforce consistancy and reduces the learning curve."
+description: "A description of the basic intection behaviors for all charts so the user always know what to expect."
 layout: "guide"
 weight: 2
 ---

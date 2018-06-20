@@ -1,6 +1,6 @@
 ---
 title: "Toolbar"
-description: "A toolbar is a set of actions related to a context grouped in a bar."
+description: "A toolbar is a set of actions related to an specific context grouped in an horizontal bar."
 layout: "guide"
 weight: 1
 ---

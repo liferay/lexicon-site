@@ -1,13 +1,14 @@
 ---
 title: "Navigation"
-description: "Navigation defines where the different navigation patterns must be placed.
-We understand as navigation patterns those ones listed in this section, although there are more patterns that could produce a navigation on interaction with them.
+description: "This section provides basic use guidelines related to the main navigation patterns of the system.
 "
 layout: "guide"
 weight: 1
 ---
 
 <div class="page-description">{$page.description}</div>
+
+This section describes the main navigational patterns, although it is necessary to point out that there are more patterns that could produce a navigation on interaction with them.
 
 ### Navigation in DE
 

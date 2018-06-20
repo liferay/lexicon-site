@@ -1,6 +1,6 @@
 ---
 title: "Dataset Template"
-description: "Dataset template shows how a dataset is displayed using Lexicon."
+description: "A Dataset Template shows how a dataset is displayed using Lexicon patterns."
 layout: "guide"
 weight: 1
 ---
