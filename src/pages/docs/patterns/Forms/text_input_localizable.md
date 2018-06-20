@@ -11,12 +11,12 @@ weight: 4
 
 ### Layout
 
-This component is composed by two elements: 
+This component is composed by two elements:
 
 * The input field: text input, text area or text input group (only specific cases).
 * The localization button, which displays a dropdown menu to select a language.
 
-![input localizable](../../../images/InputLozalizable.png)
+![input localizable](../../../images/InputLocalizable.jpg)
 
 This dropdown menu must always contain in each entry:
 * Country flag
@@ -26,7 +26,7 @@ This dropdown menu must always contain in each entry:
     * Translated: the user has provided a text that differs from the default input text.
     * Not translated: the input text does not differ from the original text.
 
-![input localizable](../../../images/InputLocalizableOpen.png)
+![input localizable with dropdown open](../../../images/InputLocalizableOpen.jpg)
 
 ### Interaction
 
@@ -34,19 +34,27 @@ Changing a language through the localization button only changes field content, 
 
 Usually this field is placed in a form where other fields are also localizable. The interaction of selecting a lenguage in one of the localizable fields changes all other fields language at same time.
 
+### Attributes
+
+![input localizable parts](../../../images/InputLocalizableParts.jpg)
+
+1. Input field
+2. Localizable button
+
+![input localizable metrics](../../../images/InputLocalizableMetrics.jpg)
+
 
 ### Variations
 
 #### Text area localizable
 
-![input localizable](../../../images/InputLocalizableArea.png)
-
+![input localizable](../../../images/InputLocalizableArea.jpg)
 
 #### Text input group localizable
 
 A very common case in Liferay Portal is to have translate fields for urls. This field is a clear combination of a input group with a localizable field.
 
-![input localizable](../../../images/InputLocalizableGroupURL.png)
+![input localizable](../../../images/InputLocalizableGroupUrl.jpg)
 
 
 

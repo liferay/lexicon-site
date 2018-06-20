@@ -20,11 +20,11 @@ There are defined three main elements to define the form hierarchy:
 
 You can see all these elements coexisting in the same form structure in the following examples:
 
-![Form hierarchy example 1](../../../images/FormHierarchy1.png)
+![Form hierarchy example 1](../../../images/FormHierarchyParts.jpg)
 
 Including examplanatory texts:
 
-![Form hierarchy example 2](../../../images/FormHierarchy2.png)
+![Form hierarchy example 2](../../../images/FormHierarchyTexts.jpg)
 
 ### Attributes
 
@@ -36,30 +36,20 @@ As it’s explained in the [grid section](../../designPrinciples/grid.html), the
 
 __Section blocks metrics__
 
-![Section blocks metrics](../../../images/FormHierarchy3.png)
+![Section blocks metrics](../../../images/FormHierarchySectionBlocks.jpg)
 
 __Inside sections metrics__
 
-![Inside sections metrics 1](../../../images/FormHierarchy4.png)
-
-![Inside sections metrics 2](../../../images/FormHierarchy5.png)
+![Inside sections metrics](../../../images/FormHierarchySections.jpg)
 
 __Metrics using explanatory texts associated to different section levels__
 
-![Metrics using explanatory texts associated to different section levels](../../../images/FormHierarchy6.png)
+![Metrics using explanatory texts associated to different section levels](../../../images/FormHierarchySectionTexts.jpg)
 
 #### Mobile
 
 In small viewports, as it’s explained in the [grid section](../../designPrinciples/grid.html) the main vertical spacing reference changes from 24px to 16px.
 
-![Inside sections metrics 2](../../../images/FormHierarchy7.png)
+![Inside sections metrics 2](../../../images/FormHierarchySectionBlocksM.jpg)
 
-![Inside sections metrics 2](../../../images/FormHierarchy8.png)
-
-### Components Description
-
-Here you can see all specific components we can find in this documentation.
-
-![Components description](../../../images/FormHierarchy9.png)
-
-
+![Inside sections metrics 2](../../../images/FormHierarchySectionTextsM.jpg)

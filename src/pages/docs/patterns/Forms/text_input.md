@@ -11,20 +11,13 @@ weight: 4
 
 A text field allow users write data in the system with the end of this data to be processed.
 
-![default empty state](../../../images/Input.png)
-
-A textfield has at least the following elements:
-- Label
-- Text field box
-- Placeholder
-- Status message
-- Help text 
+![default empty state](../../../images/Input.jpg)
 
 ### Usage
-* Text fields can have help text. Lexicon provides 2 different mechanisms to provide help:
-	* Help text below the field: Use it if you want your help text to be very explicit.
-	* Help text inside a popover triggered from a help icon next to the title: Use it in case your help text doesn't really need to be explicit.
-* Placeholder is not recommended as users interpret it as final text. In case you use it, do not write help text on it, just a text example.
+Text fields can have help text. Lexicon provides 2 different mechanisms to provide help:
+* Help text below the field: Use it if you want your help text to be very explicit.
+* Help text inside a popover triggered from a help icon next to the title: Use it in case your help text doesn't really need to be explicit.
+Placeholder is not recommended as users interpret it as final text. In case you use it, do not write help text on it, just a text example.
 
 ### States
 
@@ -32,27 +25,27 @@ A textfield has at least the following elements:
 
 Text fields can be as simple as:
 
-![default empty state](../../../images/Input.png)
+![default empty state](../../../images/Input.jpg)
 
 They can include a placeholder text, although we do not recommend using placeholders as users interpret them as final content.
 
-![default empty state](../../../images/Input+Placeholder.png)
+![default empty state](../../../images/InputPlaceholder.jpg)
 
 Text fields can also have a help text placed right below the text field.
 
-![default empty state](../../../images/Input+HelpText.png)
+![default empty state](../../../images/InputHelpText.jpg)
 
 #### Active
 
-![default active state](../../../images/InputSimple+Focus.png)
+![default active state](../../../images/InputSimpleFocus.jpg)
 
 #### Disabled
 
-![default disabled state](../../../images/Input+Disabled.png)
+![default disabled state](../../../images/InputDisabled.jpg)
 
 #### Read only
 
-![default disabled state](../../../images/Input+ReadOnly.png)
+![default disabled state](../../../images/InputReadOnly.jpg)
 
 ### Validations
 
@@ -60,26 +53,39 @@ Validation text for fields are placed right below the field box and before the h
 
 #### Success
 
-![default success state](../../../images/Input+Success.png)
+![default success state](../../../images/InputSuccess.jpg)
 
 #### Warning
 
-![default warning state](../../../images/Input+Warning.png)
+![default warning state](../../../images/InputWarning.jpg)
 
 #### Error
 
-![default error state](../../../images/Input+Error.png)
+![default error state](../../../images/InputError.jpg)
 
-![default error state](../../../images/Input+HelpText+Error.png)
+![default error state](../../../images/InputHelpTextError.jpg)
 
+### Attributes
+
+![input field parts](../../../images/InputParts.jpg)
+
+A textfield has at least the following elements:
+1. Label
+2. Text field box
+3. Placeholder
+4. Status message
+5. Help text 
+
+![input field metrics without error](../../../images/InputMetrics.jpg)
+![input field metrics with error](../../../images/InputErrorMetrics.jpg)
 
 ## Text area
 
 A text area is similar to a text field input but for several lines of text. Text areas allow users to introduce long description of products as an example.
 
-![text area](../../../images/InputTextArea.png)
+![text area](../../../images/InputTextArea.jpg)
 
-![text area](../../../images/InputTextArea+HelpText.png)
+![text area](../../../images/InputTextAreaHelpText.jpg)
 
 ### Usage
 

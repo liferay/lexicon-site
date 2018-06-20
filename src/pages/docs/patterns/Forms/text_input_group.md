@@ -18,32 +18,32 @@ Usually the components placed around the textfield are buttons, split button and
 
 #### Input group with button
 
-![input group with left button](../../../images/InputGroupButtonLeft.png)
+![input group with left button](../../../images/InputGroupButtonLeft.jpg)
 
-![input group with right button](../../../images/InputGroupButtonRight.png)
+![input group with right button](../../../images/InputGroupButtonRight.jpg)
 
 #### Url input group
 
-![input group for url](../../../images/InputGroupUrl.png)
+![input group for url](../../../images/InputGroupUrl.jpg)
 
 #### Input group with units
 
-![input group with mass on the left](../../../images/InputGroupAddonLeft+Placeholder.png)
+![input group with mass on the left](../../../images/InputGroupAddonLeftPlaceholder.jpg)
 
-![input group with mass on the right](../../../images/InputGroupAddonRight.png)
+![input group with mass on the right](../../../images/InputGroupAddonRight.jpg)
 
-![input group with mass on both sides](../../../images/InputGroupAddonLeftAddonRight.png)
+![input group with mass on both sides](../../../images/InputGroupAddonLeftAddonRight.jpg)
 
-![input group with mass in the middle and right side](../../../images/InputGroupInsert.png)
+![input group with mass in the middle and right side](../../../images/InputGroupInsert.jpg)
 
 
 #### Input group with radio or checkbox
 
-![input group with mass on the left](../../../images/InputGroupCheckboxLeft.png)
+![input group with mass on the left](../../../images/InputGroupCheckboxLeft.jpg)
 
-![input group with mass on the right](../../../images/InputGroupCheckboxLeft+Active.png)
+![input group with mass on the right](../../../images/InputGroupCheckboxLeftActive.jpg)
 
-![input group with mass on both sides](../../../images/InputGroupRadioButtonLeft.png)
+![input group with mass on both sides](../../../images/InputGroupRadioLeft.jpg)
 
-![input group with mass in the middle and right side](../../../images/InputGroupRadioButtonLeft+Active.png)
+![input group with mass in the middle and right side](../../../images/InputGroupRadioLeftActive.jpg)
 

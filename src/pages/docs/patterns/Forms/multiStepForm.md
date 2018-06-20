@@ -9,7 +9,7 @@ weight: 3
 
 <div class="page-description">{$page.description}</div>
 
-![Multi step form](../../../images/ProcessBar7Steps.png)
+![Multi step form](../../../images/MultiStepForm7Steps.jpg)
 
 ### Usage
 
@@ -26,36 +26,39 @@ Lexicon recommends 7 as a maximum number of steps to have for two reasons. First
 * Make chunks that are not overwhelming.
 * Step names must be clear, short, and express the content below them. Use two words maximum.
 
-
 A multi step form must have a minimum of two steps:
 
-![Multi step form two steps](../../../images/ProcessBar2Steps.png)
+![Multi step form two steps](../../../images/MultiStepForm2Steps.jpg)
 
-Lexicon recommends to use a maximum of seven steps: 
+Lexicon recommends to use a maximum of seven steps:
 
-![Multi step form](../../../images/ProcessBar7Steps.png)
+![Multi step form](../../../images/MultiStepForm7Steps.jpg)
 
 But in case you need to implement more steps to make the process easier to your user, please follow this recommendation:
 
-![Multi step form two steps](../../../images/ProcessBarNSteps.png)
+![Multi step form two steps](../../../images/MultiStepFormNSteps.jpg)
 
 #### Example
 
-![Multi step form example](../../../images/ProcessBarExample.jpg)
+![Multi step form example grid](../../../images/MultiStepFormExampleGrid.jpg)
 
-#### Layout
+### Attributes
 
-![Multi step form example grid](../../../images/ProcessBarExampleGrid.jpg)
+![Multi step form parts](../../../images/MultiStepFormParts.jpg)
+
+1. Done: Checked page
+2. Selected: Current page
+3. Disabled: Non visited page
+4. Steps row: equally divided space between all steps.
+
+![Multi step form metrics](../../../images/MultiStepFormMetrics.jpg)
 
 ### Mobile
 
 Due to the reduce space in mobile the process bar is reduced to a maximum of 5 steps. The steps overflow is always placed under the second to last step:
 
-![Multi step form N steps mobile](../../../images/ProcessBarNSteps+Mobile.png)
+![Multi step form N steps mobile](../../../images/MultiStepFormNStepsMobile.jpg)
 
 #### Example
 
-![Multi step form example mobile](../../../images/ProcessBarExampleMobile.jpg)
-
-
-
+![Multi step form example mobile](../../../images/MultiStepFormExampleMobile.jpg)
