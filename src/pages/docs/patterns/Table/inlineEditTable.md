@@ -1,7 +1,7 @@
 ---
 title: "Inline Edit Table"
 titleLabel: "Pending"
-description: "An inline edit table allows the user to modify certain values of the entry without going to an entry detail page."
+description: "A table variation that allows user to modify certain values of the entry without going to the detail page."
 layout: "guide"
 weight: 2
 ---

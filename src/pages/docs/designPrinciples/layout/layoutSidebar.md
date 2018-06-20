@@ -1,11 +1,13 @@
 ---
 title: "Sidebar + Box"
-description: "We apply this layout when we need a left sidebar to include a vertical navigation."
+description: "An specific layout used when we need a left sidebar to include a vertical navigation."
 layout: "guide"
 weight: 3
 ---
 
-<div class="page-description">{$page.description}</div> The space is organized in 3 columns for the sidebar and 9 or 8 columns for the content depending on its type. This way we would have two different configurations:
+<div class="page-description">{$page.description}</div> 
+
+The space is organized in 3 columns for the sidebar and 9 or 8 columns for the content depending on its type. This way we would have two different configurations:
 
 ### 3+9 columns
 This is the default configuration used when the content is a table, a list or any other content structure except a form.

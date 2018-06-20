@@ -1,13 +1,12 @@
 ---
 title: "Color"
-description: "Color  definition and usage."
+description: "A consistent color palette is an essential asset in the communication resources of any design system."
 layout: "guide"
 weight: 1
 ---
 
-Color defines a set of colors to be used in the system. Each of the colors has a meaning and a purpose to create a robust a design system.
+<div class="page-description">{$page.description}</div>
 
-### Usage
 
 Colors have a huge impact in a system as they define the visual identity, they bring harmony, they communicate, among other characteristics. Lexicon defines the following color palette that you are free to change for your own.
 

@@ -1,6 +1,6 @@
 ---
 title: "Asset Toolbar"
-description: "Asset Toolbar is a multi-purpose toolbar that can be located in different types of asset visualizations or in other types of content such as comments."
+description: "A multi-purpose toolbar that can be located in different types of asset visualizations."
 layout: "guide"
 weight: 2
 ---

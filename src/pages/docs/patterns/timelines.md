@@ -2,7 +2,7 @@
 title: "Timelines WIP"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/timelines.html"
-description: "Timelines visually represent events along the time."
+description: "Timelines represent an horizontal visualization of events along the time."
 layout: "guide"
 weight: 1
 hidden: yes

@@ -1,6 +1,6 @@
 ---
 title: "Translation bar WIP"
-description: "The translation bar is a toolbar that allows the user choose the languages to translate content."
+description: "The translation bar is a toolbar that allows the user to choose the languages when translating content."
 layout: "guide"
 weight: 2
 hidden: yes

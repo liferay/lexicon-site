@@ -2,7 +2,7 @@
 title: "List"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/list.html"
-description: "List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view."
+description: "Lists are a visual representation of a dataset based on groups of related content organized vertically."
 layout: "guide"
 weight: 1
 ---
@@ -13,7 +13,7 @@ weight: 1
 
 ![list entry in default state](../../../images/ListViewDefault.jpg)
 
-A list view is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.
+List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view. It is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.
 
 A list allows you a free way of displaying information. While the table isn't meant to have several text labels in a column, list is the pattern for doing that, as you can see in the following examples.
 

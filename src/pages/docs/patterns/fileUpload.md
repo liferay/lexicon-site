@@ -1,7 +1,7 @@
 ---
 title: "File Upload"
 titleLabel: "Portal"
-description: "File upload loads one or many files into the system."
+description: "File Uploader is a pattern that allows the user to select and upload images to the system."
 layout: "guide"
 weight: 1
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Link"
-description: "A link (also known as hyperlink) is a clickable (text or image) element. The link control is used for navigation."
+description: "Also known as hyperlink, the link is a clickable (text or image) element used for navigation purposes."
 layout: "guide"
 weight: 1
 ---

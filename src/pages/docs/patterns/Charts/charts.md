@@ -1,6 +1,6 @@
 ---
 title: "Charts"
-description: "Charts provide a graphical way to analysis data. This section also offers a dedicated color palette for charts and properties to make your charts more accessible."
+description: "This section define and describes Lexicon Charts as a main graphical pattern to analyze data."
 layout: "guide"
 weight: 1
 ---

@@ -2,7 +2,7 @@
 title: "Panel"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/panels.html"
-description: "Panels separate your content."
+description: "Panel is a specific pattern used to separate content in easily identifiable blocks."
 layout: "guide"
 weight: 1
 ---

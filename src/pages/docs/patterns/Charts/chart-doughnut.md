@@ -2,7 +2,7 @@
 title: "Doughnut chart"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/charts/basic/donut_chart.html"
-description: "Doughnut chart is a variation of the Pie chart and allows to divide data by numerical proportions of a total value (always 100%). "
+description: "Doughnut chart is a variation of the Pie chart that allows to divide data by numerical proportions of a total value."
 layout: "guide"
 weight: 3
 ---

@@ -2,7 +2,7 @@
 title: "Vertical Navigation"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/navigation/vertical_navigation.html"
-description: "Verical navigation allows the navigation between the different pages."
+description: "An alternative pattern used for a vertical display of the sections of a navigation list."
 layout: "guide"
 weight: 2
 ---

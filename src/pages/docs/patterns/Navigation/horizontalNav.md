@@ -2,7 +2,7 @@
 title: "Navbar"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/navigation/navbar.html"
-description: "A navigation bar, navbar, is an horizontal bar that provides several access points to different parts of a system."
+description: "A navigation bar displayed horizontally that provides access points to different parts of a system."
 layout: "guide"
 weight: 2
 ---

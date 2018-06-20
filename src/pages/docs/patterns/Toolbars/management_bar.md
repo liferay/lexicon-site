@@ -1,11 +1,11 @@
 ---
 title: "Management Toolbar"
-description: "Management toolbar is an extension of Toolbar. A combination of different components as filters, orders, search, visualization select and other actions, that allow to manage dataset."
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/toolbars/management_toolbar.html"
+description: "An extension of a toolbar configured as a combination of different components used to manage a dataset."
 layout: "guide"
 weight: 2
 ---
-
-<a class="label-link label label-warning" href="https://clayui.com/docs/components/panels.html" target="_blank">CLAY</a>
 
 
 

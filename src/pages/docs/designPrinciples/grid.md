@@ -2,12 +2,13 @@
 title: "Grid"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/layout/grid.html"
-description: "Grid, measures and distances."
+description: "The main structural pattern that underlies the construction and positioning of all system components."
 layout: "guide"
 weight: 1
 ---
 
-### Introduction
+<div class="page-description">{$page.description}</div>
+
 
 The aim of the Lexicon layout framework is to provide a common structural reference that contributes to streamlining the component construction and page composition processes as well as favoring visual consistency between the different elements of the interface.
 

@@ -1,11 +1,13 @@
 ---
 title: "Colors"
-description: "Colors must be the last choice you make to differentiate elements. Lexicon provides a specific color order, combinations and rules to follow when you create a new chart component, including patterns, dash lines and shapes."
+description: "An specific color palette with the aim to provide the best charts user experience."
 layout: "guide"
 weight: 2
 ---
 
 <div class="page-description">{$page.description}</div>
+
+Colors must be the last choice you make to differentiate elements. Lexicon provides a specific color order, combinations and rules to follow when you create a new chart component, including patterns, dash lines and shapes.
 
 ### Flat Colors
 

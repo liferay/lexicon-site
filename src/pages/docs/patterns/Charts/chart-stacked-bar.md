@@ -2,7 +2,7 @@
 title: "Stacked b ar chart"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/charts/basic/bar_chart.html"
-description: "Stacked Bar chart allows to compare the single items value with the total data value.."
+description: "Stacked Bar chart allows to compare the values of single items with the total data value."
 layout: "guide"
 weight: 3
 ---

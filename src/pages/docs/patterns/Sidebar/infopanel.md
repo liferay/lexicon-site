@@ -1,13 +1,15 @@
 ---
 title: "Info Panel"
-description: "Information panel is an information container where to display relevant information that does not fit into the table, list, card or any other visualization. This information can be the type you want. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy."
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/info_panel.html"
+description: "An information container that displays additional data from the one shown in the main visualization pattern."
 layout: "guide"
 weight: 2
 ---
 
 <div class="page-description">{$page.description}</div>
 
-This sidebar appears always from the right side of the viewport and pushes the container in large viewports and slides over it in small viewports. See responsive behavior for more details.
+This sidebar appears always from the right side of the viewport and pushes the container in large viewports and slides over it in small viewports. Usually it is used to show detail information of an element without navigating deeper in the navigation hierarchy. See responsive behavior for more details.
 
 In these two images belong to a “Documents and Media” application case as a visual example.
 
