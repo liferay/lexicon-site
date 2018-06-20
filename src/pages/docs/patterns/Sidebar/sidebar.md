@@ -1,5 +1,6 @@
 ---
 title: "Sidebar"
+titleLabel: "Portal"
 description: "A vertical panel that appears from the right or the left side of the screen triggered from certain buttons."
 layout: "guide"
 weight: 1
@@ -15,7 +16,7 @@ Lexicon defines different types of sidebar:
 
 The way a sidebar panel works is similar regarless the place they are triggerd. In desktop viewports, the panel always pushes the content, while in mobile viewports, the panel is played over the content.
 
-![](../../../images/SidebarInfoPanelRespPM-IP-Open.jpg)
+![sidebars posititon to reflect the layout movement](../../../images/SidebarInfoPanelRespPM-IP-Open.jpg)
 
 * In viewport sizes under 768px width, the “Product Menu” slides over the container instead of pushing it.
 * In viewport sizes under 992px width, the “Info Panel” slides over the container instead of pushing it.

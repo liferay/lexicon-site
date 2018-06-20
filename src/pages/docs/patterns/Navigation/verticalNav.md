@@ -9,7 +9,7 @@ weight: 2
 
 <div class="page-description">{$page.description}</div>
 
-![vertical navigation nested levels open](../../../images/NavigationVerticalOpen.png)
+![vertical navigation](../../../images/NavigationVertical.jpg)
 
 ### Usage
 
@@ -17,11 +17,12 @@ This pattern is always vertical and placed to the left of the form allowing the 
 
 This pattern is used in form templates. Remember *Lexicon recommends* to split long forms into smaller forms to make task easier. Therefore, this navigation pattern is needed to access the different forms.
 
+![vertical navigation nested levels open](../../../images/NavigationVerticalOpen.jpg)
+
 
 ### Mobile
 
 In mobile devices the navigation is translated into a full-width collapsible menu displayed right before the form. When this menu opens it never pushes down the content, it is displayed over the form.
 
-![Nested navigation translated into a select with a collapsible panel. Closed panel example.](../../../images/NavigationVerticalMobileClosed.png)
-
-![nested navigation translated into a select with a dropdown menu](../../../images/NavigationVerticalMobileOpen.png)
+![Nested navigation translated into a select with a collapsible panel. Closed panel example.](../../../images/NavigationVerticalMobileClosed.jpg)
+![nested navigation translated into a select with a dropdown menu](../../../images/NavigationVerticalMobileOpen.jpg)
