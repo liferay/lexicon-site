@@ -39,7 +39,7 @@
 		font-size: 28px;
 		@media (min-width: $grid-float-breakpoint) {
 			font-size: 36px;
-			padding-top: 24px;
+			padding: 1.5rem 0 1rem;
 		}
 	}
 
@@ -70,8 +70,12 @@
 		font-size: 14px;
 		letter-spacing: 1px;
 		line-height: 20px;
-		margin-top: 40px;
+		margin-top: 2rem;
 		text-transform: uppercase;
+		color: $brand-secondary;
+		& + h3 {
+			margin-top: 0.25rem;
+		}
 	}
 
 	header {
@@ -209,16 +213,6 @@
 	}
 }
 
-.News {
-	.content .sidebar-offset h3 {
-		margin-top: 0;
-	}
-
-	h5 {
-		color: $text-color;
-		margin-top: 48px;
-	}
-}
 
 @media (max-width: $grid-float-breakpoint - 1) {
 	margin-top: 80px;
@@ -245,7 +239,7 @@ h2 + p > .label {
 	color: $brand-secondary;
 	font-size: 28px;
 	max-width: 700px;
-	margin: 24px 0 80px;
+	margin-bottom: 80px;
 	line-height: 1.25;
 
 	@media (max-width: $grid-float-breakpoint - 1) {
@@ -315,5 +309,9 @@ h2 + p > .label {
 			}
 		}
 	}
-	
+}
+
+.last-update {
+	color: $green;
+	margin-top: 2rem;
 }
