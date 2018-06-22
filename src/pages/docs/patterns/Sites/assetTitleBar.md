@@ -7,12 +7,23 @@ weight: 2
 
 <div class="page-description">{$page.description}</div>
 
+![Asset Title Bar](../../../images/sites/AssetTitleBar.jpg)
 
-### Definition and Metrics
+### Attributes
+
+![Asset Title Bar metrics](../../../images/sites/AssetTitleBarMetrics.jpg)
+
+### Variations
 
 Profile info pattern can be defined in different ways as the application needs may vary.
 
-![Asset Title Bar Defition And Metrics](../../../images/sites/AssetTitleBarDefinitionAndMetrics.jpg)
+Blog entry example:
+
+![Blog Entry Title](../../../images/sites/BlogEntryTitle.jpg)
+
+Blog entry metrics:
+
+![Blog Entry Title metrics](../../../images/sites/BlogEntryTitleMetrics.jpg)
 
 
 ### Example in Context
