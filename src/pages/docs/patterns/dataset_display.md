@@ -27,11 +27,11 @@ A dataset display is the combination of a [management bar](./management_bar.html
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <svg class="lexicon-icon lexicon-icon-angle-left"><use xlink:href="/vendor/lexicon/icons.svg#angle-left"></use></svg>
     <span class="sr-only">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <svg class="lexicon-icon lexicon-icon-angle-right"><use xlink:href="/vendor/lexicon/icons.svg#angle-right"></use></svg>
     <span class="sr-only">Next</span>
   </a>
 </div>
