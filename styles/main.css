@@ -14374,7 +14374,7 @@ mark,
   @media (min-width: 900px) {
     .content .sidebar-offset h1 {
       font-size: 36px;
-      padding-top: 24px; } }
+      padding: 1.5rem 0 1rem; } }
 
 .content .sidebar-offset h2 {
   font-size: 31.92px;
@@ -14397,8 +14397,11 @@ mark,
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 20px;
-  margin-top: 40px;
-  text-transform: uppercase; }
+  margin-top: 2rem;
+  text-transform: uppercase;
+  color: #6B6C7E; }
+  .content .sidebar-offset time + h3 {
+    margin-top: 0.25rem; }
 
 .content .sidebar-offset header {
   margin: 0; }
@@ -14481,13 +14484,6 @@ mark,
   .content .sidebar-offset .type-scale.type-bold {
     font-weight: 700; }
 
-.News .content .sidebar-offset h3 {
-  margin-top: 0; }
-
-.News h5 {
-  color: #30313F;
-  margin-top: 48px; }
-
 @media (max-width: 899px) {
   margin-top: 80px; }
 
@@ -14508,7 +14504,7 @@ h2 + p > .label {
   color: #6B6C7E;
   font-size: 28px;
   max-width: 700px;
-  margin: 24px 0 80px;
+  margin-bottom: 80px;
   line-height: 1.25; }
   @media (max-width: 899px) {
     .page-description {
@@ -14563,6 +14559,10 @@ h2 + p > .label {
     background-color: #6B6C7E; }
     .carousel .carousel-indicators li.active {
       background-color: #0B5FFF; }
+
+.last-update {
+  color: #28a745;
+  margin-top: 2rem; }
 
 .sidebar-lexicon-site {
   background-color: #F5F5F8; }
