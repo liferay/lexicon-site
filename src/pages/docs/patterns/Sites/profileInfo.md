@@ -7,17 +7,33 @@ weight: 2
 
 <div class="page-description">{$page.description}</div>
 
-### Definition and Metrics
+![Profile info types](../../../images/sites/ProfileInfoTypes.jpg)
+
+### Attributes
 
 Profile info pattern can be defined in different ways as the application needs may vary.
 
-![Profile info Definition And Metrics](../../../images/sites/ProfileInfoDefitionAndMetrics.png)
+![Profile info Definition And Metrics](../../../images/sites/ProfileInfoDefinitionAndMetrics.jpg)
 
-### Sticker Variations
+### Variations
 
 Depending on where the sticker is used its size may also change.
 
-![Profile info sticker sizes: 40px, 48px, 56px](../../../images/sites/ProfileInfoStickerSizes.png)
+#### 40px
+
+![Profile info sticker sizes 40px](../../../images/sites/ProfileInfoStickerSizes40.jpg)
+
+#### 48px
+
+![Profile info sticker sizes 48px](../../../images/sites/ProfileInfoStickerSizes48.jpg)
+
+#### 56px
+
+![Profile info sticker sizes 56px](../../../images/sites/ProfileInfoStickerSizes56.jpg)
+
+#### Attributes
+
+![Profile info sticker sizes metrics](../../../images/sites/ProfileInfoStickerSizesMetrics.jpg)
 
 ### Example in Context
 

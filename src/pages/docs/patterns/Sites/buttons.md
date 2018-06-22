@@ -15,15 +15,15 @@ Primary buttons with icon and text can be used either in logged or not logged en
 
 **Default**
 
-![Button Primary Icon plus Text default state](../../../images/sites/ButtonSitesPrimaryIconTextDefault.png)
+![Button Primary Icon plus Text default state](../../../images/sites/ButtonSitesPrimaryIconTextDefault.jpg)
 
 **Hover**
 
-![Button Primary Icon plus Text hover state](../../../images/sites/ButtonSitesPrimaryIconTextHover.png)
+![Button Primary Icon plus Text hover state](../../../images/sites/ButtonSItesPrimaryIconTextHover.jpg)
 
 **Active**
 
-![Button Primary Icon plus Text active state](../../../images/sites/ButtonSitesPrimaryIconTextActive.png)
+![Button Primary Icon plus Text active state](../../../images/sites/ButtonSitesPrimaryIconTextActive.jpg)
 
 
 #### Secondary button icon + text
@@ -32,15 +32,15 @@ On the one hand we have the button with icon and text. This button is an extensi
 
 **Default**
 
-![Button site default and button site default borderless](../../../images/sites/ButtonSitesDefault.png)
+![Button site default and button site default borderless](../../../images/sites/ButtonSitesDefault.jpg)
 
 **Hover**
 
-![Button site hover and button site hover borderless](../../../images/sites/ButtonSitesHover.png)
+![Button site hover and button site hover borderless](../../../images/sites/ButtonSitesHover.jpg)
 
 **Active**
 
-![Button site active and button site active borderless](../../../images/sites/ButtonSitesActive.png)
+![Button site active and button site active borderless](../../../images/sites/ButtonSitesActive.jpg)
 
 These buttons would appear normally as triggers of actions and tools as a part of the [Asset Toolbar](./assetToolbar.html) element.
 
@@ -50,15 +50,21 @@ On the other hand we have a type of button that appears only when the user is lo
 
 **Default**
 
-![Button site default and button site default borderless](../../../images/sites/ButtonSitesBlueDefault.png)
+![Button site default and button site default borderless](../../../images/sites/ButtonSitesBlueDefault.jpg)
 
 **Hover**
 
-![Button site hover and button site hover borderless](../../../images/sites/ButtonSitesBlueHover.png)
+![Button site hover and button site hover borderless](../../../images/sites/ButtonSitesBlueHover.jpg)
 
 **Active**
 
-![Button site active and button site active borderless](../../../images/sites/ButtonSitesBlueActive.png)
+![Button site active and button site active borderless](../../../images/sites/ButtonSitesBlueActive.jpg)
 
 
 When these buttons are associated with an asset, a blog entry, a knowledge base article or a comment will only appear when hovering over the item to which it is associated. More information about this behavior can be found on the [Asset Title Bar documentation](./assetTitleBar.html).
+
+### Attributes
+
+![Button with icon metrics](../../../images/sites/ButtonSitesIconMetrics.jpg)
+
+![Button metrics](../../../images/sites/ButtonSitesMetrics.jpg)
