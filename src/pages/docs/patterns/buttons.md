@@ -11,12 +11,20 @@ weight: 1
 
 ### Types
 
-| Type | Usage |
-| ---- | ----- |
-| ![button primary default size defuault state](../../../images/ButtonPrimary.jpg) | **Primary**: The primary button is always use for the most important actions. There can't be two primary actions together or near by. |
-| ![button secondary default size defuault state](../../../images/ButtonSecondary.jpg) | **Secondary**: The secondary button is always use for the secondary actions. There can be several secondary actions near by. |
-| ![button primary default size defuault state](../../../images/ButtonLink.jpg) | **Link**: Used for many Cancel actions. |
+#### Primary
+The primary button is always use for the most important actions. There can't be two primary actions together or near by.
 
+![button primary default size defuault state](../../../images/ButtonPrimary.jpg)
+
+#### Secondary
+The secondary button is always use for the secondary actions. There can be several secondary actions near by.
+
+![button secondary default size defuault state](../../../images/ButtonSecondary.jpg)
+
+#### Link
+Used for many Cancel actions.
+
+![button primary default size defuault state](../../../images/ButtonLink.jpg)
 
 ### States
 
@@ -38,10 +46,15 @@ weight: 1
 
 ### Sizes
 
-| Size | Usage |
-| ---- | ----- |
-| ![button primary large size disable state](../../../images/ButtonPrimary.jpg) | **Default**: Used for main page actions like Save or Cancel. 40px height. |
-| ![button primary default size disable state](../../../images/ButtonPrimarySmall.jpg) | **Small**: Used for actions inside a page, like dropdowns, button groups, split buttons. 32px height. |
+#### Default
+Used for main page actions like Save or Cancel. 40px height.
+
+![button primary large size disable state](../../../images/ButtonPrimary.jpg)
+
+#### Small
+Used for actions inside a page, like dropdowns, button groups, split buttons. 32px height.
+
+![button primary default size disable state](../../../images/ButtonPrimarySmall.jpg)
 
 ### Variations
 
@@ -55,8 +68,10 @@ Secondary borderless button is meant to be used in those cases as toolbars where
 
 Buttons can icons instead of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in [management bars](./management_bar.html). This button variation can be primary, secondary or borderless type.
 
-![button icon primary default size defuault state](../../../images/ButtonIconPrimary.jpg)  
+![button icon primary default size defuault state](../../../images/ButtonIconPrimary.jpg)
+
 ![button icon secondary default size defuault state](../../../images/ButtonIconSecondary.jpg)
+
 ![button icon secondary boderdeless default size defuault state](../../../images/ButtonIconBorderless.jpg)
 
 #### Icon and text button
