@@ -7,6 +7,11 @@ weight: 5
 
 <div class="page-description">{$page.description}</div>
 
+### Sketch library
+
+Creating your own interfaces using Lexicon is pretty easy using our Sketch library.
+[Download](https://drive.google.com/open?id=1yuTAx42ZKvqc89yrCd8B2IsuCgwBc0Ci)
+
 ### Presentations
 
 **2018 January**
