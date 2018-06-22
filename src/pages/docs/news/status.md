@@ -5,11 +5,8 @@ layout: "guide"
 weight: 1
 ---
 
-## Last update
+<p class="last-update">Last Update April 16h, 2018</p>
 
-2018.04.16
-
-### Status
 
 | Legend |
 | ---- |
