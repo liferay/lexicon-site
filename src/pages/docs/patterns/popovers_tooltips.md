@@ -19,7 +19,7 @@ Popovers are used together with the question mark icon as an affordance to let t
 
 ![help icon](../../../images/PopoverFromIcon.jpg)
 
-### Do's and Don'ts
+#### Do's and Don'ts
 
 Keep a distance of 8px between a text and the icon so it is easy to recognize and associate.
 
@@ -49,8 +49,7 @@ Similar to the previous case happens with sections, in this case the distance is
 
 ### Attributes
 
-* Width: 232px fixed
-* Max-Height: 240px. Use scroll when the content is bigger.
+![popover metrics](../../../images/PopoverMetrics.jpg)
 
 ## Tooltips
 
@@ -69,4 +68,4 @@ Tooltips are brief pieces of information that appear on hover state over an elem
 
 ### Attributes
 
-* Width: 232px maximum
+![tootip metrics](../../../images/TooltipMetrics.jpg)

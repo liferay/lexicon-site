@@ -25,4 +25,5 @@ This pattern is used in form templates. Remember *Lexicon recommends* to split l
 In mobile devices the navigation is translated into a full-width collapsible menu displayed right before the form. When this menu opens it never pushes down the content, it is displayed over the form.
 
 ![Nested navigation translated into a select with a collapsible panel. Closed panel example.](../../../images/NavigationVerticalMobileClosed.jpg)
+
 ![nested navigation translated into a select with a dropdown menu](../../../images/NavigationVerticalMobileOpen.jpg)
