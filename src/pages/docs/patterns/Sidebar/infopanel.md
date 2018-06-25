@@ -23,6 +23,17 @@ The components used in the “Info Panel” can vary depending on the applicatio
 
 ![Sidebar Info Panel Components information](../../../images/SidebarInfoPanelComponents.jpg) 
 
+1. Items carousel
+2. Item title and file type
+3. Content divided by tabs. Information examples:
+    - Details tab:
+        1. Image
+        2. Meta information
+        3. Tags
+        4. Related assets
+    - Versions tab:
+        5. Versions list
+
 #### Sidebar Height
 The sidebar always adjusts to the maximum height of the viewport extending the white background color as much as necessary. 
 

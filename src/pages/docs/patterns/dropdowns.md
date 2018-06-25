@@ -9,7 +9,7 @@ weight: 1
 
 <div class="page-description">{$page.description}</div>
 
-![default dropdown menu](../../../images/DropdownRegular.jpg)
+![default dropdown menu](../../../images/Dropdown.jpg)
 
 ### Usage
 Dropdowns are used to list a set of options that are not easy to manage in the screen. This mechanism helps to clean-up the screen making everything more implicit.
@@ -35,7 +35,7 @@ The distance from the button to the dropdown is 8px.
 
 The default dropdown is just a panel not prepared for scrolling the content inside it. Use this type when the number of options you want to offer is short or the panel is big enough to contain all the elements you want to use.
 
-![default dropdown menu](../../../images/DropdownRegular.jpg)
+![default dropdown menu](../../../images/Dropdown.jpg) ![default dropdown menu](../../../images/DropdownRegular.jpg)
 
 #### Dropdown with dividers
 
@@ -47,13 +47,13 @@ Dropdown menu with dividers are thought to be used in actions menus. Dividing th
 
 Dropdowns can be configured to have checkboxes and/or radio groups. A checkbox configuration can be suitable to filter in or out dataset elements. While, a radio configuration can be suitable to establish the order criteria in a dataset.
 
-![dropdown menu with a list of checkbox options](../../../images/DropdownCheckbox.jpg)
+![dropdown menu with a list of checkbox example](../../../images/DropdownCheckbox.jpg) ![dropdown menu with a list of checkbox states](../../../images/DropdownCheckboxTypes.jpg)
 
 #### Dropdown with search field
 
 Sometimes action menus face problems with the number of elements they contain. This dropdown menu variation helps in those contexts where the set of options is large and a search mechanism helps to reduce the search time and task complexity.
 
-![dropdown menu with search field](../../../images/DropdownSearch.jpg)
+![dropdown menu with search example](../../../images/DropdownSearch.jpg) ![dropdown menu with search states](../../../images/DropdownSearchTypes.jpg)
 
 #### Dropdown with left icons
 
@@ -65,7 +65,7 @@ Dropdown menus with left icons are suitable for process bars (wizards) where the
 
 Dropdown menus with left icons are suitable for process bars (wizards) where there is a need to display a dropdown menu when the number of steps do not fit the screen. In this case, the step number has a high relevance, therefore the icon is placed on the right side.
 
-![dropdown menu with icons to the right](../../../images/DropdownRegularRightIcons.jpg)
+![dropdown menu with icons to the right example](../../../images/DropdownRegularRightIcons.jpg) ![dropdown menu with icons to the right states](../../../images/DropdownRegularRightIconsTypes.jpg)
 
 #### Dropdown with groups
 
@@ -73,7 +73,8 @@ This dropdown menu variation is created to be used with the management bar Filte
 
 The button in a dropdown menu can be either primary or secondary depending on the application needs.
 
-![dropdown menu with groups](../../../images/DropdownMultiple.jpg)
+![dropdown menu with groups examples](../../../images/DropdownMultiple.jpg) ![dropdown menu with groups](../../../images/DropdownMultipleTypes.jpg)
+
 
 ### Sorting actions
 
@@ -139,6 +140,6 @@ Guideline:
 
 ### Attributes
 
-* Max width of a dropdown menu: 288px
-* Max height: maximum of 11 visible elements of any type.
-* Each entry must be in one line, if it doesn't fit use ellipsis.
+![dropdown entries metrics](../../../images/DropdownMetrics.jpg)
+
+![dropdown entries metrics when checkbox or radios appear](../../../images/DropdownCheckboxMetrics.jpg)

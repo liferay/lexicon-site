@@ -63,6 +63,10 @@ First level sections can be either collapsible or not. On the other hand, second
 
 ![form sections style and measures](../../../images/FormSections.jpg)
 
+Form section titles might be long and the layout must prevent it.
+
+![form sections style and measures for long titles](../../../images/FormSectionsLong.jpg)
+
 #### Paragraph
 
 ![form paragraph style and measures](../../../images/FormParagraph.jpg)
