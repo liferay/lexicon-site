@@ -5,7 +5,7 @@ table {
 	margin: 32px 0 24px;
 
 	& > tbody > tr > td, & > thead > tr > th {
-		border-bottom: 1px solid $brand-border-color;
+		border-bottom: 1px solid $gray-400;
 		line-height: $base-size * 0, 75;
 		padding: $base-size / 2;
 	}
@@ -31,11 +31,11 @@ table {
 		}
 
 		&.dotWait {
-			color: $brand-light-secondary-text;
+			color: $gray-500;
 		}
 
 		&.tableSection {
-			color: $brand-secondary;
+			color: $gray-600;
 			font-size: 14px;
 			font-weight: 700;
 			text-transform: uppercase;

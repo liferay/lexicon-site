@@ -1,6 +1,6 @@
 .autocomplete {
 	background-color: $white;
-	border: 1px solid $brand-border-color-light;
+	border: 1px solid $gray-300;
 	border-radius: 4px;
 	box-shadow: 2px 3px 12px 0 rgba(231, 231, 237, 1);
 	margin-top: 8px;
@@ -10,7 +10,7 @@
 
 .autocomplete-list {
 	a {
-		color: $brand-secondary;
+		color: $gray-600;
 
 		&:hover {
 			text-decoration: none;
