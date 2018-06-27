@@ -1,40 +1,31 @@
 .footer {
-	background-color: $footer-bg-color;
-	color: $brand-light-text;
+	background-color: $gray-800;
+	color: $white;
 	min-height: $base-size * 4;
 	padding: $base-size 0;
 
 	@media (min-width: $screen-md) {
-		padding: 120px 0;
+		padding: 96px 0;
+	}
+
+	.footer-menu {
+		list-style: none;
+		padding: 0;
+		li {
+			padding-bottom: 0.5rem;
+		}
 	}
 
 	a {
-		color: $brand-light-text;
-		font-weight: 700;
-		padding-bottom: 4px;
+		color: $white;
 		text-decoration: none;
-
+		padding-bottom: 2px;
 		&:hover {
-			border-bottom: 3px solid $brand-primary;
+			border-bottom: 2px solid $brand-primary;
 		}
 	}
-
-	span {
-		line-height: $base-size;
-
-		a {
-			font-weight: 600;
-		}
-	}
-
-	.row img.logo {
-		margin: $base-size / 2 $base-size / 3;
-		max-height: $base-size * 1.333334;
-		padding: 0;
-
-		@media (min-width: $screen-md) {
-			margin: 0 $base-size / 2 0 0;
-		}
+	.license {
+		color: $gray-500;
 	}
 }
 
@@ -43,7 +34,7 @@
 	margin-top: 48px;
 
 	.row {
-		border-top: 1px solid $brand-border-color;
+		border-top: 1px solid $gray-400;
 		padding: 16px 0 48px;
 
 		.social-icons {
@@ -55,7 +46,6 @@
 				width: 32px;
 
 				img {
-					margin: 0;
 					width: 16px;
 				}
 			}

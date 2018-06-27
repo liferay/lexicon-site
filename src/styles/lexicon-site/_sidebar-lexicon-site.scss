@@ -1,5 +1,5 @@
 .sidebar-lexicon-site {
-	background-color: $sidebar-bg-color;
+	background-color: $gray-100;
 
 	@media (min-width: $grid-float-breakpoint) {
 		min-width: 370px;
@@ -18,7 +18,7 @@
 
 	.btn-version {
 		.btn {
-			background-color: $brand-light;
+			background-color: $white;
 			font-size: 12px;
 			height: 24px;
 			padding: 0 6px 0 9px;
@@ -73,11 +73,11 @@
 		padding: 0 $base-size $base-size * 4 $base-size * 1.66;
 
 		.sticker-secondary {
-			background-color: $brand-border-color;
+			background-color: $gray-400;
 		}
 
 		.lexicon-icon {
-			fill: $brand-light;
+			fill: $white;
 			width: 1.3em;
 		}
 	}
@@ -96,8 +96,8 @@
 		}
 
 		> input.form-control {
-			background-color: $brand-light;
-			border-color: $brand-light;
+			background-color: $white;
+			border-color: $white;
 			border-radius: 4px;
 			color: $text-color;
 			padding-left: 0.875rem;
@@ -105,16 +105,16 @@
 			font-size: 1rem;
 
 			&::-moz-placeholder {
-				color: $brand-light-secondary-text;
+				color: $gray-500;
 				opacity: 1;
 			}
 
 			&:-ms-input-placeholder {
-				color: $brand-light-secondary-text;
+				color: $gray-500;
 			}
 
 			&::-webkit-input-placeholder {
-				color: $brand-light-secondary-text;
+				color: $gray-500;
 			}
 
 			&:active, &:focus {
@@ -192,13 +192,13 @@
 		& > li > ul > li.active > a,
 		& > li > ul > li.active > a:focus,
 		& > li > a:focus {
-			background-color: $brand-dark-lighter;
+			background-color: #EFEFF4;
 			border-radius: 6px;
 			font-weight: 700;
 		}
 
 		& > li a:hover {
-			background-color: $brand-dark-lighter;
+			background-color: #EFEFF4;
 		}
 
 		& li > ul > li > a {
@@ -212,7 +212,7 @@
 			}
 
 			&:hover {
-				background-color: $brand-dark-lighter;
+				background-color: #EFEFF4;
 			}
 		}
 
@@ -247,5 +247,5 @@
 }
 
 .legal {
-	color: $brand-secondary;
+	color: $gray-600;
 }

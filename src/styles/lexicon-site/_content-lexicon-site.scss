@@ -4,7 +4,7 @@
 		margin-bottom: $base-size * 0.5;
 
 		a {
-			color: $brand-blue;
+			color: $brand-primary;
 		}
 	}
 
@@ -25,6 +25,7 @@
 	}
 
 	h1, h2, h3 {
+		color: $gray-800;
 		font-weight: 800;
 		margin: $base-size 0;
 		line-height: 1.25;
@@ -72,7 +73,7 @@
 		line-height: 20px;
 		margin-top: 2rem;
 		text-transform: uppercase;
-		color: $brand-secondary;
+		color: $gray-600;
 		& + h3 {
 			margin-top: 0.25rem;
 		}
@@ -236,7 +237,7 @@ h2 + p > .label {
 }
 
 .page-description {
-	color: $brand-secondary;
+	color: $gray-600;
 	font-size: 28px;
 	max-width: 700px;
 	margin-bottom: 80px;

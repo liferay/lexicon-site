@@ -15,34 +15,28 @@ $sidebar-width: 376px;
 
 // Color
 
+$white:    #FFF;
+$gray-100: #F5F5F8;
+$gray-200: #F1F2F5;
+$gray-300: #E7E7ED;
+$gray-400: #CDCED9;
+$gray-500: #A7A9BC;
+$gray-600: #6B6C7E;
+$gray-700: #393A4A;
+$gray-800: #30313F;
+$gray-900: #272833;
+
+$blue: #0B5FFF;
+$brand-primary: #0B5FFF;
+
 $bg-color: #FFF;
-$footer-bg-color: #272833;
-
-$brand-primary: #0058FF !default;
-
-$brand-dark: #0058FF;
-$brand-dark-lighter: #EFEFF4;
-
-$brand-light: #FFF;
-
-$brand-light-secondary-text: #A7A9BC;
-$brand-light-text: $brand-light;
-
-$brand-lighten: #FBF8F5;
 
 $brand-do: #287D34;
 $brand-dont: #DA1414;
 $brand-progress: #b95000;
 
-$text-color: #30313F !default;
-$text-color-light: #393A4A !default;
-
-$brand-secondary: #6B6C7E;
-
-$brand-blue: #4887FF;
-
-$brand-border-color: #CDCED9;
-$brand-border-color-light: #E8E8EC;
+$text-color: $gray-700 !default;
+$text-color-light: $gray-600 !default;
 
 // Sizes
 
