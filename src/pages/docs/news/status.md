@@ -5,7 +5,7 @@ layout: "guide"
 weight: 1
 ---
 
-<p class="last-update">Last Update April 16h, 2018</p>
+<p class="last-update">Last Update June 26th, 2018</p>
 
 
 | Legend |
@@ -17,9 +17,9 @@ weight: 1
 
 | Page | Lexicon | Clay CSS | Clay Component |
 | ---- | ----- | ----- |----- |
-| <p class="tableSection">DESING PRINCIPLES</p> |
+| <p class="tableSection">FOUNDATIONS</p> |
 | Animations | <p class="dotDone">&#9679;</p> | NA | <p class="dotWait">&#9679;</p> |
-| Colors | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Color | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
 | Grid | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
 | Layout | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
 | Typography | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
@@ -27,7 +27,6 @@ weight: 1
 | <p class="tableSection">ALERT</p> |
 | Alert Toast | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Alert Embedded | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
-| Alert Stripe | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | <p class="tableSection">BADGE</p> |
 | Badge | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | <p class="tableSection">BUTTON</p> |
@@ -47,7 +46,7 @@ weight: 1
 | Heatmap chart | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Line chart | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Pie chart | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
-| Stacked bar chart | <p class="dotWait">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Stacked bar chart | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Scatterplot chart | <p class="dotWait">&#9679;</p> | <p class="dotWait">&#9679;</p> | <p class="dotWait">&#9679;</p> |
 | <p class="tableSection">CONFIRMATION MESSAGE</p> |
 | Confirmation Message | <p class="dotDone">&#9679;</p> | NA | NA |
@@ -93,8 +92,6 @@ weight: 1
 | <p class="tableSection">PAGINATION</p> |
 | Pagination | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Pagination bar | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
-| <p class="tableSection">PANEL</p> |
-| Panel | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | <p class="tableSection">POPOVER & TOOLTIPS</p> |
 | Popover | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Tooltips | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
@@ -103,10 +100,12 @@ weight: 1
 | <p class="tableSection">SIDEBAR</p> |
 | Sidebar | <p class="dotDone">&#9679;</p> | NA | NA |
 | Info Panel | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> |
+| Product Menu | <p class="dotDone">&#9679;</p> | NA | NA |
 | <p class="tableSection">TABLE</p> |
 | Table | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
 | Inline Edit Table | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> | <p class="dotWait">&#9679;</p> |
 | <p class="tableSection">TABS</p> |
 | Tabs | <p class="dotDone">&#9679;</p> | <p class="dotWait">&#9679;</p> | <p class="dotWait">&#9679;</p> |
 | <p class="tableSection">TOOLBAR</p> |
-| Toolbar Management | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
+| Toolbar | <p class="dotDone">&#9679;</p> | NA | NA |
+| Management toolbar | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> | <p class="dotDone">&#9679;</p> |
