@@ -5,6 +5,19 @@ layout: "guide"
 weight: 1
 ---
 
+<time>June 27th, 2018</time>
+
+### Stable version
+
+We are glad to announce that Lexicon has moved out from beta version to a stable version.
+We also want to highlight the improvements done from last release:
+* The site has been adjusted to adopt the system font like we do in Lexicon.
+* All images has been changed to adapt the typography form Source Sans Pro to San Francisco (system font for MacOS)
+* A large number of patterns now include attributes sections where the patten anatomy is described.
+* Examples have been added to many of our patterns and also descriptions have been reviewed.
+
+Moreover, now you can find our sketch library under [resources](../resouces/index.html) section to build your own interfaces using Lexicon.
+
 <time>April 24th, 2018</time>
 
 ### Beta release
