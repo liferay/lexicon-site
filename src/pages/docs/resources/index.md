@@ -10,7 +10,8 @@ weight: 5
 ### Sketch library
 
 Creating your own interfaces using Lexicon is pretty easy using our Sketch library.
-[Download](https://drive.google.com/open?id=1yuTAx42ZKvqc89yrCd8B2IsuCgwBc0Ci)
+
+<a class="btn btn-primary" href="https://drive.google.com/open?id=1yuTAx42ZKvqc89yrCd8B2IsuCgwBc0Ci" target="_blank">Download</a>
 
 ### Presentations
 
