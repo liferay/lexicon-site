@@ -10,6 +10,7 @@ $grid-float-breakpoint: $screen-sm;
 
 $content-max-width: 960px;
 
+$bg-color: #FFF;
 $sidebar-bg-color: #F5F5F8;
 $sidebar-width: 376px;
 
@@ -27,13 +28,12 @@ $gray-800: #30313F;
 $gray-900: #272833;
 
 $blue: #0B5FFF;
-$brand-primary: #0B5FFF;
+$cyan: #2E5AAC; /* info */
+$green: #287D3C; /* success */
+$red: #DA1414; /* danger */
+$orange: #b95000; /* warning */
 
-$bg-color: #FFF;
-
-$brand-do: #287D34;
-$brand-dont: #DA1414;
-$brand-progress: #b95000;
+$brand-primary: $blue;
 
 $text-color: $gray-700 !default;
 $text-color-light: $gray-600 !default;

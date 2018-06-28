@@ -98,11 +98,11 @@
 			margin-bottom: 8px;
 
 			&.do {
-				border-bottom: 4px solid $brand-do;
+				border-bottom: 4px solid $green;
 			}
 
 			&.dont {
-				border-bottom: 4px solid $brand-dont;
+				border-bottom: 4px solid $red;
 			}
 		}
 
@@ -113,11 +113,11 @@
 	}
 
 	.do {
-		color: $brand-do;
+		color: $green;
 	}
 
 	.dont {
-		color: $brand-dont;
+		color: $red;
 	}
 
 	.videoContainer {
@@ -137,7 +137,7 @@
 	}
 
 	.label-link {
-		color: $brand-progress;
+		color: $orange;
 	}
 
 	.linkDecor {
