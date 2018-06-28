@@ -18,12 +18,6 @@ weight: 1
 * Modals belong to a screen, therefore a modal should not be triggered from another modal window (read below Modal over modal).
 * When a modal has footer, the actions are placed inside and aligned to the left. There is an order of importance and the sequence is: Primary button (only one), secondary button, and button link.
 
-| Do's | Dont's |
-| ---- | ------ |
-| Use it to capture the user attention to something that is more important.| Do not use it for complex cases where you need to display a lot of information or complete a long form. In this case thing about using a new page. |
-| Use it for simple content cases. | Try not triggering a modal window from another modal window. Modal windows are subordinated to pages.     |
-| Use it if you need to cut the user flow to display concrete and certain information, or if you need to capture certain data from the user. | Do never blind completely the background page information. |
-
 <table>
     <thead>
         <tr>
@@ -33,33 +27,45 @@ weight: 1
     </thead>
     <tbody>
         <tr>
-            <td class="align-middle">
-                <svg class="lexicon-icon lexicon-icon-check do align-middle"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
-                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            <td>
+                <div class="d-flex align-items-center">
+                    <svg class="lexicon-icon lexicon-icon-check do mr-3"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
+                    <span>Use it to capture the user attention to something that is more important.</span>
+                </div>
             </td>
-            <td class="align-middle">
-                <svg class="lexicon-icon lexicon-icon-times dont align-middle"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
-                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="align-middle">
-                <svg class="lexicon-icon lexicon-icon-check do align-middle"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
-                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
-            </td>
-            <td class="align-middle">
-                <svg class="lexicon-icon lexicon-icon-times dont align-middle"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
-                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            <td>
+                <div class="d-flex align-items-center">
+                    <svg class="lexicon-icon lexicon-icon-times dont mr-3"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
+                    <span>Do not use it for complex cases where you need to display a lot of information or complete a long form. In this case thing about using a new page.</span>
+                </div>
             </td>
         </tr>
         <tr>
-            <td class="align-middle">
-                <svg class="lexicon-icon lexicon-icon-check do align-middle"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
-                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            <td>
+                <div class="d-flex align-items-center">
+                    <svg class="lexicon-icon lexicon-icon-check do mr-3"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
+                    <span>Use it for simple content cases.</span>
+                </div>
             </td>
-            <td class="align-middle">
-                <svg class="lexicon-icon lexicon-icon-times dont align-middle"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
-                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            <td>
+                <div class="d-flex align-items-center">
+                    <svg class="lexicon-icon lexicon-icon-times dont mr-3"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
+                    <span>Try not triggering a modal window from another modal window. Modal windows are subordinated to pages.</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="d-flex align-items-center">
+                    <svg class="lexicon-icon lexicon-icon-check do mr-3"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
+                    <span>Use it if you need to cut the user flow to display concrete and certain information, or if you need to capture certain data from the user.</span>
+                </div>
+            </td>
+            <td>
+                <div class="d-flex align-items-center">
+                    <svg class="lexicon-icon lexicon-icon-times dont mr-3"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
+                    <span>Do never blind completely the background page information.</span>
+                </div>
             </td>
         </tr>
     </tbody>
