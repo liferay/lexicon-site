@@ -1,3 +1,7 @@
+/* info */
+/* success */
+/* danger */
+/* warning */
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10,12 +14,12 @@
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #fd7e14;
+  --red: #DA1414;
+  --orange: #b95000;
   --yellow: #ffc107;
-  --green: #28a745;
+  --green: #287D3C;
   --teal: #20c997;
-  --cyan: #17a2b8;
+  --cyan: #2E5AAC;
   --white: #FFF;
   --gray: #6B6C7E;
   --gray-dark: #30313F;
@@ -14411,15 +14415,17 @@ mark,
   .content .sidebar-offset .dodont img {
     margin-bottom: 8px; }
     .content .sidebar-offset .dodont img.do {
-      border-bottom: 4px solid #287D34; }
+      border-bottom: 4px solid #287D3C; }
     .content .sidebar-offset .dodont img.dont {
       border-bottom: 4px solid #DA1414; }
   .content .sidebar-offset .dodont p {
     font-weight: 600; }
-    .content .sidebar-offset .dodont p.do {
-      color: #287D34; }
-    .content .sidebar-offset .dodont p.dont {
-      color: #DA1414; }
+
+.content .sidebar-offset .do {
+  color: #287D3C; }
+
+.content .sidebar-offset .dont {
+  color: #DA1414; }
 
 .content .sidebar-offset .videoContainer {
   position: relative;
@@ -14552,7 +14558,7 @@ h2 + p > .label {
       background-color: #0B5FFF; }
 
 .last-update {
-  color: #28a745;
+  color: #287D3C;
   margin-top: 2rem; }
 
 .sidebar-lexicon-site {
@@ -14718,6 +14724,8 @@ table {
     border-bottom: 1px solid #CDCED9;
     line-height: 0px, 75;
     padding: 12px; }
+    table > tbody > tr > td .lexicon-icon, table > thead > tr > th .lexicon-icon {
+      min-width: 1rem; }
   table thead > tr > th {
     border-top-width: 0;
     border-bottom-width: 1px;
