@@ -1,5 +1,5 @@
 ---
-title: "What is Lexicon"
+title: "Get Started"
 description: "User experience design language."
 layout: "guide"
 icon: "lexicon-site-about"

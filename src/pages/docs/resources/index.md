@@ -1,6 +1,6 @@
 ---
 title: "Resources"
-description: "Resources offers you a series of links to previous versions of Lexicon and presentations done related to this design language."
+description: "A series of links to previous versions of Lexicon and presentations done related to this design language."
 layout: "guide"
 weight: 5
 ---
