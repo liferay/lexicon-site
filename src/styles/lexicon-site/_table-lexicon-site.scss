@@ -8,6 +8,9 @@ table {
 		border-bottom: 1px solid $gray-400;
 		line-height: $base-size * 0, 75;
 		padding: $base-size / 2;
+		.lexicon-icon {
+			min-width: 1rem;
+		}
 	}
 
 	thead > tr > th {
