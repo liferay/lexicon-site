@@ -20,9 +20,51 @@ weight: 1
 
 | Do's | Dont's |
 | ---- | ------ |
-| Use it to capture the user attention to something that is more important. | Do not use it for complex cases where you need to display a lot of information or complete a long form. In this case thing about using a new page. |
+| Use it to capture the user attention to something that is more important.| Do not use it for complex cases where you need to display a lot of information or complete a long form. In this case thing about using a new page. |
 | Use it for simple content cases. | Try not triggering a modal window from another modal window. Modal windows are subordinated to pages.     |
 | Use it if you need to cut the user flow to display concrete and certain information, or if you need to capture certain data from the user. | Do never blind completely the background page information. |
+
+<table>
+    <thead>
+        <tr>
+            <th>Do's</th>
+            <th>Don'ts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="align-middle">
+                <svg class="lexicon-icon lexicon-icon-check do align-middle"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
+                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            </td>
+            <td class="align-middle">
+                <svg class="lexicon-icon lexicon-icon-times dont align-middle"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
+                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="align-middle">
+                <svg class="lexicon-icon lexicon-icon-check do align-middle"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
+                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            </td>
+            <td class="align-middle">
+                <svg class="lexicon-icon lexicon-icon-times dont align-middle"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
+                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="align-middle">
+                <svg class="lexicon-icon lexicon-icon-check do align-middle"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
+                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            </td>
+            <td class="align-middle">
+                <svg class="lexicon-icon lexicon-icon-times dont align-middle"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
+                <span class="align-middle">Use it to capture the user attention to something that is more important.</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 
 #### Selection inside a modal
 

@@ -108,16 +108,16 @@
 
 		p {
 			font-weight: 600;
-
-			&.do {
-				color: $brand-do;
-			}
-
-			&.dont {
-				color: $brand-dont;
-			}
 		}
 
+	}
+
+	.do {
+		color: $brand-do;
+	}
+
+	.dont {
+		color: $brand-dont;
 	}
 
 	.videoContainer {
@@ -215,6 +215,12 @@
 
 	.btn-primary {
 		color: white;
+	}
+
+	td {
+		&.icon {
+			padding-right: -12px;
+		}
 	}
 }
 
