@@ -20,7 +20,7 @@ This grid is constructed from a base 8px module, so that both the dimensions of 
 
 ![grid 8 pixels detail](../../../images/Grid01.png)
 
-![two images. Left side with grid elements distribution. Right one same as left one but with distances between elements](../../../images/Grid02.png)  
+![grid elements distribution](../../../images/Grid02Part1.jpg) ![grid elements distribution with distances between elements](../../../images/Grid02Part2.jpg)  
 
 In this way we provide a common metric pattern that contributes to create visual coherence and consistency between the different elements of the system and their spatial relationships.
 
@@ -32,7 +32,7 @@ Either way, values ​​less than 8 px will be primarily associated with the an
 
 As for example the molecule formed by a label and a text input, or the one formed by a label, an input an a helper text.
 
-![form element internal spacing](../../../images/Grid03.png)  
+![form element](../../../images/Grid03Part1.jpg) ![grid elements distribution with distances between elements](../../../images/Grid03Part2.jpg)  
 
 To know a little more about the grid of 8 px we recommend checking some of the articles that have served as reference and inspiration for us to adopt this pattern.
 
@@ -45,13 +45,13 @@ The column system is the main structural pattern when organizing and arranging e
 
 It is not so much a reference to establish the distances between small elements like the different icons or buttons that can coexist in a toolbar for example. It is more a layout framework oriented to organize and establish divisions between medium and large blocks of content.
 
-![form element internal spacing](../../../images/Grid04.png)
+![form element internal spacing](../../../images/Grid04.jpg)
 
-![form element internal spacing](../../../images/Grid05.png)
+![form element internal spacing](../../../images/Grid05.jpg)
 
 The Lexicon system is a 12 column structure based on the Bootstrap CSS Grid, where we introduce a change in the value of the gutter to fit our base grid. In this case the gutter would be 24px. A value that we find repeated in other basic structural references of the system.
 
-![form element internal spacing](../../../images/Grid06.png)
+![form element internal spacing](../../../images/Grid06.jpg)
 
 The columns behave in a fluid manner, so that their width will always be a relative value that varies depending on the size of their parent container. The gutter is the only value that remains fixed when the viewport resizes.
 
@@ -63,15 +63,15 @@ But when defining the vertical spacing between paragraphs of text and elements o
 
 To set this value, we will refer to the line height of the main system font style; 24px. With this reference we seek to establish a pattern that helps to avoid the dance of measures and favors the consistency in the vertical rhythm.
 
-![form element internal spacing](../../../images/GridVertRhythm01.png)
+![form element internal spacing](../../../images/GridVertRhythm01.jpg)
 
-![form element internal spacing](../../../images/GridVertRhythm02.png)
+![form element internal spacing](../../../images/GridVertRhythm02.jpg)
 
-![form element internal spacing](../../../images/GridVertRhythm03.png)
+![form element internal spacing](../../../images/GridVertRhythm03.jpg)
 
 For small viewports, we can make adjustments with the aim of optimizing vertical space but always respecting the base grid. Normally in these cases we use the 16px spacer-y as we do for the gutter between columns and the lateral space of the container.
 
-![form element internal spacing](../../../images/GridVertRhythm04.png)
+![form element internal spacing](../../../images/GridVertRhythm04.jpg)
 
 It is understood that this metric pattern does not solve the vertical space needs of all possible cases. Either way it is established as a starting point on which to make timely adjustments when necessary.
 
@@ -83,17 +83,17 @@ Lexicon provides two types. A  fixed width container and a fluid container with 
 
 The width of this container is adjusted fluidly according to the size of the viewport.
 
-![form element internal spacing](../../../images/grid_container_fluid.png)
+![form element internal spacing](../../../images/GridContainerFluid.jpg)
 
-![form element internal spacing](../../../images/grid_container_fluid_g.png)
+![form element internal spacing](../../../images/GridContainerFluidMetrics.jpg)
 
 #### Fixed width container
 
 This container is defined by a value of maximum width. This value is adjusted to the sizes of the different viewports according to predefined breakpoints.
 
-![form element internal spacing](../../../images/grid_container_fixed.png)
+![form element internal spacing](../../../images/GridContainerFixed.jpg)
 
-![form element internal spacing](../../../images/grid_container_fixed_g.png)
+![form element internal spacing](../../../images/GridContainerFixedMetrics.jpg)
 
 ### Breakpoint table
 
