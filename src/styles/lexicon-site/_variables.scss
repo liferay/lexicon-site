@@ -10,11 +10,9 @@ $grid-float-breakpoint: $screen-sm;
 
 $content-max-width: 960px;
 
-$bg-color: #FFF;
-$sidebar-bg-color: #F5F5F8;
 $sidebar-width: 376px;
 
-// Color
+// Colors
 
 $white:    #FFF;
 $gray-100: #F5F5F8;
@@ -34,6 +32,9 @@ $red: #DA1414; /* danger */
 $orange: #b95000; /* warning */
 
 $brand-primary: $blue;
+
+$bg-color: $white;
+$sidebar-bg-color: $gray-100;
 
 $text-color: $gray-700 !default;
 $text-color-light: $gray-600 !default;
