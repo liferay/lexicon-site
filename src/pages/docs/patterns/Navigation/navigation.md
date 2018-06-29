@@ -23,6 +23,3 @@ Page navigation can have different compositions but it always follows a same pat
 	2. Page / Application name
 	3. Application actions as Export/Import or Permissions
 2. Application sections: Use it only in case the application has more than one section.
-3. Breadcrumb (mandatory after first depth level)
-4. Title: it can be the folder title, the form title, etc. It coincides with the last crumb of the breadcrumb. You must only place it in first level if you need actions at this level.
-	1. Page actions.
