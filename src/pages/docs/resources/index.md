@@ -9,9 +9,9 @@ weight: 5
 
 ### Sketch library
 
-Creating your own interfaces using Lexicon is pretty easy using our Sketch library.
+Creating your own interfaces using Lexicon is pretty easy using our Sketch library. Now, you can download it, practice and build your own interfaces.
 
-<a class="btn btn-primary" href="https://drive.google.com/open?id=1yuTAx42ZKvqc89yrCd8B2IsuCgwBc0Ci" target="_blank">Download</a>
+<a class="btn btn-primary" href="https://drive.google.com/file/d/1HfMYCIK9GE4htG6aTaRJ3NE5pJY7aB3k/view?usp=sharing" target="_blank">Download</a>
 
 ### Presentations
 
