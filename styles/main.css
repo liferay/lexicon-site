@@ -15125,7 +15125,8 @@ mark,
     margin: 0; }
 
 .content .sidebar-offset .dodont {
-  margin-right: 32px; }
+  margin-right: 32px;
+  margin-bottom: 16px; }
   .content .sidebar-offset .dodont img {
     margin-bottom: 8px; }
     .content .sidebar-offset .dodont img.do {
