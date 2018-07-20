@@ -84,15 +84,11 @@ Used in sites to link to related content.
 
 ### Attributes
 
-* Small size
-	* Height: 16px
-	* Border: 2px
-	* Line-height: 14px
-	* Font-size: 10
-	* Padding: 0px 6px 0px 6px 
-* Default size
-	* Height: 24px
-	* Border: 2px
-	* Line-height: 16px
-	* Font-size: 12
-	* Padding: 4px 8px 4px 8px 
+Small size metrics:
+
+![label small size metrics](../../../images/LabelSmallMetrics.jpg)
+
+Default size metrics:
+
+![label default size metrics](../../../images/LabelMetrics.jpg)
+
