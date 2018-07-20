@@ -66,6 +66,21 @@ Tooltips are brief pieces of information that appear on hover state over an elem
 * Please make a right use of the arrow positioning as it could drive to misunderstandings when it doesn’t point to the correct interface element.
 * When possible, try to not overlap other interaction elements in the same component.
 
+#### Do's and Don'ts
+
+Use tooltips on elements that have an action behind as button icons.
+
+<div class="row">
+	<div class="dodont col-lg">
+        <img class="do" src="../../../images/TooltipDo.jpg" alt="tooltip on button icon hover action">
+        <p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/TooltipDont.jpg" alt="tooltip on plain text hover action">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
 ### Attributes
 
 ![tootip metrics](../../../images/TooltipMetrics.jpg)
