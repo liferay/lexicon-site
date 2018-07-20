@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 const fs = require('fs');
-const clay = require('clay');
+const clay = require('clay-css');
 const path = require('path');
 
 const args = process.argv.slice(2);
