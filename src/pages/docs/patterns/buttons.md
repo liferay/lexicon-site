@@ -56,6 +56,60 @@ Used for actions inside a page, like dropdowns, button groups, split buttons. 32
 
 ![button primary default size disable state](../../../images/ButtonPrimarySmall.jpg)
 
+### Do's and Don'ts
+
+When placing buttons in a same row, use button of same height.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/ButtonSizeDo.jpg" alt="two buttons of same height in a row">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/ButtonSizeDont.jpg" alt="two buttons of different height in a row">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Caps lock is not allowed in buttons
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/ButtonCapitalizationDo.jpg" alt="button with no caps lock">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/ButtonCapitalizationDont.jpg" alt="button with caps lock">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Text must be always wrapped in one line.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/ButtonWrapDo.jpg" alt="button with text wrapped in on line">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/ButtonWrapDont.jpg" alt="button with text not wrapped">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Borderless button must be always before of after a set of bordered buttons.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/ButtonIconDo.jpg" alt="borderless button, secondary button, primary button">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/ButtonIconDont.jpg" alt="secondary button, borderless button, primary button">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
 ### Variations
 
 #### Secondary borderless
