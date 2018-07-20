@@ -15,13 +15,7 @@ A checkbox is a component that allows the user selecting something written in it
 
 ![checkbox](../../../images/CheckboxLabel.jpg)
 
-### Usage
-
-* Checkboxes should be used when more than one option can be selected.
-* Better if they are stacked
-* Mutually inclusive options
-* Use it for a single binary option as unique entry
-* Note that although we have visually defined the checkbox, we use the native checkbox as it is easier to identify by the end user using different web browsers.
+*Note: although we have visually defined the checkbox, we use the native checkbox as it is easier to identify by the end user using different web browsers.*
 
 ### States
 
@@ -39,6 +33,46 @@ On of the most common ways to find checkboxes in a form is grouped offering a se
 
 ![checkbox list metrics](../../../images/CheckboxList.jpg)![checkbox list metrics](../../../images/CheckboxListMetrics.jpg)
 
+### Do's and Don'ts
+
+Use capital letters in text associated to a checkbox.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/CheckboxCapitalizeDo.jpg" alt="checkbox text is capitalized">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/CheckboxCapitalizeDont.jpg" alt="checkbox text is not capitalized">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Use checkboxes for multiple choices in a set of options.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/CheckboxSwitchDo.jpg" alt="list of checkboxes to select options">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/CheckboxSwitchDont.jpg" alt="list of switches to select options">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Use checkboxes when more than one option can be selected.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/CheckboxDo.jpg" alt="list of checkboxes to select options">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/RadioDont.jpg" alt="list of switches to select options">
+		<p class="dont">Don't</p>
+	</div>
+</div>
 
 ## Radio
 
@@ -46,12 +80,7 @@ A radio is a component that allows the user selecting something written in its a
 
 ![radio](../../../images/RadioButtonLabelActive.jpg)
 
-### Usage
-
-* As a general rule of thumb, radio should be used when there’s a range of options and only one option can be chosen.
-* Better if they are stacked.
-* Do not use for a single binary option.
-* Note that although we have visually defined the radio, we use the native radio as it is easier to identify by the end user using different web browsers.
+*Note: although we have visually defined the radio, we use the native radio as it is easier to identify by the end user using different web browsers.*
 
 ### States
 
@@ -61,21 +90,6 @@ A radio is a component that allows the user selecting something written in its a
 | ![radio off](../../../images/RadioButton.jpg) | Off |
 | ![radio on disabled](../../../images/RadioButtonActiveDisabled.jpg) | On disabled |
 | ![radio off disabled](../../../images/RadioButtonDisabled.jpg) | Off disabled |
-
-### Radio vs Dropdown Menu
-
-It is a common case of doubt when to use radios or a dropdown menu instead when users need to choose one item out of a list of options. There is not a fixed rule for that but we propose this guidelines.
-
-#### Radio buttons:
-
-* When the number of options is small
-* When options need a long label to explain the differences of each option.
-* Radio buttons are always listed vertically.
-
-#### Dropdown menus:
-
-* When the number of options is large, or has the potential to become large.
-* Options should be of the same nature (e.g. a list of branches, or a list of people).
 
 ### Radio Group
 
@@ -94,22 +108,54 @@ It is very common to have the need of spliting a long list of options in several
 
 ![radio group example with 2 columns, 6 elements per column and radio group example with 3 columns, 6 elements per column](../../../images/RadioGroupExample.jpg)
 
+### Radio vs Dropdown Menu
+
+It is a common case of doubt when to use radios or a dropdown menu instead when users need to choose one item out of a list of options. There is not a fixed rule for that but we propose this guidelines.
+
+#### Radio buttons:
+
+* When the number of options is small
+* When options need a long label to explain the differences of each option.
+* Radio buttons are always listed vertically.
+
+#### Dropdown menus:
+
+* When the number of options is large, or has the potential to become large.
+* Options should be of the same nature (e.g. a list of branches, or a list of people).
+
+### Do's and Don'ts
+
+Use capital letters in text associated to a radio.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/RadioCapitalizeDo.jpg" alt="radio text is capitalized">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/RadioCapitalizeDont.jpg" alt="radio text is not capitalized">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Use radio when only one option can be selected.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/RadioDo.jpg" alt="radio group with one option selected">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/RadioDont.jpg" alt="radio group with two options selected">
+		<p class="dont">Don't</p>
+	</div>
+</div>
 
 ## Toggle
 
 A toggle is an interface element that by its activation or deactivation provokes an immediate action in the screen.
 
 ![switch default state](../../../images/SwitchLabelOn.jpg)
-
-### Usage
-
-* Use a toggle to present the user mutually exclusive options that have an action that is possible to perceive immediately.
-
-**Use doubt cases**
-
-* Use a radio or drop down rather than an on/off switch if the two states in question are separate options.
-
-* In confirmation messages use always a checkbox instead of a toggle as it is a single  binary option.
 
 ### States
 
@@ -122,12 +168,50 @@ A switch can be in one of these four different status:
 | ![switch on disabled](../../../images/SwitchOnDisabled.jpg) | On disabled |
 | ![switch off disabled](../../../images/SwitchOffDisabled.jpg) | Off disabled |
 
+### Do's and Don'ts
+
+Use capital letters in text associated to a toogle.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/SwitchCapitalizeDo.jpg" alt="radio text is capitalized">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/SwitchCapitalizeDont.jpg" alt="radio text is not capitalized">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Use toogles for activation.
+
+<div class="row">
+	<div class="dodont col-lg">
+		<img class="do" src="../../../images/SwitchRadioDo.jpg" alt="switch list one activated">
+		<p class="do">Do</p>
+	</div>
+	<div class="dodont col-lg">
+		<img class="dont" src="../../../images/SwitchRadioDont.jpg" alt="radio group one activated">
+		<p class="dont">Don't</p>
+	</div>
+</div>
+
+Use checkboxes instead of toggles in confirmation messages.
+
+<div class="dodont">
+    <img class="do" src="../../../images/SwitchCheckboxDo.jpg" alt="checkbox to accept terms of use">
+    <p class="do">Do</p>
+</div>
+<div class="dodont">
+    <img class="dont" src="../../../images/SwitchCheckboxDont.jpg" alt="switch to accept terms of use">
+    <p class="dont">Don't</p>
+</div>
+
 ### Variations
 
 #### Toggle with data attributes
 
 This type of toggles have labels around as the title label or other support label that make more explicit the switch value. The support label can be either at the top, right, bottom or left and its value should change with the toggle state change as the example shows. All the labels have the interaction that the switch have making the toggle more accessible.
-
 
 #### Toggle with icon
 
