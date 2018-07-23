@@ -14,8 +14,7 @@
     "clay-css": "2.1.12",
     "clay-label": "^2.1.12",
     "electric-cli": "^3.0.0",
-    "lexicon-ux": "^1.0.25",
-    "source-sans-pro": "^2.0.10"
+    "lexicon-ux": "^1.0.25"
   },
   "devDependencies": {
     "boxen": "^1.0.0",
