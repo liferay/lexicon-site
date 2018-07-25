@@ -30,8 +30,8 @@
 				<h1>{$page.title}</h1>
 
 				{if not $page.titleLabel == '' and not $page.titleLabelLink == ''}
-					<a href="{$page.titleLabelLink}" class="label label-warning">
-						<span class="label-item label-item-expand">{$page.titleLabel}</span>
+					<a href="{$page.titleLabelLink}" class="label label-warning" target="_blank">
+						<span class="label-item label-item-expand">SEE IN CLAY</span>
 					</a>
 				{elseif $page.titleLabel == 'Portal'}
 					<span class="label label-info">
