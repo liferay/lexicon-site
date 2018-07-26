@@ -2,7 +2,7 @@
 title: "Resources"
 description: "A series of links to previous versions of Lexicon and presentations done related to this design language."
 layout: "guide"
-weight: 5
+weight: 7
 ---
 
 <div class="page-description">{$page.description}</div>

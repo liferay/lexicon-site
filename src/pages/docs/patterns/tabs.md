@@ -2,6 +2,7 @@
 title: "Tabs"
 description: "Tabs are used to distribute content of a same nature in the same page without providing navigation."
 layout: "guide"
+weight: 1
 ---
 
 <div class="page-description">{$page.description}</div>
