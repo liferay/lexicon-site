@@ -27,8 +27,8 @@ Lexicon Site tries to collect all patterns created using Lexicon in Liferay prod
 
 | Label | Usage |
 | ---- | ----- |
-| <a class="label-link label label-warning" href="https://clayui.com/" target="_blank">CLAY</a> | Providing a link to the pattern implementation. |
-| <span class="label label-info">PORTAL</span> | Informing that the pattern is use in a concrete product or application. |
+| <a class="label-link label label-warning" href="https://clayui.com/" target="_blank">VIEW IN CLAY</a> | Providing a link to the pattern implementation. |
+| <span class="label label-info">PRODUCT NAME</span> | Informing that the pattern is use in a concrete product or application. |
 | <span class="label label-secondary">PENDING</span> | The pattern has been designed and will be implemented either in Clay or a Product/Application. |
 
 ### Implement Lexicon
