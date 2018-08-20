@@ -9,8 +9,8 @@ weight: 1
 <div class="page-description">{$page.description}</div>
 
 Lexicon defines different types of sidebar:
-* **Product Menu:** That allows the user to navigated through the different applications inside the Control Panel and the Site.
-* **Info Panel:** An information container where to display relevant information that does not fit into the table, list, card or any other visualization.
+* **Product Menu:** That allows the user to navigated through the different applications inside the Control Panel and the Site. See [product menu](../satellites/Sidebar/product_menu.html).
+* **Info Panel:** An information container where to display relevant information that does not fit into the table, list, card or any other visualization. See [info panel](../satellites/Sidebar/infopanel.html).
 
 ### Interaction
 

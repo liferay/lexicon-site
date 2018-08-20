@@ -12,7 +12,7 @@ This section describes the main navigational patterns, although it is necessary 
 
 ![navigation configuration DE](../../../images/Navigation.jpg)
 
-Product navigation in DE is always done through the [side nav](./sidenav.html). This navigation pattern is always placed to left side of the screen can be shown and hidden using the product menu icon.
+Product navigation in DXP DE is always done through the [product menu](../Sidebar/product_menu.html). This sidebar acts as side navigation pattern and it is always placed to left side of the screen. It can be shown and hidden using the product menu icon.
 
 ![navigation configuration DE Parts](../../../images/NavigationParts.jpg)
 

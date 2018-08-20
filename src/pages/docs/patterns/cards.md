@@ -123,5 +123,5 @@ Card sections help to separate different contents by a certain categorization or
 
 ### Examples of use
 
-Examples can be found in [dataset template](./patterns/dataset_display.html).
+Examples can be found in [dataset template](../Templates/datasetTemplate.html).
 
