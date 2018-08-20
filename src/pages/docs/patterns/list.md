@@ -66,7 +66,7 @@ List sections help to separate different contents by a certain categorization or
 
 ![list view example with 3 different states in different entries](../../../images/ListViewExample.jpg)
 
-More examples can be found in [dataset template](./Templates/datasetTemplate.html).
+More examples can be found in [dataset template](../Templates/datasetTemplate.html).
 
 ### Responsive
 
