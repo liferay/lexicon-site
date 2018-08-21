@@ -5,6 +5,12 @@ layout: "guide"
 weight: 1
 ---
 
+<time>August 21st, 2018</time>
+
+### Predictive forecast chart
+
+[Predicitive forecast chart](../patterns/Charts/chart-forecast.html) has been documented inside the charts section. This chart is very benefitial in use cases as commerce.
+
 <time>June 27th, 2018</time>
 
 ### Stable version
