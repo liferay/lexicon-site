@@ -53,7 +53,7 @@ This collection of charts grow with Liferay products' necesities. So come back e
                 <div class="card-body">
                     <div class="card-row">
                         <div class="autofit-col autofit-col-expand">
-                            <div class="card-title text-truncate" title="ChartDoughnutCard.png">Doughnut Chart</div>
+                            <div class="card-title text-truncate" title="ChartDoughnutCard.png">Donut Chart</div>
                         </div>
                     </div>
                 </div>

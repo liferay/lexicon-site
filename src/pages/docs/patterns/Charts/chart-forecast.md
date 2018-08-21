@@ -1,5 +1,5 @@
 ---
-title: "Predictive Forecasting"
+title: "Predictive forecast chart"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/charts/advanced/predictive-forecasting.html"
 description: "Predictive forecasting chart uses customer data to predict future  with a declared margin of error for its predictions."
