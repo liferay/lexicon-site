@@ -7,6 +7,19 @@ weight: 1
 
 <time>August 21st, 2018</time>
 
+### New organization
+
+A new organization has been done in the site in relation to the components. Now components are divided in two big groups: Core and Satellite.
+
+* **Core components** are the basic components and widely used components by differnet Liferay products.
+* **Satellite components** host all other components that are not so used in many Liferay products. It still worths to have them documented here so you get more out of Liferay without having to reinvent the wheel everytime you need a new pattern. You can just come here and check if what different Liferay teams are doing solve your scenario.
+
+It is important to highlight that core components are implemented and supported by Clay, while satellites don't.
+
+We have also separated **Templates**, where we include the most common templates created with Lexicon components in Liferay products.
+
+<time>August 21st, 2018</time>
+
 ### Predictive forecast chart
 
 [Predicitive forecast chart](../patterns/Charts/chart-forecast.html) has been documented inside the charts section. This chart is very benefitial in use cases as commerce.
