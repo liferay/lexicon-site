@@ -53,7 +53,7 @@ This collection of charts grow with Liferay products' necesities. So come back e
                 <div class="card-body">
                     <div class="card-row">
                         <div class="autofit-col autofit-col-expand">
-                            <div class="card-title text-truncate" title="ChartDoughnutCard.png">Doughnut Chart</div>
+                            <div class="card-title text-truncate" title="ChartDoughnutCard.png">Donut Chart</div>
                         </div>
                     </div>
                 </div>
@@ -126,6 +126,28 @@ This collection of charts grow with Liferay products' necesities. So come back e
     </div>
     <div class="col-lg">
         <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
+            <a class="card linkDecor" href="./chart-forecast.html">
+                <div class="aspect-ratio card-item-first">
+                    <div class="custom-control custom-checkbox">
+                        <label class="labelbg">
+                            <img alt="thumbnail"class="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="../../../images/ChartPreditiveForecastCard.jpg">
+                        </label>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-row">
+                        <div class="autofit-col autofit-col-expand">
+                            <div class="card-title text-truncate" title="ChartPreditiveForecastCard.jpg">Predictive Forecast Chart</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg">
+        <div class="card-type-asset form-check form-check-card form-check-top-left image-card col-lg">
             <a class="card linkDecor" href="./chart-stacked-bar.html">
                 <div class="aspect-ratio card-item-first">
                     <div class="custom-control custom-checkbox">
@@ -143,5 +165,7 @@ This collection of charts grow with Liferay products' necesities. So come back e
                 </div>
             </a>
         </div>
+    </div>
+    <div class="col-lg">
     </div>
 </div>
