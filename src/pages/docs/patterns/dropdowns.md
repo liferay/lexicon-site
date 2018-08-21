@@ -2,7 +2,7 @@
 title: "Dropdown Menu"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/dropdowns.html"
-description: "A dropdown menu dispalys a list of options related to the element that triggers it."
+description: "A dropdown menu displays a list of options related to the element that triggers it."
 layout: "guide"
 weight: 1
 ---
