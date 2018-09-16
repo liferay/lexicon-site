@@ -75,7 +75,7 @@ A closer definition of each color, its variations and usage:
 | ----- | ---- | ----- |
 | Success | #287D3C | Text color in success messages. | 
 | Success Lighten 35% | #5ACA75 | Border color in success status messages. | 
-| Success Lighten 63% | #EDE79F0 | Background color in success messages like alerts. | 
+| Success Lighten 63% | #EDF9F0 | Background color in success messages like alerts. | 
 
 ![Orange color scale](../../../images/ColorOrangeScale.jpg)
 
