@@ -1,5 +1,7 @@
 ---
 title: "Tabs"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/tabs.html"
 description: "Tabs are used to distribute content of a same nature in the same page without providing navigation."
 layout: "guide"
 weight: 1

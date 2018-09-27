@@ -1,5 +1,7 @@
 ---
 title: "Forms"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/form-elements.html"
 description: "Forms obtain user data and transmits it to the system either to store, produce an action, or both."
 layout: "guide"
 weight: 1

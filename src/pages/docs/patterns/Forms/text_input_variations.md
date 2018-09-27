@@ -1,5 +1,7 @@
 ---
 title: "Text Input Variations"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/text-input-variations.html"
 description: "A description of the search, autocomplete, labels input, date, numeric and password input variations."
 layout: "guide"
 weight: 4

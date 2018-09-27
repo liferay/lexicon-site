@@ -1,5 +1,7 @@
 ---
 title: "Dataset Display"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/dataset-display.html"
 description: "A combination of components that configure the main data management pattern of the system."
 layout: "guide"
 weight: 1

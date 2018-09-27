@@ -1,7 +1,7 @@
 ---
 title: "Text Input Group"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/forms/form_elements_input_groups.html"
+titleLabelLink: "https://clayui.com/docs/components/forms/text-input-group.html"
 description: "A text field with added elements that configure a more complex input structure."
 layout: "guide"
 weight: 4

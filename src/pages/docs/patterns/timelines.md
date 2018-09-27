@@ -1,7 +1,7 @@
 ---
 title: "Timelines WIP"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/timelines.html"
+titleLabelLink: "https://clayui.com/docs/css-framework/satellites/timelines.html"
 description: "Timelines represent an horizontal visualization of events along the time."
 layout: "guide"
 weight: 1

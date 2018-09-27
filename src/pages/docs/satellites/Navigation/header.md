@@ -1,7 +1,7 @@
 ---
 title: "Header"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/header.html"
+titleLabelLink: "https://clayui.com/docs/css-framework/satellites/navigation/header.html"
 description: "Header is toolbar that provides identification and allows the user to navigate and perform actions."
 layout: "guide"
 weight: 2

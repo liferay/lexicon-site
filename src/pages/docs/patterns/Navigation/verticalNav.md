@@ -1,7 +1,7 @@
 ---
 title: "Vertical Navigation"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/navigation/vertical_navigation.html"
+titleLabelLink: "https://clayui.com/docs/components/navigation/vertical-navigation.html"
 description: "An alternative pattern used for a vertical display of the sections of a navigation list."
 layout: "guide"
 weight: 2

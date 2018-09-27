@@ -1,7 +1,7 @@
 ---
 title: "Selectors"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/forms/form_elements.html#select-element"
+titleLabelLink: "https://clayui.com/docs/components/forms/selector.html"
 description: "A form control element used to select and entry data within several provided options."
 layout: "guide"
 weight: 3
