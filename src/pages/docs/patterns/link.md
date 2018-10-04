@@ -1,5 +1,7 @@
 ---
 title: "Link"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/link.html"
 description: "Also known as hyperlink, the link is a clickable (text or image) element used for navigation purposes."
 layout: "guide"
 weight: 1

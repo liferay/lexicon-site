@@ -1,5 +1,7 @@
 ---
 title: "Forms Hierarchy"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/forms-hierarchy.html"
 description: "Definition of the content hierarchy inside a form structure and the components used to identify it."
 layout: "guide"
 weight: 2

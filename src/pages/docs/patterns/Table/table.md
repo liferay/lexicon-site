@@ -1,7 +1,7 @@
 ---
 title: "Table"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/table.html"
+titleLabelLink: "https://clayui.com/docs/components/table/table.html"
 description: "A table is a specific pattern used for comparing datasets in a very direct an analytical way."
 layout: "guide"
 weight: 1

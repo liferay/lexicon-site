@@ -1,5 +1,7 @@
 ---
 title: "Forms Navigation"
+titleLabel: "Clay"
+titleLabelLink: "https://clayui.com/docs/components/forms/forms-navigation.html"
 description: "Forms can have navigation and this can appear in two different ways: left navigation menu or wizard."
 layout: "guide"
 weight: 2

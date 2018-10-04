@@ -1,7 +1,7 @@
 ---
 title: "Info Panel"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/info_panel.html"
+titleLabelLink: "https://clayui.com/docs/components/sidebar/info-panel.html"
 description: "An information container that displays additional data from the one shown in the main visualization pattern."
 layout: "guide"
 weight: 2
