@@ -15199,6 +15199,35 @@ mark,
   .content .sidebar-offset .type-scale.type-bold {
     font-weight: 700; }
 
+.content .sidebar-offset .designer-info {
+  display: inline-block;
+  padding-left: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle; }
+
+.content .sidebar-offset .designer-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 0; }
+
+.content .sidebar-offset .designer-detail {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6B6C7E;
+  margin-bottom: 0; }
+
+.content .sidebar-offset .project-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #6B6C7E;
+  margin-bottom: 48px; }
+
+.content .sidebar-offset h1.with-subtitle {
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
 .content .sidebar-offset .btn-primary {
   color: white; }
 
