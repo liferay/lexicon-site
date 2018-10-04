@@ -5,6 +5,13 @@ layout: "guide"
 weight: 1
 ---
 
+<time>October 4th, 2018</time>
+
+### Examples
+
+Lexicon can be use to create many different interfaces. Today we open a new section "Examples" in our site to show case different interface examples created by Liferay UX designers for our products using Lexicon. We hope these series of examples inspire you on how to create your interfaces. With the time, the number of examples will grow to show you a wide variety of interfaces built with Lexicon.
+
+
 <time>August 21st, 2018</time>
 
 ### New organization

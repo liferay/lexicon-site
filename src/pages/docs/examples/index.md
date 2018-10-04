@@ -1,9 +1,9 @@
 ---
-title: "News"
+title: "Examples"
 description: "Keep updated."
 layout: "guide"
 icon: "lexicon-site-news"
-weight: 7
+weight: 6
 ---
 
 <time>July 22nd, 2017</time>

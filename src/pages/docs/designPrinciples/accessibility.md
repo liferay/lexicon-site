@@ -22,5 +22,3 @@ Accessibility can be also a legal requierement for your business. Some countries
 * [Web Content Accessibility Guidelines (WCAG) from W3C](https://www.w3.org/WAI/intro/wcag)
 * [Section 508 of the U.S. Rehabilitation Act](https://www.section508.gov/section-508-of-the-rehabilitation-act)
 
-
-
