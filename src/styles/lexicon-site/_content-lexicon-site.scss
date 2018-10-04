@@ -214,6 +214,41 @@
 		}
 	}
 
+	.designer-info {
+		display: inline-block;
+		padding-left: 16px;
+		margin-top:auto;
+		margin-bottom:auto;
+		vertical-align: middle;
+	}
+
+	.designer-name {
+		font-weight: 600;
+		font-size: 14px;
+		color: black;
+		margin-bottom: 0;
+	}
+
+	.designer-detail {
+		font-weight: 400;
+		font-size: 14px;
+		color: $gray-600;
+		margin-bottom: 0;
+	}
+
+	.project-name {
+		font-weight: 600;
+		font-size: 14px;
+		color: $gray-600;
+		margin-bottom: 48px;
+	}
+	
+	h1.with-subtitle {
+		padding-bottom: 0; 
+		margin-bottom: 0; 
+	}
+
+
 	.btn-primary {
 		color: white;
 	}
