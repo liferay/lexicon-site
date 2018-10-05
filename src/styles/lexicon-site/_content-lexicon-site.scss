@@ -252,6 +252,24 @@
 	.btn-primary {
 		color: white;
 	}
+
+	.getstarted-card {
+		display: flex;
+		padding: $base-size;
+	}
+
+	.getstarted-info {
+		display: inline-block;
+		padding-left: $base-size;
+		margin-top: auto;
+		margin-bottom: auto;
+		vertical-align: middle;
+	}
+
+	.getstarted-img {
+		width: 120px;
+		height:auto;
+	}
 }
 
 

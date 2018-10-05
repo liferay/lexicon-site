@@ -23,7 +23,58 @@ For this, the construction of Lexicon is based on the Atomic Design theoretical 
 
 Lexicon Site is then presented as the necessary platform for the diffusion and access to Lexicon system by designers, developers or any other person involved in the creation of digital products. Mainly focused on Liferay community, but open to anyone who wants to make use of its content and also want to contribute with their own proposals and suggestions.
 
-Lexicon Site tries to collect all patterns created using Lexicon in Liferay products. This doesn't mean that all of them are reflected in Clay. Clay only implements those patterns that are of common use in several of our products and/or applications, providing a maintenance as they are more important not only for us but also for you. In this way, the components are labeled in the following way
+<span class="getstarted-card row">
+    <span class="col-12 col-sm-2 col-md-3 text-center">
+        <img class="getstarted-img" src="../../../images/getstarted/foundation.png" alt="">
+    </span>
+    <span class="getstarted-info col-md">
+        <h4>Foundations</h4>
+        <p>Foundations are those principles a design system lies on. This principles can be modified not affecting the component's behavior. We are talking about things such as colors, grid or typography.</p>
+    </span>
+</span>
+
+<span class="getstarted-card row">
+    <span class="col-12 col-sm-2 col-md-3 text-center">
+        <img class="getstarted-img" src="../../../images/getstarted/component.png" alt="">
+    </span>
+    <span class="getstarted-info col-md">
+        <h4>Core Components</h4>
+        <p>Core compontents contains all those components that are essential to build interfaces and used in such extent that worths it to have it in the core implementation of the design system. Each component define rules and behaviours. Each component look and feel is based on the combination of the foundations previously. Therefore, changes in foundations will be propagated to the entire system. In our case, these components are implemented by [Clay](https://clayui.com/).</p>
+    </span>
+</span>
+
+<span class="getstarted-card row">
+    <span class="col-12 col-sm-2 col-md-3 text-center">
+        <img  class="getstarted-img" src="../../../images/getstarted/satellite.png" alt="">
+    </span>
+    <span class="getstarted-info col-md">
+        <h4>Satellite Components</h4>
+        <p>These components are specific needs from certain products or applications. They are built using the foundations and core components offered by Lexicon. These components are not owned by the design system but by the product or application who created them..</p>
+    </span>
+</span>
+
+<span class="getstarted-card row">
+    <span class="col-12 col-sm-2 col-md-3 text-center">
+        <img class="getstarted-img" src="../../../images/getstarted/template.png" alt="">
+    </span>
+    <span class="getstarted-info col-md">
+        <h4>Templates</h4>
+        <p>Templates offers as serie of solutions to tackle repetitive interfaces. These templates speed up the design process as you only need to make some specific modifications for your use case and place the content on them.</p>
+    </span>
+</span>
+
+<span class="getstarted-card row">
+    <span class="col-12 col-sm-2 col-md-3 text-center">
+        <img class="getstarted-img" src="../../../images/getstarted/example.png" alt="">
+    </span>
+    <span class="getstarted-info col-md">
+        <h4>Examples</h4>
+        <p>UX Designers showcase in this section different interfaces created with Lexicon that break with the templates used before. These are very valid uses of Lexicon where you can see how core components and satellite components are applied to create interfaces that tackle specific scenarios.</p>
+    </span>
+</span>
+
+
+The components you find along our site are labeled for you to have a link to its implementation or the product where you could find it. This can be important to see them working live or in a context of use.
 
 | Label | Usage |
 | ---- | ----- |
