@@ -39,7 +39,7 @@ It displays tools focused on filtering, sorting and data visualization.
 
 #### State 2
 
-It displays contextual tools associated to specific items selected. It is only activated when one or more items from the visualization are selected.
+It displays contextual tools associated to specific items selected. It is only activated when one or more items from the visualization are selected. The actions of the management bar are contextualized providing only those specific actions that the selected dataset allows.
 
 The background color and the way to show the icons of the bar in this state changes to differentiate from the default state and establish a visual relation with other forms of showing this tools.
 
@@ -82,6 +82,10 @@ A dropdown button triggers a dropdowm menu with groups. This configuration is th
 
 **Group by**: used to group the dataset in different ways. A title and a data provider with the different classification terms per each criteria must be provided. In case there is no group by criteria or there is only one criteria this section must not appear.
 
+Filters are reflected in the results' bar. This bar includes a label per filter applied.
+
+![state after applying filters](../../../images/ManagementBarFilterResults.jpg)
+
 #### View change
 
 This icon button allows to change visualization among tables, lists and cards.
@@ -92,9 +96,10 @@ This button must not appear if there is only one possible visualization.
 
 #### Search
 
-When a management bar contains a search field and it is used to filter elements, there is a thin stripe informing the user with the total number of results.
+When a management bar contains a search field and it is used to filter elements, there is a thin stripe informing the user with the total number of results. This can be combined with filters.
 
-![state one after typing](../../../images/ManagementBarResults.png)
+![state one after typing](../../../images/ManagementBarResults.jpg)
+
 
 #### Layout Variations
 The functionalities that are not going to be used in the management bar disappear. So the Search field grows towards the disappearing elements, as shown below.
@@ -141,7 +146,7 @@ By tapping on the magnifying glass icon button, the management bar gets into thi
 
 After tapping on intro in the search field the management bar return to state 1 with a summary line of the results found.
 
-![state two of the management bar mobile](../../../images/ManagementBarMobileResults.png)
+![state two of the management bar mobile](../../../images/ManagementBarMobileResults.jpg)
 
 #### Mobile Layout Variations 
 

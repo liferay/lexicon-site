@@ -5,6 +5,13 @@ layout: "guide"
 weight: 1
 ---
 
+<time>October 12th, 2018</time>
+
+### Management bar update
+
+We are happy to announce that we have a new update for the management toolbar. This toolbar is now able to contextualize actions depending on the selection done in the dataset. In this way, we want to reduce the number of errors not allowing users to perform actions that do not affect to all selected elements.
+Moreover, we introduce the results bar when filters are applied and/or search is performed from the management toolbar. This helps the user with useful and visible feedback.
+
 <time>October 4th, 2018</time>
 
 ### Examples
