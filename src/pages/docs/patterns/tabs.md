@@ -9,6 +9,9 @@ weight: 1
 
 <div class="page-description">{$page.description}</div>
 
+![Tabs. On the left side classic variation on the right side modern variation](../../../images/Tab.jpg)
+
+
 ### Usage
 
 * Use tabs when you need to move between views on the same context.
@@ -21,15 +24,18 @@ weight: 1
 * Do not use all caps in the label, this complicates the readability of the tab.
 * One of the tabs must be always pre selected
 * Tabs must collapse below "More" tab when the don't fit in the screen. More dropdown tab can exist if the tabs fit in the available width. This tab will be always the last one.
+* Tab bars may need of a visual aid to help giving context. In this case, you may use a thin line under the tabs bar as shown in the following example:
+
+    ![Classic tab with rounded corners at top corners](../../../images/TabsAdvice.jpg)
 
 ### Variations
 
 #### Classic tab
 Use this tab type inside forms.
 
-![Classic tab with rounded corners at top corners](../../../images/TabsRounded.png)
+![Classic tab with rounded corners at top corners](../../../images/TabsRounded.jpg)
 
 #### Modern tab
 Use this tab type together with dataset visualizations as the list view or card view.
 
-![Modern tab without background and underline in selected state](../../../images/TabsLine.png)
+![Modern tab without background and underline in selected state](../../../images/TabsLine.jpg)
