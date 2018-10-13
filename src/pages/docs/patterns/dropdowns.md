@@ -57,9 +57,13 @@ Sometimes action menus face problems with the number of elements they contain. T
 
 #### Dropdown with left icons
 
-Dropdown menus with left icons are suitable for process bars (wizards) where there is a need to display a dropdown menu when the number of steps do not fit the screen.
-
-![dropdown menu with icons to the left](../../../images/DropdownRegularLeftIcons.jpg)
+Dropdown menus with left icons are suitable for situations like:
+* Process bars (wizards) where there is a need to display a dropdown menu when the number of steps do not fit the screen.
+	
+	![dropdown menu with icons to the left](../../../images/DropdownRegularLeftIcons.jpg)
+* Actions menus to help identifying actions that are tight related to their icons.
+	
+	![dropdown menu with icons to the left](../../../images/DropdownActionLeftIcon.jpg)
 
 #### Dropdown with right icons
 
@@ -99,7 +103,7 @@ Guideline: (not all steps are always in use)
 4. Disabling actions:
 	- Do never remove actions. If an action is not available for an item due to its state, disable it.
 	- Exception: remove the action if the item by its nature cannot perform the action.
-5. Actions menu actions don’t have icons. Using many icons can increase the reading time of the menu.
+5. Actions menu may have icons. Using many icons can help identifying actions.
 6. Complementary actions must together (Ex: Lock, Unlock)
 	- When one is able the complementary must be disabled.
 	- Sometimes both would be able at same time (undo / redo)
