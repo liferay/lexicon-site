@@ -5,6 +5,12 @@ layout: "guide"
 weight: 1
 ---
 
+<time>October 13th, 2018</time>
+
+### Examples update
+
+As promised, we are updating the examples section. This time we bring you an example from [Liferay Partner Portal](../examples/partnerPortal.html) submitted by Patrick Pentz.
+
 <time>October 12th, 2018</time>
 
 ### Management bar update
