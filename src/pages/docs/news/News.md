@@ -7,9 +7,19 @@ weight: 1
 
 <time>October 13th, 2018</time>
 
-### Examples update
+### General update
+
+**Examples:**
 
 As promised, we are updating the examples section. This time we bring you an example from [Liferay Partner Portal](../examples/partnerPortal.html) submitted by Patrick Pentz.
+
+**Dropdown menu:**
+
+[Dropdown menu](../pattern/dropdowns.html) definition has been update to accept icons on the left side of actions.
+
+**Tabs:**
+
+[Tabs](../pattern/tabs.html) have been updated with an example to give context in tabbars.
 
 <time>October 12th, 2018</time>
 
