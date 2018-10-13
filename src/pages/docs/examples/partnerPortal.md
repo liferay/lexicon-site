@@ -19,4 +19,4 @@ weight: 1
 
 Liferay's Partner Portal is the one-stop shop for everything partners need to manage their Liferay business. The portal allows our partners to register and track sales opportunities, manage subscription renewals, request marketing development funds, stay up to date with partner news, and access a variety of Liferay business resources.
 
-![Partner Portal home page](../../../images/examples/partnerPortal.png)
+![Partner Portal home page](../../../images/examples/partnerPortal.jpg)
