@@ -7,11 +7,24 @@ weight: 8
 
 <div class="page-description">{$page.description}</div>
 
-### Sketch library
+### Design libraries
 
-Creating your own interfaces using Lexicon is pretty easy using our Sketch library. Now, you can download it, practice and build your own interfaces.
+Creating your own interfaces using Lexicon is pretty easy using our Figma or Sketch libraries. Our libraries bring you our foundations and core components for you to build your interfaces.
 
-<a class="btn btn-primary" href="https://drive.google.com/file/d/1HfMYCIK9GE4htG6aTaRJ3NE5pJY7aB3k/view?usp=sharing" target="_blank">Download</a>
+<div class="row">
+    <div class="download-card">
+        <img class="download-card-img" src="../../../images/resources/figma-logo.png">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1HB5Efjbzi_hc_mMRdQ_tMGNmTnqj_IPp/view?usp=sharing" target="_blank">Download</a>
+        <p class="download-card-text">Beta version</p>
+    </div>
+    <div class="download-card">
+        <img class="download-card-img" src="../../../images/resources/sketch-symbol-transparent.png">
+        <a class="btn btn-primary" href="https://drive.google.com/file/d/1HfMYCIK9GE4htG6aTaRJ3NE5pJY7aB3k/view?usp=sharing" target="_blank">Download</a>
+        <p class="download-card-text">No longer supported</p>
+    </div>
+</div>
+
+
 
 ### Presentations
 

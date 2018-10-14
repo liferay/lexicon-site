@@ -270,6 +270,28 @@
 		width: 120px;
 		height:auto;
 	}
+
+	.download-card {
+		width: 200px;
+		height: 200px;
+		text-align: center;
+		border: 1px black;
+	}
+
+	.download-card-img {
+		height: 100px;
+		width: auto;
+		margin-bottom: $base-size;
+		margin-bottom: $base-size;
+	}
+
+	.download-card-text {
+		color: $gray-600;
+		font-size: 14px;
+		text-align: center;
+		margin-top: $base-size / 4;
+	}
+
 }
 
 
