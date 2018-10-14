@@ -15246,6 +15246,24 @@ mark,
   width: 120px;
   height: auto; }
 
+.content .sidebar-offset .download-card {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  border: 1px black; }
+
+.content .sidebar-offset .download-card-img {
+  height: 100px;
+  width: auto;
+  margin-bottom: 24px;
+  margin-bottom: 24px; }
+
+.content .sidebar-offset .download-card-text {
+  color: #6B6C7E;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 6px; }
+
 @media (max-width: 899px) {
   margin-top: 80px; }
 
