@@ -1,7 +1,7 @@
 ---
 title: "Management Toolbar"
 titleLabel: "Clay"
-titleLabelLink: "https://clayui.com/docs/components/toolbars/management_toolbar.html"
+titleLabelLink: "https://clayui.com/docs/components/toolbars/management-toolbar.html"
 description: "An extension of a toolbar configured as a combination of different components used to manage a dataset."
 layout: "guide"
 weight: 2
