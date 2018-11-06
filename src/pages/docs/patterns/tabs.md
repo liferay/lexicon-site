@@ -2,7 +2,7 @@
 title: "Tabs"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/tabs.html"
-description: "Tabs are used to distribute content of a same nature in the same page without providing navigation."
+description: "Tabs organize similar content together into individual sections in the same page."
 layout: "guide"
 weight: 1
 ---
@@ -14,28 +14,30 @@ weight: 1
 
 ### Usage
 
-* Use tabs when you need to move between views on the same context.
+* Use tabs when you need to move between views in the same context.
 * Split your information into groups that are easy to identify by your end users.
 * Order your tabs in a natural way for your users.
-* Tabs are meant to be used when you don’t need to compare contents.
-* All tabs in a tab bar must follow the same style and type. Changing styles in tabs can produce the feeling of navigation and this is not the desired outcome for this pattern.
-* A tab must change to selected state on user selection. It must be easy to identify among other tabs. There can only be one tab selected at same time. The rest of the tabs must be possible to read.
-* Tab label must be short, maximum two words, clear and concise.
-* Do not use all caps in the label, this complicates the readability of the tab.
-* One of the tabs must be always pre selected
-* Tabs must collapse below "More" tab when the don't fit in the screen. More dropdown tab can exist if the tabs fit in the available width. This tab will be always the last one.
-* Tab bars may need of a visual aid to help giving context. In this case, you may use a thin line under the tabs bar as shown in the following example:
+* Use tabs when you don’t need to compare contents.
+* All tabs in a tab bar must follow the same style and type. Having different styles in tabs can produce the feeling of navigation, and this is not the desired outcome for this pattern.
+* A tab must change to the selected state on user selection. The selected tab must stand out from other tabs. Only one tab can be selected at a time.
+* A tab's label must be short, clear, and concise with a maximum of two words.
+* Do not use all caps in the label. This complicates the readability of the tab.
+* One tab must always be pre selected
+* Remaining tabs must collapse below a "More" tab when they don't fit on the screen. This "More" dropdown tab should always be last.
+* Tab bars may need a visual aid to help give context. In this case, you may use a thin line under the tabs bar, as shown in the following example:
 
     ![Classic tab with rounded corners at top corners](../../../images/TabsAdvice.jpg)
 
 ### Variations
 
 #### Classic tab
-Use this tab type inside forms.
+
+Use the classic tab type inside forms.
 
 ![Classic tab with rounded corners at top corners](../../../images/TabsRounded.jpg)
 
 #### Modern tab
-Use this tab type together with dataset visualizations as the list view or card view.
+
+Use the modern tab type together with dataset visualizations, such as the list view or card view.
 
 ![Modern tab without background and underline in selected state](../../../images/TabsLine.jpg)

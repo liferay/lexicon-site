@@ -1,6 +1,6 @@
 ---
 title: "Form Template"
-description: "Form template helps you to understand how forms are built and composed using Lexicon patterns."
+description: "The form template demonstrates how forms are built and composed using Lexicon patterns."
 layout: "guide"
 weight: 1
 ---

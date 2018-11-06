@@ -1,7 +1,7 @@
 ---
 title: "File Upload"
 titleLabel: "Portal"
-description: "File Uploader is a pattern that allows the user to select and upload images to the system."
+description: "File Uploader is a pattern that lets users select and upload images to the system."
 layout: "guide"
 weight: 1
 ---
@@ -9,18 +9,20 @@ weight: 1
 <div class="page-description">{$page.description}</div>
 
 ### Simple File Upload
+
 Simple file upload is used to upload a simple file element.
 
 ![file upload simple](../../../images/FileUploadSimple.png)
 
 ### Multiple File Upload
-Inside this categorization we have two different patterns: file uploader and image uploader. Both are pretty similar but the second one is more visual and adapted to the situation.
 
-Both uploaders share the same **upload area** which works in the following way:
-* It must always have 2 different states:
+Inside this categorization we have two different patterns: file uploader and image uploader. Both are pretty similar, but the second one is more visual and adapted to the situation.
+
+Both uploaders share the same **upload area** which has the following attributes:
+* It must have two different states:
     * Default
-        * Message: to clarify file extension permitted, max size of each file.
-        * Secondary button: as not always users would want to user the drag and drop feature. The button opens the operating system file uploader with the possibility of selecting multiple files.
+        * Message: clarifies the permitted file extensions and max size of each file
+        * Secondary button: users may not always want to use the drag and drop feature. The button opens the operating system's file uploader with the option to select multiple files.
 
         ![file upload simple empty state](../../../images/FileUploadEmptyState.png)
 
@@ -29,21 +31,21 @@ Both uploaders share the same **upload area** which works in the following way:
 
         ![file upload simple empty state hover](../../../images/FileUploadEmptyStateHover.png)
 
-* Once files have been added to the upload system, there must be always clear options to upload more files, explicit button and drag and drop option.
-* The scroll must be only vertical if needed.
+* Once files have been added to the upload system, there must be clear options to upload more files: An explicit button and a drag and drop option.
+* The scroll must only be vertical if needed.
 * Each file can be deleted individually.
-* Each file can retry the upload individually
+* Each file can retry the upload individually.
 
 #### File Uploader
 
 ![file upload simple](../../../images/FileUpload.png)
 
-* File uploader admits any kind of file further that images as it can be pdfs, docs, etc.
-* After dropping files in the area, a list with the upload status is displayed allowing the users to see the upload status of each single file.
+* File uploader accepts any file, including images, pdfs, docs, etc.
+* After dropping files in the area, the upload status of each file is displayed in a list.
 * Files that didn't complete the upload process provide the option to retry the upload.
-* Every file must be always possible to be removed.
+* Every file must be removable.
 
-In this example the file uploader counts with a form to predefine a certain configuration for the files uploaded.
+In this example, the file uploader works together with a form to predefine configuration options for the uploaded files:
 
 ![file upload simple with errors](../../../images/FileUploaderErrorStatePanelOpen.png)
 
@@ -53,11 +55,11 @@ Files can be in different states:
 
 ![file upload list row default state](../../../images/FileUploadListDefault.png)
 
-* Upload state: while the is the upload process
+* Upload state: during the upload process
 
 ![file upload list row upload state](../../../images/FileUploadListProgress.png)
 
-* Error state: the file upload has failed
+* Error state: when the file upload has failed
 
 ![file upload list row error state](../../../images/FileUploadListError.png)
 
@@ -67,21 +69,21 @@ Files can be in different states:
 ![file upload simple](../../../images/FileUploadImageUpload.png)
 
 * Image uploader only admits image file types.
-* After dropping images in the area, a images grid appears allowing the user see the upload process.
-* The drag and drop area hots the image grid. This are must have a vertical scroll. The cell next to last uploaded image must have a "+" to invite the user to upload more files. Clicking in that cell opens the file upload for the specified files.
-* Each images is represented by its squared thumbnail.
+* After dropping images in the area, an image grid appears, letting the user see the upload process.
+* The drag and drop area fills the image grid. This area must have a vertical scroll. The cell next to the last uploaded image must have a "+" to invite the user to upload more files. Clicking in that cell opens the file upload for the specified files.
+* Each image is represented by a square thumbnail.
 * Images that didn't complete the upload process provide the option to retry the upload.
-* Every image must be always possible to be removed.
+* Every image must be removable.
 
 ![image upload with error state](../../../images/FileUploadImageUploadErrors.png)
 
 Images can be in different states:
 
-* Upload state: while the is the upload process. Left side default state, right side hover state.
+* Upload state: during the upload process. The default state is shown in the image on the left. The hover state is shown in the image on the right.
 
 ![image upload, upload state](../../../images/FileUploadImageStates.png)
 
-* Error state: the file upload has failed
+* Error state: when the file upload has failed
 
 ![image upload error state](../../../images/FileUploadImageStatesError.png)
 
@@ -89,6 +91,6 @@ Images can be in different states:
 
 ![image default and hover state](../../../images/FileUploadImageStatesDefaultHover.png)
 
-* It can be the case that the image uploader requires of checkboxes for a specific requirement
+* The image uploader may require a checked state for certain options:
 
 ![image default and selected state](../../../images/FileUploadImageStatesChecbox.png)

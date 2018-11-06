@@ -2,7 +2,7 @@
 title: "Alerts"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/alerts.html"
-description: "Alerts are used to capture the attention and inform the user in a more or less intrusive way."
+description: "Alerts are used to capture the attention of the user in an intrusive way."
 layout: "guide"
 weight: 1
 ---
@@ -13,14 +13,14 @@ weight: 1
 
 ### Usage
 
-* Alerts are possible to define in 4 different colors corresponding to status colors.
-* Alerts must always have the status icon and the keyword that defines the message type and in semibold.
+* Four different colors are available to define alert status.
+* The status icon and the keyword that defines the message type for the alert must be semi-bold.
 * Alerts can have multiple text lines.
-* All alerts types can contain links. Those links are defined in primary color.
-* Alerts can be defined as temporary in the case of toast and stripe. In these cases the delay time is:
+* Alerts can contain links. These links are defined in primary color.
+* Toast and stripe alerts can be temporary. The delay times for these temporary alerts to disappear are shown below:
     * 10 sec if there are actions associated.
     * 5 sec if there are no actions associated.
-    * In both cases the time freezes on hover to allow more time to the user to interact with the alert message. On mouse out the countdown continues.
+    * In both cases, the time freezes on hover to allow the user more time to interact with the alert message. On mouse out, the countdown continues.
 
 ### Types
 
@@ -28,48 +28,49 @@ weight: 1
 
 | Type | Usage |
 | ----- | ----- |
-| Error | Red color. This alert indicates that something went wrong after performing an action. (E.g.: Form couldn’t be saved because some data was missing) |
-| Success | Green color. Success alert messages will appear when everything was ok. (E.g.: “The user was created successfully”). |
-| Warning | Yellow color. This alert lets users know that the action they performed was done but there are some issues with it. (E.g. The item was created but with there were some issues). |
-| Information | Blue color. Information alerts are used to inform users about things that occur while they are carry out a task. |
+| Error | The error alert is Red. It indicates that something went wrong after performing an action. (E.g.: The form couldn’t be saved because some data was missing) |
+| Success | The success alert is Green. It appears when the action is successful. (E.g.: The user was created successfully). |
+| Warning | The warning alert is Yellow. It lets users know that the action was completed, but there are some issues with it. (E.g. The item was created but with some issues). |
+| Information | The information alert is Blue. It provides relevant information while a user carries out a task. |
 
-More information about color definitions can be found at [colors page](../designPrinciples/colors.html).
+See the [colors page](../designPrinciples/colors.html) to learn more about color definitions.
 
 ### Attributes
 
 ![info alert colors with numbers specifying each of its attributes](../../../images/AlertParts.jpg)
 
 An alert has 4 different attributes:
-1. The status icon.
-2. Type text.
-3. Descrition text.
-4. Close button. That might appear or not depending on the use you give to the alert in a context.
 
-Please see the following image to understand how an alert is built:
+1. The status icon
+2. The type text
+3. The description text
+4. The close button. This may not appear, depending on the alert's use.
+
+The image below shows the metrics for an alert's design:
 ![info alert colors with metrics stated to understand how it is built](../../../images/AlertMetrics.jpg)
 
 ### Variations
 
 #### Toast
 
-This type of alert is specific for toast messages. This type of messages appear on the top right corner of the screen. The maximum width of a toast message is 360px and the height can vary depending on the number of rows. It always have a close action.
+This type of alert is specific for toast messages. These type of messages appear on the top right corner of the screen. The maximum width of a toast message is 360px, and the height can vary depending on the number of rows. It always has a close action.
 
-![four differet toast alert colors](../../../images/AlertToast.jpg)
+![four different toast alert colors](../../../images/AlertToast.jpg)
 
-This alert type must appear at the bottom left side of the screen. 24px separation from the left and from the bottom. In case they are configured to close automatically, the time will be 10 seconds.
+This type of alert must appear at the bottom left side of the screen. There must be a 24px separation from the left and from the bottom. If the alert is temporary, it will disappear in 10 seconds.
 
-Example of use:
+An example is shown below:
 
 ![toast alert example. Placed to the top right in the screen and below the header](../../../images/AlertToastExample.jpg)
 
 
 #### Embedded
 
-Embedded alerts are thought to be used inside context as forms. Usually you will only need to use the information one. Its width depends on the container with you use it, always respecting the container margins to the content. The close action is not of mandatory use.
+Embedded alerts are meant for use in forms. Usually you will only need to use the information one. Its width depends on the width of the container it is placed in, always respecting the container margins to the content. The close action is not required for embedded alerts.
 
-![four differet embedded alert colors](../../../images/AlertEmbedded.jpg)
+![four different embedded alert colors](../../../images/AlertEmbedded.jpg)
 
-Example of use:
+An example is shown below:
 
 ![embedded alert example. Placed inside a form.](../../../images/AlertEmbeddedExample.jpg)
 

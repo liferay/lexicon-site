@@ -12,39 +12,38 @@ weight: 1
 ![card with image default state](../../../images/CardImage.jpg)
 
 ### Usage
-Cards is a pattern that is heavy on image usage, therefore we recommend to use it only if you have images associated to your content. A good example of this could be your users database or an image library.
+A card is a pattern that relies heavily on imagery, therefore, we recommend that you only use cards if you have images associated with your content. A practical use case for this could be your users database or an image library. 
 
-Cards are not meant to compare information in an exhaustive way but a light way. In case you need exhaustive comparison and not based on image comparison, you must use a table.
+Cards are meant for a light comparison of information rather than an exhaustive comparison. If you have exhaustive information to compare, which doesn't contain images, use a table instead.
 
-Cards in Lexicon are open to many configurations. We provide a flexible card layout for you to configure it as you want. Later on this page we provide a series of examples we use in our systems for you to get inspired.
+Cards can have various configurations. We provide a flexible card layout that is fully customizable, so you can create the UI you need. See the example configurations throughout this page to get inspired.
 
 ### Card interaction
 
-* A card can have a checkbox, a radio or none of them.
-* Selecting a card is only possible by using the checkbox or radio, and the image area. 
-* Main text in the card can be configured to navigate
-	* In case of:
-		* Folder: it navigates to the next level.
-		* File / Image / User: it navigates to its detail view.
-	* Do never use it for preview. Preview is always a secondary action placed inside the action menu.
-* If the link drives the user out of the site, please identify visually that this link will open in a new page.
+* A card can have a checkbox, a radio button, or neither of them.
+* You can select a card by using the checkbox or radio button or the image area. 
+* The main text in the card can be used for navigation:
+	* When used in a Folder card, it navigates to the next level.
+	* When used in a File, Image, or User card, it navigates to its detail view.
+	* Never use the navigation to view a preview. This is always a secondary action placed inside the action menu.
+	* If the link drives the user out of the site, please identify visually that this link will open in a new page.
 
 ### Layout
-By providing a flexible layout, Lexicon opens you a wider range of possible configurations for your card. Every element can be used or deleted adapting it to your specific needs in each use case.
+By providing a flexible layout, Lexicon gives you a wider range of possible configurations for your card. You can adapt the layout to suite your needs, so it just contain the elements you require.
 
-As you can see in the following image, a card is shaped by:
-* Image area: main element in this pattern. 16:9.
-* Checkbox or radio: useful when working together as a visualization type with a management bar.
-* Sticker or User image: Useful to identify the file type or the owner.
-* Information area
-	* Text lines of different importance: relevant information.
-	* Actions menu: actions associated to the card
+A card contains the following elements:
+* The image area: The main element in this pattern. It has a 16:9 aspect ratio.
+* Checkbox or radio: This is useful when working together as a visualization type with a management bar.
+* Sticker or User image: This is useful to identify the file type or the owner.
+* An information area
+	* Informative text: This contains relevant information, such as the description.
+	* Actions menu: This contains actions associated with the card.
 
-Among these elements, the only one that can't be removed for the pattern meaning is the image.
+The only required element for a card is the image. Everything else can be removed.
 
 ### Image card
 
-Used in image/document galleries.
+Image cards are used in image/document galleries.
 
 #### Default 
 ![card with image default state](../../../images/CardImage.jpg)
@@ -60,7 +59,7 @@ Used in image/document galleries.
 
 #### Image with different ratios
 
-It is important to highlight that images can have different sizes. To provide the end user with that relevant data about the image Lexicon incorporates cards that allow this feature.
+Images can vary in size. So no visual information is lost in the card, Lexicon maintains the original images aspect ratio within the image area's container.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -88,11 +87,11 @@ It is important to highlight that images can have different sizes. To provide th
 6. Detail or short descriptive text
 7. Label: status identifier
 
-![card medtrics](../../../images/CardMetrics.jpg)
+![card metrics](../../../images/CardMetrics.jpg)
 
 ### User card
 
-User card is used to represent users. The user can be represented by its user image or up to two initials extracted from the uses name or name + surname.
+User cards represent users. The user can be represented by their user image or up to two initials extracted from their user name or name + surname.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -105,23 +104,23 @@ User card is used to represent users. The user can be represented by its user im
 
 ### File card
 
-File card is used to represent files different to images.
+File cards represent files other than images.
 
 ![file card is identified with file icon type as center image](../../../images/CardFile.jpg)
 
 ### Folder card
 
-This card variation is meant to have horizontal representations of information. This card has the same amount of elements as the previous explained. The main purpose of this card is to represent folders, therefore we allow to remove the image in this card type. In this case, only the checkbox is used to select.
+Folder cards display horizontal representations of information. They have the same amount of elements as the other cards previously explained on this page. The main purpose of this card is to represent folders, therefore the image is removed in this card type. In this case, only the checkbox is used to select.
 
 ![folder card, similar to a stripe card](../../../images/CardFolder.jpg)
 
 ### Sections
-Card sections help to separate different contents by a certain categorization or typology.
+Card sections organize content into separate divisions by a certain categorization or typology.
 
 ![card section](../../../images/CardViewGroupSeparator.png)
 
 
-### Examples of use
+### Examples
 
-Examples can be found in [dataset template](../Templates/datasetTemplate.html).
+See the [dataset template](../Templates/datasetTemplate.html) for a practical use case of cards.
 

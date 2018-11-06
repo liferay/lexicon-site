@@ -2,7 +2,7 @@
 title: "Buttons"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/buttons.html"
-description: "Buttons are a basic ui elements that communicate and initilize actions when the user interacts with them."
+description: "Buttons communicate an action to happen on user interaction."
 layout: "guide"
 weight: 1
 ---
@@ -12,19 +12,19 @@ weight: 1
 ### Types
 
 #### Primary
-The primary button is always use for the most important actions. There can't be two primary actions together or near by.
+The primary button is always used for the most important actions. Two primary actions can't be near each other.
 
-![button primary default size defuault state](../../../images/ButtonPrimary.jpg)
+![button primary default size default state](../../../images/ButtonPrimary.jpg)
 
 #### Secondary
-The secondary button is always use for the secondary actions. There can be several secondary actions near by.
+The secondary button is always use for secondary actions. Several secondary actions can be near by each other.
 
-![button secondary default size defuault state](../../../images/ButtonSecondary.jpg)
+![button secondary default size default state](../../../images/ButtonSecondary.jpg)
 
 #### Link
-Used for many Cancel actions.
+The link button is mainly used for Cancel actions.
 
-![button primary default size defuault state](../../../images/ButtonLink.jpg)
+![button primary default size default state](../../../images/ButtonLink.jpg)
 
 ### States
 
@@ -47,18 +47,18 @@ Used for many Cancel actions.
 ### Sizes
 
 #### Default
-Used for main page actions like Save or Cancel. 40px height.
+The default size is a height of 40px. It is used for main page actions such as Save or Cancel.
 
 ![button primary large size disable state](../../../images/ButtonPrimary.jpg)
 
 #### Small
-Used for actions inside a page, like dropdowns, button groups, split buttons. 32px height.
+The small size is a height of 32px. It is used for actions inside a page, such as dropdowns, button groups, and split buttons.
 
 ![button primary default size disable state](../../../images/ButtonPrimarySmall.jpg)
 
 ### Do's and Don'ts
 
-When placing buttons in a same row, use button of same height.
+Use the same height for all the buttons that are in the same row.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -71,7 +71,7 @@ When placing buttons in a same row, use button of same height.
 	</div>
 </div>
 
-Caps lock is not allowed in buttons
+Characters can not all be uppercase in a button.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -84,20 +84,20 @@ Caps lock is not allowed in buttons
 	</div>
 </div>
 
-Text must be always wrapped in one line.
+Text can not wrap multiple lines. It must all be on one line.
 
 <div class="row">
 	<div class="dodont col-lg">
-		<img class="do" src="../../../images/ButtonWrapDo.jpg" alt="button with text wrapped in on line">
+		<img class="do" src="../../../images/ButtonWrapDo.jpg" alt="button with text on one line">
 		<p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/ButtonWrapDont.jpg" alt="button with text not wrapped">
+		<img class="dont" src="../../../images/ButtonWrapDont.jpg" alt="button with text wrapped">
 		<p class="dont">Don't</p>
 	</div>
 </div>
 
-Borderless button must be always before of after a set of bordered buttons.
+A borderless button must be placed either before or after a set of bordered buttons.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -114,59 +114,59 @@ Borderless button must be always before of after a set of bordered buttons.
 
 #### Secondary borderless
 
-Secondary borderless button is meant to be used in those cases as toolbars where the secondary button would be too heavy for the pattern design. In this way the design gets cleaner.
+A secondary borderless button is used in toolbars when a secondary button would be too heavy for the toolbar's design. This keeps the design clean.
 
-![button secondary borderless default size defuault state](../../../images/ButtonBorderless.jpg)
+![button secondary borderless default size default state](../../../images/ButtonBorderless.jpg)
 
 #### Icon button
 
-Buttons can icons instead of text and for that icons need to be monospaced inside the button. Lexicon do not use buttons with text and icon, or text and loading indicator. Icon buttons are used intensively in [management bars](./management_bar.html). This button variation can be primary, secondary or borderless type.
+Buttons can display icons instead of text. The icons, however, must be monospaced inside the button. Lexicon doesn't use buttons with text and icons or text and loading indicators. Icon buttons are used primarily in [management bars](./management_bar.html). This button variation can be primary, secondary, or borderless type.
 
-![button icon primary default size defuault state](../../../images/ButtonIconPrimary.jpg)
+![button icon primary default size default state](../../../images/ButtonIconPrimary.jpg)
 
-![button icon secondary default size defuault state](../../../images/ButtonIconSecondary.jpg)
+![button icon secondary default size default state](../../../images/ButtonIconSecondary.jpg)
 
-![button icon secondary boderdeless default size defuault state](../../../images/ButtonIconBorderless.jpg)
+![button icon secondary borderless default size default state](../../../images/ButtonIconBorderless.jpg)
 
 #### Icon and text button
 
-This button type is used *only in sites* and not in administration. The icon emphasizes and helps to understand the action. The label must be the same icon purpose.
+This button type is only used in sites, outside of administration. The icon emphasizes and helps communicate the action. The label must match the icon's purpose.
 
 ![button with icon and text](../../../images/ButtonIconText.jpg)
 
 #### Block level button
 
-All buttons can also be configured at block level. Use this configuration in those cases that you need the user to realize there is an important action to be done. It could be used as a load more action below a list, as an example. Please do not use it in forms. Be always careful with the type button to use, primary is not always the best choice neither the only configuration.
+Buttons can also be configured at block level. Use this configuration when you need to communicate that an important action is required for the user. For example, it can be used as a load more action below a list. Please do not use it in forms. Choose the button type carefully. Primary is not always the best choice, nor is it the only configuration.
 
 ![block level button primary state, default size](../../../images/ButtonBlockLevel.jpg)
 
 #### Dropdown button
 
-Dropdown buttons are always used together with a dropdown menu. This button variation can be secondary or borderless type.
+Dropdown buttons are always used with a dropdown menu. This button variation can be secondary or borderless type.
 
-![button primary default size defuault state](../../../images/ButtonDropdown.jpg)  
-![button primary default size defuault state](../../../images/ButtonDropdownBorderless.jpg)
+![button primary default size default state](../../../images/ButtonDropdown.jpg)  
+![button primary default size default state](../../../images/ButtonDropdownBorderless.jpg)
 
 #### Split button
 
-Split buttons are used in those cases where you need to offer the user a quick main action but also secondary actions.
+Split buttons are used when you need to offer the user a quick main action along with secondary actions.
 
-![button group where the left button specifies the main action and the second one displays a dropdown menu with seconday actions](../../../images/ButtonSplit.jpg)
+![button group where the left button specifies the main action and the second one displays a dropdown menu with secondary actions](../../../images/ButtonSplit.jpg)
 
 #### Button group
 
-Button groups are used to switch between complementary views for example, but they must never be used for complementary actions and "Change and Cancel" or "Save and Cancel". In those cases the use of single buttons is the correct solution.
+Button groups are used to switch between complementary views for example, but they must never be used for complementary actions, "Change and Cancel" actions, or "Save and Cancel" actions. In those cases, single buttons are the correct solution.
 
 ![button group, two examples. First one without disabled button, second one with disabled button](../../../images/ButtonGroup.jpg)
 
 #### Plus button
 
-Normally placed in toolbars, allows to have adding actions over a dataset. The kind of elements to add with this button are of the same nature and folders. Sometimes it only has a unique action, some others it has more. Visit Dropdown menu > Sorting actions to know more.
+Plus buttons provide add actions for a dataset and are normally placed in toolbars. The add button lets you add entities, such as a blog post for a blog, a message board thread for a message board, or a folder. It can have one action or multiple. Visit Dropdown menu > Sorting actions to learn more.
 
 ![Plus button](../../../images/ButtonActionPlus.jpg)
 
 #### Action button
 
-It is used when a set of contextual actions are needed over an element or a dataset. This button displays a set of actions inside a dropdown menu. The actions must be sorted in an specific way, please visit Dropdown menu > Sorting actions to know more.
+Action buttons are used when a set of contextual actions are needed for an element or a dataset. This button displays a set of actions inside a dropdown menu. The actions must be sorted in a specific way. please visit Dropdown menu > Sorting actions to learn more.
 
 ![Actions or kebab button](../../../images/ButtonActionKebab.jpg)  

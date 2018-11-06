@@ -15,55 +15,55 @@ As promised, we are updating the examples section. This time we bring you an exa
 
 **Dropdown menu:**
 
-[Dropdown menu](../pattern/dropdowns.html) definition has been update to accept icons on the left side of actions.
+[Dropdown menu](../pattern/dropdowns.html) definition has been updated to accept icons on the left side of actions.
 
 **Tabs:**
 
-[Tabs](../pattern/tabs.html) have been updated with an example to give context in tabbars.
+[Tabs](../pattern/tabs.html) have been updated with an example to give context in tab bars.
 
 <time>October 12th, 2018</time>
 
 ### Management bar update
 
-We are happy to announce that we have a new update for the management toolbar. This toolbar is now able to contextualize actions depending on the selection done in the dataset. In this way, we want to reduce the number of errors not allowing users to perform actions that do not affect to all selected elements.
-Moreover, we introduce the results bar when filters are applied and/or search is performed from the management toolbar. This helps the user with useful and visible feedback.
+We are happy to announce that we have a new update for the Management Toolbar. The Toolbar is now able to contextualize actions based on the selection in the dataset. This reduces the number of potential errors by narrowing the actions down to only the ones that are relevant to the selected elements.
+Moreover, we introduce the results bar when filters are applied and/or search is performed from the Management Toolbar. This provides the user with useful and visible feedback.
 
 <time>October 4th, 2018</time>
 
 ### Examples
 
-Lexicon can be use to create many different interfaces. Today we open a new section "Examples" in our site to show case different interface examples created by Liferay UX designers for our products using Lexicon. We hope these series of examples inspire you on how to create your interfaces. With the time, the number of examples will grow to show you a wide variety of interfaces built with Lexicon.
+Lexicon can be used to create many different interfaces. Today, we open a new "Examples" section in our site to showcase different Lexicon interface examples created by Liferay UX designers for our products. We hope these series of examples inspire you and give you an idea of the possible interfaces you can create. These examples will grow over time to showcase a wide variety of interfaces built with Lexicon.
 
 
 <time>August 21st, 2018</time>
 
 ### New organization
 
-A new organization has been done in the site in relation to the components. Now components are divided in two big groups: Core and Satellite.
+Components are now organized into two key groups: Core and Satellite.
 
-* **Core components** are the basic components and widely used components by differnet Liferay products.
-* **Satellite components** host all other components that are not so used in many Liferay products. It still worths to have them documented here so you get more out of Liferay without having to reinvent the wheel everytime you need a new pattern. You can just come here and check if what different Liferay teams are doing solve your scenario.
+* **Core components** are the basic components that are widely used by Liferay products.
+* **Satellite components** are the remaining components that are not used that often in many Liferay products. Although these components are not as widely used, they can save you time from reinventing the wheel.
 
-It is important to highlight that core components are implemented and supported by Clay, while satellites don't.
+**Note:** that core components are implemented and supported by Clay, while satellite components are not supported.
 
-We have also separated **Templates**, where we include the most common templates created with Lexicon components in Liferay products.
+We have also created a **Templates** section that includes the most common templates created with Lexicon components in Liferay products.
 
 <time>August 21st, 2018</time>
 
-### Predictive forecast chart
+### Predictive Forecast Chart
 
-[Predicitive forecast chart](../patterns/Charts/chart-forecast.html) has been documented inside the charts section. This chart is very benefitial in use cases as commerce.
+The [Predictive Forecast Chart](../patterns/Charts/chart-forecast.html) has been documented inside the charts section. This chart is very useful for  commerce data.
 
 <time>June 27th, 2018</time>
 
 ### Stable version
 
 We are glad to announce that Lexicon has moved out from beta version to a stable version.
-We also want to highlight the improvements done from last release:
-* The site has been adjusted to adopt the system font like we do in Lexicon.
-* All images has been changed to adapt the typography form Source Sans Pro to San Francisco (system font for MacOS)
-* A large number of patterns now include attributes sections where the patten anatomy is described.
-* Examples have been added to many of our patterns and also descriptions have been reviewed.
+We also want to highlight the improvements made since the last release:
+* The site has now uses the system font like we do in Lexicon.
+* All images have been changed from Source Sans Pro to San Francisco (system font for MacOS)
+* A large number of patterns now include attribute sections that describe the pattern's anatomy.
+* Examples have been added to many of our patterns, and the descriptions have been updated.
 
 Moreover, now you can find our sketch library under [resources](../resouces/index.html) section to build your own interfaces using Lexicon.
 
@@ -71,51 +71,51 @@ Moreover, now you can find our sketch library under [resources](../resouces/inde
 
 ### Beta release
 
-We are glad to announce that we are on beta right now. We will update style changes, already compromised, before leaving beta status.
+We are glad to announce that we are in beta right now. We will update style changes before leaving beta status.
 
 <time>April 20th, 2018</time>
 
 ### General Update
 
-This update comes with many tiny improvements that allow us to communicate better:
+This update comes with many small updates that improve communication:
 * Charts: base layer interaction and different chart examples
-* Forms: re-organized for better understanding
-* Animations: pending to include the real animation. But a first introduction is there as reference.
-* Labels: patterns have labelled to know if they are implemented by Clay or they are owned by any other team/application.
-* Status table: to know in what status the design and implementation is.
+* Forms: reorganized for better understanding
+* Animations: pending, but an introduction is there as reference
+* Labels: patterns have been labeled to specify if they are implemented by Clay or if they are owned by another team/application.
+* Status table: specifies the design and implementation status for each component's page
 
 
 <time>January 17th, 2018</time>
 
 ### General Update
 
-This update comes with many tiny improvements that allow us to communicate better:
-* Do's and Don'ts have been included for several patterns as: badges, labels, table, actions definition and popover. This provides us with a more graphic way of defining examples.
-* Multiple step form now includes an example to understand how the pattern is build in an use case.
+This update comes with many small updates that improve communication:
+* Dos and Don'ts have been included for the following patterns: badges, labels, table, actions definition, and popover. This helps clarify the proper usage of each pattern.
+* Multiple step form now includes an example that demonstrates how to use the pattern.
 * Text input localizable has been released.
-* Card layout has been added inside layouts at Foundation.
-* Vertical navigation has been updated with an example of collapsible menu in mobile.
-* Sidebar documentation has been splitted in several pages for a better documentation purpose focusing on special needs.
+* Card layout has been added to the Layout section under the Foundation heading.
+* Vertical navigation now includes an example of a collapsible menu on mobile.
+* Sidebar documentation has been organized into several areas of focus.
 
 <time>January 8th, 2018</time>
 
 ### Examples 
 
-Examples of use have been added into table to make more clear the row hover action with images on what can be done or not. Moreover, multistep form has been updated with a layout example in a form to better understand how it must be applied. Last but not least, checkbox groups and radio groups examples with metrix have been offered.
+Examples, along with images demonstrating the proper usage, have been added to the table page to clarify the row hover action. Multistep form has also been updated with a layout example in a form to better illustrate how to use it. Finally, checkbox group and radio group examples, along with metrics, have been added.
 
 <time>January 3rd, 2018</time>
 
 ### Sites 
 
-A full set of components inside [sites section](../patterns/Sites/sites.html) is already available to build you own site widgets. This will allow you to transform old widgets into new ones towards looking for a better information architecture, structure, and refreshing design.
+A full set of components is available in the [sites section](../patterns/Sites/sites.html) for you to use to build your own site widgets. This lets you transform old widgets, by bringing them new life with a better information architecture, structure, and a refreshing design.
 
 <time>November 28th, 2017</time>
 
 ### Layouts and Form Hierarchy 
 
-As part of the improvement in Lexicon we want to clearly defined the different layout possibilities the we usually find in admin pages. Layout is part of our foundations as it belong to a series of principles to start builing interfaces with our system.
+As part of the improvement in Lexicon, we want to clearly define the different layout possibilities that you'll usually find in admin pages. Layout is one of the foundation principles that is key to building interfaces with our system.
 
-Forms are now better definied as the [hierarchy](../patterns/Forms/formsHierarchy.html) is expressed in a dedicated page. [Slider](../patterns/Forms/slider.html) has been defined also inside Forms section.
+We've add a dedicated page for form [hierarchy](../patterns/Forms/formsHierarchy.html) to better define the form pattern. The Forms section now also includes a [Slider](../patterns/Forms/slider.html) section.
 
 <time>November 20th, 2017</time>
 
@@ -123,15 +123,15 @@ Forms are now better definied as the [hierarchy](../patterns/Forms/formsHierarch
 
 Charts and Sites have been documented at their initial stage.
 
-[Charts](../patterns/Charts/charts.html) is a totally new pattern in Lexicon and with it we want to provide you a full set of principles related to it to improve accessibility, preception and interpretation.
+[Charts](../patterns/Charts/charts.html) are a completely new pattern in Lexicon. We want to provide a full set of principles for it to improve accessibility, perception, and interpretation.
 
-[Sites](../patterns/Sites/sites.html) tackles widgets for sites. Lexicon faces a huge improvement in this area towards improving not only the visual aspect but also the usability in some of our ADTs. Many improvements will come in upcoming dates in this area towards next portal release.
+[Sites](../patterns/Sites/sites.html) tackles widgets for sites. Lexicon faces a huge improvement in this area towards improving not only the visual aspect, but also the usability in some of our ADTs. Many improvements will come in the near future in this area as the next portal release date grows closer.
 
 
 <time>November 13th, 2017</time>
 
 ### Updates
 
-Liferay is happy to announce a new version of Lexicon in alpha state. This Lexicon Evolution brings you a wider range of possibilities, new components and brand new color palette. Lexicon now worries more about accessibility, shorter interactions, and ways to achieve a better user experience never seen before in Liferay.
+Liferay is happy to announce a new alpha version of Lexicon. The alpha version brings a wider range of possibilities, new components, and a brand new color palette. Lexicon now focuses on accessibility, shorter interactions, and ways to achieve a better user experience never before seen in Liferay.
 
-This alpha version will become into beta as soon as Lexicon and Clay aligns.
+This alpha version will transition to beta as soon as Lexicon and Clay align.

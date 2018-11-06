@@ -2,7 +2,7 @@
 title: "Progress Bar"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/progress-bars.html"
-description: "Progress bar is an evolution indicator used to show the completion percentage of a task."
+description: "Progress bar indicates the percentage completed of a task."
 layout: "guide"
 weight: 1
 ---
@@ -11,30 +11,33 @@ weight: 1
 
 ### Usage
 
-Progress bar are used as a feedback mechanism for system tasks. As long as the process is running the progress bar grows continuously from 0% to 100%. Use it for system processes.
+Progress bars are used as a feedback mechanism for system tasks. As long as the process is running, the progress bar grows continuously from 0% to 100%. Use it for system processes.
 
 ### States
 
 #### Loading
-The bar progress grows in primary color and the label changes with the completion percentage.
+
+The progress bar grows in primary color, and the label changes to reflect the completion percentage.
 
 ![indeterminate progress bar](../../../images/ProgressBar30.jpg) 
 
 #### Warning
-Something happened and interrupted the process.
+
+The warning state indicates that something happened and interrupted the process.
 
 ![indeterminate progress bar](../../../images/ProgressBar70.jpg) 
 
 #### Finished
-The process is completed successfully changing the label to success icon.
+
+The finished state indicates that the process is completed successfully when the label changes to the success icon.
 ![indeterminate progress bar](../../../images/ProgressBar100.jpg) 
 
-### Do's and Don'ts
+### Dos and Don'ts
 
 <table>
     <thead>
         <tr>
-            <th>Do's</th>
+            <th>Dos</th>
             <th>Don'ts</th>
         </tr>
     </thead>
@@ -43,13 +46,13 @@ The process is completed successfully changing the label to success icon.
             <td>
                 <div class="d-flex align-items-center">
                     <svg class="lexicon-icon lexicon-icon-check do mr-3"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
-                    <span>Use it in cases like a file upload or a process execution.</span>
+                    <span>Use it for processes such as a file upload.</span>
                 </div>
             </td>
             <td>
                 <div class="d-flex align-items-center">
                     <svg class="lexicon-icon lexicon-icon-times dont mr-3"><use xlink:href="/vendor/lexicon/icons.svg#times"></use></svg>
-                    <span>Do never use it to identify the progress of a user in a certain set of actions. For that you need a multi step form type.</span>
+                    <span>Never use it to communicate the progress of a user in a certain set of actions. For that you need a <a href="https://lexicondesign.io/docs/patterns/Forms/multiStepForm.html">multi step form type</a>.</span>
                 </div>
             </td>
         </tr>

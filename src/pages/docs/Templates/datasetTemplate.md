@@ -8,7 +8,8 @@ weight: 1
 <div class="page-description">{$page.description}</div>
 
 ### Layout
-This template counts with several patterns listed as follows that can be directly mapped with the image.
+
+This template works with several patterns, listed below, that can be directly mapped with the image:
 
 1. Management toolbar
 2. Breadcrumb (When further than first level)

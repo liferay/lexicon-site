@@ -1,6 +1,6 @@
 ---
 title: "Actions Definition"
-description: "This page defines the usage of certain actions as Delete vs Send to Recycle Bin, Select vs Choose ..."
+description: "This page defines the use case for several common actions."
 layout: "guide"
 weight: 1
 ---
@@ -11,9 +11,9 @@ weight: 1
 
 #### Delete
 
-The action of deleting an element or a set of elements implies that it is not possible to recover them from anywhere and they will disappear forever. This icon can be also used for clearing actions like clear an input field content.
+The action of deleting an element or a set of elements implies that the element(s) will be completely removed, and it is not possible to recover the element(s) after deletion. The delete icon shown below can also be used for clearing actions, such as clearing input field content.
 
-As this is a strong action, you must trigger the user with a confirmation message, always native and not styled by Lexicon.
+Since this is a permanent action, you must trigger the user with a confirmation message. This message must be native and without Lexicon styling.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -33,7 +33,7 @@ As this is a strong action, you must trigger the user with a confirmation messag
 
 #### Send to Recycle Bin
 
-The action of sending to recycle bin implies that recovering the element is possible. Therefore, it doesn't imply a complete removal of the element.
+The action of sending an element or a set of elements to the recycle bin implies that the element(s) will not be completely removed and can be recovered.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -52,7 +52,7 @@ The action of sending to recycle bin implies that recovering the element is poss
 
 #### Cancel
 
-Cancel and close differ much from deleting or sending to the Recycle Bin. This action can be found in modals at the top right corner. 
+Cancel and close differ much from deleting or sending to the Recycle Bin. You can find this action in the top right corner of modals. 
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -72,7 +72,7 @@ Cancel and close differ much from deleting or sending to the Recycle Bin. This a
 
 ### Done
 
-Use it as the primary button copy in all modal that display a table / list  / card view to select one or several elements.
+The done action should be displayed as a primary button. Use this action in all modals that display a table, list, or a card view. This can be used for one or several elements.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -89,7 +89,7 @@ Use it as the primary button copy in all modal that display a table / list  / ca
 
 The convention in Lexicon is to use **Select** instead of Choose, as Select is a more formal word.
 
-Select means "to carefully choose"; it also means "to use a mouse or keystrokes to mark something on a computer screen". Therefore, Choose can not have the implication we want on interaction design.
+Select means "to carefully choose"; it also means "to use a mouse or keystrokes to mark something on a computer screen". Choose doesn't convey the true intention of the action for us.
 
 <div class="row">
 	<div class="dodont col-lg">

@@ -1,6 +1,6 @@
 ---
 title: "Interaction"
-description: "A description of the basic intection behaviors for all charts so the user always know what to expect."
+description: "A description of the basic expected interaction behaviors for all charts."
 layout: "guide"
 weight: 2
 ---
@@ -9,7 +9,7 @@ weight: 2
 
 ### Interaction events
 
-In case you need to create your own chart, it is really valuable to know how our events are defined. Use the same rules to be consistent with the rest of charts.
+If you need to create your own chart, it's useful to know how our events are defined. Use the rules covered in this section to keep a consistent user experience with the rest of the charts.
 
 #### Mouse events
 
@@ -20,13 +20,13 @@ In case you need to create your own chart, it is really valuable to know how our
 * Dismiss popover
 
 **Mouse click**
-* If element is not selected
-    * Selects the element. This is a gray-out, 40% opacity, of the rest.
+* If an element is not selected, the following behaviors are expected:
+    * Selects the element. Grays out the remaining elements with a 40% opacity.
     * Show popover
-* If element is selected (the click can be in the element itself or any other part of the chart, except the popover)
+* If an element is selected, the following behaviors are expected (the click can be in the element itself or any other part of the chart, except the popover):
     * Unselects the element
-    * Dismiss popover
-    * Chart to default state
+    * Dismisses the popover
+    * Resets the chart to its default state
 
 #### Touch events
 Same as mouse click events.
@@ -35,21 +35,21 @@ Same as mouse click events.
 
 #### Chart item
 
-This can be a bar inside a bar chart, a pie-piece in a pie chart, etc.
+This can be a bar inside a Bar Chart, a pie slice in a Pie Chart, etc.
 The popover must show information related to this specific item.
 The popover must be shown on top of the chart item.
-Highlight legend item (font weight to semibold). This creates a better relation between element in chart a legend value.
+Highlight the legend item (font weight to semi-bold). This clearly communicates the relationship between the chart element and its corresponding legend value.
 
 #### Chart item inside a group
 
-We are not going to make a difference between grouped items and stand alone items. Whenever there is an interaction inside a set of items we will do individual interactions per item as in Chart Item.
+We don't differentiate between grouped items and stand alone items. When a user interacts with an item in a set of items, the behavior is the same as a Chart Item.
 
 #### Axis item
 
-The popover must show information related to all the elements in that axis row or column. This information can be either a global information, like a number, or an information breakdown.
-The popover must be shown next to the axis item not hovering the chart.
+The popover must show information related to all the elements in that axis row or column. This information can either be global information, like a number, or an information breakdown.
+The popover must be shown next to the axis item without hovering the chart.
 
-Sometimes there will be only one axis. Sometimes the chart will not provide interaction in both axis. This is perfectly normal.
+Sometimes there will only be one axis. Sometimes the chart will not provide interaction on both axis. This is perfectly normal.
 
 *Example: Vertical stacked bar*
 * An interaction in the x-axis item will show a popover with information for each of the items.
@@ -58,16 +58,16 @@ Sometimes there will be only one axis. Sometimes the chart will not provide inte
 #### Legend item
 
 Highlight all items of this legend type in the chart.
-The popover must show information related to this specific item summary information for that legend type.
+The popover must show information related to this specific item summary for that legend type.
 The popover must be shown on top of the legend item.
 
 
 ### Chart popover
 
-Chart popover allow you to display specific data for a exact point or exact area that is interactive. This is just a different usage of the popover pattern.
+A chart popover lets you display specific data for an exact point or an exact area that is interactive. This is another usage of the popover pattern.
 
 ![Tooltip or popover](../../../images/ChartBubble.png)
 
-The following half donut chart shows a chart tooltip in action.
+The following half donut chart shows a chart tooltip in action:
 
 ![tooltip usage in a half donut chart](../../../images/ChartBubbleExample.png)

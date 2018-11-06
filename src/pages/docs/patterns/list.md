@@ -2,7 +2,7 @@
 title: "List"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/list.html"
-description: "Lists are a visual representation of a dataset based on groups of related content organized vertically."
+description: "Lists are a visual representation of a dataset, based on groups of related content, that is organized vertically."
 layout: "guide"
 weight: 1
 ---
@@ -13,13 +13,11 @@ weight: 1
 
 ![list entry in default state](../../../images/ListViewDefault.jpg)
 
-List is a visual representation of a dataset that provides more flexibility for arranging the data to display than a table and that is less visual explicit than a card view. It is useful for comparing entries among them that do not need exhaustive comparison. In case you need exhaustive comparison use the table view.
+A list is a visual representation of a dataset that provides more flexibility for arranging the data than a table and is less visually explicit than a card view. It's useful for comparing entries that don't require exhaustive comparison. If the dataset requires exhaustive comparison between entries, use the table view instead.
 
-A list allows you a free way of displaying information. While the table isn't meant to have several text labels in a column, list is the pattern for doing that, as you can see in the following examples.
+When a list is used together with a management bar, the list entries must include a checkbox, as the selection and actions are reflected in the management bar.
 
-Not all the element in a list entry are mandatory, feel free to delete and include the ones you need.
-
-When a list is used together with management bar, the list entries must include the checkbox, as the selection and actions are reflected in the management bar.
+Lists support several text labels in a column, as shown in the examples below.
 
 ### Row states
 
@@ -37,47 +35,47 @@ When a list is used together with management bar, the list entries must include 
 
 ### Row interactions
 
-* A list entry can have a checkbox, a radio or none of them.
-* Selecting a row is only possible by using the checkbox or radio depending on the selection type desired in the list. An interaction with the background does not produce row selection.
-* Text elements in the row can be configured as links to navigate.
-* A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don't need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.
-* The main text is usually used as an action:
-	* In case of:
-		* Folder: it navigates to the next level.
-		* File: it navigates to its detail view.
-	* Do never use it for preview. Preview is always a secondary action placed in the row action menu.
+* A card can have a checkbox, a radio button, or neither of them.
+* You can select a row by using the checkbox or radio button, depending on the selection type in the list. The background is not selectable.
+* You can add links to a row to navigate to other areas.
+* A row can have related actions. If there is only one action for the row that can be represented by an icon, you don't need to use an actions menu. Otherwise, include a actions menu on the right side of the row.
+* Use the main text as an action for the following use cases:
+	* A Folder that navigates to the next level
+	* A File that navigates to its detailed view
+	* Never use the row action to view a preview. This is always a secondary action placed inside the row's action menu.
 * If the link drives the user out of the site, please identify visually that this link will open in a new page.
 
 ### Content format and alignment
 
-* Main text must be always in semibold.
-* In order to favor legibility an easiest way to identify content within a list item, the width of the main content won’t go further than the 50% of the row on wide screens.
-* Inside the main content group there won’t be more than three elements stacked. However, the row can grow vertically if the elements need more vertical space, but never more than two lines.
-* In those cases when a short description is needed this would be placed, as said before, aligned on the right of the main content and will extend until the tools. This description won’t be more than two lines long.
-* Text elements can’t fill more than two lines. In the case that a text element is longer, we will use an ellipsis.
+* The Main text must always be semi bold.
+* To favor legibility, the width of the main content won’t go further than 50% of the row's width on wide screens.
+* Inside the main content group, there won’t be more than three elements stacked. The row, however, can grow vertically, if the elements need more vertical space. It will never exceed more than two lines.
+* Short descriptions are aligned on the right side of the main content and extend until the tools. These descriptions are not more than two lines long.
+* Text elements can’t fill more than two lines. If text elements exceed two lines, an ellipsis is used for the remaining text.
 
 
 ### Sections
-List sections help to separate different contents by a certain categorization or typology.
+
+List sections organize content into separate divisions by a certain categorization or typology.
 
 ![List section](../../../images/ListViewGroupSeparator.jpg)
 
-#### Example of use
+#### Examples
 
 ![list view example with 3 different states in different entries](../../../images/ListViewExample.jpg)
 
-More examples can be found in [dataset template](../Templates/datasetTemplate.html).
+See the [dataset template](../Templates/datasetTemplate.html) for more examples of lists.
 
 ### Responsive
 
-* Text elements can’t fill more than two lines.
-* Ellipsis will be used to suggest more content available when is impossible to show all in a small screen. These ellipsis won’t be actionable. They are only indicative. The whole content will be showed on the item full description state.
-* In case a list row has tags they can’t occupy more than one line. In the case that a tags row is longer, use an ellipsis.
+* Text elements can't fill more than two lines.
+* When the entire content for a list can't be displayed, for instance on a smaller screen, it will be replaced with an ellipsis.
+* If a list row contains tags, they can’t occupy more than one line. If a tag's row is longer, use an ellipsis.
 
 ## NOTIFICATIONS
 <span class="label label-info">PORTAL</span>
 
-List entries may need support for notifications. This is solved visually by placing a 8px width line on the left side of the row.
+If a list entry needs support for notifications, place an 8px width line on the left side of the row.
 
 ![list notification default state has a blue line on the left side of the row](../../../images/ListNotificationDefault.jpg)
 ![list notification active state has a blue line on the left side of the row](../../../images/ListNotificationActive.jpg)

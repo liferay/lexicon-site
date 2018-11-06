@@ -2,7 +2,7 @@
 title: "Text Input Variations"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/text-input-variations.html"
-description: "A description of the search, autocomplete, labels input, date, numeric and password input variations."
+description: "A description of the search, autocomplete, labels, date, numeric, and password input variations."
 layout: "guide"
 weight: 4
 ---
@@ -13,18 +13,18 @@ weight: 4
 
 <span class="label label-secondary">PENDING</span>
 
-Autocomplete textfield is the input that has a data provider associated offering the user text suggestions while typing.
+An autocomplete text field is an input that offers the user text suggestions while they type.
 
-![autocomple text field with list open](../../../images/AutocompleteTextField.jpg)
+![autocomplete text field with list open](../../../images/AutocompleteTextField.jpg)
 
 ## Search field
 <span class="label label-secondary">PENDING</span>
 
-Search field is pretty similar to autocomplete text field but the field states are defined better to adapt to search scenario.
+A search field is pretty similar to an autocomplete text field, but the field states are defined to reflect search results.
 
 ### Usage
 
-A search field can have auto completion showing a list of options below the field.
+A search field can have auto completion to display a list of options below the field.
 * The list below must be as wide as the search field.
 * The list must update its content as the user types.
 * Characters in each entry must be semibold and marked in regular as the user types.
@@ -49,7 +49,7 @@ A search field can have auto completion showing a list of options below the fiel
 ## Labels Input Field
 <span class="label label-secondary">PENDING</span>
 
-Labels input field is specially focus on writing categories or tags.
+A labels input field is exclusively used for categories or tags.
 
 ![search field active state](../../../images/LabelInputField.jpg)
 
@@ -59,14 +59,14 @@ Labels input field is specially focus on writing categories or tags.
 ## Date Field or Date Select
 <span class="label label-secondary">PENDING</span>
 
-Date select allows to select a date. This date select is similar to the one in HTML5 and includes same functionalities. Lexicon recommends to use native date selects as users are used to them. Use this one in desktop viewport.
+A date select lets the user select a date. This is similar to HTML5's data select and includes the same functionality. We recommend that you use native date selects since users are familiar with them. Use this one on the desktop viewport.
 
 ![multiple select active state](../../../images/DatePickerOpen.jpg)
 
 ## Numeric field 
 <span class="label label-secondary">PENDING</span>
 
-Use numeric fields whenever you are going to use integer or float numbers. Numeric fields have the advantage to include mechanisms to increase and decrease the value by using arrow keys and inside field buttons.
+Use numeric fields when you require the user to enter an integer or float value. Numeric fields provide the added bonus of letting the user increase and decrease the value via the arrow keys and internal field buttons.
 
 ![numeric input field](../../../images/InputNumeric.jpg)
 
@@ -74,6 +74,6 @@ Use numeric fields whenever you are going to use integer or float numbers. Numer
 ## Password field
 <span class="label label-secondary">PENDING</span>
 
-Input password field is used in situations where the user needs to write a password.
+An password field input is used when the user needs to enter a password.
 
 ![password field with masked text](../../../images/InputPassword.jpg)
