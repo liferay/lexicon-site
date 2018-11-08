@@ -28,6 +28,13 @@ Creating your own interfaces using Lexicon is pretty easy using our Figma or Ske
 
 ### Presentations
 
+**2018 November**
+
+Liferay DXP UX achievements for 7.1, adding the short term improvements we expect to have in Liferay DXP 7.2. Moreover, the lines of work Liferay DXP is working in termns of UX for the mid/long term future and how Lexicon helps on all this trip.
+
+<a href="https://speakerdeck.com/victorvalle/liferay-dxp-ux-evolution-7d102f41-5803-41f5-ac2e-1da01da4f1a7" target="_blank">See presentation</a>
+
+
 **2018 January**
 
 Principles, grid, distances... are important elements to know how to craft inferfaces using Lexicon. This slide deck will help you to understand how to build your own components and how to use the most common templates.
