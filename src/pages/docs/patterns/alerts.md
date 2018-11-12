@@ -53,8 +53,6 @@ The image below shows the metrics for an alert's design:
 
 #### Toast
 
-This type of alert is specific for toast messages. These type of messages appear on the top right corner of the screen. The maximum width of a toast message is 360px, and the height can vary depending on the number of rows. It always has a close action.
-
 ![four different toast alert colors](../../../images/AlertToast.jpg)
 
 This type of alert must appear at the bottom left side of the screen. There must be a 24px separation from the left and from the bottom. If the alert is temporary, it will disappear in 10 seconds.
