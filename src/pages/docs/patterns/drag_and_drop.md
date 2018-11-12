@@ -28,7 +28,6 @@ An interface element to take care about in this interaction is the pointer when 
 | Type | Usage |
 | --- | ---- |
 | ![cursor pointer](../../../images/CursorPointer.jpg) | **Default:** the standard mouse cursor. |
-| ![cursor pointer](../../../images/CursorPointer.jpg) | **Pointer:** for clickable elements. |
 | ![cursor hand open](../../../images/CursorHandOpen.jpg) | **Open hand:** you can use it with the hover state of an element when is possible to move it around and the selection is not allowed (possible examples: a map, a zoomed image). |
 | ![cursor hand closed](../../../images/CursorHandClosed.jpg) | **Dragging:** Always required as feedback for the dragging action when using a mouse. |
 
@@ -36,11 +35,11 @@ An interface element to take care about in this interaction is the pointer when 
 #### Handler
 A dragable element can be difficult to identify in the interface. To improve the affordance of these elements we encourage you to user the drag-dots icon in the component on hover.
 
-![cursor pointer](../../../images/IconDragDots.jpg)
+![6 dots icon for drag and drop affordance](../../../images/IconDragDots.jpg)
 
 A good example can be found in a list where the list items are draggable.
 
-Example: list item on hover
+![icon drag dots on the left side of a list item on hover](../../../images/ListDnD.jpg)
 
 #### Drag Element & Drag Feedback
 Elemnents that are draggable must offer a feedback also when these elements are being dragged.
