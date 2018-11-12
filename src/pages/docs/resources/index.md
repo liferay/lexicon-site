@@ -24,7 +24,11 @@ Creating your own interfaces using Lexicon is pretty easy using our Figma or Ske
     </div>
 </div>
 
+### Blog posts
 
+**2018.09.10:** [Building charts for multiple products](https://medium.com/liferaydesign/building-charts-for-multiple-products-bb399ef1a71e) *by Emiliano Cicero*
+
+**2018.07.23:** [Designing animations for a multicultural product](https://medium.com/liferaydesign/designing-for-a-multicultural-product-9564bc657cb5) *by Susana Vazquez*
 
 ### Presentations
 
