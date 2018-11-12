@@ -24,9 +24,20 @@ Creating your own interfaces using Lexicon is pretty easy using our Figma or Ske
     </div>
 </div>
 
+### Blog posts
 
+[Building charts for multiple products](https://medium.com/liferaydesign/building-charts-for-multiple-products-bb399ef1a71e) *by Emiliano Cicero*, September 2018
+
+[Designing animations for a multicultural product](https://medium.com/liferaydesign/designing-for-a-multicultural-product-9564bc657cb5) *by Susana Vazquez*, July 2018
 
 ### Presentations
+
+**2018 November**
+
+Liferay DXP UX achievements for 7.1, adding the short term improvements we expect to have in Liferay DXP 7.2. Moreover, the lines of work Liferay DXP is working in termns of UX for the mid/long term future and how Lexicon helps on all this trip.
+
+<a href="https://speakerdeck.com/victorvalle/liferay-dxp-ux-evolution-7d102f41-5803-41f5-ac2e-1da01da4f1a7" target="_blank">See presentation</a>
+
 
 **2018 January**
 

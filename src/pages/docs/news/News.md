@@ -5,6 +5,12 @@ layout: "guide"
 weight: 1
 ---
 
+<time>November 12th, 2018</time>
+### General update
+
+* Drag and drop pattern definition where you can find the styles and examples.
+* Resources: DEVCON 2018 presentation link and links to blog posts made by Lexicon Team.
+
 <time>October 13th, 2018</time>
 
 ### General update

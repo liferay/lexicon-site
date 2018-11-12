@@ -2,7 +2,7 @@
 title: "Management Toolbar"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/toolbars/management_toolbar.html"
-description: "Management toolbar is an extension of Toolbar. It is a combination of different components including filters, orders, search, visualization select, and other actions that let users manage a dataset."
+description: "Management toolbar is an extension of Toolbar. It is a combination of different components, including filters, orders, search, visualization select, and other actions that let users manage a dataset."
 layout: "guide"
 weight: 2
 ---
@@ -38,7 +38,7 @@ It displays tools focused on filtering, sorting, and data visualization.
 
 #### State 2
 
-It displays contextual tools when one or more items is selected. Only the specific actions that the selected dataset allows are displayed.
+It displays contextual tools when one or more items are selected. Only the specific actions that the selected dataset allows are displayed.
 
 The background color changes to reflect the change of state.
 
