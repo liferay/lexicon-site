@@ -1,7 +1,7 @@
 ---
-title: "Heatmap chart"
+title: "Heatmap Chart"
 titleLabel: "Pending"
-description: "The Heatmap chart is a visual representation of the data using colors to indicate the level of the values."
+description: "The Heatmap Chart is a visual representation of the data using colors to indicate the values."
 layout: "guide"
 weight: 3
 ---
@@ -12,10 +12,10 @@ weight: 3
 
 ### Color use
 
-Lexicon currently provides a serie of color sets to help the design of the Experience Cloud analytics, in the case of the heatmap you must use a **single color value** and white for the time-spots.
+Lexicon currently provides a series of color sets for the Experience Cloud analytics design. For the heatmap, you must use a **single color value** and white for the time-spots.
 
 ### Shapes use
-To help reading the activity you can use up to 7 different circle items (bubbles) inside the chart: 0, 4, 8, 12, 16, 24, 32.
+To improve the activities readability, you can use up to seven different circle items (bubbles) inside the chart: 0, 4, 8, 12, 16, 24, 32.
 
 ### States
 

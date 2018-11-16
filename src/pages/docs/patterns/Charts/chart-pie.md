@@ -1,8 +1,8 @@
 ---
-title: "Pie chart"
+title: "Pie Chart"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/charts/basic/pie_chart.html"
-description: "Pie chart allows to divide data by numerical proportions of a total value (always 100%)."
+description: "A Pie chart divides data by numerical proportions of a total value (always 100%)."
 layout: "guide"
 weight: 3
 ---
@@ -13,7 +13,7 @@ weight: 3
 
 ### Color use
 
-The Pie Chart must follow the same color order defined for charts starting from the first element in the right-top position.
+The Pie Chart must follow the standard color order for charts: the first chart element is displayed in the top-right position.
 
 ### States
 
