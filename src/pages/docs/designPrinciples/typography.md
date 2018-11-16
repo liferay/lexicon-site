@@ -11,18 +11,14 @@ weight: 1
 
 ### Font Stacks
 
-Lexicon uses two text styles exclusively. A sans serif one which is the main style of the typographic system, and a monospaced one used to render code.
+Lexicon uses two text styles exclusively: A sans serif one, which is the main style, and a monospaced one used to render code.
 
-Due to the customizable, multi-language and multi-platform nature of Liferay products like Portal, Lexicon and its implementation have opted for an agnostic use of typography.
+Lexicon takes an agnostic approach to typography, due to the customizable, multi-language, and multi-platform nature of Liferay's products. Therefore, Lexicon doesn't include any specific font family as part of its framework. Instead, it relies on the native font family of the user's operating system. This way we avoid web-font delivery services or font files stored on the server.
 
-According to this, it has been decided not to include any type family as part of the framework and to resort in any case to the family provided by the operating system on which Liferay is being accessed. This way we avoid web-font delivery services or font files stored on the server.
-
-With this in mind, Lexicon and Clay embrace the standard known as "Native Font Stack" as the basis for its typographic source.
-
-In this tables we list the different typographic families associated with the main operating systems included in each font stack.
+Lexicon and Clay embrace the standard known as "Native Font Stack" as the basis for its typographic source. The tables in the sections below list the font families available for each operating system's native font stack.
 
 #### Sans Serif
-For sans serif style, we take the Bootstrap native font stack as a reference in which we have also included families for Ubuntu, Oxigen and Gnome operating systems
+For sans serif style, using Bootstrap's native font stack as inspiration, we also include families for Ubuntu, Oxygen, and Gnome operating systems:
 
 | OS | Font Family |
 | -- | ----------- |
@@ -42,7 +38,7 @@ system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,
 
 #### Monospaced
 
-For monospaced style, we take as a reference also the font stack provided by Bootstrap.
+For monospaced style, we also follow the same approach as Bootstrap:
 
 | OS | Font Family |
 | -- | ----------- |
@@ -55,14 +51,13 @@ For monospaced style, we take as a reference also the font stack provided by Boo
 SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 </p>
 
-Being Mac OS the most widely used operating system for design tasks within Liferay and one of the most used in general, it has been decided to use the San Francisco font family for the visual examples of the system both in the technical documentation and in Lexicon Site.
-
+Since Mac OS is the most widely used operating system for design tasks in Liferay and in general, we have decided to use the San Francisco font family for the visual examples in both the technical documentation and in the Lexicon Site.
 
 ### Type Scale
 
-In the same line of looking for the simplification and standardization of the elements that make up the foundations of the system, the lexicon scale is based on the values initially provided by Bootstrap and follows one of the most used type scales in web products nowadays. 
+As we approached the foundational elements with simplification and standardization in mind, so too have we approached type scale. Lexicon's type scale is based on Bootstrap and follows one of the most widely used type scales in web products today.
 
-A scale based on an initial increase of 2px that grows to 4px in larger font sizes to favor contrast and hierarchical identification. A non-linear arithmetic progression that does not exactly fit any of the classic ratios, but provides an understandable and easy to remember set which is quite helpful dealing with complex products.
+Lexicon's type scale is based on an initial increase of 2px that grows to 4px in larger font sizes to favor contrast and improve readability. It follows a non-linear arithmetic progression that's understandable and easy to use in both simple and complex applications.
 
 <table>
     <thead>
@@ -136,31 +131,29 @@ A scale based on an initial increase of 2px that grows to 4px in larger font siz
 
 #### Line Height
 
-Lexicon typographic system uses two reference line heights. A standard line height with a 1:1.5 ratio, and another one with a 1:1.25 ratio used for headings.
+Lexicon uses two reference line heights for its typography: A standard line height with a 1:1.5 ratio and another one used for headings with a 1:1.25 ratio.
 
-1:1.5 is also one of the most common line height ratios used in web development right now. A formula that applied to the body font of 16px (1rem) returns a value of 24px (1.5rem) which is the main reference measure for the vertical organization of content in Lexicon.
+1:1.5 is one of the most common line height ratios used in web development right now. A body font of 16px (1rem) returns a value of 24px (1.5rem), which is the main reference measurement for the vertical organization of content in Lexicon.
 
-Also, regarding accessibility concerns, using a minimum value of 1.5 for line-height for main paragraph content, can help people with low vision conditions, as well as people with cognitive concerns such as Dyslexia.
+Using a minimum value of 1.5 for the line-height for main paragraph content also improves accessibility for people with low vision or cognitive concerns such as Dyslexia.
 
-In large font sizes, the optical perception we have of the spaces between lines is different. The white space between lines acquire more light and more prominence. Therefore, it is considered good legibility practice to reduce the line height in font sizes starting from 20px and above.
-
-The same applies to uppercase texts. The white spaces between text lines in uppercase are shown as more defined white blocks than those created by lowercase letters which have ascending and descending strokes. That's why uppercase headings in Lexicon, despite being 12px and 14px are also applied a ratio of 1: 1.25
+We perceive the space between large font sizes a bit differently. The white space between lines appears more prominent. Therefore, it is considered best practice to reduce the line height in font sizes that are 20 pixels or larger. The same is true for uppercase texts. Therefore uppercase headings in Lexicon, despite only being 12px and 14px, also use a ratio of 1:1.25.
 
 | Line Height | ratio |
 | -- | ----------- |
 | Standard | 1:1.5 |
 | Secondary | 1:1.25 |
 
-Lexicon only provides the value of line height for texts susceptible to going to more than one line such as paragraphs, headlines and list group items for example. For the rest of ui elements that incorporate text within their structure as buttons, input fields of single line, stickers, badges or labels for example, this value will be defined by the implementation.
+Lexicon's Line height only applies to texts elements that run more than one line, such as paragraphs, headlines, and list group items. For the remainder of the UI elements that contain text, such as buttons, single line input fields, stickers, badges, or labels, this value is defined by the implementation.
 
 #### Font Weight
 
-Lexicon incorporates three font weights in order to provide enough options to solve the different needs of content hierarchy without adding complexity to the system.
+For efficiency and simplicity, Lexicon only incorporates three font weights for content:
 
 <table>
     <thead>
         <tr>
-            <th>Font Height</th>
+            <th>Font Weight</th>
             <th>Reference</th>    
         </tr>
     </thead>
@@ -180,23 +173,22 @@ Lexicon incorporates three font weights in order to provide enough options to so
     </tbody>
 </table>
 
-
-The specific use cases of the different weights are defined in the "Type Styles" section.
+The use cases for each font weight are covered in the "Type Styles" section.
 
 #### Letter Case
 
-The system uses lowercase as a basis regardless of the specific capitalization rules. It only uses the uppercase as a hierarchy resource in the section divider pattern that we can find in dataset display views and forms for example. 
+Lexicon uses lowercase as a basis, regardless of the specific capitalization rules. Uppercase is only used as a hierarchy resource in the section divider pattern used in dataset display views and forms. 
 
-The specific cases of use of the different weights are defined in the "Type Styles" section.
+The use cases for each letter case are covered in the "Type Styles" section.
 
 #### Line Length
 
-In order to provide a comfortable continuous reading we recommend to adjust the texts of medium and long length to a line width within a range between 60 and 100 characters including spacing. In this way we favor an adequate reading rhythm avoiding too long lines that can force the look excessively and lose the horizontal reference, or too short lines that interrupt the reading very often and force a constant eye movement.
+To provide optimal reading conditions, we recommend that you use a line width within a range between 60 and 100 characters, including spacing, for medium and long text blocks. This gives a good flow to the reading and reduces the potential for straining the reader's eyes.
 
 ![line length expalanatory image](../../../images/LineLength.png)
 
 ### Type styles
-These tables show the different format combinations that can be found in Lexicon with some reference examples. 
+The tables in this section show the format combinations that are available in Lexicon, along with reference examples. 
 
 #### Headings
 
@@ -216,8 +208,8 @@ These tables show the different format combinations that can be found in Lexicon
 | --------- | ----------- | ----------- | ----------- | ----------- |
 | 16px / 1rem | 1.5 | 400 (regular) | Lowercase | Mid-long read text |
 
-The paragraph element incorporates a margin bottom of 0.75rem (12px) to define the separation between the different text blocks.
+The paragraph element incorporates a bottom margin of 0.75rem (12px) to define the separation between text blocks.
 
 #### General UI Elements
 
-All the Lexicon UI elements are styled based on a combination of these format values previously described. You can check the font attributes of each element in its specific page.
+The Lexicon UI elements are styled using a combination of the format values described on this page. You can check the font attributes of each element on its specific page.

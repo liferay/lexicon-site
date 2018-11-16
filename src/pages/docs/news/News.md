@@ -21,44 +21,44 @@ As promised, we are updating the examples section. This time we bring you an exa
 
 **Dropdown menu:**
 
-[Dropdown menu](../pattern/dropdowns.html) definition has been update to accept icons on the left side of actions.
+[Dropdown menu](../pattern/dropdowns.html) definition has been updated to accept icons on the left side of actions.
 
 **Tabs:**
 
-[Tabs](../pattern/tabs.html) have been updated with an example to give context in tabbars.
+[Tabs](../pattern/tabs.html) have been updated with an example to give context in tab bars.
 
 <time>October 12th, 2018</time>
 
 ### Management bar update
 
-We are happy to announce that we have a new update for the management toolbar. This toolbar is now able to contextualize actions depending on the selection done in the dataset. In this way, we want to reduce the number of errors not allowing users to perform actions that do not affect to all selected elements.
-Moreover, we introduce the results bar when filters are applied and/or search is performed from the management toolbar. This helps the user with useful and visible feedback.
+We are happy to announce that we have a new update for the Management Toolbar. The Toolbar is now able to contextualize actions based on the selection in the dataset. This reduces the number of potential errors by narrowing the actions down to only the ones that are relevant to the selected elements.
+Moreover, we introduce the results bar when filters are applied and/or search is performed from the Management Toolbar. This provides the user with useful and visible feedback.
 
 <time>October 4th, 2018</time>
 
 ### Examples
 
-Lexicon can be use to create many different interfaces. Today we open a new section "Examples" in our site to show case different interface examples created by Liferay UX designers for our products using Lexicon. We hope these series of examples inspire you on how to create your interfaces. With the time, the number of examples will grow to show you a wide variety of interfaces built with Lexicon.
+Lexicon can be used to create many different interfaces. Today, we open a new "Examples" section in our site to showcase different Lexicon interface examples created by Liferay UX designers for our products. We hope these series of examples inspire you and give you an idea of the possible interfaces you can create. These examples will grow over time to showcase a wide variety of interfaces built with Lexicon.
 
 
 <time>August 21st, 2018</time>
 
 ### New organization
 
-A new organization has been done in the site in relation to the components. Now components are divided in two big groups: Core and Satellite.
+Components are now organized into two key groups: Core and Satellite.
 
-* **Core components** are the basic components and widely used components by differnet Liferay products.
-* **Satellite components** host all other components that are not so used in many Liferay products. It still worths to have them documented here so you get more out of Liferay without having to reinvent the wheel everytime you need a new pattern. You can just come here and check if what different Liferay teams are doing solve your scenario.
+* **Core components** are the basic components that are widely used by Liferay products.
+* **Satellite components** are the remaining components that are not used that often in many Liferay products. Although these components are not as widely used, they can save you time from reinventing the wheel.
 
-It is important to highlight that core components are implemented and supported by Clay, while satellites don't.
+**Note:** that core components are implemented and supported by Clay, while satellite components are not supported.
 
-We have also separated **Templates**, where we include the most common templates created with Lexicon components in Liferay products.
+We have also created a **Templates** section that includes the most common templates created with Lexicon components in Liferay products.
 
 <time>August 21st, 2018</time>
 
-### Predictive forecast chart
+### Predictive Forecast Chart
 
-[Predicitive forecast chart](../patterns/Charts/chart-forecast.html) has been documented inside the charts section. This chart is very benefitial in use cases as commerce.
+[Predicitive Forecast Chart](../patterns/Charts/chart-forecast.html) has been documented inside the charts section. This chart is very useful for commerce data.
 
 <time>June 27th, 2018</time>
 
