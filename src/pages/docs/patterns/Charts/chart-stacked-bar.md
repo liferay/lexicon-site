@@ -1,30 +1,30 @@
 ---
-title: "Stacked bar chart"
+title: "Stacked Bar Chart"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/charts/basic/bar_chart.html"
-description: "Stacked Bar chart allows to compare the values of single items with the total data value."
+description: "A Stacked Bar chart compares the values of single items with the total data value."
 layout: "guide"
 weight: 3
 ---
 
 <div class="page-description">{$page.description}</div>
 
-Stacked bar charts can be either plotted in vertical or horizontal. In this page, we focus on vertical bars but both possibilities are allowed.
+Stacked Bar Charts can either be displayed in vertical bars or horizontal bars. This page focuses on vertical bars, but horizontal bars are also acceptable.
 
-This chart type is implemented using bar charts.
+This chart type is implemented using Bar Charts.
 
 ![stacked bar chart vertical non-grouped](../../../images/ChartStackedBar.png)
 
 ### Color use
 
-On the stacked bar you must follow the same color order defined for charts, starting from left to right in horizontal bars and from bottom to top in vertical bars
+The Stacked Bar Chart follows the same color order defined for charts. They must start from left to right in horizontal bars and from bottom to top in vertical bars.
 
 ### States
 
 #### Single bar item interaction
 ![stacked bar chart vertical non-grouped](../../../images/ChartStackedBarItemSel.png)
 
-#### Legened item interaction
+#### Legend item interaction
 ![stacked bar chart vertical non-grouped](../../../images/ChartStackedBarLegendSel.png)
 
 #### Axis legend interaction
