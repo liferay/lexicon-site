@@ -2,7 +2,7 @@
 title: "Multi Step Form"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/multi-step-form.html"
-description: "A progress bar used to divide the main task in subtasks to help users completing long processes."
+description: "A progress bar used to divide the main task into subtasks to help users complete long processes."
 layout: "guide"
 weight: 3
 ---
@@ -13,16 +13,12 @@ weight: 3
 
 ### Usage
 
-Multi step form is meant to be used in those context where a major or big task has to be divided in smaller task with the aim of letting the user breath in the process and provide progressive completion feeling.
+A Multi step form is used when a major or big task has to be divided into smaller task, with the aim of letting the user breath in the process and providing them with a sense of progression.
 
-Multi step form is most commonly used to guide the user in the process of filling a complex or a long form. Some processes may require you to navigate backwards through the process. For those cases make sure to set up links in the multi step form elements.
-
-Lexicon recommends 7 as a maximum number of steps to have for two reasons. First, because 7 is a good number of elements to remember. Second, because when reaching mobile screens is a good threshold for touch interaction. In case you need more than 7 steps they will be grouped under the 6th element in the multi step form with a dropdown menu.
-
-* Each of the steps can have 3 different states: Disabled, selected or done.
-* Use it when the task is long and/or complicated to divide it in small chunks easier to complete by the user.
-* Use it when the user needs guidance in the process in a process that she is not familiar with.
-* Use it when there is a specific sequence to complete steps.
+* Each step can have three different states: Disabled, selected, or done.
+* Use it to divide long and/or complicated tasks into smaller chunks that are easier for the user to complete.
+* Use it to guide a user through a new or unfamiliar process.
+* Use it when there is a specific sequence required to complete the form.
 * Make chunks that are not overwhelming.
 * Step names must be clear, short, and express the content below them. Use two words maximum.
 
@@ -30,13 +26,18 @@ A multi step form must have a minimum of two steps:
 
 ![Multi step form two steps](../../../images/MultiStepForm2Steps.jpg)
 
-Lexicon recommends to use a maximum of seven steps:
+We recommend a maximum of seven steps for two key reasons:
+* Seven is an easy number of elements to remember
+* Seven is a good threshold for touch interaction on mobile devices
 
 ![Multi step form](../../../images/MultiStepForm7Steps.jpg)
 
-But in case you need to implement more steps to make the process easier to your user, please follow this recommendation:
+If you add more than seven steps, the remaining steps should be grouped in a dropdown menu under the sixth element in the multi step form:
 
 ![Multi step form two steps](../../../images/MultiStepFormNSteps.jpg)
+
+A Multi step form is most commonly used to guide the user in the process of filling in a complex or long form. Some processes may require you to navigate backwards through the process. For those cases, make sure to set up links in the multi step form elements.
+
 
 #### Example
 
@@ -49,13 +50,13 @@ But in case you need to implement more steps to make the process easier to your 
 1. Done: Checked page
 2. Selected: Current page
 3. Disabled: Non visited page
-4. Steps row: equally divided space between all steps.
+4. Steps row: equally divided space between all steps
 
 ![Multi step form metrics](../../../images/MultiStepFormMetrics.jpg)
 
 ### Mobile
 
-Due to the reduce space in mobile the process bar is reduced to a maximum of 5 steps. The steps overflow is always placed under the second to last step:
+Due to the reduced space on mobile displays, the process bar is condensed to a maximum of five steps. The remaining steps are included in a dropdown that is always placed under the second to last step:
 
 ![Multi step form N steps mobile](../../../images/MultiStepFormNStepsMobile.jpg)
 

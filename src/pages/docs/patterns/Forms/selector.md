@@ -2,7 +2,7 @@
 title: "Selectors"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/selector.html"
-description: "A form control element used to select and entry data within several provided options."
+description: "A form control element used to select from several provided options and enter data."
 layout: "guide"
 weight: 3
 ---
@@ -13,8 +13,8 @@ weight: 3
 
 ### Usage
 
-This pattern is completely different from a dropdown as a select is a native component with a data provider. A dropdown, instead, opens a panel where the panel could contain multiple and different nature elements.
+This pattern is completely different from a dropdown. A selector is a native component with a data provider. A dropdown, however, opens a panel that could contain multiple and different natural elements.
 
 ### States
 
-The states for a select are the same as for a text input.
+The states for a selector are the same as the states for a text input.

@@ -2,7 +2,7 @@
 title: "Forms"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/form-elements.html"
-description: "Forms obtain user data and transmits it to the system either to store, produce an action, or both."
+description: "Forms obtain user data and transmit it to the system to either store the data, produce an action, or both."
 layout: "guide"
 weight: 1
 ---
@@ -13,21 +13,21 @@ weight: 1
 
 ![lexicon default](../../../images/FormParts.jpg)
 
-1. Title. Required
-2. Description. Not required but very useful. It should describe the form usage.
+1. Title (Required)
+2. Description (Not required but very useful). It should describe the form usage.
 3. Form Elements:
-	1. Text input. For more information visit [Text Input](./text_input.html). 
-	2. Text input localizable. For more information visit [Text Input Localizable](./text_input_localizable.html).
-	3. Selector. For more information visit [Selectors](./selector.html). 
-	4. Radio. Visit [Checkbox, Radio and Toggle](./radio_check_toggle.html) for more information
-	5. Checkbox. Visit [Checkbox, Radio and Toggle](./radio_check_toggle.html) for more information. 	
-4. Section.  Sections are identified with primary text with font-size of 14px and always in capital letters. Some forms may require a full width underline for a better visual separation of content. This is usually used in configuration forms.
-5. Buttons. Visit Actions to understand the use of buttons in forms.
+	1. Text input. See [Text Input](./text_input.html) for more information. 
+	2. Text input localizable. See [Text Input Localizable](./text_input_localizable.html) for more information.
+	3. Selector. See [Selectors](./selector.html) for more information. 
+	4. Radio button. See [Checkbox, Radio Button, and Toggle](./radio_check_toggle.html) for more information
+	5. Checkbox. See [Checkbox, Radio Button, and Toggle](./radio_check_toggle.html) for more information. 	
+4. Section. Sections are identified with a 14px size primary text that is always in uppercase letters. Some forms may require a full width underline for a better visual separation of content. This is usually used in configuration forms.
+5. Buttons. Visit Actions to learn how buttons are used in forms.
 
 
 ### Layout 
-Forms can be created in one single column or two columns. If your form is divided in several sections that are stacked consider not changing the internal layout between sections, it can affect the experience of filling the whole form.
-When applying columns take into account that the reading direction is left-right,  and up-down, in each column. So expect your user to read first column one and then column two.
+Forms can occupy one or two columns. If your form is divided into several sections that are stacked, it's best to keep the internal layout between sections. This can affect the experience of filling the whole form.
+When adding columns, remember that the reading direction for each column is left to right and top to bottom. The user reads column one first, then they read column two.
 
 #### One single form
 
@@ -41,9 +41,9 @@ When applying columns take into account that the reading direction is left-right
 
 #### Spacing
 
-Respecting the distancies between form elements such as texts, fields, sections, etc, is very important. Please take a closer look to our [hierarchy](./formsHierarchy.html) page to understand it.
+It's very important to maintain the distance between form elements, such as texts, fields, sections, etc. Please see our [hierarchy](./formsHierarchy.html) page for guidance.
 
-As a general thumb rule apply the following sizes for distances:
+As a general rule of thumb, use the following distances for spacing between form elements:
 
 | Description | Desktop | Mobile |
 | --- | --- | --- | 
@@ -61,11 +61,11 @@ As a general thumb rule apply the following sizes for distances:
 
 #### Sections
 
-First level sections can be either collapsible or not. On the other hand, second level sections are never collasible.
+First level sections can be collapsible. Note that second level sections, however, can never be collapsible.
 
 ![form sections style and measures](../../../images/FormSections.jpg)
 
-Form section titles might be long and the layout must prevent it.
+The layout must wrap long section titles.
 
 ![form sections style and measures for long titles](../../../images/FormSectionsLong.jpg)
 

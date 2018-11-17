@@ -1,6 +1,6 @@
 ---
 title: "Forms Rules"
-description: "Set of rules and recommendations to know how form patterns must be placed in portal."
+description: "A set of rules and recommendations for using form patterns in portal."
 layout: "guide"
 weight: 2
 ---
@@ -28,30 +28,30 @@ Try to place first as many mandatory fields when possible to make the user task 
 ### Repeatable fields
 
 #### Single repeatable field
-Single repeable field is useful when the user must introduce several data of the same type from different inputs, no matter the number nor the order.
+A single repeatable field is useful when the user must provide several pieces of information that require the same input type, and the number of fields and field order are not important.
 
 #### Set of repeatable fields
-This allow you let the user add contents of a same type in a form. This is usually used to contribute with more form pieces that allow the user to specify more information. A set always bring the possibility to add or remove sets. See the following example:
+This lets the user add blocks of the same type of content to a form. Sets of repeatable fields are usually combined with other form pieces. Additional sets can be added and existing sets can be removed.
 
 ### Actions
 
 #### General form actions
 
-General form actions always placed at the end of the form and they are always placed in same order and to the left of the form. The button size to use is default.
+General form actions are always placed at the end of the form on the left side in the same order: Primary, Secondary, and Link. Form actions should always use the default button size.
 
 ![button order. Primary, secondary, link](../../../images/ButtonOrder.jpg)
 
-*Note: This order is reversed in modals, where buttons in the footer are right-aligned: Link, Secondary, Primary.*
+*Note: This order is reversed in modals in which buttons in the footer are right-aligned: Link, Secondary, Primary.*
 
 #### Interior form actions
 
-Interior form actions should not be as notorious as general actions. Therefore, use the secondary button.
+Interior form actions are not as widely used as general actions. Therefore, use the secondary button for interior form actions.
 
 ![button primary default size defuault state](../../../images/ButtonIconSecondary.jpg)
 
-#### Do's and Don'ts
+#### Dos and Don'ts
 
-Do never use two primary buttons together. There must only be one primary button that represents the most important action.
+Never use two primary buttons together. There must only be one primary button that represents the most important action.
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -64,7 +64,7 @@ Do never use two primary buttons together. There must only be one primary button
 	</div>
 </div>
 
-Do always use concrete words rather than general as "Ok".
+Always use concrete words, rather than general words such as "Ok".
 
 <div class="row">
 	<div class="dodont col-lg">
@@ -80,7 +80,7 @@ Do always use concrete words rather than general as "Ok".
 ### Boolean situations
 
 Boolean situations are those yes/no situations usually solved with checkboxes.
-* Try to be always as explicit as possible to let the user know what is the outcome of the decision. 
+* Try to always be as explicit as possible to let the user know what is the outcome of the decision. 
 * Do not hide helpful information to the user in popovers, alerts, or secondary text.
 
 ![boolean situations solved with checkboxes, relevant information/help is explicit](../../../images/FormBooleanSituations.jpg)
