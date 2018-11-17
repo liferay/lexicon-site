@@ -2,7 +2,7 @@
 title: "Text Input Localizable"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/forms/text-input-localizable.html"
-description: "A text input viaration used in those fields that can be translated into multiple languages."
+description: "A text input variation used in fields that can be translated into multiple languages."
 layout: "guide"
 weight: 4
 ---
@@ -11,18 +11,18 @@ weight: 4
 
 ### Layout
 
-This component is composed by two elements:
+This component contains two elements:
 
-* The input field: text input, text area or text input group (only specific cases).
-* The localization button, which displays a dropdown menu to select a language.
+* The input field: a text input, text area, or text input group (only specific cases).
+* The localization button: displays a dropdown menu to select a language.
 
 ![input localizable](../../../images/InputLocalizable.jpg)
 
-This dropdown menu must always contain in each entry:
+The dropdown menu must always contain these items in each entry:
 * Country flag
 * ISO 639-1 code
 * Status:
-    * Default for the default language. Always the first in the list
+    * Default: the default language. It is always the first in the list.
     * Translated: the user has provided a text that differs from the default input text.
     * Not translated: the input text does not differ from the original text.
 
@@ -30,9 +30,9 @@ This dropdown menu must always contain in each entry:
 
 ### Interaction
 
-Changing a language through the localization button only changes field content, not the title label, and the help text. The help text is used to display the default language text to provide a hint to the user.
+The localization button only changes field content language. It does not change the title label or the help text language. The help text displays the default language text as a hint to the user.
 
-Usually this field is placed in a form where other fields are also localizable. The interaction of selecting a lenguage in one of the localizable fields changes all other fields language at same time.
+This field is usually placed in a form with other localizable fields. Selecting a language in one of the localizable fields changes the language for all other fields.
 
 ### Attributes
 
@@ -52,7 +52,7 @@ Usually this field is placed in a form where other fields are also localizable. 
 
 #### Text input group localizable
 
-A very common case in Liferay Portal is to have translate fields for urls. This field is a clear combination of a input group with a localizable field.
+A very common case in Liferay Portal is to have to translate fields for URLs. This field is a clear combination of an input group with a localizable field.
 
 ![input localizable](../../../images/InputLocalizableGroupUrl.jpg)
 
