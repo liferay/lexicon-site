@@ -15,21 +15,21 @@ weight: 2
 
 ### Usage
 
-Breadcrumb works in the same way in for any kind of viewport size. When there is not enough space in the screen to make all the breadcrumbs explicit, first levels are collapsed in a dropdown allowing the user to read and navigate to the previous closer levels but also allowing to navigate to other levels in an easy way.
+Breadcrumb works the same way across all viewport sizes. When there isn't enough space on the screen to display all the breadcrumbs, the first levels are collapsed into a dropdown menu. This allows the user to read and navigate to the previous closer levels, and also lets them navigate to other levels easily.
 
 ![breadcrumb with a dropdown menu open](../../../images/BreadcrumbDropdownExample.jpg)
 
 * The breadcrumb is always horizontal.
 * Long crumbs can be reduced using ellipsis.
-* All crumbs are links to the respective navigation level, except last crumb that is only used to identify the current page.
-* When the crumbs reach overflow in the screen, the elements get collapsed into a dropdown menu as show below. The order of the elements inside the dropdown menu is reversed.
+* All crumbs link to their respective navigation level, except the last crumb which is only used to identify the current page.
+* When the crumbs reach overflow on the screen, the elements get collapsed into a dropdown menu as shown below. The order of the elements inside the dropdown menu is reversed.
 
-### Do's and Don'ts
+### Dos and Don'ts
 
 <table>
     <thead>
         <tr>
-            <th>Do's</th>
+            <th>Dos</th>
             <th>Don'ts</th>
         </tr>
     </thead>
@@ -52,7 +52,7 @@ Breadcrumb works in the same way in for any kind of viewport size. When there is
             <td>
                 <div class="d-flex align-items-center">
                     <svg class="lexicon-icon lexicon-icon-check do mr-3"><use xlink:href="/vendor/lexicon/icons.svg#check"></use></svg>
-                    <span>Use it when navigating through folders in tables/lists.</span>
+                    <span>Use it when navigating through folders in tables or lists.</span>
                 </div>
             </td>
             <td>

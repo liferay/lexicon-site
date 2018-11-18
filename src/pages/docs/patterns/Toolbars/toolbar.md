@@ -1,6 +1,6 @@
 ---
 title: "Toolbar"
-description: "A toolbar is a set of actions related to an specific context grouped in an horizontal bar."
+description: "A toolbar is a set of actions related to a specific context that are grouped into a horizontal bar."
 layout: "guide"
 weight: 1
 ---
@@ -11,16 +11,16 @@ weight: 1
 
 ### Usage
 
-A toolbar is a generic bar that helps grouping actions in a way that they are visually organized for any context of use in Lexicon. Its height changes depending on the height of the elements it contains. The toolbar always maintains the vertical alignment.
+A toolbar organizes actions into a horizontal bar that is responsive. Its height changes to accommodate the height of the elements it contains. The toolbar always maintains the vertical alignment.
 
-You only need to define the number of blocks or containers that you want to have in your toolbar and place the elements inside it. These blocks or containers are of 2 different types:
+You only need to define the number of blocks or containers that you want to have in your toolbar, and place the elements inside it. These blocks or containers can be one of two different types:
 
-* Field: is used to make tight groups.
-* Content: is used to span as much as possible in the rest of the space. In case there are several contents the available space is equally divided.
+* Field: used to make tight groups for items such as action icons
+* Content: Fills the remaining space unused by fields as much as possible. If the toolbar contains multiple content blocks, the available space is equally divided for each content block.
 
 ### Layout
 
-For a better understanding of the previous sections, here are some example layouts:
+Below are some example layouts that combine fields and contents:
 
 Example 1: Three consecutive fields
 
@@ -34,7 +34,7 @@ Example 3: Field - Content - Field
 
 ![toolbar layout example with field - content - field](../../../images/ToolbarLayout3.jpg)
 
-To set a better context the folling examples over the management bar will help you to understand the previous images better:
+The examples below show how these layouts are used for a management toolbar:
 
 ![toolbar layout example with field - content - field](../../../images/ToolbarLayoutExample1.jpg)
 
@@ -43,11 +43,11 @@ To set a better context the folling examples over the management bar will help y
 
 ### Attributes
 
-The horizantal distance between elements is always 16px. This change into 8px in mobile viewports.
+The horizontal distance between elements is always 16px. This changes to 8px on mobile devices.
 
 ![toolbar layout example with field - content - field](../../../images/ToolbarLayoutMetricsHor.jpg)
 
-When talking about vertical distances, the minimum will be always 16px. There is an exception of the search field that we want it to take a higher relevance and its height is 40px. In this case, the bar top and bottom margins are 12px.
+The minimum vertical distance between elements is 16px. The search field is an exception to this rule. We want the search field, which has a height of 40px, to have more emphasis. In this case, the toolbar's top and bottom margins are 12px.
 
 ![toolbar layout example with field - content - field](../../../images/ToolbarLayoutMetricsVert.jpg)
 
