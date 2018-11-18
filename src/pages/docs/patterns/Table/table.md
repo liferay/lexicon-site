@@ -2,7 +2,7 @@
 title: "Table"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/table/table.html"
-description: "A table is a specific pattern used for comparing datasets in a very direct an analytical way."
+description: "A table is a specific pattern for comparing datasets in a very direct and analytical way."
 layout: "guide"
 weight: 1
 ---
@@ -11,15 +11,15 @@ weight: 1
 
 ### Usage
 
-A table view is useful for comparing entries among them that need exhaustive comparison. Tables are very heavy in text display, if you need to display images we recommend you to take a look at lists and cards.
+A table view is useful for comparing entries that need exhaustive comparison. Tables display text heavily. If you need to display images, we recommend that you use lists or cards.
 
-A table entry or row don't allow you to display 2 different data types in one same column. The reason behind this decision are comparison and sorting problems.
+A table entry or row doesn't support two different data types in the same column. The is due to potential comparison and sorting problems.
 
-When a table is used together with management bar, the table entries must include the checkbox, as the selection and actions are reflected in the management bar. You can find these examples in [dataset display](../../dataset_display.html).
+When a table is used together with the management toolbar, the table entries must include a checkbox since the selection and actions are reflected in the management toolbar. See the [dataset display](../../dataset_display.html) for examples.
 
 ![table parts](../../../images/TableParts.jpg)
 
-The previous image points out the different elements that are covered in this page:
+Tables contain the following attributes (labeled in the image above):
 1. Table header
 2. Section
 3. Row
@@ -27,27 +27,29 @@ The previous image points out the different elements that are covered in this pa
 
 ### Table header
 
-All column headers are always left-aligned, 14px, and regular weight.
+Column headers are always left-aligned, 14px, and have regular weight.
 
 ![table header](../../../images/TableHeader.jpg)
 
-Table header can be interactive:
-* Sorting (if available): the column header has an arrow next to it indicating the sort direction, A-z down arrow and Z-a up arrow. The text is underlined on hover state.
+The table header can have these interactive attributes:
+* Sorting (if available): the column header has an arrow next to it indicating the sort direction: A-z (down arrow) and Z-a (up arrow). The text is underlined on hover state.
 * Drag & drop (if available): the column header shows a drag-icon on hover state.
 
 ### Table header attributes
 
 ![table header description](../../../images/TableHeaderParts.jpg)
 
+Tables headers contain the following attributes (labeled in the image above):
+
 1. Selected column
 2. Sort direction icon
-3. Rest of columns
+3. Remaining columns
 
 ![table header metrics](../../../images/TableHeaderMetrics.jpg)
 
 ### Sections
 
-Whenever you need to group series of table entries, you can use the table group separator.
+You can use the table group separator to group a series of table entries.
 
 ![table group](../../../images/TableViewGroupSeparator.jpg)
 
@@ -59,9 +61,9 @@ Whenever you need to group series of table entries, you can use the table group 
 
 #### Hover state
 
-A table row in hover state show quick actions from the actions menu that can be performed on the element. A maximum of three actions that represented by icons can appear.
+When a user hovers over a table row, quick actions from the actions menu are displayed for the element. A maximum of three actions (represented by icons) can appear.
 
-When the row is selected the action do not appear in hover state.
+When the row is selected, the actions do not appear on hover state.
 
 ![table row in hover state](../../../images/TableViewHover.jpg)
 
@@ -73,12 +75,16 @@ When the row is selected the action do not appear in hover state.
 
 ![table row in hover state](../../../images/TableViewDefaultParts.jpg)
 
+Table rows contain the following attributes (labeled in the image above):
+
 1. Checkbox
 2. Main column text
 3. Columns
 4. Actions button
 
 ![table row in hover state](../../../images/TableViewHoverParts.jpg)
+
+Table rows on hover contain the following attributes (labeled in the image above):
 
 1. Checkbox
 2. Main column text
@@ -90,64 +96,63 @@ When the row is selected the action do not appear in hover state.
 
 ### Row interactions
 
-* A table entry can have a checkbox, a radio or none of them.
-* Selecting a row is only possible by using the checkbox or radio depending on the selection type desired in the table. An interaction with the background does not produce row selection.
-* Text elements in the row can be configured as links to navigate.
-* A row can have none or several actions associated. When there is only one action and it can be represented by an icon, you don't need to make use of the actions menu. Otherwise, use the actions menu on the right side of the row.
-* The first column is usually used as an action:
-	* In case of:
-		* Folder: it navigates to the next level.
-		* File: it navigates to its detail view.
-	* Do never use it for preview. Preview is always a secondary action placed in the row action menu.
+* A table entry can have a checkbox, a radio button, or neither of them.
+* You can select a row by using the checkbox or radio button, depending on the selection type in the list. The background is not selectable.
+* You can add links to a row to navigate to other areas.
+* A row can have related actions. If there is only one action for the row that can be represented by an icon, you don't need to use an actions menu. Otherwise, include an actions menu on the right side of the row.
+* Use the main text as an action for the following use cases:
+	* A Folder that navigates to the next level
+	* A File that navigates to its detailed view
+* Never use the row action to view a preview. This is always a secondary action placed inside the row's action menu.
 * If the link drives the user out of the site, please identify visually that this link will open in a new page.
-* A cell entry could include a button as main action of a table entry. An example could be "Execute".
-* Drag and drop is possible for moving selected elements into a folder. A click and drag over a non selected element implies selection.
+* A cell entry can include a button as the main action of a table entry. An example could be "Execute".
+* You can drag and drop selected elements into a folder. A click and drag over a non selected element implies selection.
 
 #### Row hover
 
 ![table view row hover](../../../images/TableViewRowHover.gif)
 
 ### Row Interaction Limitation
-Concerning the use of the actions menu on hover there is a limitation. It is not possible to have a row with a button in the default state because it would be impossible to click on it while the actions menu is active in the hover state.
+Note that the actions menu has a limitation on the hover state. It is not possible to have a row with a button in the default state because it would be impossible to click on it while the actions menu is active in the hover state.
 
-#### Do's and Don'ts
+#### Dos and Don'ts
 
-Do never hide a action in the table as both static actions in the row and quick actions are not compatible. Quick actions will always hover an action placed in the table row and it will be imposible to reach, in this example, "Edit" button.
+Never hide an action in the table since both static actions in the row and quick actions are not compatible. Quick actions will always hover an action placed in the table row and it will be impossible to reach, as shown for the "Edit" button in the example below.
 
 <div class="dodont">
-	<img class="do" src="../../../images/TableRowInteractionDo.jpg" alt="first, table view row default, second, table view row hover. Theres is no action to hover in the row. Correct.">
+	<img class="do" src="../../../images/TableRowInteractionDo.jpg" alt="first, table view row default, second, table view row hover. There is no action to hover in the row. Correct.">
 	<p class="do">Do</p>
 </div>
 
 <div class="dodont">
-	<img class="dont" src="../../../images/TableRowInteractionDont.jpg" alt="first, table view row default, second, table view row hover. Theres is an action hovered in the row. Incorrect.">
+	<img class="dont" src="../../../images/TableRowInteractionDont.jpg" alt="first, table view row default, second, table view row hover. There is an action hovered in the row. Incorrect.">
 	<p class="dont">Don't</p>
 </div>
 
 
 ### Columns drag and drop
 
-Drag and drop is configurable in tables. Tables that allow drag and drop handle this action from the column header, letting the user exchange columns position except with the first one.
+Drag and drop is configurable for tables. This lets the user exchange column positions, excluding the first column. Tables that allow drag and drop provide the action in the column's header.
 
 #### Columns visibility
 
-Columns in a table can be shown or hidden only when the table goes together with the management bar and the management bar implements this feature. All columns can be hidden except the first one as it is the reference column.
+You can only toggle visibility for columns that work with a management toolbar that implements this feature. All columns can be hidden, except the first one since it is the reference column.
 
 ### Columns layout
 
-A table contains 1 to many columns and how to place them properly can be cumbersome. We provide you a set of advices so you can take quick and easy decisions.
+A table can contain one or more columns, and deciding how to place them properly can be cumbersome. We provide a set of guidelines that you can follow to make this decision easier. 
 
-While main column must be always placed on the leftmost side, depending on the number of columns and its content you would prefer different table layouts:
-* **2 columns**: Place the second column right next to the first column respecting the margins.
-* **N columns**: Place columns equidistant.
+While the main column must always be placed on the leftmost side, the remaining columns can be placed in a couple different layouts:
+* **2 columns**: Place the second column right next to the first column, while respecting the margins.
+* **N # of columns**: Place columns equidistant.
 
 ### Content format and alignment
 
-* Headers must be always left-aligned and semibold.
-* First column value must be always in semibold.
-* The rest of the columns text values must be in regular.
-* Text values, dates, stickers, labels and badges must be always left-aligned.
-* Numbers, with or without unit must be right-aligned.
+* Headers must always be left-aligned and semibold.
+* The first column's value must always be semibold.
+* The remaining columns values must be regular font weight.
+* Text values, dates, stickers, labels, and badges must always be left-aligned.
+* Numbers, with or without unit, must be right-aligned.
 
 
 ### Example
