@@ -1,6 +1,6 @@
 ---
 title: "Buttons"
-description: "Specific set of button variations specifically designed for sites environment widgets."
+description: "A set of button variations specifically designed for site environment widgets."
 layout: "guide"
 weight: 2
 ---
@@ -9,9 +9,9 @@ weight: 2
 
 ### Variations
 
-#### Primary button icon + text
+#### Primary button icon with text
 
-Primary buttons with icon and text can be used either in logged or not logged environments.
+Primary buttons with icon and text can be used by guest users and users that are logged in.
 
 **Default**
 
@@ -25,10 +25,9 @@ Primary buttons with icon and text can be used either in logged or not logged en
 
 ![Button Primary Icon plus Text active state](../../../images/sites/ButtonSitesPrimaryIconTextActive.jpg)
 
+#### Secondary button icon with text
 
-#### Secondary button icon + text
-
-On the one hand we have the button with icon and text. This button is an extension of Lexicon's secondary button and is built based on the styles of this one. In this way they can be regular or without borders.
+This variation is an extension of Lexicon's secondary button, so it can be regular or have no borders.
 
 **Default**
 
@@ -42,11 +41,11 @@ On the one hand we have the button with icon and text. This button is an extensi
 
 ![Button site active and button site active borderless](../../../images/sites/ButtonSitesActive.jpg)
 
-These buttons would appear normally as triggers of actions and tools as a part of the [Asset Toolbar](./assetToolbar.html) element.
+These buttons are primarily used as triggers for actions and tools in the [Asset Toolbar](./assetToolbar.html).
 
 #### Secondary blue buttons
 
-On the other hand we have a type of button that appears only when the user is logged in and has editing permissions on the portlets and their content. These buttons are built following the same pattern of the Secondary Button but using the blue as a distinctive color.
+This variation only appears for logged in users that have editing permissions for the corresponding portlet and its content. This button variation also extends Lexicon's secondary button and is identified by the distinctive blue color.
 
 **Default**
 
@@ -61,7 +60,7 @@ On the other hand we have a type of button that appears only when the user is lo
 ![Button site active and button site active borderless](../../../images/sites/ButtonSitesBlueActive.jpg)
 
 
-When these buttons are associated with an asset, a blog entry, a knowledge base article or a comment will only appear when hovering over the item to which it is associated. More information about this behavior can be found on the [Asset Title Bar documentation](./assetTitleBar.html).
+When these buttons are associated with an asset, a blog entry, a knowledge base article, or a comment, they only appear when hovering over the associated item. See the [Asset Title Bar documentation](./assetTitleBar.html) for more information about this behavior.
 
 ### Attributes
 

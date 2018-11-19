@@ -9,7 +9,7 @@ weight: 8
 
 ### Design libraries
 
-Creating your own interfaces using Lexicon is pretty easy using our Figma or Sketch libraries. Our libraries bring you our foundations and core components for you to build your interfaces.
+Creating your own interfaces using Lexicon is pretty easy using our Figma or Sketch libraries. Our libraries provide you with our foundations and core components that you can use to build your interfaces.
 
 <div class="row">
     <div class="download-card">

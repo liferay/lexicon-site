@@ -1,6 +1,6 @@
 ---
 title: "Profile Info"
-description: "Element used to identify the author or owner and other related metadata of an asset in sites environment."
+description: "An element used to identify the author or owner and other related metadata of an asset in sites."
 layout: "guide"
 weight: 2
 ---
@@ -11,13 +11,13 @@ weight: 2
 
 ### Attributes
 
-Profile info pattern can be defined in different ways as the application needs may vary.
+The profile info pattern can be defined in different ways, depending on the needs of the application.
 
 ![Profile info Definition And Metrics](../../../images/sites/ProfileInfoDefinitionAndMetrics.jpg)
 
 ### Variations
 
-Depending on where the sticker is used its size may also change.
+Depending on where the sticker is positioned, the profile info's size may change:
 
 #### 40px
 
@@ -35,8 +35,8 @@ Depending on where the sticker is used its size may also change.
 
 ![Profile info sticker sizes metrics](../../../images/sites/ProfileInfoStickerSizesMetrics.jpg)
 
-### Example in Context
+### Examples
 
-Different examples of use can be found in blogs and comments.
+You can find examples of the profile info pattern used in blogs and comments:
 
 ![Profile info example in blogs and comments adts](../../../images/sites/ProfileInfoBlogsExample.jpg)
