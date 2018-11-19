@@ -1,7 +1,7 @@
 ---
 title: "Loading Indicator"
 titleLabel: "Portal"
-description: "Loading indicator shows the user that an external process, like a connection, is being executed."
+description: "The loading indicator shows the user that an external process, like a connection, is being executed."
 layout: "guide"
 weight: 1
 ---
@@ -10,9 +10,9 @@ weight: 1
 
 ### Usage
 
-This feedback mechanism is essential for the user to understand that something is happening. Please remember to include it when there is a connection to a server and at the same screen shows the answer to the user.
+Use the loading indicator to inform the user that there is pending content from the server that will load where the indicator is displayed. Without this indicator, the user can feel lost or navigate away from the page prematurely.
 
-Please don’t use spinners inside buttons. In case you need a spinner for an action triggered by a button, place the spinner to one of the sides of the button.
+Please don’t use loading indicators inside buttons. If you need a loading indicator for an action triggered by a button, place the loading indicator on one of the sides of the button.
 
 <div class="loading-icon loading-icon-md"></div>
 
@@ -23,7 +23,7 @@ Please don’t use spinners inside buttons. In case you need a spinner for an ac
 
 ### Size
 
-Make a responsive usage of the sizes that help the user to understand that something is happening not being aggressive. The context of use will help you understanding the size to use.
+Use the sizes below to respond to different device sizes:
 
 | Size | Description |
 | ---- | ----- |
