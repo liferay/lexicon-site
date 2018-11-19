@@ -15,34 +15,34 @@ weight: 1
 
 ### Usage
 
-Popovers are used together with the question mark icon as an affordance to let the user understand there is something to read that can be useful. Popovers contain information such as help to understand a context.
+Popovers are used together with the question mark icon to communicate to the user that there is useful information for them to read. Popovers contain helpful information such as an explanation of a context.
 
 ![help icon](../../../images/PopoverFromIcon.jpg)
 
-#### Do's and Don'ts
+#### Dos and Don'ts
 
-Keep a distance of 8px between a text and the icon so it is easy to recognize and associate.
+For readability, keep a distance of 8px between text and the icon.
 
 <div class="row">
 	<div class="dodont col-lg">
-        <img class="do" src="../../../images/PopoverTitleIconDo.jpg" alt="keep 8 pixel between title and help icon">
+        <img class="do" src="../../../images/PopoverTitleIconDo.jpg" alt="keep 8 pixels between title and help icon">
         <p class="do">Do</p>
 	</div>
 	<div class="dodont col-lg">
-		<img class="dont" src="../../../images/PopoverTitleIconDont.jpg" alt="dont place it nearer than 8 pixels">
+		<img class="dont" src="../../../images/PopoverTitleIconDont.jpg" alt="do not place it nearer than 8 pixels">
 		<p class="dont">Don't</p>
 	</div>
 </div>
 
-Similar to the previous case happens with sections, in this case the distance is 16px.
+Keep a distance of 16px between text and the icon.
 
 <div class="row">
     <div class="dodont col-lg">
-        <img class="do" src="../../../images/PopoverSectionIconDo.jpg" alt="keep 16 pixel between section title and help icon">
+        <img class="do" src="../../../images/PopoverSectionIconDo.jpg" alt="keep 16 pixels between a section title and help icon">
         <p class="do">Do</p>
     </div>
     <div class="dodont col-lg">
-        <img class="dont" src="../../../images/PopoverSectionIconDont.jpg" alt="dont place it nearer than 16 pixels">
+        <img class="dont" src="../../../images/PopoverSectionIconDont.jpg" alt="do not place it nearer than 16 pixels">
         <p class="dont">Don't</p>
     </div>
 </div>
@@ -53,22 +53,22 @@ Similar to the previous case happens with sections, in this case the distance is
 
 ## Tooltips
 
-Tooltips are brief pieces of information that appear on hover state over an element to clarify the meaning or use of an interaction element for the user.
+Tooltips are brief pieces of information that appear on hover state over an element to clarify its meaning or use for the user.
 
 ![the four different positions of a tooltip arrow in a tooltip, 4 tooltip cases](../../../images/Tooltip.jpg)
 
 ### Usage
 
-* Tooltips are used with icon buttons to help understanding the metaphor they transmit.
-* They can be also used with links or images.
-* Tooltips are thought to contain few text. Lexicon recommends a maximum of 280 characters. In case your description is longer, please use a popover.
-* The tooltip appears on hover state and disappears when hover ends. This pattern does not exist in mobile a hover is not a possible state.
-* Please make a right use of the arrow positioning as it could drive to misunderstandings when it doesn’t point to the correct interface element.
+* Tooltips are used to help explain an icon button's meaning.
+* They can also be used with links and images.
+* Tooltips should be brief and contain a small amount of text. Lexicon recommends a maximum of 280 characters. If your description is longer than 280 characters, please use a popover instead.
+* The tooltip appears on hover state and disappears on mouse out. This pattern does not exist on mobile, as hover is not a possible state on mobile devices.
+* Make sure you properly position the arrow to point to the correct interface element. Improper placement can confuse the user.
 * When possible, try to not overlap other interaction elements in the same component.
 
-#### Do's and Don'ts
+#### Dos and Don'ts
 
-Use tooltips on elements that have an action behind as button icons.
+Use tooltips on elements that trigger an action, such as button icons.
 
 <div class="row">
 	<div class="dodont col-lg">

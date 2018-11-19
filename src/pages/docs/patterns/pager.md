@@ -2,7 +2,7 @@
 title: "Pager"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/pagination.html"
-description: "Pager allows navigation between pages of a process or task divided in subtasks or also called pages."
+description: "Pager allows navigation between pages of a process or task divided into subtasks (pages)."
 layout: "guide"
 weight: 1
 hidden: yes
@@ -18,25 +18,25 @@ Pagers are commonly used in forms that are chucked because of their length.
 
 #### Default pager
 
-Use it when you need a simple pagination pattern that does not require to change the page size.
+Use the default pager when you need a simple pagination pattern that does not require the page size to be changed.
 
 ![pager default](../../../images/pagerDefault.png)
 
 #### Aligned pager
 
-Aligned pager pushes the links to the left and right.
+The aligned pager aligns the links to the left and right.
 
 ![pager aligned](../../../images/pagerAligned.png)
 
 ### States
 
-States are important in pagers to let your users understand where the process has its limits and where it can go. Please take are of enabling and disabling them properly depending on the sequence.
+States inform the user where the process has its limits and where it can go. Make sure you disable and enable them properly according to the sequence.
 
 ![pager aligned disable](../../../images/pagerAlignedDisable.png)
 
 ### Sizes
 
-Usage each size depending on the context, take into account the available space and the hierarchical importance.
+When deciding a size to use, consider the available space and the hierarchical importance:
 
 | Size | Description |
 | ---- | ----------- |
