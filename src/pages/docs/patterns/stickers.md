@@ -2,7 +2,7 @@
 title: "Stickers"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/stickers.html"
-description: "The sticker is a visual element used to quickly identify content in a different way than badges and labels."
+description: "Stickers are a visual way to quickly identify content in a different way than badges and labels."
 layout: "guide"
 weight: 1
 ---
@@ -12,7 +12,7 @@ weight: 1
 ![sticker types](../../../images/Sticker.jpg)
 
 ### Usage
-Use stickers to visually identify elements in a dataset that are part of a same group. You can use any color you want for stickers.
+Use stickers to visually identify elements in a dataset that are part of the same group. Stickers can be any color.
 
 ### Sizes
 
@@ -20,7 +20,7 @@ Use stickers to visually identify elements in a dataset that are part of a same 
 
 ![sticker 24x squared and rounded](../../../images/Sticker24.jpg)
 
-Use it in smaller contexts where you only need visual identification but not manual interaction with this element.
+Use the 24px size sticker in smaller context when you only require visual identification for the element and don't need the user to interact with it.
 
 ![metrics sticker 24x squared and rounded](../../../images/Sticker24Metrics.jpg)
 
@@ -28,7 +28,7 @@ Use it in smaller contexts where you only need visual identification but not man
 
 ![sticker 32x squared and rounded](../../../images/Sticker32.jpg)
 
-Use it in cards that are image based, allowing to see more parts of the image.
+Use the 32px size sticker in image cards, so you can see more parts of the image.
 
 ![metrics for sticker 32x squared and rounded](../../../images/Sticker32Metrics.jpg)
 
@@ -36,7 +36,7 @@ Use it in cards that are image based, allowing to see more parts of the image.
 
 ![sticker 40x rounded](../../../images/Sticker40.jpg)
 
-Use it in sites to identify the user in a comment in comments portlet. Only rounded.
+Use the 40px size sticker to identify the user in a comment in the comments portlet in sites. This size is only rounded.
 
 ![metrics for sticker 40x rounded](../../../images/Sticker40Metrics.jpg)
 
@@ -44,13 +44,13 @@ Use it in sites to identify the user in a comment in comments portlet. Only roun
 
 ![sticker 48x rounded](../../../images/Sticker48.jpg)
 
-Use it in sites to identify the user in a blog entry or article. Only rounded.
+Use the 48px size sticker to identify the user in a blog entry or article in sites. This size is only rounded.
 
 ![metrics for sticker 48x rounded](../../../images/Sticker48Metrics.jpg)
 
 ### Colors
-Stickers can have any possible color.
-There default color for stickers is: Main Lighten 28% desat 5%, that corresponds to #6B6C7E
+Stickers can be any color.
+The default color for stickers is #6B6C7E, which corresponds to Main Lighten 28% desat 5%.
 
 ![sticker default colors](../../../images/StickerColors.jpg)
 
@@ -60,17 +60,17 @@ There default color for stickers is: Main Lighten 28% desat 5%, that corresponds
 
 #### Square
 
-Use it only with files and folders. You can place up to 3 characters inside it or an icon. Always capital letters.
+Use a square sticker to identify files and folders. You can place up to three characters or an icon inside it. Always use uppercase letters.
 
 ![squared sticker](../../../images/StickerSquared.jpg)
 
 #### Round
 
-Use it only with people. You can places up to 2 characters inside it or an image. Always capital letters.
+Only use the circle sticker to identify people. You can places up to two characters or an image inside it. Always use uppercase letters.
 
 ![rounded sticker](../../../images/StickerRounded.jpg)
 
 ### Position
-A sticker can be placed in a Image Card. Its position is always bottom left as you can see in the following example.
+You can place a sticker in an Image Card. Its position is always bottom left, as shown in the example below:
 
 ![sticker position example in Card Image](../../../images/CardImage.jpg)
