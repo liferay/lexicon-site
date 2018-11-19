@@ -2,7 +2,7 @@
 title: "Icons"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/icons.html"
-description: "An icon is a visual metaphor that represents the concept that lie behind an idea and/or an action."
+description: "Icons are a visual representation of an idea and/or action."
 layout: "guide"
 weight: 1
 ---
@@ -11,7 +11,7 @@ weight: 1
 
 ### Usage
 
-Icons can be used only when the metaphor is direct and clear. In case there is not a good icon to represent the concept you want to transmit, it will probably better to use words. Icons must be reserved to broad accepted visual ideas.
+Only use an icon when it directly and clearly communicates its intention. The icon must communicate a widely accepted visual idea. If you can't find an icon that communicates your concept, it is best to use words instead.
 
 ### Size usage for designers
 
@@ -21,10 +21,10 @@ Use a 16px box for icons of 16px.
 
 ### Size usage for developers
 
-* Icons in Lexicon have no size.
+* Lexicon icons have no size.
 * The size of the icon is established by its container.
-* By default it would be 16px.
-* All the icons available to use are in the Lexicon Icon Library. Don't use icons from outside this library. Switch icon libraries completely in case Lexicon icons set is not enough for you.
+* The default container size is 16px.
+* The available icons to use are in the Lexicon Icon Library. Don't mix these icons with icons from outside this library. If Lexicon doesn't provide the icons you need, switch icon libraries completely.
 
 ### Liferay icon library
 
@@ -41,13 +41,13 @@ Liferay has its own icon library created for the purposes of the projects that u
 {/foreach}
 </ul>
 
-Please, read this [guide](https://gist.github.com/natecavanaugh/b9546c4215e5d5ef88a1b9d6ae2041a3#lexicon-icon-design-guidelines) on how to create icons for Lexicon.
+Please, follow this [guide](https://gist.github.com/natecavanaugh/b9546c4215e5d5ef88a1b9d6ae2041a3#lexicon-icon-design-guidelines) to create icons for Lexicon.
 
 #### Language flags
 
-People tend to have pretty strong opinions on whether flags should be used as a visual cue for indicating a language, mainly because in many parts of the world, the flag may have cultural and geographic meanings that we might not be aware of, or the flag itself isn't fully accurate to the dialects spoken in that region.
+People tend to have pretty strong opinions on whether flags should be used as a visual cue for indicating a language. This is because in many parts of the world the flag may have cultural and geographic meanings that we might not be aware of, or the flag itself may not be fully accurate to the dialects spoken in that region.
 
-While we understand that reasoning, we've found that the times they are actually needed (when a user is not familiar with the currently displayed language) somewhat eliminates using other mechanisms, such as the name of the language (since the current language could be in an entirely different character set). Given this, there is often at least some familiarity with the identity of a country that speaks a shared language.
+While we understand this reasoning, we've found that when a user is not familiar with the currently displayed language, flags somewhat eliminate the use of other mechanisms, such as the name of the language (since the current language could be in an entirely different character set). Given this, there is often at least some familiarity with the identity of a country that speaks a shared language.
 
 <ul class="lexicon-icon-list list-unstyled">
 {foreach $flag in $page.flags}
@@ -62,9 +62,4 @@ While we understand that reasoning, we've found that the times they are actually
 
 #### Other icon libraries
 
-[Font Awesome](http://fontawesome.io/) and [Glyphicons](http://glyphicons.com/) are good alternatives in case you don't want to use Lexicon icon library.
-
-
-
-
-
+[Font Awesome](http://fontawesome.io/) and [Glyphicons](http://glyphicons.com/) are good alternatives if you don't want to use Lexicon's icon library.

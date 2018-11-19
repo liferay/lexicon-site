@@ -2,7 +2,7 @@
 title: "Dropdown Menu"
 titleLabel: "Clay"
 titleLabelLink: "https://clayui.com/docs/components/dropdowns.html"
-description: "A dropdown menu displays a list of options related to the element that triggers it."
+description: "A dropdown menu displays a list of options for the element that triggers it."
 layout: "guide"
 weight: 1
 ---
@@ -12,70 +12,68 @@ weight: 1
 ![default dropdown menu](../../../images/Dropdown.jpg)
 
 ### Usage
-Dropdowns are used to list a set of options that are not easy to manage in the screen. This mechanism helps to clean-up the screen making everything more implicit.
+Dropdowns display a list of options that are not easy to manage on the screen. This mechanism organizes these options into a condensed menu, keeping the screen clean and making their intention more implicit.
 
-Dropdowns are usually triggered from a dropdown button or a button with icon, as the actions button. These are the two most extended cases in Lexicon.
+Dropdowns are usually triggered from a dropdown button or a button with an icon. These are the two most common implementations in Lexicon.
 
-Closing a dropdown can be done by:
-* Selecting an option in the panel, if they are mutually exclusive.
-* Clicking on the button that triggered it.
-* Clicking outside the panel.
+To close a dropdown, use one of the following methods:
+* Select an option in the panel, if they are mutually exclusive.
+* Click on the button that triggered it.
+* Click outside the panel.
 
-A dropdown menu can contain any kind of basic form component / element like text field, list of options, list of options with radios, list of options with checkboxes, or button.
+Dropdowns have a maximum width of 240px. When an option's text doesn't fit into the available space, use two lines. The text for each option should be short and specific enough to be able to fit on one line if possible.
 
-Dropdowns have a maximum width of 240px. When an entry text doesn't fit into the available space, use 2 lines. The text in each entry should be short and specific enough to not use more than one line.
+The maximum height is 600px for desktop and 400px on mobile devices. Vertical scroll is allowed when the content exceeds the limit.
 
-Maximum height is established in 600px for desktop and 400px in mobile. Vertical scroll is allowed when the content exceeds the limit.
-
-The distance from the button to the dropdown is 8px.
+The distance between the trigger button and the dropdown must be 8px.
 
 ### Types
 
 #### Default
 
-The default dropdown is just a panel not prepared for scrolling the content inside it. Use this type when the number of options you want to offer is short or the panel is big enough to contain all the elements you want to use.
+The default dropdown is a panel that doesn't support scrolling for the content inside it. Use the default configuration when you have a small number of options or when the panel is big enough to contain all the elements you want to use.
 
 ![default dropdown menu](../../../images/Dropdown.jpg) ![default dropdown menu](../../../images/DropdownRegular.jpg)
 
 #### Dropdown with dividers
 
-Dropdown menu with dividers are thought to be used in actions menus. Dividing the actions by context of use help users to find actions.
+Use a dropdown menu with dividers to keeps actions organized in an actions menu. Organizing the actions by context of use makes it easier for users to find them.
 
 ![dropdown menu with search field](../../../images/DropdownActions.jpg)
 
 #### Dropdown with checkbox or radio
 
-Dropdowns can be configured to have checkboxes and/or radio groups. A checkbox configuration can be suitable to filter in or out dataset elements. While, a radio configuration can be suitable to establish the order criteria in a dataset.
+Dropdowns can be configured to have checkboxes and/or radio groups. You can use checkboxes to filter dataset elements, while a radio can be useful for ordering the criteria in a dataset.
 
 ![dropdown menu with a list of checkbox example](../../../images/DropdownCheckbox.jpg) ![dropdown menu with a list of checkbox states](../../../images/DropdownCheckboxTypes.jpg)
 
 #### Dropdown with search field
 
-Sometimes action menus face problems with the number of elements they contain. This dropdown menu variation helps in those contexts where the set of options is large and a search mechanism helps to reduce the search time and task complexity.
+Action menus can sometimes contain multiple elements, making it a little time consuming to scroll through the entire list of options. In these cases, you can add a search field to your dropdown menu so your users can quickly find the action and move on to their next task.
 
 ![dropdown menu with search example](../../../images/DropdownSearch.jpg) ![dropdown menu with search states](../../../images/DropdownSearchTypes.jpg)
 
-#### Dropdown with left icons
+#### Dropdown with icons on the left
 
-Dropdown menus with left icons are suitable for situations like:
-* Process bars (wizards) where there is a need to display a dropdown menu when the number of steps do not fit the screen.
+Dropdown menus with icons on the left are suitable for process bars (wizards), when the number of steps do not fit the screen. This configuration can display the remaining steps. 
 	
-	![dropdown menu with icons to the left](../../../images/DropdownRegularLeftIcons.jpg)
-* Actions menus to help identifying actions that are tight related to their icons.
+![dropdown menu with icons to the left](../../../images/DropdownRegularLeftIcons.jpg)
+
+This configuration is also suitable to help quickly identify an actions menu item with an icon that closely relates to it.
 	
-	![dropdown menu with icons to the left](../../../images/DropdownActionLeftIcon.jpg)
+![dropdown menu with icons to the left](../../../images/DropdownActionLeftIcon.jpg)
 
-#### Dropdown with right icons
+#### Dropdown with icons on the right
 
-Dropdown menus with left icons are suitable for process bars (wizards) where there is a need to display a dropdown menu when the number of steps do not fit the screen. In this case, the step number has a high relevance, therefore the icon is placed on the right side.
+Dropdown menus with icons on the right are suitable for process bars (wizards) when the number of steps do not fit the screen. It displays the remaining steps and emphasizes the step number by placing the icon on the right side.
 
 ![dropdown menu with icons to the right example](../../../images/DropdownRegularRightIcons.jpg) ![dropdown menu with icons to the right states](../../../images/DropdownRegularRightIconsTypes.jpg)
 
 #### Dropdown with groups
 
-This dropdown menu variation is created to be used with the management bar Filter and Order dropdown button. This configuration is thought to clean the management bar providing the user with more specific mechanisms to find data. 
+This dropdown menu variation is for use with the management bar Filter and Order dropdown button. This configuration is used to refine the management bar UI options, providing the user with more specific mechanisms to find data.
 
-The button in a dropdown menu can be either primary or secondary depending on the application needs.
+Buttons in dropdown groups can either be primary or secondary, depending on the application needs.
 
 ![dropdown menu with groups examples](../../../images/DropdownMultiple.jpg) ![dropdown menu with groups](../../../images/DropdownMultipleTypes.jpg)
 
@@ -86,60 +84,62 @@ The button in a dropdown menu can be either primary or secondary depending on th
 
 ![dropdown menu actions sort](../../../images/DropdownActionSort.jpg)
 
-Guideline: (not all steps are always in use)
+Below is a list of guidelines for creating actions menus. Note that not all of these guidelines are always required:
 
 1. Order by context (use a separator line between each of the groups):
-	- Primary commands: edit, preview, open…
-	- Secondary commands specific of the object: expire, view history
-	- Transfer commands: copy, duplicate, move, export, import
-	- Object settings: permissions, configuration
-	- Object commands: delete, move to the recycle bin
+	- Primary commands: edit, preview, open, etc.
+	- Secondary commands specific to the object: expire, view history, etc.
+	- Transfer commands: copy, duplicate, move, export, import, etc.
+	- Object settings: permissions, configuration, etc.
+	- Object commands: delete, move to the recycle bin, etc.
 2. General rules
-	- Group size must be less or equal than 7.
+	- Group size must be less than or equal to seven.
 	- The total number of elements must not exceed 15 items.
 	- Use separator lines between groups.
 	- Do not increase the menu complexity with submenus.
-3. Order inside a group must be use frequency, in other case use alphabetic order.
+3. Groups must be ordered by frequency of use. For items inside a group, use alphabetical order.
 4. Disabling actions:
-	- Do never remove actions. If an action is not available for an item due to its state, disable it.
-	- Exception: remove the action if the item by its nature cannot perform the action.
-5. Actions menu may have icons. Using many icons can help identifying actions.
-6. Complementary actions must together (Ex: Lock, Unlock)
-	- When one is able the complementary must be disabled.
-	- Sometimes both would be able at same time (undo / redo)
+	- If an action is not available for an item due to its state, disable it.
+	- Only remove an action if the item by nature can't perform the action.
+5. Use icons to help identify actions.
+6. Complementary actions must work together (Ex: Lock, Unlock)
+	- When one is available, the complementary action must be disabled.
+	- In some cases both actions may be available at the same time (Ex: undo / redo)
 7. Only present the actions that make sense in the context. Do not overload the menu. This doesn't mean to remove disabled items.
 
 #### Dropdown menu from Plus button
 
-Sometimes the plus button use in certain contexts need more than a single action. For those cases please follow the following set of rules:
+Plus button's can contain multiple actions. When this is the case, these actions are displayed in a dropdown menu. 
+
+Users can customize a list of favorites in the plus button's dropdown menu, as shown in the message in the image on the left. This is available via a modal window that is triggered by the *More* button at the bottom. An example configuration is shown in the image on the right.
 
 ![dropdown menu actions in plus button with favorites configuration](../../../images/DropdownPlusButtonCase1.jpg)
 
-The left configuration suggest the user the possibility of having favorites elements. Favorites are selected in a modal window and the outcome is reflected as in the right image.
+Favorites are ordered using the following rules:
 
 Out of the favorites the order is ruled as follows:
-* First two elements are the most used ones.
-* The rest are displayed in alphabetical order
+* The first two elements are the most used ones.
+* The remaining favorites are displayed in alphabetical order
+
+Dropdown menus for plus buttons can also contain scrollbars to view a long list of items, as shown in the image below.
 
 ![dropdown menu actions in plus button with favorites configuration and scroll bar case](../../../images/DropdownPlusButtonCase2.jpg)
 
-The previous image shows a case with scrollbar to let your understand the scrollable area.
+When creating dropdown menus for plus buttons, please follow the guidelines shown below:
 
-Guideline:
-
-1. The menu must be splitted in 2 areas:
-	- Primary actions: always contain the generic actions. Example: folder.
-	- Secondary actions: are sets of actions that attend a certain category, for example: structures, document types…
+1. The menu must be split into two main areas:
+	- Primary actions: always contains the generic actions. Example: folder.
+	- Secondary actions: contains actions that fit a certain category. Example: structures, document types, etc.
 2. Secondary organization:
-	- Make a first group of favorites in case they exist.
-	- Make a second group with the rest of actions.
-	- Display a maximum of 7 actions between favorites and not favorites.
-	- Show a message to allow the user know the total number of actions inside the category. Example: “Showing 7 of 203 items”
-	- Include a More area to give access to the modal that contains the rest and the configuration of favorites.
+	- The first group should contain favorites if they exist.
+	- The second group should contain the remaining actions.
+	- Display a maximum of seven actions between favorites and not favorites.
+	- Display a message that shows the total number of actions inside the category. Example: “Showing 7 of 203 items”
+	- Include a More area to give access to the modal that contains the rest of the items and lets the user customize the list of favorites.
 3. Sorting inside each group:
-	- Place first the most used
-	- Place the rest in alphabetical order.
-4. The limit of this dropdown menu is 15 actions.
+	- Place the most used item first.
+	- Place the remaining items in alphabetical order.
+4. The dropdown menu can't exceed 15 actions.
 
 
 ### Attributes
