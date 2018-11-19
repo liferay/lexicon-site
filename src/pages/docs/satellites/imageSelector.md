@@ -1,7 +1,7 @@
 ---
 title: "Image Selector"
 titleLabel: "Portal"
-description: "Image selector allows the user to select images from a grid prioritizing over other metadata."
+description: "The image selector lets the user select images from a grid, prioritizing over other metadata."
 layout: "guide"
 weight: 1
 ---
@@ -10,13 +10,13 @@ weight: 1
 
 ### Usage
 
-* Use this pattern only for image selection.
-* The elements placed in the grid must be of any image type that can display a previsualization in the form of a thumbnail.
+* Only use this pattern for image selection.
+* The elements placed in the grid must be an image type that can support a thumbnail.
 * Simple and multiple selection must be possible.
-    * Single selection closes the modal on image selection.
-    * Multiple selection allows to select as many images wanted and the modal is closed with modal “Done” button.
-* Hovering an image allows to see its title name. Long titles have ellipsis in the middle allowing to see the end of the title to differentiate between image versions.
-    * Image titles are always shown in touch interfaces.
+    * Selecting a single image closes the image selector modal.
+    * Multiple selection lets the user select as many images as they need. In this case, the modal is closed with the “Done” button.
+* Hovering an image displays its title. Long titles have ellipsis in the middle, while still displaying the end of the title so the user can quickly identify it.
+    * Image titles are always shown on touch interfaces.
 
 
 ### Image status
@@ -33,12 +33,10 @@ weight: 1
 
 ![image hover state](../../../images/ImageSelectorImageSelected.jpg)
 
-Image selector example in desktop:
+Image selector example on desktop:
 
 ![image selector example in desktop size](../../../images/ImageSelector.jpg)
 
-In mobile as there is no hover state all images are forced to have always the title present.
+On mobile devices, since there is no hover state, images must always display their title.
 
 ![image selector example in mobile size](../../../images/ImageSelectorMobile.jpg)
-
-

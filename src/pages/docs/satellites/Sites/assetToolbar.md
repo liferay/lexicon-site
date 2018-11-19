@@ -8,7 +8,7 @@ weight: 2
 <div class="page-description">{$page.description}</div>
 
 ### Layout
-It is important to reflect the flexibility of this toolbar type showcasing different examples of use.
+The asset toolbar's layout is flexible and adapts to different viewport sizes, as shown in the examples below:
 
 #### 8 columns
 
@@ -32,9 +32,9 @@ It is important to reflect the flexibility of this toolbar type showcasing diffe
 
 ![Asset publisher asset toolbar](../../../images/sites/AssetToolbarComments.jpg)
 
-#### Mobile viewport < 577
+#### Mobile displays less than 577px in width
 
-And its transformation when reaching mobile viewports:
+The examples below show the asset toolbar's behavior on mobile viewports:
 
 ##### Asset publisher asset
 
@@ -56,24 +56,24 @@ And its transformation when reaching mobile viewports:
 
 ![Asset publisher asset toolbar](../../../images/sites/AssetToolbarCommentsM.jpg)
 
-This toolbar can contain tools, links or informative elements. 
+The asset toolbar can contain tools, links, or informative elements. 
 
-The toolbar is structured in two different groups of tools or informative elements. Most of the tools and content is organized in a group aligned left, and the social tools are organized in group that is aligned right.
+The toolbar is organized into two different groups of tools or informative elements. Most of the tools and content are grouped on the left, and the social tools are grouped on the right.
 
-The “Share” button always has a dropdown menu associated where the data provider is a list of places/networks where to share. The list always contain the explicit social networks placed as icon buttons outside the list.
+The “Share” button displays a dropdown menu containing a list of places/networks where the user can share. This list contains the social networks represented as icon buttons outside the list, as well as any additional social networks that are available.
 
 ![Asset toolbar share button clicked with dropdown menu](../../../images/sites/AssetToolbarBlogExample.jpg)
 
 ### Examples of use
 
-An example of use of this toolbar can be found in blogs, where in desktop in an 8 columns container, the layout is as follows in this example:
+The example below shows the asset toolbar for the blogs application on desktop in an 8-column container:
 
 ![Asset toolbar in Blogs 8 columns case](../../../images/sites/AssetToolbarBlogAdtExample.jpg)
 
-This same component in a 4 columns gets narrower adapting to the available space.
+The same component in a 4-column container narrows to adapt to the available space:
 
 ![Asset toolbar in Blogs 4 columns case](../../../images/sites/AssetToolbarBlogAdtResize.jpg)
 
-When the mobile viewport is reached the component translates it toolvar as expressed in previous images.
+On mobile displays, the component transforms its toolbar:
 
 ![Asset toolbar in Blogs mobile](../../../images/sites/AssetToolbarBlogAdtM.jpg)
