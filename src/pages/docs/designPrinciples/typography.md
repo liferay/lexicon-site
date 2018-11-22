@@ -120,7 +120,7 @@ Lexicon's type scale is based on an initial increase of 2px that grows to 4px in
         </tr>
         <tr>
             <td>40px</td>
-            <td>2.rem</td>
+            <td>2.5rem</td>
             <td class="type-scale type-scale-40">Design matters</td>
         </tr>
     </tbody>
