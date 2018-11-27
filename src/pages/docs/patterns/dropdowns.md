@@ -113,6 +113,8 @@ Plus button's can contain multiple actions. When this is the case, these actions
 
 Users can customize a list of favorites in the plus button's dropdown menu, as shown in the message in the image on the left. This is available via a modal window that is triggered by the *More* button at the bottom. An example configuration is shown in the image on the right.
 
+*Note: The default behaviour of the More button is to load more items in the dropdown menu, but it is not the desired one.*
+
 ![dropdown menu actions in plus button with favorites configuration](../../../images/DropdownPlusButtonCase1.jpg)
 
 Favorites are ordered using the following rules:
