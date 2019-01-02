@@ -9,6 +9,8 @@ weight: 3
 
 <div class="page-description">{$page.description}</div>
 
+## Selector
+
 ![select default state](../../../images/Selector.jpg)
 
 ### Usage
@@ -18,3 +20,12 @@ This pattern is completely different from a dropdown. A selector is a native com
 ### States
 
 The states for a selector are the same as the states for a text input.
+
+
+## Multi select
+Multi select is the field type that allows writing text to create “tags” that are represented in the shape of labels. This components counts with auto complete feature.
+
+
+![search field active state](../../../images/LabelInputField.jpg)
+
+![search field active state](../../../images/LabelInputFieldMultipleLines.jpg)

@@ -46,22 +46,6 @@ A search field can have auto completion to display a list of options below the f
 
 ![search field active state](../../../images/InputSearchActive.jpg)
 
-## Labels Input Field
-<span class="label label-secondary">PENDING</span>
-
-A labels input field is exclusively used for categories or tags.
-
-![search field active state](../../../images/LabelInputField.jpg)
-
-![search field active state](../../../images/LabelInputFieldMultipleLines.jpg)
-
-
-## Date Field or Date Select
-<span class="label label-secondary">PENDING</span>
-
-Date select allows to select a date. This date select is similar to the one in HTML5 and includes same functionalities. Lexicon recommends to use native date selects as users are used to them. Use this one in desktop viewport.
-
-![multiple select active state](../../../images/DatePickerOpen.jpg)
 
 ## Numeric field 
 <span class="label label-secondary">PENDING</span>
