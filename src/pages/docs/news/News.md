@@ -5,6 +5,15 @@ layout: "guide"
 weight: 1
 ---
 
+<time>January 2nd, 2019</time>
+### New components
+
+We have new components to share with you:
+* [Color picker](../pattern/Forms/picker-color.html)
+* [Date and Time picker](../pattern/Forms/picker-date-time.html)
+
+You will find them out soon in our Figma Library and in Clay.
+
 <time>November 12th, 2018</time>
 ### General update
 
