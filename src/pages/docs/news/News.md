@@ -9,8 +9,8 @@ weight: 1
 ### New components
 
 We have new components to share with you:
-* [Color picker](../pattern/Forms/picker-color.html)
-* [Date and Time picker](../pattern/Forms/picker-date-time.html)
+* [Color picker](../patterns/Forms/picker-color.html)
+* [Date and Time picker](../patterns/Forms/picker-date-time.html)
 
 You will find them out soon in our Figma Library and in Clay.
 
@@ -30,11 +30,11 @@ As promised, we are updating the examples section. This time we bring you an exa
 
 **Dropdown menu:**
 
-[Dropdown menu](../pattern/dropdowns.html) definition has been updated to accept icons on the left side of actions.
+[Dropdown menu](../patterns/dropdowns.html) definition has been updated to accept icons on the left side of actions.
 
 **Tabs:**
 
-[Tabs](../pattern/tabs.html) have been updated with an example to give context in tab bars.
+[Tabs](../patterns/tabs.html) have been updated with an example to give context in tab bars.
 
 <time>October 12th, 2018</time>
 
