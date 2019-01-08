@@ -41,8 +41,7 @@ The color palette can contain as many colors as you require, but we recommend th
 1. Custom colors label
 2. Color drop button
     * The sampled color is displayed in the predefined palette panel
-    * If changes were made, this action does not apply a selection of the color
-    <!-- If changes were made to what? -->
+    * Note that the sampled color is not preselected in the predefined palette panel
 3. Color cells set
 4. Color definition box
 5. RGB form set
@@ -53,11 +52,11 @@ Inputs 4, 5, 6 and 7 automatically update each time one of them is modified to r
 
 ### Attributes
 
-Predefined palette panel measures and distances:
+Predefined palette panel layout and dimensions:
 
 ![Predefined palette panel measures and distances](../../../images/Picker-color-panel-custom-measures.jpg)
 
-Custom panel measures and distances:
+Custom panel layout and dimensions:
 
 ![Custom panel measures and distances](../../../images/Picker-color-panel-normal-measures.jpg)
 

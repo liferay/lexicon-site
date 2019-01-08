@@ -66,6 +66,8 @@ A disabled day is greyed out, indicating that the user can not select it.
 
 ### Attributes
 
+Date picker layout and dimensions:
+
 ![Date picker measures and distances](../../../images/Picker-date-measures.jpg)
 
 ### Extension Points
