@@ -72,10 +72,17 @@ weight: 1
 </table>
 
 
-#### Selection inside a modal
+#### Multiple selection inside a modal
 
-* Select multiple items by selecting the corresponding checkboxes and clicking the "Done" button.
-* Individually select items with the corresponding radio button in the row. A modal footer and its actions are not required for individual selection.
+Selecting multiple items in a modal must be done by selecting each desired element through the checkbox. The selection will be finished by clicking in Done button at the modal footer.
+
+![multiple selection from a table inside a modal is done by selecting elements and clicking in Done button to complete the selection](../../../images/Modal-selection-multiple.jpg)
+
+#### Single selection inside a modal
+
+Single selection must be done by clicking directly on the desired element. In this case, the element must not have a Choose or Select button. The modal doesn't have footer as there is no need.
+
+![single selection from a table inside a modal is done by selecting the element directly](../../../images/Modal-selection-single.jpg)
 
 #### Modal over modal
 

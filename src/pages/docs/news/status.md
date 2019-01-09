@@ -123,6 +123,8 @@ weight: 1
 
 ## Satellite Components
 
+| Page | Lexicon | Clay CSS | Clay Component |
+| ---- | ----- | ----- |----- |
 | <p class="tableSection">FILE UPLOAD</p> |
 | File upload | <p class="dotDone">&#9679;</p> | NA | NA  |
 | <p class="tableSection">IMAGE SELECTOR</p> |
