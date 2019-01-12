@@ -23,7 +23,7 @@ To close a dropdown, use one of the following methods:
 
 Dropdowns have a maximum width of 240px. When an option's text doesn't fit into the available space, use two lines. The text for each option should be short and specific enough to be able to fit on one line if possible.
 
-The maximum height is 600px for desktop and 400px on mobile devices. Vertical scroll is allowed when the content exceeds the limit.
+The maximum height is 500px for desktop and 400px on mobile devices. Vertical scroll is allowed when the content exceeds the limit.
 
 The distance between the trigger button and the dropdown must be 8px.
 
