@@ -5,6 +5,19 @@ layout: "guide"
 weight: 1
 ---
 
+<time>February 7th, 2019</time>
+### Stickers update
+
+Stickers have been updated due to accessibility and internacionalization reasons. Text inside sticker was causing these problems. Font size, weight and color causing accessibility issues in some sticker sizes. Moreover, it was difficult to define what characters to display in languages as chinese or japanese among others.
+
+Sticker will be always image/icon based to avoid these problems.
+
+Cards have been updated as a collateral effect.
+
+### Form validation
+
+Form validation has been updated to reflect where alerts must appear on general form validation.
+
 <time>January 2nd, 2019</time>
 ### New components
 
