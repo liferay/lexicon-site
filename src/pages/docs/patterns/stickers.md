@@ -49,12 +49,13 @@ Use the 48px size sticker to identify the user in a blog entry or article in sit
 ![metrics for sticker 48x rounded](../../../images/Sticker48Metrics.jpg)
 
 ### Colors
-Stickers can be any color.
-The default color for stickers is #6B6C7E, which corresponds to Main Lighten 28% desat 5%.
-
-![sticker default colors](../../../images/StickerColors.jpg)
+Stickers can be any color, and the default color for stickers is #6B6C7E, which corresponds to Main Lighten 28% desat 5%.
 
 ![sticker color legend](../../../images/StickerColorLegend.jpg)
+
+For Documents and Media please follow the following specification of colors and icons.
+
+![sticker default colors](../../../images/StickerColors.jpg)
 
 ### Variations
 
