@@ -9,7 +9,7 @@ weight: 1
 
 <div class="page-description">{$page.description}</div>
 
-![sticker types](../../../images/Sticker.jpg)
+![sticker types](../../../images/Sticker32.jpg)
 
 ### Usage
 Use stickers to visually identify elements in a dataset that are part of the same group. Stickers can be any color.
