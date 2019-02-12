@@ -27,6 +27,7 @@ Cards can have various configurations. We provide a flexible card layout that is
 	* When used in a File, Image, or User card, it navigates to its detail view.
 	* Never use the navigation to view a preview. This is always a secondary action placed inside the action menu.
 	* If the link drives the user out of the site, please identify visually that this link will open in a new page.
+* When the card title is hovered a tooltip has to appear showing the entire element title.
 
 ### Layout
 By providing a flexible layout, Lexicon gives you a wider range of possible configurations for your card. You can adapt the layout to suite your needs, so it just contain the elements you require.
@@ -74,6 +75,9 @@ Images can vary in size. So no visual information is lost in the card, Lexicon m
         <img src="../../../images/CardImageAspectRatio3.jpg" alt="Card Image Aspect Ratio 3">
 	</div>
 </div>
+
+Aspect ratio might be used when the content to represent in the card is a document. The image can expand to fill the area.
+
 
 ### Attributes
 
