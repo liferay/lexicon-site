@@ -14,8 +14,7 @@ Creating your own interfaces using Lexicon is pretty easy using our Figma or Ske
 <div class="row">
     <div class="download-card">
         <img class="download-card-img" src="../../../images/resources/figma-logo.png">
-        <a class="btn btn-primary" href="https://drive.google.com/file/d/1HB5Efjbzi_hc_mMRdQ_tMGNmTnqj_IPp/view?usp=sharing" target="_blank">Download</a>
-        <p class="download-card-text">Beta version</p>
+        <a class="btn btn-primary" href="https://www.figma.com/file/fvvqKW4bIPIUfWqrtLAjD4/lexicon-dsl" target="_blank">Download</a>
     </div>
     <div class="download-card">
         <img class="download-card-img" src="../../../images/resources/sketch-symbol-transparent.png">
