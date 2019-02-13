@@ -31,6 +31,15 @@ Creating your own interfaces using Lexicon is pretty easy using our Figma or Ske
 
 ### Presentations
 
+**2019 February**
+
+Building a component library is a huge effort in terms of knowing the tool and the time it takes to introduce all components. Emiliano shares how to make this job efficiently and the reasons why Figma can make this task easier saving lot of time letting you scale your component library faster.
+
+<div class="videoContainer">
+    <iframe src="https://docs.google.com/presentation/d/1dJTeHkSPzc7hVvoKB0ZRaWd3i11YLJq7IZ0ADHHvfzc/embed?start=false&loop=false&delayms=3000" class="video"></iframe>
+</div>
+
+
 **2018 November**
 
 Liferay DXP UX achievements for 7.1, adding the short term improvements we expect to have in Liferay DXP 7.2. Moreover, the lines of work Liferay DXP is working in termns of UX for the mid/long term future and how Lexicon helps on all this trip.
