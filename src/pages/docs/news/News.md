@@ -5,6 +5,15 @@ layout: "guide"
 weight: 1
 ---
 
+<time>February 14th, 2019</time>
+### New resources
+
+Big news for the open source community:
+1. Emiliano shares his experience "Building a component library with Figma".
+2. We shared our Figma library so you can now see we implemented it and play around with it. Please provide us with feedback directly on the library or through git.
+
+You can find both at [resources](../resources/index.html).
+
 <time>February 7th, 2019</time>
 ### Stickers update
 
