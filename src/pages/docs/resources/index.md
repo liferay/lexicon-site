@@ -33,7 +33,7 @@ Creating your own interfaces using Lexicon is pretty easy using our Figma or Ske
 
 **2019 February**
 
-Building a component library is a huge effort in terms of knowing the tool and the time it takes to introduce all components. Emiliano shares how to make this job efficiently and the reasons why Figma can make this task easier saving lot of time letting you scale your component library faster.
+Building a component library is a huge effort in terms of knowing the tool and the time it takes to introduce all components. Emiliano shares how to make this job efficiently and the reasons why Figma can make this task easier saving lot of time letting you scale your component library faster. [Watch the presentation](https://www.youtube.com/watch?v=lNJxO1ibNrM).
 
 <div class="videoContainer">
     <iframe src="https://docs.google.com/presentation/d/1dJTeHkSPzc7hVvoKB0ZRaWd3i11YLJq7IZ0ADHHvfzc/embed?start=false&loop=false&delayms=3000" class="video"></iframe>
