@@ -26,6 +26,14 @@ The states for a selector are the same as the states for a text input.
 Multi select is the field type that allows writing text to create “tags” that are represented in the shape of labels. This components counts with auto complete feature.
 
 
-![search field active state](../../../images/LabelInputField.jpg)
+![multiple select field](../../../images/SelectMulti.jpg)
 
-![search field active state](../../../images/LabelInputFieldMultipleLines.jpg)
+![multiple select field with N lines](../../../images/SelectMultiNLines.jpg)
+
+Multi select includes different features as:
+
+* Text automplete
+* Fast label creation on text paste, creating tags for elements separated by commas.
+* This component aslo has a character whitelist that allows create labels with only desired characters.
+
+![multiple select field with N lines](../../../images/SelectMultiAutocomplete.gif)
