@@ -10,6 +10,7 @@ weight: 1
 Today we bring to improvements:
 * **NEW COMPONENT**: Card for navigation that are useful in distributive pages.
 * **UPDATE** Alerts with buttons to differentiate actions from navigation. Navigation is provided by links.
+* **UPDATE**: Typography > Contetn Alignment
 
 
 <time>February 14th, 2019</time>
