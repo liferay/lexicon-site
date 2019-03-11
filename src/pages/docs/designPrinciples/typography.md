@@ -213,3 +213,15 @@ The paragraph element incorporates a bottom margin of 0.75rem (12px) to define t
 #### General UI Elements
 
 The Lexicon UI elements are styled using a combination of the format values described on this page. You can check the font attributes of each element on its specific page.
+
+#### Content Alingment
+
+Content aligment is relevant for readability. Respecting some basic rules, 1rem spacing, make your text easier to consume. Please follow the advices in the images:
+
+<p class="do">Do</p>
+
+![two buttons of same height in a row](../../../images/ContentAlignmentDo.jpg)
+
+<p class="dont">Don't</p>
+
+![two buttons of same height in a row](../../../images/ContentAlignmentDont.jpg)
