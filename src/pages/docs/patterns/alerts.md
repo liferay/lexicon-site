@@ -61,6 +61,10 @@ An example is shown below:
 
 ![toast alert example. Placed to the top right in the screen and below the header](../../../images/AlertToastExample.jpg)
 
+Toasts can have actions associated. Actions are always represented by buttons while navigation is represented by links:
+
+![toast alert examples for each type with a button](../../../images/AlertToastWithButton.jpg)
+
 
 #### Embedded
 
