@@ -5,6 +5,13 @@ layout: "guide"
 weight: 1
 ---
 
+<time>March 11th, 2019</time>
+### Cards for navigation and Alerts with action
+Today we bring to improvements:
+* **NEW COMPONENT**: Card for navigation that are useful in distributive pages.
+* **UPDATE** Alerts with buttons to differentiate actions from navigation. Navigation is provided by links.
+
+
 <time>February 14th, 2019</time>
 ### New resources
 
